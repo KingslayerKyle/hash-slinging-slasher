@@ -48,6 +48,22 @@ for an hour of grinding. A whole night is cheap.
 Your assistant should help you set these up rather than assume them. `preflight` refuses to pass
 until they are working, because a night of grinding with nowhere to send it is a night wasted.
 
+## The one-click grinder
+
+For anyone who wants to donate CPU time and nothing else, there is a standalone app: run
+`bin/windows/grinder.exe` (or `cargo run --release --bin grinder`). It fetches the community
+tables itself — with git if the machine has one, by plain download if not — then grinds the
+searches in a self-feeding rotation, printing every find as it lands. No GitHub account, no
+terminal knowledge, nothing to configure.
+
+Everything found is continuously exported to `exports/` as `hash,name` csv files named for the
+[cod-name-db](https://github.com/echo000/cod-name-db) table each belongs to, so closing the app
+at any moment — Enter, Ctrl+C, or just closing the window — leaves files ready to contribute.
+At most the last minute of work is lost.
+
+To ship it to somebody, give them a folder holding `grinder.exe`, the other `bin/windows`
+executables, `snapshots/` and `data/`. That is the whole app.
+
 ## Getting started
 
 Point your assistant at this folder and say so:
