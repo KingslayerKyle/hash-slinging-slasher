@@ -1,0 +1,7 @@
+16c4d49ab3f5e1c4,mc/mtl_t8_camo_smoke_blast
+2823613de0113f2d,mc/mtl_p8_wz_loot_crate_top
+3649a7e59a5fe27d,mc/t7_fir_dirt_pebbles_1
+3eb344df7cb8c00b,wc/t7_fir_dirt_pebbles_1
+579e9d879ba7049d,mc/mtl_p8_wz_loot_crate_steel_01
+58ad0e20d2544a5f,mc/mtl_p8_wz_loot_crate_middle
+6d757b8de8363e07,mc/mtl_p8_wz_loot_crate_foam
