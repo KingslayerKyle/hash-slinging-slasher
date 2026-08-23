@@ -1,0 +1,5 @@
+1a58a264dddea0ea,mc/mtl_wpn_t9_partyhorn_prop_weapon
+2c765beac05c8b90,mc/mtl_c_t9_rabbit_layer_3
+2c765ceac05c8d43,mc/mtl_c_t9_rabbit_layer_2
+2c765deac05c8ef6,mc/mtl_c_t9_rabbit_layer_1
+2c7662eac05c9775,mc/mtl_c_t9_rabbit_layer_4

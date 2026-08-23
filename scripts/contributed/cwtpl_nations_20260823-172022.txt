@@ -1,0 +1,16 @@
+usa
+gen
+rus
+uk
+ger
+cub
+fra
+lao
+fin
+sa
+jpn
+nic
+shg
+eg
+esp
+isr
