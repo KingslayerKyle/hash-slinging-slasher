@@ -1,0 +1,3 @@
+35c7986f077e8afc,mc/mtl_wpn_t8_zm_melee_katana_blade_stage_03
+35c79a6f077e8e62,mc/mtl_wpn_t8_zm_melee_katana_blade_stage_01
+3cbfbe3300b69dc9,mc/mtl_c_zmb_passenger_female_dresstop1
