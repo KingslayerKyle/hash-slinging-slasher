@@ -1,0 +1,8 @@
+vox/scripted/mpl/abnd/
+vox/scripted/mpl/adgi/
+vox/scripted/mpl/ahva/
+vox/scripted/mpl/ami6/
+vox/scripted/mpl/anbo/
+vox/scripted/mpl/anme/
+vox/scripted/zm_operators/mcln/
+vox/scripted/zm_operators/weav/
