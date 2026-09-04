@@ -1,0 +1,8 @@
+11c1e022fc778ef,zmb\ai\nosferatu\vox_2.0\attack_bite\attack_bite_06.ln100.pc.snd
+75ee5e5ae631373,zmb\ai\nosferatu\vox_2.0\attack_bite\attack_bite_02.ln100.pc.snd
+26adb2395102a5a1,zmb\ai\nosferatu\vox_2.0\attack_bite\attack_bite_00.ln100.pc.snd
+35f78d84559daabd,zmb\ai\nosferatu\vox_2.0\attack_bite\attack_bite_04.ln100.pc.snd
+3a24c03e82fa3656,zmb\ai\nosferatu\vox_2.0\attack_bite\attack_bite_03.ln100.pc.snd
+531dcdf1e25e191c,zmb\ai\nosferatu\vox_2.0\attack_bite\attack_bite_01.ln100.pc.snd
+6c0a54fa4bb5d6a8,zmb\ai\nosferatu\vox_2.0\attack_bite\attack_bite_05.ln100.pc.snd
+720cbd63debae6b2,zmb\ai\nosferatu\vox_2.0\attack_bite\attack_bite_07.ln100.pc.snd
