@@ -1,0 +1,10 @@
+add0ae26a04d5ad,zmb\level\zm_orange\dynamite\dynamite_place.ln100.pc.snd
+3bd98f0eb9af9db5,zmb\level\zm_zodt8\gate\gate_open.ln100.pc.snd
+50ae2737997ca8a1,zmb\level\zm_zodt8\artifact\artifact_lp.ll100.pc.snd
+575acf0d705588b2,zmb\level\zm_escape\catwalk\catwalk_door_open.ln100.pc.snd
+5890a702a1465978,zmb\level\zm_office\defcon\defcon_switch.ln100.pc.snd
+5c2e0f730ca4b438,zmb\level\zm_orange\dynamite\dynamite_fuse_lp.ll100.pc.snd
+6f022dfde1c4a5ac,zmb\level\zm_escape\crane\crane_dock.ln100.pc.snd
+70031430b6a83511,zmb\level\zm_office\defcon\defcon_alarm.ln100.pc.snd
+7491b51187ed303f,zmb\level\zm_orange\dynamite\dynamite_explode.ln100.pc.snd
+749ed076871f6966,zmb\level\zm_orange\zipline\zipline_lp.ll100.pc.snd
