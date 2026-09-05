@@ -8,8 +8,53 @@ dcb65ad80fa5b76,amb/environment/water/sprinkler/small/sprinkler_sml_00.rr75.pc.a
 5d5266424d43fafb,evt/cp_rus_kgb/obj_frame/evt_use_computer_power_off.ln75.pc.all.snd
 4f31339c9d6ac5bd,evt/cp_rus_kgb/obj_frame/evt_use_computer_power_on.ln75.pc.all.snd
 ddfa4b388a668e5,mc/mlt_p8_1forest5_0.sn55.pc_inspect.ln75.pc.all.snd
+31de216c4d3da38a,mpl/executions/exec_003/exec_003_laststand.ln75.pc.all.snd
+1bb65b10f21968c4,mpl/executions/exec_003/exec_003_prone.ln75.pc.all.snd
+7ac942209d0a3bba,mpl/executions/exec_003/exec_003_stand.ln75.pc.all.snd
+23ec4a85873b0c92,mpl/executions/exec_005/exec_005_laststand.ln75.pc.all.snd
+15860c29bf71854c,mpl/executions/exec_005/exec_005_prone.ln75.pc.all.snd
+64fa056399cd80f2,mpl/executions/exec_005/exec_005_stand.ln75.pc.all.snd
+43721af13b400fc8,mpl/executions/exec_013/exec_013_laststand.ln75.pc.all.snd
+7f346f7732abecca,mpl/executions/exec_013/exec_013_prone.ln75.pc.all.snd
+398fc2cda2fd3744,mpl/executions/exec_013/exec_013_stand.ln75.pc.all.snd
+5db7f5cf2ace9d32,mpl/executions/exec_016/exec_016_laststand.ln75.pc.all.snd
+4894264e8b223aec,mpl/executions/exec_016/exec_016_prone.ln75.pc.all.snd
+23e4850350cbbd92,mpl/executions/exec_016/exec_016_stand.ln75.pc.all.snd
+7aa5f466f65228d2,mpl/executions/exec_025/exec_025_laststand.ln75.pc.all.snd
+17d589c64867d68c,mpl/executions/exec_025/exec_025_prone.ln75.pc.all.snd
+7e373887796a7432,mpl/executions/exec_025/exec_025_stand.ln75.pc.all.snd
+5b265241c493eb7c,mpl/executions/exec_026/exec_026_laststand.ln75.pc.all.snd
+66acede395015fee,mpl/executions/exec_026/exec_026_prone.ln75.pc.all.snd
+e71aaaffe1f9598,mpl/executions/exec_026/exec_026_stand.ln75.pc.all.snd
+3bdc58cb955553e2,mpl/executions/exec_027/exec_027_laststand.ln75.pc.all.snd
+32899b8a3baa49dc,mpl/executions/exec_027/exec_027_prone.ln75.pc.all.snd
+732cc606923ee1c2,mpl/executions/exec_027/exec_027_stand.ln75.pc.all.snd
+7e53cec7d6da17e4,mpl/executions/exec_031/exec_031_laststand.ln75.pc.all.snd
+2f932feaa14f0216,mpl/executions/exec_031/exec_031_prone.ln75.pc.all.snd
+27370cf4f2a65d30,mpl/executions/exec_031/exec_031_stand.ln75.pc.all.snd
+7e40453896db3404,mpl/executions/exec_037/exec_037_laststand.ln75.pc.all.snd
+4cd2b5ac23b22c36,mpl/executions/exec_037/exec_037_prone.ln75.pc.all.snd
+2302f9b2850e6dd0,mpl/executions/exec_037/exec_037_stand.ln75.pc.all.snd
+6bcbbae927b697d8,mpl/executions/exec_051/exec_051_laststand.ln75.pc.all.snd
+6205bfc0ad37289a,mpl/executions/exec_051/exec_051_prone.ln75.pc.all.snd
+11c0459ee7b2ddd4,mpl/executions/exec_051/exec_051_stand.ln75.pc.all.snd
+65a8f0eba10c41c,mpl/executions/exec_123/exec_123_laststand.ln75.pc.all.snd
+2cafc2c47e10a08e,mpl/executions/exec_123/exec_123_prone.ln75.pc.all.snd
+41a2183fc06afbb8,mpl/executions/exec_123/exec_123_stand.ln75.pc.all.snd
 ec0151ea605d6b6,mpl/executions/exec_136/exec_136_prone.ln75.pc.all.snd
 64f0592507621850,mpl/executions/exec_136/exec_136_stand.ln75.pc.all.snd
+5d4c4a8beff7ef16,mpl/executions/exec_137/exec_137_laststand.ln75.pc.all.snd
+78ae8bfba6d8c566,mpl/executions/exec_137/exec_137_stand.ln75.pc.all.snd
+42c2f596a154586c,mpl/executions/exec_138/exec_138_laststand.ln75.pc.all.snd
+3e28eba1e1e9789e,mpl/executions/exec_138/exec_138_prone.ln75.pc.all.snd
+75b802759fdf7d88,mpl/executions/exec_138/exec_138_stand.ln75.pc.all.snd
+5586bfa38bfed32a,mpl/executions/exec_201/exec_201_laststand.ln75.pc.all.snd
+150687d0bc6b4aa3,mpl/executions/exec_201/exec_201_laststand_dog.ln75.pc.all.snd
+14f3cc0f7ff1a7e4,mpl/executions/exec_201/exec_201_prone.ln75.pc.all.snd
+4557101d68f2059,mpl/executions/exec_201/exec_201_prone_dog.ln75.pc.all.snd
+7732a17f50efe95a,mpl/executions/exec_201/exec_201_stand.ln75.pc.all.snd
+5fdf2ce4c6483f73,mpl/executions/exec_201/exec_201_stand_dog.ln75.pc.all.snd
+2f685e96a548750c,mpl/executions/exec_201/exec_201_whistle.ln75.pc.all.snd
 2948df5d8da9d310,mpl/intros/mp_moscow/mp_moscow_van_door_v5.ln75.pc.all.snd
 72c0915480ac1b91,mpl/intros/mp_moscow/mp_moscow_van_foley_v12.ln75.pc.all.snd
 3cb4818d15ce1ea2,mus/cp/rus_amerika/3.0_caught/mus_amerika_caught_v1.1_live_edit.sn75.pc.all.snd
@@ -218,6 +263,7 @@ eba6b6b2b44dc99,vox/scripted/operators/adlr/vox_adlr_mtx_execute_blitz_00.rn75.p
 4bdee9ac3714058d,vox/scripted/operators/adlr/vox_adlr_mtx_execute_close_eyes_00.rn75.pc.en.snd
 5e403c69868c59dc,vox/scripted/operators/adlr/vox_adlr_mtx_execute_dead_00.rn75.pc.en.snd
 3f5ac3c811957f4,vox/scripted/operators/adlr/vox_adlr_mtx_execute_dismember_00.rn75.pc.en.snd
+4d13a87f6d50d578,vox/scripted/operators/adlr/vox_adlr_mtx_execute_electric_shock_00.rn75.pc.en.snd
 1fb27ba5e5dbbf97,vox/scripted/operators/adlr/vox_adlr_mtx_execute_esad_00.rn75.pc.en.snd
 2002709fc1d80460,vox/scripted/operators/adlr/vox_adlr_mtx_execute_escape_death_00.rn75.pc.en.snd
 ac611dc5cd7f12c,vox/scripted/operators/adlr/vox_adlr_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -255,6 +301,7 @@ ede06168171afb8,vox/scripted/operators/antv/vox_antv_mtx_execute_arrow_stab_00.r
 7e37431d43b37601,vox/scripted/operators/antv/vox_antv_mtx_execute_close_eyes_00.rn75.pc.en.snd
 c333dccc3ad48a8,vox/scripted/operators/antv/vox_antv_mtx_execute_dead_00.rn75.pc.en.snd
 52a96d95b16c9c88,vox/scripted/operators/antv/vox_antv_mtx_execute_dismember_00.rn75.pc.en.snd
+6ffef6b0fc2320ec,vox/scripted/operators/antv/vox_antv_mtx_execute_electric_shock_00.rn75.pc.en.snd
 12f083ce51f3947b,vox/scripted/operators/antv/vox_antv_mtx_execute_esad_00.rn75.pc.en.snd
 305f841503ae0e44,vox/scripted/operators/antv/vox_antv_mtx_execute_escape_death_00.rn75.pc.en.snd
 2c6b81c9bb079490,vox/scripted/operators/antv/vox_antv_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -292,6 +339,7 @@ f26b13bd61c7c0c,vox/scripted/operators/antv/vox_antv_mtx_execute_fire_match_00.r
 68e1f7825aa7ce6b,vox/scripted/operators/bakr/vox_bakr_mtx_execute_close_eyes_00.rn75.pc.en.snd
 4ec6180de73b4716,vox/scripted/operators/bakr/vox_bakr_mtx_execute_dead_00.rn75.pc.en.snd
 eb293cc6540e2d6,vox/scripted/operators/bakr/vox_bakr_mtx_execute_dismember_00.rn75.pc.en.snd
+78cefc79da4c7302,vox/scripted/operators/bakr/vox_bakr_mtx_execute_electric_shock_00.rn75.pc.en.snd
 503f8ef15c10b255,vox/scripted/operators/bakr/vox_bakr_mtx_execute_esad_00.rn75.pc.en.snd
 de58effceb6f136,vox/scripted/operators/bakr/vox_bakr_mtx_execute_escape_death_00.rn75.pc.en.snd
 558d6110ae802b2,vox/scripted/operators/bakr/vox_bakr_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -329,6 +377,7 @@ fd2054b8ba01486,vox/scripted/operators/bakr/vox_bakr_mtx_execute_overkill_00.rn7
 36cd35cfb05e238b,vox/scripted/operators/bdzr/vox_bdzr_mtx_execute_close_eyes_00.rn75.pc.en.snd
 4cef575061fdf176,vox/scripted/operators/bdzr/vox_bdzr_mtx_execute_dead_00.rn75.pc.en.snd
 203f60b3438fcfb6,vox/scripted/operators/bdzr/vox_bdzr_mtx_execute_dismember_00.rn75.pc.en.snd
+2aa0df1832ff822,vox/scripted/operators/bdzr/vox_bdzr_mtx_execute_electric_shock_00.rn75.pc.en.snd
 6a88253bbda5e2b5,vox/scripted/operators/bdzr/vox_bdzr_mtx_execute_esad_00.rn75.pc.en.snd
 4d9015e5c776f56,vox/scripted/operators/bdzr/vox_bdzr_mtx_execute_escape_death_00.rn75.pc.en.snd
 77a4ddbfff1fbdd2,vox/scripted/operators/bdzr/vox_bdzr_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -366,6 +415,7 @@ c3bf26061b95ad5,vox/scripted/operators/bdzr/vox_bdzr_mtx_execute_rare_01.rn75.pc
 538227ea957efea5,vox/scripted/operators/beck/vox_beck_mtx_execute_close_eyes_00.rn75.pc.en.snd
 3287004489da2cf4,vox/scripted/operators/beck/vox_beck_mtx_execute_dead_00.rn75.pc.en.snd
 9aac8f1bf6a304c,vox/scripted/operators/beck/vox_beck_mtx_execute_dismember_00.rn75.pc.en.snd
+1c50d9c4fece3a10,vox/scripted/operators/beck/vox_beck_mtx_execute_electric_shock_00.rn75.pc.en.snd
 fce7f446bb47bcf,vox/scripted/operators/beck/vox_beck_mtx_execute_esad_00.rn75.pc.en.snd
 67bc8f1bd98a6b38,vox/scripted/operators/beck/vox_beck_mtx_execute_escape_death_00.rn75.pc.en.snd
 7af2a03c272c3f84,vox/scripted/operators/beck/vox_beck_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -403,6 +453,7 @@ e1d721f27e9bd27,vox/scripted/operators/beck/vox_beck_mtx_execute_melee_kill_00.r
 9bbd7b3439cec33,vox/scripted/operators/frs1/vox_frs1_mtx_execute_close_eyes_00.rn75.pc.en.snd
 60add21964a932de,vox/scripted/operators/frs1/vox_frs1_mtx_execute_dead_00.rn75.pc.en.snd
 2e4cbc161c16575e,vox/scripted/operators/frs1/vox_frs1_mtx_execute_dismember_00.rn75.pc.en.snd
+4d2b1bab0a532aaa,vox/scripted/operators/frs1/vox_frs1_mtx_execute_electric_shock_00.rn75.pc.en.snd
 1836d4c81049d0fd,vox/scripted/operators/frs1/vox_frs1_mtx_execute_esad_00.rn75.pc.en.snd
 270a0d58c6cf9ade,vox/scripted/operators/frs1/vox_frs1_mtx_execute_escape_death_00.rn75.pc.en.snd
 28217c27138b93a,vox/scripted/operators/frs1/vox_frs1_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -440,6 +491,7 @@ e1d721f27e9bd27,vox/scripted/operators/beck/vox_beck_mtx_execute_melee_kill_00.r
 51a6336649c20c99,vox/scripted/operators/frs2/vox_frs2_mtx_execute_close_eyes_00.rn75.pc.en.snd
 696e899739f7ac80,vox/scripted/operators/frs2/vox_frs2_mtx_execute_dead_00.rn75.pc.en.snd
 519c50248d75fa0,vox/scripted/operators/frs2/vox_frs2_mtx_execute_dismember_00.rn75.pc.en.snd
+627f8704d3c5ad64,vox/scripted/operators/frs2/vox_frs2_mtx_execute_electric_shock_00.rn75.pc.en.snd
 41011ac92f1ae833,vox/scripted/operators/frs2/vox_frs2_mtx_execute_esad_00.rn75.pc.en.snd
 15800d55213180dc,vox/scripted/operators/frs2/vox_frs2_mtx_execute_escape_death_00.rn75.pc.en.snd
 20fb9791b8a59d48,vox/scripted/operators/frs2/vox_frs2_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -477,6 +529,7 @@ e972964c4208a3,vox/scripted/operators/fuze/vox_fuze_mtx_execute_blitz_00.rn75.pc
 2c13c8ba3c5fe77f,vox/scripted/operators/fuze/vox_fuze_mtx_execute_close_eyes_00.rn75.pc.en.snd
 5be017ea4a0ab552,vox/scripted/operators/fuze/vox_fuze_mtx_execute_dead_00.rn75.pc.en.snd
 342bb3abd550e77a,vox/scripted/operators/fuze/vox_fuze_mtx_execute_dismember_00.rn75.pc.en.snd
+2e0f674ff792b8f6,vox/scripted/operators/fuze/vox_fuze_mtx_execute_electric_shock_00.rn75.pc.en.snd
 3cb47ef505eb79b9,vox/scripted/operators/fuze/vox_fuze_mtx_execute_esad_00.rn75.pc.en.snd
 8bbd5c9d339ba7a,vox/scripted/operators/fuze/vox_fuze_mtx_execute_escape_death_00.rn75.pc.en.snd
 292f8a05b6c44776,vox/scripted/operators/fuze/vox_fuze_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -514,6 +567,7 @@ ec753086c477082,vox/scripted/operators/fuze/vox_fuze_mtx_execute_overkill_00.rn7
 10138dc327387079,vox/scripted/operators/grca/vox_grca_mtx_execute_close_eyes_00.rn75.pc.en.snd
 26f3bb6420fe81a0,vox/scripted/operators/grca/vox_grca_mtx_execute_dead_00.rn75.pc.en.snd
 751f98b01d286ac0,vox/scripted/operators/grca/vox_grca_mtx_execute_dismember_00.rn75.pc.en.snd
+64a48571497679c4,vox/scripted/operators/grca/vox_grca_mtx_execute_electric_shock_00.rn75.pc.en.snd
 3b8468c106ac1153,vox/scripted/operators/grca/vox_grca_mtx_execute_esad_00.rn75.pc.en.snd
 4deedc7dbdaa8e3c,vox/scripted/operators/grca/vox_grca_mtx_execute_escape_death_00.rn75.pc.en.snd
 627f105025ba2128,vox/scripted/operators/grca/vox_grca_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -551,6 +605,7 @@ ec753086c477082,vox/scripted/operators/fuze/vox_fuze_mtx_execute_overkill_00.rn7
 4ff5768c2111702f,vox/scripted/operators/gstf/vox_gstf_mtx_execute_close_eyes_00.rn75.pc.en.snd
 14d69b340bee31c2,vox/scripted/operators/gstf/vox_gstf_mtx_execute_dead_00.rn75.pc.en.snd
 1ebef61ee81210ca,vox/scripted/operators/gstf/vox_gstf_mtx_execute_dismember_00.rn75.pc.en.snd
+136b5dfb5dd457a6,vox/scripted/operators/gstf/vox_gstf_mtx_execute_electric_shock_00.rn75.pc.en.snd
 2dcd84df946f6209,vox/scripted/operators/gstf/vox_gstf_mtx_execute_esad_00.rn75.pc.en.snd
 260deec044ce08ea,vox/scripted/operators/gstf/vox_gstf_mtx_execute_escape_death_00.rn75.pc.en.snd
 30252ae238ba5c6,vox/scripted/operators/gstf/vox_gstf_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -590,6 +645,7 @@ da942155715f55b,vox/scripted/operators/gstf/vox_gstf_mtx_execute_see_hell_00.rn7
 3218a5d9e360619b,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_confirm_kill_00.rn75.pc.en.snd
 379df3df13c84428,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_dead_00.rn75.pc.en.snd
 6f8513f6f47edf08,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_dismember_00.rn75.pc.en.snd
+468e9a2e813bd86c,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_electric_shock_00.rn75.pc.en.snd
 3e5b39e0a20e8ffb,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_esad_00.rn75.pc.en.snd
 396f761cf05b79c4,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_escape_death_00.rn75.pc.en.snd
 357b73d1a7b50010,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -634,6 +690,7 @@ bf09657e5504ad9,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_move_up_00.rn75
 348a9408db88a36b,vox/scripted/operators/jckl/vox_jckl_mtx_execute_close_eyes_00.rn75.pc.en.snd
 587b3abf6b0ac416,vox/scripted/operators/jckl/vox_jckl_mtx_execute_dead_00.rn75.pc.en.snd
 4421fe16db4039d6,vox/scripted/operators/jckl/vox_jckl_mtx_execute_dismember_00.rn75.pc.en.snd
+558949680f111802,vox/scripted/operators/jckl/vox_jckl_mtx_execute_electric_shock_00.rn75.pc.en.snd
 59f4b1a2dfe02f55,vox/scripted/operators/jckl/vox_jckl_mtx_execute_esad_00.rn75.pc.en.snd
 7b9ce69379980e36,vox/scripted/operators/jckl/vox_jckl_mtx_execute_escape_death_00.rn75.pc.en.snd
 73102da4b5c91fb2,vox/scripted/operators/jckl/vox_jckl_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -671,6 +728,7 @@ a15ee46cd033005,vox/scripted/operators/kngs/vox_kngs_mtx_execute_blitz_00.rn75.p
 2b7832def06fd901,vox/scripted/operators/kngs/vox_kngs_mtx_execute_close_eyes_00.rn75.pc.en.snd
 111baca31224c3a8,vox/scripted/operators/kngs/vox_kngs_mtx_execute_dead_00.rn75.pc.en.snd
 3a8ec2e1778f2d88,vox/scripted/operators/kngs/vox_kngs_mtx_execute_dismember_00.rn75.pc.en.snd
+1b602280aa8b33ec,vox/scripted/operators/kngs/vox_kngs_mtx_execute_electric_shock_00.rn75.pc.en.snd
 17d8f2a4a06b0f7b,vox/scripted/operators/kngs/vox_kngs_mtx_execute_esad_00.rn75.pc.en.snd
 1c53ffbd7fa2e944,vox/scripted/operators/kngs/vox_kngs_mtx_execute_escape_death_00.rn75.pc.en.snd
 185ffd7236fc6f90,vox/scripted/operators/kngs/vox_kngs_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -708,6 +766,7 @@ a15ee46cd033005,vox/scripted/operators/kngs/vox_kngs_mtx_execute_blitz_00.rn75.p
 632402de9bfc117b,vox/scripted/operators/kngt/vox_kngt_mtx_execute_close_eyes_00.rn75.pc.en.snd
 11ca2383123d89e6,vox/scripted/operators/kngt/vox_kngt_mtx_execute_dead_00.rn75.pc.en.snd
 69dfd6ddbd016d46,vox/scripted/operators/kngt/vox_kngt_mtx_execute_dismember_00.rn75.pc.en.snd
+65c4a96c03688392,vox/scripted/operators/kngt/vox_kngt_mtx_execute_electric_shock_00.rn75.pc.en.snd
 368592ba61ad0445,vox/scripted/operators/kngt/vox_kngt_mtx_execute_esad_00.rn75.pc.en.snd
 55c251783e1b0586,vox/scripted/operators/kngt/vox_kngt_mtx_execute_escape_death_00.rn75.pc.en.snd
 20e4f7f96cf30362,vox/scripted/operators/kngt/vox_kngt_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -745,6 +804,7 @@ a15ee46cd033005,vox/scripted/operators/kngs/vox_kngs_mtx_execute_blitz_00.rn75.p
 7f31fc3c7e4998bb,vox/scripted/operators/ktsn/vox_ktsn_mtx_execute_close_eyes_00.rn75.pc.en.snd
 7cbf9732056b2826,vox/scripted/operators/ktsn/vox_ktsn_mtx_execute_dead_00.rn75.pc.en.snd
 5f6c9bf716a13b86,vox/scripted/operators/ktsn/vox_ktsn_mtx_execute_dismember_00.rn75.pc.en.snd
+1d392fd55f4db4d2,vox/scripted/operators/ktsn/vox_ktsn_mtx_execute_electric_shock_00.rn75.pc.en.snd
 2fb7860989757085,vox/scripted/operators/ktsn/vox_ktsn_mtx_execute_esad_00.rn75.pc.en.snd
 40f85596f49563c6,vox/scripted/operators/ktsn/vox_ktsn_mtx_execute_escape_death_00.rn75.pc.en.snd
 2cade12876e6d7a2,vox/scripted/operators/ktsn/vox_ktsn_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -782,6 +842,7 @@ e455fbfaa688783,vox/scripted/operators/ktsn/vox_ktsn_mtx_execute_shotgun_kill_00
 1f58c9f75b1caec1,vox/scripted/operators/lazr/vox_lazr_mtx_execute_close_eyes_00.rn75.pc.en.snd
 22d6fcd35c3f668,vox/scripted/operators/lazr/vox_lazr_mtx_execute_dead_00.rn75.pc.en.snd
 264cf052aba1c248,vox/scripted/operators/lazr/vox_lazr_mtx_execute_dismember_00.rn75.pc.en.snd
+7b9e9a54bf2196ac,vox/scripted/operators/lazr/vox_lazr_mtx_execute_electric_shock_00.rn75.pc.en.snd
 4465be30148e23b,vox/scripted/operators/lazr/vox_lazr_mtx_execute_esad_00.rn75.pc.en.snd
 54dc869c5d065f04,vox/scripted/operators/lazr/vox_lazr_mtx_execute_escape_death_00.rn75.pc.en.snd
 3ca7d54a61d0b350,vox/scripted/operators/lazr/vox_lazr_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -819,6 +880,7 @@ c976bb0018738d5,vox/scripted/operators/lazr/vox_lazr_mtx_execute_rare_03.rn75.pc
 79bc8294968c4ab1,vox/scripted/operators/masn/vox_masn_mtx_execute_close_eyes_00.rn75.pc.en.snd
 4af5f238bd20e1d8,vox/scripted/operators/masn/vox_masn_mtx_execute_dead_00.rn75.pc.en.snd
 4bb89b081dc90b18,vox/scripted/operators/masn/vox_masn_mtx_execute_dismember_00.rn75.pc.en.snd
+3d5406527604289c,vox/scripted/operators/masn/vox_masn_mtx_execute_electric_shock_00.rn75.pc.en.snd
 225b5b76017fb60b,vox/scripted/operators/masn/vox_masn_mtx_execute_esad_00.rn75.pc.en.snd
 72b34656e46b9a34,vox/scripted/operators/masn/vox_masn_mtx_execute_escape_death_00.rn75.pc.en.snd
 5ecc47e3d401220,vox/scripted/operators/masn/vox_masn_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -856,6 +918,7 @@ d2f7ac996918b9c,vox/scripted/operators/masn/vox_masn_mtx_execute_fire_match_00.r
 337baa34aa0e8a11,vox/scripted/operators/maxi/vox_maxi_mtx_execute_close_eyes_00.rn75.pc.en.snd
 480da51afd66d678,vox/scripted/operators/maxi/vox_maxi_mtx_execute_dead_00.rn75.pc.en.snd
 74a3d4991a8bd038,vox/scripted/operators/maxi/vox_maxi_mtx_execute_dismember_00.rn75.pc.en.snd
+79622b94fe46c1fc,vox/scripted/operators/maxi/vox_maxi_mtx_execute_electric_shock_00.rn75.pc.en.snd
 627ead4bce9e882b,vox/scripted/operators/maxi/vox_maxi_mtx_execute_esad_00.rn75.pc.en.snd
 1b4b2a7d51dc1494,vox/scripted/operators/maxi/vox_maxi_mtx_execute_escape_death_00.rn75.pc.en.snd
 3e356fb819bc7c00,vox/scripted/operators/maxi/vox_maxi_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -909,6 +972,7 @@ fb085684d7b2d9c,vox/scripted/operators/maxi/vox_maxi_mtx_execute_rare_06.rn75.pc
 3d41d5abeae51f21,vox/scripted/operators/mrs1/vox_mrs1_mtx_execute_close_eyes_00.rn75.pc.en.snd
 69a295a1a5308408,vox/scripted/operators/mrs1/vox_mrs1_mtx_execute_dead_00.rn75.pc.en.snd
 7b70b216148e30e8,vox/scripted/operators/mrs1/vox_mrs1_mtx_execute_dismember_00.rn75.pc.en.snd
+3572adfd670068c,vox/scripted/operators/mrs1/vox_mrs1_mtx_execute_electric_shock_00.rn75.pc.en.snd
 75f190bbfa8b51db,vox/scripted/operators/mrs1/vox_mrs1_mtx_execute_esad_00.rn75.pc.en.snd
 393985eb0b1a0fe4,vox/scripted/operators/mrs1/vox_mrs1_mtx_execute_escape_death_00.rn75.pc.en.snd
 75fa046232037eb0,vox/scripted/operators/mrs1/vox_mrs1_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -946,6 +1010,7 @@ e3a20b146645e11,vox/scripted/operators/mrs1/vox_mrs1_mtx_execute_rare_07.rn75.pc
 641921563b9a8187,vox/scripted/operators/mrs2/vox_mrs2_mtx_execute_close_eyes_00.rn75.pc.en.snd
 dbb0d4eb20359ba,vox/scripted/operators/mrs2/vox_mrs2_mtx_execute_dead_00.rn75.pc.en.snd
 7cbb0e986d68bce2,vox/scripted/operators/mrs2/vox_mrs2_mtx_execute_dismember_00.rn75.pc.en.snd
+697019a6da68ef9e,vox/scripted/operators/mrs2/vox_mrs2_mtx_execute_electric_shock_00.rn75.pc.en.snd
 53a37d8f69152621,vox/scripted/operators/mrs2/vox_mrs2_mtx_execute_esad_00.rn75.pc.en.snd
 35ec8841343a8a62,vox/scripted/operators/mrs2/vox_mrs2_mtx_execute_escape_death_00.rn75.pc.en.snd
 2e60028db79805be,vox/scripted/operators/mrs2/vox_mrs2_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -983,6 +1048,7 @@ d324f5932fc002d,vox/scripted/operators/mrs2/vox_mrs2_mtx_execute_worst_nightmare
 d3c438c8976651,vox/scripted/operators/mrs3/vox_mrs3_mtx_execute_close_eyes_00.rn75.pc.en.snd
 1438fc024e24ccb8,vox/scripted/operators/mrs3/vox_mrs3_mtx_execute_dead_00.rn75.pc.en.snd
 6df2d197505d5678,vox/scripted/operators/mrs3/vox_mrs3_mtx_execute_dismember_00.rn75.pc.en.snd
+75c0728d0ad1993c,vox/scripted/operators/mrs3/vox_mrs3_mtx_execute_electric_shock_00.rn75.pc.en.snd
 4d7835edd702c56b,vox/scripted/operators/mrs3/vox_mrs3_mtx_execute_esad_00.rn75.pc.en.snd
 26a387de7f3ad2d4,vox/scripted/operators/mrs3/vox_mrs3_mtx_execute_escape_death_00.rn75.pc.en.snd
 bcbd3ea24070c40,vox/scripted/operators/mrs3/vox_mrs3_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1020,6 +1086,7 @@ ed65541df98fc67,vox/scripted/operators/mrs3/vox_mrs3_mtx_execute_rare_01.rn75.pc
 73794399daa4efe1,vox/scripted/operators/naga/vox_naga_mtx_execute_close_eyes_00.rn75.pc.en.snd
 23f393d5d9507bc8,vox/scripted/operators/naga/vox_naga_mtx_execute_dead_00.rn75.pc.en.snd
 76b7e7070a83e8a8,vox/scripted/operators/naga/vox_naga_mtx_execute_dismember_00.rn75.pc.en.snd
+5bb6c6d9b306a94c,vox/scripted/operators/naga/vox_naga_mtx_execute_electric_shock_00.rn75.pc.en.snd
 6cdcd5e88b28569b,vox/scripted/operators/naga/vox_naga_mtx_execute_esad_00.rn75.pc.en.snd
 184fcefeb28dc1a4,vox/scripted/operators/naga/vox_naga_mtx_execute_escape_death_00.rn75.pc.en.snd
 118d8a7037fbcb70,vox/scripted/operators/naga/vox_naga_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1057,6 +1124,7 @@ afcb45a0a39c69b,vox/scripted/operators/naga/vox_naga_mtx_execute_war_over_00.rn7
 5429eca4edc6af3b,vox/scripted/operators/park/vox_park_mtx_execute_close_eyes_00.rn75.pc.en.snd
 13eb8635ff24f2a6,vox/scripted/operators/park/vox_park_mtx_execute_dead_00.rn75.pc.en.snd
 1396311d94d38b06,vox/scripted/operators/park/vox_park_mtx_execute_dismember_00.rn75.pc.en.snd
+2d4edb510a2d7352,vox/scripted/operators/park/vox_park_mtx_execute_electric_shock_00.rn75.pc.en.snd
 46e3750d832f3b05,vox/scripted/operators/park/vox_park_mtx_execute_esad_00.rn75.pc.en.snd
 32225026e7917e46,vox/scripted/operators/park/vox_park_mtx_execute_escape_death_00.rn75.pc.en.snd
 1dd7dbb869e2f222,vox/scripted/operators/park/vox_park_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1094,6 +1162,7 @@ b3affabdd2ccce3,vox/scripted/operators/prce/vox_prce_mtx_execute_blitz_00.rn75.p
 66d5fe0e4ddc42bf,vox/scripted/operators/prce/vox_prce_mtx_execute_close_eyes_00.rn75.pc.en.snd
 26b23eb83810c792,vox/scripted/operators/prce/vox_prce_mtx_execute_dead_00.rn75.pc.en.snd
 337d5ca90ad4fbba,vox/scripted/operators/prce/vox_prce_mtx_execute_dismember_00.rn75.pc.en.snd
+17d4f0e3b298c36,vox/scripted/operators/prce/vox_prce_mtx_execute_electric_shock_00.rn75.pc.en.snd
 1f9a2eb7f378d3f9,vox/scripted/operators/prce/vox_prce_mtx_execute_esad_00.rn75.pc.en.snd
 3c6266ce8cef1fba,vox/scripted/operators/prce/vox_prce_mtx_execute_escape_death_00.rn75.pc.en.snd
 5c9a0bcdbb3636b6,vox/scripted/operators/prce/vox_prce_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1131,6 +1200,7 @@ ab7edbf9acdd489,vox/scripted/operators/prce/vox_prce_mtx_execute_next_00.rn75.pc
 7d172c460783850b,vox/scripted/operators/ptnv/vox_ptnv_mtx_execute_close_eyes_00.rn75.pc.en.snd
 4c880e1915ba5ef6,vox/scripted/operators/ptnv/vox_ptnv_mtx_execute_dead_00.rn75.pc.en.snd
 1ab21a5a15452836,vox/scripted/operators/ptnv/vox_ptnv_mtx_execute_dismember_00.rn75.pc.en.snd
+79013476827631a2,vox/scripted/operators/ptnv/vox_ptnv_mtx_execute_electric_shock_00.rn75.pc.en.snd
 6a20dc0471625035,vox/scripted/operators/ptnv/vox_ptnv_mtx_execute_esad_00.rn75.pc.en.snd
 528217e339e88cd6,vox/scripted/operators/ptnv/vox_ptnv_mtx_execute_escape_death_00.rn75.pc.en.snd
 454df444dc90db52,vox/scripted/operators/ptnv/vox_ptnv_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1174,6 +1244,7 @@ bd4a9291575c855,vox/scripted/operators/ptnv/vox_ptnv_mtx_execute_rare_01.rn75.pc
 33e25ccb91d57fb7,vox/scripted/operators/rvas/vox_rvas_mtx_execute_close_eyes_00.rn75.pc.en.snd
 789122693a657caa,vox/scripted/operators/rvas/vox_rvas_mtx_execute_dead_00.rn75.pc.en.snd
 6f640b9076719632,vox/scripted/operators/rvas/vox_rvas_mtx_execute_dismember_00.rn75.pc.en.snd
+228fd3b8c58fd68e,vox/scripted/operators/rvas/vox_rvas_mtx_execute_electric_shock_00.rn75.pc.en.snd
 7c33dc66f4f1c6f1,vox/scripted/operators/rvas/vox_rvas_mtx_execute_esad_00.rn75.pc.en.snd
 2dd1afd8cd87a292,vox/scripted/operators/rvas/vox_rvas_mtx_execute_escape_death_00.rn75.pc.en.snd
 1c77ec6d9d68298e,vox/scripted/operators/rvas/vox_rvas_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1211,6 +1282,7 @@ bd4a9291575c855,vox/scripted/operators/ptnv/vox_ptnv_mtx_execute_rare_01.rn75.pc
 49d7803460d16dbd,vox/scripted/operators/sala/vox_sala_mtx_execute_close_eyes_00.rn75.pc.en.snd
 29379cfac563e38c,vox/scripted/operators/sala/vox_sala_mtx_execute_dead_00.rn75.pc.en.snd
 7ae3f8085f73ab84,vox/scripted/operators/sala/vox_sala_mtx_execute_dismember_00.rn75.pc.en.snd
+74bfdd5bceac4a28,vox/scripted/operators/sala/vox_sala_mtx_execute_electric_shock_00.rn75.pc.en.snd
 19a7aecbfd584f27,vox/scripted/operators/sala/vox_sala_mtx_execute_esad_00.rn75.pc.en.snd
 13272dd541048750,vox/scripted/operators/sala/vox_sala_mtx_execute_escape_death_00.rn75.pc.en.snd
 2271c9f1b3f980fc,vox/scripted/operators/sala/vox_sala_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1248,6 +1320,7 @@ e053dbf4e2cb5f0,vox/scripted/operators/sala/vox_sala_mtx_execute_pistol_whip_00.
 2f57dcb9f4c8dc33,vox/scripted/operators/sims/vox_sims_mtx_execute_close_eyes_00.rn75.pc.en.snd
 664a969dfab4a2de,vox/scripted/operators/sims/vox_sims_mtx_execute_dead_00.rn75.pc.en.snd
 7a9e4b46ee2a75e,vox/scripted/operators/sims/vox_sims_mtx_execute_dismember_00.rn75.pc.en.snd
+66c1cf4a58761aaa,vox/scripted/operators/sims/vox_sims_mtx_execute_electric_shock_00.rn75.pc.en.snd
 1dd3994ca65540fd,vox/scripted/operators/sims/vox_sims_mtx_execute_esad_00.rn75.pc.en.snd
 61292cdcfca90ade,vox/scripted/operators/sims/vox_sims_mtx_execute_escape_death_00.rn75.pc.en.snd
 3ca13746a712293a,vox/scripted/operators/sims/vox_sims_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1285,6 +1358,7 @@ c92d424faec88ae,vox/scripted/operators/sims/vox_sims_mtx_execute_pistol_whip_00.
 7b208237f27986a7,vox/scripted/operators/stch/vox_stch_mtx_execute_close_eyes_00.rn75.pc.en.snd
 72a6f1f6481e8f9a,vox/scripted/operators/stch/vox_stch_mtx_execute_dead_00.rn75.pc.en.snd
 71b43772a62d8bc2,vox/scripted/operators/stch/vox_stch_mtx_execute_dismember_00.rn75.pc.en.snd
+7f792ef0896949be,vox/scripted/operators/stch/vox_stch_mtx_execute_electric_shock_00.rn75.pc.en.snd
 5f006fcca1acc301,vox/scripted/operators/stch/vox_stch_mtx_execute_esad_00.rn75.pc.en.snd
 7753d37ed4a47f02,vox/scripted/operators/stch/vox_stch_mtx_execute_escape_death_00.rn75.pc.en.snd
 636e5b8d2225cd5e,vox/scripted/operators/stch/vox_stch_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1322,6 +1396,7 @@ c92d424faec88ae,vox/scripted/operators/sims/vox_sims_mtx_execute_pistol_whip_00.
 4f8bb7d5ec3b1f0b,vox/scripted/operators/stry/vox_stry_mtx_execute_close_eyes_00.rn75.pc.en.snd
 40a246df437ec8f6,vox/scripted/operators/stry/vox_stry_mtx_execute_dead_00.rn75.pc.en.snd
 5e10894fd21e2636,vox/scripted/operators/stry/vox_stry_mtx_execute_dismember_00.rn75.pc.en.snd
+6456c4acc58c6ba2,vox/scripted/operators/stry/vox_stry_mtx_execute_electric_shock_00.rn75.pc.en.snd
 5e3b14ca9f26ba35,vox/scripted/operators/stry/vox_stry_mtx_execute_esad_00.rn75.pc.en.snd
 6b68d32cdcde36d6,vox/scripted/operators/stry/vox_stry_mtx_execute_escape_death_00.rn75.pc.en.snd
 5e34af8e7f868552,vox/scripted/operators/stry/vox_stry_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1359,6 +1434,7 @@ c92d424faec88ae,vox/scripted/operators/sims/vox_sims_mtx_execute_pistol_whip_00.
 4ebe2293e5466191,vox/scripted/operators/weav/vox_weav_mtx_execute_close_eyes_00.rn75.pc.en.snd
 5e2127e166f969f8,vox/scripted/operators/weav/vox_weav_mtx_execute_dead_00.rn75.pc.en.snd
 5af3684ba3cddab8,vox/scripted/operators/weav/vox_weav_mtx_execute_dismember_00.rn75.pc.en.snd
+759309f728a9d17c,vox/scripted/operators/weav/vox_weav_mtx_execute_electric_shock_00.rn75.pc.en.snd
 7892301238311bab,vox/scripted/operators/weav/vox_weav_mtx_execute_esad_00.rn75.pc.en.snd
 20c859b000e41814,vox/scripted/operators/weav/vox_weav_mtx_execute_escape_death_00.rn75.pc.en.snd
 43b29eeac8c47f80,vox/scripted/operators/weav/vox_weav_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1396,6 +1472,7 @@ b83fef2d3e5ce89,vox/scripted/operators/weav/vox_weav_mtx_execute_see_hell_00.rn7
 5355f26162966a77,vox/scripted/operators/wolf/vox_wolf_mtx_execute_close_eyes_00.rn75.pc.en.snd
 295a8621dac9bd6a,vox/scripted/operators/wolf/vox_wolf_mtx_execute_dead_00.rn75.pc.en.snd
 336e74b23343e2f2,vox/scripted/operators/wolf/vox_wolf_mtx_execute_dismember_00.rn75.pc.en.snd
+2275c0b9abaff74e,vox/scripted/operators/wolf/vox_wolf_mtx_execute_electric_shock_00.rn75.pc.en.snd
 1c4dcd15f7998cb1,vox/scripted/operators/wolf/vox_wolf_mtx_execute_esad_00.rn75.pc.en.snd
 72c534b2b518cb52,vox/scripted/operators/wolf/vox_wolf_mtx_execute_escape_death_00.rn75.pc.en.snd
 c00567448fd384e,vox/scripted/operators/wolf/vox_wolf_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1433,6 +1510,7 @@ eddf8c0cdc33fb7,vox/scripted/operators/wolf/vox_wolf_mtx_execute_point_blank_00.
 24a8883b373df101,vox/scripted/operators/wood/vox_wood_mtx_execute_close_eyes_00.rn75.pc.en.snd
 ba27c9d86239ba8,vox/scripted/operators/wood/vox_wood_mtx_execute_dead_00.rn75.pc.en.snd
 39138fe0808cb588,vox/scripted/operators/wood/vox_wood_mtx_execute_dismember_00.rn75.pc.en.snd
+8e4e47f16e6cbec,vox/scripted/operators/wood/vox_wood_mtx_execute_electric_shock_00.rn75.pc.en.snd
 125fc29f1469e77b,vox/scripted/operators/wood/vox_wood_mtx_execute_esad_00.rn75.pc.en.snd
 710b0be9c5ecc144,vox/scripted/operators/wood/vox_wood_mtx_execute_escape_death_00.rn75.pc.en.snd
 6d17099e7d464790,vox/scripted/operators/wood/vox_wood_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1470,6 +1548,7 @@ bd65f310dc86571,vox/scripted/operators/wood/vox_wood_mtx_execute_point_blank_00.
 d7a65f878813d91,vox/scripted/operators/wrth/vox_wrth_mtx_execute_close_eyes_00.rn75.pc.en.snd
 539f9a1821eb25f8,vox/scripted/operators/wrth/vox_wrth_mtx_execute_dead_00.rn75.pc.en.snd
 6bacce430b218eb8,vox/scripted/operators/wrth/vox_wrth_mtx_execute_dismember_00.rn75.pc.en.snd
+7aa2332552906d7c,vox/scripted/operators/wrth/vox_wrth_mtx_execute_electric_shock_00.rn75.pc.en.snd
 6e10a248f322d7ab,vox/scripted/operators/wrth/vox_wrth_mtx_execute_esad_00.rn75.pc.en.snd
 2b2279ce7e655414,vox/scripted/operators/wrth/vox_wrth_mtx_execute_escape_death_00.rn75.pc.en.snd
 4e0cbf094645bb80,vox/scripted/operators/wrth/vox_wrth_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1507,6 +1586,7 @@ d7a65f878813d91,vox/scripted/operators/wrth/vox_wrth_mtx_execute_close_eyes_00.r
 d2030fafc3ba607,vox/scripted/operators/zyna/vox_zyna_mtx_execute_close_eyes_00.rn75.pc.en.snd
 54ddd95e29f1a23a,vox/scripted/operators/zyna/vox_zyna_mtx_execute_dead_00.rn75.pc.en.snd
 2c65212b5813c662,vox/scripted/operators/zyna/vox_zyna_mtx_execute_dismember_00.rn75.pc.en.snd
+5a4e1b0ddafc9c1e,vox/scripted/operators/zyna/vox_zyna_mtx_execute_electric_shock_00.rn75.pc.en.snd
 1ac6499ee1036ea1,vox/scripted/operators/zyna/vox_zyna_mtx_execute_esad_00.rn75.pc.en.snd
 4c41a1b53a66e2e2,vox/scripted/operators/zyna/vox_zyna_mtx_execute_escape_death_00.rn75.pc.en.snd
 44b51c01bdc45e3e,vox/scripted/operators/zyna/vox_zyna_mtx_execute_explode_kill_00.rn75.pc.en.snd
@@ -1571,5 +1651,12 @@ ecbe1c54264d132,vox/scripted/operators/zyna/vox_zyna_mtx_execute_pistol_whip_00.
 2442abf4c31b66cf,zmb/ai/klaus/land/land_03.ln75.pc.all.snd
 4cabb03e0a926e62,zmb/ai/klaus/land/land_04.ln75.pc.all.snd
 2f4e60581173cae5,zmb/ai/klaus/land/land_05.ln75.pc.all.snd
+98d8564e853b1ac,zmb/ai/werewolf/vox/pain_2.0/wwolf_pain_00.rn75.pc.all.snd
+1f4686be8e743c77,zmb/ai/werewolf/vox/pain_2.0/wwolf_pain_01.rn75.pc.all.snd
+65fabb5d3e212bc6,zmb/ai/werewolf/vox/pain_2.0/wwolf_pain_02.rn75.pc.all.snd
+1885fdc0f1c4a71,zmb/ai/werewolf/vox/pain_2.0/wwolf_pain_03.rn75.pc.all.snd
+6592681d78d5a2e8,zmb/ai/werewolf/vox/pain_2.0/wwolf_pain_04.rn75.pc.all.snd
+69a5ac01575778e3,zmb/ai/werewolf/vox/pain_2.0/wwolf_pain_05.rn75.pc.all.snd
+7c42a983d69114c2,zmb/ai/werewolf/vox/pain_2.0/wwolf_pain_06.rn75.pc.all.snd
 fcd135253ece34,zmb/armor/armor_break_swt.ln75.pc.all.snd
 539580b1b81ed5e6,zmb/machines/ammochest/ammo_close.rn75.pc.all.snd
