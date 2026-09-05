@@ -1,0 +1,2 @@
+43d08038ce3a6c42,mc/mtl_veh_t9_civ_truck_semi_80s_base_body_roof_reflector_snow
+4589b5fac71fff1f,mc/mtl_veh_t9_civ_truck_semi_80s_base_body_front_d_plastic_orange_snow
