@@ -1,0 +1,2 @@
+3c75e1a12a3f8143,wpn_ballistic_knife_fire_pap_plr_rh
+3ccecda12a8b881d,wpn_ballistic_knife_fire_pap_plr_lh
