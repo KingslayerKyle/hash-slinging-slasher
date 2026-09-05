@@ -1995,6 +1995,67 @@ twenty seconds and a pass worth starting is measured in trillions. The first run
 sized in billions out of habit and finished before it was worth watching.
 
 
+---
+
+## 33. Sound aliases named from the aliases they point at — 2026-09-05
+
+```
+python contrib/alias_edges.py <aliases.csv> | bin\windows\confirm_list.exe - --game BLKOPSCW
+```
+
+`contrib/alias_edges.py` | **3** (CW), 0 (BO4) | 38,993 and 42,606 candidates
+
+**Read the alias definition table first — this entry is really about that.** Both games' tables
+had never been used here: nothing in this file or in `scripts/` referenced them before today, and
+between them they cover the two sound pools completely.
+
+| | Black Ops 4 | Cold War |
+|---|---|---|
+| alias ids in the table | 50,043 — **the whole `sound_alias` pool** | 50,890 — **the whole pool** |
+| file ids in the table | 78,609 of 79,263 `sound_asset` | 96,777 |
+| rows | 476,693 | 241,595 |
+
+Every row carries, in **plain text**, the zone the sound is banked in, its bus, its volume group
+and its duck group — and in `secondaryaliasname` and `stopalias`, the **hash of another alias**.
+That last part is the method. An edge with a known name at one end and an unknown at the other is
+a name you are one edit away from, on the game's own authority rather than on a guess about what
+the corpus looks like.
+
+The edit is measured, not invented. The same tables hold **172,830 edges with a known name at
+both ends**, and each is a worked example:
+
+```
+mpl_hud_notify_camo           ->  mpl_hud_notify_camo_riff
+wpn_flame_thrower_start_plr   ->  wpn_flame_thrower_cooldown
+uin_aar_bar_fill_tail         ->  uin_aar_bar_fill_main
+tst_front_left_1              ->  tst_front_right_1
+```
+
+A rule is the pair of tails that differ after the longest shared run of whole tokens, which
+covers appending, replacing and swapping in one form. Rules seen twice or more are replayed onto
+the open edges.
+
+**What it reaches that nothing else does:** an individual unnamed alias, identified by name, in
+the one pool where every recombination shape has returned a total zero. It does not ask what the
+corpus looks like in general — it says *this* unknown is the partner of *that* known one.
+
+**The rate is the reason to keep it.** 3 names from 38,993 candidates is **1 per 13,000**, against
+a registry whose best rows sit between 1 per 810 and 1 per 94,000. Black Ops 4 returned 0 from a
+comparable list, so this is a Cold War result so far.
+
+**Spent by:** the number of known names sitting at the end of an open edge — 395 in Cold War, 351
+in Black Ops 4, out of tens of thousands of edges, because a handful of known aliases anchor most
+of them. That count rises every time an alias is named by any method, so unlike most things here
+this one is refilled by everybody else's work.
+
+**What is still unmined in those tables.** The alias → file mapping. 78,609 real `sound_asset`
+ids sit in the Black Ops 4 table each attached to a named-or-nameable alias, and `sound_asset` is
+the largest single opportunity in either game at 70,878 unnamed of 79,263. The published relation
+between the two vocabularies is weak — 0.7% of file stems are exactly an alias name — but nobody
+has tried it *per edge*, with the alias's zone and sequence number in hand, which is a different
+question from the corpus-wide one that measured 0.7%.
+
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
@@ -2907,6 +2968,7 @@ Do not spend a night rediscovering these. Each cost real time.
 | Reading candidates with `BufRead::lines()` | Not a search dead end but the same lesson: the `String` per candidate *was* the program, capping `confirm_list` at 5.2M/s against 64.3M/s for raw bytes. |
 | A legacy name corpus found on disk, diffed against the published tables | The complement of the *re-hashing the newer titles' names* row above: that one asked whether the tables' **newest** sources reach these two games, this one asks whether their **oldest** ones were folded in completely. An earlier generation of community name data shipped its sources as plain CSVs under a hash function that means nothing to us, so only the name strings matter. **1,782,690 distinct names** across eleven files, compared by string against all 3,565,276 names the current tables hold: **2,434 absent, 0.14%**, and all 2,434 come from a single image file whose names are in a composite spelling (`colour&spec~<decimal>`, `*reflection_probe_octahedron_N`) that neither of our two titles uses. Offered verbatim plus every decomposition of that spelling -- 7,946 candidates -- against both games: **0 and 0.** **Confirming against the snapshots is the whole point of this one:** a legacy index like this is a community artefact, not a dump, and a large share of what it holds is not a real asset in *any* of these games -- so a name being absent from the tables says nothing on its own, and only a hash landing on an id the snapshot actually holds is evidence. The scrape was not sloppy; it was essentially complete, and the one file it half-carried holds nothing either game could hold. Worth knowing for the reach figure it produced on the way: the legacy corpus lands on **194,257** real Black Ops 4 ids and **520,874** real Cold War ids, overwhelmingly in the wanted types, so this vocabulary genuinely describes these games -- it is simply already all in the tables. Generator: `scripts/contributed/legacy_index_gap.py`. |
 | The store's loot-icon grid, filled in past what is observed | Black Ops 4 names store icons on a strict four-axis grid -- `<family>_ui_icon_<kind>_<theme>_<tier>_<subject>`, as in `loot02_ui_icon_outfit_northern_lights_legendary3_seraph` -- and every axis is a closed vocabulary measured straight off the corpus: 8 families, 17 themes, 15 tiers, 99 subjects. That multiplies to 201,960 cells against **3,452 observed**, so 98% of the grid looked open. The counts made it look better still: the thirteen specialists appear 19, 19, 20, 20, 20, 20, 21, 21, 22, 22 and 23 times, which is the signature of a grid the game filled in rather than a sparse one. **0 of 201,960.** This is the same answer the animation transition grid gave and for the same reason -- the unobserved cells are unobserved because they do not exist. A bundle ships for the specialists it ships for. **The general lesson, now measured twice: an axis vocabulary being closed and a grid being dense do not imply the empty cells are real, and regular counts are not evidence either.** Enumerate a grid only where something outside the naming says the cell exists. Generator: `scripts/contributed/loot_icon_grid.py`. |
+| Recombining sound aliases **inside the cell the game files them in** | The standing sound negatives could all be read as "the corpus was too coarse" -- recombination over one undifferentiated pool spends everything on pairs that were never going to go together. The alias definition tables let that be fixed exactly: every alias carries a plaintext zone, volume group and duck group, so the pool splits into 1,301 (BO4) and 761 (CW) cells of sounds that genuinely belong together, and the cells are tight -- the commonest two-token prefix covers a median 45-48% of a cell, and the best of them hold 661 unnamed aliases beside 216 known names sharing **one** prefix between them. Fourteen plans over Cold War's biggest cells, each recombining a cell's own heads x cores x tails and nothing else: **0.** So the coarseness was never the problem. Partitioning the corpus perfectly, using the game's own filing rather than a guess, does not reach these names either -- which closes the last reading under which recombination might have worked here and says the unnamed aliases are not built from the named ones at any granularity. Generator: `scripts/contributed/alias_cells.py`, which writes one plan per cell. |
 
 ---
 
