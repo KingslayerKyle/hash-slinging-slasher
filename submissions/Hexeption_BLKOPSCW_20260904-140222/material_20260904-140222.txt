@@ -1,0 +1,2 @@
+114d6b226d2ccea4,mc/t8_zm_esc_blood_text_hints_01
+564a29b933892bb1,mc/mtl_c_t8_zmb_dlc0_hero_stanton_bead_thread_red
