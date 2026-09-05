@@ -1,0 +1,1 @@
+32c95b8a98c5c138,zmb_mq_stp4_lever_activate_power
