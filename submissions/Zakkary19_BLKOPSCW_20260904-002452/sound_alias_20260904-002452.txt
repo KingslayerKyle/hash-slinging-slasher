@@ -1,0 +1,5 @@
+22be976c95d1ad9f,zmb_gold_omega_audiolog_6_sfx
+2c0aad4fbe30123e,zmb_gold_omega_audiolog_9_sfx
+498a9559cdda02d5,zmb_s2_omega_audiolog_7_sfx
+4d5fe329c44c834d,zmb_gold_omega_audiolog_8_sfx
+6c747f8013166d80,zmb_gold_omega_audiolog_7_sfx
