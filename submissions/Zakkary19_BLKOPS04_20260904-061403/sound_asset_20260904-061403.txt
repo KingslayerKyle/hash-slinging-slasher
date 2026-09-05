@@ -1,0 +1,2 @@
+2c112d50df3d5b52,mus\zmb\mus_chap205_19.00.ll100.pc.snd
+70471652d1f1e552,zmb\armor\armor_break_swt.ln100.pc.snd
