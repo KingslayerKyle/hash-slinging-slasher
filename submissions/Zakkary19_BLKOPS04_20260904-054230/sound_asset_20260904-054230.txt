@@ -1,0 +1,7 @@
+c5a4eb3d8d321b1,zmb\ai\werewolf\vox\pain_2.0\wwolf_pain_02.ln100.pc.snd
+2cd94afc9291fc0d,zmb\ai\werewolf\vox\pain_2.0\wwolf_pain_06.ln100.pc.snd
+2dbdfbc69b43fde6,zmb\ai\werewolf\vox\pain_2.0\wwolf_pain_01.ln100.pc.snd
+2f8f647b47219002,zmb\ai\werewolf\vox\pain_2.0\wwolf_pain_05.ln100.pc.snd
+51d194b531330e6c,zmb\ai\werewolf\vox\pain_2.0\wwolf_pain_03.ln100.pc.snd
+592c63cbacc6d7ff,zmb\ai\werewolf\vox\pain_2.0\wwolf_pain_04.ln100.pc.snd
+72406e5b660b1203,zmb\ai\werewolf\vox\pain_2.0\wwolf_pain_00.ln100.pc.snd
