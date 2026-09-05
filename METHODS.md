@@ -1926,6 +1926,75 @@ and is a decision about shared state rather than a pass.
 
 ---
 
+---
+
+## 32. Cores from the pools nobody files, dropped into observed frames — 2026-09-05
+
+```
+python contrib/untargeted_pool_cores.py <untargeted names>... > contrib/untargeted_cores.txt
+python contrib/boundary_frames.py --heads --limit 45000 > contrib/frame_heads.txt
+python contrib/boundary_frames.py --tails --limit 45000 > contrib/frame_tails.txt
+bin\windows\confirm_plan.exe plans/frames_untargeted.txt
+```
+
+`contrib/untargeted_pool_cores.py`, `contrib/boundary_frames.py` | **13** (CW), **91** (BO4) |
+6.4 T and 8.1 T candidates
+
+Two halves, and neither works without the other. That is the whole entry, because each half was
+measured alone first and both returned zero.
+
+**The vocabulary.** Every method here seeds from names known to be real, and the sources are
+always the published tables and this project's findings — which between them describe only the
+five *targeted* types. But a game holds tens of thousands of assets in types nobody submits: ai
+types, script bundles, fx, characters, vehicles, destructibles, beams, cameras. Those names are
+obtained a different way — they are read out of the build rather than cracked, several of those
+pools carrying their name as a plaintext string in the asset — and their vocabulary had never
+been fed back into the search.
+
+That corpus has the one property the cross-era corpora lack. Re-hashing a newer title's published
+names returns **zero** against these two games (see the dead ends) because the newer engines
+renamed rather than inherited. Untargeted-pool names are *game-native*: a spawner called
+`spawner_zm_gegenees` and a script bundle called `aib_t9_vign_cust_zm_silver_steiner_left_levitate`
+are Black Ops 4 and Cold War strings, so the characters and systems they name are the ones these
+games' models, materials and images are named after too.
+
+From 15,114 such names: 9,880 kept after dropping the code-and-data pools (a lua file or a script
+parse tree is named after a **source file**, so its vocabulary describes the program and no model
+is ever named after a widget — this filter is worth 5,236 names of pure noise), 39,575 cores, and
+**4,008 carrying at least one token no held name has ever used**.
+
+**The frames.** `heads` cuts a name once and keeps the front; `tails` cuts once and keeps the
+back. This keeps **both sides of the same cut** — everything before one token, and everything
+after it — so the question stops being *what else begins like this* or *what else ends like this*
+and becomes **what else goes here**. Cut at every underscore, slash and dot, so a frame can sit
+five segments deep. Measured off 1.66 M names describing Black Ops 4: 528,180 distinct heads and
+3,365,044 tails.
+
+**What it reaches that nothing else does:** a name whose every decoration is ordinary and whose
+*subject* is a word only an untargeted asset ever named. `ui_icon_general_feedback_demented_echo_head`
+is unreachable by any method seeded from the targeted types, because nothing they contain says
+`demented_echo` — an ai type does. The Cold War pass landed across five asset types off two such
+words, `tormentor` and `demented_echo`, which is the thesis in miniature: a character named in a
+pool nobody files has models, materials, images, anims and sounds named after it.
+
+**Both halves were measured alone and both are zero.** The same 4,008 cores against the committed
+`data/prefixes.txt` × `data/suffixes.txt` — 13.0 B candidates — returned **0**. The ending list is
+short tails (`_c`, `_n`, `_01`), so a candidate could only ever be `<prefix><core>_c` while the
+real name is `ui_icon_general_feedback_<core>_head`; the middle was inexpressible and the core had
+nowhere to land. The lists were not wrong, they were the wrong *shape* for the question. Equally,
+frames crossed with the corpus's own vocabulary is just the general search, which has been swept
+since the second day.
+
+**Spent by:** the size of the untargeted corpus, not the frames. 4,008 cores is a small stem list
+by this project's standards and it is the entire supply — every further name recovered from a pool
+nobody files widens it, and nothing else does. Widening the frames is the cheap knob and it decays
+the usual way; widening the *vocabulary* is what reopens this.
+
+**Note for whoever runs it next:** the engine sustains ~813 M candidates a second here, so 13 B is
+twenty seconds and a pass worth starting is measured in trillions. The first run of this method was
+sized in billions out of habit and finished before it was worth watching.
+
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
@@ -2837,6 +2906,7 @@ Do not spend a night rediscovering these. Each cost real time.
 | Numbered families as grids on **two** axes | `families.py --gaps` walks the *last* numeric run in a name and fills holes in it. A name carrying two numbers sits in a rectangle, and `families.py` keys its family on everything before the last number -- so `p7_..._01` and `p8_..._01` are unrelated families to it and it can never propose a cell by reasoning across them. Listed under *Candidates worth building* as `numbered_grids.py` from the beginning and never built. Built 2026-08-24: roughly **a third of every name in the corpus carries exactly two numeric runs** (material 36.6%, image 36.8%, xmodel 35.4%, xanim 20.8%), giving 983 rectangles of at least 2x2 whose cells the corpus has never shown. 128,899 candidates at margin 2, against **both** games: **0 matched, 0 hits of any kind** -- against 126,331 unnamed Cold War ids and 166,703 Black Ops 4 ones. Positive control passed and is the part worth keeping: **1,482 of 1,482 observed cells, 100.0%**, rebuild byte for byte from the template, and 543 of them (36.6%) hash to an id the Cold War snapshot actually holds -- so the plumbing is sound and the holes are genuinely empty. This is the **fifth** grid to answer this way after the animation transition grid, the `vox_` slot grid and the cosmetic-bundle grid, and it is the most general of them: those three each composed a *semantic* vocabulary, where this composes bare integers and so carries no assumption about meaning at all. Together they close the shape rather than three instances of it -- **an unobserved cell is unobserved because it was never made.** Do not build a sixth. Generator: `scripts/contributed/numbered_grids_20260824-155834.py`. |
 | Reading candidates with `BufRead::lines()` | Not a search dead end but the same lesson: the `String` per candidate *was* the program, capping `confirm_list` at 5.2M/s against 64.3M/s for raw bytes. |
 | A legacy name corpus found on disk, diffed against the published tables | The complement of the *re-hashing the newer titles' names* row above: that one asked whether the tables' **newest** sources reach these two games, this one asks whether their **oldest** ones were folded in completely. An earlier generation of community name data shipped its sources as plain CSVs under a hash function that means nothing to us, so only the name strings matter. **1,782,690 distinct names** across eleven files, compared by string against all 3,565,276 names the current tables hold: **2,434 absent, 0.14%**, and all 2,434 come from a single image file whose names are in a composite spelling (`colour&spec~<decimal>`, `*reflection_probe_octahedron_N`) that neither of our two titles uses. Offered verbatim plus every decomposition of that spelling -- 7,946 candidates -- against both games: **0 and 0.** **Confirming against the snapshots is the whole point of this one:** a legacy index like this is a community artefact, not a dump, and a large share of what it holds is not a real asset in *any* of these games -- so a name being absent from the tables says nothing on its own, and only a hash landing on an id the snapshot actually holds is evidence. The scrape was not sloppy; it was essentially complete, and the one file it half-carried holds nothing either game could hold. Worth knowing for the reach figure it produced on the way: the legacy corpus lands on **194,257** real Black Ops 4 ids and **520,874** real Cold War ids, overwhelmingly in the wanted types, so this vocabulary genuinely describes these games -- it is simply already all in the tables. Generator: `scripts/contributed/legacy_index_gap.py`. |
+| The store's loot-icon grid, filled in past what is observed | Black Ops 4 names store icons on a strict four-axis grid -- `<family>_ui_icon_<kind>_<theme>_<tier>_<subject>`, as in `loot02_ui_icon_outfit_northern_lights_legendary3_seraph` -- and every axis is a closed vocabulary measured straight off the corpus: 8 families, 17 themes, 15 tiers, 99 subjects. That multiplies to 201,960 cells against **3,452 observed**, so 98% of the grid looked open. The counts made it look better still: the thirteen specialists appear 19, 19, 20, 20, 20, 20, 21, 21, 22, 22 and 23 times, which is the signature of a grid the game filled in rather than a sparse one. **0 of 201,960.** This is the same answer the animation transition grid gave and for the same reason -- the unobserved cells are unobserved because they do not exist. A bundle ships for the specialists it ships for. **The general lesson, now measured twice: an axis vocabulary being closed and a grid being dense do not imply the empty cells are real, and regular counts are not evidence either.** Enumerate a grid only where something outside the naming says the cell exists. Generator: `scripts/contributed/loot_icon_grid.py`. |
 
 ---
 
