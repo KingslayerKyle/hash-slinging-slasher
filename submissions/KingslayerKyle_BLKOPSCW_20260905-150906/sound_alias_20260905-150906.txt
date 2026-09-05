@@ -1,0 +1,3 @@
+1f2f2c9bc14a6694,wpn_pistol_npc_rv_decay_int
+21e091ef1f28a97b,wpn_pistol_plr_rv_decay_int
+249a2778ac3afb27,zmb_s2_requiem_audiolog_5_sfx_swt
