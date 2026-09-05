@@ -1,0 +1,3 @@
+18d469e682773b84,pt_rifle_fem_stand_ges_spray
+32bcf57ef63b82fa,pt_rifle_fem_crouch_ges_spray
+5015c71164540d75,pt_rifle_male_prone_ges_spray
