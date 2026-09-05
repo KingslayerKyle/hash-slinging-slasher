@@ -1,0 +1,3 @@
+ab5a62b1adcd220,zmb_tormentor_explode_glass
+e8f8dfc02bd1a99,zmb_tormentor_explode_elec
+5ac7138111c3117c,zmb_tormentor_spawn_swt
