@@ -1,0 +1,8 @@
+2b575d8db3a60a95,zmb_tormentor_spawn
+2e2a5ca8a07b95e4,mus_epilogue_intro
+3bd0083dfe8c9490,mus_tribes_loop_0
+3e7e6b2494e1c93b,zmb_tormentor_explode
+3ee0f92f8e76ec74,evt_igc_zm_gold_epilogue
+4c6d21aeebcfc085,zmb_step_tormentor_glass
+54841dfdf0b46850,zmb_step_tormentor_crystals
+65eb1e22e2f9a826,zmb_vocals_tormentor_spawn
