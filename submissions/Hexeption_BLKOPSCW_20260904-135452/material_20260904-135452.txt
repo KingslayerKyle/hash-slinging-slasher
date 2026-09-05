@@ -1,0 +1,1 @@
+60f371af47665750,set_stencil_masked
