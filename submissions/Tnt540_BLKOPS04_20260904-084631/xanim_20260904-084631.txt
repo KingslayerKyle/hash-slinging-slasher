@@ -1,0 +1,3 @@
+3d74f2c73a6eb5b4,pt_sniper_t8_damagesemi_stand_inspect
+6ba5f47d7ee0ee6c,pt_brawler_crouch_ges_spray
+74938eba257c6b4e,pt_sniper_t8_damagesemi_prone_inspect
