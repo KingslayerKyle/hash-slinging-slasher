@@ -1258,6 +1258,7 @@ comparable for that reason alone — but the trend held anyway):
 | 4,000 | 172,336,688 | 6 |
 | 4,000 (re-run later same session, grown corpus) | 121,811,572,000¹ | 24 |
 | 8,000 | 243,624,552,000 | 122 |
+| 16,000 | 487,268,192,000 | 128 |
 
 ¹ This jump in candidate count between the two 4,000-token rows is not the token pool changing --
 it is the corpus's own vocabulary growing between runs (each `swaps` invocation re-measures its
@@ -1266,9 +1267,22 @@ a productive session sees a materially larger `names to vary` list than one earl
 table as "wider pool + bigger corpus, run in sequence," not as a controlled single-variable
 experiment -- the qualitative result holds regardless: yield kept climbing as the pool widened, and
 the tokens beyond the default 1,024 were nowhere near exhausted. 122 names from the 8,000-token
-run, concentrated in `xanim`, is the single best haul of this session. A 16,000-token run was
-started to see whether the trend continues; runtime scales with candidate count, so budget for
-roughly double the previous step's wall-clock time with each doubling.
+run, concentrated in `xanim`, was the single best haul of this session at the time.
+
+**The 16,000-token run has since completed: 128 names** (image 34, material 56, sound_alias 15,
+sound_asset 12, xanim 4, xmodel 7 -- note the mix shifted hard away from `xanim`, which dominated
+the 8,000-token haul, toward `image` and `material`). Candidates roughly doubled as expected
+(243.6B -> 487.3B) but yield did not: 122 -> 128 is a 5% gain on a 100% larger pass, so the
+per-candidate rate roughly halved (5.0 x 10^-10 per candidate at 8,000 tokens, 2.6 x 10^-10 at
+16,000). **This is the first step in the series that did not pay for its own doubling** -- the
+earlier steps (1,024 -> 4,000 -> 8,000) each returned proportionally more, not less, as the pool
+widened; 16,000 is where that reverses. Read together with the type mix flip, the likeliest
+explanation is that the *most* common tokens (which every pool size up to 8,000 already includes)
+were carrying the productive substitutions, and the newly-added 8,000-16,000 rank band is
+increasingly rare tokens that mostly just add candidates without adding hits. A 32,000-token run
+would cost roughly another doubling of wall-clock time for a haul this trend predicts to be smaller
+than 128, not larger -- **treat this dimension as past its knee, not exhausted outright**, and do
+not widen it again without a new reason to expect otherwise.
 
 ## 5. Family gap filling
 
