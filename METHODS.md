@@ -1323,6 +1323,20 @@ past their respective knees** (16,000 for Cold War, 8,000-16,000 for Black Ops 4
 corpus has grown substantially since** -- re-measuring the knee position after a large enough
 gain elsewhere is a cheap check, re-running the same pool size on an unchanged corpus is not.
 
+**Follow-up: the dedicated Black Ops 4 sound pass (`confirm_cw --game BLKOPS04 --sounds
+--no-fold`), run right after, on the corpus this widening series had just grown.** 181.9 billion
+forward hashes swept in 2,302s, hunting 75,859 sound ids the tables did not already resolve:
+**111 new `sound_alias` names, 0 `sound_asset`.** The single largest haul of this session's Black
+Ops 4 work, and it landed entirely in the pool that has an existing table to feed from
+(`fnv1a_soundbanks_aliases`) rather than the injected `sound_asset` pool -- consistent with the
+standing note that `sound_asset`'s 70,878-of-79,263 unnamed count is a ceiling, not a yield
+estimate, and that the general search's committed lists were built to describe alias-shaped
+names, not the SAB-derived asset ones. `derive_closure --game BLKOPS04` afterward added 2 more
+(`materials_from_images` +1, `final_byte` +1) and closed cleanly. **This pass had not been run
+against Black Ops 4 at all this session before now** -- worth remembering that the dedicated
+sound pass and `swaps` are different methods over overlapping ground, and running one is not a
+substitute for having run the other.
+
 ### `derive_closure.py --game` did not reach two of its seven derivations -- found and fixed 2026-09-10
 
 Running the closure against Black Ops 4 after the `swaps 4000` gain above surfaced a real bug.
