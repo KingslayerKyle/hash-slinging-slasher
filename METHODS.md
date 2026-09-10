@@ -1298,6 +1298,14 @@ the identical pool size, returned **roughly 5-20x more on Black Ops 4**, consist
 transfers to Black Ops 4** -- re-measure each widening step there independently before deciding
 it has plateaued the way Cold War's did at 16,000.
 
+**8,000 tokens, same game**: 243,626,880,000 candidates, **133 new names** (sound_alias 87,
+material 28, image 8, xanim 5, xmodel 5) -- still climbing (117 -> 133), and the mix flipped
+toward `sound_alias`, which barely featured at 4,000. Cold War's 4,000 -> 8,000 step was where its
+own per-candidate rate was still improving too; the two games agree on that much so far. The
+`derive_closure` round after each `swaps` gain adds a handful more on top (1 name after the
+4,000-token run once the `final_byte`/`sound_languages` fix below was in place; 4 after the
+8,000-token run) -- small next to `swaps` itself, but free.
+
 ### `derive_closure.py --game` did not reach two of its seven derivations -- found and fixed 2026-09-10
 
 Running the closure against Black Ops 4 after the `swaps 4000` gain above surfaced a real bug.
