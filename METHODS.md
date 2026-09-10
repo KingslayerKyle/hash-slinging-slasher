@@ -1243,6 +1243,33 @@ walking their numbered fields in place is exactly what this does.
 **Spent when** the ranges around known members have been walked past their natural end. Widen with
 `swaps` before concluding it is finished.
 
+### `swaps`' own token-pool size is a second, independent widening knob — measured 2026-09-10
+
+`confirm_variants swaps` takes an optional trailing number: the count of most-used tokens it
+substitutes at every position (default 1,024, per `COMMON_TOKENS` in `src/bin/confirm_variants.rs`).
+This is completely separate from the general search's beginning/ending lists, and had never been
+pushed past the default on this machine. Measured on Cold War, against the corpus as it stood at
+each step (so later runs benefit from earlier ones' seeds too, and the counts are not directly
+comparable for that reason alone — but the trend held anyway):
+
+| token pool | candidates | new names |
+|---|---|---|
+| 1,024 (default) | not recorded exactly, order 160M | 5 |
+| 4,000 | 172,336,688 | 6 |
+| 4,000 (re-run later same session, grown corpus) | 121,811,572,000¹ | 24 |
+| 8,000 | 243,624,552,000 | 122 |
+
+¹ This jump in candidate count between the two 4,000-token rows is not the token pool changing --
+it is the corpus's own vocabulary growing between runs (each `swaps` invocation re-measures its
+common-token list and its seed names from whatever is confirmed *at that moment*, so a run late in
+a productive session sees a materially larger `names to vary` list than one early in it). Read the
+table as "wider pool + bigger corpus, run in sequence," not as a controlled single-variable
+experiment -- the qualitative result holds regardless: yield kept climbing as the pool widened, and
+the tokens beyond the default 1,024 were nowhere near exhausted. 122 names from the 8,000-token
+run, concentrated in `xanim`, is the single best haul of this session. A 16,000-token run was
+started to see whether the trend continues; runtime scales with candidate count, so budget for
+roughly double the previous step's wall-clock time with each doubling.
+
 ## 5. Family gap filling
 
 **Builds from** numbered families with two or more confirmed members, across *everybody's*
