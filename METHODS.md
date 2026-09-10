@@ -1306,6 +1306,23 @@ own per-candidate rate was still improving too; the two games agree on that much
 4,000-token run once the `final_byte`/`sound_languages` fix below was in place; 4 after the
 8,000-token run) -- small next to `swaps` itself, but free.
 
+**16,000 tokens: 118 new names** (image 34, sound_alias 58, material 14, xanim 8, xmodel 4) against
+487,268,768,000 candidates -- **down from 133 at 8,000.** So Black Ops 4's knee is at 8,000 tokens,
+not 16,000 like Cold War's: both games' yield eventually turns over on this widening, but not at
+the same pool size, and Black Ops 4's turnover arrived one doubling earlier despite (or perhaps
+because of) starting from a far less picked-over corpus. **Do not extrapolate a knee position
+between games either** -- each has now been measured to its own turnover point independently, and
+that is the only way either was found. `derive_closure --game BLKOPS04` after this step added a
+further 4 (`image_channels` +3, `final_byte` +1), closing in two rounds.
+
+**Combined session tally for this widening series, both games, both directions: 128 + 10 (Cold
+War) + 117 + 60 + 133 + 4 + 118 + 4 (Black Ops 4) = 574 names across eight pull requests**, from a
+single knob (`swaps`'s own token-pool size) applied to two corpora it had only ever been run
+against at its 1,024 default before this session. **Treat both games' `swaps` widening as spent
+past their respective knees** (16,000 for Cold War, 8,000-16,000 for Black Ops 4) **unless the
+corpus has grown substantially since** -- re-measuring the knee position after a large enough
+gain elsewhere is a cheap check, re-running the same pool size on an unchanged corpus is not.
+
 ### `derive_closure.py --game` did not reach two of its seven derivations -- found and fixed 2026-09-10
 
 Running the closure against Black Ops 4 after the `swaps 4000` gain above surfaced a real bug.
