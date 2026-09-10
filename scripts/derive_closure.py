@@ -305,7 +305,15 @@ def run_derivation(entry, confirm, game, dry_run):
         print("  %-42s skipped: %s is not here" % (entry["label"], entry["script"]))
         return 0
 
-    generate = [sys.executable, script] + entry["args"]
+    # A forced game must reach the generator as well as the confirmer. Most of these scripts
+    # (`image_siblings.py`, `materials_from_images.py`, `image_channels.py`, `families.py`) build
+    # candidates from confirmed names across every game and simply ignore an unrecognised flag, so
+    # this is a harmless no-op for them. `final_byte.py` and `sound_languages.py` are different:
+    # each reads its own `--game`, defaulting to `state/game.txt` when it is absent. Passing
+    # `--game` only to `confirm_list` (as this used to) left those two peeling bytes for whichever
+    # game `start` last chose while testing the results against the forced one -- a silent
+    # game mismatch that reports a clean "found nothing new" for a game never actually asked.
+    generate = [sys.executable, script] + entry["args"] + (["--game", game] if game else [])
 
     if dry_run:
         try:

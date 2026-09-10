@@ -1284,6 +1284,50 @@ would cost roughly another doubling of wall-clock time for a haul this trend pre
 than 128, not larger -- **treat this dimension as past its knee, not exhausted outright**, and do
 not widen it again without a new reason to expect otherwise.
 
+### The same widening, tried on Black Ops 4 for the first time, pays far better -- 2026-09-10
+
+Every row above is Cold War. This session's `swaps` widening had never been run against Black
+Ops 4 at all, and CLAUDE.md is explicit about why that gap exists: only one contributor has ever
+ground Black Ops 4, so almost nothing here has been tried against it twice, let alone tuned.
+
+`confirm_variants swaps 4000 --game BLKOPS04`: 121,807,200,000 candidates, **117 new names**
+(material 76, sound_alias 26, image 7, xmodel 7, xanim 1). Cold War's *own* 4,000-token row
+returned 6 the first time and 24 on a re-run against a grown corpus -- so the identical method, at
+the identical pool size, returned **roughly 5-20x more on Black Ops 4**, consistent with Black Ops
+4 being the far less picked-over of the two games. **Do not assume a Cold War yield curve
+transfers to Black Ops 4** -- re-measure each widening step there independently before deciding
+it has plateaued the way Cold War's did at 16,000.
+
+### `derive_closure.py --game` did not reach two of its seven derivations -- found and fixed 2026-09-10
+
+Running the closure against Black Ops 4 after the `swaps 4000` gain above surfaced a real bug.
+`run_derivation` built the generator command as `[python, script] + entry["args"]` and only
+appended `--game <forced>` to the **confirm** step, never to the **generate** step. Five of the
+seven derivations (`image_siblings.py`, `materials_from_images.py`, `image_channels.py`,
+`families.py --gaps`, the `tails.py`-built plan) read confirmed names from *both* games
+unconditionally and so were unaffected. **Two were not**: `final_byte.py` and
+`sound_languages.py` each take their own `--game`, defaulting to whatever `state/game.txt` last
+held when it is absent -- so a forced `--game BLKOPS04` run was silently peeling final bytes and
+building language variants for Cold War's unnamed ids while testing the results against Black Ops
+4's. The mismatch never errors: it just returns "found nothing new" for the forced game, which
+reads exactly like a closed derivation.
+
+Confirmed by re-running `final_byte.py` with and without an explicit `--game BLKOPS04`: without
+it, `game: BLKOPSCW` printed in its own banner despite `--game BLKOPS04` having been passed to
+`confirm_list` right after it, and the run added 0; with it, `game: BLKOPS04` printed and the run
+added 1. **Fixed in `scripts/derive_closure.py`**: `generate` now carries `["--game", game]`
+whenever one is forced, exactly like `confirm_args` already did. It is a no-op for the five
+game-agnostic derivations, which parse argv with plain `"--game" in argv` checks or ignore argv
+entirely, so passing the flag costs them nothing. Covered by `--self-test`, which still passes.
+
+Manually closing Black Ops 4 over three rounds with the fix (materials-from-images, final-byte,
+tails-3, and family-gap-filling all reaching genuinely) added 27 + 1 + 2 + 27 = 57 names in round
+1 and 3 more in round 2 (a `family gap filling` gap the round-1 xmodel gains opened up) before
+round 3 closed at 0 -- **60 names total**, on top of the 117 from `swaps`. Every prior
+`derive_closure --game BLKOPS04` run on any machine before this fix landed would have understated
+`final_byte` and `sound_languages` for Black Ops 4 specifically; worth a deliberate re-run of
+those two there if the corpus has grown since.
+
 ## 5. Family gap filling
 
 **Builds from** numbered families with two or more confirmed members, across *everybody's*
