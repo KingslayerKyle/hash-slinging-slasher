@@ -3331,6 +3331,32 @@ Do not spend a night rediscovering these. Each cost real time.
 | `final_byte.py`, Cold War, re-run 2026-09-11 at 1,677,099 assets / 8,443,027 resolved hashes | Last run 2026-09-08/09 solved ~10,150 candidates off a smaller table refresh; re-run after this session's clone update and hash-table refresh to see whether the intervening growth reopened it. 12,051 candidates (up from ~10,186), **0 matched, 0 new** -- the extra ~1,900 candidates are ids the backwards solve can now reach that it could not before, and every one of them is either already published or already in this machine's own `findings/`. Consistent with the general pattern that this method is bounded by how many *known-name prefixes* exist to solve against rather than by how many unnamed ids there are, and that count has not moved enough since the last run to open anything new. Free to re-check (12K candidates, under two minutes even sharing the machine with a 173B-candidate pass), so worth re-running after any batch of new confirms lands rather than left for days. |
 | `images_from_materials`, Cold War, full run to completion 2026-09-11 (`--anyway`, futility guard cleared -- last 7 confirming runs on this machine were the 2026-09-08/09/10 dead-end measurements recorded above, not carelessness) | The 2026-09-10 attempt at this exact pass got to 96% of its single largest slice and stopped mid-run without a final tally -- interrupted, not measured, since the binary checkpoints its finds but not its slice position. Re-run clean start to finish: 575,703 published materials plus this machine's 141 confirmed, 891,626 stems total, sliced 16 ways over 518,556 endings taken from both the material and image tables, **16 slices x ~173.4B candidates = 2.77T candidates against Cold War's unnamed image/material/xmodel/xanim/sound ids, 0 matched in every slice, 0 total.** Matches `scripts/README.md`'s standing "near-spent: 7 names in Cold War" note and extends it to fully spent at the current corpus and table state -- unlike Black Ops 4, where the same binary is still adding names most times it runs (58 the same week), Cold War's material/image seam has nothing left for this shape at this corpus size. Re-check only after a large batch of new Cold War materials or images lands, not on the ordinary week-to-week growth from table refreshes alone. |
 
+### `derive_closure.py` could not run at all under the futility guard, and `sound_languages.py` is live on Cold War where it is dead on Black Ops 4 -- 2026-09-11
+
+Running `derive_closure.py` after the images_from_materials pass above (itself a real zero, so the
+machine's empty-run streak was already at 9) surfaced a bug that had likely been silently eating
+every closure run since the guard was added: `run_derivation`/`run_plan` `Popen` a generator into
+`confirm_list`/`confirm_plan` without ever passing `--anyway`, so the confirmer prints the futility
+message and exits immediately, closing its end of the pipe -- and the generator's next
+`sys.stdout.write` then raises `OSError: [Errno 22] Invalid argument` on Windows instead of a clean
+`BrokenPipeError`. Every one of the seven derivations crashed this way in identical fashion; the
+round completed and reported "added 0" only because each crash was caught at the subprocess level,
+not because anything actually ran. **Fixed** by adding a `--anyway` flag to `derive_closure.py`
+itself, threaded into both `run_derivation`'s `confirm_args` and `run_plan`'s `command` -- the
+closure is meant to be free and run after *any* pass including a zero, so it needs to survive the
+same guard a direct search would clear with the flag.
+
+With the fix, the same round actually ran and added **16** Cold War names: `image siblings of
+confirmed materials` +1, `sound language and encoding variants` (`sound_languages.py`) +15, the
+rest 0. The second is the interesting one -- `sound_languages.py` is recorded dead on Black Ops 4
+just above this entry (0 matched, both folded and unfolded, 4.16M candidates), and the two games
+share the same generator and the same derivation slot in `derive_closure.py`. **The relation is
+real on Cold War and dead on Black Ops 4 specifically**, not dead in general as the single BO4
+measurement might have suggested -- Cold War's sound tables evidently still have language/encoding
+respellings the corpus hasn't caught, where Black Ops 4's do not. Worth a dedicated (non-closure)
+pass on Cold War beyond what one closure round surfaces, and a reminder that a method measured dead
+on one game is a per-game result, not a per-generator one, until it has actually been tried on both. |
+
 ---
 
 ## A quirk worth knowing, and deliberately not fixed: ids in two of the five types
