@@ -1,0 +1,2 @@
+43f7a21f0aacc201,status_effect_dot
+53e2d15cdf3290ad,status_effect_suppress

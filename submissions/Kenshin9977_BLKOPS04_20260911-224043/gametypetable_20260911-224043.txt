@@ -1,0 +1,4 @@
+1cbfa99dae4784cf,gametypetable_mp
+1cddbc9dae60a2a7,gametypetable_zm
+1d09b39dae85ce47,gametypetable_wz
+7ef5e11ab8158950,defaultgametypetable

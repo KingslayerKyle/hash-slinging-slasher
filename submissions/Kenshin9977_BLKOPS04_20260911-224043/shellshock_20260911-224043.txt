@@ -1,0 +1,3 @@
+fd79bf5478b106,status_effect_deaf
+1d75058b374c36ca,status_effect_slowed
+729ce2fe30d1d785,lightninggun
