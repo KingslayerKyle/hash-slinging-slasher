@@ -1,0 +1,6 @@
+mus\zm\blood\lockup\mus_lockup.sn100.pc.snd
+mus\zm\mansion\boss\boss_battle_intro.sn100.pc.snd
+mus\zm\zodt8\boss\mus_boss_intro.sn100.pc.snd
+mus\zm\zodt8\boss\mus_boss_loop_1.sl100.pc.snd
+mus\zm\zodt8\boss\mus_boss_loop_2.sl100.pc.snd
+mus\zm\zodt8\boss\mus_boss_loop_3.sl100.pc.snd

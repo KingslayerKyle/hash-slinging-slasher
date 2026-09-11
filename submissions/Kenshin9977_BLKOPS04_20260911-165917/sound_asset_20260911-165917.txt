@@ -1,0 +1,6 @@
+1b510ccdadbe8d07,mus\zm\zodt8\boss\mus_boss_loop_3.sl100.pc.snd
+2b874a2fe9b93cbf,mus\zm\blood\lockup\mus_lockup.sn100.pc.snd
+2bf6fa24189dd5cd,mus\zm\zodt8\boss\mus_boss_loop_1.sl100.pc.snd
+5fea693ba3797924,mus\zm\mansion\boss\boss_battle_intro.sn100.pc.snd
+7a73f2533b305906,mus\zm\zodt8\boss\mus_boss_loop_2.sl100.pc.snd
+7ce69bfad1201fb5,mus\zm\zodt8\boss\mus_boss_intro.sn100.pc.snd
