@@ -1,0 +1,12 @@
+87ed84150b27047,gamedata/tables/common/presence.json
+e53080191629a74,gamedata/tables/common/marketing.json
+1c61e6025950f187,gamedata/tables/mp/mp_codcaster_color_list.json
+1ef97aa28e1ce9f2,gamedata/tables/common/default_structured_table.json
+22d6d7673e266395,gamedata/tables/mp/mp_codcaster_logo_list.json
+329d7608f9cfbd49,gamedata/tables/mp/mp_spawn_influencers_override.json
+3ca659e557f607a9,gamedata/tables/wz/wz_spawn_lists.json
+415cefa0ccc14049,gamedata/tables/mp/mp_spawn_lists.json
+4d7de0e29a249d66,gamedata/tables/wz/wz_spawn_influencers.json
+545afdba310e3b06,gamedata/tables/mp/mp_spawn_influencers.json
+60a22199b70c9d0e,gamedata/tables/common/chunks.json
+65bc74d13ab193e9,gamedata/tables/wz/wz_spawn_influencers_override.json
