@@ -1,0 +1,2 @@
+35e1942e9b2849d5,status_effect_grenade_deaf
+69eaac458ce5a548,status_effect_grenade_dot

@@ -1,0 +1,10 @@
+49f163e9c03378f,scripts/core_common/throttle_shared.csc
+231af7f90d6093a8,scripts/core_common/gamestate.csc
+27138497a4a230aa,scripts/zm/archetype/archetype_zod_companion.gsh
+33134801f28aa031,scripts/weapons/weapon_utils.csc
+49a6dcaa993120c3,scripts/core_common/spawner_shared.csc
+51d774937628cbb3,scripts/zm/weapons/zm_weap_molotov.csc
+599277ff455339cb,scripts/killstreaks/mp/uav.csc
+69c2fafb55bfd260,scripts/core_common/spawning_shared.csc
+7cc035282b6a585f,scripts/zm/ai/zm_ai_dog.csc
+7f9d1ec3c0aa68b8,scripts/zm_common/zm_vo.csc

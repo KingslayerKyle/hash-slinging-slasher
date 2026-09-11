@@ -1,0 +1,1 @@
+3965b51435e3c71b,scripts/core_common/delete.bsc

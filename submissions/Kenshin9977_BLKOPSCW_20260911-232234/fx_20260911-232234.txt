@@ -1,0 +1,3 @@
+2bb901748a5f953a,weapon/fx8_muz_hero_sig_grapple_1p
+649c5dd58668a80d,destruct/fx_dest_glass_burst
+7fc188cbac886944,zombie/fx8_magicbox_arrival_b
