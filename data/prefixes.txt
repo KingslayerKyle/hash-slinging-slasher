@@ -183,6 +183,7 @@ ei/gfx8_fire_x/scripted/operators/adlr/
 ei/gfx8_fire_x/
 ei/gfx8_fire_x/scripted/
 ei/gfx8_fire_x/scripted/operators/
+pb_cin_
 vm_pistol_
 vm_sniper_
 vm_tr_
@@ -193,7 +194,6 @@ reb_stl_
 ai_robot_
 vm_lmg_
 vm_shotgun_
-pb_cin_
 vm_zom_
 vm_zm_
 pt_smg_
