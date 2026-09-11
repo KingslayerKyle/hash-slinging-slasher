@@ -1,0 +1,10 @@
+fly\emotes\eyebeam_male.ln100.pc.snd
+fly\emotes\eyebeam_female.ln100.pc.snd
+mpl\mp_morocco\flyby_fire.ln100.pc.snd
+mpl\mp_morocco\flyby_sweet.ln100.pc.snd
+zmb\ai\gladiator\destroyer\vox\roar\swt\wpn_concrete_28.sn100.pc.snd
+zmb\ai\gladiator\destroyer\vox\roar\swt\wpn_concrete_29.sn100.pc.snd
+zmb\level\zm_office\ambience\bgs\outdoor\outdoor_lr.sl100.pc.snd
+zmb\level\zm_office\ee\portraits_stinger.ln100.pc.snd
+zmb\purchases\box\zodt8\head_grab_1.ln100.pc.snd
+zmb\purchases\box\zodt8\head_grab_2.ln100.pc.snd
