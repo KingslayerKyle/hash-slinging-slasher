@@ -1,0 +1,4 @@
+f58be01586d9a2e,mc/mtl_c_t8_zmb_dlc4_electric_zombie_body
+5232078288e69b95,mc/mtl_c_t8_zmb_dlc4_male_boots_ora
+56d87918e36fbb1d,mc/mtl_c_t8_zmb_dlc4_electric_zombie_arms
+5b8dc5ef91a045bf,mc/mtl_c_t8_zmb_dlc4_electric_zombie_legs
