@@ -3370,7 +3370,19 @@ run at all. **The guard and its own recommended remedy were silently incompatibl
 have been since whichever session first hit three empty confirming runs after `futility.rs` shipped.
 There is no way to tell from the historical logs how many past closure invocations quietly did
 nothing this way; treat any run of `derive_closure.py` recorded as "added 0" without `--anyway`
-during a documented empty-run streak as unverified rather than as a real negative. |
+during a documented empty-run streak as unverified rather than as a real negative.
+
+**Follow-up, same session:** the general search (`confirm_cw`, defaults, `--anyway`) was not
+actually spent for Cold War either -- its efficiency-table figures are dominated by Black Ops 4's
+much larger run count. The last real full run before this one (2026-09-09) added 16; re-run
+2026-09-11 after the corpus had grown by the closure gains above, it swept the same ~295.6B forward
+hashes in 3,927s and added **9 more** (3 image, 4 material, 2 xmodel), and the closure that followed
+picked up 1 further name from `image_channels.py`. The general search only *looks* dead in aggregate
+because most of its recorded runs are against Black Ops 4, which has had 118 passes on this machine
+against Cold War's ~28 -- a method's own registry entry can hide a per-game split this wide, and the
+efficiency ranking has no per-game breakdown to catch it. Worth remembering next to the standing
+"a ranking rules things out, it does not choose" lesson: it can rule out the wrong game's worth of
+runs along with the right one's. |
 
 ---
 
