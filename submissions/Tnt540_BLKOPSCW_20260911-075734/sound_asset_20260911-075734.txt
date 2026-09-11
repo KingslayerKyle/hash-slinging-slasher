@@ -1,0 +1,15 @@
+59a50282f83e9d5,mpl/mpl_casino/chips/chips_03.ln75.pc.all.snd
+d79e86d82c61dcb,mpl/mpl_casino/chips/chips_01.ln75.pc.all.snd
+102cbdc75b259874,uin/2k18/mtx/mtx_select_5.ln75.pc.all.snd
+12c5360fcbe8e589,wpn/zmb/freezegun/zombie/shatter/shatter_00.ln75.pc.all.snd
+2ba7b81620fa87a5,amb/alarms/air_raid/air_raid_horn.ln75.pc.all.snd
+2c5fc0bf7e19f838,mpl/mpl_casino/chips/chips_00.ln75.pc.all.snd
+48031a9b4722dfcf,wpn/zmb/freezegun/zombie/shatter/shatter_02.ln75.pc.all.snd
+4b9efb2dfabcf8aa,uin/2k18/mtx/mtx_select_3.ln75.pc.all.snd
+4dace97a73d1a0d6,amb/animals/birds/raven/raven_00.rn75.pc.all.snd
+5849cea70a4f73a6,wpn/zmb/freezegun/zombie/shatter/shatter_01.ln75.pc.all.snd
+6b7688b1851aeb52,mpl/mpl_casino/chips/chips_02.ln75.pc.all.snd
+6f199b8d8377674b,zmb/level/zm_zodt8/sidequest/engineer/lever_finish.ln75.pc.all.snd
+709f59a04ec47cc3,exp/mantis/exp/exp_mantis_01.ln75.pc.all.snd
+7c90cf760d58446e,amb/environment/wind/howl/indoor/indoor.rn75.pc.all.snd
+7e5673cec0b439f0,exp/mantis/exp/exp_mantis_00.ln75.pc.all.snd
