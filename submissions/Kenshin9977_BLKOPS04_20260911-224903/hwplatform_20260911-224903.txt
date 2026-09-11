@@ -1,0 +1,4 @@
+4fd69a40349a80da,hwplatform_durango
+5c794bd5f0603f39,default_hwplatform
+66c43548c7002f12,hwplatform_neo
+7d1f84ed6c4553a1,hwplatform_scorpio

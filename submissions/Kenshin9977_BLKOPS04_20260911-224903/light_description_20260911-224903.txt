@@ -1,0 +1,4 @@
+206c1081d4c5772c,gfx_dlight_gen_omni_r100
+47273bc5e7747a58,gfx_dlight_gen_omni
+56d09963c1795170,gfx_dlight_gen_omni_r50
+56e89e63c18debd0,gfx_dlight_gen_omni_r25

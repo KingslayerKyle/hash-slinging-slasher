@@ -1,0 +1,2 @@
+433d2a6d116656b3,soldier_aim
+5ceff5711fae32b9,robot_aim

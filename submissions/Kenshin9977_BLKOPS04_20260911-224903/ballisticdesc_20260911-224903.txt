@@ -1,0 +1,5 @@
+cf7f7273a7aac42,defaultbullet
+1ac113a7374fd06b,raygun
+6269fccbe6d86a70,45_fmj
+77ea811fd6047f63,338_fmj
+7a8de762a01fac90,9mm_fmj

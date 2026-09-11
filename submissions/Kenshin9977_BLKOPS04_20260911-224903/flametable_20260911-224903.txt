@@ -1,0 +1,2 @@
+6efa585a41207471,default_flame_thirdperson
+7c9e63bac4fc46ba,default_flame_firstperson

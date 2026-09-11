@@ -1,0 +1,16 @@
+cfbae44f0df54d0,veh_seeker_mine
+f837378dcf85646,veh_vtol_military
+140ca7b24e37dd34,veh_motorcycle_wz
+2276dbf56c3e2bc3,veh_drn_dart_mp
+253dd5a36f0268d1,veh_drn_ai_tank_mp
+33989e6e8dfad654,veh_amws_plr
+3726f6b1268dcd90,veh_vtol_mothership
+403c6fda96f37f77,veh_amws_mp
+57f9622ccf27a681,veh_drn_qrdrone_mp
+58530417dbdade35,veh_raps_mini
+595b4a456c8ab113,veh_tank_wz
+5e27611f94fd78db,veh_suv_wz
+70aa32f249d9e457,veh_heli_wz
+70d498da8ac63bc1,veh_heli_swat
+7156f334b75af03f,default_vehiclesounddef
+748ceef2dd301eb4,veh_vtol_supplyship

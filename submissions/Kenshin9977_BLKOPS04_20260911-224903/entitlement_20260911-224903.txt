@@ -1,0 +1,15 @@
+3c612cf15abddb9,ambassador_hero
+11b6898ea2c93806,ambassador_champion
+16582f0e479c96e9,spectreeditiongame
+1a6cefd9dde386bd,enhancedgame
+1be23f482b82219f,beta_reward
+377b58d9f38de25f,blackops_pack_survivor
+3a781384eac47b59,defaultentitlement
+4015be56c5ea0253,blackops_pack_spectre
+53e413f99b7c14d9,digitalgame
+69df29d0839a1be1,black_ops_pass
+6f7c1ff18a02ed4e,retail_pro_pack
+7541976a426adb94,predigitalgame
+754c2b9dddd8a254,deluxegame
+7dcd5350df98f438,blackops_pack
+7e6c70afd58c1ac4,ambassador_legend

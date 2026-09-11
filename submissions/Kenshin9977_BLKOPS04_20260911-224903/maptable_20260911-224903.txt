@@ -1,0 +1,15 @@
+1faf1b44ebf1f3b9,maptable_zm_dlc4
+1faf1c44ebf1f56c,maptable_zm_dlc3
+1faf1d44ebf1f71f,maptable_zm_dlc2
+1faf1e44ebf1f8d2,maptable_zm_dlc1
+1faf1f44ebf1fa85,maptable_zm_dlc0
+2d7a141b1e04e8a7,maptable_wz_base
+2ef0c86c1309d5df,maptable_mp_base
+4e4c2da1fd3039f8,maptable_mp_dlc3
+4e4c2ea1fd303bab,maptable_mp_dlc2
+4e4c2fa1fd303d5e,maptable_mp_dlc1
+4e4c32a1fd304277,maptable_mp_dlc6
+4e4c33a1fd30442a,maptable_mp_dlc5
+4e4c34a1fd3045dd,maptable_mp_dlc4
+70366756c3cda4bb,maptable_zm_base
+739c1d26e40f85bc,defaultmaptable

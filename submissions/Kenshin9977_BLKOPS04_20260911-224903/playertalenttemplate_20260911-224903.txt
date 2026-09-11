@@ -1,0 +1,3 @@
+345de1ea3dc675c7,defaultplayertalenttemplate
+5268553c053473d0,pst_base_mp
+52c0673c057f083c,pst_base_wz

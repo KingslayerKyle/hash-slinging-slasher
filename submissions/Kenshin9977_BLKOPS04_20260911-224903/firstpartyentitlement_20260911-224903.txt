@@ -1,0 +1,9 @@
+c4f9839e46d40b8,enhancedgameentitlement
+1413110382be26bf,defaultfpentitlement
+256639cd8e8f1703,predigitalgameentitlement
+31198f2c6d9617bc,digitalgameentitlement
+3b4585e328a1e70d,loyalty_entitlement
+441944df11f98eb6,code1entitlement
+50509674146901f5,code2entitlement
+6a16dfeef06ac51c,blackopspassentitlement
+6c11cd2a40fe926e,prestige_token_entitlement

@@ -1,0 +1,4 @@
+150cd81fd55926df,ranktable_wz
+1516e11fd5618aaf,ranktable_zm
+1565de1fd5a559e7,ranktable_mp
+3d7f958e004a15bc,defaultranktable

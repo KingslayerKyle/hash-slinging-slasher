@@ -1,0 +1,2 @@
+1187d52ad91027b2,storecategorylist
+502d6817d4b4fa0b,defaultstorecategorylist
