@@ -3355,7 +3355,22 @@ real on Cold War and dead on Black Ops 4 specifically**, not dead in general as 
 measurement might have suggested -- Cold War's sound tables evidently still have language/encoding
 respellings the corpus hasn't caught, where Black Ops 4's do not. Worth a dedicated (non-closure)
 pass on Cold War beyond what one closure round surfaces, and a reminder that a method measured dead
-on one game is a per-game result, not a per-generator one, until it has actually been tried on both. |
+on one game is a per-game result, not a per-generator one, until it has actually been tried on both.
+
+**The same bug was silently eating Black Ops 4's closure runs too.** Re-run with the fix, `--game
+BLKOPS04 --anyway`, immediately after the Cold War one above (so the machine's empty-run streak was
+still well past the guard threshold): **13** names in round 1 -- `image siblings of confirmed
+materials` +8, `materials from image cores` +3, `final byte solved backwards` +2 -- with round 2
+correctly at 0. None of this is new ground; every one of these derivations is already in
+`DERIVATIONS` and has run before. What changed is that a closure invoked while three or more recent
+passes had returned nothing -- which, per this file's own advice, is closure's best moment, since it
+is free and is explicitly recommended as *the* thing to run when a streak of zeros says the corpus
+looks closed to what is being tried -- was exactly the condition under which it could not actually
+run at all. **The guard and its own recommended remedy were silently incompatible**, and probably
+have been since whichever session first hit three empty confirming runs after `futility.rs` shipped.
+There is no way to tell from the historical logs how many past closure invocations quietly did
+nothing this way; treat any run of `derive_closure.py` recorded as "added 0" without `--anyway`
+during a documented empty-run streak as unverified rather than as a real negative. |
 
 ---
 
