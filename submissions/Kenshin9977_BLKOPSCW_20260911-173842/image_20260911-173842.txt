@@ -1,0 +1,2 @@
+1c64e99f5f757cb,uie_ui_hud_common_tiny_ring
+4da0056d17a8ac89,uie_ui_hud_common_tiny_circle
