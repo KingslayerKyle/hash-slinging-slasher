@@ -1,0 +1,6 @@
+8bb7d93747987a1,prt_wz_stanton_dlc0
+203a1dcc75cf8c53,prt_wz_soldier_seal_female
+42e7a274de12337e,prt_wz_soldier_air_female
+57d9e98fa3f08f76,prt_wz_soldier_sea_male
+6c8d991db6f42c4a,prt_wz_soldier_land_male
+7beba0d40d750e10,prt_wz_soldier_hardened_male
