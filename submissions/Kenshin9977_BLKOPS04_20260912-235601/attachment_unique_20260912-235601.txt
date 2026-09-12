@@ -1,0 +1,2 @@
+15a75f4de4bfa6a5,au_baseweapon_dualoptic
+5b40b4075aae8048,au_baseweapon_elo
