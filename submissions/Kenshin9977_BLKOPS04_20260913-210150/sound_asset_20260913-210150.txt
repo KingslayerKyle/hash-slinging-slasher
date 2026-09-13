@@ -1,0 +1,12 @@
+624b2e5d3299220,en\vox\scripted\zmb\red\vox_red_plr_1_temp_attalid_enter_2.sn100.pc.snd
+9428aa07e254bed,en\vox\scripted\zmb\red\vox_red_plr_4_temp_attalid_enter_0.sn100.pc.snd
+a05e3c7af86aaee,en\vox\scripted\zmb\red\vox_red_plr_3_temp_attalid_enter_2.sn100.pc.snd
+141837f3aaecb88a,en\vox\scripted\zmb\red\vox_red_plr_1_temp_attalid_enter_0.sn100.pc.snd
+24399e11c0a05e18,en\vox\scripted\zmb\red\vox_red_plr_4_temp_attalid_enter_1.sn100.pc.snd
+2712a068700ef3b4,en\vox\scripted\zmb\red\vox_red_plr_3_temp_attalid_enter_0.sn100.pc.snd
+29cfff02aae48ea7,en\vox\scripted\zmb\red\vox_red_plr_1_temp_attalid_enter_1.sn100.pc.snd
+3a14670d862a8d59,en\vox\scripted\zmb\red\vox_red_plr_3_temp_attalid_enter_1.sn100.pc.snd
+44de35b702fc6226,en\vox\scripted\urban\tvoi\vox_tvoi_tutor_ajax_flash_bank_shot_nag_00.sn100.pc.snd
+6d21101835e5822e,en\vox\scripted\zmb\red\vox_red_plr_2_temp_attalid_enter_1.sn100.pc.snd
+77a56d6e98d8413f,en\vox\scripted\zmb\red\vox_red_plr_4_temp_attalid_enter_2.sn100.pc.snd
+7bd52a711291b84b,en\vox\scripted\zmb\red\vox_red_plr_2_temp_attalid_enter_0.sn100.pc.snd
