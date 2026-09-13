@@ -1,0 +1,1 @@
+62e97922771d5096,gamedata/ddl/generated/dlog_event_party_match_start.ddl

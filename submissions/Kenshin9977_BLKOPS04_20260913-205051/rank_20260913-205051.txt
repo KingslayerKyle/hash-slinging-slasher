@@ -1,0 +1,13 @@
+5bf680d686e82388,wz_wins_12
+5bf681d686e8253b,wz_wins_13
+5bf682d686e826ee,wz_wins_10
+5bf683d686e828a1,wz_wins_11
+5bf9ffd686eb312c,wz_wins_09
+5bfa00d686eb32df,wz_wins_08
+5bfa03d686eb37f8,wz_wins_05
+5bfa04d686eb39ab,wz_wins_04
+5bfa05d686eb3b5e,wz_wins_07
+5bfa06d686eb3d11,wz_wins_06
+5bfa07d686eb3ec4,wz_wins_01
+5bfa09d686eb422a,wz_wins_03
+5bfa0ad686eb43dd,wz_wins_02
