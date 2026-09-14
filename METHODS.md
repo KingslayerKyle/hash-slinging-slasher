@@ -2411,6 +2411,42 @@ generator exposes — rank cutoff and admission threshold alike — is now exhau
 size; reopening it needs either a much larger corpus or a different notion of "family" than
 `head_<axis>_<tail>` split on the first underscore.
 
+## 35. Saluki's own recovered-hash databases, outside the six wanted pools — 2026-09-14
+
+```
+python contrib/saluki_beams.py "path/to/beams_recovered.csv" | bin\windows\confirm_list.exe - --game BLKOPS04
+```
+
+Saluki (the live Cordycep-backed browser this project's confirmations are checked against) ships
+recovered names for the `beam` pool specifically -- a real Black Ops 4 pool, 130 ids total, that
+sits outside this project's default six pools and so is invisible to every search here unless
+`all_pools = true` is set in `config.toml` for the run. Requested via the user's own Saluki
+session (with BO4 loaded, no live game process involved -- Saluki reads the CASC containers
+directly) and exported as `hash,name`, 34 lines.
+
+**26 of 34 confirmed new** against Black Ops 4's `beam` pool with `all_pools = true` -- a 76% hit
+rate, the highest of anything run this session. `cod-name-db` has no dedicated `beam` table, so
+these are filed under `submit`'s general "every pool" handling the same way Kenshin9977's earlier
+`fx`/`xcam`/`sanim`/etc. finds were (see their 2026-09-11 submission, which already carries a
+`beam` pool from a *different* recovered-hash source, FiggleFX's `beams_recovered.csv` --
+`scripts/contributed/figglefx_bo4_fx_beams_20260904-070316.py`). The two sources evidently do not
+fully overlap, since this session's 26 were confirmed new against everything already published and
+claimed. **95 of 130 beam ids remain unnamed** after this session.
+
+**Why this is worth more than 26 names.** Saluki bundling its own recovered-hash list for one
+untargeted pool raises the obvious question of whether it has similar lists for others -- this was
+not investigated further this session, but is worth asking about directly: any other "recover" or
+"database" feature in Saluki's UI beyond the four browsable pools (Model/Material/Image/Animation)
+is a candidate source nobody here has tried. **Spent by:** whatever Saluki's own beam database
+already knows; a larger or updated Saluki release could reopen this the way a table refresh
+reopens the general search.
+
+**Practical note:** `all_pools = true` must be set for `confirm_list`/`confirm_cw` to even look at
+a non-standard pool's ids -- without it the pool is not part of `wanted_for_search` at all, and a
+correct candidate simply will not be checked (not "found nothing," genuinely never asked). Unset
+it again afterward; leaving it on turns every subsequent default search into a much slower
+every-pool sweep, which CLAUDE.md §5 explains is the single most reliable way to waste a night.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
