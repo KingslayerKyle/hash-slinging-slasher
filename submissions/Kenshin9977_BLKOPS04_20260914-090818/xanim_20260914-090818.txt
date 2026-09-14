@@ -1,0 +1,2 @@
+58d86339994feff5,vm_tr_damageburst_t8_ads_acog_6x_wz_up
+72df503c30009914,vm_tr_damageburst_t8_ads_acog_6x_wz_down
