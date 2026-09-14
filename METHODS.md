@@ -2395,7 +2395,13 @@ family `family_grid.py --audit` will admit at the standing `--min-members 200` /
 31-61 add nothing beyond what the top 30 already found. So this is now fully spent for Cold War
 at this corpus size, not merely spent past rank 20. Reopens only if the corpus grows enough to
 push a currently-too-small family over `--min-members 200`, or if the thresholds themselves are
-loosened. Re-run for Black Ops 4 too — its own `--top 20` sweep is the only generic run it has had.
+loosened. **Re-run for Black Ops 4 immediately after, same 4,764,491 candidates (`--game BLKOPS04`): 0
+new.** Extends the 2026-09-02 `--top 20` Black Ops 4 negative to the full 61-family set — ranks
+21-61 do not open anything there either, even though Black Ops 4 is otherwise the far less
+picked-over game (see the `swaps` widening section, where the identical token-pool step returned
+5-20x more on Black Ops 4 than Cold War). So this specific method's ceiling is not a
+picked-over-corpus effect — the shared-tail grid restriction itself is what is exhausted here,
+on both games, at the current corpus size.
 
 ## Candidates worth building, with the measurement that decides each
 
