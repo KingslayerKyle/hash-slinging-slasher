@@ -1,0 +1,3 @@
+c8b0c166d826bb7,melee_moneybag_enter
+54dd1a7454a50caf,melee_amulet_enter
+7dafc40ae5fd9e1e,melee_galvaknuckles_enter
