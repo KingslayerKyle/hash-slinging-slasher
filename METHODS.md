@@ -2447,6 +2447,43 @@ correct candidate simply will not be checked (not "found nothing," genuinely nev
 it again afterward; leaving it on turns every subsequent default search into a much slower
 every-pool sweep, which CLAUDE.md §5 explains is the single most reliable way to waste a night.
 
+## 36. `name_field_probe`, extended to Black Ops 4 for the first time — 2026-09-14
+
+`name_field_probe` and `loader_strings` (§ "Infrastructure, not generators" above) had only ever
+been run against Cold War, for lack of a live Black Ops 4 loader to point them at. The user
+opened Black Ops 4 in Cordycep for an unrelated reason (the `beam` pool export in method 35) and
+offered the same session for this. No Rust toolchain was available on the machine, so
+`contrib/name_field_probe.py` reimplements the Rust binary's exact algorithm in pure Python via
+`ctypes` (`OpenProcess` + `ReadProcessMemory` against Cordycep's own process, read-only, no game
+process involved) rather than installing one.
+
+**Every one of the wanted-adjacent pools stores only its id at a fixed header offset, never a
+name.** `xanim`=3 at `+0x70`, `xmodel`=4/`material`=6 at `+0x00`, `xmodelmesh`=5 at `+0x00`,
+`technique_set`=8 at `+0x00`, `image`=9 at `+0x20` — confirmed over 156 of 172 pools, sampling 128
+assets per pool then verifying the winning offset over the whole pool (100% coverage in every
+row). The `xanim`-at-`+0x70` figure matches the Rust tool's own docstring exactly, which is the
+strongest evidence the Python reimplementation is faithful. **This closes the "hidden plaintext
+name in the header" hypothesis for the five wanted types on Black Ops 4 the same way it was
+already closed on Cold War** — the id really is all the header holds; nothing here would ever
+find these names.
+
+**What the header approach did find:** four *other* pools store a name as readable text,
+hash-verified by construction: `sound`=10 (30, bank names like `core_bootstrap.all`), `sanim`=77
+(399), `storagefile`=128 (41), `storecategory`=132 (8) — 478 names total. **All 478 already
+published or claimed** (`all_pools = true`, 0 matched) — these pools are evidently already well
+covered by other contributors' "every pool" sweeps (Kenshin9977's submissions already carry
+`sanim`). Zero net names, but a clean, useful negative: the header-text approach is not a source
+of anything new here, on top of confirming it cannot reach the five wanted types at all.
+
+**The bigger implication is the one worth acting on.** Cordycep decrypts whatever it loads before
+this ever touches it — so the standing "Cold War's fast files are still AES-256-CTR encrypted,
+key unknown, single largest untapped source" barrier (see "Why the yield per submission keeps
+falling") does not apply to a live Cordycep session the way it applies to reading the files
+directly. **Nobody has pointed this probe, or `loader_strings`' live string-pool cross-check, at a
+*live Cold War* Cordycep session** — only ever at a Cold War session for the header-offset
+question specifically, historically, and never at Black Ops 4 until today. Loading Cold War the
+same way and re-running both scripts is the direct, concrete next step this result points at.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
