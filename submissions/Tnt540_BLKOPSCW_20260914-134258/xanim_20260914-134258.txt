@@ -1,0 +1,3 @@
+17e79057a3165561,vm_flamethrower_t9_additive_hip_recoil
+263fd219846ad940,vm_pistol_briefcase_t9_hip_recoil_settle
+6b24e812b5cc93c7,vm_pistol_briefcase_t9_additive_hip_recoil
