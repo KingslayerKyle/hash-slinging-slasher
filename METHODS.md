@@ -2403,6 +2403,14 @@ picked-over game (see the `swaps` widening section, where the identical token-po
 picked-over-corpus effect — the shared-tail grid restriction itself is what is exhausted here,
 on both games, at the current corpus size.
 
+**Loosening the thresholds instead of the rank cutoff was tried next and also closed.**
+`--min-members 80 --min-axis 3 --min-tails 10` (down from the defaults of 200/3/20) admits 97
+families instead of 61, but the extra 36 are so small they add only 14,823 cells on top of the
+4,764,491 the full default sweep already emits. **0 new on both games.** So every knob this
+generator exposes — rank cutoff and admission threshold alike — is now exhausted at this corpus
+size; reopening it needs either a much larger corpus or a different notion of "family" than
+`head_<axis>_<tail>` split on the first underscore.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
