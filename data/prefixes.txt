@@ -114,8 +114,8 @@ mc/i_t8_
 pb_
 mc/uie_
 loot_
-p8_usa_
 vm_ar_
+p8_usa_
 loot_ui_
 i_mkg_
 wpn_t8_
@@ -228,8 +228,8 @@ mm_bow_
 pt_ar_
 pb_rifle_
 o_
-vm_eqp_
 vm_launcher_
+vm_eqp_
 mm_launcher_
 p8_nt4_
 p7_jun_

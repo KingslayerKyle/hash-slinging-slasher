@@ -1015,6 +1015,7 @@ _barehands
 _r90
 _fastmag
 _l90
+_settle
 _throw
 _last
 _ch3
@@ -1022,7 +1023,6 @@ _ch2
 _ch4
 _acog
 _8l
-_settle
 _player1
 _miss
 _8r
@@ -1055,6 +1055,7 @@ _exit
 _alert
 _attack
 _walk
+_recoil
 _hide
 _ch7
 _ani
@@ -4797,4 +4798,3 @@ _point_blank
 _props_01
 _door_open
 _feet_02
-_weapon_ray_gun
