@@ -2411,6 +2411,30 @@ generator exposes — rank cutoff and admission threshold alike — is now exhau
 size; reopening it needs either a much larger corpus or a different notion of "family" than
 `head_<axis>_<tail>` split on the first underscore.
 
+## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
+
+Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
+elsewhere is a cheap check") after the corpus grew from 245,673 to 295,855+ merged names via a
+rebase onto three days of upstream PRs. 487.3 billion candidates, 7,139s, **16 matched, 3 new**
+(all `xanim`) — submitted as [#2124](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2124).
+Small next to the original 128-name run at this same pool size (2026-08-29), consistent with the
+standing "treat as spent past the knee unless the corpus has grown substantially" guidance: the
+corpus did grow, and it paid a little, not a lot. Plain (non-swap) `confirm_variants` was re-run
+alongside it for the first time in a while: 10.5 billion candidates, 6 matched, **0 new**.
+
+**A measurement artifact worth flagging for whoever next trusts `derive_closure`'s own delta.**
+Immediately after submitting the 3 `swaps` names, `derive_closure.py --anyway` reported "image
+siblings of confirmed materials +10" with no corresponding new run folder under
+`findings/blkopscw/`, and the following `submit` found nothing pending. The likely cause: this
+repository is shared by several very active contributors (Kenshin9977 and ImSimpy alone merged
+dozens of pull requests in the hours around this session), and `derive_closure.py` measures a
+derivation's yield as `confirmed_total()` before vs. after — a raw count that includes merged
+submissions, not just this run's own output. If somebody else's batch merges in the few seconds
+between those two reads, it is counted as this derivation's gain. `submit`'s own ledger (which
+tracks specific run folders rather than a raw total) is the trustworthy number here, and it said
+zero. Worth fixing in `derive_closure.py` — diff the actual run folder's contents, not a global
+total — on a repository this actively shared.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
