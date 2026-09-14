@@ -42,7 +42,7 @@ python scripts/coverage.py --five                where the unnamed assets actual
 | 23 | uncarried sound endings | `sound_alias` and `sound_asset`, the two largest pools | `scripts/contributed/uncarried_endings_20260823-040620.py --sound-pass` | **1,385 names.** 79% of published sound names end in something `data/sound.suffixes.txt` cannot express -- proportionally the larger of the two ending gaps |
 | 24 | measured image channels | `image`, through the channels method 13's hand-written list omits | `scripts/contributed/image_channels_wide_20260823-043005.py` | 36 names, but it widens a derivation `derive_closure` re-runs every round: 231 of 250 real channels were uncarried, `_thermalmap` alone heads 16,000 |
 | 25 | all-boundary cores | every method built as core x ending | `scripts/contributed/uncarried_endings_allboundary_20260823-134935.py` -> `confirm_plan` | **the most productive change measured on 2026-08-23.** Not a new method -- a fix to how every ending sweep builds its cores. Turned 2,065 names into 2,553 while using five times fewer endings, and 1,385 sound names into 1,746 in a single pass |
-| 30 | family grid completion | `sound_alias` above all | `scripts/unnamed_profile.py --grid`, `contrib/family_grid.py` -> `confirm_list` | **23 on Black Ops 4, and `derive_closure` turned those into 102 more.** Rank families by tails shared across more than one axis value, not by raw product: `i_` looks like 158 M cells and collapses to 694 K under that, because it is not a grid, it is every name beginning `i_` |
+| 30 | family grid completion | `sound_alias` above all | `scripts/unnamed_profile.py --grid`, `contrib/family_grid.py` -> `confirm_list` | **23 on Black Ops 4, and `derive_closure` turned those into 102 more.** Rank families by tails shared across more than one axis value, not by raw product: `i_` looks like 158 M cells and collapses to 694 K under that, because it is not a grid, it is every name beginning `i_`. **10 more on Cold War, 2026-09-14, from families beyond the top 20 -- see below** |
 | 31 | beginnings the ceiling drops | any type, through the beginnings `data/prefixes.txt` measures and then **discards for want of a slot** | `scripts/contributed/ceiling_dropped_begins_20260829-064955.py` -> `confirm_plan` | **9 on Cold War sound, and `derive_closure` turned them into 18 more; 1 more on the general half.** Distinct from 22/23: those are endings the list never measured, these are beginnings it *did* measure and the 700 ceiling threw away. Spent by nothing yet; re-run after any pass that grows the corpus, since the cut list changes |
 | — | localize unfolding | `localizeentry` | `confirm_localize` | **off, and refuses to run.** Worthless — see dead ends |
 
@@ -2366,6 +2366,32 @@ between the two vocabularies is weak — 0.7% of file stems are exactly an alias
 has tried it *per edge*, with the alias's zone and sequence number in hand, which is a different
 question from the corpus-wide one that measured 0.7%.
 
+
+## 34. Family grid completion, past the top 20 — 2026-09-14
+
+```
+python scripts/family_grid.py --top 30 | bin\windows\confirm_list.exe - --game BLKOPSCW
+```
+
+Every prior run of this method — the original method 30 pass, the `--top 20` generic sweep
+(Black Ops 4 only, 2026-09-02), and the twenty hand-written `*_shared_tail_grid_*.py` variants
+(both games, 2026-09-09) — stopped at the twenty largest grid-shaped families: `vox`, `i`, `fly`,
+`vm`, `ui`, `wpn`, `p8`, `mp`, `p7`, `amb`, `jup`, `p9`, `zmb`, `sat`, `evt`, `callingcards`,
+`icon`, `pt`, `weap`, `mus`. All twenty are recorded dead on Cold War. Nobody had asked
+`family_grid.py --audit` what sits *below* rank 20 — `melee` (41,151 cells), `veh` (18,150),
+`pb` (15,725), `ai` (14,654), `att` (11,592), `volume0` (9,892), `uin` (9,170), `mm` (9,156),
+and others down to rank 30.
+
+`--top 30` re-sweeps the already-dead top 20 (harmless — they contribute 0 as before) and reaches
+the ten families below them for the first time. **4,709,171 candidates in 18s, 10 new
+`sound_alias` names.** Every hit landed in a family outside the previously-covered twenty, which
+is the point: the shared-tail grid restriction is not spent in general, only spent on the specific
+families that had actually been tried. `derive_closure` afterward added 0 — these ten did not
+feed any of the seven registered derivations, all of which key off image/material/xmodel.
+
+**Spent by:** the next rank band. `--top 40` or `--top 50` is the obvious next step and untried;
+expect smaller families to pay less per candidate but the ceiling has clearly not been found yet
+at 30. Re-run for Black Ops 4 too — its own `--top 20` sweep is the only generic run it has had.
 
 ## Candidates worth building, with the measurement that decides each
 
