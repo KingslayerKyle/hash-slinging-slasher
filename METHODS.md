@@ -2389,9 +2389,13 @@ is the point: the shared-tail grid restriction is not spent in general, only spe
 families that had actually been tried. `derive_closure` afterward added 0 — these ten did not
 feed any of the seven registered derivations, all of which key off image/material/xmodel.
 
-**Spent by:** the next rank band. `--top 40` or `--top 50` is the obvious next step and untried;
-expect smaller families to pay less per candidate but the ceiling has clearly not been found yet
-at 30. Re-run for Black Ops 4 too — its own `--top 20` sweep is the only generic run it has had.
+**Spent by:** all 61 families it can currently find. The obvious next step, `--top 61` (every
+family `family_grid.py --audit` will admit at the standing `--min-members 200` / `--min-axis 3` /
+`--min-tails 20` thresholds), was run immediately after: 4,764,491 candidates, **0 new** — ranks
+31-61 add nothing beyond what the top 30 already found. So this is now fully spent for Cold War
+at this corpus size, not merely spent past rank 20. Reopens only if the corpus grows enough to
+push a currently-too-small family over `--min-members 200`, or if the thresholds themselves are
+loosened. Re-run for Black Ops 4 too — its own `--top 20` sweep is the only generic run it has had.
 
 ## Candidates worth building, with the measurement that decides each
 
