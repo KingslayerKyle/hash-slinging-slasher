@@ -1,0 +1,5 @@
+en\vox\scripted\frenetic\tvoi\vox_tvoi_tutor_noma_slide_11_success_00.sn100.pc.snd
+en\vox\scripted\urban\tvoi\vox_tvoi_tutor_ajax_flash_cook_lvl1_held_01.sn100.pc.snd
+en\vox\scripted\zmb\white\vox_whi_rush_rushmore_ssb_1.sn100.pc.snd
+en\vox\scripted\zmb\white\vox_whi_rush_rushmore_ssb_2.sn100.pc.snd
+en\vox\scripted\zmb\white\vox_whi_rush_rushmore_ssb_3.sn100.pc.snd
