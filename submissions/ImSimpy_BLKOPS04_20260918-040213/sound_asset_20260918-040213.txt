@@ -1,0 +1,15 @@
+79ed9211d732a39,wpn\smg\minigun\plr\act\wpn_smg_minigun_act_loop_plr.ll100.pc.snd
+bce9efbbed47308,en\vox\scripted\wz\cras\vox_cras_boost_win_00_s.sn100.pc.snd
+137b3b47de2beb95,wpn\tactical\damageburst\suppressed\plr\wpn_damageburst_fire.ln100.pc.snd
+23c04b6c7dbe432f,wpn\tactical\damageburst\plr\wpn_damageburst_act.ln100.pc.snd
+2d3a9fda2dd8526e,wpn\tactical\damageburst\killcam\wpn_damageburst_fire.ln100.pc.snd
+34a1921a07edf8a0,wpn\tactical\damageburst\killcam\wpn_damageburst_act.ln100.pc.snd
+35417ed803edc416,en\vox\scripted\wz\ctre\vox_ctre_boost_win_00_s.sn100.pc.snd
+3c8cc868fe874a02,wpn\tactical\damageburst\killcam\sup\wpn_damageburst_fire.ln100.pc.snd
+3f03a369c7b66248,wpn\turret\pbr\lfe\wpn_pbr_lfe.ln100.pc.snd
+439843fd0d2f22f5,wpn\turret\pbr\lfe\wpn_pbr_loop_lfe.ll100.pc.snd
+502b6e1901c897be,exp\firegat\lfe\exp_firegat_lfe.ln100.pc.snd
+588e234a200e8e12,en\vox\scripted\wz\alex\vox_alex_boost_win_00_s.sn100.pc.snd
+6f6263d822cef30b,wpn\tactical\damageburst\killcam\wpn_damageburst_lfe.ln100.pc.snd
+77b0d51454e19499,wpn\tactical\damageburst\lfe\wpn_damageburst_lfe.ln100.pc.snd
+78940f4317d06437,wpn\tactical\damageburst\plr\wpn_damageburst_fire.ln100.pc.snd
