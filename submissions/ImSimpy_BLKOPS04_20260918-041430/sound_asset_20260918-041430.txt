@@ -1,0 +1,4 @@
+2445d11dcc94b300,mus\mp\_sets2018\set_07\mp7_potm_outro_v1_master.sn100.pc.snd
+25ead3698a1fe89d,mus\mp\_sets2018\set_06\mp6_potm_loop_v1_master.sl100.pc.snd
+4a24a6ae6f7c8270,fly\weapon\reload\crossbow\crossbow_mag_in_43.ln100.pc.snd
+726e7a774d6869e5,mus\mp\_sets2018\set_07\mp7_potm_loop_v1_master.sl100.pc.snd
