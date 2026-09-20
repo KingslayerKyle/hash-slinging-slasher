@@ -2593,6 +2593,25 @@ capped* ending list rather than the uncapped one, and it is cheap enough (hundre
 low billions of candidates) to run after every single batch of new confirms, on both games, without
 it ever being a real cost. Do this before reaching for anything more expensive.
 
+**And the full sweep against Black Ops 4 is where this really paid off.** The same 1,877,196-core,
+100,000-ending general plan that found 51 on Cold War, run unchanged against Black Ops 4 --
+187.7B candidates, same lists, only the wanted-id set differs -- returned **324 names**: 54 image,
+136 material, 2 sound_alias, 42 xanim, 90 xmodel. `derive_closure` afterward added **75 more** across
+three rounds (`family gap filling` alone contributing, plus the usual image/material derivations
+feeding off 136 fresh materials). Submitted as
+[#2138](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2138) -- 380 names sent, 19
+dropped as already claimed by somebody else's submission or open pull request in the few minutes
+between this run starting and `submit` sending, which on a repository this actively shared is the
+expected outcome rather than a problem.
+
+Black Ops 4 paying roughly 6x what Cold War did from the *identical* candidate list is worth
+sitting with. Both games share the same all-boundary core vocabulary (cores are pooled from
+confirmed names and published tables across both titles), so the difference is not what was
+offered -- it is that Black Ops 4's unnamed remainder was, at this exact moment, unusually
+reachable by this shape. That can flip; it does not mean Black Ops 4 is now the better game to
+point this at *in general*, only that it was on 2026-09-20. Re-measure rather than assume next
+time.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
