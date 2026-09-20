@@ -2670,10 +2670,15 @@ is unlikely to reopen anything without a much larger corpus.
 **Running total, four segment depths combined:** Cold War 137 + 3 = **140**. Black Ops 4
 768 + 15 = **783**.
 
-**Untried next: the same segment-depth sweep on the *sound* cores.** Only the default (2 segments)
-was tried for sound this session. Given the general side's depths 1/3/4 all paid something,
-the sound equivalents are worth the same four regenerations before assuming sound is done past
-its one measured depth.
+**Done immediately after, same session -- the sound side pays the same way.** `--sound-pass
+--segments 3` (default is 2): 100,000 endings x 2,527,503 cores, 252.75B candidates. **Cold War 10
+new** (1 image, 5 material, 4 sound_alias), **Black Ops 4 38 new** (6 image, 17 material, 9
+sound_alias, 2 xanim, 4 xmodel). `derive_closure` added 0 more on Cold War, 10 more on Black Ops
+4. Submitted as [#2148](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2148) (Cold
+War) and [#2147](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2147) (Black Ops 4).
+
+**Running total, general + sound, all segment depths tried so far:** Cold War 140 + 10 = **150**.
+Black Ops 4 783 + 48 = **831**.
 
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
