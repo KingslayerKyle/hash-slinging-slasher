@@ -2649,8 +2649,16 @@ a knee that exhausts after one pull. **Untried at this corpus size: `--segments 
 `--segments 4`.** Worth doing before assuming the ending-depth axis is spent; each costs one
 regeneration (under a minute) plus one ~190B-candidate pass per game.
 
-**Running total, both segment depths combined:** Cold War 79 + 44 = **123**. Black Ops 4
-590 + 114 = **704**.
+**`--segments 1` tried next, same session:** smaller ending vocabulary (181,488 uncarried at depth
+1 against 820,404 at depth 3), and the yield shrank with it -- **Cold War 13 new** (3 image, 7
+material, 3 sound_alias), **Black Ops 4 45 new** (4 image, 25 material, 3 sound_alias, 3 xanim, 10
+xmodel). `derive_closure` added 1 more on Cold War, 19 more on Black Ops 4. Submitted as
+[#2144](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2144) (Cold War) and
+[#2143](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2143) (Black Ops 4). Smaller
+than depths 2 and 3, but still real -- not yet the point where widening this axis stops paying.
+
+**Running total, three segment depths combined:** Cold War 123 + 14 = **137**. Black Ops 4
+704 + 64 = **768**.
 
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
