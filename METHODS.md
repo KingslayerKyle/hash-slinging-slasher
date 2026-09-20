@@ -2677,8 +2677,17 @@ sound_alias, 2 xanim, 4 xmodel). `derive_closure` added 0 more on Cold War, 10 m
 4. Submitted as [#2148](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2148) (Cold
 War) and [#2147](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2147) (Black Ops 4).
 
-**Running total, general + sound, all segment depths tried so far:** Cold War 140 + 10 = **150**.
-Black Ops 4 783 + 48 = **831**.
+**`--sound-pass --segments 1` next:** a much smaller uncarried-ending vocabulary at this depth
+(35,118, under the 100,000 cap, so every one of them is used rather than a top-N cut) --
+88.8B candidates. **Cold War 16 new** (3 image, 3 material, 6 sound_alias, **2 sound_asset**, 1
+xanim, 1 xmodel) -- the first `sound_asset` hit from any of this session's all-boundary runs.
+**Black Ops 4 68 new** (4 image, 32 material, 31 xmodel). `derive_closure` added 0 more on Cold
+War, 7 more on Black Ops 4. Submitted as
+[#2150](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2150) (Cold War) and
+[#2149](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2149) (Black Ops 4).
+
+**Running total, general + sound, all segment depths tried so far:** Cold War 150 + 16 = **166**.
+Black Ops 4 831 + 75 = **906**.
 
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
