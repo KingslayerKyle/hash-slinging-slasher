@@ -2686,8 +2686,22 @@ War, 7 more on Black Ops 4. Submitted as
 [#2150](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2150) (Cold War) and
 [#2149](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2149) (Black Ops 4).
 
-**Running total, general + sound, all segment depths tried so far:** Cold War 150 + 16 = **166**.
-Black Ops 4 831 + 75 = **906**.
+**`--sound-pass --segments 4` closes the sound side of the axis the same way depth 4 closed the
+general side:** Cold War **2 new** (material), Black Ops 4 **16 new** (5 image, 11 sound_alias)
+plus 7 more from closure. Submitted as
+[#2152](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2152) (Cold War) and
+[#2151](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2151) (Black Ops 4).
+
+**Segment-depth axis, both general and sound, now fully swept 1 through 4 on both games. Stop
+here** -- the shape is consistent everywhere it was checked (2 and 3 strong, 1 and 4 weaker), and
+widening further (5+) is very unlikely to pay without a substantially larger corpus than the one
+measured today.
+
+**Final running total for this session's method-25 work, general + sound, all four segment
+depths, both games:** Cold War **169**. Black Ops 4 **929**. Roughly 1,100 names total from one
+initial insight (the working core lists in `contrib/` were weeks stale) multiplied across four
+plan shapes (general/sound x full/confirmed-only) and four ending-segment depths, on top of the
+turn-taking this project already does between the two games.
 
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
