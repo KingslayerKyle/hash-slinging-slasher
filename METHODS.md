@@ -2612,6 +2612,26 @@ reachable by this shape. That can flip; it does not mean Black Ops 4 is now the 
 point this at *in general*, only that it was on 2026-09-20. Re-measure rather than assume next
 time.
 
+**The sound half of the same fresh-cores approach pays too, once run as the full sweep rather than
+just the ceiling-dropped-beginnings subset.** `stem: @borrowed/ab_sound_cores.txt` (the same
+2,526,795 fresh all-boundary sound cores from above), `end: @contrib/ab_sound_ends.txt` (the
+matching fresh 100,000-ending list, uncapped rather than the committed `data/sound.suffixes.txt`),
+`bare: yes`, no beginning -- 252.7B candidates. **Cold War: 23 new** (4 image, 8 material, 10
+sound_alias, 1 xmodel). Run unchanged against **Black Ops 4: 137 new** (14 image, 75 material, 17
+sound_alias, 9 xanim, 22 xmodel) -- sound_alias folds normally on both games (it is the SAB
+`sound_asset` paths specifically that need `--no-fold` on Black Ops 4, and this run used the
+default fold and still landed 17 real Black Ops 4 sound_alias names, so the fold/no-fold choice
+was not actually a live concern here). `derive_closure` added 0 more on Cold War and 11 more on
+Black Ops 4 (7 image siblings, 4 materials-from-images). Submitted as
+[#2140](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2140) (Cold War, 23) and
+[#2139](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2139) (Black Ops 4).
+
+**Running total for method 25's general and sound halves together, both games, this session:**
+Cold War 51 + 5 + 23 + 0 = **79**. Black Ops 4 35 + 8 + 324 + 75 + 137 + 11 = **590**. From one
+regenerated core list each, reused across four plan variants (general full, general
+confirmed-only, sound full, sound confirmed-only) and both games. Regenerating stale working data
+was the entire trigger for all of it.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
