@@ -2547,6 +2547,52 @@ folders with identical contents rather than deduplicating across concurrent proc
 `submit` then resolved. Not a bug, just a reason a run folder's own count and the true new-name
 count can diverge when two of this method's variants run at the same time.
 
+## Method 25 (all-boundary cores), the *general* half, is far from spent -- 2026-09-20
+
+The sound half above turned out closed once genuinely fresh cores were used. The general
+(non-sound) half was never actually re-checked at this corpus size, on the theory it would be
+similarly stale. It was not.
+
+Regenerated `ab_cores.txt`/`ab_ends.txt` the same way (`uncarried_endings_allboundary_20260829-172236.py`,
+no arguments changed): **1,877,196 all-boundary cores**, up an order of magnitude from whatever the
+stale Sep-4 copy held, crossed with the same top-100,000 uncarried endings the method has always
+used. Run as `stem: @borrowed/ab_cores.txt`, `end: @contrib/ab_ends.txt`, `bare: yes` -- no `begin:`
+line, since an all-boundary core is already a complete prefix from position 0 and adding
+`data/prefixes.txt` on top would triple-count it as a 700x-wider cross product for no reason (caught
+at `--size`: 131.5T candidates with a spurious `begin:` line, 187.7T without it -- ~700x apart,
+exactly the beginning-list size, confirming the mistake before it cost an hour).
+
+**Cold War: 187.7B candidates, 51 new names** -- 9 image, 14 material, **26 xanim**, 2 xmodel.
+`xanim` is normally the hardest pool here (least-named of the five, per every coverage snapshot in
+this file) and the biggest single share of this haul. `derive_closure` afterward added 5 more
+(1 image siblings, 1 materials-from-images, 3 image channels). Submitted as
+[#2137](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2137) (56 names total).
+
+**The same stem and ending lists, unchanged, against Black Ops 4** via `--game BLKOPS04` -- nothing
+about the lists is game-specific, only the wanted-id set checked against them -- and the
+**confirmed-only** cut of the same cores (`--confirmed-only`, cores that exist only in this
+project's own findings/submissions, 85,305 of them, crossed with the *committed* `data/suffixes.txt`
+rather than the uncapped list, 410M candidates) found **35 new Black Ops 4 names**: 9 image, 11
+material, 1 xanim, 14 xmodel. The confirmed-only sound cores crossed the same way against Black Ops
+4 (unfolded, per CLAUDE.md §6) added **8 more**: 1 image, 3 material, 2 xanim, 2 xmodel. Submitted
+together as [#2136](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2136).
+
+**The general lesson from both halves together:** this method's yield tracks the *size of the core
+list*, not the size of the ending list or how many times the method has been run before. A core
+list regenerated fresh from whatever the corpus holds *today* keeps paying every time the corpus
+has grown meaningfully since the list was last built -- which for a shared, actively-submitted
+project happens continuously. **Treat `ab_cores.txt`/`ab_sound_cores.txt` in `contrib/` as
+perishable working data with a shelf life measured in days, not as a settled input.** Regenerating
+them costs under a minute and should be the default before running any method that reads them,
+not an afterthought reached for only after a stale run comes back suspiciously empty.
+
+**The confirmed-only cut deserves its own line, separately from "regenerate the cores."** It is
+not a smaller, cheaper version of the full sweep -- it targets a *different* vocabulary
+(names this project alone has found, never in any published table) against the *committed,
+capped* ending list rather than the uncapped one, and it is cheap enough (hundreds of millions to
+low billions of candidates) to run after every single batch of new confirms, on both games, without
+it ever being a real cost. Do this before reaching for anything more expensive.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
