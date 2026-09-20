@@ -2728,6 +2728,25 @@ explains *why* it worked does not identify other cases that will. **Do not re-ru
 expecting another `mcdp/`** -- treat it as closed unless the corpus grows by an order of magnitude,
 not the ~2x it has grown since the ranking was last taken.
 
+## Widening `--top` beyond 100,000 endings still pays at this corpus size -- 2026-09-20
+
+`uncarried_endings_allboundary_20260829-172236.py`'s own docstring calls 100,000 "the measured
+sweet spot" from 2026-08-23 (20,000 gave 602, 100,000 gave 2,553, 300,000 gave 1,470, combined
+both games on a much smaller corpus). Worth re-checking after everything above, since the corpus
+driving the ending ranking has grown several times over since that sweet spot was measured.
+
+`--top 300000` (2 segments, general, otherwise identical to the depth-2 run earlier in this
+session): 1,877,309 cores x 300,000 endings, 563.2B candidates. **Cold War: 28 new** (5 image, 21
+material, 1 sound_alias, 1 xmodel) -- on top of the 51 the top-100,000 cut of the same corpus
+already found, so this is genuinely additional reach from the extra 200,000 endings, not a
+re-discovery. Black Ops 4 result pending at time of writing.
+
+The 2026-08-23 conclusion ("100,000 is the sweet spot, 300,000 is worse") was measured on a
+smaller, combined-both-games corpus and should not be treated as fixed -- like the segment-depth
+axis, the right cut of the endings list moves as the corpus that generates it grows. Re-check
+`--top` sizing the same way segment depth was re-checked here, rather than trusting a
+three-week-old sweet spot.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
