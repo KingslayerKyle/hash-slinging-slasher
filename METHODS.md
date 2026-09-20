@@ -2739,13 +2739,19 @@ driving the ending ranking has grown several times over since that sweet spot wa
 session): 1,877,309 cores x 300,000 endings, 563.2B candidates. **Cold War: 28 new** (5 image, 21
 material, 1 sound_alias, 1 xmodel) -- on top of the 51 the top-100,000 cut of the same corpus
 already found, so this is genuinely additional reach from the extra 200,000 endings, not a
-re-discovery. Black Ops 4 result pending at time of writing.
+re-discovery. Run against Black Ops 4 with the identical plan: **119 new** (8 image, 67 material,
+8 xanim, 36 xmodel). `derive_closure` afterward added 11 more on Cold War, 17 more on Black Ops 4
+(`final_byte` solved-backwards contributing 6 of those). Submitted as
+[#2155](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2155) (Cold War, 39) and
+[#2154](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2154) (Black Ops 4).
 
 The 2026-08-23 conclusion ("100,000 is the sweet spot, 300,000 is worse") was measured on a
 smaller, combined-both-games corpus and should not be treated as fixed -- like the segment-depth
 axis, the right cut of the endings list moves as the corpus that generates it grows. Re-check
 `--top` sizing the same way segment depth was re-checked here, rather than trusting a
-three-week-old sweet spot.
+three-week-old sweet spot. **Untried next: `--top 300000` at segment depth 3 (the other strong
+depth from the earlier sweep), and the sound side's own `--top` widening -- neither was tried
+this session.**
 
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
