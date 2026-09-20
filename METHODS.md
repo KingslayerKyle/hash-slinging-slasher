@@ -2657,8 +2657,23 @@ xmodel). `derive_closure` added 1 more on Cold War, 19 more on Black Ops 4. Subm
 [#2143](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2143) (Black Ops 4). Smaller
 than depths 2 and 3, but still real -- not yet the point where widening this axis stops paying.
 
-**Running total, three segment depths combined:** Cold War 123 + 14 = **137**. Black Ops 4
-704 + 64 = **768**.
+**`--segments 4` closes the axis, at least for now.** Cold War **3 new** (all material), Black Ops
+4 **13 new** (12 material, 1 sound_alias) plus 2 more from closure -- both a clear step down from
+depths 2 and 3, matching the shape of the original 2026-08-23 combined-both-games measurement
+(1 seg 316, 2 seg 2,553, 3 seg 1,523, 4 seg 381: 2 and 3 are the strongest, 1 and 4 fall off on
+both sides). Submitted as [#2146](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2146)
+(Cold War) and [#2145](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2145) (Black
+Ops 4). **Stop varying general segment depth here** -- depths 1 through 4 are now all freshly
+measured at this corpus size and the shape matches the original finding closely enough that 5+
+is unlikely to reopen anything without a much larger corpus.
+
+**Running total, four segment depths combined:** Cold War 137 + 3 = **140**. Black Ops 4
+768 + 15 = **783**.
+
+**Untried next: the same segment-depth sweep on the *sound* cores.** Only the default (2 segments)
+was tried for sound this session. Given the general side's depths 1/3/4 all paid something,
+the sound equivalents are worth the same four regenerations before assuming sound is done past
+its one measured depth.
 
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
