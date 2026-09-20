@@ -2516,6 +2516,37 @@ all-boundary core lists this run reused are missing cores the current, larger co
 `uncarried_endings_allboundary_20260823-134935.py` or its 2026-08-29 successor) before concluding
 this is dead** -- this run did not control for that variable and should not be read as closing it.
 
+**Done immediately after, same session.** Regenerated `ab_sound_cores.txt` fresh
+(`uncarried_endings_allboundary_20260829-172236.py --sound-pass`, no arguments changed): 2,526,795
+all-boundary sound cores against the current corpus, up from the ~182,000 the stale contrib/ copy
+held. Re-ran the ceiling-dropped-beginnings plan with this fresh stem list (376 beginnings x
+2,526,795 cores x 3,014 endings, 2.87T candidates): **0 matched, 0 new**, settling the open
+question above -- the stale core list was not what was holding this method back at this corpus
+size. Genuinely closed now, not just unmeasured.
+
+**The productive half turned out to be a different generator entirely.** While regenerating,
+`--sound-pass --confirmed-only` was also run: cores that exist *only* in this project's own
+findings and merged submissions, never in the published tables, crossed against the **committed**
+(capped) `data/sound.suffixes.txt` rather than the uncapped list -- a combination method 25's
+"confirmed-only" flag supports but nobody appears to have actually run at this corpus size (387,199
+cores, 1.17B candidates, seconds to finish). **6 new names** (3 image, 2 material, 1 xmodel) --
+landing outside the sound pools despite an all-*sound*-cores source, because a segment boundary cut
+from a sound path can equally be a valid image/material core; the search checks every wanted pool
+regardless of which vocabulary a candidate's pieces came from. `derive_closure` afterward reported
+`image siblings of confirmed materials +11`, run against a baseline (`confirmed_total()`, 466) that
+had already been overtaken by the plan runs above (472) by the time it started -- the exact
+shared-repo measurement artifact the 2026-09-14 session flagged for this same derivation. **Trust
+`submit`'s own ledger over either number**: it sent **11 names total** (8 image, 2 material, 1
+xmodel) as [#2135](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2135), which is the
+one count here actually re-verified against the tables and open pull requests at send time.
+
+Note for whoever re-runs this: the confirmed-only plan and the full-corpus plan above were run
+concurrently (the confirmed-only cores are a subset of the full set), and both independently
+converged on the same 6 real ids -- `confirm_plan` correctly wrote them to two separate run
+folders with identical contents rather than deduplicating across concurrent processes, which
+`submit` then resolved. Not a bug, just a reason a run folder's own count and the true new-name
+count can diverge when two of this method's variants run at the same time.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
