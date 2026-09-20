@@ -2484,6 +2484,38 @@ directly. **Nobody has pointed this probe, or `loader_strings`' live string-pool
 question specifically, historically, and never at Black Ops 4 until today. Loading Cold War the
 same way and re-running both scripts is the direct, concrete next step this result points at.
 
+## Method 31 (ceiling-dropped beginnings) re-measured, both games, 2026-09-20
+
+Re-ran `contrib/ceiling_dropped_begins.py --sound` (the `borrowed/ab_*_cores.txt` all-boundary
+stem lists it needs were missing from this clone -- `borrowed/` doesn't exist on disk here and
+never got committed, being gitignored working data; recreated from the same-shape lists already
+sitting in `contrib/ab_cores.txt`/`contrib/ab_sound_cores.txt` from early September, which are
+stale by roughly two weeks of corpus growth but still the same all-boundary shape method 25
+established). The measurement itself found real, fresh displaced vocabulary: **376 sound
+beginnings** past the 700 cap now (largest unlisted: deep `vox/scripted/...` and `amb/...`
+paths), up from the 153 recorded in 2026-08-29 -- the corpus has grown enough that more gets cut.
+
+Ran the resulting plan (376 beginnings x 182,295 all-boundary sound cores x 3,014 sound endings,
+207.2B candidates) against Cold War: **0 matched, 0 new.** The general-lists half was checked too
+but not run -- only 7 beginnings are currently past that cap (versus 700 carried), matching the
+original finding that the general half is the minor of the two, and 7 was not worth an hour of
+machine for a plan this small to write up.
+
+The same plan (same beginnings, same all-boundary sound cores, same sound endings -- nothing
+about it is game-specific except which unnamed-id set it is checked against) was then run with
+`--game BLKOPS04`: only 4.4B candidates there, since Black Ops 4's `sound_asset`/`sound_alias`
+pools have been cut down enormously by other contributors since this method was invented (70,878
+unnamed in 2026-08-29 down to roughly 14,586 now). **0 matched, 0 new** there too.
+
+So the method that returned 9 (then 18 more via closure) three weeks ago on a smaller corpus
+returns nothing on this one, on both games. Two readings, and no way to distinguish them from a
+single re-run: either the specific 153-then-376 beginnings the cap displaces are exhausted at this
+corpus size and a much larger displaced set is needed to reopen it, or the two-week-stale
+all-boundary core lists this run reused are missing cores the current, larger corpus would offer.
+**Re-run with freshly regenerated `ab_cores.txt`/`ab_sound_cores.txt` (method 25's own generator,
+`uncarried_endings_allboundary_20260823-134935.py` or its 2026-08-29 successor) before concluding
+this is dead** -- this run did not control for that variable and should not be read as closing it.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
