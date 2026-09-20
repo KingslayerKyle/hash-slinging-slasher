@@ -2703,6 +2703,31 @@ initial insight (the working core lists in `contrib/` were weeks stale) multipli
 plan shapes (general/sound x full/confirmed-only) and four ending-segment depths, on top of the
 turn-taking this project already does between the two games.
 
+## Redecoration re-ranked fresh: `mcdp/`'s trick does not generalise past it -- 2026-09-20
+
+Method 19's insight (`mcdp/` is a re-decoration of the general material vocabulary, not its own
+namespace -- 692 of 692 cores borrowed, 2,846 names) came with a diagnostic,
+`scripts/contributed/redecorations_20260823-023757.py`, that ranks every uncarried beginning by
+*borrowed vocabulary share* rather than by how many names it heads. It had never been re-run since
+2026-08-23, and the corpus has grown roughly 2x since. Re-ranked fresh: `launcher_`, `volume8_`,
+`volume9_`, `volume12_`, `volume17_`, `[korea15]fxt8_`, `[korea15]fxt9_` all score **100%
+borrowed**, and a further ~20 score 25-98%, none of them examined before now.
+
+Tested the top 60 (three batches of ~10-30 `begin:` lines each, one shared 954,662-core held-
+vocabulary stem list, `bare: yes`, a few million to ten million candidates per batch -- this shape
+is nearly free): **0 new on Cold War, across all three batches and all 60 beginnings.** Black Ops
+4: **1 new** (material), from batch 1, closure added 0 more. Submitted as
+[#2153](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2153).
+
+**A 100% borrowed-vocabulary share predicted nothing here, the same way high overlap has failed to
+predict yield everywhere else this file has tried it** (material↔image cores, BO3 SAB stems,
+newer-title cores -- see "Structural overlap has now failed to predict yield three times" above,
+now effectively a fourth and fifth instance). `mcdp/` was not a generalisable trick; it was a
+specific, large (second-biggest material directory in Cold War) exception, and the diagnostic that
+explains *why* it worked does not identify other cases that will. **Do not re-run this ranking
+expecting another `mcdp/`** -- treat it as closed unless the corpus grows by an order of magnitude,
+not the ~2x it has grown since the ranking was last taken.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
