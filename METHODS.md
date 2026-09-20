@@ -2632,6 +2632,26 @@ regenerated core list each, reused across four plan variants (general full, gene
 confirmed-only, sound full, sound confirmed-only) and both games. Regenerating stale working data
 was the entire trigger for all of it.
 
+**The ending list's segment depth is a fifth axis worth varying, not just a knob to set once.**
+`--segments` controls which trailing-N-underscore-segment shape counts as "an ending" when
+*measuring* the uncarried gap -- it does not touch the cores at all, so re-running it is cheap (one
+more `--segments N` invocation) and produces a genuinely different top-100,000 ending list each
+time. Tried `--segments 3` (the default is 2) fresh, same 1,877,005 general cores: **Cold War 41
+new** (5 image, 7 material, 2 sound_alias, **27 xanim**), **Black Ops 4 92 new** (5 image, 43
+material, 8 sound_alias, 12 xanim, 24 xmodel). `derive_closure` added 3 more on Cold War, 22 more
+on Black Ops 4 (5 image siblings, 13 final-byte, 3 tails, 1 family gap). Submitted as
+[#2142](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2142) (Cold War, 44) and
+[#2141](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2141) (Black Ops 4).
+
+Two segment depths, same core list, same order of magnitude of new names each time (41+3=44 and
+23 and 51+5=56 on Cold War; 92+22=114 and 324+75=399 and 137+11=148 on Black Ops 4) -- this is not
+a knee that exhausts after one pull. **Untried at this corpus size: `--segments 1` and
+`--segments 4`.** Worth doing before assuming the ending-depth axis is spent; each costs one
+regeneration (under a minute) plus one ~190B-candidate pass per game.
+
+**Running total, both segment depths combined:** Cold War 79 + 44 = **123**. Black Ops 4
+590 + 114 = **704**.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
