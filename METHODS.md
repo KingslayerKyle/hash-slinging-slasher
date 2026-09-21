@@ -2749,9 +2749,14 @@ The 2026-08-23 conclusion ("100,000 is the sweet spot, 300,000 is worse") was me
 smaller, combined-both-games corpus and should not be treated as fixed -- like the segment-depth
 axis, the right cut of the endings list moves as the corpus that generates it grows. Re-check
 `--top` sizing the same way segment depth was re-checked here, rather than trusting a
-three-week-old sweet spot. **Untried next: `--top 300000` at segment depth 3 (the other strong
-depth from the earlier sweep), and the sound side's own `--top` widening -- neither was tried
-this session.**
+three-week-old sweet spot. **`--top 300000` at segment depth 3, done next session:** 1,878,102 cores x 300,000 endings,
+563.4B candidates. **Cold War 8 new** (material), **Black Ops 4 18 new** (1 image, 11 material, 6
+xmodel), closure adding 0 and 2 respectively. Submitted as
+[#2157](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2157) (Cold War) and
+[#2156](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2156) (Black Ops 4). Smaller
+than depth 2's top-300k result (28/119) but still real -- the two strong depths do not scale
+identically when the ending cap is widened, and both are now worth diminishing but nonzero returns
+at 300k. **The sound side's own `--top` widening is still untried as of this entry.**
 
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
