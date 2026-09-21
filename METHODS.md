@@ -2772,6 +2772,12 @@ and 3; `--top` widening from 100k to the full/300k vocabulary added roughly half
 default found, not another multiple). The next step change here needs either real corpus growth
 from other contributors, or a genuinely different candidate-generation shape.
 
+**Quick re-check, `family_grid.py --top 61`, both games, 2026-09-21:** still fully spent (0 new,
+both games) despite the corpus having grown by roughly 1,300 confirmed names since the last check.
+Confirms the earlier finding was not a stale-corpus artifact -- the shared-tail grid restriction
+itself is exhausted at every threshold this generator's own knobs can reach; corpus growth alone
+does not reopen it. Do not re-check again without a new admission threshold or a much larger jump.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
