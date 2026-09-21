@@ -2785,7 +2785,15 @@ and this session's all-boundary work added roughly 900 Cold War names since the 
 18 material, 7 sound_alias, 6 image, 2 xanim, 1 xmodel. An order of magnitude more than the last
 check, off the same fixed 16,000-token knee: this method's yield tracks total corpus growth, not
 just growth in the specific pools it targets, and is worth re-running after *any* large batch of
-gains, not only ones in the same asset types. Black Ops 4 side pending at time of writing.
+gains, not only ones in the same asset types.
+
+Run against Black Ops 4 with the same knee: 495.7B variants, **120 new** (18 image, 70 material, 5
+sound_alias, 5 xanim, 22 xmodel) plus 5 more from closure. Submitted as
+[#2160](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2160) (Cold War) and
+[#2161](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2161) (Black Ops 4). Both
+games paid substantially more than their last check, confirming this is a method worth
+re-triggering after any large gain rather than one to leave at its last-measured knee
+indefinitely.
 
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
