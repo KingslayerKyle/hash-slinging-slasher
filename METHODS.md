@@ -2778,6 +2778,15 @@ Confirms the earlier finding was not a stale-corpus artifact -- the shared-tail 
 itself is exhausted at every threshold this generator's own knobs can reach; corpus growth alone
 does not reopen it. Do not re-check again without a new admission threshold or a much larger jump.
 
+**`confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked again
+2026-09-21.** Method 4's own note says to re-measure the knee after a large enough gain elsewhere,
+and this session's all-boundary work added roughly 900 Cold War names since the 2026-09-14 re-check
+(which found only 3 new off a much smaller gain). 502.3B variants in 6,512s, **34 new** this time --
+18 material, 7 sound_alias, 6 image, 2 xanim, 1 xmodel. An order of magnitude more than the last
+check, off the same fixed 16,000-token knee: this method's yield tracks total corpus growth, not
+just growth in the specific pools it targets, and is worth re-running after *any* large batch of
+gains, not only ones in the same asset types. Black Ops 4 side pending at time of writing.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
