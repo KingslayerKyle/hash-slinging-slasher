@@ -2756,7 +2756,21 @@ xmodel), closure adding 0 and 2 respectively. Submitted as
 [#2156](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2156) (Black Ops 4). Smaller
 than depth 2's top-300k result (28/119) but still real -- the two strong depths do not scale
 identically when the ending cap is widened, and both are now worth diminishing but nonzero returns
-at 300k. **The sound side's own `--top` widening is still untried as of this entry.**
+at 300k. **The sound side's own `--top` widening, done next session:** sound only has 187,100 uncarried
+endings total at this corpus size (all of it, not a top-N cut), against the 100,000-cap used
+throughout the earlier sound runs -- so this is the full sound ending vocabulary, not an arbitrary
+wider number. 2,527,789 cores x 187,100 endings, 472.9B candidates. **Cold War: 13 new** (1 image,
+6 material, 6 sound_alias), **Black Ops 4: 38 new** (8 image, 12 material, 2 sound_alias, 14
+xanim, 2 xmodel). Closure added 10 more on Cold War, 1 more on Black Ops 4. Submitted as
+[#2159](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2159) (Cold War) and
+[#2158](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2158) (Black Ops 4).
+
+**Both the segment-depth axis and the `--top` widening axis are now explored for general and
+sound, both games.** Further widening either axis without a substantially larger corpus is
+unlikely to pay based on the diminishing pattern already measured (depths 1 and 4 weaker than 2
+and 3; `--top` widening from 100k to the full/300k vocabulary added roughly half again what the
+default found, not another multiple). The next step change here needs either real corpus growth
+from other contributors, or a genuinely different candidate-generation shape.
 
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
