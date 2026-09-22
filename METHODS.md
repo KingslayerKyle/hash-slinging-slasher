@@ -2795,6 +2795,13 @@ games paid substantially more than their last check, confirming this is a method
 re-triggering after any large gain rather than one to leave at its last-measured knee
 indefinitely.
 
+**Plain (non-swap) `confirm_variants`, re-checked 2026-09-22.** Last checked 2026-09-14 at 0 new.
+10.7B variants, ~355s per game (free next to `swaps`). **Cold War: 4 new** (sound_alias). **Black
+Ops 4: 3 new** (image). Closure added 0 on both. Submitted as PR #2163 (Cold War) and #2162 (Black
+Ops 4). Small, but the point of re-running this one specifically is that it costs six minutes
+total for both games -- worth doing after every large batch regardless of how small the last
+result was, since the cost of checking is close to zero.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
