@@ -2856,8 +2856,17 @@ method's segment-depth axis is now closed the same way, at general depths 1-4 (s
 at 2 and 3, both strong; 1 and 4 untried for sound specifically and lower priority given the
 general pattern).
 
-**Running total for the confirmed-only-endings method, this session:** Cold War 3+34+5+12+1+0 =
-**55**. Black Ops 4 11+3+17+11+0+6 = **48**.
+**Sound depths 1 and 4, done to close the sound side out too:** depth 1 (11,623 endings, 29.4B
+candidates) gave **2 new on Cold War, 1 on Black Ops 4**; depth 4 (100,000-capped from 120,534,
+253.2B candidates) gave **3 new on Cold War, 11 on Black Ops 4**. Submitted as
+[#2171](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2171) (Cold War) and
+[#2170](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2170) (Black Ops 4). Sound
+depth 4 outperforming depth 1 here (11 vs 1 on Black Ops 4) breaks from the general-side pattern
+where 1 and 4 were both weak -- worth remembering that the two halves' segment-depth curves are
+not identical, so closing one does not tell you the other is closed too.
+
+**Running total for the confirmed-only-endings method, this session, all depths both halves:**
+Cold War 3+34+5+12+1+0+2+3 = **60**. Black Ops 4 11+3+17+11+0+6+1+11 = **60**.
 
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
