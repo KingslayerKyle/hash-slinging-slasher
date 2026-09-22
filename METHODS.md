@@ -2835,6 +2835,16 @@ method rather than a one-off script. **Worth re-running after any batch of new c
 the confirmed-only ending list grows with the corpus the same way the confirmed-only core list
 does.
 
+**Segment depth 3, done immediately after, same session:** the new script takes `--segments` the
+same way the all-boundary generator does. General: 31,472 confirmed-only endings x 1,879,251 cores,
+59.1B candidates -- **Cold War 5 new**, **Black Ops 4 17 new**. Sound: 104,782 confirmed-only sound
+endings (capped at the default 100,000) x 2,531,943 sound cores, 253.2B candidates -- **Cold War 12
+new**, **Black Ops 4 11 new**. Closure added 3 more on Cold War, 0 on Black Ops 4. Submitted as
+[#2167](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2167) (Cold War, 20) and
+[#2166](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2166) (Black Ops 4, 31). Same
+shape as the all-boundary segment-depth axis: depth 3 pays roughly as well as depth 2, worth the
+same 1-and-4 check before calling this axis closed.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
