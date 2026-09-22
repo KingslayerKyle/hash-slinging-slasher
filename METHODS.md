@@ -2845,6 +2845,20 @@ new**, **Black Ops 4 11 new**. Closure added 3 more on Cold War, 0 on Black Ops 
 shape as the all-boundary segment-depth axis: depth 3 pays roughly as well as depth 2, worth the
 same 1-and-4 check before calling this axis closed.
 
+**Depths 1 and 4, general only, closed the axis the same way as the all-boundary sweep did:**
+depth 1 (2,574 confirmed-only endings, 4.8B candidates) gave **1 new on Cold War, 0 on Black Ops
+4**; depth 4 (37,986 endings, 8.9B candidates) gave **0 on Cold War, 6 on Black Ops 4** (closure
+added 0 further on both). Submitted as
+[#2169](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2169) (Cold War) and
+[#2168](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2168) (Black Ops 4). Confirms
+the same 2-and-3-strong, 1-and-4-weak shape found on the all-boundary sweep proper -- this new
+method's segment-depth axis is now closed the same way, at general depths 1-4 (sound only checked
+at 2 and 3, both strong; 1 and 4 untried for sound specifically and lower priority given the
+general pattern).
+
+**Running total for the confirmed-only-endings method, this session:** Cold War 3+34+5+12+1+0 =
+**55**. Black Ops 4 11+3+17+11+0+6 = **48**.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
