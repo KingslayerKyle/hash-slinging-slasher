@@ -2802,6 +2802,39 @@ Ops 4). Small, but the point of re-running this one specifically is that it cost
 total for both games -- worth doing after every large batch regardless of how small the last
 result was, since the cost of checking is close to zero.
 
+## A new method: all-boundary cores crossed with endings this project alone discovered — 2026-09-22
+
+Every all-boundary run so far (`uncarried_endings_allboundary_20260829-172236.py`, this session's
+segment-depth and `--top`-widening sweeps) takes its ending vocabulary from the *union* of
+published and confirmed names, and `--confirmed-only` restricts the **core** side to names this
+project alone found. Nothing restricted the **ending** side the same way.
+
+`contrib/confirmed_only_endings.py` (new, written this session) does that mirror: it counts
+endings only on names in `findings/` and merged submissions, throws away any ending that also
+appears on a *published* name, and crosses the survivors against the full (published + confirmed)
+core list. The idea: an ending this project discovered but no published table has ever shown is
+evidence the corpus's own vocabulary never carried it -- so it is worth asking of every core, not
+just the handful it was first found on.
+
+**Cold War, general:** 19,504 endings appear only on this project's own confirmed names (heading
+68,297 of them -- a fifth of everything this machine has confirmed ends in something no published
+name does), crossed with 1,878,566 all-boundary cores, 36.6B candidates. **3 new** (sound_alias).
+**Cold War, sound:** 60,857 confirmed-only sound endings (heading 190,221 confirmed sound names)
+x 2,531,897 sound cores, 154B candidates. **34 new**, all material. Black Ops 4: general **11 new**
+(2 image, 5 material, 3 sound_alias, 1 xmodel), sound **3 new** (2 material, 1 xmodel). Closure
+added 0 on both games. Submitted as
+[#2165](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2165) (Cold War, 37) and
+[#2164](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2164) (Black Ops 4, 14).
+
+**The sound half paying 34 material names off a sound-vocabulary ending list is the interesting
+part**, and it repeats the pattern from the confirmed-only-cores work earlier this session: a
+candidate assembled from sound-shaped pieces is still checked against every wanted pool, and
+segment-cut fragments do not respect the sound/general boundary the way whole names do. `--script
+contrib/confirmed_only_endings.py` is carried into the pull request, so this is now a repeatable
+method rather than a one-off script. **Worth re-running after any batch of new confirms**, since
+the confirmed-only ending list grows with the corpus the same way the confirmed-only core list
+does.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
