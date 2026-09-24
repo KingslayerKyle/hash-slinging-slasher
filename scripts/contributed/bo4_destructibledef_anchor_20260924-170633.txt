@@ -1,0 +1,111 @@
+# destructibledef -> xmodel anchor: owner tokens (destructible/ddef/def dropped, t8/veh_t8_
+# variants normalised) re-templated as the target xmodel name, with a state word (dest/dead/dmg/...)
+# insertable at any position and up to 2 tokens droppable; where that alone didn't land, a two-word
+# gap fill via tmitm.exe on the owner-token prefix/suffix pairs. 1 new name out of 29 targets,
+# exact at 63 bits: veh_t8_civ_truck_mini_rug_truck_dest_wht_morocco. Control: reproduces 123-227
+# of the 222-227 known destructibledef->xmodel pairs depending on the pass, so the miss rate on the
+# 29 unnamed ones is real, not a broken generator.
+
+# ===== destr_pairs.py =====
+
+"""destructibledef -> xmodel pairs from the zone graph (pointers + by-value), with the
+destructibledef names from every source we have."""
+import collections, struct, subprocess, sys
+sys.argv = ["x"]
+src = open("graph_rules.py", encoding="utf-8").read()
+exec(src[:src.index("def main():")])
+names = load_names()
+for p in ("all_names/blkops04/destructibledef.txt",):
+    for line in show(p).decode("utf-8", "replace").splitlines():
+        k, _, v = line.partition(",")
+        try: names.setdefault(int(k, 16) & M60, v.strip())
+        except ValueError: pass
+for l in open(r"gpu\all_new.csv", encoding="utf-8"):
+    n = l.rstrip("\n").split(",", 2)[2].rsplit(",", 1)[0]; names[fnv(n)] = n
+for l in open("plain_hits.txt", encoding="utf-8"):
+    n = l.rstrip("\n").split(",", 2)[2]; names[fnv(n)] = n
+pairs = set()
+for ot, oh, tt, th in edges():
+    if ot == "destructibledef" and tt == "xmodel": pairs.add((oh, th))
+for line in open("byvalue.tsv"):
+    tp, tid, ot, oh, off, z = line.rstrip("\n").split("\t")
+    if ot == "destructibledef" and tp == "xmodel": pairs.add((int(oh, 16), int(tid, 16)))
+owners = {o for o, t in pairs}
+print("pairs", len(pairs), "owners", len(owners), "owners named", sum(o in names for o in owners))
+both = [(names[o], names[t]) for o, t in pairs if o in names and t in names]
+todo = [(names[o], t) for o, t in pairs if o in names and t not in names]
+print("both named", len(both), "| unnamed xmodel under named owner", len({t for _, t in todo}))
+for o, t in sorted(both)[:25]: print("  ", o, "->", t)
+
+# ===== destr_gen.py =====
+
+"""xmodel names from their destructibledef owner: veh_[t8_] + the owner's tokens (destructible/t8
+dropped), a state word inserted at any position, up to 2 tokens deleted, and the known pairs'
+extra words. Checked at 63 bits against every unnamed xmodel."""
+import itertools, struct, sys
+sys.argv = ["x"]
+exec(open("destr_pairs.py", encoding="utf-8").read().split("pairs = set()")[0])
+exec("pairs = set()" + open("destr_pairs.py", encoding="utf-8").read().split("pairs = set()")[1].split("owners =")[0])
+M63 = (1 << 63) - 1
+ids = show("snapshots/blkops04.ids"); T = set()
+for off in range(26, len(ids) - 9, 10):
+    i, p = struct.unpack_from("<QH", ids, off)
+    if p == 4 and (i & M60) not in names: T.add(i & M63)
+def h63(s):
+    h = 0xCBF29CE484222325
+    for c in s.encode(): h = ((h ^ c) * 0x100000001B3) & 0xFFFFFFFFFFFFFFFF
+    return h & M63
+STATE = ["dest", "dead", "destructible", "dmg", "damaged", "destroyed", "burnt", "burned", "wreck",
+         "wrecked", "dstr", "d", "broken", "husk", "only", "windows", "glass", "door", "hood", "trunk",
+         "tire", "wheel", "bumper", "panel", "fl", "fr", "bl", "br", "lod", "static", "base", "body"]
+owners = {names[o] for o, t in pairs if o in names}
+found = {}
+for on in owners:
+    tok = [t for t in on.split("_") if t not in ("destructible", "t8")]
+    bases = set()
+    for d in range(0, 3):
+        for drop in itertools.combinations(range(len(tok)), d):
+            bases.add(tuple(t for i, t in enumerate(tok) if i not in drop))
+    for b in bases:
+        for pre in ("veh_t8_", "veh_", "p8_", "veh_t8_civ_"):
+            for s in [None] + STATE:
+                for i in range(len(b) + 1) if s else [0]:
+                    parts = list(b[:i]) + ([s] if s else []) + list(b[i:])
+                    n = pre + "_".join(parts)
+                    x = h63(n)
+                    if x in T: found[x] = n
+print("unnamed xmodels", len(T), "owners", len(owners), "found", len(found))
+for n in sorted(found.values()): print("  ", n)
+open(r"gpu\found_destr.txt", "w", newline="\n").write("\n".join(sorted(found.values())) + "\n")
+
+# ===== destr_slot_jobs.py =====
+
+"""slot.cu jobs for the unnamed xmodels under a named destructibledef: owner tokens (destructible,
+ddef, def, t8 variants normalised), prefix = a head of them, suffix = a tail of them, the unknown
+word in between (insertion or replacement at any position), with and without a veh_t8_ lead."""
+import sys
+sys.argv = ["x"]
+exec(open("destr_pairs.py", encoding="utf-8").read().replace("for o, t in sorted(both)[:25]", "for o, t in []"))
+M63 = (1 << 63) - 1
+ids = show("snapshots/blkops04.ids"); full = {}
+for off in range(26, len(ids) - 9, 10):
+    i, p = struct.unpack_from("<QH", ids, off)
+    if p == 4: full[i & M60] = i & M63
+DROP = {"destructible", "ddef", "def"}
+jobs = set()
+for o, t in pairs:
+    if o not in names or t in names or t not in full: continue
+    tok = [x for x in names[o].split("_") if x not in DROP]
+    leads = {""}
+    if tok[:2] != ["veh", "t8"] and tok[0] != "p8": leads |= {"veh_t8_", "veh_"}
+    if tok[:1] == ["veh"]: leads.add("")
+    for lead in leads:
+        for i in range(0, len(tok) + 1):
+            for j in range(i, len(tok) + 1):
+                if j - i > 3: continue
+                pre = lead + "_".join(tok[:i]) + ("_" if i else "")
+                suf = ("_" + "_".join(tok[j:])) if j < len(tok) else ""
+                if not pre: continue
+                jobs.add((pre, suf, full[t]))
+print("targets", len({j[2] for j in jobs}), "jobs", len(jobs), "prefixes", len({j[0] for j in jobs}))
+open(r"gpu\slot_jobs_destr.txt", "w", encoding="utf-8", newline="\n").write("".join("%s\t%s\t%x\n" % j for j in sorted(jobs)))
