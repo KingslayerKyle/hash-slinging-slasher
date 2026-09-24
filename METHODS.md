@@ -2916,6 +2916,27 @@ this session, on both the original all-boundary method and its confirmed-only-en
 and the shape holds every time. Submitted as
 [#2184](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2184) (Black Ops 4, 7).
 
+## The third confirmed-only axis, beginnings, is dead — 2026-09-24
+
+Cores and endings each had a confirmed-only variant that paid; the natural third leg is
+beginnings. `contrib/confirmed_only_beginnings.py` (new) finds leading segments (the
+`uncarried.py`/`redecorations.py` convention) that appear only on names this project confirmed,
+never on any published name: **654 general beginnings** (>=3 names each, heading 95,039 confirmed
+names) and **820 sound beginnings** (heading 167,946 confirmed names) qualify -- large sets, on
+the same order as the confirmed-only endings lists that worked.
+
+Crossed against the held/all-boundary vocabulary (general: 955,217 stems, 625.7M candidates;
+sound: 2,527,789 stems, 2.1B candidates), both cheap: **0 matched, every combination, both
+general and sound, both games.**
+
+This closes the confirmed-only family at three for three tried, two live (cores, endings) and one
+dead (beginnings). It also extends the redecoration finding from earlier this session -- beginning
+vocabulary discovered by this project does not generalise across cores any better than beginning
+vocabulary discovered from the published tables did. **The asymmetry is now measured rather than
+assumed: whatever makes a core or an ending transferable across names does not hold for a
+beginning**, on either the published or the confirmed-only cut of it. Not worth trying a fourth
+beginning-shaped variant without a reason to expect this specific asymmetry to break.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
