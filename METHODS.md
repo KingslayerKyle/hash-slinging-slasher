@@ -2898,6 +2898,24 @@ a single asset's identity than a material or model core is. **Not worth pursuing
 dedicated method** -- the yield here is small enough that it is better understood as confirming
 where the boundary of "recombination is dead" sits than as a productive method in its own right.
 
+## Segment depth 5, fresh, both halves — the all-boundary axis's true floor — 2026-09-24
+
+`contrib/ab_sound_cores_seg5.txt`/`ab_sound_ends_seg5.txt` sat in `contrib/` since 2026-09-02,
+evidence depth 5 had been tried before (registry rows exist from 2026-09-01/09), but never
+re-checked with a refreshed corpus the way depths 1-4 were earlier this session. Regenerated
+fresh and ran both halves, both games: **general, 998,300 uncarried 5-segment endings (top
+100,000) x 1,880,519 cores, 188.1B candidates -- 0 on Cold War, 2 on Black Ops 4. Sound, 624,647
+endings (top 100,000) x 2,533,611 cores, 253.4B candidates -- 0 on Cold War, 5 on Black Ops 4.**
+Closure added 0 to either game.
+
+This is the clearest confirmation yet that the segment-depth curve genuinely peaks at 2-3 and
+decays past it rather than merely looking that way on a stale sample: even a fully fresh depth-5
+core and ending list, on the same corpus that made depths 2 and 3 pay 30-100+ names each, returns
+single digits. **The segment-depth axis is closed for real now** -- 1 through 5 measured fresh
+this session, on both the original all-boundary method and its confirmed-only-endings variant,
+and the shape holds every time. Submitted as
+[#2184](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2184) (Black Ops 4, 7).
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
