@@ -2945,6 +2945,15 @@ in the corpus are Cold War's), so `--no-fold` was mostly a no-op on them rather 
 of the backslash-preserving Black Ops 4 SAB convention -- worth remembering that this flag only
 matters when the *candidate itself* contains a backslash, not just because the target pool does.
 
+**Widening confirmed-only sound endings past the 100,000 cap at depth 4** (120,548 total, all of
+them this time): 305.4B candidates, **0 on Cold War, 1 on Black Ops 4** -- and even that 1 was
+independently found and claimed by another contributor in the minutes between the pass finishing
+and `submit` running, so the net send was 0. A clean, honest zero on a repository this actively
+shared, not a bug. **The confirmed-only-endings family, across every depth, every `--top` size,
+and now every cap-widening tried, is genuinely at its floor for this corpus size.** Stop widening
+this specific axis; the next reopening comes from real corpus growth, not from re-slicing the
+same vocabulary a different way.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
