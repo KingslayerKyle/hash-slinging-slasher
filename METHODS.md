@@ -2937,6 +2937,14 @@ assumed: whatever makes a core or an ending transferable across names does not h
 beginning**, on either the published or the confirmed-only cut of it. Not worth trying a fourth
 beginning-shaped variant without a reason to expect this specific asymmetry to break.
 
+**One more check while sound tooling was already at hand:** re-ran confirmed-only sound
+endings/cores against Black Ops 4 with `--no-fold`, on the theory that some confirmed-only sound
+fragments might carry literal backslashes reachable only unfolded. **0 new.** The candidates this
+generator builds are overwhelmingly folded-convention strings already (most confirmed sound names
+in the corpus are Cold War's), so `--no-fold` was mostly a no-op on them rather than a real test
+of the backslash-preserving Black Ops 4 SAB convention -- worth remembering that this flag only
+matters when the *candidate itself* contains a backslash, not just because the target pool does.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
