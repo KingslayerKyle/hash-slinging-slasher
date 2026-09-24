@@ -2868,6 +2868,14 @@ not identical, so closing one does not tell you the other is closed too.
 **Running total for the confirmed-only-endings method, this session, all depths both halves:**
 Cold War 3+34+5+12+1+0+2+3 = **60**. Black Ops 4 11+3+17+11+0+6+1+11 = **60**.
 
+**Routine refresh, 2026-09-24, after `cod-name-db` advanced two days (published names 2,247,023 ->
+2,252,063).** Regenerated the default-depth (2 segments, top 100,000) general all-boundary cores
+and re-ran the plain sweep: **5 new on Cold War, 4 on Black Ops 4**, closure adding 0 to either.
+Small, as expected from two days of upstream growth rather than a large local batch, but the
+pattern holds -- this stem list is worth regenerating and re-running on the cheap default
+configuration any time `start` reports the tables moved, not only after a big session of one's
+own.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
