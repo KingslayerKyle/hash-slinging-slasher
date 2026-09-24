@@ -2876,6 +2876,28 @@ pattern holds -- this stem list is worth regenerating and re-running on the chea
 configuration any time `start` reports the tables moved, not only after a big session of one's
 own.
 
+## Purely self-referential recombination: dead for general, weakly live for sound — 2026-09-24
+
+Added `--confirmed-only-cores` to `contrib/confirmed_only_endings.py`, so both the core *and*
+ending vocabulary can be restricted to names this project alone confirmed at once -- nothing
+published on either side. This tests the strongest form of the standing "recombining across names
+is dead" lesson: not just reusing pieces from different names, but reusing pieces from names
+*this project itself invented*, with no published material anywhere in the candidate.
+
+**General: 19,507 endings x 87,483 cores, 1.7B candidates -- 0 on both games.** Consistent with
+every other cross-type and cross-name recombination measured dead in this file.
+
+**Sound: 60,858 endings x 392,464 cores, 23.9B candidates -- 4 new on Cold War (1 image, 3
+material), 2 new on Black Ops 4 (2 xmodel).** Small, but not zero, and the only shape in this
+purely-self-referential family that returns anything. Submitted as
+[#2183](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2183). Consistent with the
+pattern already seen twice this session (confirmed-only-cores, confirmed-only-endings): sound
+vocabulary generalises slightly better across the general/sound wanted-pool boundary than general
+vocabulary does, likely because sound path segments are more numerous and more loosely coupled to
+a single asset's identity than a material or model core is. **Not worth pursuing further as a
+dedicated method** -- the yield here is small enough that it is better understood as confirming
+where the boundary of "recombination is dead" sits than as a productive method in its own right.
+
 ## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
