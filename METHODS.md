@@ -3021,6 +3021,16 @@ regenerating these lists after any large merge event pays about as well as it di
 this session discovered the lists were stale** -- this is now a routine to run after `start`
 reports a large jump in merged submissions, not a one-off insight.
 
+**The confirmed-only-endings variant paid the same way, and Black Ops 4's image pool had a real
+vein in it.** General: 31,248 confirmed-only endings x 1,889,792 cores, 59.1B candidates -- **12
+new on Cold War (11 material, 1 xmodel), 74 new on Black Ops 4 (73 image, 1 xmodel).** The 73-image
+figure landed almost entirely in the last slice of the run, consistent with one dense pocket of
+reachable names rather than a uniform spread. Sound: 73,352 confirmed-only sound endings x
+2,547,413 cores, 186.9B candidates -- 0 on Cold War, 3 on Black Ops 4. Closure added 4 more on
+Cold War, 0 on Black Ops 4. Submitted as
+[#2194](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2194) (Cold War, 16) and
+#2193 (Black Ops 4, 77).
+
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
 elsewhere is a cheap check") after the corpus grew from 245,673 to 295,855+ merged names via a
 rebase onto three days of upstream PRs. 487.3 billion candidates, 7,139s, **16 matched, 3 new**
