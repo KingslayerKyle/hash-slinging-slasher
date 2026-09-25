@@ -3101,6 +3101,58 @@ position-from-edge rather than the full masked sequence — to have any chance; 
 larger rewrite and not attempted here since the per-type original is already registered and the
 loosening could just as easily explode false-positive rule pairs as find real ones.
 
+## A new method: substitution rules applied to fragments, not whole names — 2026-09-25
+
+Built after the cross-type pooling test above closed clean: `coordinated_identifiers.py` learns a
+substitution rule (e.g. a faction code or camo colour interchangeable with another) from two whole
+names sharing an identical masked template, then only ever applies the rule back onto other WHOLE
+names that already contain the token repeated. That is a narrow use of a fact that is not itself
+narrow — token A and token B being the same *kind* of thing in this game's naming does not depend
+on the particular name it was witnessed in.
+
+`contrib/rule_substituted_cores.py` applies each learned rule to every **all-boundary core**
+(method 25: a known name cut at every segment boundary) that carries the token anywhere, repeated
+or not, and keeps only the substituted cores that are **not already in today's base all-boundary
+core list** — the base list against these same endings is stale ground this session already
+measured today, so only the incremental new fragments are worth spending candidates on. Rules are
+still learned **per type** (a fresh test the same day found cross-type template pooling supports
+zero rules — see above) but applied to the **pooled** core list, since a core is already
+type-agnostic in every other all-boundary run here.
+
+Crossed the new fragments only against the standing wide ending lists with the plan engine:
+
+| pass | new cores | endings | candidates | Cold War | Black Ops 4 |
+|---|---|---|---|---|---|
+| visual (xmodel/material/image/xanim) | 150,356 (from 7 rule pairs, mostly image/material) | `ab_ends.txt`, 300,000 | 45.1B | **4** (3 image, 1 material) | 0 |
+| sound (sound_asset/sound_alias) | 28,931,455 (from 3,618 rule pairs, almost all `sound_asset`) | `ab_sound_ends.txt`, 100,000, folded | 2.89T across 8 slices | **26** (6 image, 12 material, 8 sound_alias) | not yet run |
+
+`derive_closure` afterward added 3 more Cold War names off the visual seeds (image siblings) and
+13 more off the sound seeds (7 image siblings, 2 materials from image cores, 2 image channels, 2
+final-byte solves) -- 16 free names on top of 30 direct ones, close to the 1.5x this file's
+closure multiplier usually runs. Submitted as
+[#2197](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2197) (visual, 4),
+[#2198](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2198) (visual closure, 3),
+[#2199](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2199) (sound, 26), and
+[#2200](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2200) (sound closure, 13).
+
+**Why the sound half paid so much more than the visual half.** `coordinated_identifiers` itself
+found this earlier the same day -- `sound_asset` alone offered 7,234 supported rules against a
+handful each for material and image -- so a much richer rule vocabulary was always going to turn
+into a much richer substituted-core list once applied to the pooled all-boundary cores (28.9M new
+sound cores against 150K new visual ones, roughly 200x). The sound pass needed 8 engine-managed
+slices (~27 minutes each, ~3.5 hours total) purely because of that size, not because of anything
+unusual in the search itself.
+
+**Spent by:** the same axis that limits `coordinated_identifiers` itself -- the number of
+repeated-token sibling frames available to learn a rule from in the first place. Re-run whenever
+the corpus grows enough to teach the base method new rules; a stale rule set applied to a fresh
+core list is still bounded by what the rules know, not by what the cores offer.
+
+**Not yet run:** Black Ops 4, either sound fold. The visual half returned 0 on Black Ops 4, which
+is consistent with the visual rule set being thin (7 pairs) rather than the method failing there --
+worth trying the sound half before writing Black Ops 4 off, since that is where almost all the
+rule vocabulary and almost all of today's yield sat on Cold War.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
