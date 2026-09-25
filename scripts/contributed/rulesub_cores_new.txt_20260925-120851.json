@@ -1,0 +1,24 @@
+{
+  "base_cores": 1889847,
+  "rule_tokens": 13,
+  "supported_pairs": 7,
+  "per_type": {
+    "xmodel": {
+      "seeds": 174762,
+      "rule_pairs": 0
+    },
+    "material": {
+      "seeds": 366913,
+      "rule_pairs": 2
+    },
+    "image": {
+      "seeds": 361371,
+      "rule_pairs": 3
+    },
+    "xanim": {
+      "seeds": 39380,
+      "rule_pairs": 3
+    }
+  },
+  "new_cores": 150356
+}
