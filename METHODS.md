@@ -2954,7 +2954,62 @@ and now every cap-widening tried, is genuinely at its floor for this corpus size
 this specific axis; the next reopening comes from real corpus growth, not from re-slicing the
 same vocabulary a different way.
 
-## `confirm_variants swaps` at its established Cold War knee (16,000 tokens), re-checked 2026-09-14
+## Checking out other contributors' methods, and a real find in one — 2026-09-25
+
+Rebasing onto three days of upstream merges (301,776 -> 320,090 names, a jump of over 18,000)
+pulled in several new generators from other contributors, registered in the raw efficiency table
+but never written up here narratively: `coordinated_identifiers.py`, `coordinated_sound_phrases.py`,
+`single_to_coordinated_sound.py`, `sound_seed_siblings.py`, four `paired_animation_rules.py`
+variants, `image_delta_derivations.py`, `material_delta_plan.py`, `model_counterpart_offsets.py`,
+`attachment_triplet_plan.py`, and two `bo4_reflection_probes.py` variants. Ran the general-shaped
+ones fresh against the current corpus rather than assuming their registry "spent"/"untried" tags
+still held.
+
+**`coordinated_identifiers.py` -- the real find.** Finds tokens that repeat *within the same name*
+(e.g. two occurrences of a word), builds a template with every occurrence of that token masked,
+and looks for other names sharing that exact template shape with a *different* repeated token
+filling it. Two such sibling fills, seen twice, become a substitution rule -- and unlike ordinary
+slot substitution, applying the rule changes **every** occurrence of the token in a name at once,
+not just one. Run fresh: sound_asset alone offered 7,234 supported rules from 86,420 sibling
+controls and reconstructed 1,552,246 already-known names as a positive control (out of 696,655
+sound candidates); material and image each supported a handful of rules too. **6 new Cold War
+`sound_asset` names** -- the hardest pool in either game to reach, per every dead-end this file
+already records against it. 0 on Black Ops 4 either fold direction, and 0 on the visual (image/
+material/xanim/xmodel) candidates on both games. `derive_closure` afterward added 19 more on Cold
+War and 81 more on Black Ops 4 -- almost all of that second number is the corpus jump reopening
+derivations that had gone stale, not this method directly, but running it was what triggered
+checking. Submitted as [#2190](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2190)
+(Cold War, 25) and #2189 (Black Ops 4, 81).
+
+**`model_counterpart_offsets.py` -- clever, and already spent.** Learns pairs of (label token,
+paired numeric offset) that change together at a fixed relative distance in xmodel names -- e.g. a
+component name change that always comes with the same +N shift in a nearby number -- requiring
+three independent sibling frames and three distinct source values before trusting a rule. Fresh
+run: 2,194 total rules across the sixteen measured offsets (-8 to +8), tens of thousands of control
+hits confirming the rules reconstruct real names, 1,892,715 final candidates. **0 new on either
+game.** The generator's own controls prove the relation is real; the corpus this project already
+holds has already had every reachable instance of it extracted (consistent with this being
+registered "spent" in the table already).
+
+**`attachment_triplet_plan.py` -- correct shape, no headroom left.** The `i_attach_` image family
+specifically: learns *triplets* of fields that change together across independently-witnessed
+texture cores (2+ frames required), then crosses the recombined cores with the 8 measured channel
+suffixes. 664 rules, 1,638 controls, 3,498 new cores x 8 channels = 31,482 candidates. **0 on
+either game.** Same story as the offsets method -- well-designed, well-controlled, and this
+specific attachment-texture corner of the image family has nothing left in it right now.
+
+**Not re-run: the four `paired_animation_rules.py` variants, `image_delta_derivations.py`,
+`material_delta_plan.py`, `coordinated_sound_phrases.py`, `single_to_coordinated_sound.py`,
+`sound_seed_siblings.py`, and both `bo4_reflection_probes.py` variants.** The delta-shaped ones
+(`image_delta_derivations`, `material_delta_plan`) take an explicit list of *newly confirmed*
+names as their argument rather than reading the whole corpus -- they are a human's hand-tool for
+following up one specific discovery batch immediately, not a fresh search in their own right, and
+`derive_closure.py`'s `image_channels`/`materials_from_images`/`image_siblings` derivations already
+re-run the same relations over the *entire* corpus every round, which is a superset of what a delta
+tool targeted at one batch could reach. Worth reading before reinventing the same idea, not worth
+running separately when the closure already covers the ground. The sound- and animation-specific
+ones were not read closely enough this session to judge; flagging them here so the next session
+does not have to re-discover that they exist.
 
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
 elsewhere is a cheap check") after the corpus grew from 245,673 to 295,855+ merged names via a
