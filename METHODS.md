@@ -3031,6 +3031,15 @@ Cold War, 0 on Black Ops 4. Submitted as
 [#2194](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2194) (Cold War, 16) and
 #2193 (Black Ops 4, 77).
 
+**Widened to `--top 300000` to chase the dense Black Ops 4 image vein** (566.9B candidates, same
+1,889,847 cores): the vein did not repeat -- **12 new on Black Ops 4** this time (4 material, 1
+xanim, 7 xmodel, no additional image), **2 new on Cold War** (material, sound_alias). Closure
+added 0 on Cold War, 2 on Black Ops 4. Submitted as
+[#2196](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2196) (Cold War) and #2195
+(Black Ops 4). Consistent with the standing lesson that a rich pocket found at one ending-cap size
+does not mean widening further finds more of the *same* pocket -- it finds whatever else is
+reachable at the new size, which can be a different pool entirely.
+
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
 elsewhere is a cheap check") after the corpus grew from 245,673 to 295,855+ merged names via a
 rebase onto three days of upstream PRs. 487.3 billion candidates, 7,139s, **16 matched, 3 new**
