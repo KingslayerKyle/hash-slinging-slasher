@@ -3062,6 +3062,45 @@ tracks specific run folders rather than a raw total) is the trustworthy number h
 zero. Worth fixing in `derive_closure.py` — diff the actual run folder's contents, not a global
 total — on a repository this actively shared.
 
+## A new idea from reading `coordinated_identifiers.py`: pool the evidence across asset types — dead, cleanly — 2026-09-25
+
+`coordinated_identifiers.py` (previous section) learns its substitution rules once per asset type,
+with each type's names as a closed world: a rule like `usa<->rus` can only be *supported* by two
+xmodel siblings sharing a template, never by an xmodel sibling and a material sibling together,
+even though the token itself is game vocabulary (operator codes, faction names, camo colours,
+weapon variants) with no reason to respect the type boundary. Wrote
+`contrib/coordinated_identifiers_crosstype.py` to test the obvious fix: pool every type's known
+names (xmodel, material, image, xanim, sound_asset, sound_alias) into one flat evidence set before
+looking for repeated-token templates, learn rules from whichever frames support them regardless of
+type, then apply the rules back across every type's names.
+
+Caught one thing before running it: the first draft computed a "how many rules pooled across
+types" diagnostic with a second nested pass back over every row for every supported pair, which
+does not belong in a script touching low millions of rows. Restructured so `groups` maps
+`template -> {token: set(kinds it wore)}` and the cross-kind check falls out of the one existing
+pass over `groups.items()` instead.
+
+Run against the corpus: 1,173,159 known names pooled, 320,048 repeated-token rows, 7,246 supported
+rules, 926,631 candidates (rebuilding 1,557,954 already-known names as a positive control — a
+healthy ratio, same shape as the per-type original). But **`cross_kind_supported_pairs: 0`** —
+of every supported rule, not one drew its two required sibling observations from more than one
+asset kind. Confirmed against the game anyway, all four configurations (Cold War visual, Cold War
+sound, Black Ops 4 visual, Black Ops 4 sound both folds): **0 new names in every case** — the
+candidate files were classified back down into the same per-type rows as the original method's own
+run and added nothing beyond what it already found.
+
+**The hypothesis was clean and the falsification is just as clean.** Template shape here is the
+*entire* token sequence around the masked position, not just the token itself — and each asset
+type's naming convention is specific enough (segment count, which fields sit next to which, which
+separators appear) that a material name and an xmodel name essentially never produce the identical
+template even when they share the exact vocabulary word. Pooling the evidence sets costs nothing to
+try and answers a real question (does this project's naming convention share structure across
+types, at the template-shape granularity `coordinated_identifiers` uses) with a firm no. A future
+attempt at cross-type transfer would need a looser template — matching on token identity and
+position-from-edge rather than the full masked sequence — to have any chance; that is a different,
+larger rewrite and not attempted here since the per-type original is already registered and the
+loosening could just as easily explode false-positive rule pairs as find real ones.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
@@ -3963,6 +4002,7 @@ Do not spend a night rediscovering these. Each cost real time.
 
 | Tried | Outcome |
 |---|---|
+| Pooling `coordinated_identifiers.py`'s evidence across asset types instead of per-type, 2026-09-25 | `contrib/coordinated_identifiers_crosstype.py`. Hypothesis: a substitution rule like `usa<->rus` is game vocabulary, not naming-convention vocabulary, so it should be learnable from sibling evidence in *any* asset type, not just the type it is applied to. Pooled all six types' names into one evidence set: 7,246 supported rules, 926,631 candidates, but **`cross_kind_supported_pairs: 0`** — no rule's two required sibling frames ever came from different kinds, because the per-type naming convention makes the full masked-template shape (not just the token) type-specific. Confirmed anyway, all four game/fold configurations: **0 new everywhere.** The per-type original already covers this ground; pooling only adds candidates the per-type run already tried under a different fingerprint. |
 | `sab_plan.py`, the full directory x basename x tail product (not sampled), Black Ops 4, 2026-09-04 | Method 20's generator (`sabpaths`) capped itself at 36.4M candidates to finish as a pipe and returned 5 names. This asks the *same vocabulary, same convention* completely, as a plan the engine runs instead of a piped generator: 13,315 directories x 93,743 basenames x 150 tails, **188.5B candidates, 0 matched.** Extends the existing extensive `sound_asset` dead-end record (numbered takes, directory x basename recombination, all-boundary cores x uncarried endings, cross-title respelling -- all recorded dead above) with the one shape none of them tried: the full product at once, unsampled. Consistent with the standing conclusion that this pool's unnamed 70,697 are not built from pieces the named ~8,600 are built from, under any recombination shape measured so far. |
 | `cross_era.py` with widened `--heads`/`--tails` caps (5,000/20,000, up from the 1,200/6,000 defaults), Black Ops 4, 2026-09-03 | The `--top`-cap lesson above paid off huge for the ending sweep (621 names), so the same fix was tried on `cross_era.py`'s own rank caps -- same shape of parameter, same corpus that had grown 5x since the defaults were last measured. 120T candidates over 8 slices; **5 of 8 slices run (62%), 0 matched in every one.** Not a full run -- `confirm_plan` has no slice-resume flag, so finishing the last 3 would mean redoing the first 5 from scratch, which was not worth it once 5 straight zeros were in. Unlike the ending-sweep cap, widening this one did not reopen anything: the newer titles' vocabulary, respelled with our own decorations, still does not land on Black Ops 4's specific unnamed ids at this corpus size. Consistent with the standing "engines renamed rather than inherited" conclusion. Worth a full 8-slice run if the corpus grows substantially again, but do not expect the same shape of win twice from the same trick. |
 |---|---|
