@@ -3011,6 +3011,16 @@ running separately when the closure already covers the ground. The sound- and an
 ones were not read closely enough this session to judge; flagging them here so the next session
 does not have to re-discover that they exist.
 
+**Following that, the all-boundary methods invented earlier this session were re-run against the
+same +18,000-name jump.** General: fresh cores (1,889,746) x top-100,000 endings -- **10 new on
+Cold War, 25 on Black Ops 4.** Sound: fresh cores (2,547,327) x top-100,000 sound endings -- **10
+new on Cold War (including 2 sound_alias), 16 on Black Ops 4.** Closure added 6 more on Cold War,
+11 more on Black Ops 4. Submitted as [#2192](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2192)
+(Cold War, 26) and #2191 (Black Ops 4, 52). **Confirms directly, on the same corpus jump, that
+regenerating these lists after any large merge event pays about as well as it did the first time
+this session discovered the lists were stale** -- this is now a routine to run after `start`
+reports a large jump in merged submissions, not a one-off insight.
+
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
 elsewhere is a cheap check") after the corpus grew from 245,673 to 295,855+ merged names via a
 rebase onto three days of upstream PRs. 487.3 billion candidates, 7,139s, **16 matched, 3 new**
