@@ -3127,13 +3127,37 @@ Crossed the new fragments only against the standing wide ending lists with the p
 | sound (sound_asset/sound_alias) | 28,931,455 (from 3,618 rule pairs, almost all `sound_asset`) | `ab_sound_ends.txt`, 100,000, folded | 2.89T across 8 slices | **26** (6 image, 12 material, 8 sound_alias) | not yet run |
 
 `derive_closure` afterward added 3 more Cold War names off the visual seeds (image siblings) and
-13 more off the sound seeds (7 image siblings, 2 materials from image cores, 2 image channels, 2
-final-byte solves) -- 16 free names on top of 30 direct ones, close to the 1.5x this file's
-closure multiplier usually runs. Submitted as
+reported 13 more off the sound seeds (7 image siblings, 2 materials from image cores, 2 image
+channels, 2 final-byte solves) -- but only **10** of those 13 actually landed in the pull request.
+This is the same measurement artifact this file already recorded on 2026-08-22: `derive_closure`
+reports its yield as a raw confirmed-count delta, and `submit`'s ledger (which tracks the actual
+run folder) is the trustworthy number on a repository this actively shared -- three of the
+"closure" names had evidently already been claimed by another contributor's merge in the seconds
+between the two counts. Recording the true number rather than the closure's self-report. 30 direct
+names plus 13 closure-*reported* (10 closure-*landed*) is still a strong multiplier for free.
+Submitted as
 [#2197](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2197) (visual, 4),
 [#2198](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2198) (visual closure, 3),
 [#2199](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2199) (sound, 26), and
-[#2200](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2200) (sound closure, 13).
+[#2200](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2200) (sound closure, 10).
+
+**The ending-side mirror, `contrib/rule_substituted_endings.py`, 2026-09-26.** The core-side pass
+above only ever offers a substituted CORE against the standing endings; a rule-eligible token can
+just as easily sit in the ending half of a name, which the core-side pass cannot reach no matter
+how it is run. Mirrors the same logic onto `ab_ends.txt` / `ab_sound_ends.txt` instead, keeping
+only the endings not already in the standing lists, and crosses them against the *standing*
+(unchanged) core lists -- the untested quarter of the 2x2 (new cores x new endings remains
+untested and is not expected to pay much given how sparse the visual rule set is).
+
+| pass | new endings | cores | candidates | Cold War | Black Ops 4 |
+|---|---|---|---|---|---|
+| visual | 4,137 | `ab_cores.txt`, 1,889,847 | 7.8B | **2** (material) | **2** (material) |
+| sound | 186,500 | `ab_sound_cores.txt`, 2,547,327 | 475.2B | pending | pending |
+
+Submitted as [#2202](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2202) (Cold War
+visual-endings, 2) and [#2201](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2201)
+(Black Ops 4 visual-endings, 2). The sound-ending pass is queued behind the still-running Black
+Ops 4 sound core-side pass.
 
 **Why the sound half paid so much more than the visual half.** `coordinated_identifiers` itself
 found this earlier the same day -- `sound_asset` alone offered 7,234 supported rules against a
@@ -3148,10 +3172,12 @@ repeated-token sibling frames available to learn a rule from in the first place.
 the corpus grows enough to teach the base method new rules; a stale rule set applied to a fresh
 core list is still bounded by what the rules know, not by what the cores offer.
 
-**Not yet run:** Black Ops 4, either sound fold. The visual half returned 0 on Black Ops 4, which
-is consistent with the visual rule set being thin (7 pairs) rather than the method failing there --
-worth trying the sound half before writing Black Ops 4 off, since that is where almost all the
-rule vocabulary and almost all of today's yield sat on Cold War.
+**Still running / not yet run, as of 2026-09-26:** the Black Ops 4 sound core-side pass (both
+folds) launched and is chewing through its own 8 slices; the sound-ending pass (both games, both
+folds) is queued behind it. Worth finishing before writing Black Ops 4 off on this method -- the
+core-side visual pass returned 0 there, but the ending-side visual pass (above) found 2, so "0 on
+Black Ops 4" was a property of that one pass rather than of the game, and almost all of the rule
+vocabulary and yield sits on the sound side regardless of game.
 
 ## Candidates worth building, with the measurement that decides each
 
