@@ -3179,6 +3179,52 @@ core-side visual pass returned 0 there, but the ending-side visual pass (above) 
 Black Ops 4" was a property of that one pass rather than of the game, and almost all of the rule
 vocabulary and yield sits on the sound side regardless of game.
 
+## A second fragment-generalisation: slotswap's context vocabulary applied to cores — 2026-09-26
+
+Method 10 (`slotswap.py` / sibling token substitution) measures, for every token slot in every
+known name, what the corpus has seen filling a slot with the same left/right neighbours -- then
+only ever substitutes inside WHOLE known names, the same restriction `rule_substituted_cores.py`
+found and removed for `coordinated_identifiers.py` the day before. `contrib/slotswap_cores.py`
+applies the identical fix here: measure slotswap's own alphabet unchanged, then walk every
+all-boundary core and substitute at every INTERIOR slot (every token except the one sitting at the
+core's own cut boundary, which the ending half of the cross product already varies), keep only
+cores not already in the base all-boundary list, and cross the new fragments against the standing
+wide ending lists.
+
+Slotswap's context vocabulary turned out to be far richer than `coordinated_identifiers`' repeated-
+token rules (111,143 slot contexts against 7 rule pairs for visual), so this reaches much further:
+**35.0M new visual cores** and **30.2M new sound cores**, against 150K and 28.9M respectively from
+the first fragment method. Crossed against the same standing wide ending lists (`ab_ends.txt`
+300,000 / `ab_sound_ends.txt` 100,000): 10.5T visual candidates, 3.0T sound candidates -- run
+against Cold War only so far, in engine-managed 8-slice batches, competing for CPU against the
+Black Ops 4 sound-core rulesub pass and each other, which slowed every pass's own throughput
+without losing any work (three-way scheduling fairness, not corruption or restart -- confirmed by
+watching stem counts only ever increase within a slice).
+
+**Partial results, as of this pause (both passes still running, several slices left):**
+
+| pass | new cores | slices done | found so far |
+|---|---|---|---|
+| visual, Cold War | 35,015,108 (from 111,143 slot contexts) | 2 of 8 | 25 (slice 1), slice 2 in progress |
+| sound, Cold War | 30,237,084 (same alphabet) | 4 of 8 | 21 + 2 + 2 = 25 across slices 1/3/4, slice 2 clean |
+
+Submitted incrementally as each slice checkpoints (never wait for the whole run — a checkpoint is
+already safe): visual slice 1 in
+[#2206](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2206) (7 landed of 25 found --
+the rest were claimed by other contributors during an unusually long `submit` queue delay under
+three-way CPU contention, which is the system working as designed, not a bug); sound slices in
+[#2204](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2204) (21),
+[#2207](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2207) (2). Still to run when
+resumed: the remaining slices of both Cold War passes, then both Black Ops 4 folds of each, then
+`derive_closure`, then a final tally to replace this partial entry.
+
+**A submit-latency lesson worth keeping.** Running three CPU-saturating searches at once is fine
+for the searches themselves (fair scheduling, no corruption), but it starves anything else on the
+box -- `submit.exe` took over 40 minutes with zero output on one occasion here, confirmed alive
+throughout by process inspection rather than log output. Nothing was wrong; it was just waiting for
+a CPU timeslice the searches were not giving up. Worth knowing before assuming a silent submit has
+hung.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
