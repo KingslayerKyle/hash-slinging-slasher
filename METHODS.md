@@ -3124,7 +3124,7 @@ Crossed the new fragments only against the standing wide ending lists with the p
 | pass | new cores | endings | candidates | Cold War | Black Ops 4 |
 |---|---|---|---|---|---|
 | visual (xmodel/material/image/xanim) | 150,356 (from 7 rule pairs, mostly image/material) | `ab_ends.txt`, 300,000 | 45.1B | **4** (3 image, 1 material) | 0 |
-| sound (sound_asset/sound_alias) | 28,931,455 (from 3,618 rule pairs, almost all `sound_asset`) | `ab_sound_ends.txt`, 100,000, folded | 2.89T across 8 slices | **26** (6 image, 12 material, 8 sound_alias) | not yet run |
+| sound (sound_asset/sound_alias) | 28,931,455 (from 3,618 rule pairs, almost all `sound_asset`) | `ab_sound_ends.txt`, 100,000, folded | 2.89T across 8 slices | **26** (6 image, 12 material, 8 sound_alias) | **10** (7 material, 2 xmodel, 1 sound_alias) -- finished 2026-09-27, 221m8s solo, no contention |
 
 `derive_closure` afterward added 3 more Cold War names off the visual seeds (image siblings) and
 reported 13 more off the sound seeds (7 image siblings, 2 materials from image cores, 2 image
@@ -3152,12 +3152,16 @@ untested and is not expected to pay much given how sparse the visual rule set is
 | pass | new endings | cores | candidates | Cold War | Black Ops 4 |
 |---|---|---|---|---|---|
 | visual | 4,137 | `ab_cores.txt`, 1,889,847 | 7.8B | **2** (material) | **2** (material) |
-| sound | 186,500 | `ab_sound_cores.txt`, 2,547,327 | 475.2B | pending | pending |
+| sound | 186,500 | `ab_sound_cores.txt`, 2,547,327 | 475.2B | **exhausted without running** | **10** (3 image, 3 material, 2 xanim, 2 xmodel) |
 
 Submitted as [#2202](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2202) (Cold War
 visual-endings, 2) and [#2201](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2201)
-(Black Ops 4 visual-endings, 2). The sound-ending pass is queued behind the still-running Black
-Ops 4 sound core-side pass.
+(Black Ops 4 visual-endings, 2). Finished 2026-09-27: the Cold War sound-ending fingerprint turned
+out identical to an already-submitted pass ([#2203](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2203),
+2026-09-25) and `confirm_plan` declined in 3 seconds rather than reproduce it -- so nothing was lost
+by finishing this method's Cold War half, there was simply nothing left on it. Black Ops 4 ran
+clean in 31 minutes and found 10, submitted as
+[#2208](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2208).
 
 **Why the sound half paid so much more than the visual half.** `coordinated_identifiers` itself
 found this earlier the same day -- `sound_asset` alone offered 7,234 supported rules against a
@@ -3172,12 +3176,17 @@ repeated-token sibling frames available to learn a rule from in the first place.
 the corpus grows enough to teach the base method new rules; a stale rule set applied to a fresh
 core list is still bounded by what the rules know, not by what the cores offer.
 
-**Still running / not yet run, as of 2026-09-26:** the Black Ops 4 sound core-side pass (both
-folds) launched and is chewing through its own 8 slices; the sound-ending pass (both games, both
-folds) is queued behind it. Worth finishing before writing Black Ops 4 off on this method -- the
-core-side visual pass returned 0 there, but the ending-side visual pass (above) found 2, so "0 on
-Black Ops 4" was a property of that one pass rather than of the game, and almost all of the rule
-vocabulary and yield sits on the sound side regardless of game.
+**Finished 2026-09-27** (the prior session's run had been killed with the terminal, not completed
+-- nothing was actually still running when this session started, despite the note above; a fresh
+solo run was needed regardless). Both remaining pieces confirmed: the Black Ops 4 sound core-side
+pass (10 names, 221 minutes solo, no contention -- compare the 27 min/slice, ~3.5h total figure
+above, which was under three-way contention) and the sound-ending pass (Black Ops 4 10 names in 31
+minutes; Cold War turned out already exhausted by a different-looking pass with the same
+fingerprint, so it declined in 3 seconds rather than repeat #2203). `rule_substituted_cores` /
+`rule_substituted_endings` are now fully run on both games, both halves -- nothing left queued on
+this method. The core-side visual pass returned 0 on Black Ops 4, but the ending-side visual pass
+found 2, so "0 on Black Ops 4" was a property of that one pass rather than of the game, and almost
+all of the rule vocabulary and yield sits on the sound side regardless of game.
 
 ## A second fragment-generalisation: slotswap's context vocabulary applied to cores — 2026-09-26
 
@@ -3224,6 +3233,32 @@ box -- `submit.exe` took over 40 minutes with zero output on one occasion here, 
 throughout by process inspection rather than log output. Nothing was wrong; it was just waiting for
 a CPU timeslice the searches were not giving up. Worth knowing before assuming a silent submit has
 hung.
+
+**Status as of 2026-09-27: still exactly where the table above left it.** The processes above did
+not survive the session that started them -- there was nothing running when this session opened
+(`tasklist` showed no `confirm_*` process), and the accumulated 7-run empty streak in
+`state/empty_runs.txt` says at least some continuation was attempted and came back empty before the
+machine went idle. This session spent its time budget finishing `rule_substituted_*` instead (see
+above) and did not touch `slotswap_cores`.
+
+**Important for whoever resumes this: `confirm_plan` has no partial-slice resume.** The "8 slices"
+are all run inside one process invocation (`src/bin/confirm_plan.rs`, `SLICES = 8`, one call to
+`run_best` per chunk of the stem list, checkpointed after each) -- there is no flag or state file
+that lets a fresh invocation pick up at slice 5. Re-running `plans/slotswap_cores_visual.txt`
+verbatim redoes all 8 slices, including the ~2 already confirmed done. To actually resume only the
+remaining ground: the stem files are written `sorted()` by the generator, so slice boundaries are
+positional chunks of that sorted order (`plan.stems.chunks(ceil(N/8))`) -- take the last N/8 * (8 -
+done) lines of `contrib/slotswap_cores_new.txt` (or `_sound_`) into a new file, point a copy of the
+plan at that instead, and only the untested tail gets searched. Nobody has built that trimmed plan
+yet.
+
+**Still queued, in priority order:** Cold War sound (4 of 8 slices remain, ~1.5T of the original
+3.0T), Cold War visual (6 of 8 remain, ~7.9T of the original 10.5T), then both Black Ops 4 folds of
+each (10.5T visual + 3.0T sound, neither started). At the ~230M candidates/s this machine sustains
+solo (measured across two `rule_substituted` passes today, both close to the GPU.md forward-hash
+figure), the full remaining set is upwards of 24 hours of machine time -- comfortably more than any
+single session's budget, so plan to take it in pieces via the trimmed-plan approach above rather
+than as one sitting.
 
 ## Candidates worth building, with the measurement that decides each
 
