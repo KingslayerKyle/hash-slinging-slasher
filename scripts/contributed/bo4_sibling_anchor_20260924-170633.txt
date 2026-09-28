@@ -1,0 +1,87 @@
+# Sibling anchor. The Greyhoundx zone reader gives every owner asset's full target list (weapon ->
+# xanim, scriptbundle -> xanim/xmodel, etc). When an owner holds BOTH named and unnamed targets of
+# the same pool, the named siblings' token-boundary prefixes/suffixes become that owner's own
+# templates, met in the middle over a ~40k vocabulary (tmitm.exe, already submitted) for the
+# unnamed ones under the SAME owner only - so the search space per target stays tiny and precise.
+# 24 new names, all exact at 63 bits: a p8_fxanim_mp_mad_lemur_{idle01-05,run01-02} family,
+# pt_staff_ts_{prone,stand,crouch}_{idle,pullout,plant,putaway}, three weapons sharing a
+# not_deployable_loop sibling anim, one scriptbundle-anchored xmodel.
+
+# ===== sib_jobs.py =====
+
+"""Sibling-anchored jobs: an owner asset (weapon, scriptbundle, ...) often holds several targets of
+the same pool. Its NAMED targets give templates for its UNNAMED ones: every token-boundary prefix
+of a named sibling, paired with every token-boundary suffix of a (possibly different) named
+sibling under the SAME owner. Writes tj_<tag>.txt (prefix \t suffix \t 63 \t targets) for tmitm.exe."""
+import collections
+import struct
+import sys
+
+sys.argv = ["x"]
+exec(open("anchor_pairs.py", encoding="utf-8").read().split('if __name__ == "__main__":')[0])
+
+M63 = (1 << 63) - 1
+PID = {"xanim": 3, "xmodel": 4, "image": 9, "material": 6}
+
+
+def prefixes(name, max_tokens=4):
+    toks = name.split("_")
+    out = []
+    for i in range(1, min(len(toks), max_tokens) + 1):
+        out.append("_".join(toks[:i]) + "_")
+    return out
+
+
+def suffixes(name, max_tokens=3):
+    toks = name.split("_")
+    out = [""]
+    for i in range(1, min(len(toks) - 1, max_tokens) + 1):
+        out.append("_" + "_".join(toks[-i:]))
+    return out
+
+
+def build(owner_type, pool, tag):
+    names = all_names()
+    ids = show("snapshots/blkops04.ids")
+    full = {}
+    for off in range(26, len(ids) - 9, 10):
+        i, p = struct.unpack_from("<QH", ids, off)
+        if p == PID[pool]:
+            full[i & M60] = i & M63
+
+    pr = pairs_for({(owner_type, pool)})[(owner_type, pool)]
+    by_owner = collections.defaultdict(set)
+    for o, t in pr:
+        by_owner[o].add(t)
+
+    jobs = collections.defaultdict(set)
+    n_owners = 0
+    for o, targets in by_owner.items():
+        named_sibs = [names[t] for t in targets if t in names]
+        unnamed = [t for t in targets if t not in names and t in full]
+        if not named_sibs or not unnamed:
+            continue
+        n_owners += 1
+        pres = set()
+        sufs = set()
+        for s in named_sibs:
+            pres.update(prefixes(s))
+            sufs.update(suffixes(s))
+        for t in unnamed:
+            for p in pres:
+                for s in sufs:
+                    jobs[(p, s)].add(full[t])
+
+    print(tag, "owners with a mix", n_owners, "distinct (prefix,suffix)", len(jobs),
+          "target instances", sum(len(v) for v in jobs.values()))
+    with open("tj_%s.txt" % tag, "w", encoding="utf-8", newline="\n") as fh:
+        for (p, s), ts in jobs.items():
+            if "\t" in p or "\t" in s:
+                continue
+            fh.write("%s\t%s\t63\t%s\n" % (p, s, ",".join("%x" % t for t in sorted(ts))))
+
+
+if __name__ == "__main__":
+    build("weapon", "xanim", "weapon_xanim")
+    build("scriptbundle", "xanim", "scriptbundle_xanim")
+    build("scriptbundle", "xmodel", "scriptbundle_xmodel")
