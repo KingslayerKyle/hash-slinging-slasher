@@ -1,0 +1,24 @@
+{
+  "base_ends": 300000,
+  "rule_tokens": 13,
+  "supported_pairs": 7,
+  "per_type": {
+    "xmodel": {
+      "seeds": 174762,
+      "rule_pairs": 0
+    },
+    "material": {
+      "seeds": 366930,
+      "rule_pairs": 2
+    },
+    "image": {
+      "seeds": 361389,
+      "rule_pairs": 3
+    },
+    "xanim": {
+      "seeds": 39380,
+      "rule_pairs": 3
+    }
+  },
+  "new_ends": 4137
+}
