@@ -1,0 +1,5 @@
+128b58b8140cd890,mcdp/mtl_p8_flower_pot_bouquet_leaf_dmg
+276116e748195ace,mcs/mtl_p8_usa_power_line_plastic_tube
+28566fd240b8811b,mc/vfx_fluid_blood_imp_flesh_m02_dec
+3ee344c11d7596ca,mc/t9_decal_damage_concrete_corner_trim_normal
+5d6ea35e0f185adb,mc/t9_sand_tidal_pebbles_01_wet_lt_dsp
