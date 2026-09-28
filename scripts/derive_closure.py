@@ -240,7 +240,7 @@ def self_test():
         shutil.rmtree(root, ignore_errors=True)
 
 
-def run_plan(entry, game, dry_run):
+def run_plan(entry, game, dry_run, anyway=False):
     """A derivation that is a plan rather than a generator, run through `confirm_plan`.
 
     Some of the cheapest things here are cross products, and a cross product printed by Python runs
@@ -274,7 +274,7 @@ def run_plan(entry, game, dry_run):
         print("  %-42s skipped: confirm_plan is not built" % entry["label"])
         return 0
 
-    command = [tool, plan] + (["--game", game] if game else [])
+    command = [tool, plan] + (["--game", game] if game else []) + (["--anyway"] if anyway else [])
 
     if dry_run:
         sized = subprocess.run(command + ["--size"], capture_output=True, text=True, timeout=900)
@@ -295,17 +295,25 @@ def run_plan(entry, game, dry_run):
     return max(gained, 0)
 
 
-def run_derivation(entry, confirm, game, dry_run):
+def run_derivation(entry, confirm, game, dry_run, anyway=False):
     """One derivation: generate candidates, hand them to `confirm_list`, report what it found."""
     if "plan" in entry:
-        return run_plan(entry, game, dry_run)
+        return run_plan(entry, game, dry_run, anyway)
 
     script = os.path.join(ROOT, entry["script"])
     if not os.path.exists(script):
         print("  %-42s skipped: %s is not here" % (entry["label"], entry["script"]))
         return 0
 
-    generate = [sys.executable, script] + entry["args"]
+    # A forced game must reach the generator as well as the confirmer. Most of these scripts
+    # (`image_siblings.py`, `materials_from_images.py`, `image_channels.py`, `families.py`) build
+    # candidates from confirmed names across every game and simply ignore an unrecognised flag, so
+    # this is a harmless no-op for them. `final_byte.py` and `sound_languages.py` are different:
+    # each reads its own `--game`, defaulting to `state/game.txt` when it is absent. Passing
+    # `--game` only to `confirm_list` (as this used to) left those two peeling bytes for whichever
+    # game `start` last chose while testing the results against the forced one -- a silent
+    # game mismatch that reports a clean "found nothing new" for a game never actually asked.
+    generate = [sys.executable, script] + entry["args"] + (["--game", game] if game else [])
 
     if dry_run:
         try:
@@ -330,6 +338,8 @@ def run_derivation(entry, confirm, game, dry_run):
     ]
     if game:
         confirm_args += ["--game", game]
+    if anyway:
+        confirm_args += ["--anyway"]
 
     # The generator's own folder, because these scripts import `snapshot` as a sibling.
     producer = subprocess.Popen(
@@ -359,6 +369,11 @@ def main(argv):
     parser.add_argument("--once", action="store_true", help="one round rather than a fixpoint")
     parser.add_argument("--game", help="force a game for this run")
     parser.add_argument(
+        "--anyway",
+        action="store_true",
+        help="clear the futility guard on every derivation this runs, the way a direct search would",
+    )
+    parser.add_argument(
         "--rounds", type=int, default=MOST_ROUNDS, help="most rounds to run (default %d)" % MOST_ROUNDS
     )
     options = parser.parse_args(argv)
@@ -376,7 +391,7 @@ def main(argv):
     if options.dry_run:
         print("the derivations a round would run, and how many candidates each would ask about:\n")
         for entry in DERIVATIONS:
-            run_derivation(entry, confirm, options.game, True)
+            run_derivation(entry, confirm, options.game, True, options.anyway)
         print("\nNothing was confirmed and nothing was written.")
         return 0
 
@@ -388,7 +403,8 @@ def main(argv):
     for round_number in range(1, max(options.rounds, 1) + 1):
         print("round %d" % round_number)
         gained = sum(
-            run_derivation(entry, confirm, options.game, False) for entry in DERIVATIONS
+            run_derivation(entry, confirm, options.game, False, options.anyway)
+            for entry in DERIVATIONS
         )
         total += gained
         print("  round %d added %d\n" % (round_number, gained))
