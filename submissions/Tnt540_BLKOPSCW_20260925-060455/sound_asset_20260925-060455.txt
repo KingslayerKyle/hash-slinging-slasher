@@ -1,0 +1,6 @@
+6faa9ada86ba855,zmb/level/zm_silver/quest/main/aetherbomb/explo_base/explo_base_01.ln75.pc.all.snd
+eda41f2fbaddc4b,zmb/level/zm_silver/quest/main/aetherbomb/explo_base/explo_base_03.ln75.pc.all.snd
+106feed3420a2baf,zmb/level/zm_silver/quest/main/aetherbomb/explo_base/explo_base_01.rn75.pc.all.snd
+175f99511a41cfbe,zmb/level/zm_silver/quest/main/aetherbomb/explo_base/explo_base_02.rn75.pc.all.snd
+2d8bc3c131457829,zmb/level/zm_silver/quest/main/aetherbomb/explo_base/explo_base_03.rn75.pc.all.snd
+2dc01a44f701b6b8,zmb/level/zm_silver/quest/main/aetherbomb/explo_base/explo_base_02.ln75.pc.all.snd
