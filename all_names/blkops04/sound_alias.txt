@@ -6542,6 +6542,7 @@ ce6d777f3e30df9,veh_pbr_ignition_off
 3084a45c75aea9d4,veh_quad_atv
 29cdbe06d14cf84a,veh_quad_atv_ignition
 7840ec6ac58287b8,veh_quad_atv_shutoff
+2a6d7af187ada1e1,veh_quadtank_mini_grunt
 aa65b39680b8d1b,veh_quadtank_mini_loop
 2b2da39875ae9bdf,veh_quadtank_mini_step
 7be3bdcadd5a0fcb,veh_quadtank_mini_step_concrete
@@ -18658,6 +18659,7 @@ c7f396aed80374b,zmb_red_scroll_lp_calm
 5755987467fabcd9,zmb_rush_points_x1
 612ef6ccaf0effeb,zmb_rush_points_x10
 5755957467fab7c0,zmb_rush_points_x2
+6124e4ccaf068cd0,zmb_rush_points_x20
 57559c7467fac3a5,zmb_rush_points_x5
 5e75b563a3a6e639,zmb_rush_powerup_life
 531658e82d2845f7,zmb_rush_timer_countdown
