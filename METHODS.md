@@ -3260,6 +3260,38 @@ figure), the full remaining set is upwards of 24 hours of machine time -- comfor
 single session's budget, so plan to take it in pieces via the trimmed-plan approach above rather
 than as one sitting.
 
+**Cold War sound finished -- 2026-09-28: 76 more names, and the second half paid better than the
+first.** The trimmed plan was built exactly as described above: the stem file read the way
+`confirm_plan` reads it (trimmed, `hash,name` split, sorted bytewise, deduplicated -- 30,237,084
+stems, none repeated), chunked at `ceil(N/8)` = 3,779,636, and everything from position 15,118,544
+on written to `contrib/slotswap_sound_cores_tail_s5-8.txt` (15,118,540 stems). The plan is
+`plans/slotswap_cores_sound_tail.txt`; 1.51T candidates, 0.017 expected by chance, about 1h50m at
+229-235M/s with nothing else on the box. Its first slice returned nothing, and the rest returned
+**76 names** ([#2213](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2213)), all kept
+by `submit` -- against 45 from slices 1-4, so the ground did not thin towards the end of the sort.
+
+What they are is the useful part: **54 material, 12 sound_alias, 5 xmodel, 4 xanim, 1 image, 0
+sound_asset.** The cores are sound-shaped, but the endings list crosses them into material paths
+far more often than into sound files. So the Black Ops 4 sound fold is not the obvious next run
+it looks like, and the unfolded BO4 plan (`slotswap_cores_sound_nofold.txt`) is aimed at the one
+pool this pass returned nothing in.
+
+`derive_closure --game BLKOPSCW` after it: **16** (5 image siblings, 10 final byte, 1 three-byte
+tail; [#2214](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2214)). Its round 2
+then *reported* the corpus closed while six of its seven derivations had actually been refused by
+the futility guard -- three empty derivations in a row trip it partway through a round, and
+`derive_closure` counted each refusal as a zero. A rerun with `--anyway` ran all seven and did
+return 0, so it was closed; `derive_closure.py` now reports a round with refusals as unknown rather
+than closed and says to rerun with `--anyway`.
+
+**Cold War visual is further back than the table says.** Its log ends with slice 2 at 97.5% and no
+checkpoint, so only slice 1 of 8 is done. And `contrib/slotswap_cores_new.txt` now holds
+35,017,591 lines against the 35,015,108 stems that run read, so the file was regenerated after it
+and positional slices of the new file will not line up exactly with the old ones. Resume from
+slice 2's start in the *new* sort. Any of the ~2,500 new stems that sort into slice 1's range were
+never searched and cannot be picked out without the old file, but that is under 0.1% of the stems,
+not worth a 1.3T re-run of slice 1.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought

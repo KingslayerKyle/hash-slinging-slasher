@@ -288,7 +288,7 @@ def run_plan(entry, game, dry_run, anyway=False):
     before = confirmed_total(game)
     if subprocess.run(command, stdout=subprocess.DEVNULL).returncode != 0:
         print("  %-42s confirm_plan would not run" % entry["label"])
-        return 0
+        return None
 
     gained = confirmed_total(game) - before
     print("  %-42s %+d" % (entry["label"], gained))
@@ -355,7 +355,7 @@ def run_derivation(entry, confirm, game, dry_run, anyway=False):
 
     if consumer.returncode != 0:
         print("  %-42s confirm_list exited %d" % (entry["label"], consumer.returncode))
-        return 0
+        return None
 
     gained = confirmed_total(game) - before
     print("  %-42s %+d" % (entry["label"], gained))
@@ -402,14 +402,29 @@ def main(argv):
     total = 0
     for round_number in range(1, max(options.rounds, 1) + 1):
         print("round %d" % round_number)
-        gained = sum(
+        # `None` is a derivation whose confirmer refused to run -- most often the futility guard,
+        # which trips partway through a round once three derivations in a row come back empty.
+        # It asked nothing, so it must not be counted as a zero: on 2026-09-28 a round that ran
+        # one derivation of seven reported "the corpus is closed", and a rerun with `--anyway`
+        # was needed to find out whether it was.
+        outcomes = [
             run_derivation(entry, confirm, options.game, False, options.anyway)
             for entry in DERIVATIONS
-        )
+        ]
+        refused = [entry["label"] for entry, outcome in zip(DERIVATIONS, outcomes) if outcome is None]
+        gained = sum(outcome or 0 for outcome in outcomes)
         total += gained
         print("  round %d added %d\n" % (round_number, gained))
 
         if options.once:
+            break
+        if refused and not worth_another_round(gained):
+            print(
+                "%d of %d derivations refused to run this round, so nothing is known to be closed.\n"
+                "If the futility guard stopped them, rerun with --anyway: the round before this one\n"
+                "confirmed names, which is exactly the case the guard is not meant for."
+                % (len(refused), len(DERIVATIONS))
+            )
             break
         if not worth_another_round(gained):
             print(
