@@ -3285,12 +3285,32 @@ return 0, so it was closed; `derive_closure.py` now reports a round with refusal
 than closed and says to rerun with `--anyway`.
 
 **Cold War visual is further back than the table says.** Its log ends with slice 2 at 97.5% and no
-checkpoint, so only slice 1 of 8 is done. And `contrib/slotswap_cores_new.txt` now holds
-35,017,591 lines against the 35,015,108 stems that run read, so the file was regenerated after it
-and positional slices of the new file will not line up exactly with the old ones. Resume from
-slice 2's start in the *new* sort. Any of the ~2,500 new stems that sort into slice 1's range were
-never searched and cannot be picked out without the old file, but that is under 0.1% of the stems,
-not worth a 1.3T re-run of slice 1.
+checkpoint, so only slice 1 of 8 is done. (`contrib/slotswap_cores_new.txt` holds 35,017,591
+lines against the 35,015,108 stems the run read, which looks like a regeneration but is not: the
+2,483 extra lines are duplicates, and deduplicated the file is exactly the stems that run read, so
+the slice boundaries line up.) Resumed 2026-09-28 as `plans/slotswap_cores_visual_tail.txt`: slices
+2-8, 30,638,219 stems, 9.19T candidates, 0.10 expected by chance.
+
+**Cold War visual finished -- 2026-09-28: 235 names**, every one kept by `submit` (#2215-#2219).
+It ran at 340-363M/s, about 55 minutes a slice -- half again faster than the ~230M/s measured
+while it shared the box, so run these alone. By slice of the resumed run:
+
+| slice | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|---|
+| names | 58 | 46 | 4 | 72 | 8 | 15 | 17 |
+
+**112 image, 95 material, 20 xmodel, 8 xanim, 0 sound.** Because the stems are sorted, each slice
+is a band of the alphabet, and the yield is lumpy by band rather than decaying: the first two
+slices were almost entirely images and the fourth almost entirely materials. Together with the
+original slice 1's 25, the whole visual plan returned **260 names from 10.5T** (1 per ~40B).
+`derive_closure` after it added **48** (21 image siblings, 13 materials from image cores, 11 image
+channels, 2 three-byte tails, 1 final byte; #2220) and its second round ran all seven derivations
+to zero. With the sound half's 121 and its 16 of closure, slotswap cores is **445 names on Cold
+War**.
+
+Still not run: both Black Ops 4 folds. By the sound half's make-up the visual plan
+(`slotswap_cores_visual.txt --game BLKOPS04`, 10.5T, about 8 hours alone) is the one worth running;
+the unfolded sound plan aims at `sound_asset`, which neither Cold War half reached at all.
 
 ## Candidates worth building, with the measurement that decides each
 
