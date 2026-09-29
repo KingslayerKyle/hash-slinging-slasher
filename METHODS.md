@@ -3321,9 +3321,72 @@ channels, 2 three-byte tails, 1 final byte; #2220) and its second round ran all 
 to zero. With the sound half's 121 and its 16 of closure, slotswap cores is **445 names on Cold
 War**.
 
-Still not run: both Black Ops 4 folds. By the sound half's make-up the visual plan
-(`slotswap_cores_visual.txt --game BLKOPS04`, 10.5T, about 8 hours alone) is the one worth running;
-the unfolded sound plan aims at `sound_asset`, which neither Cold War half reached at all.
+**Black Ops 4 visual -- 2026-09-29: 151 names** from the full 10.5T plan, unchanged, against 52,183
+unnamed ids (#2221-#2224). By slice: 77, 13, 11, 17, 8, 16, 2, 7. **78 xanim, 32 material, 24
+image, 14 xmodel, 3 sound_alias** -- anims are over half of it here, against 8 of Cold War's 235, so
+the same cores land on a different pool in each game and both folds are worth running.
+`derive_closure --game BLKOPS04` after it: **79** (43 family gap filling off the new anims, 13
+image siblings, 11 final byte, 5 channels, 4 materials from images, 2 tails, then 1 more final
+byte on an `--anyway` rerun, since the guard refused 5 of 7 in round 2 -- the fixed script now says
+so rather than calling it closed; #2225). The
+unfolded Black Ops 4 sound plan does not need running whole: only 1,048,952 of the 30.2M sound
+cores keep a backslash, and only those can reach an unfolded `sound_asset` name -- the rest would
+repeat the folded search. That subset (`plans/slotswap_cores_sound_backslash_bo4.txt`, 0.10T,
+about ten minutes) returned **0** on 2026-09-29. With Cold War's 0 as well, slotswap cores do not
+reach `sound_asset` in either game; that pool wants a method built on SAB file structure, not on
+recombined alias vocabulary.
+
+**The half of the cross product neither pass ran -- measured 2026-09-29.** The two plans only ever
+crossed each core list with its own endings. Of the 30.2M sound cores, only 5.1M are also visual
+cores, and the two endings lists share 25,761 of their 300,000 + 100,000 entries -- so sound cores
+had almost never met the visual endings, although the Cold War sound pass showed they reach
+material paths (54 of its 76). `plans/xcross_soundcores_visualends.txt` is exactly that missing
+block: 25,151,469 sound-only cores × 274,239 visual-only endings, 6.90T, with no overlap with either
+pass.
+
+**It is dead: 0 names from the first two slices, 1.72T, on Cold War**, against roughly one name per
+40B for the visual plan. Stopped there. The premise was wrong, and it could have been checked in a
+minute before spending the hours: of the Cold War sound pass's 76 names, **73 came from cores that
+are also visual cores**, 1 from a sound-only core, 2 from neither. The sound pass reached materials
+through the 5.1M cores the two lists share -- exactly the ones this plan removed as already
+searched -- so what was left was the barren part. **Before crossing two lists, attribute the finds
+of the passes that motivate it** to the part of each list that produced them.
+
+## The all-boundary snowball: this week's finds are next week's best cores -- 2026-09-29
+
+The lesson under method 25 ("treat `ab_cores.txt` as perishable") turned out to be much stronger
+than it reads. After the slotswap-cores passes above confirmed ~900 names, rebuilding the lists
+with the unchanged method-25 generator (`--top 300000`) added only **1,160 cores and 144
+endings** to 1.89M and 300k. Searching exactly that delta, both games:
+
+| block | candidates / game | Cold War | Black Ops 4 |
+|---|---|---|---|
+| new cores x all endings | 0.35B | **161** | **39** |
+| all cores x new endings | 0.27B | 7 | 3 |
+| slotswap cores of the rebuilt base, not seen before (28,860) x all endings | 8.7B | 16 | 25 |
+| all slotswap cores x the 144 new endings | 5.0B | 0 | 0 |
+| `derive_closure` after | -- | 6 | 5 |
+
+**262 names for about 30B candidates in total -- minutes of machine.** The new-cores block ran at one
+name per ~1.7M candidates, four orders of magnitude denser than the slotswap pass (one per ~40B)
+that produced the names those cores were cut from. A core cut from a name confirmed three days ago
+is a fragment of something real that nobody has crossed with the endings yet; the endings already
+carry the rest of the vocabulary. (#2226-#2231.)
+
+That makes it a loop with a natural stop, so it is now `contrib/ab_snowball.py`: per round and per
+half (visual, then sound), rebuild the lists, search only cores, endings and slotswap cores not in
+its ledger (`contrib/ab_snowball_seen_*`, seeded from whatever is on disk the first time), close,
+submit, and stop on the first round that confirms nothing. It is not a rotation -- every round's
+input is the previous round's output, and an empty round ends it.
+
+**Run it after any pass that confirms a meaningful number of names**, not on a timer: its whole
+yield is the corpus growth since the last run.
+
+First run, straight after the table above: **116 names over three rounds (93, 14, 9), then an empty
+fourth**, #2232-#2236, about 40 minutes. Most of it came from the new-cores blocks again (the sound
+half's 1,914 new cores gave 44 on the first round, from 0.19B) and from Black Ops 4's new slotswap
+cores (25). Crossing the old lists with new endings returned 1 name in every round combined -- the
+endings list barely moves, so almost all the value is in the cores.
 
 ## Candidates worth building, with the measurement that decides each
 
