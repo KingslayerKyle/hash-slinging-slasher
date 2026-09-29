@@ -1,0 +1,16 @@
+{
+  "base_ends": 100000,
+  "rule_tokens": 556,
+  "supported_pairs": 3618,
+  "per_type": {
+    "sound_asset": {
+      "seeds": 152537,
+      "rule_pairs": 3617
+    },
+    "sound_alias": {
+      "seeds": 78293,
+      "rule_pairs": 119
+    }
+  },
+  "new_ends": 186500
+}
