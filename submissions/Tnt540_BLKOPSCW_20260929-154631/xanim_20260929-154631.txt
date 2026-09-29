@@ -1,0 +1,3 @@
+6c3ac568f84ee90,ch_cin_mp_apoc_cia_shot030_player5_pistol
+43128f4541dbb2ac,ch_cin_mp_apoc_cia_shot030_player5_knife
+72b2a3f8ba6c452f,ch_cin_mp_apoc_cia_shot030_player6_pistol
