@@ -1,0 +1,4 @@
+1383f7a2a9a88823,zmb_step_armored_med_walk
+45b35557446e6c5b,wpn_ai_steiner_attack_blast_impact_lfe
+6bc13f57a2e7c4d0,wpn_ai_steiner_attack_blast_impact_swt
+6e212bce418ed62b,zmb_step_armored_med_run
