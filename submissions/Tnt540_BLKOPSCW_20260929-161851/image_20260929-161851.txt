@@ -1,0 +1,2 @@
+4a50fca0cb8b4d10,i_attach_t9_ar_fastfire_ext_mag_01_decal_bowling_c
+4a5100a0cb8b53dc,i_attach_t9_ar_fastfire_ext_mag_01_decal_bowling_g
