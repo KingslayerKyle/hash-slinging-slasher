@@ -3420,6 +3420,37 @@ same moment and have not been crossed with anything. So it is now a block in eve
 `ab_snowball.py` round (new cores x every known tail) rather than a sweep, and `core_rings.py` is
 kept for measuring rather than for grinding.
 
+Two neighbours of it, both measured the same day and both nearly dry, so nobody need rebuild them:
+
+- **Method 10 slotswap on the fresh names only** (`contrib/fresh_slotswap.py`, whole names,
+  every slot, the corpus's own slot alphabet): 4,733 names confirmed since 2026-09-04, 169,109
+  candidates, **0** on both games. A fresh family's missing members are two known pieces joined
+  at a new place, not one word changed.
+- **The fresh tails x the prefixes `ab_cores.txt` leaves out**: only 78,013 prefixes of known
+  names are missing from it, 0.9B, **2** names. The ranked core list already carries nearly every
+  prefix, so the cross that pays is fresh cores x the whole tail universe, not the reverse.
+- **All cores x the long tail is not worth running.** The obvious generalisation -- every
+  all-boundary core (1.89M) x the 5.0M tails `ab_ends.txt` does not carry, 9.4T -- was measured
+  on a random 1% of the cores first (`plans/ab_cores_sample_x_long_tails.txt`, seed 20260930):
+  **0 names from 94B on Cold War.** The long tail only pays where a fresh family's own tails are
+  in it, which the snowball block already covers.
+- **A second slotswap substitution on the proven substituted cores** (`contrib/second_swap.py`):
+  the 556 slotswap finds rest on only 43 substituted cores that are still in the current lists,
+  and a second substitution of those produces nothing the lists do not already hold. 0 candidates.
+- **`xskeleton` is not a source.** Its 85,613 Cold War ids are exactly the 85,612 `xmodel` ids plus
+  one -- the same names hashed -- and `xcollision` shares 57,460 of its 60,670. Naming one names the
+  others; nothing flows between them.
+
+**Sound files named after their aliases -- a thin seam into `sound_asset`, 2026-09-30.** Nothing
+built on recombined alias vocabulary reaches `sound_asset` (see above). But 2,245 published sound
+files have a basename -- the text before the first `.` -- that is exactly an alias name.
+`contrib/alias_to_file.py` places every named alias into each folder whose files share its first
+two tokens, with each extension chain that folder uses: 829,676 candidates, **3 Cold War
+`sound_asset` names** (`fly/weapon/reload/sniper_cannon/fly_sniper_cannon_inspect_p1..3.ln75.pc.all.snd`),
+0 on Black Ops 4 unfolded, #2247. One per 280k candidates, and the first `sound_asset` names this
+project has found in a week. The convention is real but rare -- most sound files do not carry
+their alias's name -- so this is worth re-running after the aliases table grows, not a mine.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
