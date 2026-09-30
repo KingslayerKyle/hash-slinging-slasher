@@ -3336,6 +3336,15 @@ about ten minutes) returned **0** on 2026-09-29. With Cold War's 0 as well, slot
 reach `sound_asset` in either game; that pool wants a method built on SAB file structure, not on
 recombined alias vocabulary.
 
+**Black Ops 4 folded sound -- 2026-09-30: 14 names from 0.84T instead of 3.03T.** Slice 1 of the
+full plan (0.38T) returned 0. Rather than run the other seven, the attribution measured on Cold War
+(73 of 76 sound-pass names came from sound cores that are also visual cores) was applied directly:
+the 4,611,922 shared cores in the sorted range after slice 1, x the sound endings, 0.46T
+(`plans/slotswap_sound_shared_bo4.txt`): **14 names** -- 10 image, 3 xmodel, 1 material -- one per
+~33B, the same density as the visual passes, #2239. The 21M sound-only cores left unsearched are
+the part Cold War showed to be barren. **When a plan's yield has been attributed to part of its
+stem list, run that part first on the next game.**
+
 **The half of the cross product neither pass ran -- measured 2026-09-29.** The two plans only ever
 crossed each core list with its own endings. Of the 30.2M sound cores, only 5.1M are also visual
 cores, and the two endings lists share 25,761 of their 300,000 + 100,000 entries -- so sound cores
@@ -3387,6 +3396,42 @@ fourth**, #2232-#2236, about 40 minutes. Most of it came from the new-cores bloc
 half's 1,914 new cores gave 44 on the first round, from 0.19B) and from Black Ops 4's new slotswap
 cores (25). Crossing the old lists with new endings returned 1 name in every round combined -- the
 endings list barely moves, so almost all the value is in the cores.
+
+**Two extensions measured 2026-09-30:**
+
+- **The endings half does pay, just not through `ab_ends.txt`.** Only 144 of the week's endings
+  ever reach the top-300k list, but the 1,411 names confirmed since 2026-09-25 have 8,861 boundary
+  tails, 7,409 of them in neither `ab_ends.txt` nor `data/suffixes.txt`. Those tails x all 1.89M
+  cores: **27 names** (19 Cold War, 8 Black Ops 4) from 28B, about one per billion
+  (`plans/newname_tails_20260930.txt`, #2237/#2238). Added to `ab_snowball.py` as a fifth block,
+  with its own ledger seeded from every tail that existed at the time.
+- **`rule_substituted_cores.py` regenerated on the rebuilt base does not.** 258 new visual and
+  28,337 new sound cores, crossed with their ending lists on both games: 3 names in total. Its
+  seven repeated-token rules move far less than slotswap's 111,000 slot contexts when the corpus
+  grows, so it is left out of the snowball.
+
+**Fresh families want the whole tail universe, not the ranked endings -- 2026-09-30.** The 2,929
+all-boundary cores cut from the 1,479 names confirmed since 2026-09-25 had already met the top-300k
+endings through the snowball. Crossed instead with **every boundary tail of every published or
+confirmed name** (5,217,100 tails; `plans/hot_cores_all_tails_20260930.txt`), 15.3B per game:
+**202 names** (87 Cold War, 115 Black Ops 4), then 49 more from closure (#2243/#2244). One per
+~150M.
+
+Walking the same idea back through older confirmations (`contrib/core_rings.py`, one date ring at
+a time, never re-crossing a core) shows where it comes from:
+
+| cores of names confirmed | cores | Cold War | Black Ops 4 |
+|---|---|---|---|
+| 2026-09-25 to 09-30 | 2,929 | 87 | 115 |
+| 2026-09-15 to 09-24 | 2,958 | 3 | 3 |
+| 2026-09-01 to 09-14 | 5,139 | 4 | 3 |
+| 2026-08 | 341 | 0 | 0 |
+
+Same core counts, same tails, a 30x cliff after one week. It is not "recent cores are good"; it
+is **a family found days ago meeting the tails of its own siblings**, which were confirmed at the
+same moment and have not been crossed with anything. So it is now a block in every
+`ab_snowball.py` round (new cores x every known tail) rather than a sweep, and `core_rings.py` is
+kept for measuring rather than for grinding.
 
 ## Candidates worth building, with the measurement that decides each
 
