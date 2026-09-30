@@ -1,0 +1,12 @@
+_90_16a
+_gen_far
+_sh100_ch14
+_sh100_ch15
+_sh100_ch16
+_sh100_ch17
+_sh100_ch19
+_sh110_ch14
+_sh110_ch15
+_sh110_ch16
+_sh110_ch17
+_sh110_ch19
