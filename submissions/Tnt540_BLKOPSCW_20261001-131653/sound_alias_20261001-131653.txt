@@ -1,0 +1,5 @@
+50a8cd58401617c,uin_defaultmachine_purchase
+54fb43f0bd34c07,uin_defaultmachine_menu_close
+20cea4407da859a2,uin_defaultmachine_purchase_denied
+2ac8b172883d28f5,uin_defaultmachine_menu_open
+703ec23b12ef696f,uin_defaultmachine_gain_focus
