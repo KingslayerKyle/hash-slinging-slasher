@@ -1,0 +1,3 @@
+i_wpn_t8_ar_heavy_decal_iconcatch
+mc/mtl_veh_t8_civ_car_compact_engine_decalyellow
+wpn_sensorgun_fire
