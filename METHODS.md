@@ -3464,6 +3464,265 @@ two tokens, with each extension chain that folder uses: 829,676 candidates, **3 
 project has found in a week. The convention is real but rare -- most sound files do not carry
 their alias's name -- so this is worth re-running after the aliases table grows, not a mine.
 
+## The unnamed names are made of tokens nobody has seen -- and a dictionary supplies them -- 2026-10-01
+
+**The measurement that decides it.** `contrib/token_markov.py` learns P(token | previous two tokens)
+over every name one game is known to hold in one pool, and enumerates names best-first by
+threshold (OMEN-style depth-first walk, banded so nothing is held in memory). As a positive control
+it is trained with 10% of the known names held out (`--holdout 0.1`):
+
+| pool (Cold War) | held-out names regenerated within 2M candidates |
+|---|---|
+| `xanim` | **56%** (1 per 1,600) |
+| `xmodel` | **27%** (1 per 1,060) |
+
+Pointed at the real unnamed ids, the same walk returned **9 names from about 206M** across all five
+types in both games (6 Black Ops 4 specialist-outfit images in its first 5M; nothing past ~5M in
+any pool). A model that rebuilds half of a random sample of known names and none of the unnamed ones
+says the unnamed remainder is *not* a random sample of the name distribution: almost every unnamed
+name holds a token, or a junction between tokens, that no known name holds. That is why every
+recombination shape decays to zero however it is cut, and it says where to look instead -- at
+sources of tokens the corpus has never contained.
+
+**Open slots filled from a dictionary** (`contrib/open_slot_words.py`). A *frame* is an exact known
+prefix and an exact known suffix around one token. A frame whose slot holds at least 5 distinct
+fillers, 60% or more of them English words, is a word slot -- an open class whose unseen members
+are words too. Each such frame (10,226 in Black Ops 4, 11,592 in Cold War) is offered the top 30,000
+English words from `wordfreq` (`pip install --user wordfreq`), on its own, never mixed with another
+frame's pieces:
+
+| game | candidates | new | of which |
+|---|---|---|---|
+| Black Ops 4 | 306.7M | **41** | image 10, material 12, xmodel 11, alias 7, anim 1 |
+| Cold War | 347.7M | **135** | alias 106, material 17, image 12 |
+
+One per ~2.6M in Cold War, four minutes a game -- and the words are exactly ones the corpus could
+never have produced: `amateurs`, `terminated`, `reclaimed`, `suspensions`, `eisenhower`,
+`michigan`, `disgusted` (#2250/#2251). The hits skew to rarer words, so the widenings were
+measured the same day, each disjoint from what ran before:
+
+| widening | Cold War | Black Ops 4 | rate |
+|---|---|---|---|
+| top 30k words, frames with >= 5 fillers (above) | 135 / 348M | 41 / 307M | 1 per 3.7M |
+| words ranked 30k-150k, same frames (`--word-from 30000 --words 150000`) | 53 / 1.39B | 44 / 1.23B | 1 per 27M |
+| top 30k, frames with 3-4 fillers (`--min 3 --max-fill 5`) | 21 / 829M | 22 / 693M | 1 per 35M |
+| top 30k, frames with exactly 2 fillers whose prefix holds >= 5 word fillers across all its tails (`--head-class`) | 9 / 692M | 8 / 653M | 1 per 79M |
+| German, Spanish, Russian, Vietnamese, French, Italian words not in English's top 150k (`--lang`) | **0** / 747M | -- | dead |
+
+**Ranking by meaning instead of frequency** (`contrib/open_slot_neighbours.py`). A slot's fillers
+are a semantic class, so each frame is offered the 3,000 GloVe words (6B, 100d) nearest the
+centroid of its own fillers, from the whole 400k vocabulary: **18 Cold War / 105M, 26 Black Ops 4 /
+94M** -- 1 per 4.5M, five times the deep-frequency rate, reaching words no frequency cut would get
+to. The union of each filler's own 200 nearest words instead of the centroid (`--mode knn`) adds
+almost nothing beyond it: 1 name from 54M across both games.
+
+Two non-dictionary vocabularies through the same frames (`--vocab-file`), each excluding English's
+top 30k so nothing is offered twice:
+
+| vocabulary | words | Cold War | Black Ops 4 |
+|---|---|---|---|
+| tokens of the newer titles' `_v2` tables that no table or find of ours holds (seen >= 2 times) | 17,558 | 14 / 204M | 12 / 180M |
+| tokens of our own tables and finds, offered to every word slot rather than only the contexts they were seen in | 18,658 | 8 / 217M | 19 / 191M |
+
+**`submit` could not open a pull request for a large batch on Windows -- fixed in source,
+2026-10-01.** It passed the PR body to `gh` as a `-f body=...` argument; a batch of 20 runs writes a
+body past Windows' 32,767-character command-line limit and `gh` fails to start ("The filename or
+extension is too long", os error 206). Worse, the batch folder had already been written into
+`submissions/` and its branch pushed, so the next `submit` dropped those names as "already
+claimed" and they were never sent. `src/bin/submit.rs` now sends the request as JSON on stdin
+(`--input -`), as blobs, trees and commits already did. **`bin/windows/submit.exe` has not been
+rebuilt** (no Rust toolchain on the machine that found it); until it is, a failed batch can be
+rescued by opening the PR for its already-pushed branch with `gh api repos/<repo>/pulls --input -`
+and appending its runs (the `### run_...` headings of its `about_*.md`) to `submissions/.submitted`.
+
+`--ledger` on `open_slot_words.py` records the frames each word range has covered, so a re-run
+after the corpus grows offers words only to frames that are new since.
+
+Two more cuts of the embedding ranking, both weak: ranks 3,000-15,000 on frames with >= 5 fillers
+(`--skip 3000 --per 15000`) returned **0 / 112M on Black Ops 4 and 2 / 112M on Cold War**; and
+every English word in every *single- or two-filler* frame swapped for its 40 nearest neighbours
+(`--mode knn --knn 40 --min 1 --max-fill 3`) returned **1 / 74M on Cold War but 12 / 59M on Black
+Ops 4**. A word with no siblings is rarely sitting in an open class; where the game has filled a
+slot several times, it is. Black Ops 4 kept paying further out: 150 neighbours per word instead of 40
+(`--knn 150`) returned **14 more / 220M**.
+
+*Not built, for size:* letting a word slot's exact prefix take **any** tail seen after it with another
+filler (a new word arriving with a sibling's continuation rather than one exact known suffix). Counted
+2026-10-01: 8,392 qualifying heads in Cold War and 6,473 in Black Ops 4, **32B and 26B** candidates
+with the top 30k words as exact per-head frames -- far past a Python generator -- and as one engine
+plan the heads and their 878k distinct tails cross-mix into **75 trillion**. It needs either a
+per-head mode in `confirm_plan` (one literal beginning, its own ending file, many plans in one
+process) or a much tighter tail filter before it is worth running.
+
+**Sound files, which every split on `_` alone had missed** (`contrib/sound_word_slots.py`). A sound
+file is a path -- `amb/environment/wind/gusts/sand/dunes/sand_dune_gusts_01.rn75.pc.all.snd` -- so
+splitting on `_` glues its directories and extension chain into single tokens and leaves almost no
+frames. Split on `_`, `/` and `.`, every directory component and basename word is a slot. Frames
+with >= 4 word fillers, each offered the top 30k frequency words plus its 3,000 GloVe centroid
+neighbours:
+
+| game | frames | candidates | new `sound_asset` |
+|---|---|---|---|
+| Cold War | 4,160 | 127M | **107**, then **36** more from `derive_closure` |
+| Black Ops 4 (backslashes, `--no-fold`) | 3,235 | 99.5M | 2 |
+
+143 Cold War sound files in one pass, against 3 for the best `sound_asset` method of the day
+before -- the largest batch into that pool in weeks. The aliases the same lines belong to had
+already come out of the word sweep over `sound_alias` that morning: re-deriving aliases from the
+new files' basenames matched 107, all already found. The two pools agree.
+
+That also exposed a hole in `contrib/alias_to_file.py`: it placed an alias into a folder as the
+bare basename, but these files are `<alias>_00.rn75.pc.en.snd` -- the alias plus a take number --
+and run straight after the aliases landed it had found none of them. It now takes `--takes`, which
+offers each folder the take suffixes its own files use (commonest 8): 2.9M candidates, and it
+reproduces **all 141** of the day's Cold War sound files (0 new, since they were already found).
+Run it with `--takes` after any batch of aliases.
+
+It was also reading only `fnv1a_xsounds.csv`, while Black Ops 4's voice files are published in the
+per-language tables (`fnv1a_english_xsounds.csv`, ...), so it never saw an `en/vox/...` folder. It now
+reads every non-`_v2` `*xsounds*` table, and `--takes=N` sets how many takes a folder offers. The
+convention is strong in Black Ops 4 -- 35,469 of its 68,028 known sound files are a known alias plus a
+take -- and the fixed generator does rebuild those known files, yet `--takes=30 --backslash` against
+the unnamed ids: **16.96M candidates, 0.** Every Black Ops 4 alias anyone has named already has its
+files named; the open alias->file seam was Cold War's.
+
+**And the snowball multiplied all of it.** `ab_snowball.py` straight after the first word sweeps
+(the fresh families' cores against every known tail): **587 names over three rounds**, then an
+empty fourth -- the fresh-family effect of 2026-09-29 again, but seeded by tokens that came from a
+dictionary rather than from the corpus. Run the snowball after every word-sweep batch.
+
+**Hot word frames** (`contrib/hot_word_frames.py`). The cores lesson of 2026-09-30 in word-slot
+form: a frame that has just yielded a dictionary word is the likeliest frame to hold more, and a few
+thousand hot frames can afford no frequency or similarity cut at all. Every name the word methods
+confirmed today, each alphabetic token of it taken as the slot (splitting on `_`, `/` and `.`), and
+each frame offered the union of wordfreq's whole English list and the GloVe vocabulary -- 383,157
+words:
+
+| game | hot names | frames | candidates | new |
+|---|---|---|---|---|
+| Cold War | 445 | 2,717 | 1.04B | **90** (aliases 38, sound files 36, materials 11, images 4, model 1) |
+| Black Ops 4 | 206 | 968 | 371M | 5 |
+
+One per 11.6M in Cold War, three times the deep-frequency rate on the same game, because the frames
+are chosen by having just paid. It feeds itself: `--ledger` records every frame offered (`--seed`
+records the frames of a run made before the ledger existed), so each re-run offers the whole
+vocabulary only to the frames the previous round's finds created. Round 2 (477 new Cold War frames,
+183M; 28 Black Ops 4, 11M): **2 names** -- it closes after one round. `--sibling-tails 30000`
+(each hot prefix x every tail at least two words lead into under it, top 200 per prefix x the top
+30k words): 298M candidates, 166 matches but only **5 new** -- the snowball reaches the same names
+from the cores side.
+
+**Grids whose rows are each too thin to qualify** (`contrib/open_slot_rows.py`). In a grid -- forty
+speakers, fifty skins -- most rows hold one or two known words, so no single row's frame passes the
+threshold while the column is plainly open. The evidence is pooled by wildcarding every *other*
+short-code token (2-5 chars, a letter in it); a pooled slot with >= 8 fillers across >= 3 rows is
+open, and each of its rows with fewer than 3 fillers of its own (so no earlier sweep reached it) is
+offered the top 30k words, still as its own exact frame. 26,776 thin rows: **40 Cold War (37 aliases)
+/ 803M, 6 Black Ops 4 / 803M.** The 37 new aliases then gave **35 sound files** through
+`alias_to_file.py --takes`. The same rows offered the 3,000 GloVe words nearest the pooled fillers
+instead (`--vectors`): **0 / 80M in each game.**
+
+**Compounds nobody has seen, built from halves everybody has** (`contrib/compound_slots.py`). A
+quarter of the fillers in open word slots are two English words glued with no separator -- 1,714 of
+6,865 in Cold War, 1,433 of 6,408 in Black Ops 4 (`licenseplate`, `wirefence`, `gunboat`,
+`bonusroom`, `quickscope`) -- and a new compound is in no dictionary. Each open frame that glues
+words (>= 4 fillers, at least one compound) offers its own left halves x its own right halves, and
+each half joined to the top 5,000 English words on the other side:
+
+| game | frames | candidates | matched | new |
+|---|---|---|---|---|
+| Cold War | 10,583 | 693M | 114 | **12** |
+| Black Ops 4 | 6,849 | 532M | 146 | **43** (materials 27, images 15) |
+
+The matched-but-not-new counts are names the day's other word methods and the snowball had already
+reached, so the method is independently re-deriving that ground as well as adding to it. Black Ops
+4 responds to compounds far better than to the plain dictionary at the same depth. Deeper on Black
+Ops 4, halves x words ranked 5k-30k (`--from 5000 --top 30000`): 2.66B, 85 matched, **12 new** --
+the snowball running alongside reached most of the rest first. Ranking the new halves by meaning
+instead (`--vectors`: each side offered the 2,000 GloVe words nearest the centroid of that side's
+own halves) is weak: **5 / 213M on Black Ops 4, 0 / 276M on Cold War.**
+
+**Two-word slots** (`contrib/open_slot_bigrams.py`). Many open slots span two tokens that vary as a
+unit -- `..._paint_dead_mpx_...`. A frame here is an exact prefix and suffix around two adjacent
+English words, qualifying with >= 5 distinct pairs (15,241 frames in Cold War, 15,012 in Black Ops 4),
+and each is offered the 20,000 commonest adjacent English word pairs found in any published or
+confirmed name of any title:
+
+| game | candidates | new |
+|---|---|---|
+| Cold War | 305M | **37** (materials 21, images 11, models 4, alias 1) |
+| Black Ops 4 | 300M | **45** (aliases 40, models 3, image 1, anim 1) |
+
+The pairs themselves are not new words -- they are known pairs placed in two-token slots they have
+never been seen in, which no one-token substitution (slotswap) can express.
+
+Unlike every one-token widening, going *deeper* paid more, not less: pairs ranked 20k-120k
+(`--from 20000 --pairs 120000`, 1.5B a game) returned **129 Cold War (aliases 73, materials 29,
+models 12) and 103 Black Ops 4 (anims 86)**. Rare pairs are specific -- a character and an action, a
+scene and a prop -- and specific is what a grid's missing cells are. Three-word slots (`--n 3`, the
+top 20k word triples into 13,448 / 12,6xx frames) returned 7 Cold War and 9 Black Ops 4. Pairs ranked
+past 120k (the remaining 145k, 2.2B a game): **57 Black Ops 4** (anims 20, materials 12, images 11),
+**59 Cold War** (materials 30). Triples ranked past 20k (`--n 3 --from 20000`, the remaining 300k,
+4B a game): **62 Black Ops 4** across all five types, **112 Cold War** (materials 46, images 40,
+models 22). Four-word slots (`--n 4`, every corpus word 4-gram, 1.8B a game): **45 Black Ops 4, 60 Cold War**.
+And pairs offered to *one-word* slots (`--into-single`: insertion and substitution at once, which
+no same-length sweep expresses), top 20k pairs into frames with >= 5 word fillers: **30 Black Ops 4
+/ 179M (anims 22), 42 Cold War / 198M (images 21, anims 11)**.
+Crossing each two-word frame's own first words with its own second words (`--inner`, 0.8-0.9M a
+game) returned **0 in both** -- that recombination is slotswap's ground; the value is in pairs
+brought from elsewhere.
+Pairs that are *not* both English words (`--mixed`: any letter-bearing tokens -- codes, names,
+abbreviations -- into the frames such pairs fill, top 30k): **3 Black Ops 4 / 243M, 0 Cold War /
+370M.** The pairs that pay are English.
+
+**Two-word slots inside sound paths** (`contrib/sound_pair_slots.py`). The pair sweep splits on `_`
+only, so it never saw sound files; this splits on `_`, `/` and `.` and takes pairs of adjacent English
+words joined by the same separator (inside a basename with `_`, across folders with `/`), frames with
+>= 4 distinct pairs, offered the commonest 30k pairs of that separator from every sound table and find:
+**70 Cold War / 119M and 61 Black Ops 4 / 102M** -- the first batch of Black Ops 4 sound files of the
+day worth the name (single-word slots had returned 2). Their basenames then gave **14 Black Ops 4
+aliases** through `aliases_from_files.py`. Unlike the visual pools, rarer pairs do not pay here:
+pairs ranked past 30k (`--from 30000`), **1 Cold War / 278M, 3 Black Ops 4 / 239M.**
+
+**Alphanumeric designations** (`contrib/open_slot_alnum.py`). Slots holding codes that mix letters
+and digits -- `mp5`, `ak47`, `sh385` -- sit between the word sweeps (letters only) and the short-code
+brute force (<= 3 characters). Frames with >= 4 such fillers, offered every such token of 2-8
+characters in any name of any title (21,141): **133 Black Ops 4 anims from 42M** -- one per 316k --
+and 1 Cold War model from 99M. Nearly all were cinematic shots, `ch_zm_<map>_<scene>_sh<NNN>_<who>`,
+which led to a dedicated generator:
+
+**Cinematic shot grids** (`contrib/cinematic_shots.py`). Every scene prefix carrying `_sh<digits>_`
+gets every shot sh000-sh995 in steps of 5, a/b/c variants of its known shots and its siblings'
+shots, x every character or object seen in that scene or any sibling scene of the same map. Run to
+a fixpoint: **117 Black Ops 4 anims from about 130k candidates** (47, 0, 70 after the snowball fed it
+new characters, 0) -- one per ~1,100 -- and 3 Cold War.
+
+Two generalisations of it, both nearly dry -- the shot grid was the open one:
+`contrib/numeric_slots.py` (every exact frame whose fillers are `<letters><digits>[<letter>]`,
+enumerated over the counter's whole range) **16 Black Ops 4 anims / 3.4M, 0 Cold War / 4.3M**;
+`contrib/designation_grids.py` (any lettered counter x every tail its siblings continue with --
+the shot grid's two axes for every prefix) **0 / 0.5M and 1 / 1.3M**, and with bare counters
+(`--bare`, `_01_` style) **0 / 1.8M and 0 / 3.9M**.
+
+**Three neighbours, same reasoning, weaker:**
+
+- `contrib/token_inflect.py` -- every word token re-inflected (-s, -es, -ed, -ing, -er, -ies, doubled
+  consonants, and each stripped again): 29M candidates, **4 names** (1 Cold War, 3 Black Ops 4).
+
+- `contrib/token_abbrev.py` -- each alphabetic token replaced by its truncations, consonant
+  skeleton and doubled-letter collapse, and short tokens by the corpus words they prefix: 27M
+  candidates, **11 names** (9 Cold War aliases, 2 Black Ops 4). The aliases are one new family,
+  `vox_zber_eg_pwr_pufs_<l><n>_<speaker>_0`, reached by `puffs` -> `pufs`: the game ships both
+  spellings.
+- `contrib/open_slot_codes.py` -- the same frames for *short-code* slots (1-4 chars, middle slots
+  only, since `affix_sweep` owns final ones), every 1-3 char code: 326M candidates, **2 names**.
+  Short-code classes are already complete; word classes are not.
+
+**Spent by:** the dictionary, not the corpus. Every confirmed name adds frames (and fillers that
+promote thin frames past the threshold), so it refills a little after any pass, but the large
+step only comes from a new vocabulary: a deeper word list, proper nouns (places, people, units),
+other languages' words where the game uses them.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
@@ -4365,6 +4624,15 @@ Do not spend a night rediscovering these. Each cost real time.
 
 | Tried | Outcome |
 |---|---|
+| **Compounds inside sound paths**, both games, 2026-10-01 | `compound_slots.py --sound`: the glued-compound method of the visual pools on sound-file paths split at `_`, `/` and `.` (1,300 frames per game). **92M Cold War + 97M Black Ops 4, 0 new.** Sound paths take words and word pairs (`sound_word_slots.py`, `sound_pair_slots.py`), not new compounds. |
+| **Cold War weapon-blueprint attachment models, as a grid and as new names**, 2026-10-01 | `contrib/blueprint_grid.py`. `attach_t9_<part>_<class>_<weapon>_<blueprint>_<view|world>` is 11,437 of Cold War's 68,354 named models. Completing it per weapon (every part seen on a weapon x every blueprint seen on it x view/world x its suffixes; parts pooled across the class with `--across-classes`): **800,901 candidates, 0.** Probing every weapon's three most-blueprinted parts with 212,256 candidate blueprint names (wordfreq's top 200k, our corpus tokens, the newer titles' tokens; `--probe`): **70M, 0.** A blueprint carries exactly the parts it carries, and the blueprint list is complete; Cold War's 17k unnamed models are not here. |
+| **Misspellings and UK/US respellings of every word token**, both games, 2026-10-01 | `contrib/token_typos.py`: each alphabetic token of 4+ letters in every known name replaced by every adjacent transposition, single deletion and single doubling, plus -our/-or, -ise/-ize, -re/-er, -ll-/-l-, grey/gray and similar. **26M Cold War + 19M Black Ops 4 candidates, 0.** The unseen tokens are real words (`open_slot_words.py`), inflections and abbreviations, not typos. |
+| **Foreign-language words in English word slots**, Cold War, 2026-10-01 | `open_slot_words.py --lang de,es,ru,vi,fr,it --words 20000`, accents folded to ASCII, minus every word in English's top 150k: 64,276 words x 11,616 word-slot frames, **747M candidates, 0.** Cold War is set in Germany, Cuba, Vietnam and the USSR and still names its assets in English; the same frames returned 135 from English's top 30k. |
+| **Cross-game token swaps learned from the two games' own named sets**, 2026-10-01 | `contrib/era_token_swap.py`. Every name present in one game is indexed by "its tokens with one slot blanked"; a name present in the other game under the same blank is a pair differing in exactly one token, and recurring pairs (`lt`->`bot`, `heavy`->`plr`, `katana`->`brawler`, ...) form a translation table, down-weighted where the same swap already links siblings *inside* the target. Hex-hash image tokens (`_ec5b0b30`) dominate the raw counts and are filtered out. Top 20,000 swaps applied to every name present in the source and not the target: **2.69M candidates BO4->CW, 3.22M CW->BO4, 0 new either way.** Together with the 3-name verbatim transfer this closes cross-game transfer at one-token distance: the shared content is already named in both. |
+| **Sound alias names read off sound-file basenames**, both games, 2026-10-01 | `contrib/aliases_from_files.py` -- the reverse of `alias_to_file.py`. Every published or confirmed `sound_asset` basename, raw and with its trailing take number stripped (`vox_x_congrat_sml_03` -> `vox_x_congrat_sml`): 476,458 candidates. 1,127 Black Ops 4 aliases matched, **all already named; 0 new in either game.** Every alias whose file anyone knows is already named, so the unnamed aliases sit with unnamed files. |
+| **Exhaustive 3-4 character speaker codes, Cold War**, 2026-10-01 | The Black Ops 4 version returned 176 names; Cold War never had one. `contrib/cw_speaker_codes.py`: `vox_` + every unseen code of 3-4 chars from [a-z0-9] (1,726,149) + the 1,054 lines at least three known Cold War speakers share, as a plan: 1.8B candidates, **0.** Cold War's voice cast is fully known at that length; its ~490-line speaker grids are already filled. |
+| **Snapshot order as locality**, 2026-10-01 | Consecutive named records share a 3-token family 52-54% of the time in `image` against 5-9% shuffled, which looks like load-order information. It is not: both snapshots are **sorted by id**, and the locality is FNV's own -- names differing only in their final byte hash to ids a small multiple of 2^40 apart. That is exactly what `final_byte` already solves backwards. The snapshot carries no order beyond the hash. |
+| **The lighting-bake map stamp as a hash of the map name**, 2026-10-01 | The 38 distinct 8-hex stamps in `volume<V>_state<S>_<kind>_<stamp>_<i>` against 841 `mp_`/`zm_`/`cp_`/`wz_` map tokens in seven spellings (`mp_x`, `maps/mp/mp_x.d3dbsp`, ...), under CRC32, FNV-1a 32 and the low, high and 63-bit-shifted halves of FNV-1a 64: **0 matches.** The stamp is a bake identifier, not derivable from the map, so the bake grid's ceiling stays the published maps. |
 | Pooling `coordinated_identifiers.py`'s evidence across asset types instead of per-type, 2026-09-25 | `contrib/coordinated_identifiers_crosstype.py`. Hypothesis: a substitution rule like `usa<->rus` is game vocabulary, not naming-convention vocabulary, so it should be learnable from sibling evidence in *any* asset type, not just the type it is applied to. Pooled all six types' names into one evidence set: 7,246 supported rules, 926,631 candidates, but **`cross_kind_supported_pairs: 0`** — no rule's two required sibling frames ever came from different kinds, because the per-type naming convention makes the full masked-template shape (not just the token) type-specific. Confirmed anyway, all four game/fold configurations: **0 new everywhere.** The per-type original already covers this ground; pooling only adds candidates the per-type run already tried under a different fingerprint. |
 | `sab_plan.py`, the full directory x basename x tail product (not sampled), Black Ops 4, 2026-09-04 | Method 20's generator (`sabpaths`) capped itself at 36.4M candidates to finish as a pipe and returned 5 names. This asks the *same vocabulary, same convention* completely, as a plan the engine runs instead of a piped generator: 13,315 directories x 93,743 basenames x 150 tails, **188.5B candidates, 0 matched.** Extends the existing extensive `sound_asset` dead-end record (numbered takes, directory x basename recombination, all-boundary cores x uncarried endings, cross-title respelling -- all recorded dead above) with the one shape none of them tried: the full product at once, unsampled. Consistent with the standing conclusion that this pool's unnamed 70,697 are not built from pieces the named ~8,600 are built from, under any recombination shape measured so far. |
 | `cross_era.py` with widened `--heads`/`--tails` caps (5,000/20,000, up from the 1,200/6,000 defaults), Black Ops 4, 2026-09-03 | The `--top`-cap lesson above paid off huge for the ending sweep (621 names), so the same fix was tried on `cross_era.py`'s own rank caps -- same shape of parameter, same corpus that had grown 5x since the defaults were last measured. 120T candidates over 8 slices; **5 of 8 slices run (62%), 0 matched in every one.** Not a full run -- `confirm_plan` has no slice-resume flag, so finishing the last 3 would mean redoing the first 5 from scratch, which was not worth it once 5 straight zeros were in. Unlike the ending-sweep cap, widening this one did not reopen anything: the newer titles' vocabulary, respelled with our own decorations, still does not land on Black Ops 4's specific unnamed ids at this corpus size. Consistent with the standing "engines renamed rather than inherited" conclusion. Worth a full 8-slice run if the corpus grows substantially again, but do not expect the same shape of win twice from the same trick. |
