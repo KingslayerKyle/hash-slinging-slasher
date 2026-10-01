@@ -1,0 +1,10 @@
+_confectionery_c
+_parcheesi_cup
+_parcheesi_wood
+_pork_c
+_pork_full
+_pork_m
+_pork_n
+_sign_confectionery
+_skull_cranium
+_soup_pork
