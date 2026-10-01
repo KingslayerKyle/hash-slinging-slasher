@@ -1,0 +1,143 @@
+r"""Open word slots filled with new compounds of the words they already glue together.
+
+Measured 2026-10-01: of the fillers in open word slots (frames with >= 4 alphabetic fillers), a
+quarter are two English words joined with no separator -- 1,714 of 6,865 in Cold War, 1,433 of 6,408
+in Black Ops 4: `licenseplate`, `wirefence`, `gunboat`, `bonusroom`, `matchstart`, `quickscope`.
+A compound nobody has seen is a token no dictionary lists and no recombination of whole tokens can
+make. But its *halves* are ordinary words, and a slot that glues `bonus|room` and `panic|room` is
+likely to glue `safe|room` too.
+
+For every open frame (exact prefix and suffix, >= --min fillers), each filler is split into two
+words of wordfreq's top 50k where it can be. The frame's left halves L and right halves R (plain
+fillers count as both) are then offered
+
+    - L x R, crossed inside the frame
+    - L x the top --top words, and the top --top words x R
+
+each glued with no separator, and as its own exact frame.
+
+    python contrib/compound_slots.py --game BLKOPSCW | bin\windows\confirm_list.exe - \
+        --game BLKOPSCW --label "compound word slots" --script contrib/compound_slots.py
+"""
+import argparse
+import collections
+import os
+import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import token_markov  # noqa: E402
+
+POOLS = ("xmodel", "image", "material", "xanim", "sound_alias")
+ALPHA = re.compile(r"^[a-z]{3,}$")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--game", required=True)
+    ap.add_argument("--min", type=int, default=4)
+    ap.add_argument("--top", type=int, default=5000)
+    ap.add_argument("--from", dest="word_from", type=int, default=0,
+                    help="skip the commonest N words (already run); the inner L x R cross is skipped too")
+    ap.add_argument("--vectors", help="instead of the top words, offer each side the --per GloVe words"
+                                      " nearest the centroid of that side's own halves")
+    ap.add_argument("--per", type=int, default=2000)
+    ap.add_argument("--sound", action="store_true", help="sound-file paths instead of the visual pools")
+    ap.add_argument("--count", action="store_true")
+    args = ap.parse_args()
+
+    from wordfreq import top_n_list
+    english = {w for w in top_n_list("en", 50000) if ALPHA.match(w)}
+    top = [w for w in top_n_list("en", args.top * 2) if ALPHA.match(w)][args.word_from: args.top]
+
+    def split2(w):
+        for i in range(3, len(w) - 2):
+            if w[:i] in english and w[i:] in english:
+                return w[:i], w[i:]
+        return None
+
+    frames = collections.defaultdict(set)
+    if args.sound:
+        # sound paths: every `_`, `/` and `.` piece is a slot (see sound_word_slots.py)
+        if args.game == "BLKOPS04":
+            from sound_word_slots import present_unfolded
+            names = present_unfolded(args.game, "sound_asset")
+        else:
+            names, _ = token_markov.present(args.game, "sound_asset")
+        for name in names:
+            parts = re.split(r"([_/.])", name)
+            for i in range(0, len(parts), 2):
+                if ALPHA.match(parts[i]):
+                    frames[("".join(parts[:i]), "".join(parts[i + 1:]))].add(parts[i])
+    for pool in ([] if args.sound else POOLS):
+        names, _ = token_markov.present(args.game, pool)
+        for name in names:
+            toks = name.split("_")
+            for i, tok in enumerate(toks):
+                if ALPHA.match(tok):
+                    head = "_".join(toks[:i]) + "_" if i else ""
+                    tail = "_" + "_".join(toks[i + 1:]) if i < len(toks) - 1 else ""
+                    frames[(head, tail)].add(tok)
+
+    jobs = []
+    total = 0
+    for key, fillers in frames.items():
+        if len(fillers) < args.min:
+            continue
+        left, right, glued = set(), set(), 0
+        for f in fillers:
+            parts = split2(f) if f not in english else None
+            if parts:
+                left.add(parts[0])
+                right.add(parts[1])
+                glued += 1
+            elif f in english:
+                left.add(f)
+                right.add(f)
+        if not glued:
+            continue  # this slot never glues words; leave it to open_slot_words.py
+        jobs.append((key, sorted(left), sorted(right), fillers))
+        total += len(left) * len(right) + (len(left) + len(right)) * len(top)
+    print("%s: %d compound-bearing open frames, about %d candidates" % (args.game, len(jobs), total),
+          file=sys.stderr)
+    if args.count:
+        return
+    out = sys.stdout
+    if args.sound and args.game == "BLKOPS04":
+        class Slashed:
+            def write(self, text):
+                sys.stdout.write(text.replace("/", chr(92)))
+        out = Slashed()
+    if args.vectors:
+        import numpy as np
+        from open_slot_neighbours import load
+        vocab, index, mat = load(args.vectors)
+
+        def nearest(words):
+            ids = [index[w] for w in words if w in index]
+            if not ids:
+                return []
+            c = mat[ids].mean(axis=0)
+            c /= np.linalg.norm(c) + 1e-9
+            return [vocab[j] for j in np.argpartition(-(mat @ c), args.per)[: args.per]]
+
+        total = 0
+        for (head, tail), left, right, seen in jobs:
+            new_left, new_right = nearest(left), nearest(right)
+            block = {a + b for a in new_left for b in right} | {a + b for a in left for b in new_right}
+            block -= seen
+            total += len(block)
+            out.write("".join(head + c + tail + "\n" for c in block))
+        print("  %d candidates written" % total, file=sys.stderr)
+        return
+    for (head, tail), left, right, seen in jobs:
+        inner = set() if args.word_from else {a + b for a in left for b in right} - seen
+        out.write("".join(head + c + tail + "\n" for c in inner))
+        for a in left:
+            out.write("".join(head + a + w + tail + "\n" for w in top))
+        for b in right:
+            out.write("".join(head + w + b + tail + "\n" for w in top))
+
+
+if __name__ == "__main__":
+    main()
