@@ -3717,6 +3717,20 @@ Pushed further the same day, every probe on one speaker (`hdsn`, who holds every
 
 The topic pairs run at one quip per ~715k candidates, far denser than chained web text: an unseen
 quip is two words from the grid's own subject, not a common English bigram.
+Two more shapes of the same topic idea (`glove_phrase_pairs.py`), each followed by `--fill` and
+`alias_to_file.py --takes`:
+
+| probe | candidates | new quips | fill | files | total |
+|---|---|---|---|---|---|
+| a topic word x one of the 30k commonest English words, both orders (`--open 30000`) | 183M | 12 | 374 | 386 | **772** (#2346) |
+| the same with 150k common words | 920M | 1 | | | |
+| every ordered triple of the 300 nearest topic words + 100 function words + the quips' own words (`--triples 300`) | 108M | 9 | 306 | 316 | **632** (#2347) |
+
+Each quip found on one speaker is worth ~60 names once the cast and their files follow, which is
+why probes this sparse still pay.
+The widest of these then came up dry, which is where the seam stands: triples from the 500 nearest
+topic words (284M) gave 1 quip, and topic pairs on *every* operator rather than one (348M, looking
+for operator-specific quips like `baseball_bat`, `took_down`) gave 0.
 
 **Cross fill: the grid inside a category** (`phrase_grid.py --cross`). Most categories are not
 phrases but a second grid -- `ss_<killstreak>_<event>`, `ping_item_<gear>`, `se_kill_<event>`. Each
@@ -3768,7 +3782,19 @@ files and aliases: 0 -- their numbered families were already complete.
 The same idea for *words* (`contrib/sound_word_templates.py`): a token repeated between a sound
 path's folder and its basename (`wpn/smg/cqb/plr/wpn_smg_cqb_loop`) made a placeholder and filled
 with every value its family (first two path components) uses there: **7 Cold War / 2.1M, 35 Black
-Ops 4 / 1.7M**; two repeated words crossed (`--two 30`): **0 / 1.55M and 0 / 1.17M**.
+Ops 4 / 1.7M**; two repeated words crossed (`--two 30`): **0 / 1.55M and 0 / 1.17M**; templates whose repeated word
+already takes >= 3 values offered the top 30k English words, written into both places at once
+(`--dictionary 30000`): **0 Cold War / 112M, 12 Black Ops 4 / 110M**.
+
+**Images named for a material's part, not the whole material** (`contrib/material_prefix_images.py`,
+2026-10-05). Cold War's vehicles have 11,674 materials and 5,336 images: materials stack paint, wear
+and skin variants on a part (`..._exterior_c_carpaint_b_mpx_bp_bomber`), while the part's images
+carry their own endings (`i_mtl_veh_t9_mil_ru_air_attack_frogfoot_canopy_maps1_r`, `..._canopy_o`).
+Every material at every prefix of >= 4 tokens, as `i_mtl_<prefix>_<ending>` and `i_<prefix>_<ending>`
+for the 60 commonest image endings measured per game: **92 Cold War / 23M, 13 Black Ops 4 / 18M**;
+the next 140 endings added 1 each, and endings measured inside each part's own family instead
+(`--per-family 40`) 3 each. The reverse (`contrib/image_base_materials.py`: each image minus
+its channel ending, as `mc/mtl_<base>` with the 200 commonest material endings): **11 / 18M, 9 / 14M.**
 
 **Alphanumeric designations** (`contrib/open_slot_alnum.py`). Slots holding codes that mix letters
 and digits -- `mp5`, `ak47`, `sh385` -- sit between the word sweeps (letters only) and the short-code
@@ -4710,6 +4736,8 @@ Do not spend a night rediscovering these. Each cost real time.
 
 | Tried | Outcome |
 |---|---|
+| **Character skins: part grid and new skin names**, 2026-10-05 | `contrib/skin_part_grid.py`: every `c_t9_`/`c_t8_` skin key x every part ending (`_viewarms`, `_lowerbody_viewbody`, `_torso_sy`, ...) its faction uses: **12,027 Cold War + 620 Black Ops 4 candidates, 0.** Then each of 27 Cold War operators' skin slot (`c_t9_<faction>_pl_<op>_<skin>_viewarms`) probed with every word of wordfreq and GloVe (397k): **7.5M, 0.** Skins are complete as grids, and the unnamed ones are not single dictionary words. |
+| **Topic pairs on every other shared voice category**, Cold War, 2026-10-05 | The probe that found the execution quips (`glove_phrase_pairs.py`: every pair of the 2,000 GloVe words nearest a category's own phrase words, on its top speaker) run on the other 57 categories shared by >= 10 speakers (`se_kill`, `eq`, `kill`, `ping_item`, `ss_*`, `zm_*`, ...): **226M candidates, 0.** Their phrases are game-system vocabulary (killstreaks, gear, events) that the grids already hold in full; only the quips were an open class. |
 | **Weapon sound aliases for weapons only the models name**, both games, 2026-10-05 | `contrib/weapon_event_grid.py`: weapons from `wpn_<class>_<weapon>_*` aliases *and* `wpn_t<N>_<class>_<weapon>_*` models, each offered every event its class's aliases use: **4,833 Cold War + 16,772 Black Ops 4 candidates, 0.** Every weapon's sound set is already named. |
 | **Sound aliases built from a file's path**, both games, 2026-10-05 | `contrib/aliases_from_paths.py`: Cold War's effect aliases are visibly built from the path (`fly/weapon/reload/sniper_quick/bullet_in/sniper_quick_bullet_in_00` -> `fly_sniper_quick_bullet_in`; `.../ww/electric/crystal_empty/crystal_empty_00` -> `zmb_ww_crystal_empty`), so every known file offered top folder + any ordered choice of up to two folder names + basename minus take, with `_plr`/`_npc`: **8 Cold War / 1.09M, 0 Black Ops 4 / 706k.** The convention is real but already mined -- the aliases of every known file are named, and the unnamed effect aliases sit with unnamed files. |
 | **Cold War zombies voice folders for the maps nobody has a file for**, 2026-10-05 | Only `zm_silver`, `zm_audiologs` and `zm_onslaught` have known voice files. Three probes for the rest, all **0**: the 383 aliases led by a map code (`zamr`, `zber`, `zdtp`) placed into `vox/scripted/zmb/<zm_word or word>/` for every GloVe word, as the reordered basename (43M) and as the alias itself with and without a take (52M); and `z` + every 3 letters as the file's map code, in ten guessed folders (`zm_gold`, `zm_tungsten`, `zm_platinum`, ...), on 30 `zm_silver` lines (5.3M). Either those maps' lines are speaker-specific or their files are named another way. |
