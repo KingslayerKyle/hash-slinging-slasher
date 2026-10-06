@@ -3684,6 +3684,92 @@ day worth the name (single-word slots had returned 2). Their basenames then gave
 aliases** through `aliases_from_files.py`. Unlike the visual pools, rarer pairs do not pay here:
 pairs ranked past 30k (`--from 30000`), **1 Cold War / 278M, 3 Black Ops 4 / 239M.**
 
+**English web bigrams -- the phrases voice lines are made of** (2026-10-05). `open_slot_bigrams.py
+--pair-file` with the top 100k two-word pairs of Norvig's `count_2w.txt` (web text,
+https://norvig.com/ngrams/) that the corpus does not already use, offered to the same two-word
+frames: **365 Cold War (357 aliases) / 1.53B, 7 Black Ops 4 / 1.51B.** Cold War's voice lines are
+ordinary English phrases the game's own names never contained; Black Ops 4's frames are mostly not
+voice. Then `alias_to_file.py --takes` turned the 357 aliases into **357 sound files** -- one file
+per alias, `<alias>_00`. So: **714 names from one external phrase list.**
+
+**Phrase grids: detect a phrase on two speakers, then fill the cast** (`contrib/phrase_grid.py`).
+All 357 of those aliases were one family, `vox_<spk>_mtx_execute_<phrase>`, and each phrase exists
+for ~35 of the 37 operators. A phrase only has to be *detected* once, so the vocabulary can be huge.
+For every Cold War voice category whose phrases are shared across >= 10 speakers (58 of them),
+`--probe` offers every phrase of a 3.07M vocabulary -- wordfreq's whole list, GloVe's vocabulary,
+every web bigram (2-letter words allowed: `line_up`, `move_up`), 1.29M trigrams chained from
+frequent bigrams, and every word pair and triple in the corpus -- to the two speakers holding the
+most phrases: **18 hits from 356M**. `--fill` then crosses every phrase now known for any speaker
+of a category with all its speakers: **66 aliases**, and `alias_to_file.py --takes` gave **284
+sound files**. The web bigrams ranked past 100k, run the same day: **178 more** in Cold War.
+
+The loop is: any batch of new voice aliases -> `phrase_grid.py --fill` -> `alias_to_file.py
+--takes` -> submit.
+
+Pushed further the same day, every probe on one speaker (`hdsn`, who holds every quip):
+
+| probe vocabulary | candidates | new quips | then `--fill` | then sound files |
+|---|---|---|---|---|
+| 12.3M phrases chained from web bigrams (tri- and 4-grams, each also with function words dropped) | 24.5M | 11 | 165 | 176 |
+| 26.7M deeper chains (`contrib/quip_phrases.py`) | 26.7M | 6 | 102 | 108 |
+| every word and ordered pair of the 3,000 GloVe words nearest the quips' own words (`contrib/glove_phrase_pairs.py`) | 9.3M | 13 | (in the next row's fill) | |
+| the same with 8,000 words | 64M | 5 | | |
+
+The topic pairs run at one quip per ~715k candidates, far denser than chained web text: an unseen
+quip is two words from the grid's own subject, not a common English bigram.
+
+**Cross fill: the grid inside a category** (`phrase_grid.py --cross`). Most categories are not
+phrases but a second grid -- `ss_<killstreak>_<event>`, `ping_item_<gear>`, `se_kill_<event>`. Each
+category's phrases split at the first word into rows and remainders, and every row x every
+remainder x every speaker: **442 aliases from 650k candidates**, which `alias_to_file.py --takes`
+turned into **460 sound files** (#2330). A second round, splits after two or three words, and Black
+Ops 4's categories all returned 0: the open grid was streak x event, once.
+
+**Never run two `submit`s at once.** On 2026-10-05 a background chain's `submit` and a manual one
+overlapped by seconds and both opened PRs for the same two batches (#2318/#2319, #2320/#2321; the
+copies were closed). `submit` takes no lock, and `ab_snowball.py` submits after every round, so
+keep `submit` out of background chains and run it by hand when nothing else is submitting.
+
+**Black Ops 4 zombies voice files: the alias reordered, in every map's folder**
+(`contrib/bo4_zm_plr_files.py`, 2026-10-05). Black Ops 4's zombies lines break the
+basename-equals-alias convention every other alias->file method assumes: the alias puts the event
+first, the file puts the map code and speaker first, and the alias's index *is* the file's take --
+
+    vox_box_smg_plr_17_3        ->  en\vox\scripted\zmb\orange\vox_oran_plr_17_box_smg_3.sn100.pc.snd
+    vox_boss_success_ncom_1     ->  en\vox\scripted\zmb\<map>\vox_<code>_ncom_boss_success_1.sn100.pc.snd
+
+(map-specific lines add a separate take, `..._ready_0_0`, and some carry `_s`). The only unknown is
+the map, and the zombies voice folders are nine (`bod`, `common`/`cmn`, `fiv`, `man`, `orange`/`oran`,
+`red`, `tow`, `white`/`whi`, `zod`). Every known `vox_<event>_plr_<n>_<idx>` alias in every map with
+each form: **370 sound files from 763k**; the same for non-player lines `vox_<event>_<npc>_<idx>`
+(`--npc`): **248 more**; known files read back as aliases (`--aliases`): **40 aliases**. Afterwards
+3 player aliases in the tables are without a file, so the seam is closed; an event x player x
+index grid (`--grid --grid-files`, 851k) and every other voice folder (`--all-folders`, 17.9M) both
+returned 0 -- lines exist only for the players who say them, and only the zombies folders reorder.
+
+**Cold War's zombies voice lines use the same reordering** (`contrib/cw_zm_line_files.py`,
+2026-10-05). The 950 known files under `vox/scripted/zmb/` (`zm_silver`, `zm_audiologs`,
+`zm_onslaught`, ...) are `vox_<mapcode>_<speaker>_<line>_<take>`, and no known alias contained a
+map code. Every file read back under eleven candidate orderings (4,759 candidates) returned **412
+aliases**, all of one form -- `vox_<line>_<speaker>_<take>`, Black Ops 4's convention exactly
+(`vox_dark_aether_audiolog_05_alic_6`, `vox_mq_def_count_final_psys_2`). The other direction --
+every known alias of that shape placed into the six known folders (16,746), and the 414 aliases led
+by a map code (`vox_zber_..._jagr_0`) placed into 84 guessed `zm_<map>` folders (68,724) -- returned
+0: the remaining maps' folder names or codes are not the guessed ones.
+
+**Numbered sound templates** (`contrib/sound_number_templates.py`, 2026-10-05). The numeric
+methods only ever read the visual pools, and a sound path often carries its number twice -- Cold
+War's execution sounds are `mpl/executions/exec_<NNN>/<NNN>_<part>.ln75.pc.all.snd`, one folder per
+numbered execution, with 46 of the folders named. Every 2-3 digit number in a sound name becomes a
+placeholder holding the same value wherever it appears, names group by template, and each template
+seen with >= 3 numbers is filled with every number of its width: **772 Cold War sound files from
+1.06M candidates**, all executions (#2337), then 0 on a second round. Cold War aliases, Black Ops 4
+files and aliases: 0 -- their numbered families were already complete.
+The same idea for *words* (`contrib/sound_word_templates.py`): a token repeated between a sound
+path's folder and its basename (`wpn/smg/cqb/plr/wpn_smg_cqb_loop`) made a placeholder and filled
+with every value its family (first two path components) uses there: **7 Cold War / 2.1M, 35 Black
+Ops 4 / 1.7M**; two repeated words crossed (`--two 30`): **0 / 1.55M and 0 / 1.17M**.
+
 **Alphanumeric designations** (`contrib/open_slot_alnum.py`). Slots holding codes that mix letters
 and digits -- `mp5`, `ak47`, `sh385` -- sit between the word sweeps (letters only) and the short-code
 brute force (<= 3 characters). Frames with >= 4 such fillers, offered every such token of 2-8
@@ -4624,6 +4710,12 @@ Do not spend a night rediscovering these. Each cost real time.
 
 | Tried | Outcome |
 |---|---|
+| **Weapon sound aliases for weapons only the models name**, both games, 2026-10-05 | `contrib/weapon_event_grid.py`: weapons from `wpn_<class>_<weapon>_*` aliases *and* `wpn_t<N>_<class>_<weapon>_*` models, each offered every event its class's aliases use: **4,833 Cold War + 16,772 Black Ops 4 candidates, 0.** Every weapon's sound set is already named. |
+| **Sound aliases built from a file's path**, both games, 2026-10-05 | `contrib/aliases_from_paths.py`: Cold War's effect aliases are visibly built from the path (`fly/weapon/reload/sniper_quick/bullet_in/sniper_quick_bullet_in_00` -> `fly_sniper_quick_bullet_in`; `.../ww/electric/crystal_empty/crystal_empty_00` -> `zmb_ww_crystal_empty`), so every known file offered top folder + any ordered choice of up to two folder names + basename minus take, with `_plr`/`_npc`: **8 Cold War / 1.09M, 0 Black Ops 4 / 706k.** The convention is real but already mined -- the aliases of every known file are named, and the unnamed effect aliases sit with unnamed files. |
+| **Cold War zombies voice folders for the maps nobody has a file for**, 2026-10-05 | Only `zm_silver`, `zm_audiologs` and `zm_onslaught` have known voice files. Three probes for the rest, all **0**: the 383 aliases led by a map code (`zamr`, `zber`, `zdtp`) placed into `vox/scripted/zmb/<zm_word or word>/` for every GloVe word, as the reordered basename (43M) and as the alias itself with and without a take (52M); and `z` + every 3 letters as the file's map code, in ten guessed folders (`zm_gold`, `zm_tungsten`, `zm_platinum`, ...), on 30 `zm_silver` lines (5.3M). Either those maps' lines are speaker-specific or their files are named another way. |
+| **Phrase-grid fill and cross fill on Cold War's sound-effect alias families**, 2026-10-05 | `phrase_grid.py --family <fly|wpn|zmb|evt|amb|prj|veh|mus|mpl|uin> --fill --cross --speakers 5 --phrases 3`, the second token playing the speaker (`wpn_<weapon>_...`): 78k candidates across ten families, **0.** Only the operator voice lines are shared grids. |
+| **Phrase grids in Black Ops 4**, 2026-10-05 | `phrase_grid.py --game BLKOPS04`: its 10 voice categories shared by >= 10 speakers (`ae`, `callout`, `threat`, `ult_*`, ...) probed with the 3.07M-phrase vocabulary on two speakers each (61M), filled, and cross-filled at splits 1 and 2: **0 everywhere.** Its voice lines are not shared grids the way Cold War's operator lines are. |
+| **Black Ops 4 voice lines x every speaker of their group**, 2026-10-05 | `contrib/vox_line_grid.py`: every `en/vox/scripted/<group>/<spk>/vox_<spk>_<line>_<take>` line seen with >= 2 speakers of a group, offered to every speaker of that group with the line's takes (plus 00-03), as files and as bare aliases. **129,280 file + 31,507 alias candidates, 0.** A line exists for exactly the speakers who recorded it; the sound-pair finds of 2026-10-01 were new *lines* reaching many speakers at once, not holes in old lines. |
 | **Compounds inside sound paths**, both games, 2026-10-01 | `compound_slots.py --sound`: the glued-compound method of the visual pools on sound-file paths split at `_`, `/` and `.` (1,300 frames per game). **92M Cold War + 97M Black Ops 4, 0 new.** Sound paths take words and word pairs (`sound_word_slots.py`, `sound_pair_slots.py`), not new compounds. |
 | **Cold War weapon-blueprint attachment models, as a grid and as new names**, 2026-10-01 | `contrib/blueprint_grid.py`. `attach_t9_<part>_<class>_<weapon>_<blueprint>_<view|world>` is 11,437 of Cold War's 68,354 named models. Completing it per weapon (every part seen on a weapon x every blueprint seen on it x view/world x its suffixes; parts pooled across the class with `--across-classes`): **800,901 candidates, 0.** Probing every weapon's three most-blueprinted parts with 212,256 candidate blueprint names (wordfreq's top 200k, our corpus tokens, the newer titles' tokens; `--probe`): **70M, 0.** A blueprint carries exactly the parts it carries, and the blueprint list is complete; Cold War's 17k unnamed models are not here. |
 | **Misspellings and UK/US respellings of every word token**, both games, 2026-10-01 | `contrib/token_typos.py`: each alphabetic token of 4+ letters in every known name replaced by every adjacent transposition, single deletion and single doubling, plus -our/-or, -ise/-ize, -re/-er, -ll-/-l-, grey/gray and similar. **26M Cold War + 19M Black Ops 4 candidates, 0.** The unseen tokens are real words (`open_slot_words.py`), inflections and abbreviations, not typos. |
