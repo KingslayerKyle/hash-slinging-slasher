@@ -1,0 +1,14 @@
+_80_forever
+_cable_dead
+_cable_dirty
+_detailmaps2_c
+_detailmaps2_n
+_drum_lfe.ln100.pc.snd
+_drum_loop.ll100.pc.snd
+_drum_start.ln100.pc.snd
+_drum_stop.ln100.pc.snd
+_forever_a
+_scorpion_r
+_shrug_00.ln100.pc.snd
+_shrug_01.ln100.pc.snd
+_shrug_02.ln100.pc.snd
