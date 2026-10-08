@@ -1,0 +1,4 @@
+a002b39f440c9e9,mc/mtl_p8_jpn_vending_machine_decalplastic
+321f6b9566d9eb45,mc/mtl_veh_t8_civ_car_compact_engine_decalyellow
+5197b12715daf08e,mc/mtl_veh_t8_civ_car_compact_engine_decalyellow_dirty
+69b95654ac4f9715,mc/mtl_wpn_t8_ar_heavy_decal_iconcatch

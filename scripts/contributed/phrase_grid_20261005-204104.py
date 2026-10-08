@@ -1,0 +1,106 @@
+r"""Voice-line phrase grids: probe a huge phrase vocabulary on two speakers, then fill every speaker.
+
+Measured 2026-10-05: 357 of the 365 names English web bigrams found in Cold War were one family,
+`vox_<spk>_mtx_execute_<phrase>` -- execution quips like `real_challenge`, `wrong_time`,
+`just_starting` -- and every phrase exists for ~35 of its 37 operators. That changes the economics:
+a phrase only has to be *detected* once, on one or two speakers, and the grid can then be filled.
+So a vocabulary of millions of phrases costs millions of candidates, not tens of millions.
+
+A *category* is the text between a speaker code and a phrase (`mtx_execute`). For every category
+whose phrases are shared by many speakers (>= --speakers speakers, >= --phrases phrases each seen
+with >= 3 speakers), this
+
+    --probe   offers every phrase of the vocabulary to the two speakers holding the most phrases
+    --fill    offers every phrase known for any speaker of the category to every speaker of it
+
+The vocabulary (`--vocab` files, one phrase per line, words joined by `_`) is meant to be large:
+single words, web bigrams, the corpus's own word pairs and triples, chained bigrams.
+
+    python contrib/phrase_grid.py --probe --vocab phrases.txt | bin\windows\confirm_list.exe - --game BLKOPSCW ...
+    python contrib/phrase_grid.py --fill | bin\windows\confirm_list.exe - --game BLKOPSCW ...
+"""
+import argparse
+import collections
+import os
+import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import token_markov  # noqa: E402
+
+PHRASE = re.compile(r"^[a-z]+(?:_[a-z]+){0,4}$")
+
+
+def categories(names, min_speakers, min_phrases):
+    """{category: (speakers, phrases)} for vox_<spk>_<category>_<phrase> grids."""
+    seen = collections.defaultdict(lambda: collections.defaultdict(set))
+    speakers_of = collections.defaultdict(set)
+    for name in names:
+        if not name.startswith("vox_"):
+            continue
+        toks = name.split("_")
+        if len(toks) < 4:
+            continue
+        spk = toks[1]
+        rest = toks[2:]
+        for k in range(1, min(4, len(rest))):
+            cat, phrase = "_".join(rest[:k]), "_".join(rest[k:])
+            if PHRASE.match(phrase):
+                seen[cat][phrase].add(spk)
+                speakers_of[cat].add(spk)
+    out = {}
+    for cat, phrases in seen.items():
+        shared = {p for p, who in phrases.items() if len(who) >= 3}
+        if len(speakers_of[cat]) >= min_speakers and len(shared) >= min_phrases:
+            out[cat] = (speakers_of[cat], phrases)
+    return out
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--game", default="BLKOPSCW")
+    ap.add_argument("--speakers", type=int, default=10)
+    ap.add_argument("--phrases", type=int, default=5)
+    ap.add_argument("--probe", action="store_true")
+    ap.add_argument("--fill", action="store_true")
+    ap.add_argument("--vocab", nargs="*", default=[])
+    ap.add_argument("--count", action="store_true")
+    args = ap.parse_args()
+
+    names, _ = token_markov.present(args.game, "sound_alias")
+    cats = categories(names, args.speakers, args.phrases)
+    out = set()
+    if args.fill:
+        for cat, (speakers, phrases) in cats.items():
+            for phrase in phrases:
+                for spk in speakers:
+                    out.add("vox_%s_%s_%s" % (spk, cat, phrase))
+    if args.probe:
+        vocab = set()
+        for path in args.vocab:
+            with open(path, encoding="utf-8", errors="replace") as handle:
+                vocab |= {v.strip() for v in handle if PHRASE.match(v.strip())}
+        # streamed, not collected: a large vocabulary over every category is hundreds of millions
+        total = 0
+        for cat, (speakers, phrases) in cats.items():
+            per = collections.Counter()
+            for phrase, who in phrases.items():
+                per.update(who)
+            probes = [s for s, _ in per.most_common(2)]
+            for spk in probes:
+                head = "vox_%s_%s_" % (spk, cat)
+                total += len(vocab)
+                if not args.count:
+                    sys.stdout.write("".join(head + p + "\n" for p in vocab if p not in phrases))
+        print("%s: probing %d categories with %d phrases, about %d candidates"
+              % (args.game, len(cats), len(vocab), total), file=sys.stderr)
+        return
+    out -= names
+    print("%s: %d grid categories (%s), %d candidates" % (args.game, len(cats),
+          ", ".join(sorted(cats)[:12]) + (" ..." if len(cats) > 12 else ""), len(out)), file=sys.stderr)
+    if not args.count:
+        sys.stdout.write("".join(o + "\n" for o in sorted(out)))
+
+
+if __name__ == "__main__":
+    main()

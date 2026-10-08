@@ -1,0 +1,2 @@
+7b7381cd99c461e6,i_wpn_t9_loot_smg_spray_newstock_ferfluid_o
+7b7382cd99c46399,i_wpn_t9_loot_smg_spray_newstock_ferfluid_n

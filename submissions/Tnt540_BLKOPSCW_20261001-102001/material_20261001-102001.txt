@@ -1,0 +1,4 @@
+2441e83ba2b69a2c,mc/mtl_wpn_t9_loot_smg_lapa_basemag
+30f25a2cdb68456f,mc/mtl_wpn_t9_loot_smg_lapa_basemag_ripper
+310ccdf7ccc3d04a,mc/mtl_p8_wz_supply_stash_decal_packstrap
+4307770cc0f733e4,mc/mtl_c_t9_usa_vest_02_blacker_clothanim

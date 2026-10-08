@@ -1,0 +1,5 @@
+db06147492db338,mc/mtl_p9_zm_gold_access_card_decal_01
+2ad408013fca549b,ei/gfx9_spark_streak_abnorm_mtx_cryo_hdrg
+34c071a12f0911ab,el/gfx9_tracer_mtx_cryo_hdrg
+47ec898cadd24cc8,ei/gfx9_spark_streak_long_mtx_cryo_hdrg
+7ffb63c103aa6079,ei/gfx9_spark_round_mtx_cryo_hdrg

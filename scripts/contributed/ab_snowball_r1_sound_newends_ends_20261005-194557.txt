@@ -1,0 +1,6 @@
+_mech_left
+_mech_right
+_shot_left
+_shot_right
+_swt_left
+_swt_right

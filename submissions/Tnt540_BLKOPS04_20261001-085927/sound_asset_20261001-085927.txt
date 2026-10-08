@@ -1,0 +1,2 @@
+602e5864feb44a21,en\vox\scripted\zmb\white\vox_whi_ncom_s1_eleven_0.sn100.pc.snd
+70ee15cfa7b81430,en\vox\scripted\zmb\white\vox_whi_rush_rushmore_declaration_0.sn100.pc.snd
