@@ -170,7 +170,7 @@
     },
     "modwar22": {
       "files": 6,
-      "names": 0,
+      "names": 2121,
       "types": {
         "image": {
           "found_pct": 38.5,
@@ -185,9 +185,9 @@
           "total": 230876
         },
         "sound_alias": {
-          "found_pct": 6.7,
-          "named": 9919,
-          "names": 0,
+          "found_pct": 8.1,
+          "named": 12036,
+          "names": 2117,
           "total": 147867
         },
         "sound_asset": {
@@ -204,8 +204,8 @@
         },
         "xmodel": {
           "found_pct": 8.4,
-          "named": 6686,
-          "names": 0,
+          "named": 6690,
+          "names": 4,
           "total": 79628
         }
       }
@@ -305,6 +305,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 294626
+    "names": 296747
   }
 }
