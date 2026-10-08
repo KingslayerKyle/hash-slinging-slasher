@@ -45,7 +45,7 @@ REPO = "https://github.com/KingslayerKyle/hash-slinging-slasher"
 # not. Check the card after changing one.
 NICE = {"blkops04": "Black Ops 4", "blkopscw": "Cold War",
         "modwar22": "Modern Warfare II", "yamyamok": "Modern Warfare III",
-        "blackop6": "Black Ops 6", "blackop7": "Black Ops 7", "modwar7": "MW7"}
+        "blackop6": "Black Ops 6", "blackop7": "Black Ops 7", "modwar7": "Modern Warfare 4"}
 
 # GitHub green, so the card reads as a repository update rather than an alert.
 COLOUR = 0x2EA043
