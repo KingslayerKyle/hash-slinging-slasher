@@ -279,6 +279,8 @@ fn main() {
     println!("fingerprint: {fingerprint}");
     recon::warn_if_swept(&fingerprint);
 
+    let policies = slasher::games::groups(&wanted);
+    let policies = &policies;
     let filter = Filter::new(wanted.keys());
 
     let threads = std::thread::available_parallelism()
@@ -319,7 +321,6 @@ fn main() {
 
         for chunk in seeds.chunks(size) {
             let filter = &filter;
-            let wanted = &wanted;
             let done = &done;
             let tried = &tried;
             let tokens = &tokens;
@@ -332,9 +333,11 @@ fn main() {
                     let lowered = name.to_lowercase();
                     let mut look = |variant: &str| {
                         counted += 1;
-                        let id = hash64(variant) & ID_MASK;
-                        if filter.may_hold(id) && wanted.contains_key(&id) {
-                            hits.push((id, variant.to_owned()));
+                        for (basis, targets) in policies {
+                            let id = slasher::feed(*basis, variant.as_bytes()) & ID_MASK;
+                            if filter.may_hold(id) && targets.contains_key(&id) {
+                                hits.push((id, variant.to_owned()));
+                            }
                         }
                     };
 

@@ -1,5 +1,3529 @@
 {
   "games": {
+    "blackop6": {
+      "achievement": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 44
+      },
+      "achievementlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "ai_eventlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "ai_interaction": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 96
+      },
+      "ai_token_collections": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ai_token_definitions": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ai_token_stealing_definitions": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ai_token_types": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "aianimset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 253
+      },
+      "aianimsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 48
+      },
+      "aiasm": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 39
+      },
+      "aidebugdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "aiimpactvfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "aimarkup": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "aimarkup_generated": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 21
+      },
+      "aiobstacle": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 121
+      },
+      "aipaths": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 21
+      },
+      "aishootstyleslist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "aitype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 341
+      },
+      "ambientsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "animpkg": {
+        "named": 2572,
+        "ours_at_baseline": 0,
+        "total": 2818
+      },
+      "assetstreamcollection": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "attachment": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3328
+      },
+      "attachmentblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6911
+      },
+      "audiovisualizer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "behaviorsequencer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 18
+      },
+      "behaviortokenconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "behaviortree": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 31
+      },
+      "bestplaycam": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "blendspace2d": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "bonefollowermappinggraph": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 120
+      },
+      "bonetoggleparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 50
+      },
+      "botbtconstants": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "bullet_penetration": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "bulletpenetrationset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "calloutmarkerping": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 235
+      },
+      "calloutmarkerpingmetadata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "calloutmarkerpingwheel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "camera": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 63
+      },
+      "camo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1792
+      },
+      "carryobject": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "character": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 546
+      },
+      "charcollbounds": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "chroma": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "cinematicmotion": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 49
+      },
+      "cinematicscene": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "clientcharacter": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "clothasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "codcasterdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "codcasterteamcustomization": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "col_map": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "collisiontile": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1025
+      },
+      "com_map": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "compassdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "computeshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1535
+      },
+      "contraildata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "conversation": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1405
+      },
+      "coverselector": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 22
+      },
+      "curve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 153
+      },
+      "customdamagepattern": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ddl": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3901
+      },
+      "deatheffect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "decalvolumemask": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 462
+      },
+      "decalvolumematerial": {
+        "named": 3076,
+        "ours_at_baseline": 0,
+        "total": 5213
+      },
+      "deployableweaponconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "dismemberment": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "dismembermenttype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "dlogschema": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "downloadgroupset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "dynamicbones": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1727
+      },
+      "dynentitylist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 117
+      },
+      "ecsasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "edgelist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1754
+      },
+      "emote": {
+        "named": 17,
+        "ours_at_baseline": 0,
+        "total": 150
+      },
+      "enemyselector": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "equipmentsfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "execution": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 405
+      },
+      "fogspline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 107
+      },
+      "foliagesfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "font": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 58
+      },
+      "fonticon": {
+        "named": 42,
+        "ours_at_baseline": 0,
+        "total": 220
+      },
+      "footstepsfxoverride": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "footstepsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 42
+      },
+      "footstepsurfacetable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "footstepvfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 90
+      },
+      "fx_map": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "fx_map_trzone": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 162
+      },
+      "gamemode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "gameprops": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "gametype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 168
+      },
+      "gametypestatdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 8
+      },
+      "gametypetable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "genericblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 48
+      },
+      "gesture": {
+        "named": 11,
+        "ours_at_baseline": 0,
+        "total": 603
+      },
+      "gfx_map": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "gfx_map_trzone": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 706
+      },
+      "gfxumbratome": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "glass_map": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "globalmaptable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "gobo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "gradingclut": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 48
+      },
+      "grappleweapontunables": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "grounddeformationvis": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "gscobj": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1420
+      },
+      "handplantsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "hudoutline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 156
+      },
+      "hwconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 110
+      },
+      "hwconfigtieredgroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "hwconfiguratorinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "hwconfigvargroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 36
+      },
+      "hyperpose": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "hyperposeasmasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "iesprofile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 82
+      },
+      "ikparameters": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "iktarget": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "image": {
+        "named": 47384,
+        "ours_at_baseline": 0,
+        "total": 389526
+      },
+      "impactfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 678
+      },
+      "impactsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 22
+      },
+      "impacttypetoimpactfxtable": {
+        "named": 4,
+        "ours_at_baseline": 0,
+        "total": 77
+      },
+      "importsettingconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "impulsemotion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "indexedlisttype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "indoorexclusiontile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "keybinds": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "keyvaluepairs": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 502
+      },
+      "laser": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 214
+      },
+      "leagueplayseasons": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "lensflare": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "libshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 18
+      },
+      "lightdef": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 87
+      },
+      "lightstate": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 54
+      },
+      "localize": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 129318
+      },
+      "localizeassetentrydev": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1171
+      },
+      "locdmgtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "luafile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9087
+      },
+      "map_ents": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "map_ents_trzone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 74
+      },
+      "map_fx_objects": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "map_game_objects": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "mapinfo": {
+        "named": 3,
+        "ours_at_baseline": 0,
+        "total": 83
+      },
+      "maptable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "mapvoxelizedstateformat": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
+      },
+      "material": {
+        "named": 70369,
+        "ours_at_baseline": 0,
+        "total": 186048
+      },
+      "materialanimation": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 439
+      },
+      "materialanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 495
+      },
+      "materialcamoanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "materialflipbookparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "materialsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1116
+      },
+      "materialtintanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 49
+      },
+      "materialuvanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "materialuvdistortionparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "mayhem": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 58
+      },
+      "mldeformer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 14
+      },
+      "mldeformerbinding": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 42
+      },
+      "mlmodel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "motionmatchingfeatures": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "motionmatchingset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "movie": {
+        "named": 281,
+        "ours_at_baseline": 0,
+        "total": 1656
+      },
+      "movingplatform": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "nameplatesettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 14
+      },
+      "navmesh": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 22
+      },
+      "netconststrings": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 630
+      },
+      "objective": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "objectivedata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 16
+      },
+      "objectstoreddlconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "objectstoreddlconfiggroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "objectstoregamemode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "objectstoreproject": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "objectstoretitleidgroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "omnvar": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "operator": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "operatorlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "operatorskin": {
+        "named": 6,
+        "ours_at_baseline": 0,
+        "total": 464
+      },
+      "parachutedata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "particlesimanimation": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "particlesystem": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 39231
+      },
+      "pbgcolor": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "pbgcurve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "pbgpostfxbundle": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 104
+      },
+      "pbgpostfxbundlenvt": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "perlinnoise": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "physicsasset": {
+        "named": 333,
+        "ours_at_baseline": 0,
+        "total": 42926
+      },
+      "physicsfxpipeline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "physicsfxshape": {
+        "named": 5,
+        "ours_at_baseline": 0,
+        "total": 3644
+      },
+      "physicslibrary": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "physicssfxeventasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 107
+      },
+      "physicsvfxeventasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "playerlookatprofile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "playerspawninfluencer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 101
+      },
+      "playerspawnsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "posematchingasmconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "posematchingtransitionset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "proceduralbonelodsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "proceduralbones": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 771
+      },
+      "project": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "projecttable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "radar": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ragdollasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "rawfile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1277
+      },
+      "reactiveaudiopackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "reactiveaudioparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "reactiveoperator": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 190
+      },
+      "reactivevfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1042
+      },
+      "reticle": {
+        "named": 64,
+        "ours_at_baseline": 0,
+        "total": 3631
+      },
+      "reverbpreset": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 414
+      },
+      "rumble": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "rumblegraph": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 164
+      },
+      "scenario": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "scriptable": {
+        "named": 551,
+        "ours_at_baseline": 0,
+        "total": 7735
+      },
+      "scriptablevariant": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 27
+      },
+      "scriptbrushmodel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4893
+      },
+      "scriptbundle": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 55822
+      },
+      "sfxpkg": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 995
+      },
+      "shock": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 87
+      },
+      "shockwave": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "sightconfig": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 53
+      },
+      "sightconfigtemplate": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 21
+      },
+      "sndacoustics": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 53
+      },
+      "sndadsr": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 51
+      },
+      "sndadsrzone": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 8
+      },
+      "sndambient": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 206
+      },
+      "sndambientelement": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 340
+      },
+      "sndbreathstate": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "sndcurve": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 261
+      },
+      "sndfilter": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 21
+      },
+      "sndfullocclusion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "sndfutz": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "sndmasterpreset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 16
+      },
+      "sndmasterpresetbundle": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndmodifier": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 151
+      },
+      "sndmusicset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "sndocclusion": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "sndocclusionsetting": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 34
+      },
+      "sndreverb": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 298
+      },
+      "sndtable": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "sndtimescale": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 23
+      },
+      "sndvolmod": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndweaponreflectiondeltatweaks": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndzoneweather": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "socialplayerprofile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "sound_alias": {
+        "named": 14883,
+        "ours_at_baseline": 0,
+        "total": 207980
+      },
+      "sound_asset": {
+        "named": 79244,
+        "ours_at_baseline": 0,
+        "total": 327081
+      },
+      "soundbank": {
+        "named": 141,
+        "ours_at_baseline": 0,
+        "total": 268
+      },
+      "soundbanklist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "soundbankpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 62
+      },
+      "soundbanktransient": {
+        "named": 1105,
+        "ours_at_baseline": 0,
+        "total": 1983
+      },
+      "soundcone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 31
+      },
+      "soundevent": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3323
+      },
+      "soundglobalbulletcrack": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalcontext": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalcurve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobaldoppler": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalentchannel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalnametable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalocclusion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalperk": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalsurfaceinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalvolmod": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalweaponreflect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalwhizby": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundspeakermap": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 91
+      },
+      "soundsubmix": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 820
+      },
+      "spray": {
+        "named": 202,
+        "ours_at_baseline": 0,
+        "total": 203
+      },
+      "storagefile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
+      },
+      "streaminginfo": {
+        "named": 3,
+        "ours_at_baseline": 0,
+        "total": 9701
+      },
+      "stringtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 741
+      },
+      "stterrain": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "suit": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 26
+      },
+      "suitanimpackage": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 21
+      },
+      "surfacefx": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "tacgraph": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 20
+      },
+      "techset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6699
+      },
+      "timeline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "tracer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 530
+      },
+      "trackerfootstepfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "triggereffect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 18
+      },
+      "ttf": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "unlockfeedconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vectorfield": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 118
+      },
+      "vehicle": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 102
+      },
+      "vehicleblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 30
+      },
+      "vehicletrick": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vehicletunables": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 37
+      },
+      "vehleanoutanimcurveset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vfxpkg": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 2042
+      },
+      "vhmdata": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "visionset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 275
+      },
+      "volumetriccloud": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "volumetricheightmap": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 46
+      },
+      "volumetricsmokesettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vtm_surfacemapsdata": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 20
+      },
+      "vtmdata": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 53
+      },
+      "waterbuoyancy": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "watersystem": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 28
+      },
+      "watervis": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 67
+      },
+      "weapon": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 958
+      },
+      "weaponaccuracy": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 20
+      },
+      "weaponblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 843
+      },
+      "weaponsndreflections": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weaponsndreflectionzone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weapontrigger": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weapontunables": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 833
+      },
+      "weather": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 56
+      },
+      "weatherdistantsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherenvironmentsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherimpactsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathermap": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 50
+      },
+      "weatherprecipitationsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathersoundthresholds": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherstate": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 56
+      },
+      "weathersurfacetypemapping": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "weathertile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 44
+      },
+      "weathervolume": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "weatherwind": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 44
+      },
+      "whizbysfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "world_event_data": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 73
+      },
+      "worldmodelattachment": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "xanim": {
+        "named": 68229,
+        "ours_at_baseline": 0,
+        "total": 87620
+      },
+      "xanimcurve": {
+        "named": 6,
+        "ours_at_baseline": 0,
+        "total": 46
+      },
+      "xanimnode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5668
+      },
+      "xanimparammodifier": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xanimset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xanimsetaddon": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xanimsetalias": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xanimsetparameters": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 407
+      },
+      "xanimsetstate": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xanimtree": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 214
+      },
+      "xcam": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1610
+      },
+      "xcompositemodel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1127
+      },
+      "xmodel": {
+        "named": 7643,
+        "ours_at_baseline": 0,
+        "total": 102982
+      },
+      "xmodeldetailcollision": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 52766
+      },
+      "xmodelsurfs": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 330817
+      },
+      "zivart": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      }
+    },
+    "blackop7": {
+      "achievement": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 157
+      },
+      "achievementlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "ai_eventlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "ai_interaction": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 64
+      },
+      "ai_token_collections": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ai_token_definitions": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ai_token_stealing_definitions": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ai_token_types": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "aianimsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 69
+      },
+      "aiasm": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 69
+      },
+      "aidebugdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "aiimpactvfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 19
+      },
+      "aimarkup": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "aimarkup_generated": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "aiobstacle": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 181
+      },
+      "aipaths": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "aishootstyleslist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "aitype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 343
+      },
+      "ambientsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "animpkg": {
+        "named": 2984,
+        "ours_at_baseline": 0,
+        "total": 3325
+      },
+      "assetstreamcollection": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 8
+      },
+      "attachment": {
+        "named": 3,
+        "ours_at_baseline": 0,
+        "total": 12462
+      },
+      "attachmentblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 23099
+      },
+      "behaviorsequencer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 16
+      },
+      "behaviortree": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 63
+      },
+      "bestplaycam": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "blendspace2d": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "bloodtraildecaldescription": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "bonefollowermappinggraph": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 481
+      },
+      "bonetoggleparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 87
+      },
+      "botbtconstants": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "bullet_penetration": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "bulletcracksfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "bulletpenetrationset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "calloutmarkerping": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 277
+      },
+      "calloutmarkerpingmetadata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "calloutmarkerpingwheel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "camera": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 97
+      },
+      "camo": {
+        "named": 13,
+        "ours_at_baseline": 0,
+        "total": 2425
+      },
+      "carryobject": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "character": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 389
+      },
+      "charcollbounds": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 30
+      },
+      "cinematicmotion": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 42
+      },
+      "cinematicscene": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "clientcharacter": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "clothasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "codcasterdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "codcastergameplaystat": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "codcasterteamcustomization": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "col_map": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "collisiontile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12504
+      },
+      "com_map": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "compassdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "computeshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1399
+      },
+      "contraildata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "conversation": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1678
+      },
+      "coverselector": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 27
+      },
+      "curve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 263
+      },
+      "customdamagepattern": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "ddl": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 451
+      },
+      "deatheffect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 105
+      },
+      "decalvolumemask": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 642
+      },
+      "decalvolumematerial": {
+        "named": 3468,
+        "ours_at_baseline": 0,
+        "total": 7141
+      },
+      "deployableweaponconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "dismemberment": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 19
+      },
+      "dismembermenttype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 125
+      },
+      "dlogschema": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "downloadgroupset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "dynamicbones": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4588
+      },
+      "dynentitylist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 281
+      },
+      "ecsasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "edgelist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2845
+      },
+      "emote": {
+        "named": 143,
+        "ours_at_baseline": 0,
+        "total": 283
+      },
+      "emotetransient": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 187
+      },
+      "enemyselector": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 24
+      },
+      "equipmentsfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "execution": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 568
+      },
+      "fastfilemodule": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 14
+      },
+      "fogspline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 61
+      },
+      "foliageimpactfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "foliagesfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "foliagevfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "font": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 51
+      },
+      "fonticon": {
+        "named": 42,
+        "ours_at_baseline": 0,
+        "total": 244
+      },
+      "footstepdecaldescription": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "footstepsfxoverride": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "footstepsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 46
+      },
+      "footstepsurfacetable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "footstepvfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 131
+      },
+      "fx_map": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "fx_map_trzone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 892
+      },
+      "gamemode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "gamemodefeatureflags": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "gamemodeinit": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "gamemodescenario": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "gameprops": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 20
+      },
+      "gametype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 214
+      },
+      "gametypestatdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "gametypetable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "genericblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 57
+      },
+      "gesture": {
+        "named": 10,
+        "ours_at_baseline": 0,
+        "total": 559
+      },
+      "gfx_map": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "gfx_map_trzone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 8789
+      },
+      "gfxumbratome": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 537
+      },
+      "glass_map": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "glassmaterialsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "gobo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 105
+      },
+      "gradingclut": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 56
+      },
+      "grappleweapontunables": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "grenadeutilityspec": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "grounddeformationvis": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "gscobj": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 287
+      },
+      "gunnyarchetype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "handplantsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "heatmapradar": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "hudoutline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 205
+      },
+      "hwconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 153
+      },
+      "hwconfiggroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "hwconfigregistry": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "hwconfigtieredgroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "hwconfiguratorinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "hyperpose": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "hyperposeasmasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "hyperposegamefeatures": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "iesprofile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "ikparameters": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "iktarget": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "image": {
+        "named": 62966,
+        "ours_at_baseline": 0,
+        "total": 839489
+      },
+      "impactfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 949
+      },
+      "impactsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 23
+      },
+      "impacttypetoimpactfxtable": {
+        "named": 3,
+        "ours_at_baseline": 0,
+        "total": 89
+      },
+      "importsettingconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "impulsemotion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "indexedlisttype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "indexedlisttypedev": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "indoorexclusiontile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 227
+      },
+      "keybinds": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "keyvaluepairs": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 625
+      },
+      "laser": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 226
+      },
+      "leagueplayseasons": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "lensflare": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "libshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "lightdef": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 95
+      },
+      "lightstate": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 103
+      },
+      "localize": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 204868
+      },
+      "localizeassetentrydev": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1063
+      },
+      "locdmgtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "luafile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12580
+      },
+      "map_ents": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "map_ents_trzone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 86
+      },
+      "map_fx_objects": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 100
+      },
+      "map_game_objects": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 100
+      },
+      "mapinfo": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 104
+      },
+      "maptable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "mapvoxelizedstateformat": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 57
+      },
+      "material": {
+        "named": 105285,
+        "ours_at_baseline": 0,
+        "total": 388231
+      },
+      "materialanimation": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 759
+      },
+      "materialanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 862
+      },
+      "materialcamoanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "materialflipbookparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "materialfloattable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "materialsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1214
+      },
+      "materialtintanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 89
+      },
+      "materialuvanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "materialuvdistortionparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "mayhem": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 152
+      },
+      "mldeformer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "mldeformerbinding": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 47
+      },
+      "mlmodel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "motionmatchingfeatures": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "motionmatchingset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "movie": {
+        "named": 225,
+        "ours_at_baseline": 0,
+        "total": 2382
+      },
+      "movingplatform": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "nameplatesettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 16
+      },
+      "navmesh": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "netconststrings": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 773
+      },
+      "notifgroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "objective": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 18
+      },
+      "objectivedata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 17
+      },
+      "objectstoreddlconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 40
+      },
+      "objectstoreddlconfiggroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "objectstoregamemode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "objectstoreproject": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "objectstoretitleidgroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "omnvar": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "omnvarlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "operator": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 264
+      },
+      "operatorbonesync": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "operatorlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "operatorskin": {
+        "named": 4,
+        "ours_at_baseline": 0,
+        "total": 1947
+      },
+      "parachutedata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "particlesimanimation": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "particlesystem": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 49771
+      },
+      "pbgcolor": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "pbgcurve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "pbgpostfxbundle": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 136
+      },
+      "pbgpostfxbundlenvt": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "perk": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 231
+      },
+      "perlinnoise": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "physicsasset": {
+        "named": 312,
+        "ours_at_baseline": 0,
+        "total": 57588
+      },
+      "physicsbodyqualitylibrary": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "physicsfxpipeline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 17
+      },
+      "physicsfxshape": {
+        "named": 5,
+        "ours_at_baseline": 0,
+        "total": 3206
+      },
+      "physicsmateriallibrary": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "physicsmotionpropertieslibrary": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "physicssfxeventasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 101
+      },
+      "physicsvfxeventasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "playerlookatprofile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "playerspawninfluencer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 152
+      },
+      "playerspawnsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "posematchingasmconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "posematchingtransitionset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "proceduralbonelodsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "proceduralbones": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1703
+      },
+      "project": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "projectinit": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "projecttable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "radar": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ragdollasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 18
+      },
+      "rawfile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 557
+      },
+      "reactiveaudiopackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "reactiveaudioparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "reactiveoperator": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 212
+      },
+      "reactivevfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1159
+      },
+      "reticle": {
+        "named": 92,
+        "ours_at_baseline": 0,
+        "total": 8202
+      },
+      "reverbpreset": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 276
+      },
+      "rgblogitechprofile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "rumble": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 120
+      },
+      "rumblegraph": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 185
+      },
+      "scenario": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "scriptable": {
+        "named": 480,
+        "ours_at_baseline": 0,
+        "total": 10503
+      },
+      "scriptablevariant": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "scriptbrushmodel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5173
+      },
+      "scriptbundle": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 103103
+      },
+      "sfxpkg": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1221
+      },
+      "shock": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 101
+      },
+      "shockwave": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sightconfig": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 40
+      },
+      "sightconfigtemplate": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "sndacoustics": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 78
+      },
+      "sndadsr": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 59
+      },
+      "sndadsrzone": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "sndambient": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 793
+      },
+      "sndambientelement": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 926
+      },
+      "sndbreathsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndbreathstate": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "sndchannels": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndcontext": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndcurve": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 232
+      },
+      "sndfilter": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 19
+      },
+      "sndfullocclusion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "sndfutz": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "sndhdrloudness": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndhdrsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndmasterpreset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "sndmodifier": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 220
+      },
+      "sndmusicset": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 54
+      },
+      "sndocclusion": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 8
+      },
+      "sndocclusionsetting": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 44
+      },
+      "sndreverb": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 202
+      },
+      "sndtable": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 96
+      },
+      "sndtagmanager": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndtimescale": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "sndvolmod": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndweaponreflectiondeltatweaks": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndzoneweather": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "socialplayerprofile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "socullingocclusion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1409
+      },
+      "sound_alias": {
+        "named": 22504,
+        "ours_at_baseline": 0,
+        "total": 254502
+      },
+      "sound_asset": {
+        "named": 99625,
+        "ours_at_baseline": 0,
+        "total": 399776
+      },
+      "soundbank": {
+        "named": 250,
+        "ours_at_baseline": 0,
+        "total": 295
+      },
+      "soundbanklist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "soundbankpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 166
+      },
+      "soundbanktransient": {
+        "named": 1414,
+        "ours_at_baseline": 0,
+        "total": 2480
+      },
+      "soundcone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 34
+      },
+      "soundevent": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7917
+      },
+      "soundglobalbulletcrack": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalcontext": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalcurve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobaldoppler": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalentchannel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalnametable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalocclusion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalsurfaceinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalvolmod": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalweaponreflect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalwhizby": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundspeakermap": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 103
+      },
+      "soundsubmix": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 750
+      },
+      "spatialcinematics": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "spikeprofilerconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "spikeprofilersettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "spray": {
+        "named": 303,
+        "ours_at_baseline": 0,
+        "total": 313
+      },
+      "storagefile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 31
+      },
+      "streaminginfo": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 32929
+      },
+      "streamtreeasset": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 100
+      },
+      "stringtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 778
+      },
+      "stterrain": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 60
+      },
+      "suit": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 38
+      },
+      "suitanimpackage": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 25
+      },
+      "surfacefx": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "tacgraph": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "techset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4806
+      },
+      "timeline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "tracer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 730
+      },
+      "trackerfootstepfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "triggereffect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 33
+      },
+      "ttf": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "turretshootstyle": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "unlockfeedconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "unlockfeeditem": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 39
+      },
+      "vectorfield": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 272
+      },
+      "vehicle": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 170
+      },
+      "vehicleblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 26
+      },
+      "vehiclerevsfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vehicletrick": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vehicletunables": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 90
+      },
+      "vehleanoutanimcurveset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vfxpkg": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 2667
+      },
+      "vhmdata": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "virtualcutoutmap": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "visionset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 261
+      },
+      "volumetriccloud": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "volumetricheightmap": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 62
+      },
+      "volumetricsmokesettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vtmdata": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "waterbuoyancy": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "watersystem": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 37
+      },
+      "watervis": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 172
+      },
+      "weapon": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 1586
+      },
+      "weaponaccuracy": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 22
+      },
+      "weaponarchetype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "weaponblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3238
+      },
+      "weaponsndreflections": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weaponsndreflectionzone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weapontrigger": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weapontunables": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1934
+      },
+      "weather": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 116
+      },
+      "weatherdistantsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherenvironmentsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherimpactsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherlayermask": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathermap": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 66
+      },
+      "weatherprecipitationsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathersettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathersoundthresholds": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherstate": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 67
+      },
+      "weathersurfacetypemapping": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathertile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 331
+      },
+      "weatherwind": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 76
+      },
+      "whizbysfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 17
+      },
+      "world_event_data": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 100
+      },
+      "worldmodelattachment": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "xanim": {
+        "named": 81521,
+        "ours_at_baseline": 0,
+        "total": 97260
+      },
+      "xanimcurve": {
+        "named": 17,
+        "ours_at_baseline": 0,
+        "total": 67
+      },
+      "xanimnode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6213
+      },
+      "xanimparammodifier": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xanimpayload": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xanimset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 314
+      },
+      "xanimsetalias": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 102219
+      },
+      "xanimsetparameters": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 472
+      },
+      "xanimsetstate": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 17014
+      },
+      "xanimtree": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 239
+      },
+      "xcam": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 2357
+      },
+      "xcompositemodel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3492
+      },
+      "xlens": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xmodel": {
+        "named": 9202,
+        "ours_at_baseline": 0,
+        "total": 206371
+      },
+      "xmodelalias": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
+      },
+      "xmodeldetailcollision": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 52644
+      },
+      "xmodelsurfs": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 436467
+      },
+      "zivart": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      }
+    },
     "blkops04": {
       "aimtable": {
         "named": 0,
@@ -32,7 +3556,7 @@
         "total": 1
       },
       "attachment": {
-        "named": 54,
+        "named": 319,
         "ours_at_baseline": 0,
         "total": 458
       },
@@ -112,7 +3636,7 @@
         "total": 45
       },
       "compute_shader_set": {
-        "named": 1,
+        "named": 0,
         "ours_at_baseline": 0,
         "total": 166
       },
@@ -277,8 +3801,8 @@
         "total": 5
       },
       "image": {
-        "named": 125824,
-        "ours_at_baseline": 18797,
+        "named": 155461,
+        "ours_at_baseline": 48257,
         "total": 167360
       },
       "impact_fx": {
@@ -372,8 +3896,8 @@
         "total": 37
       },
       "material": {
-        "named": 98785,
-        "ours_at_baseline": 26671,
+        "named": 111898,
+        "ours_at_baseline": 39562,
         "total": 122750
       },
       "motion_matching_input": {
@@ -522,7 +4046,7 @@
         "total": 1
       },
       "rumble": {
-        "named": 9,
+        "named": 10,
         "ours_at_baseline": 0,
         "total": 287
       },
@@ -557,7 +4081,7 @@
         "total": 67
       },
       "shellshock": {
-        "named": 4,
+        "named": 7,
         "ours_at_baseline": 0,
         "total": 45
       },
@@ -572,18 +4096,18 @@
         "total": 1
       },
       "sound": {
-        "named": 1,
+        "named": 6,
         "ours_at_baseline": 0,
         "total": 100
       },
       "sound_alias": {
-        "named": 35993,
-        "ours_at_baseline": 9522,
+        "named": 45924,
+        "ours_at_baseline": 19315,
         "total": 50043
       },
       "sound_asset": {
-        "named": 8562,
-        "ours_at_baseline": 178,
+        "named": 68827,
+        "ours_at_baseline": 60396,
         "total": 79263
       },
       "spectate_camera": {
@@ -687,7 +4211,7 @@
         "total": 48
       },
       "technique_set": {
-        "named": 1673,
+        "named": 1888,
         "ours_at_baseline": 0,
         "total": 3597
       },
@@ -717,7 +4241,7 @@
         "total": 17
       },
       "unlockable_item": {
-        "named": 115,
+        "named": 137,
         "ours_at_baseline": 0,
         "total": 521
       },
@@ -742,7 +4266,7 @@
         "total": 35
       },
       "weapon": {
-        "named": 3,
+        "named": 1128,
         "ours_at_baseline": 0,
         "total": 1165
       },
@@ -752,13 +4276,13 @@
         "total": 78
       },
       "weapon_tunables": {
-        "named": 1,
+        "named": 900,
         "ours_at_baseline": 0,
         "total": 1093
       },
       "xanim": {
-        "named": 15471,
-        "ours_at_baseline": 3502,
+        "named": 18859,
+        "ours_at_baseline": 6861,
         "total": 21968
       },
       "xanim_tree": {
@@ -772,8 +4296,8 @@
         "total": 588
       },
       "xmodel": {
-        "named": 48502,
-        "ours_at_baseline": 8379,
+        "named": 52360,
+        "ours_at_baseline": 12225,
         "total": 61139
       },
       "xmodelalias": {
@@ -829,7 +4353,7 @@
         "total": 1
       },
       "attachment": {
-        "named": 30,
+        "named": 2177,
         "ours_at_baseline": 0,
         "total": 2343
       },
@@ -934,7 +4458,7 @@
         "total": 3
       },
       "computeshaderset": {
-        "named": 1,
+        "named": 0,
         "ours_at_baseline": 0,
         "total": 381
       },
@@ -1169,8 +4693,8 @@
         "total": 5
       },
       "image": {
-        "named": 204814,
-        "ours_at_baseline": 5806,
+        "named": 210289,
+        "ours_at_baseline": 10990,
         "total": 245235
       },
       "impactsfxtable": {
@@ -1219,7 +4743,7 @@
         "total": 48
       },
       "localizeentry": {
-        "named": 1,
+        "named": 0,
         "ours_at_baseline": 0,
         "total": 99294
       },
@@ -1249,8 +4773,8 @@
         "total": 2
       },
       "material": {
-        "named": 134342,
-        "ours_at_baseline": 13971,
+        "named": 143079,
+        "ours_at_baseline": 22335,
         "total": 158158
       },
       "milestone": {
@@ -1299,7 +4823,7 @@
         "total": 1327
       },
       "physpreset": {
-        "named": 180,
+        "named": 181,
         "ours_at_baseline": 0,
         "total": 390
       },
@@ -1439,7 +4963,7 @@
         "total": 1
       },
       "rumble": {
-        "named": 17,
+        "named": 18,
         "ours_at_baseline": 0,
         "total": 370
       },
@@ -1474,7 +4998,7 @@
         "total": 202
       },
       "scriptbundle": {
-        "named": 2613,
+        "named": 2602,
         "ours_at_baseline": 0,
         "total": 17304
       },
@@ -1494,7 +5018,7 @@
         "total": 29
       },
       "shellshock": {
-        "named": 4,
+        "named": 6,
         "ours_at_baseline": 0,
         "total": 35
       },
@@ -1519,8 +5043,8 @@
         "total": 42
       },
       "sound_alias": {
-        "named": 34080,
-        "ours_at_baseline": 25661,
+        "named": 41550,
+        "ours_at_baseline": 32838,
         "total": 50890
       },
       "sound_alias_modifier": {
@@ -1529,12 +5053,12 @@
         "total": 57
       },
       "sound_asset": {
-        "named": 78113,
-        "ours_at_baseline": 175,
+        "named": 83133,
+        "ours_at_baseline": 5195,
         "total": 97217
       },
       "sound_bank": {
-        "named": 1,
+        "named": 107,
         "ours_at_baseline": 0,
         "total": 107
       },
@@ -1654,7 +5178,7 @@
         "total": 48
       },
       "tracer": {
-        "named": 3,
+        "named": 24,
         "ours_at_baseline": 0,
         "total": 302
       },
@@ -1684,7 +5208,7 @@
         "total": 971
       },
       "unlockableitem": {
-        "named": 136,
+        "named": 222,
         "ours_at_baseline": 0,
         "total": 728
       },
@@ -1719,7 +5243,7 @@
         "total": 38
       },
       "weapon": {
-        "named": 108,
+        "named": 632,
         "ours_at_baseline": 0,
         "total": 685
       },
@@ -1739,7 +5263,7 @@
         "total": 2796
       },
       "weaponfrontend": {
-        "named": 76,
+        "named": 131,
         "ours_at_baseline": 0,
         "total": 131
       },
@@ -1749,12 +5273,12 @@
         "total": 87
       },
       "weaponstylesettings": {
-        "named": 1,
+        "named": 567,
         "ours_at_baseline": 0,
         "total": 631
       },
       "weapontunables": {
-        "named": 1,
+        "named": 438,
         "ours_at_baseline": 0,
         "total": 534
       },
@@ -1764,8 +5288,8 @@
         "total": 40
       },
       "xanim": {
-        "named": 18996,
-        "ours_at_baseline": 2665,
+        "named": 21885,
+        "ours_at_baseline": 5287,
         "total": 28468
       },
       "xanimcurve": {
@@ -1779,13 +5303,13 @@
         "total": 1125
       },
       "xcollision": {
-        "named": 45528,
+        "named": 47536,
         "ours_at_baseline": 0,
         "total": 60670
       },
       "xmodel": {
-        "named": 67069,
-        "ours_at_baseline": 2604,
+        "named": 68370,
+        "ours_at_baseline": 3879,
         "total": 85612
       },
       "xmodelalias": {
@@ -1799,7 +5323,7 @@
         "total": 271840
       },
       "xskeleton": {
-        "named": 65532,
+        "named": 68204,
         "ours_at_baseline": 0,
         "total": 85613
       },
@@ -1808,7 +5332,3858 @@
         "ours_at_baseline": 0,
         "total": 4
       }
+    },
+    "modwar22": {
+      "achievement": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 24
+      },
+      "achievementlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "ai_eventlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "ai_interaction": {
+        "named": 3,
+        "ours_at_baseline": 0,
+        "total": 81
+      },
+      "aianimset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 295
+      },
+      "aiasm": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 34
+      },
+      "aimarkup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "aipaths": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 78
+      },
+      "airegiongraphs": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 78
+      },
+      "animclass": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "animpkg": {
+        "named": 1009,
+        "ours_at_baseline": 0,
+        "total": 1279
+      },
+      "attachment": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3837
+      },
+      "attachmentblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7298
+      },
+      "audiovisualizer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "behaviorsequencer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "behaviortree": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 14
+      },
+      "blendspace2d": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 59
+      },
+      "bulletpenetration": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "calloutmarkerping": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 71
+      },
+      "calloutmarkerpingmetadata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "calloutmarkerpingwheel": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 21
+      },
+      "camera": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 69
+      },
+      "camo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 462
+      },
+      "carryobject": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "cinematicmotion": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 44
+      },
+      "clientcharacter": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "clothasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "codcasterdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "col_map": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "collisiontile": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 598
+      },
+      "com_map": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "computeshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1206
+      },
+      "coverselector": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 24
+      },
+      "curve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 259
+      },
+      "ddl": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 39
+      },
+      "decalvolumemask": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 402
+      },
+      "decalvolumematerial": {
+        "named": 2007,
+        "ours_at_baseline": 0,
+        "total": 2626
+      },
+      "dlogschema": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "domainshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 217
+      },
+      "dynamicbones": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1132
+      },
+      "dynentitylist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 702
+      },
+      "edgelist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 221
+      },
+      "enemyselector": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "equipsndtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "execution": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 155
+      },
+      "fogspline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 470
+      },
+      "font": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 30
+      },
+      "fonticon": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 13
+      },
+      "footstepvfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 25
+      },
+      "fx_map": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "fx_map_trzone": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1028
+      },
+      "gamemode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "gameprops": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "gametype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 40
+      },
+      "gametypestatdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "gametypetable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "gesture": {
+        "named": 11,
+        "ours_at_baseline": 0,
+        "total": 413
+      },
+      "gfx_map": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "gfx_map_trzone": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10726
+      },
+      "gfxumbratome": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3235
+      },
+      "glass_map": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "gradingclut": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 245
+      },
+      "hudoutline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 77
+      },
+      "hullshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 104
+      },
+      "hwconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 152
+      },
+      "hwconfiguratorinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "image": {
+        "named": 118484,
+        "ours_at_baseline": 0,
+        "total": 307431
+      },
+      "impactfx": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 19
+      },
+      "impactfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 179
+      },
+      "impacttypetoimpactfxtable": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 64
+      },
+      "keybinds": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "keyvaluepairs": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 402
+      },
+      "laser": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 182
+      },
+      "leaderboarddef": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 40
+      },
+      "leagueplayseasons": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "libshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "lightdef": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 33
+      },
+      "lightstate": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "localize": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 129981
+      },
+      "locdmgtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "luafile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4984
+      },
+      "map_ents": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "map_ents_trzone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "mapinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 186
+      },
+      "maptable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "mapvoxelizedstateformat": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 45
+      },
+      "material": {
+        "named": 100669,
+        "ours_at_baseline": 0,
+        "total": 230876
+      },
+      "materialanimation": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 93
+      },
+      "materialanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 96
+      },
+      "materialcamoanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "materialtintanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "materialuvanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "mayhem": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 36
+      },
+      "motionmatchingfeatures": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "motionmatchingset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "movie": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 470
+      },
+      "movingplatform": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "nameplatesettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "navmesh": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "netconststrings": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 422
+      },
+      "objectivedata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "particlesimanimation": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 13
+      },
+      "physicsasset": {
+        "named": 82,
+        "ours_at_baseline": 0,
+        "total": 23505
+      },
+      "physicsfxpipeline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "physicsfxshape": {
+        "named": 5,
+        "ours_at_baseline": 0,
+        "total": 2479
+      },
+      "physicslibrary": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "physicssfxeventasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 130
+      },
+      "physicsvfxeventasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "pixelshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10842
+      },
+      "proceduralbones": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 270
+      },
+      "project": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "projecttable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ragdollasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "rawfile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2470
+      },
+      "reactiveaudiopackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "reactiveaudioparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "reactiveoperator": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 19
+      },
+      "reactivevfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 135
+      },
+      "reticle": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 333
+      },
+      "rumble": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 63
+      },
+      "rumblegraph": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 139
+      },
+      "scenario": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "scriptable": {
+        "named": 38,
+        "ours_at_baseline": 0,
+        "total": 4997
+      },
+      "scriptablevariant": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 310
+      },
+      "scriptbundle": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 23480
+      },
+      "scriptfile": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 3802
+      },
+      "settingcontext": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "sfxpkg": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 431
+      },
+      "sightconfig": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 85
+      },
+      "sightconfigtemplate": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 49
+      },
+      "sndmodifier": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 38
+      },
+      "sound_alias": {
+        "named": 9919,
+        "ours_at_baseline": 0,
+        "total": 147867
+      },
+      "sound_asset": {
+        "named": 45911,
+        "ours_at_baseline": 0,
+        "total": 249863
+      },
+      "soundbank": {
+        "named": 220,
+        "ours_at_baseline": 0,
+        "total": 314
+      },
+      "soundbanklist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "soundbanktransient": {
+        "named": 549,
+        "ours_at_baseline": 0,
+        "total": 661
+      },
+      "soundevent": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 806
+      },
+      "soundglobalbulletcrack": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalcontext": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalcurve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobaldoppler": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalentchannel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalfactiontable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalfutz": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalmaster": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalnametable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalocclusion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalperk": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalsendeffect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalshapecone": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalspeakermap": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalsurfaceinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalvolmod": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalwhizby": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "streaminginfo": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 9895
+      },
+      "stringtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2338
+      },
+      "stterrain": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "suit": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 102
+      },
+      "suitanimpackage": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 26
+      },
+      "surfacefx": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "tacgraph": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 78
+      },
+      "techset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6001
+      },
+      "tracer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 135
+      },
+      "triggereffect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 32
+      },
+      "ttf": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vectorfield": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 313
+      },
+      "vehicle": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 163
+      },
+      "vehicletrick": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "vertexshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1933
+      },
+      "vfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 17687
+      },
+      "vfxpkg": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1099
+      },
+      "vhmdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 79
+      },
+      "virtualleaderboarddef": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 54
+      },
+      "volumetriccloud": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "volumetricheightmap": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 34
+      },
+      "waterbuoyancy": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "watersystem": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 25
+      },
+      "watervis": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 58
+      },
+      "weapon": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 698
+      },
+      "weaponaccuracy": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 18
+      },
+      "weaponblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 942
+      },
+      "weapontrigger": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathervolume": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xanim": {
+        "named": 44996,
+        "ours_at_baseline": 0,
+        "total": 55778
+      },
+      "xanimcurve": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 125
+      },
+      "xcam": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 684
+      },
+      "xcompositemodel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 671
+      },
+      "xmodel": {
+        "named": 6686,
+        "ours_at_baseline": 0,
+        "total": 79628
+      },
+      "xmodeldetailcollision": {
+        "named": 153,
+        "ours_at_baseline": 0,
+        "total": 33071
+      },
+      "xmodelsurfs": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 195652
+      },
+      "zivart": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      }
+    },
+    "modwar7": {
+      "achievement": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 39
+      },
+      "achievementlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "ai_eventlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "ai_interaction": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "ai_token_collections": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ai_token_definitions": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ai_token_stealing_definitions": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ai_token_types": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "aianimsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "aiasm": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "aidebugdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "aiimpactvfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "aimarkup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "aimarkup_generated": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "aiobstacle": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "aipaths": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "aishootstyleslist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "aitype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ambientsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "animpkg": {
+        "named": 578,
+        "ours_at_baseline": 0,
+        "total": 725
+      },
+      "assetstreamcollection": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "attachment": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 973
+      },
+      "attachmentblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 84
+      },
+      "battlechatterevent": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 124
+      },
+      "battlechattertree": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 276
+      },
+      "behaviorsequencer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 14
+      },
+      "behaviortree": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "bestplaycam": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "blendspace2d": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "bloodtraildecaldescription": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "bonefollowermappinggraph": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "bonetoggleparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "botbtconstants": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "bullet_penetration": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "bulletcracksfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "bulletpenetrationset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "calloutmarkerping": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 88
+      },
+      "calloutmarkerpingmetadata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "calloutmarkerpingwheel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "camera": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 49
+      },
+      "camo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "carryobject": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "character": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "charcollbounds": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "cinematicmotion": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 32
+      },
+      "cinematicscene": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "clientcharacter": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "clothasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "codcasterdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "codcastergameplaystat": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "codcasterteamcustomization": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "compassdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "computeshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1380
+      },
+      "contraildata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "conversation": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1582
+      },
+      "coverselector": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 17
+      },
+      "curve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 204
+      },
+      "customdamagepattern": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ddl": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 52
+      },
+      "deatheffect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "decalvolumemask": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "decalvolumematerial": {
+        "named": 171,
+        "ours_at_baseline": 0,
+        "total": 480
+      },
+      "deployableweaponconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "dismemberment": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "dismembermenttype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "dlogschema": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "downloadgroupset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "dynamicbones": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 106
+      },
+      "dynentitylist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ecsasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "edgelist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "emote": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "emotetransient": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "enemyselector": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "equipmentsfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "execution": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 20
+      },
+      "fastfilemodule": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 13
+      },
+      "firereactiveentspackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "fogspline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 20
+      },
+      "foliageimpactfxsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "foliageimpactfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "foliagesfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 16
+      },
+      "foliagevfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 13
+      },
+      "font": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 67
+      },
+      "fonticon": {
+        "named": 42,
+        "ours_at_baseline": 0,
+        "total": 251
+      },
+      "footstepdecaldescription": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "footstepsfxoverride": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "footstepsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "footstepsurfacetable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "footstepvfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 36
+      },
+      "gamemode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 8
+      },
+      "gamemodefeatureflags": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "gamemodeinit": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 8
+      },
+      "gamemodescenario": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "gameprops": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "gametype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 127
+      },
+      "gametypestatdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 13
+      },
+      "gametypetable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "genericblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "gesture": {
+        "named": 89,
+        "ours_at_baseline": 0,
+        "total": 565
+      },
+      "glassmaterialsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "gobo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "gradingclut": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 20
+      },
+      "grappleweapontunables": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "grenadeutilityspec": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "grounddeformationvis": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "gscobj": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 558
+      },
+      "gunnyarchetype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 142
+      },
+      "handplantsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "heatmapradar": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "hudoutline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 142
+      },
+      "hwconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 19
+      },
+      "hwconfiggroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 18
+      },
+      "hwconfigregistry": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "hwconfigtieredgroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "hwconfiguratorinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "hyperpose": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "hyperposeasmasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "hyperposegamefeatures": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "iesprofile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 8
+      },
+      "ikparameters": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "iktarget": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "image": {
+        "named": 14873,
+        "ours_at_baseline": 0,
+        "total": 37365
+      },
+      "impactfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 61
+      },
+      "impactsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "impacttypetoimpactfxtable": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "importsettingconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "impulsemotion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 20
+      },
+      "indexedlisttype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "indexedlisttypedev": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "keybinds": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "keyvaluepairs": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 217
+      },
+      "laser": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 37
+      },
+      "leagueplayseasons": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "lensflare": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "libshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "lightstate": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "localize": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 69015
+      },
+      "localizeassetentrydev": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 512
+      },
+      "locdmgtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "luafile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10831
+      },
+      "map_ents_trzone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "map_fx_objects": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "map_game_objects": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "map_spawn_points": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "mapinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 13
+      },
+      "maptable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "mapvoxelizedstateformat": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "material": {
+        "named": 3640,
+        "ours_at_baseline": 0,
+        "total": 7809
+      },
+      "materialanimation": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 16
+      },
+      "materialanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 18
+      },
+      "materialcamoanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "materialflipbookparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "materialfloattable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "materialsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 859
+      },
+      "materialtintanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "materialuvanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "materialuvdistortionparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "mayhem": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "mlmodel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "motionmatchingfeatures": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "motionmatchingset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "movie": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 103
+      },
+      "movingplatform": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "nameplatesettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 13
+      },
+      "navmesh": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "netconststrings": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 438
+      },
+      "notifgroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "objective": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "objectivedata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "objectstoreddlconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 17
+      },
+      "objectstoreddlconfiggroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "objectstoregamemode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "objectstoreproject": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "objectstoretitleidgroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "omnvar": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "omnvarlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "operator": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 22
+      },
+      "operatorbonesync": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "operatorlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "operatorskin": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 25
+      },
+      "parachutedata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "particlesimanimation": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "particlesystem": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4858
+      },
+      "pbgcolor": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "pbgcurve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "pbgpostfxbundle": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 65
+      },
+      "pbgpostfxbundlenvt": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 23
+      },
+      "perk": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 173
+      },
+      "perlinnoise": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "physicsasset": {
+        "named": 51,
+        "ours_at_baseline": 0,
+        "total": 1627
+      },
+      "physicsbodyqualitylibrary": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "physicsfxpipeline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "physicsfxshape": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 520
+      },
+      "physicsmateriallibrary": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "physicsmotionpropertieslibrary": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "physicssfxeventasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "physicsvfxeventasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "playerlookatprofile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "playerspawninfluencer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 53
+      },
+      "playerspawnsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "posematchingasmconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "posematchingtransitionset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "proceduralbonelodsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "proceduralbones": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "project": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "projectinit": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "projecttable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "radar": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "ragdollasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "rawfile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 572
+      },
+      "reactiveaudiopackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "reactiveaudioparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "reactiveoperator": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "reactivevfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "reticle": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 780
+      },
+      "reverbpreset": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 33
+      },
+      "rgblogitechprofile": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 31
+      },
+      "rumble": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 56
+      },
+      "rumblegraph": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 133
+      },
+      "scenario": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "scriptable": {
+        "named": 19,
+        "ours_at_baseline": 0,
+        "total": 341
+      },
+      "scriptablevariant": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "scriptbrushmodel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "scriptbundle": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 15582
+      },
+      "sfxpkg": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 226
+      },
+      "shock": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 78
+      },
+      "shockwave": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 18
+      },
+      "sightconfig": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 54
+      },
+      "sightconfigtemplate": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "sndacoustics": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndadsr": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 51
+      },
+      "sndadsrzone": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 8
+      },
+      "sndambient": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "sndambientelement": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 28
+      },
+      "sndbreathsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndbreathstate": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "sndchannels": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndcontext": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndcurve": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 257
+      },
+      "sndfilter": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "sndfullocclusion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndfutz": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "sndhdrloudness": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndhdrsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndmasterpreset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "sndmodifier": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 103
+      },
+      "sndmusicset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "sndocclusion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "sndocclusionsetting": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 63
+      },
+      "sndprojectsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndreverb": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 49
+      },
+      "sndtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "sndtagmanager": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndtimescale": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "sndvolmod": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndweaponreflectiondeltatweaks": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndzoneweather": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "socialplayerprofile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "sound_alias": {
+        "named": 7523,
+        "ours_at_baseline": 0,
+        "total": 73962
+      },
+      "sound_asset": {
+        "named": 24454,
+        "ours_at_baseline": 0,
+        "total": 130464
+      },
+      "soundbank": {
+        "named": 24,
+        "ours_at_baseline": 0,
+        "total": 105
+      },
+      "soundbanklist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "soundbankpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "soundbanktransient": {
+        "named": 291,
+        "ours_at_baseline": 0,
+        "total": 582
+      },
+      "soundcone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 38
+      },
+      "soundevent": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1624
+      },
+      "soundglobalbulletcrack": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalcontext": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalcurve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobaldoppler": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalentchannel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalnametable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalocclusion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalsurfaceinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalvolmod": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalweaponreflect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalwhizby": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundspeakermap": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 71
+      },
+      "soundsubmix": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 769
+      },
+      "spikeprofilerconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "spikeprofilersettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "spray": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "storagefile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 27
+      },
+      "streaminginfo": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1349
+      },
+      "streamtreeasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "stringtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 557
+      },
+      "suit": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "suitanimpackage": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 27
+      },
+      "tacgraph": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "techset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2139
+      },
+      "threattype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "timeline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "tracer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 37
+      },
+      "trackerfootstepfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "triggereffect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 21
+      },
+      "ttf": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "turretshootstyle": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "unlockfeedconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "unlockfeeditem": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vectorfield": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 19
+      },
+      "vehicle": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 43
+      },
+      "vehicleblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vehiclerevsfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vehicletrick": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vehicletunables": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "vehleanoutanimcurveset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "vfxpkg": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 167
+      },
+      "visionset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 151
+      },
+      "volumetricsmokesettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "waterbuoyancy": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "watervis": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weapon": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 312
+      },
+      "weaponaccuracy": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "weaponarchetype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "weaponblueprint": {
+        "named": 3,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "weaponsndreflections": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 87
+      },
+      "weaponsndreflectionzone": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "weapontrigger": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weapontunables": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 353
+      },
+      "weaponwearable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weather": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherdistantsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherenvironmentsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherimpactsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherlayermask": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "weatherprecipitationsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathersettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathersoundthresholds": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherstate": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathersurfacetypemapping": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathertile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weatherwind": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "whizbysfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 31
+      },
+      "world_event_data": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "worldmodelattachment": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "xanim": {
+        "named": 25929,
+        "ours_at_baseline": 0,
+        "total": 35164
+      },
+      "xanimcurve": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "xanimnode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4537
+      },
+      "xanimparammodifier": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xanimpayload": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xanimset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 47
+      },
+      "xanimsetalias": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 53063
+      },
+      "xanimsetparameters": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 295
+      },
+      "xanimsetstate": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3553
+      },
+      "xanimtree": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 130
+      },
+      "xcam": {
+        "named": 24,
+        "ours_at_baseline": 0,
+        "total": 235
+      },
+      "xcompositemodel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 39
+      },
+      "xlens": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xmodel": {
+        "named": 230,
+        "ours_at_baseline": 0,
+        "total": 3926
+      },
+      "xmodeldetailcollision": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1779
+      },
+      "xmodelsurfs": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11137
+      },
+      "zivart": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      }
+    },
+    "yamyamok": {
+      "achievement": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 63
+      },
+      "achievementlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "ai_eventlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 13
+      },
+      "ai_interaction": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 107
+      },
+      "aianimset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 325
+      },
+      "aiasm": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 36
+      },
+      "aiimpactvfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "aimarkup": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "aimarkup_generated": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "aipaths": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 93
+      },
+      "airegiongraphs": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 93
+      },
+      "aishootstyleslist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "aitype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 354
+      },
+      "ambientsfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "animclass": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "animpkg": {
+        "named": 1837,
+        "ours_at_baseline": 0,
+        "total": 1990
+      },
+      "attachment": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 6468
+      },
+      "attachmentblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 14437
+      },
+      "audiovisualizer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "behaviorsequencer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "behaviortree": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 24
+      },
+      "blendspace2d": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 169
+      },
+      "bulletpenetration": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "calloutmarkerping": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 115
+      },
+      "calloutmarkerpingmetadata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "calloutmarkerpingwheel": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 31
+      },
+      "camera": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 52
+      },
+      "camo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1337
+      },
+      "carryobject": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "character": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 433
+      },
+      "cinematicmotion": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 43
+      },
+      "clientcharacter": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "clothasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 19
+      },
+      "codcasterdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "col_map": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "collisiontile": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 642
+      },
+      "com_map": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "computeshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1082
+      },
+      "conversation": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "coverselector": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 30
+      },
+      "curve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 293
+      },
+      "ddl": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 46
+      },
+      "decalvolumemask": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 589
+      },
+      "decalvolumematerial": {
+        "named": 2884,
+        "ours_at_baseline": 0,
+        "total": 4258
+      },
+      "dismemberment": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "dlogschema": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "downloadgroupset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "dynamicbones": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1959
+      },
+      "dynentitylist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1161
+      },
+      "ecsasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "edgelist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1467
+      },
+      "enemyselector": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "equipmentsfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "execution": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 254
+      },
+      "fogspline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 451
+      },
+      "foliagesfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "font": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 27
+      },
+      "fonticon": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 13
+      },
+      "footstepsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 14
+      },
+      "footstepvfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 39
+      },
+      "fx_map": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "fx_map_trzone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 631
+      },
+      "gamemode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "gameprops": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "gametype": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 156
+      },
+      "gametypestatdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 11
+      },
+      "gametypetable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "genericblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 26
+      },
+      "gesture": {
+        "named": 13,
+        "ours_at_baseline": 0,
+        "total": 429
+      },
+      "gfx_map": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "gfx_map_trzone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 4023
+      },
+      "gfxumbratome": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3513
+      },
+      "glass_map": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "gradingclut": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 191
+      },
+      "gscobj": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4434
+      },
+      "handplantsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "hudoutline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 98
+      },
+      "hwconfig": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 122
+      },
+      "hwconfigtieredgroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "hwconfiguratorinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "hwconfigvargroup": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "iesprofile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 30
+      },
+      "image": {
+        "named": 142419,
+        "ours_at_baseline": 0,
+        "total": 436889
+      },
+      "impactfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 370
+      },
+      "impactsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 17
+      },
+      "impacttypetoimpactfxtable": {
+        "named": 3,
+        "ours_at_baseline": 0,
+        "total": 98
+      },
+      "keybinds": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "keyvaluepairs": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 490
+      },
+      "laser": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 208
+      },
+      "leagueplayseasons": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "libshader": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "lightdef": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 36
+      },
+      "lightstate": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "localize": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 131609
+      },
+      "locdmgtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "luafile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5563
+      },
+      "map_ents": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "map_ents_trzone": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 95
+      },
+      "mapinfo": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 106
+      },
+      "maptable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "mapvoxelizedstateformat": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 17
+      },
+      "material": {
+        "named": 116042,
+        "ours_at_baseline": 0,
+        "total": 221679
+      },
+      "materialanimation": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 194
+      },
+      "materialanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 195
+      },
+      "materialcamoanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "materialflipbookparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "materialsfxtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 691
+      },
+      "materialtintanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "materialuvanimationparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
+      "materialuvdistortionparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "mayhem": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 67
+      },
+      "motionmatchingfeatures": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "motionmatchingset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "movie": {
+        "named": 104,
+        "ours_at_baseline": 0,
+        "total": 951
+      },
+      "movingplatform": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
+      },
+      "nameplatesettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 13
+      },
+      "navmesh": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "netconststrings": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 626
+      },
+      "objectivedata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "objectstoregamemode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "objectstoreproject": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 7
+      },
+      "operator": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 143
+      },
+      "operatorlist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "operatorskin": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 955
+      },
+      "particlesimanimation": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 8
+      },
+      "physicsasset": {
+        "named": 88,
+        "ours_at_baseline": 0,
+        "total": 25777
+      },
+      "physicsfxpipeline": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 15
+      },
+      "physicsfxshape": {
+        "named": 5,
+        "ours_at_baseline": 0,
+        "total": 2125
+      },
+      "physicslibrary": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "physicssfxeventasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 204
+      },
+      "physicsvfxeventasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "playerspawninfluencer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "playerspawnsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "proceduralbonelodsettings": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "proceduralbones": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 375
+      },
+      "project": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "projecttable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ragdollasset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5
+      },
+      "rawfile": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 2635
+      },
+      "reactiveaudiopackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 9
+      },
+      "reactiveaudioparams": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 10
+      },
+      "reactiveoperator": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 126
+      },
+      "reactivevfxpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 695
+      },
+      "reticle": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 375
+      },
+      "reverbpreset": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 322
+      },
+      "rumble": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 69
+      },
+      "rumblegraph": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 136
+      },
+      "scenario": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "scriptable": {
+        "named": 48,
+        "ours_at_baseline": 0,
+        "total": 6531
+      },
+      "scriptablevariant": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 343
+      },
+      "scriptbundle": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 56369
+      },
+      "settingcontext": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "sfxpkg": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 827
+      },
+      "shock": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 62
+      },
+      "sightconfig": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 68
+      },
+      "sightconfigtemplate": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 30
+      },
+      "sndcurve": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 177
+      },
+      "sndmasterpreset": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 16
+      },
+      "sndmodifier": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 56
+      },
+      "sndmodifierset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sound_alias": {
+        "named": 11671,
+        "ours_at_baseline": 0,
+        "total": 166718
+      },
+      "sound_asset": {
+        "named": 152549,
+        "ours_at_baseline": 0,
+        "total": 291343
+      },
+      "soundbank": {
+        "named": 392,
+        "ours_at_baseline": 0,
+        "total": 518
+      },
+      "soundbanklist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "soundbanktransient": {
+        "named": 902,
+        "ours_at_baseline": 0,
+        "total": 1059
+      },
+      "soundevent": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1061
+      },
+      "soundglobalbulletcrack": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalcontext": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalcurve": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobaldoppler": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalentchannel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalfactiontable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalfutz": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalnametable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalocclusion": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalperk": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalsendeffect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalshapecone": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalsurfaceinfo": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalvolmod": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundglobalwhizby": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "soundspeakermap": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 95
+      },
+      "soundsubmix": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1006
+      },
+      "storagefile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "streaminginfo": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 18664
+      },
+      "stringtable": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2000
+      },
+      "stterrain": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "suit": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 170
+      },
+      "suitanimpackage": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 27
+      },
+      "surfacefx": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "tacgraph": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 93
+      },
+      "techset": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4273
+      },
+      "timelapsesky": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "tracer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 298
+      },
+      "trackerfootstepfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "triggereffect": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 34
+      },
+      "ttf": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "ttlos": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 70
+      },
+      "vectorfield": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 210
+      },
+      "vehicle": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 159
+      },
+      "vehicletrick": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "vfx": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 25009
+      },
+      "vfxpkg": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1573
+      },
+      "vhmdata": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "volumetriccloud": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
+      },
+      "volumetricheightmap": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 34
+      },
+      "vtm_surfacemapsdata": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 94
+      },
+      "waterbuoyancy": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "watersystem": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 22
+      },
+      "watervis": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 63
+      },
+      "weapon": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 926
+      },
+      "weaponaccuracy": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 18
+      },
+      "weaponblueprint": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1854
+      },
+      "weapontrigger": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "weathervolume": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xanim": {
+        "named": 62214,
+        "ours_at_baseline": 0,
+        "total": 64407
+      },
+      "xanimcurve": {
+        "named": 2,
+        "ours_at_baseline": 0,
+        "total": 132
+      },
+      "xanimnode": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "xcam": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 880
+      },
+      "xcompositemodel": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1055
+      },
+      "xmodel": {
+        "named": 8049,
+        "ours_at_baseline": 0,
+        "total": 106555
+      },
+      "xmodeldetailcollision": {
+        "named": 180,
+        "ours_at_baseline": 0,
+        "total": 42889
+      },
+      "xmodelsurfs": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 229923
+      },
+      "zivart": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      }
     }
   },
-  "measured": "2026-08-24"
+  "measured": "2026-10-08"
 }

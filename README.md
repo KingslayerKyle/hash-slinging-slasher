@@ -11,20 +11,21 @@ Call of Duty stores most of its asset names as hashes rather than text. The name
 the number survives. This recovers them — and proves each one against the real game, so what
 comes out is a fact rather than a guess.
 
-Currently **Black Ops Cold War** and **Black Ops 4** — and it grinds both. Left alone it
-alternates between them, because Black Ops 4 actually has *more* unnamed assets in the types that
-matter (141,889 against 136,467) and far less of it has been recovered so far.
+Supports **Black Ops 4, Cold War, MWII, MWIII, BO6, BO7 and MW7**. The modern-games release adds five games and their canonical snapshots. Available captures take turns, and findings stay separate per game. MP/SP modes are searched together after merging their captures by asset type.
+
+See [modern capture setup and local verification](docs/MODERN_CAPTURES.md). The repository ships one snapshot per game. MWII, MWIII and BO6 each combine their captured MP/SP modes, so a game is searched once.
 
 ## You do not need the game
 
 This is the part worth understanding, because it is why anyone can help.
 
 Confirming a name asks one question: *is the hash of this string the id of an asset the game
-holds?* The answer is a set of numbers, and those numbers have already been captured — 1.6
-million of them for Cold War, 1.0 million for Black Ops 4, in a file of a few megabytes.
+holds?* The answer is a set of numbers, and those numbers have already been captured — 1.7
+million of them for Cold War and 1.2 million for Black Ops 4, alongside five modern captures.
 
-Those numbers are committed here, in `snapshots/`. Both games are finished and will never be
-patched again, so the capture was a one-off: these files are final, not a cache that goes stale.
+Those numbers are committed here, in `snapshots/`, with asset-type maps alongside them. BO4 and
+Cold War retain their existing captures. Newer builds replace the same game file when refreshed;
+MW7 will use the same `modwar7.ids` slot when the full retail capture is available.
 
 So you need **no game, no Cordycep, no Saluki, and not even Windows**. You need this repo and a
 CPU.
@@ -120,9 +121,11 @@ exactly what an assistant is good at, and why this repo is written to be read by
 
 ## The two halves
 
-Grinding needs nothing. **Capturing** needed the game, Cordycep with everything loaded, and
-Windows — and has already been done, for every pool in both games. It is kept for whenever a
-third title is worth adding, behind a feature that is off by default:
+Grinding uses the committed snapshots. **Capturing** reads an already prepared Cordycep
+session on Windows. The repository already ships all seven captures, including their injected
+sound pools. Modern captures are produced with hash-capture and combined by asset type; see
+[capture setup](docs/MODERN_CAPTURES.md). The legacy snapshot tool remains behind an optional
+feature for BO4 and Cold War:
 
 ```
 cargo build --release --features cordycep
@@ -138,7 +141,7 @@ Findings arrive as pull requests, opened for you — you do not need to know git
 checked automatically and reviewed by hand before going upstream.
 
 The most useful non-grinding contribution: **a home for the types that have no table**. Every
-pool in both games is identified — `snapshots/*.pools.txt` is the complete map of every index,
+captured pool in all seven games is identified — `snapshots/*.pools.txt` is the complete map of every index,
 its asset type, and how many assets it holds. What some types still lack is a *destination*:
 cod-name-db carries tables for models, anims, images, materials and sounds, but a confirmed
 `technique_set` name, for example, has no csv upstream to land in yet. Proposing and seeding

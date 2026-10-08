@@ -21,6 +21,7 @@ import glob
 import os
 import re
 import struct
+from pathlib import Path
 import sys
 
 import settings
@@ -43,14 +44,94 @@ SKIP = {"xmodelmesh", "streamkey", "localizeentry", "localize_entry"}
 IMPORTANT = {"xmodel", "xanim", "image", "material", "sound_asset", "sound_alias"}
 
 
-def fnv1a(name):
+MODERN = {"MODWAR22", "YAMYAMOK", "BLACKOP6", "BLACKOP7", "MODWAR7"}
+MODERN_TABLES = {"fnv1a_ximages_v2", "fnv1a_xmaterials_v2", "fnv1a_xanims_v2",
+                "fnv1a_xsounds_v2", "fnv1a_soundbanks_aliases_v2",
+                "fnv1a_soundbanks_v2", "fnv1a_animpkgs_v2"}
+
+
+def database_policy(table):
+    table=table.removesuffix('.csv')
+    if not table.startswith("fnv1a_"):
+        return None
+    mask = {"fnv1a_bones":0xffffffff, "fnv1a_strings":0x0fffffffffffffff,
+            "fnv1a_bones_v2":0xffffffffffffffff,
+            "fnv1a_soundbanks_aliases_v2":0xffffffffffffffff}.get(table,ID_MASK)
+    basis = 0x47F5817A5EF961BA if table.endswith("_v2") and table not in {"fnv1a_bones_v2","fnv1a_soundbanks_aliases_v2"} else BASIS
+    return basis, mask, "xsounds" in table and not table.endswith("_v2")
+
+
+def database_source_hash(table,name):
+    table=table.removesuffix('.csv')
+    policy=database_policy(table)
+    if policy is None:
+        return None
+    value=0x811c9dc5 if table=="fnv1a_bones" else policy[0]
+    prime=0x01000193 if table=="fnv1a_bones" else PRIME
+    mask=0xffffffff if table=="fnv1a_bones" else 0xffffffffffffffff
+    for byte in name.encode("utf-8"):
+        value=((value^byte)*prime)&mask
+    return value
+
+
+def verified_database_row(table,key,display):
+    table=table.removesuffix('.csv')
+    policy=database_policy(table)
+    if policy is None:
+        return None
+    display=display.strip()
+    lowered=display.translate(str.maketrans('ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'))
+    older_mask=not table.endswith('_v2') and policy[1]==ID_MASK
+    for spelling in dict.fromkeys((display,lowered)):
+        candidates=(spelling.replace(chr(92),"/"),spelling.replace("/",".").replace(chr(92),"."),spelling.replace("/",chr(92)))
+        for index,name in enumerate(candidates):
+            if index==2 and not policy[2]:
+                continue
+            full=database_source_hash(table,name)
+            if full & policy[1] == key or (older_mask and full & 0x0fffffffffffffff == key):
+                return full,name
+    return None
+
+
+def database_names(table,lines):
+    for line in lines:
+        key,sep,display=line.partition(",")
+        if not sep:
+            continue
+        try:
+            key=int(key.strip(),16)
+        except ValueError:
+            continue
+        if database_policy(table) is None:
+            name=display.strip()
+        else:
+            restored=verified_database_row(table,key,display)
+            if restored is None:
+                continue
+            _,name=restored
+        if name:
+            yield name
+
+
+def sound_spelling(game, key, display):
+    table='fnv1a_xsounds_v2' if game in MODERN else 'fnv1a_xsounds'
+    restored=verified_database_row(table,key,display)
+    if restored is not None:
+        _,name=restored
+        value=fnv1a_nofold(name) if game=='BLKOPS04' else fnv1a(name,game,'sound_asset')
+        if value & ID_MASK == key & ID_MASK:
+            return name
+    return None
+
+
+def fnv1a(name, game=None, kind="image"):
     """The game's hash: FNV-1a 64, lowercased, backslashes folded to forward slashes.
 
     Both games use it and so do all the non-`_v2` tables. See docs/HASHES.md for which files use
     which offset and which mask -- getting the mask wrong is the commonest reason a correct name
     fails to resolve.
     """
-    h = BASIS
+    h = 0x47F5817A5EF961BA if game in MODERN and kind != "sound_alias" else BASIS
     for byte in name.strip().lower().replace("\\", "/").encode("utf-8", "replace"):
         h = ((h ^ byte) * PRIME) & 0xFFFFFFFFFFFFFFFF
     return h
@@ -90,13 +171,14 @@ POOLS = _pool_lists()
 
 
 class Snapshot:
-    def __init__(self, game, records):
+    def __init__(self, game, records, pools=None):
         self.game = game
         self.records = records          # list of (id, pool index)
-        self.pools = POOLS.get(game, [])
+        self.pools = POOLS.get(game, []) if pools is None else pools
 
     def pool_name(self, index):
-        return self.pools[index] if index < len(self.pools) else "pool_%d" % index
+        name = self.pools[index] if index < len(self.pools) else "pool_%d" % index
+        return "sound_asset" if name == "sndasset" else name
 
     def by_pool(self):
         """{pool name: [ids]}, in pool order."""
@@ -139,6 +221,8 @@ def read(path):
     (count,) = struct.unpack_from("<Q", blob, at)
     at += 8
 
+    if len(blob) != at + count * RECORD:
+        raise SystemExit("%s: invalid snapshot length" % path)
     records = []
     for index in range(count):
         offset = at + index * RECORD
@@ -146,7 +230,20 @@ def read(path):
         pool = int.from_bytes(blob[offset + 8:offset + 10], "little")
         records.append((asset_id, pool))
 
-    return Snapshot(game, records)
+    pools = None
+    if game in MODERN:
+        rows = {}
+        for line in Path(path).with_suffix(".pools.txt").read_text().splitlines():
+            fields = re.split(r"[\s,]+", line.strip())
+            if len(fields) == 3 and fields[0].isdigit() and fields[2].isdigit():
+                i, name = int(fields[0]), fields[1]
+                if i in rows or name in rows.values():
+                    raise SystemExit("duplicate pool mapping")
+                rows[i] = name
+        if not rows or any(p not in rows for _, p in records):
+            raise SystemExit("capture has unmapped pools")
+        pools = [rows.get(i, "pool_%d" % i) for i in range(max(rows)+1)]
+    return Snapshot(game, records, pools)
 
 
 def snapshots():
@@ -155,50 +252,42 @@ def snapshots():
     return sorted(glob.glob(os.path.join(folder, "*.ids")))
 
 
-def known_hashes(tables=None):
-    """Every hash the community tables already resolve, under both spellings of the top bit.
-
-    Both the stored key and the hash of the stored name are taken, because the files do not all
-    store keys at the same width -- `fnv1a_strings.csv` masks to sixty bits, and the two `_v2`
-    exceptions store the full sixty-four. Re-hashing the name covers all of them.
-    """
+def known_hashes(tables=None, game=None):
+    """Stored keys remain authoritative; name hashes use verified source-table spellings."""
     folder = tables or settings.tables_csv()
+    game = game or settings.game()
     known = set()
-
     for path in sorted(glob.glob(os.path.join(folder, "*.csv"))):
+        table = Path(path).stem
+        if game in MODERN and table not in MODERN_TABLES:
+            continue
         with open(path, encoding="utf-8", errors="replace") as handle:
             for line in handle:
-                key, _, name = line.partition(",")
+                key, sep, display = line.partition(",")
+                if not sep:
+                    continue
                 try:
-                    value = int(key.strip(), 16)
-                    known.add(value)
-                    known.add(value & ID_MASK)
+                    key = int(key.strip(),16)
                 except ValueError:
-                    pass
-                if name.strip():
-                    h = fnv1a(name)
-                    known.add(h)
-                    known.add(h & ID_MASK)
-
+                    continue
+                known.update((key,key & ID_MASK))
+                restored = verified_database_row(table,key,display)
+                if restored is not None:
+                    full, _ = restored
+                    known.update((full,full & ID_MASK))
     return known
 
 
 def table_names(*tables):
-    """The names one or more tables hold, without their keys."""
+    """Source-table-verified spellings; Saluki display paths are not asset-name seeds."""
     folder = settings.tables_csv()
     out = []
-
     for table in tables:
         path = os.path.join(folder, table + ".csv")
         if not os.path.exists(path):
             continue
         with open(path, encoding="utf-8", errors="replace") as handle:
-            for line in handle:
-                _, _, name = line.partition(",")
-                name = name.strip()
-                if name:
-                    out.append(name)
-
+            out.extend(database_names(table, handle))
     return out
 
 

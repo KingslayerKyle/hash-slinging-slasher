@@ -42,6 +42,9 @@ jobs:
       - name: test
         run: cargo test --release --verbose
 
+      - name: test database spellings, mode merging and seven-game reporting
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+
       # The markdown here is executable instructions for another program: an assistant reads
       # AGENTS.md and does what it says. A binary that has been renamed or a script that has
       # moved is a bug that wastes somebody's night, and nothing else in this pipeline would
@@ -58,7 +61,7 @@ jobs:
       - name: the reconnaissance scripts still run
         run: |
           cd scripts
-          python3 -c "import snapshot; print(len(snapshot.read('../snapshots/blkopscw.ids')), 'assets')"
+          python3 -c "import snapshot; shots = [snapshot.read(p) for p in snapshot.snapshots()]; assert len(shots) == 7; assert all(snapshot.IMPORTANT <= set(s.by_pool()) for s in shots); print([(s.game, len(s)) for s in shots])"
           python3 methods_report.py --by-method
           python3 methods_report.py --duplicates
 

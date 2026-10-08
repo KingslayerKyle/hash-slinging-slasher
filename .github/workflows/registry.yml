@@ -20,11 +20,20 @@ name: derived files
 on:
   push:
     branches: [main]
-    # A merged submission is a push touching `submissions/`. Nothing else changes what the
-    # registry says, and this must not trigger on its own commit -- which touches `METHODS.md`
-    # and nothing else, so it cannot.
+    # Rebuild after merged submissions or changes to captures and name interpretation.
+    # Derived commits touch README/summary/name files, never these trigger inputs.
     paths:
       - 'submissions/**'
+      - 'snapshots/**'
+      - 'scripts/collect_names.py'
+      - 'scripts/announce_names.py'
+      - 'scripts/snapshot.py'
+      - 'scripts/settings.py'
+      - 'scripts/measure_coverage.py'
+      - 'src/lib.rs'
+      - 'src/database.rs'
+      - 'src/games.rs'
+      - 'all_names/coverage.json'
   workflow_dispatch:
 
 permissions:
@@ -53,6 +62,9 @@ jobs:
       # snapshots, no network. That is why this job is thirty seconds rather than a build.
       - name: regenerate the registry
         run: python scripts/methods_report.py --registry --write
+
+      - name: verify game-specific name collection and Discord formatting
+        run: python -m unittest discover -s scripts -p "test_name_reporting.py"
 
       # Every name the project has recovered, as one sorted file per game and asset type.
       #

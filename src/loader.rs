@@ -15,7 +15,7 @@
 use std::collections::{HashMap, HashSet};
 
 use crate::snapshot::Snapshot;
-use crate::{config, paths};
+use crate::config;
 
 /// Every asset the game holds, as id and pool index, with any strings that came with them.
 ///
@@ -38,46 +38,17 @@ pub fn loaded_assets() -> Result<(Vec<(u64, usize)>, Vec<String>), String> {
 /// A snapshot carries its game internally and is matched on it rather than on its filename, so
 /// one game's assets can never be used to judge another's names.
 fn from_snapshot() -> Result<(Vec<(u64, usize)>, Vec<String>), String> {
-    let folder = paths::snapshots();
-    let wanted = config::game();
-
-    let entries = std::fs::read_dir(&folder)
-        .map_err(|error| format!("{} could not be read: {error}", folder.display()))?;
-
-    let mut seen = Vec::new();
-
-    for entry in entries.flatten() {
-        let path = entry.path();
-        if path.extension().and_then(|end| end.to_str()) != Some("ids") {
-            continue;
+    let game = config::game();
+    let path = crate::games::capture(&game)?;
+    let snapshot = Snapshot::read(&path).map_err(|e| e.to_string())?;
+    let pools = crate::pools_for(&game);
+    for (_, pool) in snapshot.records() {
+        if pools.get(pool as usize).is_none_or(|name| name.starts_with("pool_")) {
+            return Err(format!("{game}: captured pool {pool} has no asset-type mapping"));
         }
-
-        let snapshot = match Snapshot::read(&path) {
-            Ok(snapshot) => snapshot,
-            Err(why) => {
-                eprintln!("{} could not be read: {why}", path.display());
-                continue;
-            }
-        };
-
-        if snapshot.game() != wanted {
-            seen.push(snapshot.game().to_owned());
-            continue;
-        }
-
-        println!("{} assets from the {wanted} snapshot", snapshot.len());
-
-        let assets = snapshot.records().map(|(id, pool)| (id, pool as usize)).collect();
-
-        return Ok((assets, Vec::new()));
     }
-
-    Err(format!(
-        "no {wanted} snapshot in {}{}. It ships with the repository, so this means it was \
-         deleted or `snapshots` in config.toml points elsewhere.",
-        folder.display(),
-        if seen.is_empty() { String::new() } else { format!(" (found {} instead)", seen.join(", ")) }
-    ))
+    println!("{} assets from the {game} snapshot", snapshot.len());
+    Ok((snapshot.records().map(|(id, pool)| (id, pool as usize)).collect(), Vec::new()))
 }
 
 /// The live loader, for whoever has the game open. Only worth using to capture a snapshot.
@@ -99,6 +70,12 @@ fn from_loader() -> Result<(Vec<(u64, usize)>, Vec<String>), String> {
              one game's names against another's assets -- pass `--game {open}` to follow the \
              loader."
         ));
+    }
+
+    // Combined mode indexes and injected pools describe the offline capture, not the
+    // live loader's native enum. Modern searches must use that canonical snapshot.
+    if crate::games::modern(&open) {
+        return Err("modern games use combined snapshots; capture live pools with hash-capture".to_owned());
     }
 
     let pool_names = crate::pools_for(&open);

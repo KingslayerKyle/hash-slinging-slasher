@@ -27,13 +27,13 @@ def main(argv):
         wanted_game = argv[argv.index("--game") + 1].upper()
 
     print("reading the tables", file=sys.stderr)
-    known = snapshot.known_hashes()
 
     for path in snapshot.snapshots():
         snap = snapshot.read(path)
         if wanted_game and snap.game != wanted_game:
             continue
 
+        known = snapshot.known_hashes(game=snap.game)
         rows = []
         for pool, ids in snap.by_pool().items():
             if only_five and pool not in snapshot.IMPORTANT:

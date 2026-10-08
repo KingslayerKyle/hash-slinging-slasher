@@ -51,7 +51,10 @@ def tables_csv():
     if glob.glob(os.path.join(folder, "*.csv")):
         return folder
 
-    checkout = os.path.join(os.path.dirname(folder) or ROOT, "cod-name-db", "csv")
+    # Rust accepts a configured Git checkout regardless of its directory name.
+    # Keep Python reporting on the same database as the Rust search tools.
+    checkout_root = folder if os.path.exists(os.path.join(folder, ".git")) else os.path.join(os.path.dirname(folder) or ROOT, "cod-name-db")
+    checkout = os.path.join(checkout_root, "csv")
     if glob.glob(os.path.join(checkout, "*.csv")):
         return checkout
 
@@ -67,3 +70,16 @@ def require(key):
             "This script needs it; see config.example.toml for what it means." % key
         )
     return value
+
+def game():
+    """Same CLI pin and per-clone choice used by the Rust searches."""
+    import sys
+    if "--game" in sys.argv:
+        return sys.argv[sys.argv.index("--game") + 1].upper()
+    values = _values()
+    if values.get("alternate_games") != "false":
+        try:
+            return open(os.path.join(ROOT, "state", "game.txt"), encoding="utf-8").read().strip()
+        except OSError:
+            pass
+    return values.get("game", "BLKOPSCW").upper()

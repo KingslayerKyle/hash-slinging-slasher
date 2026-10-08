@@ -29,6 +29,7 @@ materials, images and anims, and a sound search hunts `sound_asset` and `sound_a
 measures its own tables and its own half of the confirmed names.
 """
 import settings
+import snapshot
 import collections, os, sys, glob
 
 # A sound name's encoding tail. One confirmed xmodel genuinely carries one -- somebody at Treyarch
@@ -196,12 +197,9 @@ EXTRA_PREFIX = ["mtl_", "t9_", "wm_", "i_", "c_", "i_mtl_", "i_c_"]
 def table_names(table):
     path = os.path.join(TABLES, table + ".csv")
     with open(path, encoding="utf-8", errors="replace") as handle:
-        for line in handle:
-            line = line.strip()
-            if "," in line:
-                # Normalised to forward slashes so one list serves both normalisations -- see the
-                # note beside COLD_WAR. A `--no-fold` search translates them back.
-                yield line.split(",", 1)[1].lower().replace(chr(92), "/")
+        for name in snapshot.database_names(table,handle):
+            # Vocabulary is shared by legacy modes; --no-fold restores literal backslashes.
+            yield name.replace(chr(92),"/")
 
 
 def found_names(sound=None, seen=None):

@@ -44,3 +44,7 @@ __pycache__/
 # harvesters write here, and it is tens of megabytes of somebody else's shipped strings --
 # the *script* that regenerates it belongs in the pull request, never the output.
 /borrowed/
+
+# Large local mode-combined captures and modern per-game vocabulary.
+/local-captures/
+/data/modern/

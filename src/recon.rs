@@ -80,7 +80,7 @@ pub fn survey(repo: &str, submissions: &Path) -> Landscape {
     let merged = names_under(submissions);
     println!("  merged submissions on disk: {} name(s)", merged.len());
     for name in &merged {
-        claim(&mut landscape.claimed, name);
+        claim_all_offsets(&mut landscape.claimed, name);
     }
 
     for fingerprint in fingerprints_under(submissions) {
@@ -96,7 +96,7 @@ pub fn survey(repo: &str, submissions: &Path) -> Landscape {
                     if !landscape.holds(name) {
                         in_flight += 1;
                     }
-                    claim(&mut landscape.claimed, name);
+                    claim_all_offsets(&mut landscape.claimed, name);
                 }
 
                 for fingerprint in &submission.fingerprints {
@@ -237,6 +237,12 @@ fn spellings_of(name: &str) -> [u64; 4] {
 /// Records a name under every spelling it could be claimed as. See [`spellings_of`].
 fn claim(into: &mut HashSet<u64>, name: &str) {
     into.extend(spellings_of(name));
+}
+
+fn claim_all_offsets(into: &mut HashSet<u64>, name: &str) {
+    claim(into, name);
+    let hash = crate::feed(crate::games::IW_BASIS, name.as_bytes());
+    into.extend([hash, hash & ID_MASK]);
 }
 
 /// Every open pull request against the repository, with the names each one adds.

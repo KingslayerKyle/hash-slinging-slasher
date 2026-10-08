@@ -19,7 +19,7 @@ use std::time::Instant;
 
 use slasher::loader::{loaded_assets, unnamed_in};
 use slasher::fingerprint::{Fingerprint, Sketch};
-use slasher::{config, expected_by_chance, feed, hash64, paths, pool_index, pool_label, read_list, readiness, recon, table_keys, Filter, ID_MASK, Results, RunNote};
+use slasher::{config, expected_by_chance, feed, paths, pool_index, pool_label, read_list, readiness, recon, table_keys, Filter, ID_MASK, Results, RunNote};
 
 const HEX: [u8; 16] = *b"0123456789abcdef";
 
@@ -31,7 +31,7 @@ fn step(hash: u64, byte: u8) -> u64 {
 /// Every tag under one base name, against the filter. Returns `(id, full name)` hits.
 fn sweep(base: &str, filter: &Filter, wanted: &HashMap<u64, usize>) -> Vec<(u64, String)> {
     let mut hits = Vec::new();
-    let seed = step(hash64(base), b'#');
+    let seed = step(slasher::games::hash(&slasher::config::game(), "techset", base, true), b'#');
 
     for a in HEX {
         let s1 = step(seed, a);
@@ -72,7 +72,7 @@ fn main() {
     let began = Instant::now();
 
     // The streaming property the sweep depends on, checked rather than trusted.
-    assert_eq!(feed(hash64("mc/a"), b"bc#0"), hash64("mc/abc#0"));
+    assert_eq!(feed(slasher::games::hash(&slasher::config::game(), "techset", "mc/a", true), b"bc#0"), slasher::games::hash(&slasher::config::game(), "techset", "mc/abc#0", true));
 
     let list = std::env::args().nth(1).expect("a file of candidate base names");
     let bases = read_list(Path::new(&list));
@@ -109,7 +109,7 @@ fn main() {
     // Bare names first -- if Cold War dropped the tag, this is the whole answer, instantly.
     let mut results = Results::load(paths::findings());
     for base in &bases {
-        let id = hash64(base) & ID_MASK;
+        let id = slasher::games::hash(&slasher::config::game(), "techset", base, true) & ID_MASK;
         if wanted.contains_key(&id) {
             println!("  HIT (no tag) {id:x},{base}");
             results.add(&label, id, base.clone());

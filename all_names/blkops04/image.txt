@@ -156,7 +156,6 @@ b368015c03eeab1,core_frontend_bc7_combo
 70437a63f12c3982,dimitars_particles_dust01
 316544e24336a32d,eb_art_ceiling_wood_dirty_c
 4c535b207d54270a,eb_art_floor_stone_tile_c
-91061260a897c83,ei\gfx8_fire_x/scripted/operators/adlr/vox_adlr_se_kill_mult_nightingale_00.rn75.pc.ru_01_proxy_geo
 51986fd75214afda,flannel_n
 2ad2b867e0baf9c8,flood_light_decal_c
 15792e1f72128798,footerpreordericon
