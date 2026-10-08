@@ -68,7 +68,7 @@ on the take-bearing plan (78, 49, 92, 63, 172, 25, 21, 0) were already telling y
 
 Widening tails to every modern game while dropping the take axis returned **16 names from 12.5
 billion candidates**, one per 783 million, against the take-bearing plan's one per 516 million over
-188 trillion. Those tails are the same *kind* of token the MWII tables already carry, so the first
+188 billion. Those tails are the same *kind* of token the MWII tables already carry, so the first
 plan had already taken them.
 
 ## Negative 3 — re-widening a spent method
@@ -93,11 +93,9 @@ Recorded in full in part one, repeated because it is the most expensive mistake 
 never would have, because MWII holds 44,077 distinct basenames across 45,049 names. One line of
 measurement -- basenames per name -- decides whether a whole-product plan is worth anything at all.
 
-## An operational note worth having: `submit`'s ledger can outrun its own push
+## An operational note worth having: an interrupted submission can leave an orphaned batch
 
-`submit` records a run in `submissions/.submitted` when it sends it. Killing it between that write
-and the `gh pr create` leaves a run marked sent whose pull request **does not exist**, and the names
-are then dropped forever as "already claimed" — by the ledger that was written about them.
+`submit` writes the local batch before opening its pull request, and records the run as sent only after the send succeeds. An interruption before the pull request exists can leave an orphaned local batch that a later survey treats as already claimed. Check GitHub before treating a local batch or ledger entry as proof of a completed submission.
 
 It happened here on a truncated pipe: 53 confirmed names sat in `findings/` and in an orphaned
 `submissions/` folder, and two subsequent `submit` runs both reported zero to send. The repair is
@@ -106,7 +104,7 @@ three steps, and each is safe on its own:
 1. confirm the names are still in `findings/<game>/` -- if they are not, nothing can be recovered;
 2. move the orphaned folder **out** of `submissions/`, because that tree is scanned as "merged
    submissions" and its names are excluded from resending even when no pull request carries them;
-3. delete that one run's line from `submissions/.submitted` and submit again.
+3. if that run has a stale line in `submissions/.submitted`, remove only that line, then submit again.
 
 Do not rewrite the ledger wholesale. It is append-only by design -- "so a crash cannot lose the
 record and cause the same names to be submitted twice" -- and editing it with `Set-Content
