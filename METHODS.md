@@ -124,6 +124,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | sound files: exact-id search, zombies player exertions under scripted/exerts/plr n | 1 | 1 | 2,442 | 14,723 | 6 | 6 | 6 | 2026-09-11 | 2026-09-11 | untried |
 | music: tag der toten round cues mus round start nn mas under mus/zm/orange/round start | 1 | 1 | 5 | 32 | 6 | 6 | 6 | 2026-09-13 | 2026-09-13 | untried |
 | sound files: exact-id search, full aliases <suffix> plr <n> <v> -> vox <map> plr <n> <suffix> <v>[ s] | 1 | 1 | 1,550 | 12,281 | 7 | 7 | 7 | 2026-09-11 | 2026-09-11 | untried |
+| mw7 native full-corpus visual numeric siblings 0-999 | 1 | 1 | 15 | 137 | 9 | 9 | 9 | 2026-10-08 | 2026-10-08 | untried |
 | sound alias: gpu gap fill re-run on rebuilt vocabularies and targets | 1 | 1 | 36 | 338 | 9 | 9 | 9 | 2026-09-14 | 2026-09-14 | untried |
 | bo4: closed-category completion | 1 | 1 | 7 | 71 | 10 | 10 | 10 | 2026-09-13 | 2026-09-13 | untried |
 | zombies map lines, file parts reordered as aliases | 1 | 1 | 412 | 4,759 | 11 | 11 | 11 | 2026-10-05 | 2026-10-05 | untried |
@@ -154,6 +155,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | zombies vo grid: man = dead of the night | 1 | 1 | 1,549 | 207,751 | 134 | 134 | 134 | 2026-09-10 | 2026-09-10 | untried |
 | cold war source literals | 1 | 1 | 251 | 35,278 | 140 | 140 | 140 | 2026-08-26 | 2026-08-26 | untried |
 | zombies vo grid: fiv = classified, whi | 1 | 1 | 3,505 | 575,687 | 164 | 164 | 164 | 2026-09-10 | 2026-09-10 | untried |
+| mw7 confirmed visual numeric sibling closure 0-999 | 1 | 3 | 27 | 4,940 | 182 | 4 | 4 | 2026-10-08 | 2026-10-08 | live |
 | voice phrase grids, fill after deep quips | 1 | 1 | 102 | 18,802 | 184 | 184 | 184 | 2026-10-05 | 2026-10-05 | untried |
 | zombies aether vo grid round 2: bod plr 0-16 x (csv + common + mitm-found events), plus mitm round-3 hits | 1 | 1 | 487 | 101,127 | 207 | 207 | 207 | 2026-09-10 | 2026-09-10 | untried |
 | vo: gpu gap fill rerun with  n s variants (zm + mp prefixes) + cpu variant probe | 1 | 1 | 357 | 84,856 | 237 | 237 | 237 | 2026-09-10 | 2026-09-10 | untried |
@@ -199,6 +201,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | animation symmetry | 1 | 1 | 2 | 9,297 | 4,648 | 4,648 | 4,648 | 2026-09-04 | 2026-09-04 | untried |
 | build strings, casc archives | 1 | 4 | 139 | 659,480 | 4,744 | 1,316 | 273,138 | 2026-08-24 | 2026-08-24 | spent |
 | sound files: exact-id search, stoker vocals | 1 | 1 | 3 | 14,726 | 4,908 | 4,908 | 4,908 | 2026-09-11 | 2026-09-11 | untried |
+| modern material-image delta closure | 1 | 1 | 2 | 10,535 | 5,267 | 5,267 | 5,267 | 2026-10-08 | 2026-10-08 | untried |
 | zombies vo grids (all maps, players + npc speakers) with 72 more csv suffixes cracked via the guide vocabulary | 1 | 1 | 521 | 2,840,147 | 5,451 | 5,451 | 5,451 | 2026-09-10 | 2026-09-10 | untried |
 | an unnamed method | 1 | 38 | 19,908 | 117,577,360 | 5,906 | 1 | 1 | 2026-09-02 | 2026-09-24 | live |
 | black market loot stream, itemshop, and contract icons | 1 | 1 | 7 | 43,712 | 6,244 | 6,244 | 6,244 | 2026-09-04 | 2026-09-04 | untried |
@@ -436,6 +439,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | token insertion and deletion material | 1 | 1 | 13 | 32,998,295 | 2,538,330 | 2,538,330 | 2,538,330 | 2026-08-31 | 2026-08-31 | untried |
 | sound uncarried two-segment endings top 500 | 1 | 1 | 10 | 25,397,193 | 2,539,719 | 2,539,719 | 2,539,719 | 2026-08-26 | 2026-08-26 | untried |
 | high-control terminal token counterparts after bo4 texture ledger | 1 | 1 | 2 | 5,190,062 | 2,595,031 | 2,595,031 | 2,595,031 | 2026-09-04 | 2026-09-04 | untried |
+| modern material-to-image uncapped measured channel siblings | 1 | 1 | 56 | 145,430,530 | 2,596,973 | 2,596,973 | 2,596,973 | 2026-10-08 | 2026-10-08 | untried |
 | xhash external core respelling | 1 | 2 | 15 | 39,142,720 | 2,609,514 | 2,446,420 | 2,446,420 | 2026-08-28 | 2026-08-28 | live |
 | seeded sound-alias token edits | 1 | 1 | 2 | 5,339,594 | 2,669,797 | 2,669,797 | 2,669,797 | 2026-09-05 | 2026-09-05 | untried |
 | interior token duplication | 1 | 2 | 4 | 10,737,038 | 2,684,259 | 2,684,259 | 2,684,259 | 2026-08-27 | 2026-08-27 | live |
@@ -579,6 +583,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | ab snowball r2 sound: all cores x new endings | 1 | 1 | 1 | 17,844,687 | 17,844,687 | 17,844,687 | 17,844,687 | 2026-09-29 | 2026-09-29 | untried |
 | corpus-mined substitutions, top 300 | 1 | 4 | 6 | 109,732,535 | 18,288,755 | 13,715,940 | 27,434,695 | 2026-08-27 | 2026-08-27 | live |
 | suffix-chain completion | 2 | 2 | 10 | 187,289,550 | 18,728,955 | 10,404,975 | 10,404,975 | 2026-09-01 | 2026-09-01 | live |
+| modern image-to-material uncapped measured directory siblings | 1 | 1 | 37 | 694,835,592 | 18,779,340 | 18,779,340 | 18,779,340 | 2026-10-08 | 2026-10-08 | untried |
 | character insertion | 1 | 2 | 135 | 2,577,959,172 | 19,095,993 | 16,740,545 | 16,740,545 | 2026-08-24 | 2026-08-24 | live |
 | ab snowball r1 visual: all cores x new endings | 1 | 9 | 46 | 901,101,864 | 19,589,170 | 6,619,910 | 95,017,300 | 2026-09-30 | 2026-10-06 | spent |
 | voice phrase grids, probe with 3.07m phrases on two speakers per category | 1 | 1 | 18 | 355,930,140 | 19,773,896 | 19,773,896 | 19,773,896 | 2026-10-05 | 2026-10-05 | untried |
@@ -689,6 +694,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | confirmed-only sound all-boundary cores x uncarried endings | 2 | 7 | 717 | 91,609,516,086 | 127,767,804 | 42,055,113 | 79,082,077 | 2026-08-26 | 2026-08-26 | live |
 | sound path two-word slots, pairs ranked 30k+ | 1 | 2 | 4 | 516,815,180 | 129,203,795 | 79,600,424 | 79,600,424 | 2026-10-01 | 2026-10-01 | live |
 | uncarried beginnings over the held vocabulary | 1 | 1 | 7 | 945,274,375 | 135,039,196 | 135,039,196 | 135,039,196 | 2026-08-23 | 2026-08-23 | untried |
+| mw7 full-corpus visual numeric siblings 0-999 | 1 | 1 | 3 | 443,772,340 | 147,924,113 | 147,924,113 | 147,924,113 | 2026-10-08 | 2026-10-08 | untried |
 | ab snowball r5 sound: all cores x new name tails | 1 | 1 | 32 | 4,756,607,392 | 148,643,981 | 148,643,981 | 148,643,981 | 2026-10-01 | 2026-10-01 | untried |
 | hot cores x every tail of every known name | 1 | 2 | 202 | 30,561,666,356 | 151,295,378 | 132,876,810 | 132,876,810 | 2026-09-30 | 2026-09-30 | live |
 | confirmed-only all-boundary cores x uncarried five-segment endings | 1 | 1 | 26 | 3,959,839,598 | 152,301,523 | 152,301,523 | 152,301,523 | 2026-09-01 | 2026-09-01 | untried |
@@ -964,6 +970,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | all-boundary uncarried four-segment endings current | 1 | 1 | 2 | 33,678,536,782 | 16,839,268,391 | 16,839,268,391 | 16,839,268,391 | 2026-09-01 | 2026-09-01 | untried |
 | xmodel cores borrowed wide, stripped shallow | 1 | 1 | 1 | 17,342,167,500 | 17,342,167,500 | 17,342,167,500 | 17,342,167,500 | 2026-08-24 | 2026-08-24 | untried |
 | material cores borrowed wide, stripped shallow | 1 | 2 | 6 | 106,477,308,000 | 17,746,218,000 | 13,309,663,500 | 13,309,663,500 | 2026-08-24 | 2026-08-24 | live |
+| modern visual verified full-corpus tails of length 4 | 1 | 1 | 95 | 1,727,070,269,592 | 18,179,687,048 | 18,179,687,048 | 18,179,687,048 | 2026-10-08 | 2026-10-08 | untried |
 | all-boundary sound cores x uncarried sound endings, 4 segment(s), top 300000 | 1 | 3 | 39 | 719,488,798,288 | 18,448,430,725 | 4,393,314,644 | 9,540,731,802 | 2026-08-29 | 2026-09-09 | live |
 | measured tails of length 15 | 1 | 2 | 22 | 406,264,584,852 | 18,466,572,038 | 11,948,958,378 | 40,626,458,485 | 2026-08-25 | 2026-08-25 | cooling |
 | all-boundary sound cores x all 187k uncarried sound endings, 2026-09-20b | 1 | 2 | 51 | 945,903,699,378 | 18,547,131,360 | 12,446,101,307 | 12,446,101,307 | 2026-09-21 | 2026-09-21 | live |
@@ -1106,7 +1113,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1028 distinct methods, run 1126 ways between them, across 3721 runs. `names` is what each run
+1035 distinct methods, run 1133 ways between them, across 3730 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->

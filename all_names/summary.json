@@ -212,18 +212,18 @@
     },
     "modwar7": {
       "files": 6,
-      "names": 27249,
+      "names": 27484,
       "types": {
         "image": {
-          "found_pct": 44.6,
-          "named": 16682,
-          "names": 1809,
+          "found_pct": 44.9,
+          "named": 16792,
+          "names": 1919,
           "total": 37365
         },
         "material": {
-          "found_pct": 51.2,
-          "named": 3999,
-          "names": 359,
+          "found_pct": 52.2,
+          "named": 4078,
+          "names": 438,
           "total": 7809
         },
         "sound_alias": {
@@ -239,9 +239,9 @@
           "total": 130464
         },
         "xanim": {
-          "found_pct": 80.8,
-          "named": 28425,
-          "names": 2496,
+          "found_pct": 81.0,
+          "named": 28471,
+          "names": 2542,
           "total": 35164
         },
         "xmodel": {
@@ -305,6 +305,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 294391
+    "names": 294626
   }
 }
