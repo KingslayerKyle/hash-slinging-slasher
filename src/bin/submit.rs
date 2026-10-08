@@ -1457,24 +1457,20 @@ fn open_pull_request(
     // `who:branch` is how GitHub names a branch that lives in somebody else's fork.
     let head = if fork == repo { branch.clone() } else { format!("{who}:{branch}") };
 
+    // The request goes in on stdin as JSON, not as `-f body=...` arguments. A batch carrying many
+    // runs writes a body past Windows' 32,767-character command-line limit, and `gh` then fails to
+    // start at all ("The filename or extension is too long", os error 206) -- which happened on
+    // 2026-10-01 with a 206-name batch. Blobs, trees and commits already go this way.
+    let request = format!(
+        "{{\"title\":{},\"head\":{},\"base\":{},\"body\":{}}}",
+        quoted(&title),
+        quoted(&head),
+        quoted(&base),
+        quoted(&body)
+    );
     let opened = gh(
-        &[
-            "api",
-            &format!("repos/{repo}/pulls"),
-            "-X",
-            "POST",
-            "-f",
-            &format!("title={title}"),
-            "-f",
-            &format!("head={head}"),
-            "-f",
-            &format!("base={base}"),
-            "-f",
-            &format!("body={body}"),
-            "--jq",
-            ".html_url",
-        ],
-        None,
+        &["api", &format!("repos/{repo}/pulls"), "-X", "POST", "--input", "-", "--jq", ".html_url"],
+        Some(&request),
     );
 
     // Only once the pull request exists. A script recorded as carried by a send that failed would
