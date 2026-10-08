@@ -12,6 +12,12 @@ pub fn modern(game: &str) -> bool {
     matches!(game, "MODWAR22" | "YAMYAMOK" | "BLACKOP6" | "BLACKOP7" | "MODWAR7")
 }
 
+/// Modern models normally carry embedded names. Keep their hashes as history/vocabulary,
+/// but require a deliberate opt-in to hunt or submit a hash-only model exception.
+pub fn searchable(game: &str, kind: &str, search_modern_models: bool) -> bool {
+    !modern(game) || kind != "xmodel" || search_modern_models
+}
+
 pub fn basis(game: &str, kind: &str) -> u64 {
     if modern(game) && !matches!(kind, "sound_alias" | "bone" | "bones") {
         IW_BASIS

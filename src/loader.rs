@@ -130,8 +130,7 @@ pub fn wanted_for_search(
         .filter_map(|kind| crate::pool_index(kind))
         .collect();
 
-    let mut wanted = unnamed(assets, known);
-    wanted.retain(|_, pool| !unreachable.contains(pool) && targets.wants(*pool));
+    let mut wanted = wanted_in_targets(assets, known, &unreachable, &targets);
 
     // And everything somebody has already claimed but that has not reached the tables yet.
     //
@@ -165,6 +164,21 @@ pub fn wanted_for_search(
     wanted
 }
 
+fn wanted_in_targets(
+    assets: &[(u64, usize)], known: &HashSet<u64>, unreachable: &[usize],
+    targets: &crate::config::Targets,
+) -> HashMap<u64, usize> {
+    let mut wanted = HashMap::new();
+    // Filter before assigning shared ids to their first pool: an excluded model
+    // must not swallow a searchable animation/image with the same id.
+    for &(id, pool) in assets {
+        if targets.wants(pool) && !unreachable.contains(&pool) && !known.contains(&id) {
+            wanted.entry(id).or_insert(pool);
+        }
+    }
+    wanted
+}
+
 /// The same, narrowed to one pool. A search aimed at a single kind of asset should not be told
 /// it matched when it hit something else, or a wrong rule looks like a right one.
 pub fn unnamed_in(assets: &[(u64, usize)], known: &HashSet<u64>, pool: usize) -> HashMap<u64, usize> {
@@ -182,6 +196,15 @@ pub fn unnamed_in(assets: &[(u64, usize)], known: &HashSet<u64>, pool: usize) ->
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn excluded_models_do_not_hide_a_shared_searchable_id() {
+        let assets = [(7, 0), (7, 1), (8, 0), (9, 1), (10, 2)];
+        let targets = crate::config::Targets::Only([1, 2].into_iter().collect());
+        let known = [9].into_iter().collect();
+        let wanted = wanted_in_targets(&assets, &known, &[2], &targets);
+        assert_eq!(wanted, [(7, 1)].into_iter().collect());
+    }
 
     /// The narrowing must drop what no rule can reach, and keep what the config asked for.
     #[test]

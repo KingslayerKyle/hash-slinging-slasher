@@ -6,11 +6,10 @@
 
 <table>
 <tr><th align="left"><code>blackop6/</code></th>
-<th align="right" colspan="2">30,514 names in 6 file(s)</th>
+<th align="right" colspan="2">30,514 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>xmodel</code></td><td align="right">0</td><td align="right">7,643 / 102,982 &nbsp;(7.4%)</td></tr>
 <tr><td><code>material</code></td><td align="right">5,130</td><td align="right">75,499 / 186,048 &nbsp;(40.6%)</td></tr>
 <tr><td><code>image</code></td><td align="right">36</td><td align="right">47,420 / 389,526 &nbsp;(12.2%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">274</td><td align="right">68,503 / 87,620 &nbsp;(78.2%)</td></tr>
@@ -23,11 +22,10 @@
 
 <table>
 <tr><th align="left"><code>blackop7/</code></th>
-<th align="right" colspan="2">44,881 names in 6 file(s)</th>
+<th align="right" colspan="2">44,881 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>xmodel</code></td><td align="right">0</td><td align="right">9,202 / 206,371 &nbsp;(4.5%)</td></tr>
 <tr><td><code>material</code></td><td align="right">2,955</td><td align="right">108,240 / 388,231 &nbsp;(27.9%)</td></tr>
 <tr><td><code>image</code></td><td align="right">69</td><td align="right">63,035 / 839,489 &nbsp;(7.5%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">355</td><td align="right">81,876 / 97,260 &nbsp;(84.2%)</td></tr>
@@ -78,11 +76,10 @@
 
 <table>
 <tr><th align="left"><code>modwar22/</code></th>
-<th align="right" colspan="2">4,463 names in 6 file(s)</th>
+<th align="right" colspan="2">4,278 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>xmodel</code></td><td align="right">185</td><td align="right">6,871 / 79,628 &nbsp;(8.6%)</td></tr>
 <tr><td><code>material</code></td><td align="right">63</td><td align="right">100,732 / 230,876 &nbsp;(43.6%)</td></tr>
 <tr><td><code>image</code></td><td align="right">8</td><td align="right">118,492 / 307,431 &nbsp;(38.5%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">15</td><td align="right">45,011 / 55,778 &nbsp;(80.7%)</td></tr>
@@ -95,11 +92,10 @@
 
 <table>
 <tr><th align="left"><code>modwar7/</code></th>
-<th align="right" colspan="2">61,077 names in 6 file(s)</th>
+<th align="right" colspan="2">61,077 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>xmodel</code></td><td align="right">0</td><td align="right">230 / 3,926 &nbsp;(5.9%)</td></tr>
 <tr><td><code>material</code></td><td align="right">1,207</td><td align="right">4,847 / 7,809 &nbsp;(62.1%)</td></tr>
 <tr><td><code>image</code></td><td align="right">4,699</td><td align="right">19,572 / 37,365 &nbsp;(52.4%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">5,616</td><td align="right">31,545 / 35,164 &nbsp;(89.7%)</td></tr>
@@ -114,11 +110,10 @@
 
 <table>
 <tr><th align="left"><code>yamyamok/</code></th>
-<th align="right" colspan="2">0 names in 6 file(s)</th>
+<th align="right" colspan="2">0 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>xmodel</code></td><td align="right">0</td><td align="right">8,049 / 106,555 &nbsp;(7.6%)</td></tr>
 <tr><td><code>material</code></td><td align="right">0</td><td align="right">116,042 / 221,679 &nbsp;(52.3%)</td></tr>
 <tr><td><code>image</code></td><td align="right">0</td><td align="right">142,419 / 436,889 &nbsp;(32.6%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">0</td><td align="right">62,214 / 64,407 &nbsp;(96.6%)</td></tr>
@@ -141,8 +136,8 @@ this project found 36 of the 47,420 names anybody has for that pool, and
 342,106 of its ids are still nameless. The percentage is the fraction named,
 not the fraction found here.
 
-The emptiest pool is `xmodel` under `blackop7/`: 9,202 of 206,371 named,
-so 197,169 ids carry no name at all. That is the largest unworked ground
+The emptiest pool is `sound_alias` under `yamyamok/`: 11,671 of 166,718 named,
+so 155,047 ids carry no name at all. That is the largest unworked ground
 here, and it is invisible from a count on its own.
 
 The community half of that is measured against `cod-name-db` on 2026-10-08 and stored in
@@ -187,5 +182,7 @@ Local findings and cod-name-db names are not copied into these contribution list
 Historical rows that cannot reproduce their keys remain in the submissions and are
 listed in `unverified.json`; they are excluded from the usable lists and counts.
 
-Only the six asset types worth searching are here. Other submitted asset types are retained in the history;
-the rest stay in `submissions/`, which is the record.
+Models are searched and counted for Black Ops 4 and Cold War. MWII, MWIII, BO6, BO7
+and MW4 carry embedded model names, so their model rows and percentages are omitted
+from progress totals. Historical model-name files remain here as vocabulary and evidence.
+Other submitted asset types stay in `submissions/`, which is the record.

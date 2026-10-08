@@ -71,6 +71,11 @@ def require(key):
         )
     return value
 
+def search_modern_models():
+    """Deliberate opt-in; listing xmodel or all_pools is insufficient."""
+    return _values().get("search_modern_models") == "true"
+
+
 def game():
     """Same CLI pin and per-clone choice used by the Rust searches."""
     import sys

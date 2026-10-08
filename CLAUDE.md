@@ -7,8 +7,14 @@ MWIII (`YAMYAMOK`), BO6 (`BLACKOP6`), BO7 (`BLACKOP7`) and MW7 (`MODWAR7`).
 The older two-game counts and examples below are historical. Startup rotates all seven
 installed captures; explicit game selection leaves the rotation cursor unchanged.
 
-Search the six default types: models, animations, images, materials, sound assets and
-sound aliases. Modern ordinary assets use offset `0x47F5817A5EF961BA`; modern aliases
+Search animations, images, materials, sound assets and sound aliases in every game.
+Search models normally only in BO4 and Cold War: modern models carry embedded names.
+Existing xmodel pool lists and all_pools also obey this policy. Only a verified hash-only
+modern model exception warrants search_modern_models = true in [search]; searches and submit
+honor that explicit opt-in. Never call historical modern model entries new recoveries.
+Modern model coverage is omitted from progress reports; snapshots and name history remain.
+
+Modern ordinary assets use offset `0x47F5817A5EF961BA`; modern aliases
 use `0xCBF29CE484222325`. Lookup uses 63 bits; modern alias output keeps all 64 bits.
 BO4 SAB sound names retain their literal backslashes. Use the shared game policies rather
 than reusing a legacy hash for modern candidates. Pool indexes come from the capture's

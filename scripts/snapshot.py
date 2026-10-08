@@ -50,6 +50,11 @@ MODERN_TABLES = {"fnv1a_ximages_v2", "fnv1a_xmaterials_v2", "fnv1a_xanims_v2",
                 "fnv1a_soundbanks_v2", "fnv1a_animpkgs_v2"}
 
 
+def searchable(game, kind, search_modern_models=False):
+    """Shared model policy: reports always use the default; searches may opt in."""
+    return game.upper() not in MODERN or kind != "xmodel" or search_modern_models
+
+
 def database_policy(table):
     table=table.removesuffix('.csv')
     if not table.startswith("fnv1a_"):
@@ -187,12 +192,14 @@ class Snapshot:
             out.setdefault(self.pool_name(pool), []).append(asset_id)
         return out
 
-    def unnamed(self, known, skip=SKIP):
+    def unnamed(self, known, skip=SKIP, search_modern_models=None):
         """{id: pool name} for everything the tables cannot name."""
+        if search_modern_models is None:
+            search_modern_models = settings.search_modern_models()
         out = {}
         for asset_id, pool in self.records:
             name = self.pool_name(pool)
-            if name in skip:
+            if name in skip or not searchable(self.game, name, search_modern_models):
                 continue
             if asset_id in known:
                 continue

@@ -156,6 +156,7 @@ fn gather(
             continue;
         };
 
+        if !report_kind_allowed(&path, kind) { continue; }
         let names = by_type.entry(kind.to_owned()).or_default();
         for line in read_lines(&path) {
             names.push(line);
@@ -173,8 +174,16 @@ fn count_names(directory: &Path) -> usize {
     entries
         .flatten()
         .filter(|entry| entry.path().extension().and_then(|e| e.to_str()) == Some("txt"))
+        .filter(|entry| entry.path().file_stem().and_then(|s| s.to_str())
+            .is_some_and(|kind| report_kind_allowed(&entry.path(), kind)))
         .map(|entry| read_lines(&entry.path()).len())
         .sum()
+}
+
+fn report_kind_allowed(path: &Path, kind: &str) -> bool {
+    let game = path.components().rev().filter_map(|part| part.as_os_str().to_str())
+        .map(str::to_ascii_uppercase).find(|part| slasher::config::GAMES.contains(&part.as_str()));
+    game.is_none_or(|game| slasher::games::searchable(&game, slasher::strip_stamp(kind), false))
 }
 
 /// The names in one `hash,name` file. Read loosely: these have been written with both line
@@ -219,6 +228,16 @@ fn thousands(value: usize) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn model_reports_follow_each_games_policy() {
+        for game in slasher::config::GAMES {
+            let path = PathBuf::from("findings").join(game.to_lowercase()).join("run_test").join("xmodel.txt");
+            assert_eq!(report_kind_allowed(&path, "xmodel"), !slasher::games::modern(game));
+            assert!(report_kind_allowed(&path, "image"));
+            assert_eq!(report_kind_allowed(&path, "xmodel_20261008-010000"), !slasher::games::modern(game));
+        }
+    }
 
     #[test]
     fn thousands_are_separated() {

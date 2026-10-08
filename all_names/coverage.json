@@ -1646,11 +1646,6 @@
         "ours_at_baseline": 0,
         "total": 1127
       },
-      "xmodel": {
-        "named": 7643,
-        "ours_at_baseline": 0,
-        "total": 102982
-      },
       "xmodeldetailcollision": {
         "named": 0,
         "ours_at_baseline": 0,
@@ -3497,11 +3492,6 @@
         "named": 0,
         "ours_at_baseline": 0,
         "total": 1
-      },
-      "xmodel": {
-        "named": 9202,
-        "ours_at_baseline": 0,
-        "total": 206371
       },
       "xmodelalias": {
         "named": 0,
@@ -6269,11 +6259,6 @@
         "ours_at_baseline": 0,
         "total": 671
       },
-      "xmodel": {
-        "named": 6686,
-        "ours_at_baseline": 0,
-        "total": 79628
-      },
       "xmodeldetailcollision": {
         "named": 153,
         "ours_at_baseline": 0,
@@ -8036,11 +8021,6 @@
         "ours_at_baseline": 0,
         "total": 1
       },
-      "xmodel": {
-        "named": 230,
-        "ours_at_baseline": 0,
-        "total": 3926
-      },
       "xmodeldetailcollision": {
         "named": 0,
         "ours_at_baseline": 0,
@@ -9162,11 +9142,6 @@
         "named": 0,
         "ours_at_baseline": 0,
         "total": 1055
-      },
-      "xmodel": {
-        "named": 8049,
-        "ours_at_baseline": 0,
-        "total": 106555
       },
       "xmodeldetailcollision": {
         "named": 180,

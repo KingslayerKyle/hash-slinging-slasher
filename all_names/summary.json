@@ -1,7 +1,7 @@
 {
   "games": {
     "blackop6": {
-      "files": 6,
+      "files": 5,
       "names": 30514,
       "types": {
         "image": {
@@ -33,17 +33,11 @@
           "named": 68503,
           "names": 274,
           "total": 87620
-        },
-        "xmodel": {
-          "found_pct": 7.4,
-          "named": 7643,
-          "names": 0,
-          "total": 102982
         }
       }
     },
     "blackop7": {
-      "files": 6,
+      "files": 5,
       "names": 44881,
       "types": {
         "image": {
@@ -75,12 +69,6 @@
           "named": 81876,
           "names": 355,
           "total": 97260
-        },
-        "xmodel": {
-          "found_pct": 4.5,
-          "named": 9202,
-          "names": 0,
-          "total": 206371
         }
       }
     },
@@ -169,8 +157,8 @@
       }
     },
     "modwar22": {
-      "files": 6,
-      "names": 4463,
+      "files": 5,
+      "names": 4278,
       "types": {
         "image": {
           "found_pct": 38.5,
@@ -201,17 +189,11 @@
           "named": 45011,
           "names": 15,
           "total": 55778
-        },
-        "xmodel": {
-          "found_pct": 8.6,
-          "named": 6871,
-          "names": 185,
-          "total": 79628
         }
       }
     },
     "modwar7": {
-      "files": 6,
+      "files": 5,
       "names": 61077,
       "types": {
         "image": {
@@ -243,17 +225,11 @@
           "named": 31545,
           "names": 5616,
           "total": 35164
-        },
-        "xmodel": {
-          "found_pct": 5.9,
-          "named": 230,
-          "names": 0,
-          "total": 3926
         }
       }
     },
     "yamyamok": {
-      "files": 6,
+      "files": 5,
       "names": 0,
       "types": {
         "image": {
@@ -285,12 +261,6 @@
           "named": 62214,
           "names": 0,
           "total": 64407
-        },
-        "xmodel": {
-          "found_pct": 7.6,
-          "named": 8049,
-          "names": 0,
-          "total": 106555
         }
       }
     }
@@ -305,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 408077
+    "names": 407892
   }
 }

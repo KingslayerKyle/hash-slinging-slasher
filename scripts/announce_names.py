@@ -30,6 +30,8 @@ import sys
 import urllib.error
 import urllib.request
 
+import snapshot
+
 ROOT = pathlib.Path(__file__).resolve().parent
 while not (ROOT / "scripts" / "snapshot.py").exists() and ROOT != ROOT.parent:
     ROOT = ROOT.parent
@@ -59,14 +61,17 @@ def embed(summary):
     rank = {kind: index for index, kind in enumerate(order)}
 
     fields = []
+    total_names = 0
     # Follow the display-name mapping: older games first, then the modern releases.
     game_rank = {game: index for index, game in enumerate(NICE)}
     for game, data in sorted(summary["games"].items(),
                              key=lambda item: (game_rank.get(item[0], len(game_rank)), item[0])):
         rows = sorted(
-            data["types"].items(),
+            ((kind, counts) for kind, counts in data["types"].items() if snapshot.searchable(game, kind)),
             key=lambda pair: (rank.get(pair[0], len(rank)), pair[0]),
         )
+        game_names = sum(counts["names"] for _, counts in rows)
+        total_names += game_names
         lines = []
         for kind, counts in rows:
             found = counts.get("found_pct")
@@ -84,13 +89,12 @@ def embed(summary):
             )
         fields.append(
             {
-                "name": "%s — %s found here" % (NICE.get(game, game), format(data["names"], ",")),
+                "name": "%s — %s found here" % (NICE.get(game, game), format(game_names, ",")),
                 "value": "\n".join(lines),
                 "inline": True,
             }
         )
 
-    totals = summary["totals"]
     return {
         "title": "GitHub repository",
         "url": REPO + "/tree/main/all_names",
@@ -98,7 +102,7 @@ def embed(summary):
         "fields": fields,
         "footer": {
             "text": "%s names found by this project - \"named\" is how much of that pool "
-            "has been named in total (including cod-name-db too)" % format(totals["names"], ",")
+            "has been named in total (including cod-name-db too)" % format(total_names, ",")
         },
     }
 

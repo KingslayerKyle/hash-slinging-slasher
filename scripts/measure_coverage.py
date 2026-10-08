@@ -77,6 +77,8 @@ def measure():
             raise SystemExit("no published tables found for %s; refusing a baseline of zero" % snap.game)
         types = {}
         for kind, ids in snap.by_pool().items():
+            if not snapshot.searchable(snap.game, kind):
+                continue
             ids = set(ids)
             ours = {value & snapshot.ID_MASK for value in mine.get(game, {}).get(kind, set())}
             ours &= ids

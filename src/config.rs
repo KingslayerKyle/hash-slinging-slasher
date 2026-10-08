@@ -19,14 +19,13 @@ use std::collections::HashSet;
 use std::fs;
 use std::path::Path;
 
-use crate::pool_index;
 
 /// Where the settings live, looked for beside the working directory.
 const CONFIG: &str = "config.toml";
 
 /// The asset types worth grinding first, when nothing says otherwise.
 ///
-/// Models, animations, images, materials, sound files and sound aliases. Everything else the game
+/// Models (BO4/CW only), animations, images, materials, sound files and sound aliases. Everything else the game
 /// holds is still captured and still confirmable -- it is simply not what a search spends its time
 /// on until these are close to done.
 ///
@@ -193,11 +192,28 @@ pub fn targets() -> Targets {
     read_targets(&crate::paths::root().join(CONFIG))
 }
 
+/// Advanced opt-in shared by searches and submission filtering. Listing xmodel or
+/// setting all_pools in an older config does not opt into modern model recovery.
+pub fn search_modern_models() -> bool {
+    let text = fs::read_to_string(crate::paths::root().join(CONFIG)).unwrap_or_default();
+    flag(&text, "search_modern_models") == Some(true)
+}
+
 fn read_targets(path: &Path) -> Targets {
     let text = fs::read_to_string(path).unwrap_or_default();
+    let game = game();
+    targets_from_text(&text, &game, crate::pools_for(&game))
+}
 
-    if flag(&text, "all_pools") == Some(true) {
-        return Targets::Everything;
+fn targets_from_text(text: &str, game: &str, table: &[&str]) -> Targets {
+    let opt_in = flag(text, "search_modern_models") == Some(true);
+    let allowed = |kind: &str| crate::games::searchable(game, kind, opt_in);
+    if flag(text, "all_pools") == Some(true) {
+        if allowed("xmodel") {
+            return Targets::Everything;
+        }
+        return Targets::Only(table.iter().enumerate()
+            .filter(|(_, kind)| allowed(kind)).map(|(index, _)| index).collect());
     }
 
     let listed = list(&text, "pools");
@@ -209,9 +225,9 @@ fn read_targets(path: &Path) -> Targets {
 
     let mut pools = HashSet::new();
     for name in &names {
-        match pool_index(name) {
+        match table.iter().position(|kind| *kind == crate::games::canonical(name)) {
             Some(index) => {
-                pools.insert(index);
+                if allowed(table[index]) { pools.insert(index); }
             }
             None => eprintln!("config.toml lists a pool this game has no name for: {name}"),
         }
@@ -271,10 +287,28 @@ fn value_of(text: &str, key: &str) -> Option<String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    fn pool_index(kind: &str) -> Option<usize> { crate::pool_index_in(crate::POOLS, kind) }
+
+    #[test]
+    fn model_policy_applies_to_defaults_old_lists_all_pools_and_opt_in() {
+        let table = ["xmodel", "xanim", "image", "material", "sound_asset", "sound_alias", "gesture"];
+        for game in GAMES {
+            for config in ["", "pools = [\"xmodel\", \"xanim\", \"image\", \"material\", \"sound_asset\", \"sound_alias\"]", "all_pools = true"] {
+                let targets = targets_from_text(config, game, &table);
+                assert_eq!(targets.wants(0), !crate::games::modern(game), "{game}: {config}");
+                for pool in 1..6 { assert!(targets.wants(pool), "{game}: pool {pool}"); }
+                let opted = targets_from_text(&format!("{config}\nsearch_modern_models = true"), game, &table);
+                assert!(opted.wants(0), "explicit exception: {game}");
+            }
+            let only_model = targets_from_text("pools = [\"xmodel\"]", game, &table);
+            assert_eq!(only_model.wants(0), !crate::games::modern(game));
+            assert!(!only_model.wants(1), "exclusion must not widen a configured search");
+        }
+    }
 
     #[test]
     fn the_default_is_the_five_types_that_matter() {
-        let targets = read_targets(Path::new("no-such-config.toml"));
+        let targets = targets_from_text("", "BLKOPSCW", crate::POOLS);
 
         assert!(targets.wants(pool_index("xmodel").unwrap()));
         assert!(targets.wants(pool_index("image").unwrap()));
@@ -291,7 +325,7 @@ mod tests {
         let path = dir.join("config.toml");
         fs::write(&path, text).unwrap();
 
-        let targets = read_targets(&path);
+        let targets = targets_from_text(&fs::read_to_string(&path).unwrap(), "BLKOPSCW", crate::POOLS);
         assert!(targets.wants(pool_index("localizeentry").unwrap()));
         assert!(targets.wants(999));
 
@@ -305,7 +339,7 @@ mod tests {
         let path = dir.join("config.toml");
         fs::write(&path, "pools = [\"localizeentry\", \"xanim\"]  # what I want\n").unwrap();
 
-        let targets = read_targets(&path);
+        let targets = targets_from_text(&fs::read_to_string(&path).unwrap(), "BLKOPSCW", crate::POOLS);
         assert!(targets.wants(pool_index("localizeentry").unwrap()));
         assert!(targets.wants(pool_index("xanim").unwrap()));
         assert!(!targets.wants(pool_index("xmodel").unwrap()));

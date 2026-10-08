@@ -303,6 +303,8 @@ def pool_coverage(written):
     for game, types in baseline.get("games", {}).items():
         counts = {}
         for kind, figures in types.items():
+            if not snapshot.searchable(game, kind):
+                continue
             total = figures.get("total", 0)
             named = figures.get("named", 0)
             # Anything this project has published since the baseline was taken.
@@ -366,7 +368,8 @@ def write_index(written, check):
     """A README in the folder, so somebody who lands in it knows what they are looking at."""
     by_game = collections.defaultdict(list)
     for game, kind, count in written:
-        by_game[game].append((kind, count))
+        if snapshot.searchable(game, kind):
+            by_game[game].append((kind, count))
 
     coverage = pool_coverage(written)
     games = sorted(by_game)
@@ -494,8 +497,10 @@ def write_index(written, check):
         "Historical rows that cannot reproduce their keys remain in the submissions and are",
         "listed in `unverified.json`; they are excluded from the usable lists and counts.",
         "",
-        "Only the six asset types worth searching are here. Other submitted asset types are retained in the history;",
-        "the rest stay in `submissions/`, which is the record.",
+        "Models are searched and counted for Black Ops 4 and Cold War. MWII, MWIII, BO6, BO7",
+        "and MW4 carry embedded model names, so their model rows and percentages are omitted",
+        "from progress totals. Historical model-name files remain here as vocabulary and evidence.",
+        "Other submitted asset types stay in `submissions/`, which is the record.",
         "",
     ]
 
@@ -532,7 +537,8 @@ def write_summary(written, check):
     coverage = pool_coverage(written)
     by_game = collections.defaultdict(list)
     for game, kind, count in written:
-        by_game[game].append((kind, count))
+        if snapshot.searchable(game, kind):
+            by_game[game].append((kind, count))
 
     out = {"games": {}, "totals": {}}
     grand = 0

@@ -1,5 +1,8 @@
 """Regression checks for game-specific collection, coverage and Discord output."""
 import tempfile
+import json
+import io
+from contextlib import redirect_stdout
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -7,9 +10,94 @@ import collect_names as collect
 import announce_names as announce
 import measure_coverage as coverage
 import snapshot
+import coverage as pool_report
 
 
 class NameReporting(unittest.TestCase):
+
+    def test_snapshot_models_are_excluded_without_losing_other_types_or_history(self):
+        for game in collect.SUPPORTED:
+            shot = snapshot.Snapshot(game, [(7, 0), (7, 1), (8, 0), (9, 2)],
+                                     ['xmodel', 'image', 'sound_alias'])
+            with patch.object(snapshot.settings, 'search_modern_models', return_value=False):
+                default = shot.unnamed(set())
+            self.assertNotIn(8, default) if game in snapshot.MODERN else self.assertIn(8, default)
+            self.assertEqual(default[7], 'image')
+            self.assertEqual(default[9], 'sound_alias')
+            self.assertIn(8, shot.unnamed(set(), search_modern_models=True))
+            self.assertEqual(shot.by_pool()['xmodel'], [7, 8])
+            self.assertNotIn(7, shot.unnamed({7}, search_modern_models=True))
+
+    def test_pool_progress_omits_modern_model_rows(self):
+        shots = {game: snapshot.Snapshot(game, [(11, 0), (12, 1)], ['xmodel', 'image']) for game in collect.SUPPORTED}
+        with patch.object(snapshot, 'snapshots', return_value=list(shots)), patch.object(snapshot, 'read', side_effect=shots.get), \
+             patch.object(snapshot, 'known_hashes', return_value={99}):
+            for game in collect.SUPPORTED:
+                output = io.StringIO()
+                with redirect_stdout(output):
+                    pool_report.main(['--game', game, '--five'])
+                self.assertEqual('xmodel' in output.getvalue(), game not in snapshot.MODERN)
+                self.assertIn('image', output.getvalue())
+
+    def test_config_requires_explicit_model_opt_in(self):
+        with patch.object(snapshot.settings, '_values', return_value={'pools': '["xmodel"]', 'all_pools': 'true'}):
+            self.assertFalse(snapshot.settings.search_modern_models())
+        with patch.object(snapshot.settings, '_values', return_value={'search_modern_models': 'true'}):
+            self.assertTrue(snapshot.settings.search_modern_models())
+
+    def test_progress_excludes_modern_models_but_keeps_historical_lists(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for game in collect.SUPPORTED:
+                folder = root / ('submissions/Tester_%s_20261008-010101' % game)
+                folder.mkdir(parents=True)
+                for kind in collect.WANTED:
+                    (folder / (kind + '_20261008-010101.txt')).write_text(
+                        collect.output_row(game, kind, 'test_' + kind) + '\n', encoding='utf-8')
+            # An old stored baseline must not bring modern model percentages back.
+            baseline = {'games': {game.lower(): {kind: {'named': 50, 'total': 100, 'ours_at_baseline': 0}
+                                                for kind in collect.WANTED} for game in collect.SUPPORTED}}
+            (root / 'all_names').mkdir()
+            (root / 'all_names/coverage.json').write_text(json.dumps(baseline), encoding='utf-8')
+            with patch.object(collect, 'ROOT', directory), patch.object(collect, 'snapshots_by_game', return_value={}):
+                gathered = collect.collect([])
+                _, written = collect.write(gathered, False)
+                collect.write_summary(written, False)
+                collect.write_index(written, False)
+                stored = collect.pool_coverage(written)
+            summary = json.loads((root / 'all_names/summary.json').read_text(encoding='utf-8'))
+            self.assertEqual(summary['totals']['names'], 37)
+            for game in collect.SUPPORTED:
+                tag = game.lower()
+                modern = game in snapshot.MODERN
+                self.assertEqual('xmodel' in summary['games'][tag]['types'], not modern)
+                self.assertEqual('xmodel' in stored[tag], not modern)
+                self.assertEqual(summary['games'][tag]['names'], 5 if modern else 6)
+                self.assertEqual((root / 'all_names' / tag / 'xmodel.txt').read_text(encoding='utf-8'),
+                                 collect.output_row(game, 'xmodel', 'test_xmodel') + '\n')
+            index = (root / 'all_names/README.md').read_text(encoding='utf-8')
+            self.assertEqual(index.count('<td><code>xmodel</code></td>'), 2)
+
+    def test_discord_filters_models_even_from_a_stale_summary(self):
+        summary = {'games': {game.lower(): {'names': 15, 'types': {kind: {'names': 10 if kind == 'xmodel' else 1, 'found_pct': 20.0}
+                           for kind in collect.WANTED}} for game in collect.SUPPORTED},
+                   'totals': {'names': 105}, 'order': collect.DISPLAY_ORDER}
+        card = announce.embed(summary)
+        self.assertEqual([f['name'].split(' — ')[0] for f in card['fields']], list(announce.NICE.values()))
+        for game, field in zip(collect.SUPPORTED, card['fields']):
+            self.assertEqual('xmodel' in field['value'], game not in snapshot.MODERN)
+            self.assertIn('5 found here' if game in snapshot.MODERN else '15 found here', field['name'])
+        self.assertTrue(card['footer']['text'].startswith('55 names'))
+
+    def test_coverage_does_not_measure_modern_embedded_models(self):
+        shots = {game: snapshot.Snapshot(game, [(11, 0), (12, 1)], ['xmodel', 'image']) for game in collect.SUPPORTED}
+        with patch.object(snapshot, 'snapshots', return_value=list(shots)), patch.object(snapshot, 'read', side_effect=shots.get), \
+             patch.object(snapshot, 'known_hashes', return_value={11, 12}), patch.object(coverage, 'our_ids', return_value={}):
+            report = coverage.measure()['games']
+        for game in collect.SUPPORTED:
+            self.assertEqual('xmodel' in report[game.lower()], game not in snapshot.MODERN)
+            self.assertEqual(report[game.lower()]['image']['named'], 1)
+
     def test_every_game_and_type_keeps_search_hash_and_width(self):
         for game in collect.SUPPORTED:
             for kind in collect.WANTED:

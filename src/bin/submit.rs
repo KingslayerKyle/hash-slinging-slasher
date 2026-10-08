@@ -229,14 +229,20 @@ struct PreparedBatch {
     claimed_elsewhere: usize,
     claimed_names: HashSet<String>,
     worthless: std::collections::BTreeMap<String, usize>,
+    embedded_models: usize,
 }
 
 fn prepare_batch(game: &str, pending: &[PathBuf], known: &HashSet<u64>, landscape: &recon::Landscape, cached: &HashSet<u64>) -> PreparedBatch {
+    prepare_batch_with_policy(game, pending, known, landscape, cached, config::search_modern_models())
+}
+
+fn prepare_batch_with_policy(game: &str, pending: &[PathBuf], known: &HashSet<u64>, landscape: &recon::Landscape, cached: &HashSet<u64>, search_modern_models: bool) -> PreparedBatch {
     // Drop anything already claimed: published in the tables, merged into submissions, or sitting
     // in somebody's open pull request. This is the cheap part and the whole reason a long grind
     // does not have to be redone when the world moves under it.
     let mut batch: Vec<(String, u64, String)> = Vec::new(); // (type, id as found, name)
     let mut dropped = 0_usize;
+    let mut embedded_models = 0_usize;
     let mut claimed_elsewhere = 0_usize;
 
     // The same names, counted once each. `claimed_elsewhere` tallies every occurrence across
@@ -249,6 +255,10 @@ fn prepare_batch(game: &str, pending: &[PathBuf], known: &HashSet<u64>, landscap
 
     for folder in pending {
         for (kind, id, name) in names_in(folder) {
+            if !slasher::games::searchable(game, &kind, search_modern_models) {
+                embedded_models += 1;
+                continue;
+            }
             // A pool that has already cost somebody a night for nothing does not go upstream,
             // whoever found it and however genuine the hash is. See LOW_VALUE_POOLS.
             if low_value_reason(&kind).is_some() {
@@ -282,7 +292,7 @@ fn prepare_batch(game: &str, pending: &[PathBuf], known: &HashSet<u64>, landscap
 
     batch.sort();
     batch.dedup();
-    PreparedBatch { rows: batch, dropped, claimed_elsewhere, claimed_names, worthless }
+    PreparedBatch { rows: batch, dropped, claimed_elsewhere, claimed_names, worthless, embedded_models }
 }
 
 /// Serialize the exact matched keys; do not rehash display paths or truncate aliases.
@@ -314,7 +324,10 @@ fn send(
     landscape: &recon::Landscape,
     cached: &HashSet<u64>,
 ) -> Option<String> {
-    let PreparedBatch { rows: mut batch, dropped, claimed_elsewhere, claimed_names, worthless } = prepare_batch(game, pending, known, landscape, cached);
+    let PreparedBatch { rows: mut batch, dropped, claimed_elsewhere, claimed_names, worthless, embedded_models } = prepare_batch(game, pending, known, landscape, cached);
+    if embedded_models > 0 {
+        println!("held back {embedded_models} modern xmodel name(s): models carry embedded names; use search_modern_models = true only for a verified hash-only exception");
+    }
 
     for (kind, count) in &worthless {
         println!(
@@ -1696,6 +1709,30 @@ fn base64(bytes: &[u8]) -> String {
 mod tests {
     use super::*;
     use slasher::hash64;
+
+    #[test]
+    fn modern_model_submissions_require_opt_in_and_preserve_local_history() {
+        let root = std::env::temp_dir().join(format!("submit_model_policy_{}", std::process::id()));
+        fs::create_dir_all(&root).unwrap();
+        for game in config::GAMES {
+            let folder = root.join(game);
+            fs::create_dir_all(&folder).unwrap();
+            let model = format!("{:x},test_model\n", slasher::games::output_key(game, "xmodel", "test_model", true));
+            fs::write(folder.join("xmodel.txt"), &model).unwrap();
+            for kind in ["xanim", "image", "material", "sound_asset", "sound_alias"] {
+                fs::write(folder.join(format!("{kind}.txt")), format!("{:x},test_{kind}\n", slasher::games::output_key(game, kind, &format!("test_{kind}"), true))).unwrap();
+            }
+            for opt_in in [false, true] {
+                let batch = prepare_batch_with_policy(game, &[folder.clone()], &HashSet::new(), &recon::Landscape::default(), &HashSet::new(), opt_in);
+                let allowed = !slasher::games::modern(game) || opt_in;
+                assert_eq!(batch.rows.len(), if allowed { 6 } else { 5 });
+                assert_eq!(batch.embedded_models, usize::from(!allowed));
+                assert_eq!(batch.rows.iter().any(|(kind, _, _)| kind == "xmodel"), allowed);
+            }
+            assert_eq!(fs::read_to_string(folder.join("xmodel.txt")).unwrap(), model);
+        }
+        fs::remove_dir_all(root).unwrap();
+    }
 
     #[test]
     fn submission_exclusions_use_each_games_hash_family() {

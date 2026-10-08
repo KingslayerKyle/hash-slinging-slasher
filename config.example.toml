@@ -20,6 +20,12 @@
 # slower for names nobody needs yet.
 pools = ["xmodel", "xanim", "image", "material", "sound_asset", "sound_alias"]
 
+# xmodel is searched only for BO4 and Cold War by default. Modern models carry embedded names.
+# This also applies to old configs that list xmodel and to all_pools = true.
+# Advanced exception: enable only after verifying a modern model lacks an embedded name.
+# Search and submit both honor this opt-in; progress reports still omit modern model coverage.
+search_modern_models = false
+
 # `sound_asset` and `sound_alias` are different things and go to different tables upstream: sound
 # *files* to fnv1a_xsounds.csv, alias *names* to fnv1a_soundbanks_aliases.csv. Black Ops 4's own
 # `sound` pool is neither -- it holds sound banks.

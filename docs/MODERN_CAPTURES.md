@@ -28,7 +28,7 @@ This writes ignored `data/modern/<game>/` lists, separate from the committed leg
 
 `next_game` only saves the game choice. It does not refresh tables, run startup network checks or grant a readiness receipt. The existing deliberate offline `--anyway` override still leaves published-name exclusions enabled. Local development can proceed without running `start`, `submit`, committing or pushing.
 
-An isolated published-name replay exercises all six searchable types, forward searches, inverse/fragment searches, mixed-pool routing, normal exclusions and result writing. Modern models use reproducible names shared with ordinary source tables, since the database has no dedicated modern model table; every fixture must match that game's actual model pool:
+An isolated published-name replay exercises all six retained asset types, forward searches, inverse/fragment searches, mixed-pool routing, normal exclusions and result writing. Modern models use reproducible names shared with ordinary source tables, since the database has no dedicated modern model table; every fixture must match that game's actual model pool:
 
 ```text
 verify_capture --game BLACKOP6 --out replay-output
@@ -37,6 +37,25 @@ python scripts/test_merge_snapshots.py
 ```
 
 Replay output is test evidence, not new findings. The replay temporarily withholds sampled names only in its own exclusion set; normal search exclusions and readiness checks are unchanged. Use a fresh output directory for each replay. Test counts establish these policies for sampled names; they do not prove every asset or displayed sound path is recoverable.
+
+## Models with embedded names
+
+Normal searches target models only in BO4 and Cold War. MWII (2022), MWIII (2023), BO6,
+BO7 and MW4 carry embedded model names, so ordinary searches and submissions exclude xmodel.
+This applies to existing configs listing xmodel and to all_pools = true. Animations, images,
+materials, sound assets and sound aliases keep their existing search and hash policies.
+
+Greyhound's MWII and MWIII loaders read the XModel NamePtr directly, with a hash-name fallback
+when it is absent. For a verified hash-only exception, set search_modern_models = true in the
+[search] section of config.toml and include xmodel in pools (or use all_pools). This explicit
+setting applies to both searches and submissions. Turn it off again after the exception.
+Python snapshot analysis uses the same default and setting; unnamed also accepts an explicit
+search_modern_models argument for isolated analysis.
+
+Progress tables, totals and Discord omit modern model rows rather than claiming a measured
+100 percent. Snapshots do not store NamePtr availability. Existing snapshots, submissions and
+all_names model files are preserved as history and vocabulary. The isolated verify_capture
+replay can still test historical model hashing; it does not search for new findings.
 
 ## Modern-games release milestone
 

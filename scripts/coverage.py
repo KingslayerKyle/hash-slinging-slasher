@@ -36,6 +36,8 @@ def main(argv):
         known = snapshot.known_hashes(game=snap.game)
         rows = []
         for pool, ids in snap.by_pool().items():
+            if not snapshot.searchable(snap.game, pool):
+                continue
             if only_five and pool not in snapshot.IMPORTANT:
                 continue
 

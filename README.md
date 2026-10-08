@@ -15,6 +15,12 @@ Supports **Black Ops 4, Cold War, MWII, MWIII, BO6, BO7 and MW7**. The modern-ga
 
 See [modern capture setup and local verification](docs/MODERN_CAPTURES.md). The repository ships one snapshot per game. MWII, MWIII and BO6 each combine their captured MP/SP modes, so a game is searched once.
 
+Normal searches recover animations, images, materials, sound assets and sound aliases in all
+seven games. Models are searched only in BO4 and Cold War: the newer games carry embedded model
+names. Modern model percentages and counts are omitted from progress reports, while existing
+snapshots and model-name files remain available. See the model policy and exception setting in
+[modern capture setup](docs/MODERN_CAPTURES.md).
+
 ## You do not need the game
 
 This is the part worth understanding, because it is why anyone can help.
