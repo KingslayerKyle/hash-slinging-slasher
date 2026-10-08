@@ -1,0 +1,4 @@
+_med_run
+_med_walk
+_shelter_dirt
+_shelter_rust
