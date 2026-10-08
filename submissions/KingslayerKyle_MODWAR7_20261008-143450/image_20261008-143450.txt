@@ -1,0 +1,2 @@
+3f13ccd1d323c352,rex_parts_tourniquet_b_red_thermalmap
+64362a08e7d818e6,parts_wristwear_mp_watch_i_vm_glass_thermalmap
