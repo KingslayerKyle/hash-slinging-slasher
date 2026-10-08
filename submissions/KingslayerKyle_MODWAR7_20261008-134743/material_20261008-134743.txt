@@ -1,0 +1,8 @@
+421ee20f7b413c6,elcq/vfx_spark_round_sheet_2_desat
+c5078cf26bd5d65,smaa_temporal_supersampling_filmic
+224881a18e95fc78,elcqp/vfx_spark_round_sheet_2_desat
+32d5a21f1da93d3d,m/att_rex_ammo_762n_link
+3ded7292cb4c95c3,m/att_rex_ammo_762n_df
+5498a4e040c01267,m/tool_spray_paint_can_02_green
+60284aae19791e5f,elcq/vfx_spark_burst_sparse_anim_2_desat
+698754223b336cdb,m/tool_spray_paint_can_02_red
