@@ -1,0 +1,2 @@
+6c4c38a3b32923bc,mc/mtl_p8_sta_condos_ad_01
+6c4c3ba3b32928d5,mc/mtl_p8_sta_condos_ad_02
