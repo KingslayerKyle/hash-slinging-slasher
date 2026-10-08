@@ -1,0 +1,6 @@
+3fe08bd2327a710,mc/mtl_wpn_t8_loot_smg_minigun_basemag
+172db9b28a2f1c0a,mc/t8_zm_esc_hexagonal_tiles_01
+310ccdf7ccc3d04a,mc/mtl_p8_wz_supply_stash_decal_packstrap
+514c7ee038f5ed50,wc/t8_zm_esc_hexagonal_tiles_01
+61b4502e9d0c60ba,mc/mtl_veh_t8_civ_compact_glass_interred
+77aae88dd3e36825,mc/mtl_veh_t8_civ_compact_glass_interred_dirty

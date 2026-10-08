@@ -1,0 +1,9 @@
+bbc06ccb3fc83ae,amb_cliff_int_wind_2d
+1521e27da7518880,amb_moscow_int_wind_2d
+234bbc970d067adc,amb_tundra_int_wind_2d
+24f37e98f8a19e26,amb_tundra_ext_wind_2d
+600407e2ddeadb75,amb_bug_clutter_particle_w
+6abfbf865c4ac1aa,amb_moscow_ext_wind_2d
+76cf4473dc1be99e,amb_finance_int_wind_2d
+788312060d00a175,amb_central_int_wind_2d
+7b3b0250643401c8,amb_vault_int_wind_2d

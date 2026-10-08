@@ -1,0 +1,3 @@
+34f0513e31f5078,wpn_sensorgun_fire_npc
+5d87f471553238f5,wpn_sensorgun_lfe
+667c3014645a0219,wpn_sensorgun_fire_plr

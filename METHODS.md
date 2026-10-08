@@ -114,6 +114,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | zombies vo: mitm round 4 (white/orange, npc seeds) + gpu 3-token gap fill, first 22 prefixes | 1 | 1 | 419 | 619 | 1 | 1 | 1 | 2026-09-10 | 2026-09-10 | untried |
 | bo4: numeric-sibling completion across every non-sound pocket | 1 | 1 | 29 | 51 | 1 | 1 | 1 | 2026-09-14 | 2026-09-14 | untried |
 | image: gpu 1-2 token gap fill over image prefixes x image tokens x channel endings | 2 | 2 | 348 | 642 | 1 | 1 | 6 | 2026-09-11 | 2026-09-11 | cooling |
+| zombies player-line files read back as aliases | 1 | 1 | 40 | 80 | 2 | 2 | 2 | 2026-10-05 | 2026-10-05 | untried |
 | bo4: truncation and skeleton variants of every vocabulary word in every single-slot template | 1 | 1 | 87 | 187 | 2 | 2 | 2 | 2026-09-13 | 2026-09-13 | untried |
 | bo4: merged token-slot categories, second pass on the enlarged corpus | 1 | 1 | 78 | 194 | 2 | 2 | 2 | 2026-09-14 | 2026-09-14 | untried |
 | bo4: every string in the dump hashed against every pocket | 1 | 1 | 6,240 | 15,741 | 2 | 2 | 2 | 2026-09-11 | 2026-09-11 | untried |
@@ -125,6 +126,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | sound files: exact-id search, full aliases <suffix> plr <n> <v> -> vox <map> plr <n> <suffix> <v>[ s] | 1 | 1 | 1,550 | 12,281 | 7 | 7 | 7 | 2026-09-11 | 2026-09-11 | untried |
 | sound alias: gpu gap fill re-run on rebuilt vocabularies and targets | 1 | 1 | 36 | 338 | 9 | 9 | 9 | 2026-09-14 | 2026-09-14 | untried |
 | bo4: closed-category completion | 1 | 1 | 7 | 71 | 10 | 10 | 10 | 2026-09-13 | 2026-09-13 | untried |
+| zombies map lines, file parts reordered as aliases | 1 | 1 | 412 | 4,759 | 11 | 11 | 11 | 2026-10-05 | 2026-10-05 | untried |
 | bo4: gpu gap fill with a vocabulary taken from the game's own english subtitles | 1 | 1 | 77 | 1,056 | 13 | 13 | 13 | 2026-09-11 | 2026-09-11 | untried |
 | bo4: exhaustive 1-9 character enumeration over [a-z0-9 ] against every pocket | 1 | 1 | 3 | 49 | 16 | 16 | 16 | 2026-09-13 | 2026-09-13 | untried |
 | bo4: exhaustive 9-character enumeration, decode fixed | 1 | 1 | 4 | 71 | 17 | 17 | 17 | 2026-09-13 | 2026-09-13 | untried |
@@ -139,24 +141,32 @@ table under a name you would not have guessed is the thing you are about to rebu
 | blackout banter aliases + files cracked from the hashed banter stringtable | 1 | 1 | 34 | 1,339 | 39 | 39 | 39 | 2026-09-11 | 2026-09-11 | untried |
 | black ops 4 source literals | 1 | 1 | 546 | 23,249 | 42 | 42 | 42 | 2026-08-26 | 2026-08-26 | untried |
 | sound alias: weapon sound aliases from tables/weapon hashed fields | 1 | 1 | 12 | 543 | 45 | 45 | 45 | 2026-09-11 | 2026-09-11 | untried |
+| voice phrase grids, fill after topic x common quips | 1 | 1 | 374 | 19,340 | 51 | 51 | 51 | 2026-10-06 | 2026-10-06 | untried |
 | sound alias: plaintext alias names from the w28447 dump sound tables + aliases derived from the stems of already-named linked files | 1 | 1 | 254 | 14,836 | 58 | 58 | 58 | 2026-09-11 | 2026-09-11 | untried |
+| voice phrase grids, fill after quip triples | 1 | 1 | 306 | 19,326 | 63 | 63 | 63 | 2026-10-06 | 2026-10-06 | untried |
 | channel and material derivations from paired image discoveries | 1 | 1 | 11 | 738 | 67 | 67 | 67 | 2026-09-22 | 2026-09-22 | untried |
 | zombies aether-story vo grid, blood of the dead (bod, plr 0-16), events from cracked vox csv + common table | 1 | 1 | 1,143 | 88,672 | 77 | 77 | 77 | 2026-09-10 | 2026-09-10 | untried |
 | final byte current 20260907 | 1 | 1 | 15 | 1,316 | 87 | 87 | 87 | 2026-09-07 | 2026-09-07 | untried |
 | mp/blackout specialist vo: gpu 1-2 token gap fill over en\vox\scripted\{mpl,wz}\<spec>\vox <spec> | 1 | 1 | 463 | 41,415 | 89 | 89 | 89 | 2026-09-10 | 2026-09-10 | untried |
 | sound alias two byte solve | 1 | 1 | 5 | 521 | 104 | 104 | 104 | 2026-09-02 | 2026-09-02 | untried |
 | sound files: directory probe | 1 | 1 | 98 | 10,731 | 109 | 109 | 109 | 2026-09-11 | 2026-09-11 | untried |
+| voice phrase grids, fill after long-phrase probe | 1 | 1 | 165 | 18,751 | 113 | 113 | 113 | 2026-10-05 | 2026-10-05 | untried |
 | zombies vo grid: man = dead of the night | 1 | 1 | 1,549 | 207,751 | 134 | 134 | 134 | 2026-09-10 | 2026-09-10 | untried |
 | cold war source literals | 1 | 1 | 251 | 35,278 | 140 | 140 | 140 | 2026-08-26 | 2026-08-26 | untried |
 | zombies vo grid: fiv = classified, whi | 1 | 1 | 3,505 | 575,687 | 164 | 164 | 164 | 2026-09-10 | 2026-09-10 | untried |
+| voice phrase grids, fill after deep quips | 1 | 1 | 102 | 18,802 | 184 | 184 | 184 | 2026-10-05 | 2026-10-05 | untried |
 | zombies aether vo grid round 2: bod plr 0-16 x (csv + common + mitm-found events), plus mitm round-3 hits | 1 | 1 | 487 | 101,127 | 207 | 207 | 207 | 2026-09-10 | 2026-09-10 | untried |
 | vo: gpu gap fill rerun with  n s variants (zm + mp prefixes) + cpu variant probe | 1 | 1 | 357 | 84,856 | 237 | 237 | 237 | 2026-09-10 | 2026-09-10 | untried |
 | vo sound files derived from known vox  sound aliases: en\vox\scripted\<mode>\<map>\<alias> <n> | 1 | 1 | 12,846 | 3,180,688 | 247 | 247 | 247 | 2026-09-10 | 2026-09-10 | untried |
+| voice phrase grids, fill after probe | 1 | 1 | 66 | 18,604 | 281 | 281 | 281 | 2026-10-05 | 2026-10-05 | untried |
 | build strings, lpc fast files | 1 | 1 | 7 | 2,135 | 305 | 305 | 305 | 2026-08-24 | 2026-08-24 | untried |
 | build strings, casc blte 0.5gb probe | 1 | 1 | 10 | 3,637 | 363 | 363 | 363 | 2026-08-24 | 2026-08-24 | untried |
-| final byte solved backwards | 1 | 176 | 7,608 | 3,523,807 | 463 | 4 | 1,428 | 2026-08-22 | 2026-09-28 | spent |
 | zombies vo grid: oran (dir orange) = tag der toten, plr 0-24 | 1 | 1 | 1,394 | 747,687 | 536 | 536 | 536 | 2026-09-10 | 2026-09-10 | untried |
+| voice phrase grids, fill after wide triples | 1 | 1 | 34 | 19,056 | 560 | 560 | 560 | 2026-10-06 | 2026-10-06 | untried |
+| final byte solved backwards | 1 | 202 | 7,693 | 4,339,283 | 564 | 4 | 18,632 | 2026-08-22 | 2026-10-05 | spent |
+| voice phrase grids, fill after wiki probe | 1 | 1 | 33 | 19,057 | 577 | 577 | 577 | 2026-10-07 | 2026-10-07 | untried |
 | weapon anim grid | 1 | 2 | 77 | 46,426 | 602 | 446 | 927 | 2026-09-03 | 2026-09-03 | live |
+| cinematic shot grid, round 3 | 1 | 1 | 70 | 46,414 | 663 | 663 | 663 | 2026-10-01 | 2026-10-01 | untried |
 | zombies vo grid round 3: all 5 aether/dotn maps x plr 0-24 x events (csv + common + mitm rounds 1-3), plus mitm round-3 hits | 1 | 1 | 1,678 | 1,258,928 | 750 | 750 | 750 | 2026-09-10 | 2026-09-10 | untried |
 | black market character spray tag images | 1 | 1 | 10 | 8,316 | 831 | 831 | 831 | 2026-09-04 | 2026-09-04 | untried |
 | gaps | 2 | 5 | 376 | 346,722 | 922 | 190 | 50,180 | 2026-08-20 | 2026-08-27 | spent |
@@ -164,20 +174,25 @@ table under a name you would not have guessed is the thing you are about to rebu
 | uncarried sound grid two | 1 | 1 | 1 | 1,114 | 1,114 | 1,114 | 1,114 | 2026-09-07 | 2026-09-07 | untried |
 | figglefx bo4 verified general exports | 1 | 1 | 134 | 159,569 | 1,190 | 1,190 | 1,190 | 2026-09-04 | 2026-09-04 | untried |
 | reverse final-byte solve after source refresh | 1 | 1 | 3 | 4,051 | 1,350 | 1,350 | 1,350 | 2026-09-03 | 2026-09-03 | untried |
+| numbered sound templates, every number | 1 | 1 | 772 | 1,055,896 | 1,367 | 1,367 | 1,367 | 2026-10-05 | 2026-10-05 | untried |
 | blackout vo: all named speakers x all known blackout events x variants | 1 | 1 | 112 | 159,536 | 1,424 | 1,424 | 1,424 | 2026-09-11 | 2026-09-11 | untried |
+| voice phrase grids, cross fill inside categories | 1 | 1 | 442 | 650,084 | 1,470 | 1,470 | 1,470 | 2026-10-05 | 2026-10-05 | untried |
 | two byte pool solve | 1 | 1 | 2 | 3,124 | 1,562 | 1,562 | 1,562 | 2026-09-04 | 2026-09-04 | untried |
 | zombies vo: english-dictionary mitm on the last csv/script suffixes (bo4 mitm dict english.cpp) + mitm round 4 mansion/common + gpu 3-token progress | 1 | 1 | 1,657 | 3,173,167 | 1,915 | 1,915 | 1,915 | 2026-09-10 | 2026-09-10 | untried |
+| zombies player-line aliases placed into every map's voice folder | 1 | 1 | 370 | 763,091 | 2,062 | 2,062 | 2,062 | 2026-10-05 | 2026-10-05 | untried |
 | hashindex bo4 bocw global and script labels | 1 | 1 | 160 | 352,925 | 2,205 | 2,205 | 2,205 | 2026-09-04 | 2026-09-04 | untried |
 | final-byte-after-xanim-seed | 1 | 1 | 16 | 35,919 | 2,244 | 2,244 | 2,244 | 2026-08-29 | 2026-08-29 | untried |
 | black ops 4 final byte after upstream corpus refresh | 1 | 1 | 1 | 2,267 | 2,267 | 2,267 | 2,267 | 2026-09-01 | 2026-09-01 | untried |
 | final-byte after current findings | 1 | 1 | 5 | 11,775 | 2,355 | 2,355 | 2,355 | 2026-09-01 | 2026-09-01 | untried |
 | black ops 1 build names, verbatim | 1 | 2 | 271 | 651,912 | 2,405 | 1,940 | 3,164 | 2026-08-22 | 2026-08-22 | live |
+| cinematic shot grid | 1 | 2 | 50 | 143,956 | 2,879 | 867 | 34,387 | 2026-10-01 | 2026-10-01 | spent |
 | black ops 3 build names, respelled, full harvest | 1 | 2 | 148 | 473,642 | 3,200 | 1,691 | 29,602 | 2026-08-22 | 2026-08-22 | spent |
 | numbered family gaps after pr2011 | 1 | 1 | 36 | 119,028 | 3,306 | 3,306 | 3,306 | 2026-09-09 | 2026-09-09 | untried |
 | zombies vo grids, all 8 maps, with 176 more csv suffixes cracked by 3-token mitm | 1 | 1 | 593 | 1,964,627 | 3,313 | 3,313 | 3,313 | 2026-09-10 | 2026-09-10 | untried |
 | bo4: plaintext names harvested from the w28447/-8 dump (all pools) + mitm character xmodels | 1 | 1 | 98 | 340,813 | 3,477 | 3,477 | 3,477 | 2026-09-11 | 2026-09-11 | untried |
 | anim symmetry | 2 | 2 | 5 | 18,464 | 3,692 | 3,098 | 3,098 | 2026-09-03 | 2026-09-04 | live |
 | vo: gpu gap fill with the cod-wiki-enriched 16k vocabulary (all zm/mp prefixes) + grids with 16 more csv suffixes | 1 | 1 | 803 | 3,062,529 | 3,813 | 3,813 | 3,813 | 2026-09-10 | 2026-09-10 | untried |
+| zombies player and npc lines placed into every map's voice folder | 1 | 1 | 248 | 946,142 | 3,815 | 3,815 | 3,815 | 2026-10-05 | 2026-10-05 | untried |
 | zombies npc/announcer speakers (gpu-found tokens) x known events x variants | 1 | 1 | 120 | 460,800 | 3,840 | 3,840 | 3,840 | 2026-09-10 | 2026-09-10 | untried |
 | early black ops 4 source literals | 1 | 1 | 4 | 16,198 | 4,049 | 4,049 | 4,049 | 2026-08-26 | 2026-08-26 | untried |
 | sound aliases = recovered sound file stems minus  n | 1 | 1 | 4 | 18,353 | 4,588 | 4,588 | 4,588 | 2026-09-10 | 2026-09-10 | untried |
@@ -195,13 +210,14 @@ table under a name you would not have guessed is the thing you are about to rebu
 | blackout character banter grid: vox <spk> <idx> banter <c1> <c2> <line> <nn> over the ~60 named blackout speakers | 1 | 1 | 276 | 2,628,096 | 9,522 | 9,522 | 9,522 | 2026-09-10 | 2026-09-10 | untried |
 | channels | 2 | 4 | 916 | 9,598,953 | 10,479 | 2,732 | 602,442 | 2026-08-20 | 2026-08-20 | spent |
 | paired-token-blocks-anim | 1 | 1 | 33 | 410,321 | 12,433 | 12,433 | 12,433 | 2026-08-20 | 2026-08-20 | untried |
-| family gap filling | 1 | 81 | 671 | 8,467,691 | 12,619 | 654 | 134,583 | 2026-08-19 | 2026-09-25 | spent |
+| family gap filling | 1 | 89 | 765 | 9,574,760 | 12,516 | 654 | 36,008 | 2026-08-19 | 2026-10-01 | spent |
 | sound aliases named from the aliases they point at | 1 | 1 | 3 | 38,993 | 12,997 | 12,997 | 12,997 | 2026-09-05 | 2026-09-05 | untried |
 | black ops 3 build names, verbatim, full harvest | 1 | 2 | 177 | 2,462,622 | 13,913 | 8,858 | 32,402 | 2026-08-22 | 2026-08-22 | cooling |
 | cold war source filenames and text | 1 | 1 | 151 | 2,102,012 | 13,920 | 13,920 | 13,920 | 2026-08-27 | 2026-08-27 | untried |
 | \ bo4 image siblings from confirmed materials 20260830\ | 1 | 1 | 135 | 2,163,297 | 16,024 | 16,024 | 16,024 | 2026-08-30 | 2026-08-30 | untried |
 | alias slot substitution | 4 | 9 | 1,354 | 21,780,323 | 16,085 | 6,535 | 2,047,927 | 2026-08-20 | 2026-08-21 | spent |
 | zombies vo: gpu 3-token gap fill complete (112 prefixes) + 67 four-token suffixes (gapfill4 on the 3090) -> grids + aliases | 1 | 1 | 355 | 6,030,376 | 16,986 | 16,986 | 16,986 | 2026-09-11 | 2026-09-11 | untried |
+| mw7 verified numeric and texture siblings | 1 | 1 | 114 | 1,963,655 | 17,225 | 17,225 | 17,225 | 2026-10-08 | 2026-10-08 | untried |
 | rare-token-compound-splice-anim | 1 | 3 | 30 | 521,194 | 17,373 | 10,849 | 17,385 | 2026-08-20 | 2026-08-20 | live |
 | black ops 4 final-byte solve after refreshed tables | 1 | 2 | 2 | 35,304 | 17,652 | 17,652 | 17,652 | 2026-08-27 | 2026-08-27 | live |
 | black ops 3 build names, verbatim | 1 | 1 | 4 | 73,303 | 18,325 | 18,325 | 18,325 | 2026-08-22 | 2026-08-22 | untried |
@@ -212,14 +228,20 @@ table under a name you would not have guessed is the thing you are about to rebu
 | rare shared-token splices | 1 | 2 | 7 | 158,622 | 22,660 | 13,212 | 79,348 | 2026-08-28 | 2026-08-29 | cooling |
 | external sound paths with one directory dropped | 1 | 1 | 1 | 23,776 | 23,776 | 23,776 | 23,776 | 2026-09-04 | 2026-09-04 | untried |
 | reversible endpoint token swaps | 1 | 1 | 2 | 49,872 | 24,936 | 24,936 | 24,936 | 2026-09-04 | 2026-09-04 | untried |
+| sound files from aliases, after cross fill | 1 | 1 | 460 | 11,480,155 | 24,956 | 24,956 | 24,956 | 2026-10-05 | 2026-10-05 | untried |
 | bo3 mod tools gdt asset names | 1 | 2 | 3 | 84,078 | 28,026 | 21,019 | 42,039 | 2026-08-22 | 2026-08-22 | live |
+| sound files from aliases, after topic x common quips | 1 | 1 | 386 | 11,662,505 | 30,213 | 30,213 | 30,213 | 2026-10-06 | 2026-10-06 | untried |
+| sound files from aliases, after web-bigram aliases | 1 | 1 | 357 | 11,024,773 | 30,881 | 30,881 | 30,881 | 2026-10-05 | 2026-10-05 | untried |
 | rare shared-token splices family size 13-30 | 1 | 1 | 10 | 325,039 | 32,503 | 32,503 | 32,503 | 2026-08-28 | 2026-08-28 | untried |
 | black ops 4 family gap filling after refreshed corpus | 1 | 2 | 6 | 200,472 | 33,412 | 33,412 | 33,412 | 2026-08-27 | 2026-08-27 | live |
+| aliases from sound files, after sound pair slots | 1 | 1 | 14 | 477,105 | 34,078 | 34,078 | 34,078 | 2026-10-01 | 2026-10-01 | untried |
 | paired-token-blocks-alias-deterministic | 1 | 2 | 14 | 481,544 | 34,396 | 24,067 | 60,216 | 2026-08-20 | 2026-08-20 | live |
 | paired-token-blocks-anim-deterministic | 1 | 9 | 104 | 3,708,652 | 35,660 | 15,884 | 206,784 | 2026-08-20 | 2026-08-20 | spent |
 | final-byte-after-image-channel-seed | 1 | 1 | 1 | 36,014 | 36,014 | 36,014 | 36,014 | 2026-08-29 | 2026-08-29 | untried |
 | \ cw final-byte after upstream corpus refresh\ | 1 | 1 | 1 | 37,273 | 37,273 | 37,273 | 37,273 | 2026-08-29 | 2026-08-29 | untried |
+| sound files from aliases, after quip triples | 1 | 1 | 316 | 11,798,006 | 37,335 | 37,335 | 37,335 | 2026-10-06 | 2026-10-06 | untried |
 | numbered families on two axes | 1 | 2 | 7 | 265,407 | 37,915 | 22,119 | 22,119 | 2026-08-27 | 2026-08-27 | live |
+| sound files from aliases, after phrase grids | 1 | 1 | 284 | 11,146,413 | 39,247 | 39,247 | 39,247 | 2026-10-05 | 2026-10-05 | untried |
 | learned coordinated repeated identifiers sound | 1 | 2 | 34 | 1,366,822 | 40,200 | 21,356 | 341,705 | 2026-09-22 | 2026-09-22 | spent |
 | external source filenames | 1 | 1 | 28 | 1,226,186 | 43,792 | 43,792 | 43,792 | 2026-08-27 | 2026-08-27 | untried |
 | zombies vo grids with suffixes cracked from the zm scripts' hashed vo say/function a2bd5a0c arguments | 1 | 1 | 67 | 3,073,427 | 45,872 | 45,872 | 45,872 | 2026-09-10 | 2026-09-10 | untried |
@@ -230,13 +252,14 @@ table under a name you would not have guessed is the thing you are about to rebu
 | older-title vocabulary | 1 | 2 | 59 | 3,144,542 | 53,297 | 34,939 | 112,305 | 2026-08-21 | 2026-08-21 | cooling |
 | image siblings from confirmed materials current | 1 | 1 | 43 | 2,307,057 | 53,652 | 53,652 | 53,652 | 2026-09-01 | 2026-09-01 | untried |
 | black ops 3 build names, respelled | 1 | 1 | 1 | 54,358 | 54,358 | 54,358 | 54,358 | 2026-08-22 | 2026-08-22 | untried |
-| image siblings of confirmed materials | 1 | 174 | 6,272 | 354,291,603 | 56,487 | 393 | 540,425 | 2026-08-19 | 2026-09-28 | spent |
 | alias slot substitution, left context only | 3 | 6 | 1,934 | 109,332,515 | 56,531 | 8,885 | 2,932,361 | 2026-08-20 | 2026-08-20 | spent |
 | image siblings from confirmed materials | 1 | 1 | 35 | 2,001,561 | 57,187 | 57,187 | 57,187 | 2026-08-26 | 2026-08-26 | untried |
 | cod-ultimate source literals | 1 | 2 | 12 | 686,330 | 57,194 | 49,023 | 49,023 | 2026-08-31 | 2026-08-31 | live |
 | image siblings of richkiller-derived materials | 1 | 1 | 39 | 2,396,589 | 61,451 | 61,451 | 61,451 | 2026-09-04 | 2026-09-04 | untried |
 | edits anim | 2 | 5 | 208 | 12,868,629 | 61,868 | 15,318 | 15,318 | 2026-08-20 | 2026-08-20 | live |
+| sound files from aliases, after long-phrase quips | 1 | 1 | 176 | 11,236,875 | 63,845 | 63,845 | 63,845 | 2026-10-05 | 2026-10-05 | untried |
 | cold war animation token edits after new findings | 2 | 2 | 93 | 5,989,742 | 64,405 | 32,080 | 3,038,360 | 2026-08-26 | 2026-08-31 | spent |
+| image siblings of confirmed materials | 1 | 199 | 6,346 | 422,676,858 | 66,605 | 393 | 2,754,711 | 2026-08-19 | 2026-10-01 | spent |
 | adjacent-token-order-anim | 1 | 1 | 2 | 136,243 | 68,121 | 68,121 | 68,121 | 2026-08-20 | 2026-08-20 | untried |
 | rare compound material splice | 1 | 1 | 3 | 208,316 | 69,438 | 69,438 | 69,438 | 2026-09-04 | 2026-09-04 | untried |
 | witnessed nonadjacent paired animation changes | 1 | 1 | 3 | 214,702 | 71,567 | 71,567 | 71,567 | 2026-09-22 | 2026-09-22 | untried |
@@ -245,16 +268,20 @@ table under a name you would not have guessed is the thing you are about to rebu
 | vo sound files derived from known vox  sound aliases: en\vox\scripted\<mode>\<map>\<alias> <n>.sn100 | 1 | 1 | 10,388 | 797,443,920 | 76,765 | 76,765 | 76,765 | 2026-09-10 | 2026-09-10 | untried |
 | bo3 mod tools asset names | 1 | 2 | 22 | 1,735,532 | 78,887 | 78,887 | 78,887 | 2026-08-24 | 2026-08-24 | live |
 | witnessed nonadjacent paired image changes | 1 | 1 | 57 | 4,674,651 | 82,011 | 82,011 | 82,011 | 2026-09-22 | 2026-09-22 | untried |
+| sound files from aliases with takes, after pooled grid rows | 1 | 1 | 35 | 2,904,447 | 82,984 | 82,984 | 82,984 | 2026-10-01 | 2026-10-01 | untried |
 | rare-token-compound-splice-model | 1 | 2 | 60 | 5,611,060 | 93,517 | 80,164 | 80,164 | 2026-08-20 | 2026-08-20 | live |
 | zombies character conversations: vox <map> plr <n> <idx> banter <chr1> <chr2> <v> from zm vo.gsc + zm characters.gsc chrnames | 1 | 1 | 625 | 61,424,640 | 98,279 | 98,279 | 98,279 | 2026-09-10 | 2026-09-10 | untried |
 | family grid current | 1 | 1 | 38 | 3,786,603 | 99,647 | 99,647 | 99,647 | 2026-08-31 | 2026-08-31 | untried |
+| sound files from aliases, after deep quips | 1 | 1 | 108 | 11,283,066 | 104,472 | 104,472 | 104,472 | 2026-10-05 | 2026-10-05 | untried |
 | \ cw sound-alias token insertion and deletion 20260830\ | 1 | 1 | 70 | 7,641,905 | 109,170 | 109,170 | 109,170 | 2026-08-30 | 2026-08-30 | untried |
 | rare shared token splice 13 30 current | 1 | 1 | 3 | 331,149 | 110,383 | 110,383 | 110,383 | 2026-09-02 | 2026-09-02 | untried |
 | rare-token-compound-splice-batch | 1 | 4 | 236 | 26,219,346 | 111,098 | 48,548 | 3,278,056 | 2026-08-20 | 2026-08-20 | spent |
 | coordinated identifiers, sound | 1 | 1 | 6 | 699,191 | 116,531 | 116,531 | 116,531 | 2026-09-25 | 2026-09-25 | untried |
+| sound paths with a repeated word, filled from the family | 1 | 3 | 49 | 5,873,595 | 119,869 | 47,768 | 47,768 | 2026-10-05 | 2026-10-05 | live |
 | cold war two-token suffix precedents current | 1 | 1 | 1 | 124,990 | 124,990 | 124,990 | 124,990 | 2026-09-03 | 2026-09-03 | untried |
 | rare shared-token splices family size 61-120 | 1 | 1 | 18 | 2,355,489 | 130,860 | 130,860 | 130,860 | 2026-08-28 | 2026-08-28 | untried |
 | figglefx cold war community export | 1 | 1 | 1 | 132,659 | 132,659 | 132,659 | 132,659 | 2026-09-04 | 2026-09-04 | untried |
+| sound aliases built from file paths | 1 | 1 | 8 | 1,089,910 | 136,238 | 136,238 | 136,238 | 2026-10-05 | 2026-10-05 | untried |
 | alias slot substitution, right context only | 1 | 2 | 146 | 22,349,656 | 153,079 | 121,544 | 121,544 | 2026-08-20 | 2026-08-20 | live |
 | rare shared-token splices families 18901-19200 | 1 | 1 | 20 | 3,237,958 | 161,897 | 161,897 | 161,897 | 2026-08-29 | 2026-08-29 | untried |
 | vox speaker x line grid, unseen cells | 1 | 1 | 34 | 5,564,535 | 163,662 | 163,662 | 163,662 | 2026-08-23 | 2026-08-23 | untried |
@@ -266,17 +293,20 @@ table under a name you would not have guessed is the thing you are about to rebu
 | image siblings closure followup | 1 | 1 | 13 | 2,309,889 | 177,683 | 177,683 | 177,683 | 2026-09-02 | 2026-09-02 | untried |
 | sound language and encoding variants | 1 | 2 | 53 | 9,914,264 | 187,061 | 113,060 | 374,530 | 2026-08-20 | 2026-09-11 | cooling |
 | rare shared-token splices family sizes 10201-10500 | 1 | 1 | 14 | 2,725,854 | 194,703 | 194,703 | 194,703 | 2026-08-28 | 2026-08-28 | untried |
+| numbered designation slots | 1 | 1 | 16 | 3,352,846 | 209,552 | 209,552 | 209,552 | 2026-10-01 | 2026-10-01 | untried |
 | modern warfare 2 build names, verbatim | 1 | 1 | 1 | 209,784 | 209,784 | 209,784 | 209,784 | 2026-08-22 | 2026-08-22 | untried |
-| image channel completion | 1 | 143 | 1,703 | 363,951,647 | 213,712 | 5,159 | 2,666,145 | 2026-08-20 | 2026-09-27 | spent |
 | rare compound image splice | 1 | 1 | 1 | 223,738 | 223,738 | 223,738 | 223,738 | 2026-09-04 | 2026-09-04 | untried |
+| image channel completion | 1 | 160 | 1,754 | 409,349,325 | 233,380 | 5,159 | 891,255 | 2026-08-20 | 2026-10-05 | spent |
 | cross-game verbatim transfer | 1 | 1 | 3 | 702,081 | 234,027 | 234,027 | 234,027 | 2026-08-25 | 2026-08-25 | untried |
 | token edits anim | 1 | 1 | 13 | 3,067,026 | 235,925 | 235,925 | 235,925 | 2026-09-03 | 2026-09-03 | untried |
+| sound files from aliases | 1 | 4 | 188 | 44,736,077 | 237,957 | 159,878 | 194,856 | 2026-10-01 | 2026-10-05 | live |
 | mcdp material redecorations after pr971 | 1 | 1 | 5 | 1,198,438 | 239,687 | 239,687 | 239,687 | 2026-08-27 | 2026-08-27 | untried |
 | refreshed mcdp material core redecorations | 1 | 1 | 5 | 1,198,717 | 239,743 | 239,743 | 239,743 | 2026-08-28 | 2026-08-28 | untried |
 | speaker grids re-run cw | 1 | 1 | 6 | 1,466,925 | 244,487 | 244,487 | 244,487 | 2026-08-24 | 2026-08-24 | untried |
 | token insertion and deletion anim | 1 | 1 | 12 | 3,115,854 | 259,654 | 259,654 | 259,654 | 2026-09-07 | 2026-09-07 | untried |
 | paired-token-blocks-model-deterministic | 1 | 6 | 148 | 39,959,454 | 269,996 | 96,527 | 475,923 | 2026-08-20 | 2026-08-20 | cooling |
 | mined substitution equivalence classes | 1 | 2 | 211 | 58,068,971 | 275,208 | 151,043 | 1,529,932 | 2026-08-25 | 2026-08-25 | spent |
+| aliases placed in their family's sound folders | 1 | 1 | 3 | 829,676 | 276,558 | 276,558 | 276,558 | 2026-09-30 | 2026-09-30 | untried |
 | witnessed nonadjacent paired model changes | 1 | 1 | 4 | 1,127,177 | 281,794 | 281,794 | 281,794 | 2026-09-22 | 2026-09-22 | untried |
 | token-insertion-deletion-alias | 1 | 2 | 28 | 7,924,449 | 283,016 | 233,070 | 233,070 | 2026-08-20 | 2026-08-20 | live |
 | corpus-mined substitutions, top 1500 | 1 | 2 | 371 | 105,553,541 | 284,510 | 178,297 | 703,699 | 2026-08-25 | 2026-08-25 | cooling |
@@ -285,12 +315,16 @@ table under a name you would not have guessed is the thing you are about to rebu
 | image siblings bo4 | 1 | 1 | 6 | 1,879,167 | 313,194 | 313,194 | 313,194 | 2026-08-26 | 2026-08-26 | untried |
 | token insertion deletion animation | 1 | 1 | 10 | 3,152,190 | 315,219 | 315,219 | 315,219 | 2026-09-09 | 2026-09-09 | untried |
 | rare shared-token splices family size 241-480 | 1 | 2 | 89 | 28,268,386 | 317,622 | 224,352 | 543,622 | 2026-08-28 | 2026-08-28 | live |
+| sound files from aliases, after web-bigram widening | 1 | 1 | 35 | 11,161,426 | 318,897 | 318,897 | 318,897 | 2026-10-05 | 2026-10-05 | untried |
 | animation token insertion and deletion after pr983 | 1 | 1 | 9 | 2,961,267 | 329,029 | 329,029 | 329,029 | 2026-08-27 | 2026-08-27 | untried |
+| sound files from aliases, after wide triples | 1 | 1 | 35 | 11,813,019 | 337,514 | 337,514 | 337,514 | 2026-10-06 | 2026-10-06 | untried |
+| sound files from aliases, after wiki probe | 1 | 1 | 35 | 11,833,282 | 338,093 | 338,093 | 338,093 | 2026-10-07 | 2026-10-07 | untried |
 | token insertion and deletion | 5 | 21 | 1,164 | 394,291,167 | 338,738 | 34,598 | 3,459,022 | 2026-08-20 | 2026-09-08 | spent |
 | deep image channel completion after pr977 | 1 | 1 | 11 | 3,767,092 | 342,462 | 342,462 | 342,462 | 2026-08-27 | 2026-08-27 | untried |
 | sound-alias context length completion | 1 | 1 | 1 | 353,063 | 353,063 | 353,063 | 353,063 | 2026-09-04 | 2026-09-04 | untried |
 | external bo4-source core respelling | 1 | 2 | 9 | 3,192,200 | 354,688 | 319,220 | 319,220 | 2026-08-28 | 2026-08-28 | live |
 | deep image channel completion after pr979 | 1 | 1 | 10 | 3,766,987 | 376,698 | 376,698 | 376,698 | 2026-08-27 | 2026-08-27 | untried |
+| images for every material prefix x measured channel endings | 1 | 2 | 105 | 41,331,480 | 393,633 | 251,442 | 1,399,903 | 2026-10-06 | 2026-10-06 | cooling |
 | \ refreshed mcdp material core redecorations\ | 1 | 1 | 3 | 1,199,830 | 399,943 | 399,943 | 399,943 | 2026-08-29 | 2026-08-29 | untried |
 | rare shared-token splices family size 121-240 | 1 | 2 | 29 | 12,188,574 | 420,295 | 320,751 | 320,751 | 2026-08-28 | 2026-08-28 | live |
 | cross-game sound stem transfer | 1 | 1 | 27 | 11,737,632 | 434,727 | 434,727 | 434,727 | 2026-08-20 | 2026-08-20 | untried |
@@ -299,13 +333,13 @@ table under a name you would not have guessed is the thing you are about to rebu
 | family grid top 30 | 1 | 1 | 10 | 4,709,171 | 470,917 | 470,917 | 470,917 | 2026-09-14 | 2026-09-14 | untried |
 | rare shared-token splices families 13801-14100 | 1 | 2 | 15 | 7,293,903 | 486,260 | 260,496 | 260,496 | 2026-08-28 | 2026-08-28 | live |
 | slotswap | 3 | 6 | 1,903 | 928,681,787 | 488,009 | 183,556 | 5,712,231 | 2026-08-20 | 2026-09-03 | spent |
-| materials from image cores | 1 | 144 | 1,390 | 696,517,512 | 501,091 | 9,045 | 666,348 | 2026-08-20 | 2026-09-27 | spent |
 | cold war xanim token insertions and deletions cap12 minseen8 | 1 | 1 | 6 | 3,142,235 | 523,705 | 523,705 | 523,705 | 2026-09-08 | 2026-09-08 | untried |
 | black ops 4 materials from image cores current | 1 | 1 | 9 | 4,838,880 | 537,653 | 537,653 | 537,653 | 2026-09-01 | 2026-09-01 | untried |
 | mined substitutions, ranking tail | 1 | 1 | 237 | 129,160,520 | 544,981 | 544,981 | 544,981 | 2026-08-25 | 2026-08-25 | untried |
 | token edits material after pr828 | 1 | 1 | 4 | 2,186,916 | 546,729 | 546,729 | 546,729 | 2026-08-26 | 2026-08-26 | untried |
 | cold war legacy multi-axis numbered grids | 1 | 1 | 7 | 3,858,203 | 551,171 | 551,171 | 551,171 | 2026-08-29 | 2026-08-29 | untried |
 | rare shared-token splices family size 481-960 | 1 | 2 | 128 | 73,051,283 | 570,713 | 314,886 | 314,886 | 2026-08-28 | 2026-08-28 | live |
+| materials from image cores | 1 | 170 | 1,453 | 835,311,000 | 574,887 | 9,045 | 1,336,224 | 2026-08-20 | 2026-10-06 | spent |
 | cold war same-directory outer-inner cross | 1 | 3 | 9 | 5,196,762 | 577,418 | 577,418 | 577,418 | 2026-08-27 | 2026-08-27 | live |
 | final byte substitution | 1 | 2 | 121 | 70,135,764 | 579,634 | 467,581 | 467,581 | 2026-08-22 | 2026-08-22 | live |
 | \ cw adjacent material token order 20260830\ | 1 | 1 | 4 | 2,374,577 | 593,644 | 593,644 | 593,644 | 2026-08-30 | 2026-08-30 | untried |
@@ -316,11 +350,13 @@ table under a name you would not have guessed is the thing you are about to rebu
 | templates | 3 | 5 | 395 | 265,290,228 | 671,620 | 286,113 | 3,386,404 | 2026-08-20 | 2026-09-03 | spent |
 | high-control terminal token counterparts | 1 | 2 | 6 | 4,130,040 | 688,340 | 516,254 | 516,254 | 2026-09-04 | 2026-09-04 | live |
 | image interior2 | 1 | 1 | 3 | 2,121,927 | 707,309 | 707,309 | 707,309 | 2026-09-08 | 2026-09-08 | untried |
+| execution quips, glove-topic word pairs on one speaker | 1 | 1 | 13 | 9,290,304 | 714,638 | 714,638 | 714,638 | 2026-10-05 | 2026-10-05 | untried |
 | mined classes over indel-augmented pairs | 1 | 2 | 75 | 55,459,097 | 739,454 | 396,848 | 8,962,006 | 2026-08-25 | 2026-08-25 | spent |
 | correlated-token-blocks-material-image-wide | 1 | 6 | 563 | 425,162,272 | 755,172 | 270,359 | 5,907,185 | 2026-08-20 | 2026-08-20 | spent |
 | corpus-mined substitutions | 7 | 38 | 1,354 | 1,042,097,492 | 769,643 | 25,953 | 1,289,462 | 2026-08-25 | 2026-09-02 | spent |
 | rare shared-token splices family sizes 9901-10200 | 1 | 1 | 9 | 7,174,482 | 797,164 | 797,164 | 797,164 | 2026-08-28 | 2026-08-28 | untried |
 | length-sorted interior tokens | 1 | 1 | 1 | 816,286 | 816,286 | 816,286 | 816,286 | 2026-08-27 | 2026-08-27 | untried |
+| token trigram walk, image | 1 | 1 | 6 | 5,000,000 | 833,333 | 833,333 | 833,333 | 2026-10-01 | 2026-10-01 | untried |
 | \ bo4 sound-alias token insertion and deletion 20260830\ | 1 | 1 | 9 | 7,647,725 | 849,747 | 849,747 | 849,747 | 2026-08-30 | 2026-08-30 | untried |
 | rare shared token splice 31 60 current | 1 | 1 | 1 | 861,934 | 861,934 | 861,934 | 861,934 | 2026-09-02 | 2026-09-02 | untried |
 | paired-token-blocks-model-lengths2-4 | 1 | 2 | 21 | 18,272,811 | 870,133 | 702,844 | 702,844 | 2026-08-20 | 2026-08-20 | live |
@@ -335,6 +371,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | animation token insertion and deletion after pr986 | 1 | 1 | 3 | 2,962,200 | 987,400 | 987,400 | 987,400 | 2026-08-27 | 2026-08-27 | untried |
 | \ cold war animation token edits refreshed 20260830\ | 1 | 1 | 3 | 2,995,208 | 998,402 | 998,402 | 998,402 | 2026-08-29 | 2026-08-29 | untried |
 | rare shared-token splices family size 961-1200 | 1 | 2 | 33 | 34,762,466 | 1,053,408 | 1,022,406 | 1,086,347 | 2026-08-28 | 2026-08-28 | live |
+| alphanumeric code slots | 1 | 2 | 134 | 141,267,947 | 1,054,238 | 316,339 | 316,339 | 2026-10-01 | 2026-10-01 | live |
 | edits material | 2 | 5 | 139 | 150,302,473 | 1,081,312 | 439,383 | 1,589,712 | 2026-08-20 | 2026-08-20 | cooling |
 | cold war corpus-mined substitutions rank 401-500 | 1 | 2 | 6 | 6,492,678 | 1,082,113 | 1,082,113 | 1,082,113 | 2026-08-27 | 2026-08-27 | live |
 | rare shared token splice 1921 3840 current | 1 | 2 | 261 | 290,452,894 | 1,112,846 | 580,905 | 13,202,404 | 2026-09-02 | 2026-09-02 | spent |
@@ -342,6 +379,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | \ bo4 adjacent xmodel token order 20260830\ | 1 | 1 | 1 | 1,238,704 | 1,238,704 | 1,238,704 | 1,238,704 | 2026-08-30 | 2026-08-30 | untried |
 | sibling token substitution, right context only | 1 | 1 | 369 | 461,529,482 | 1,250,757 | 1,250,757 | 1,250,757 | 2026-08-19 | 2026-08-19 | untried |
 | rare shared token splice 121 240 current | 1 | 1 | 5 | 6,312,219 | 1,262,443 | 1,262,443 | 1,262,443 | 2026-09-02 | 2026-09-02 | untried |
+| designation grids | 1 | 1 | 1 | 1,302,385 | 1,302,385 | 1,302,385 | 1,302,385 | 2026-10-01 | 2026-10-01 | untried |
 | model component counterparts with measured integer offsets | 1 | 1 | 1 | 1,307,654 | 1,307,654 | 1,307,654 | 1,307,654 | 2026-09-22 | 2026-09-22 | untried |
 | token edits material current | 1 | 2 | 48 | 65,328,704 | 1,361,014 | 759,636 | 759,636 | 2026-08-29 | 2026-08-29 | live |
 | sound alias slot substitution | 1 | 2 | 3 | 4,119,600 | 1,373,200 | 1,028,660 | 2,062,280 | 2026-08-21 | 2026-08-22 | live |
@@ -349,12 +387,15 @@ table under a name you would not have guessed is the thing you are about to rebu
 | refreshed token insertion/deletion | 1 | 1 | 9 | 13,694,727 | 1,521,636 | 1,521,636 | 1,521,636 | 2026-08-27 | 2026-08-27 | untried |
 | animation token insertion and deletion | 1 | 1 | 2 | 3,043,656 | 1,521,828 | 1,521,828 | 1,521,828 | 2026-09-02 | 2026-09-02 | untried |
 | token edits material after new findings | 1 | 1 | 21 | 32,170,813 | 1,531,943 | 1,531,943 | 1,531,943 | 2026-08-25 | 2026-08-25 | untried |
+| multi-word slots, each frame's own words crossed | 1 | 1 | 1 | 1,534,736 | 1,534,736 | 1,534,736 | 1,534,736 | 2026-10-01 | 2026-10-01 | untried |
 | precedents top50 | 1 | 1 | 40 | 61,822,767 | 1,545,569 | 1,545,569 | 1,545,569 | 2026-09-02 | 2026-09-02 | untried |
 | material cores spelled as image | 5 | 13 | 1,006 | 1,578,450,625 | 1,569,036 | 289,958 | 42,125,208 | 2026-08-25 | 2026-09-03 | spent |
 | sibling token substitution | 7 | 14 | 2,724 | 4,277,911,710 | 1,570,452 | 206,904 | 76,964,097 | 2026-08-19 | 2026-09-10 | spent |
 | \ bo4 material token edits cap20 minseen4 20260830\ | 1 | 1 | 34 | 53,634,909 | 1,577,497 | 1,577,497 | 1,577,497 | 2026-08-29 | 2026-08-29 | untried |
 | \ cold war rare shared-token splice family 3601-3900 material\ | 1 | 1 | 3 | 4,744,802 | 1,581,600 | 1,581,600 | 1,581,600 | 2026-08-28 | 2026-08-28 | untried |
+| materials for every image base x measured material endings | 1 | 2 | 20 | 32,651,001 | 1,632,550 | 1,591,620 | 1,591,620 | 2026-10-06 | 2026-10-06 | live |
 | precedents top10 | 2 | 2 | 19 | 31,423,294 | 1,653,857 | 1,122,260 | 1,122,260 | 2026-09-02 | 2026-09-02 | live |
+| sound path two-word slots | 1 | 2 | 131 | 221,173,229 | 1,688,345 | 1,676,775 | 1,676,775 | 2026-10-01 | 2026-10-01 | live |
 | alias token substitutions | 1 | 3 | 7 | 11,834,165 | 1,690,595 | 1,314,899 | 1,314,911 | 2026-09-07 | 2026-09-07 | live |
 | material token edits after new findings | 1 | 2 | 38 | 64,915,906 | 1,708,313 | 1,708,313 | 1,708,313 | 2026-08-26 | 2026-08-26 | live |
 | \ bo4 rare shared-token splice family 2701-3000 material\ | 1 | 1 | 5 | 8,580,314 | 1,716,062 | 1,716,062 | 1,716,062 | 2026-08-28 | 2026-08-28 | untried |
@@ -371,6 +412,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | rare shared-token splices family sizes 6601-6900 | 1 | 2 | 13 | 26,110,812 | 2,008,524 | 1,450,600 | 1,450,600 | 2026-08-28 | 2026-08-28 | live |
 | family grid, shared tails, cold war | 1 | 1 | 2 | 4,076,947 | 2,038,473 | 2,038,473 | 2,038,473 | 2026-08-24 | 2026-08-24 | untried |
 | family column cross product | 3 | 9 | 349 | 711,519,426 | 2,038,737 | 456,163 | 54,076,619 | 2026-08-19 | 2026-09-02 | spent |
+| sound path word slots | 1 | 2 | 109 | 226,556,874 | 2,078,503 | 1,187,257 | 49,760,166 | 2026-10-01 | 2026-10-01 | spent |
 | rare shared splice 121 240 cw 20260903 | 1 | 1 | 3 | 6,315,365 | 2,105,121 | 2,105,121 | 2,105,121 | 2026-09-03 | 2026-09-03 | untried |
 | corpus-mined substitutions, top 200 | 1 | 5 | 30 | 63,659,860 | 2,121,995 | 1,273,098 | 3,183,216 | 2026-08-27 | 2026-08-27 | live |
 | rare shared-token splices family size 1501-1800 | 1 | 2 | 18 | 38,218,845 | 2,123,269 | 1,194,361 | 1,194,361 | 2026-08-28 | 2026-08-28 | live |
@@ -380,12 +422,14 @@ table under a name you would not have guessed is the thing you are about to rebu
 | rare shared-token splices families 15001-15300 | 1 | 1 | 1 | 2,199,697 | 2,199,697 | 2,199,697 | 2,199,697 | 2026-08-28 | 2026-08-28 | untried |
 | witnessed nonadjacent paired material changes | 1 | 1 | 3 | 6,629,438 | 2,209,812 | 2,209,812 | 2,209,812 | 2026-09-22 | 2026-09-22 | untried |
 | \ cold war material token edits cap30 minseen3 20260830\ | 1 | 1 | 36 | 79,633,756 | 2,212,048 | 2,212,048 | 2,212,048 | 2026-08-29 | 2026-08-29 | untried |
+| execution quips, probe with 12.3m chained phrases | 1 | 1 | 11 | 24,542,054 | 2,231,095 | 2,231,095 | 2,231,095 | 2026-10-05 | 2026-10-05 | untried |
 | precedents top70 | 1 | 1 | 36 | 81,027,780 | 2,250,771 | 2,250,771 | 2,250,771 | 2026-09-02 | 2026-09-02 | untried |
 | sibling token substitution, left context only | 2 | 3 | 1,401 | 3,216,420,428 | 2,295,803 | 769,926 | 3,368,815 | 2026-08-19 | 2026-08-20 | cooling |
 | \ cold war material token edits cap20 minseen4 20260830\ | 1 | 1 | 23 | 53,630,368 | 2,331,755 | 2,331,755 | 2,331,755 | 2026-08-29 | 2026-08-29 | untried |
 | \ bo4 adjacent material token order 20260830\ | 1 | 1 | 1 | 2,374,563 | 2,374,563 | 2,374,563 | 2,374,563 | 2026-08-30 | 2026-08-30 | untried |
 | \ sound-alias two-token substitutions\ | 1 | 1 | 2 | 4,861,240 | 2,430,620 | 2,430,620 | 2,430,620 | 2026-08-30 | 2026-08-30 | untried |
 | image channel completion, measured channel list | 1 | 2 | 36 | 88,257,624 | 2,451,600 | 2,451,600 | 2,451,600 | 2026-08-23 | 2026-08-23 | live |
+| token abbreviation and expansion | 1 | 2 | 11 | 27,057,793 | 2,459,799 | 1,716,208 | 1,716,208 | 2026-10-01 | 2026-10-01 | live |
 | \ cold war rare shared-token splice family 2401-2700 image\ | 1 | 1 | 1 | 2,507,207 | 2,507,207 | 2,507,207 | 2,507,207 | 2026-08-28 | 2026-08-28 | untried |
 | \ cw adjacent image token order 20260830\ | 1 | 1 | 1 | 2,509,437 | 2,509,437 | 2,509,437 | 2,509,437 | 2026-08-30 | 2026-08-30 | untried |
 | token insertion and deletion material | 1 | 1 | 13 | 32,998,295 | 2,538,330 | 2,538,330 | 2,538,330 | 2026-08-31 | 2026-08-31 | untried |
@@ -409,8 +453,11 @@ table under a name you would not have guessed is the thing you are about to rebu
 | token edits anim cap30 | 1 | 2 | 4 | 13,523,498 | 3,380,874 | 3,380,865 | 3,380,883 | 2026-09-03 | 2026-09-03 | live |
 | rare shared-token splices families 33901-34000 | 1 | 1 | 29 | 100,204,390 | 3,455,323 | 3,455,323 | 3,455,323 | 2026-08-29 | 2026-08-29 | untried |
 | cold war amb sound family | 1 | 1 | 2 | 6,956,252 | 3,478,126 | 3,478,126 | 3,478,126 | 2026-08-30 | 2026-08-30 | untried |
+| all-boundary refresh 2026-09-29, new cores x all endings | 1 | 2 | 200 | 696,002,320 | 3,480,011 | 2,161,497 | 8,923,106 | 2026-09-29 | 2026-09-29 | cooling |
+| images for every material prefix x its family's measured endings | 1 | 2 | 6 | 21,021,375 | 3,503,562 | 3,037,059 | 3,037,059 | 2026-10-06 | 2026-10-06 | live |
 | rare shared-token splices families 15901-16200 | 1 | 1 | 8 | 28,031,004 | 3,503,875 | 3,503,875 | 3,503,875 | 2026-08-28 | 2026-08-28 | untried |
 | cold war image token edits | 2 | 2 | 18 | 64,416,665 | 3,578,703 | 2,662,730 | 5,410,649 | 2026-08-26 | 2026-08-31 | live |
+| open-slot english words | 2 | 3 | 182 | 654,499,979 | 3,596,153 | 14,997 | 14,997 | 2026-10-01 | 2026-10-05 | live |
 | asset adjacent transpose bo4 | 1 | 1 | 10 | 36,296,871 | 3,629,687 | 3,629,687 | 3,629,687 | 2026-09-09 | 2026-09-09 | untried |
 | bounded family column cross product | 1 | 1 | 3 | 10,956,657 | 3,652,219 | 3,652,219 | 3,652,219 | 2026-08-27 | 2026-08-27 | untried |
 | wide materials from images | 1 | 1 | 1 | 3,699,887 | 3,699,887 | 3,699,887 | 3,699,887 | 2026-09-02 | 2026-09-02 | untried |
@@ -428,10 +475,13 @@ table under a name you would not have guessed is the thing you are about to rebu
 | material token insertion and deletion after pr983 | 1 | 1 | 8 | 32,496,827 | 4,062,103 | 4,062,103 | 4,062,103 | 2026-08-27 | 2026-08-27 | untried |
 | cold war sound stems, black ops 4 spelling | 1 | 1 | 3 | 12,257,370 | 4,085,790 | 4,085,790 | 4,085,790 | 2026-08-21 | 2026-08-21 | untried |
 | per-suffix precedents, five-token mirror | 1 | 1 | 73 | 301,603,209 | 4,131,550 | 4,131,550 | 4,131,550 | 2026-08-26 | 2026-08-26 | untried |
+| ab snowball r4 sound: new cores x all endings | 1 | 1 | 3 | 12,500,125 | 4,166,708 | 4,166,708 | 4,166,708 | 2026-10-01 | 2026-10-01 | untried |
 | total corpus sweep, all pools | 1 | 1 | 26 | 110,823,650 | 4,262,448 | 4,262,448 | 4,262,448 | 2026-09-05 | 2026-09-05 | untried |
 | \ cold war rare shared-token splice family 2701-3000 material\ | 1 | 1 | 2 | 8,580,309 | 4,290,154 | 4,290,154 | 4,290,154 | 2026-08-28 | 2026-08-28 | untried |
 | confirmed-only sound all-boundary cores, refreshed | 1 | 2 | 47 | 202,544,928 | 4,309,466 | 2,596,729 | 2,596,729 | 2026-08-29 | 2026-08-29 | live |
 | edits model | 2 | 4 | 12 | 52,757,566 | 4,396,463 | 1,876,636 | 6,607,769 | 2026-08-20 | 2026-08-20 | cooling |
+| execution quips, deep chained phrases on one speaker | 1 | 1 | 6 | 26,713,251 | 4,452,208 | 4,452,208 | 4,452,208 | 2026-10-05 | 2026-10-05 | untried |
+| open-slot embedding neighbours | 1 | 2 | 44 | 199,716,612 | 4,539,013 | 3,633,293 | 3,633,293 | 2026-10-01 | 2026-10-01 | live |
 | rare shared-token splices families 12901-13200 | 1 | 2 | 6 | 27,286,700 | 4,547,783 | 3,410,837 | 3,410,837 | 2026-08-28 | 2026-08-28 | live |
 | rare shared-token splices family sizes 6001-6300 | 1 | 2 | 3 | 14,089,319 | 4,696,439 | 3,522,329 | 3,522,329 | 2026-08-28 | 2026-08-28 | live |
 | \ bo4 rare shared-token splice family 3601-3900 material\ | 1 | 1 | 1 | 4,744,803 | 4,744,803 | 4,744,803 | 4,744,803 | 2026-08-28 | 2026-08-28 | untried |
@@ -442,6 +492,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | materials from images after gain | 1 | 1 | 1 | 4,846,608 | 4,846,608 | 4,846,608 | 4,846,608 | 2026-09-02 | 2026-09-02 | untried |
 | black ops 4 material token insertions and deletions cap16 minseen5 | 1 | 1 | 9 | 44,036,727 | 4,892,969 | 4,892,969 | 4,892,969 | 2026-09-08 | 2026-09-08 | untried |
 | xmodel cores spelled as material | 4 | 9 | 110 | 551,720,250 | 5,015,638 | 1,297,902 | 49,307,187 | 2026-08-28 | 2026-09-03 | spent |
+| word pairs into one-word slots | 1 | 3 | 114 | 574,760,000 | 5,041,754 | 4,713,809 | 4,713,809 | 2026-10-01 | 2026-10-01 | live |
 | precedents top40 | 1 | 1 | 10 | 51,576,111 | 5,157,611 | 5,157,611 | 5,157,611 | 2026-09-02 | 2026-09-02 | untried |
 | rare shared-token splices family sizes 9001-9300 | 1 | 1 | 2 | 10,475,702 | 5,237,851 | 5,237,851 | 5,237,851 | 2026-08-28 | 2026-08-28 | untried |
 | \ bo4 rare shared-token splice family 2401-2700 xmodel\ | 1 | 1 | 1 | 5,281,185 | 5,281,185 | 5,281,185 | 5,281,185 | 2026-08-28 | 2026-08-28 | untried |
@@ -450,16 +501,21 @@ table under a name you would not have guessed is the thing you are about to rebu
 | rare shared-token splices family sizes 6901-7200 | 1 | 1 | 1 | 5,494,443 | 5,494,443 | 5,494,443 | 5,494,443 | 2026-08-28 | 2026-08-28 | untried |
 | cold war material token edits current | 1 | 1 | 6 | 33,028,500 | 5,504,750 | 5,504,750 | 5,504,750 | 2026-09-01 | 2026-09-01 | untried |
 | token edits material current bo4 20260903 | 1 | 1 | 6 | 33,095,322 | 5,515,887 | 5,515,887 | 5,515,887 | 2026-09-03 | 2026-09-03 | untried |
+| ab snowball r2 visual: new cores x all endings | 1 | 13 | 100 | 564,001,880 | 5,640,018 | 496,155 | 496,155 | 2026-09-29 | 2026-10-05 | live |
 | black ops 4 image token insertions and deletions cap8 minseen12 | 1 | 1 | 4 | 22,877,526 | 5,719,381 | 5,719,381 | 5,719,381 | 2026-09-08 | 2026-09-08 | untried |
 | corpus-mined substitutions, top 500 | 1 | 5 | 21 | 121,661,444 | 5,793,402 | 2,714,810 | 24,268,543 | 2026-08-27 | 2026-08-27 | cooling |
 | rare shared-token splices family sizes 5401-5700 | 1 | 1 | 1 | 5,806,329 | 5,806,329 | 5,806,329 | 5,806,329 | 2026-08-28 | 2026-08-28 | untried |
 | \ bo4 rare shared-token splice family 3001-3300 material\ | 1 | 1 | 1 | 5,966,596 | 5,966,596 | 5,966,596 | 5,966,596 | 2026-08-28 | 2026-08-28 | untried |
 | corpus-mined substitutions, top 1000 | 1 | 4 | 24 | 145,853,160 | 6,077,215 | 4,050,931 | 18,234,083 | 2026-08-27 | 2026-08-27 | cooling |
+| two-word slots, web bigrams ranked 100k+ | 1 | 1 | 178 | 1,083,632,880 | 6,087,825 | 6,087,825 | 6,087,825 | 2026-10-05 | 2026-10-05 | untried |
+| ab snowball r2 sound: new cores x all endings | 1 | 8 | 56 | 354,903,549 | 6,337,563 | 650,006 | 7,400,074 | 2026-09-29 | 2026-10-05 | spent |
 | token insertion and deletion model | 1 | 2 | 4 | 27,607,752 | 6,901,938 | 4,608,579 | 4,608,579 | 2026-08-31 | 2026-09-07 | live |
 | black ops 4 amb sound family | 1 | 1 | 1 | 6,962,026 | 6,962,026 | 6,962,026 | 6,962,026 | 2026-08-30 | 2026-08-30 | untried |
 | rare shared-token splices family sizes 4501-4800 | 1 | 1 | 5 | 34,844,158 | 6,968,831 | 6,968,831 | 6,968,831 | 2026-08-28 | 2026-08-28 | untried |
 | rare shared token splice 241 480 current | 1 | 2 | 4 | 28,939,012 | 7,234,753 | 4,823,168 | 14,469,506 | 2026-09-02 | 2026-09-02 | live |
+| token inflection | 1 | 2 | 4 | 29,077,611 | 7,269,402 | 4,238,059 | 4,238,059 | 2026-10-01 | 2026-10-01 | live |
 | sab directory and basename recombination | 1 | 1 | 5 | 36,351,762 | 7,270,352 | 7,270,352 | 7,270,352 | 2026-08-21 | 2026-08-21 | untried |
+| two-word slots, corpus word pairs | 1 | 2 | 82 | 604,915,290 | 7,377,015 | 6,670,340 | 6,670,340 | 2026-10-01 | 2026-10-01 | live |
 | precedents top30 | 2 | 2 | 11 | 81,245,056 | 7,385,914 | 4,062,252 | 40,622,528 | 2026-09-02 | 2026-09-02 | cooling |
 | rare shared-token splice families 481-960 | 1 | 1 | 5 | 37,321,382 | 7,464,276 | 7,464,276 | 7,464,276 | 2026-09-03 | 2026-09-03 | untried |
 | rare shared token splice 961 1920 current | 1 | 2 | 19 | 142,465,412 | 7,498,179 | 7,123,270 | 7,914,745 | 2026-09-02 | 2026-09-02 | live |
@@ -467,17 +523,23 @@ table under a name you would not have guessed is the thing you are about to rebu
 | \ seeded sound-alias token edits\ | 1 | 1 | 1 | 7,651,395 | 7,651,395 | 7,651,395 | 7,651,395 | 2026-08-30 | 2026-08-30 | untried |
 | sound character deletion and transposition | 1 | 2 | 13 | 101,307,572 | 7,792,890 | 4,221,125 | 50,654,061 | 2026-08-24 | 2026-08-24 | spent |
 | \ cold war rare shared-token splice family 3301-3600 material\ | 1 | 1 | 1 | 7,888,923 | 7,888,923 | 7,888,923 | 7,888,923 | 2026-08-28 | 2026-08-28 | untried |
+| open-slot words from wiki transcripts | 1 | 1 | 4 | 32,236,750 | 8,059,187 | 8,059,187 | 8,059,187 | 2026-10-07 | 2026-10-07 | untried |
+| ab snowball r5 sound: new cores x all endings | 1 | 1 | 3 | 24,300,243 | 8,100,081 | 8,100,081 | 8,100,081 | 2026-10-01 | 2026-10-01 | untried |
 | black ops 4 image token edits | 1 | 1 | 4 | 32,464,572 | 8,116,143 | 8,116,143 | 8,116,143 | 2026-08-31 | 2026-08-31 | untried |
 | \ bo4 material token edits cap40 minseen2 20260830\ | 1 | 1 | 13 | 105,807,354 | 8,139,027 | 8,139,027 | 8,139,027 | 2026-08-29 | 2026-08-29 | untried |
+| two-word slots, english web bigrams (count 2w) not in the corpus | 1 | 2 | 372 | 3,032,500,000 | 8,151,881 | 4,182,739 | 4,182,739 | 2026-10-05 | 2026-10-05 | live |
 | \ bo4 material token edits refreshed 20260830\ | 1 | 1 | 4 | 32,739,897 | 8,184,974 | 8,184,974 | 8,184,974 | 2026-08-29 | 2026-08-29 | untried |
 | black ops 4, uncarried two-segment endings | 1 | 1 | 1,468 | 12,179,260,896 | 8,296,499 | 8,296,499 | 8,296,499 | 2026-08-23 | 2026-08-23 | untried |
 | token-edits-material-bo4 | 1 | 1 | 4 | 33,296,040 | 8,324,010 | 8,324,010 | 8,324,010 | 2026-09-07 | 2026-09-07 | untried |
 | cold war suffix precedents top5 20260907 | 1 | 1 | 1 | 8,513,726 | 8,513,726 | 8,513,726 | 8,513,726 | 2026-09-07 | 2026-09-07 | untried |
 | rare shared-token splices family sizes 6301-6600 | 1 | 2 | 6 | 51,290,334 | 8,548,389 | 5,129,036 | 5,129,036 | 2026-08-28 | 2026-08-28 | live |
 | \ cold war material token edits cap50 minseen2 20260830\ | 1 | 1 | 15 | 131,595,356 | 8,773,023 | 8,773,023 | 8,773,023 | 2026-08-30 | 2026-08-30 | untried |
+| repeated-word sound templates x dictionary words | 1 | 1 | 12 | 109,874,835 | 9,156,236 | 9,156,236 | 9,156,236 | 2026-10-06 | 2026-10-06 | untried |
 | material token insertion and deletion | 1 | 2 | 7 | 66,040,581 | 9,434,368 | 8,255,060 | 11,006,779 | 2026-09-02 | 2026-09-02 | live |
 | per-prefix-continuations-depth2-cap24 | 1 | 1 | 4 | 39,983,007 | 9,995,751 | 9,995,751 | 9,995,751 | 2026-08-20 | 2026-08-20 | untried |
+| token trigram walk to 20000000, image | 1 | 1 | 2 | 20,000,000 | 10,000,000 | 10,000,000 | 10,000,000 | 2026-10-01 | 2026-10-01 | untried |
 | rare shared-token splices family sizes 4201-4500 | 1 | 1 | 1 | 10,130,357 | 10,130,357 | 10,130,357 | 10,130,357 | 2026-08-28 | 2026-08-28 | untried |
+| any english word in any known name -> its 40 glove neighbours | 1 | 2 | 13 | 133,284,028 | 10,252,617 | 4,899,895 | 4,899,895 | 2026-10-01 | 2026-10-01 | live |
 | redecoration batch 1 | 1 | 1 | 1 | 10,501,282 | 10,501,282 | 10,501,282 | 10,501,282 | 2026-09-20 | 2026-09-20 | untried |
 | \ bo4 rare shared-token splice family 2101-2400\ | 1 | 1 | 2 | 21,030,543 | 10,515,271 | 10,515,271 | 10,515,271 | 2026-08-28 | 2026-08-28 | untried |
 | image token insertion and deletion | 1 | 2 | 6 | 64,948,181 | 10,824,696 | 8,118,449 | 16,237,192 | 2026-09-02 | 2026-09-02 | live |
@@ -485,10 +547,14 @@ table under a name you would not have guessed is the thing you are about to rebu
 | token edits material current cw 20260903 | 1 | 1 | 3 | 33,095,190 | 11,031,730 | 11,031,730 | 11,031,730 | 2026-09-03 | 2026-09-03 | untried |
 | token edits material | 1 | 1 | 3 | 33,118,937 | 11,039,645 | 11,039,645 | 11,039,645 | 2026-09-03 | 2026-09-03 | untried |
 | precedents top20 | 2 | 2 | 5 | 57,508,152 | 11,501,630 | 7,188,519 | 7,188,519 | 2026-09-02 | 2026-09-02 | live |
+| execution quips, topic + function word triples, one speaker | 1 | 1 | 9 | 107,850,176 | 11,983,352 | 11,983,352 | 11,983,352 | 2026-10-06 | 2026-10-06 | untried |
 | cold war uncarried four-segment endings current | 1 | 1 | 5 | 60,407,129 | 12,081,425 | 12,081,425 | 12,081,425 | 2026-08-31 | 2026-08-31 | untried |
 | \ cold war material token edits cap60 minseen1 20260830\ | 1 | 1 | 13 | 158,177,067 | 12,167,466 | 12,167,466 | 12,167,466 | 2026-08-30 | 2026-08-30 | untried |
+| execution quips, glove-topic word pairs (8000 words) on one speaker | 1 | 1 | 5 | 64,432,729 | 12,886,545 | 12,886,545 | 12,886,545 | 2026-10-05 | 2026-10-05 | untried |
 | token insertion deletion material cap24 | 1 | 1 | 5 | 64,526,533 | 12,905,306 | 12,905,306 | 12,905,306 | 2026-09-09 | 2026-09-09 | untried |
 | sibling token substitution right context current | 1 | 1 | 23 | 296,853,548 | 12,906,676 | 12,906,676 | 12,906,676 | 2026-08-25 | 2026-08-25 | untried |
+| two-word slots, corpus pairs ranked 20k-120k | 1 | 2 | 232 | 3,025,489,975 | 13,040,905 | 11,815,842 | 11,815,842 | 2026-10-01 | 2026-10-01 | live |
+| ab snowball r3 sound: new cores x all endings | 1 | 6 | 45 | 606,906,069 | 13,486,801 | 140,001 | 28,644,036 | 2026-09-29 | 2026-10-05 | spent |
 | sibling token substitution, re-run on grown corpus | 1 | 1 | 12 | 162,810,506 | 13,567,542 | 13,567,542 | 13,567,542 | 2026-09-08 | 2026-09-08 | untried |
 | token edits model current | 1 | 2 | 2 | 27,434,480 | 13,717,240 | 13,717,240 | 13,717,240 | 2026-08-29 | 2026-08-29 | live |
 | token edits model | 1 | 1 | 1 | 13,801,977 | 13,801,977 | 13,801,977 | 13,801,977 | 2026-09-03 | 2026-09-03 | untried |
@@ -496,17 +562,29 @@ table under a name you would not have guessed is the thing you are about to rebu
 | rare shared-token splice families 241-480 | 1 | 2 | 2 | 29,082,266 | 14,541,133 | 14,541,133 | 14,541,133 | 2026-09-03 | 2026-09-03 | live |
 | \ bo4 material token edits cap50 minseen2 20260830\ | 1 | 1 | 9 | 131,591,450 | 14,621,272 | 14,621,272 | 14,621,272 | 2026-08-30 | 2026-08-30 | untried |
 | sibling token substitution left context current | 1 | 1 | 23 | 337,560,590 | 14,676,547 | 14,676,547 | 14,676,547 | 2026-08-25 | 2026-08-25 | untried |
+| open-slot words from the newer titles' vocabulary | 1 | 2 | 26 | 383,975,898 | 14,768,303 | 14,569,377 | 15,000,384 | 2026-10-01 | 2026-10-01 | live |
+| hot word frames, whole vocabulary | 1 | 2 | 95 | 1,411,929,833 | 14,862,419 | 11,567,053 | 11,567,053 | 2026-10-01 | 2026-10-01 | live |
+| open-slot words from the corpus's own non-dictionary vocabulary | 1 | 2 | 27 | 407,981,080 | 15,110,410 | 10,067,207 | 10,067,207 | 2026-10-01 | 2026-10-01 | live |
+| execution quips, topic word x common word, one speaker | 1 | 1 | 12 | 183,360,000 | 15,280,000 | 15,280,000 | 15,280,000 | 2026-10-06 | 2026-10-06 | untried |
+| ab snowball r1 sound: new cores x all endings | 1 | 9 | 100 | 1,548,115,481 | 15,481,154 | 900,009 | 31,083,644 | 2026-09-29 | 2026-10-06 | spent |
 | character substitution | 1 | 1 | 81 | 1,256,307,739 | 15,509,972 | 15,509,972 | 15,509,972 | 2026-08-24 | 2026-08-24 | untried |
+| any english word -> its 150 glove neighbours | 1 | 1 | 14 | 220,319,664 | 15,737,118 | 15,737,118 | 15,737,118 | 2026-10-01 | 2026-10-01 | untried |
 | black ops 4 material token edits after new findings | 1 | 1 | 2 | 33,006,487 | 16,503,243 | 16,503,243 | 16,503,243 | 2026-08-31 | 2026-08-31 | untried |
+| hot word frames, whole vocabulary, round 4 | 1 | 1 | 22 | 364,381,339 | 16,562,788 | 16,562,788 | 16,562,788 | 2026-10-01 | 2026-10-01 | untried |
 | token insertion deletion material | 1 | 2 | 4 | 66,752,055 | 16,688,013 | 16,687,998 | 16,688,029 | 2026-09-09 | 2026-09-09 | live |
 | material cores spelled as xmodel | 4 | 9 | 48 | 838,814,750 | 17,475,307 | 90,750 | 28,702,083 | 2026-08-28 | 2026-09-03 | spent |
 | suffix precedents current | 2 | 2 | 35 | 622,623,642 | 17,789,246 | 10,042,077 | 77,829,809 | 2026-09-02 | 2026-09-02 | cooling |
 | rare shared-token splices family sizes 11701-12000 | 1 | 1 | 1 | 17,801,434 | 17,801,434 | 17,801,434 | 17,801,434 | 2026-08-28 | 2026-08-28 | untried |
+| ab snowball r2 sound: all cores x new endings | 1 | 1 | 1 | 17,844,687 | 17,844,687 | 17,844,687 | 17,844,687 | 2026-09-29 | 2026-09-29 | untried |
 | corpus-mined substitutions, top 300 | 1 | 4 | 6 | 109,732,535 | 18,288,755 | 13,715,940 | 27,434,695 | 2026-08-27 | 2026-08-27 | live |
 | suffix-chain completion | 2 | 2 | 10 | 187,289,550 | 18,728,955 | 10,404,975 | 10,404,975 | 2026-09-01 | 2026-09-01 | live |
 | character insertion | 1 | 2 | 135 | 2,577,959,172 | 19,095,993 | 16,740,545 | 16,740,545 | 2026-08-24 | 2026-08-24 | live |
+| ab snowball r1 visual: all cores x new endings | 1 | 9 | 46 | 901,101,864 | 19,589,170 | 6,619,910 | 95,017,300 | 2026-09-30 | 2026-10-06 | spent |
+| voice phrase grids, probe with 3.07m phrases on two speakers per category | 1 | 1 | 18 | 355,930,140 | 19,773,896 | 19,773,896 | 19,773,896 | 2026-10-05 | 2026-10-05 | untried |
 | token edits mat cap30 | 1 | 1 | 4 | 79,362,695 | 19,840,673 | 19,840,673 | 19,840,673 | 2026-09-03 | 2026-09-03 | untried |
+| token trigram walk to 20000000, xmodel | 1 | 1 | 1 | 20,000,000 | 20,000,000 | 20,000,000 | 20,000,000 | 2026-10-01 | 2026-10-01 | untried |
 | sound character substitution cw | 1 | 1 | 49 | 983,905,838 | 20,079,710 | 20,079,710 | 20,079,710 | 2026-08-24 | 2026-08-24 | untried |
+| ab snowball r3 visual: new cores x all endings | 1 | 8 | 58 | 1,166,703,889 | 20,115,584 | 675,002 | 391,501,305 | 2026-09-29 | 2026-10-05 | spent |
 | cold war, uncarried two-segment endings | 1 | 1 | 597 | 12,179,260,896 | 20,400,772 | 20,400,772 | 20,400,772 | 2026-08-23 | 2026-08-23 | untried |
 | rare shared-token splices family size 1801-2100 | 1 | 2 | 2 | 43,513,608 | 21,756,804 | 21,756,771 | 21,756,837 | 2026-08-28 | 2026-08-28 | live |
 | corpus-mined substitutions, deep cut | 1 | 1 | 2 | 43,582,606 | 21,791,303 | 21,791,303 | 21,791,303 | 2026-08-25 | 2026-08-25 | untried |
@@ -514,17 +592,23 @@ table under a name you would not have guessed is the thing you are about to rebu
 | token edits img cap30 | 1 | 2 | 7 | 154,739,211 | 22,105,601 | 12,894,940 | 12,894,940 | 2026-09-03 | 2026-09-03 | live |
 | black ops 4 sound, uncarried two-segment endings | 1 | 1 | 509 | 11,274,140,892 | 22,149,589 | 22,149,589 | 22,149,589 | 2026-08-23 | 2026-08-23 | untried |
 | image cores spelled as material | 2 | 3 | 10 | 221,738,750 | 22,173,875 | 14,270,250 | 39,518,125 | 2026-08-28 | 2026-08-28 | live |
+| compound word slots | 1 | 2 | 55 | 1,224,585,138 | 22,265,184 | 12,364,146 | 12,364,146 | 2026-10-01 | 2026-10-01 | live |
 | char edits current | 1 | 1 | 3 | 68,250,824 | 22,750,274 | 22,750,274 | 22,750,274 | 2026-08-29 | 2026-08-29 | untried |
 | confirmed-only all-boundary general cores x committed suffixes, 2026-09-20 | 1 | 2 | 36 | 819,098,610 | 22,752,739 | 11,701,408 | 11,701,408 | 2026-09-20 | 2026-09-20 | live |
 | \\ cold war image token length stream\\ | 1 | 1 | 2 | 45,579,875 | 22,789,937 | 22,789,937 | 22,789,937 | 2026-08-29 | 2026-08-29 | untried |
 | cold war image token insertions and deletions cap8 minseen12 | 1 | 1 | 1 | 22,877,777 | 22,877,777 | 22,877,777 | 22,877,777 | 2026-09-08 | 2026-09-08 | untried |
+| voice phrase grids, probed with wiki dialogue transcripts | 1 | 1 | 2 | 49,396,982 | 24,698,491 | 24,698,491 | 24,698,491 | 2026-10-07 | 2026-10-07 | untried |
 | keyword sweep: zombie models | 1 | 1 | 4 | 100,074,665 | 25,018,666 | 25,018,666 | 25,018,666 | 2026-08-21 | 2026-08-21 | untried |
+| ab snowball r1 visual: new cores x all endings | 1 | 14 | 79 | 1,983,006,610 | 25,101,349 | 2,662,508 | 154,200,514 | 2026-09-29 | 2026-10-06 | spent |
 | sound uncarried five-segment endings top16000 | 1 | 1 | 7 | 178,731,170 | 25,533,024 | 25,533,024 | 25,533,024 | 2026-09-09 | 2026-09-09 | untried |
+| ab snowball r6 sound: new cores x all endings | 1 | 2 | 3 | 77,000,770 | 25,666,923 | 19,250,192 | 19,250,192 | 2026-10-01 | 2026-10-01 | live |
 | cold war, uncarried five-segment endings | 1 | 1 | 382 | 9,963,115,100 | 26,081,453 | 26,081,453 | 26,081,453 | 2026-08-23 | 2026-08-23 | untried |
 | \ bo4 material token edits cap60 minseen1 20260830\ | 1 | 1 | 6 | 158,173,101 | 26,362,183 | 26,362,183 | 26,362,183 | 2026-08-30 | 2026-08-30 | untried |
 | sound uncarried three-segment endings top32000 | 2 | 2 | 88 | 2,360,521,764 | 26,824,110 | 20,004,421 | 40,698,651 | 2026-09-09 | 2026-09-09 | live |
+| open-slot english words, deep | 1 | 2 | 97 | 2,618,852,272 | 26,998,477 | 26,254,828 | 27,894,235 | 2026-10-01 | 2026-10-01 | live |
 | tails of length 1 | 1 | 1 | 1 | 27,486,426 | 27,486,426 | 27,486,426 | 27,486,426 | 2026-09-03 | 2026-09-03 | untried |
 | family column cross product, re-run on grown corpus | 1 | 1 | 2 | 55,113,580 | 27,556,790 | 27,556,790 | 27,556,790 | 2026-09-08 | 2026-09-08 | untried |
+| open-slot embedding neighbours, per-filler knn 200 | 1 | 1 | 1 | 27,781,645 | 27,781,645 | 27,781,645 | 27,781,645 | 2026-10-01 | 2026-10-01 | untried |
 | \ per-suffix precedents cw 20260830\ | 1 | 1 | 11 | 307,102,800 | 27,918,436 | 27,918,436 | 27,918,436 | 2026-08-30 | 2026-08-30 | untried |
 | rare splice 961 1920 | 1 | 2 | 5 | 142,066,503 | 28,413,300 | 17,758,312 | 17,758,312 | 2026-09-03 | 2026-09-03 | live |
 | sibling token substitution with digits, re-run on grown corpus | 1 | 1 | 6 | 172,336,688 | 28,722,781 | 28,722,781 | 28,722,781 | 2026-09-09 | 2026-09-09 | untried |
@@ -532,101 +616,158 @@ table under a name you would not have guessed is the thing you are about to rebu
 | material interior character substitutions refreshed | 1 | 1 | 17 | 496,757,656 | 29,221,038 | 29,221,038 | 29,221,038 | 2026-08-27 | 2026-08-27 | untried |
 | image siblings wide | 1 | 2 | 8 | 241,732,438 | 30,216,554 | 20,144,369 | 20,144,369 | 2026-09-03 | 2026-09-03 | live |
 | sound uncarried two-segment endings top500 | 1 | 1 | 1 | 30,263,406 | 30,263,406 | 30,263,406 | 30,263,406 | 2026-09-09 | 2026-09-09 | untried |
+| ab snowball r5 visual: all cores x new endings | 1 | 1 | 1 | 30,269,536 | 30,269,536 | 30,269,536 | 30,269,536 | 2026-10-01 | 2026-10-01 | untried |
+| ab snowball r6 visual: new cores x all endings | 1 | 3 | 12 | 364,801,216 | 30,400,101 | 13,666,712 | 118,800,396 | 2026-10-01 | 2026-10-05 | cooling |
+| ab snowball r5 visual: new cores x all endings | 1 | 3 | 18 | 548,101,827 | 30,450,101 | 4,000,013 | 476,101,587 | 2026-10-01 | 2026-10-05 | spent |
 | rare shared-token splices families 21301-21600 | 1 | 2 | 3 | 91,884,529 | 30,628,176 | 22,971,132 | 22,971,132 | 2026-08-29 | 2026-08-29 | live |
 | \ cold war material token edits cap70 minseen1 20260830\ | 1 | 1 | 6 | 184,036,838 | 30,672,806 | 30,672,806 | 30,672,806 | 2026-08-30 | 2026-08-30 | untried |
 | image token edits after new findings | 1 | 1 | 1 | 31,952,764 | 31,952,764 | 31,952,764 | 31,952,764 | 2026-08-26 | 2026-08-26 | untried |
 | image token insertion and deletion after pr984 | 1 | 1 | 1 | 31,982,799 | 31,982,799 | 31,982,799 | 31,982,799 | 2026-08-27 | 2026-08-27 | untried |
 | rare shared token splice 3841 7680 current | 1 | 2 | 11 | 353,828,962 | 32,166,269 | 17,691,448 | 17,691,448 | 2026-09-02 | 2026-09-02 | live |
 | token edits image | 1 | 1 | 1 | 32,542,333 | 32,542,333 | 32,542,333 | 32,542,333 | 2026-09-03 | 2026-09-03 | untried |
+| three-word slots, corpus word triples | 1 | 2 | 16 | 531,362,461 | 33,210,153 | 29,162,329 | 29,162,329 | 2026-10-01 | 2026-10-01 | live |
 | rare shared-token splices families 17101-17400 | 1 | 2 | 2 | 66,750,923 | 33,375,461 | 33,375,461 | 33,375,461 | 2026-08-28 | 2026-08-28 | live |
 | sound uncarried two-segment endings top2000 | 2 | 2 | 7 | 241,744,812 | 34,534,973 | 20,145,401 | 120,872,406 | 2026-09-09 | 2026-09-09 | cooling |
+| four-word slots, every corpus word 4-gram | 1 | 2 | 105 | 3,632,778,776 | 34,597,893 | 30,726,879 | 30,726,879 | 2026-10-01 | 2026-10-01 | live |
+| open-slot english words, pooled across grid rows | 1 | 2 | 46 | 1,605,789,441 | 34,908,466 | 20,081,375 | 133,755,738 | 2026-10-01 | 2026-10-01 | cooling |
+| open-slot english words, thin | 1 | 2 | 43 | 1,521,610,010 | 35,386,279 | 31,482,049 | 31,482,049 | 2026-10-01 | 2026-10-01 | live |
 | per-prefix-continuations-depth2-cap48 | 1 | 1 | 2 | 72,302,925 | 36,151,462 | 36,151,462 | 36,151,462 | 2026-08-20 | 2026-08-20 | untried |
 | heads of length 1 | 1 | 1 | 1 | 36,707,544 | 36,707,544 | 36,707,544 | 36,707,544 | 2026-08-27 | 2026-08-27 | untried |
 | cold war sound, uncarried 1-segment endings | 1 | 2 | 560 | 20,953,836,251 | 37,417,564 | 29,431,729 | 29,431,729 | 2026-08-23 | 2026-08-23 | live |
+| two-word slots, corpus pairs ranked 120k+ | 1 | 2 | 116 | 4,412,385,691 | 38,037,807 | 37,680,211 | 37,680,211 | 2026-10-01 | 2026-10-01 | live |
 | sound uncarried two-segment endings top1000 | 2 | 2 | 5 | 196,436,240 | 39,287,248 | 33,992,458 | 60,466,406 | 2026-09-09 | 2026-09-09 | live |
+| ab snowball r4 visual: new cores x all endings | 1 | 4 | 27 | 1,071,603,572 | 39,689,021 | 1,931,256 | 484,051,613 | 2026-10-01 | 2026-10-05 | spent |
 | black ops 4, uncarried three-segment endings | 1 | 2 | 1,058 | 42,578,054,890 | 40,243,908 | 16,329,961 | 157,676,083 | 2026-08-23 | 2026-08-23 | cooling |
 | xmodel cores spelled as image | 2 | 2 | 4 | 162,828,125 | 40,707,031 | 33,660,000 | 33,660,000 | 2026-09-02 | 2026-09-04 | live |
 | cold war uncarried one-segment endings top 500 after pr969 | 1 | 1 | 1 | 41,080,998 | 41,080,998 | 41,080,998 | 41,080,998 | 2026-08-27 | 2026-08-27 | untried |
 | sound character insertion | 1 | 2 | 49 | 2,032,746,695 | 41,484,626 | 22,585,574 | 254,098,957 | 2026-08-24 | 2026-08-24 | spent |
 | per-prefix continuations depth2 cap24 | 1 | 1 | 1 | 41,529,671 | 41,529,671 | 41,529,671 | 41,529,671 | 2026-08-27 | 2026-08-27 | untried |
+| three-word slots, corpus triples ranked 20k+ | 1 | 3 | 286 | 12,012,991,070 | 42,003,465 | 36,031,182 | 36,031,182 | 2026-10-01 | 2026-10-01 | live |
+| compound word slots, glove-ranked halves | 1 | 1 | 5 | 212,515,946 | 42,503,189 | 42,503,189 | 42,503,189 | 2026-10-01 | 2026-10-01 | untried |
+| sound files and aliases, confirmed seeds only | 1 | 1 | 149 | 6,478,589,425 | 43,480,465 | 43,480,465 | 43,480,465 | 2026-10-08 | 2026-10-08 | untried |
 | \ cold war material token edits cap50 minseen1 20260830\ | 1 | 1 | 3 | 132,268,164 | 44,089,388 | 44,089,388 | 44,089,388 | 2026-08-30 | 2026-08-30 | untried |
 | two mined substitutions composed | 1 | 1 | 1 | 45,000,000 | 45,000,000 | 45,000,000 | 45,000,000 | 2026-08-25 | 2026-08-25 | untried |
 | measured image channels | 1 | 2 | 2 | 90,670,236 | 45,335,118 | 45,049,731 | 45,620,505 | 2026-08-27 | 2026-08-31 | live |
 | black ops 4, uncarried four-segment endings | 1 | 1 | 409 | 18,715,524,480 | 45,759,228 | 45,759,228 | 45,759,228 | 2026-08-23 | 2026-08-23 | untried |
 | anim substitutions bo4 | 1 | 1 | 1 | 46,101,284 | 46,101,284 | 46,101,284 | 46,101,284 | 2026-08-26 | 2026-08-26 | untried |
+| corpus pairs ranked 20k+ into one-word slots | 1 | 2 | 65 | 3,016,410,520 | 46,406,315 | 40,651,004 | 40,651,004 | 2026-10-05 | 2026-10-05 | live |
+| ab snowball r2 visual: all cores x new endings | 1 | 2 | 9 | 419,799,558 | 46,644,395 | 41,979,955 | 41,979,955 | 2026-10-01 | 2026-10-01 | live |
 | per-prefix-continuations-depth3-cap24 | 1 | 2 | 10 | 472,580,559 | 47,258,055 | 26,254,247 | 236,292,329 | 2026-08-20 | 2026-08-20 | cooling |
+| single words into two-word slots | 1 | 2 | 19 | 910,470,000 | 47,919,473 | 38,225,000 | 38,225,000 | 2026-10-05 | 2026-10-05 | live |
 | rare shared-token splices family sizes 8401-8700 | 1 | 1 | 1 | 48,782,460 | 48,782,460 | 48,782,460 | 48,782,460 | 2026-08-28 | 2026-08-28 | untried |
 | char substitutions bo4 sounds | 1 | 1 | 21 | 1,035,667,459 | 49,317,498 | 49,317,498 | 49,317,498 | 2026-08-24 | 2026-08-24 | untried |
 | material substitutions cw | 1 | 1 | 9 | 492,105,760 | 54,678,417 | 54,678,417 | 54,678,417 | 2026-08-25 | 2026-08-25 | untried |
 | black ops 4, uncarried five-segment endings | 1 | 1 | 182 | 9,963,115,100 | 54,742,390 | 54,742,390 | 54,742,390 | 2026-08-23 | 2026-08-23 | untried |
+| all-boundary refresh 2026-09-29, all cores x new endings | 1 | 2 | 10 | 548,202,080 | 54,820,208 | 39,157,291 | 91,367,013 | 2026-09-29 | 2026-09-29 | live |
+| ab snowball r5 sound: new cores x every known tail | 1 | 2 | 44 | 2,511,845,316 | 57,087,393 | 31,398,066 | 31,398,066 | 2026-10-01 | 2026-10-01 | live |
 | cold war, uncarried three-segment endings | 1 | 2 | 742 | 42,578,054,890 | 57,382,823 | 23,804,371 | 203,050,496 | 2026-08-23 | 2026-08-23 | cooling |
 | cold war sound, uncarried two-segment endings | 1 | 1 | 195 | 11,273,898,861 | 57,814,865 | 57,814,865 | 57,814,865 | 2026-08-23 | 2026-08-23 | untried |
+| open-slot embedding neighbours, ranks 3000-15000, frames >= 5 fillers | 1 | 1 | 2 | 116,167,256 | 58,083,628 | 58,083,628 | 58,083,628 | 2026-10-01 | 2026-10-01 | untried |
+| hot word prefixes x their family tails x top 30k words | 1 | 2 | 5 | 298,140,000 | 59,628,000 | 46,450,000 | 46,450,000 | 2026-10-01 | 2026-10-01 | live |
+| images for every material prefix x 200 measured channel endings | 1 | 2 | 2 | 138,431,017 | 69,215,508 | 60,958,159 | 60,958,159 | 2026-10-06 | 2026-10-06 | live |
 | sibling token substitution, right context, re-run on grown corpus | 1 | 1 | 4 | 313,996,264 | 78,499,066 | 78,499,066 | 78,499,066 | 2026-09-08 | 2026-09-08 | untried |
+| open-slot english words, 2-filler frames under word-class heads | 1 | 2 | 17 | 1,345,670,508 | 79,157,088 | 76,939,404 | 81,651,983 | 2026-10-01 | 2026-10-01 | live |
 | uncarried two-segment endings over the full published core list | 1 | 2 | 264 | 20,951,727,534 | 79,362,604 | 72,749,053 | 87,298,864 | 2026-08-23 | 2026-08-23 | live |
+| two-token slots, mixed code/word pairs | 1 | 1 | 3 | 242,531,605 | 80,843,868 | 80,843,868 | 80,843,868 | 2026-10-01 | 2026-10-01 | untried |
+| open-slot short codes | 1 | 1 | 2 | 179,032,926 | 89,516,463 | 89,516,463 | 89,516,463 | 2026-10-01 | 2026-10-01 | untried |
+| hot word frames, whole vocabulary, round 2 | 1 | 1 | 2 | 182,765,431 | 91,382,715 | 91,382,715 | 91,382,715 | 2026-10-01 | 2026-10-01 | untried |
+| hot word frames, whole vocabulary, round 5 | 1 | 2 | 17 | 1,559,444,957 | 91,732,056 | 62,032,954 | 134,159,345 | 2026-10-05 | 2026-10-05 | live |
 | confirmed-only all-boundary cores x uncarried endings | 2 | 17 | 1,187 | 109,498,794,977 | 92,248,352 | 29,860,502 | 2,300,323,003 | 2026-08-26 | 2026-08-29 | spent |
 | character substitution material current | 1 | 1 | 5 | 466,937,880 | 93,387,576 | 93,387,576 | 93,387,576 | 2026-08-25 | 2026-08-25 | untried |
 | confirmed-only all-boundary uncarried endings bo4 | 1 | 1 | 44 | 4,110,141,101 | 93,412,297 | 93,412,297 | 93,412,297 | 2026-09-02 | 2026-09-02 | untried |
+| ab snowball r6 visual: all cores x new endings | 1 | 2 | 11 | 1,040,062,582 | 94,551,143 | 71,327,118 | 326,791,400 | 2026-10-01 | 2026-10-05 | cooling |
 | char substitutions cw | 1 | 3 | 41 | 3,975,824,680 | 96,971,333 | 66,239,055 | 265,122,255 | 2026-08-24 | 2026-08-25 | cooling |
+| ab snowball r2 visual: new cores x every known tail | 1 | 10 | 91 | 9,063,493,348 | 99,598,828 | 17,964,497 | 458,733,730 | 2026-10-01 | 2026-10-06 | spent |
 | confirmed-only all-boundary cores x uncarried two-segment endings | 1 | 2 | 79 | 7,918,179,181 | 100,230,116 | 59,160,293 | 59,160,293 | 2026-09-01 | 2026-09-01 | live |
+| sound path three-word slots | 1 | 1 | 1 | 101,772,379 | 101,772,379 | 101,772,379 | 101,772,379 | 2026-10-05 | 2026-10-05 | untried |
 | cold war suffix precedents resume | 1 | 1 | 3 | 310,645,123 | 103,548,374 | 103,548,374 | 103,548,374 | 2026-09-01 | 2026-09-01 | untried |
+| ab snowball r1 sound: all cores x new endings | 1 | 1 | 2 | 209,071,300 | 104,535,650 | 104,535,650 | 104,535,650 | 2026-10-01 | 2026-10-01 | untried |
 | char substitutions bo4 | 1 | 2 | 23 | 2,650,269,779 | 115,229,120 | 94,629,420 | 147,273,098 | 2026-08-24 | 2026-08-24 | live |
 | sound uncarried two-segment endings top8000 | 2 | 2 | 8 | 966,616,812 | 120,827,101 | 80,551,401 | 241,654,203 | 2026-09-09 | 2026-09-09 | live |
+| ab snowball r3 visual: new cores x every known tail | 1 | 7 | 155 | 19,456,178,062 | 125,523,729 | 5,003,103 | 818,255,227 | 2026-10-01 | 2026-10-05 | spent |
 | confirmed-only sound all-boundary cores x uncarried endings | 2 | 7 | 717 | 91,609,516,086 | 127,767,804 | 42,055,113 | 79,082,077 | 2026-08-26 | 2026-08-26 | live |
+| sound path two-word slots, pairs ranked 30k+ | 1 | 2 | 4 | 516,815,180 | 129,203,795 | 79,600,424 | 79,600,424 | 2026-10-01 | 2026-10-01 | live |
 | uncarried beginnings over the held vocabulary | 1 | 1 | 7 | 945,274,375 | 135,039,196 | 135,039,196 | 135,039,196 | 2026-08-23 | 2026-08-23 | untried |
+| ab snowball r5 sound: all cores x new name tails | 1 | 1 | 32 | 4,756,607,392 | 148,643,981 | 148,643,981 | 148,643,981 | 2026-10-01 | 2026-10-01 | untried |
+| hot cores x every tail of every known name | 1 | 2 | 202 | 30,561,666,356 | 151,295,378 | 132,876,810 | 132,876,810 | 2026-09-30 | 2026-09-30 | live |
 | confirmed-only all-boundary cores x uncarried five-segment endings | 1 | 1 | 26 | 3,959,839,598 | 152,301,523 | 152,301,523 | 152,301,523 | 2026-09-01 | 2026-09-01 | untried |
 | sound uncarried four-segment endings top32000 | 2 | 2 | 9 | 1,375,146,972 | 152,794,108 | 85,946,685 | 85,946,685 | 2026-09-09 | 2026-09-09 | live |
+| ab snowball r3 sound: all cores x new name tails | 1 | 4 | 64 | 10,143,244,550 | 158,488,196 | 35,838,299 | 1,095,338,107 | 2026-10-01 | 2026-10-01 | spent |
 | confirmed-only all-boundary cores x uncarried 2-segment endings, top 300000, blkops04 | 1 | 1 | 71 | 11,310,637,702 | 159,304,756 | 159,304,756 | 159,304,756 | 2026-09-01 | 2026-09-01 | untried |
 | sound character substitution current | 1 | 1 | 6 | 985,045,956 | 164,174,326 | 164,174,326 | 164,174,326 | 2026-08-25 | 2026-08-25 | untried |
 | confirmed-only all-boundary sound cores x fresh uncarried endings, 2026-09-20 | 1 | 2 | 14 | 2,334,809,970 | 166,772,140 | 145,925,623 | 145,925,623 | 2026-09-20 | 2026-09-20 | live |
+| ab snowball r3 visual: all cores x new endings | 1 | 1 | 1 | 168,306,298 | 168,306,298 | 168,306,298 | 168,306,298 | 2026-10-01 | 2026-10-01 | untried |
 | wrapper decorations, suffix side | 1 | 8 | 1,071 | 185,010,310,334 | 172,745,387 | 1,985,948 | 159,762,864 | 2026-08-23 | 2026-08-23 | spent |
 | confirmed-only all-boundary cores x uncarried 3-segment endings, top 300000, blkops04 | 1 | 1 | 64 | 11,293,237,644 | 176,456,838 | 176,456,838 | 176,456,838 | 2026-09-01 | 2026-09-01 | untried |
 | cold war sound, uncarried 3-segment endings | 1 | 2 | 121 | 22,865,684,520 | 188,972,599 | 181,473,686 | 181,473,686 | 2026-08-23 | 2026-08-23 | live |
 | measured heads of length 6 | 2 | 2 | 92 | 17,483,482,820 | 190,037,856 | 135,677,462 | 135,677,462 | 2026-08-25 | 2026-08-25 | live |
 | confirmed-only all-boundary cores x uncarried three-segment endings | 1 | 2 | 41 | 7,911,079,110 | 192,953,149 | 113,035,416 | 113,035,416 | 2026-09-01 | 2026-09-01 | live |
 | confirmed-only all-boundary cold war cores x uncarried endings | 1 | 3 | 75 | 14,592,745,926 | 194,569,945 | 67,600,676 | 758,467,584 | 2026-08-29 | 2026-08-31 | spent |
+| two-word slots, word pairs from wiki dialogue transcripts | 1 | 1 | 5 | 988,748,930 | 197,749,786 | 197,749,786 | 197,749,786 | 2026-10-07 | 2026-10-07 | untried |
+| ab snowball r3 visual: all cores x new name tails | 1 | 7 | 113 | 22,449,734,850 | 198,670,219 | 13,083,628 | 2,111,181,504 | 2026-10-01 | 2026-10-05 | spent |
 | scoped all-boundary cores x all uncarried 3-segment endings | 1 | 1 | 621 | 134,101,557,623 | 215,944,537 | 215,944,537 | 215,944,537 | 2026-09-03 | 2026-09-03 | untried |
+| compound word slots, halves x words ranked 5k-30k | 1 | 1 | 12 | 2,662,775,000 | 221,897,916 | 221,897,916 | 221,897,916 | 2026-10-01 | 2026-10-01 | untried |
+| voice phrase grids, small casts, probe | 1 | 1 | 2 | 447,982,774 | 223,991,387 | 223,991,387 | 223,991,387 | 2026-10-05 | 2026-10-05 | untried |
 | sound uncarried three-segment endings top64000 | 2 | 2 | 21 | 4,720,969,764 | 224,808,084 | 214,589,534 | 214,589,534 | 2026-09-09 | 2026-09-09 | live |
+| ab snowball r2 visual: all cores x new name tails | 1 | 10 | 79 | 18,727,983,378 | 237,063,080 | 29,493,796 | 789,727,527 | 2026-09-30 | 2026-10-05 | spent |
 | sound uncarried two-segment endings top4000 | 1 | 1 | 1 | 241,684,406 | 241,684,406 | 241,684,406 | 241,684,406 | 2026-09-09 | 2026-09-09 | untried |
 | uncarried endings over all-boundary truncation cores | 1 | 6 | 4,625 | 1,120,036,280,202 | 242,170,006 | 76,634,118 | 518,821,573 | 2026-08-23 | 2026-08-23 | cooling |
 | uncarried three-segment endings over the full published core list | 1 | 2 | 56 | 13,564,678,200 | 242,226,396 | 165,422,904 | 165,422,904 | 2026-08-23 | 2026-08-23 | live |
 | uncarried three-segment endings over all-boundary cores | 1 | 2 | 1,523 | 400,012,766,734 | 262,647,909 | 221,982,667 | 221,982,667 | 2026-08-23 | 2026-08-23 | live |
 | confirmed-only all-boundary uncarried two-segment endings current | 1 | 1 | 28 | 7,610,476,104 | 271,802,718 | 271,802,718 | 271,802,718 | 2026-09-01 | 2026-09-01 | untried |
 | sound uncarried two-segment endings top64000 | 1 | 1 | 14 | 3,866,044,406 | 276,146,029 | 276,146,029 | 276,146,029 | 2026-09-09 | 2026-09-09 | untried |
+| ab snowball r2 sound: new cores x every known tail | 1 | 8 | 66 | 18,535,852,534 | 280,846,250 | 23,533,845 | 127,683,546 | 2026-10-01 | 2026-10-05 | cooling |
+| execution quips, topic(500) + function word triples, one speaker | 1 | 1 | 1 | 283,593,393 | 283,593,393 | 283,593,393 | 283,593,393 | 2026-10-06 | 2026-10-06 | untried |
 | model character substitutions refreshed | 1 | 1 | 1 | 286,924,916 | 286,924,916 | 286,924,916 | 286,924,916 | 2026-08-27 | 2026-08-27 | untried |
 | all-boundary confirmed cores x uncarried endings | 1 | 8 | 243 | 70,412,103,724 | 289,761,743 | 22,567,795 | 2,875,461,397 | 2026-09-03 | 2026-09-03 | spent |
+| ab snowball r1 visual: new cores x every known tail | 1 | 11 | 109 | 31,956,685,870 | 293,180,604 | 4,603,553 | 1,177,660,445 | 2026-09-30 | 2026-10-06 | spent |
 | measured heads of length 5 | 1 | 3 | 31 | 9,541,037,394 | 307,775,399 | 210,743,705 | 210,743,705 | 2026-08-25 | 2026-08-26 | live |
 | sound uncarried two-segment endings top16000 | 2 | 2 | 6 | 1,933,112,812 | 322,185,468 | 241,639,101 | 241,639,101 | 2026-09-09 | 2026-09-09 | live |
 | uncarried endings over published cores | 1 | 6 | 1,191 | 385,019,657,854 | 323,274,271 | 17,624,983 | 4,062,515,784 | 2026-08-23 | 2026-08-23 | spent |
 | black ops 4 confirmed-only all-boundary uncarried two-segment endings | 1 | 1 | 22 | 7,125,471,254 | 323,885,057 | 323,885,057 | 323,885,057 | 2026-08-30 | 2026-08-30 | untried |
 | sound, uncarried endings over all-boundary cores | 1 | 8 | 3,397 | 1,105,024,531,644 | 325,294,239 | 92,280,373 | 902,952,472 | 2026-08-23 | 2026-08-23 | cooling |
 | char insertions bo4 | 1 | 1 | 4 | 1,358,281,948 | 339,570,487 | 339,570,487 | 339,570,487 | 2026-08-24 | 2026-08-24 | untried |
+| ab snowball r4 sound: all cores x new name tails | 1 | 1 | 3 | 1,023,185,585 | 341,061,861 | 341,061,861 | 341,061,861 | 2026-10-01 | 2026-10-01 | untried |
 | confirmed-only all-boundary uncarried endings cw | 1 | 1 | 12 | 4,110,141,101 | 342,511,758 | 342,511,758 | 342,511,758 | 2026-09-02 | 2026-09-02 | untried |
 | confirmed-only cores over the full uncarried ending vocabulary | 1 | 8 | 1,576 | 555,022,909,612 | 352,171,896 | 141,523,942 | 3,319,756,536 | 2026-08-23 | 2026-08-23 | spent |
 | sound dotted tails | 1 | 3 | 126 | 29,595,227,882 | 352,324,141 | 343,483,821 | 361,595,696 | 2026-08-19 | 2026-08-24 | live |
 | confirmed-only all-boundary uncarried sound endings bo4 | 1 | 1 | 43 | 15,363,253,631 | 357,284,968 | 357,284,968 | 357,284,968 | 2026-09-02 | 2026-09-02 | untried |
+| ab snowball r3 sound: new cores x every known tail | 1 | 5 | 84 | 31,383,093,074 | 373,608,250 | 60,273,336 | 641,509,388 | 2026-10-01 | 2026-10-05 | spent |
+| ab snowball r4 visual: new cores x every known tail | 1 | 4 | 48 | 17,937,392,558 | 373,695,678 | 73,641,762 | 438,095,252 | 2026-10-01 | 2026-10-05 | cooling |
+| ab snowball r1 sound: all cores x new name tails | 1 | 4 | 14 | 5,326,857,858 | 380,489,847 | 77,911,182 | 77,911,182 | 2026-10-01 | 2026-10-05 | live |
+| ab snowball r5 sound: new slotswap cores x all endings | 1 | 1 | 1 | 394,303,943 | 394,303,943 | 394,303,943 | 394,303,943 | 2026-10-01 | 2026-10-01 | untried |
 | measured heads of length 4 | 2 | 3 | 15 | 6,149,861,538 | 409,990,769 | 115,289,728 | 3,152,328,598 | 2026-08-25 | 2026-08-25 | spent |
 | sound uncarried three-segment endings top256000 | 2 | 2 | 46 | 18,883,657,764 | 410,514,299 | 393,409,536 | 393,409,536 | 2026-09-09 | 2026-09-09 | live |
 | sound uncarried three-segment endings top128000 | 2 | 2 | 23 | 9,441,865,764 | 410,515,902 | 236,046,644 | 1,573,644,294 | 2026-09-09 | 2026-09-09 | cooling |
+| slotswap-substituted all-boundary cores, visual, delta from the refreshed base 2026-09-29 | 1 | 2 | 41 | 17,316,057,720 | 422,342,871 | 346,321,154 | 346,321,154 | 2026-09-29 | 2026-09-29 | live |
+| tails of names confirmed since 2026-09-25 x prefixes the all-boundary list does not carry | 1 | 1 | 2 | 850,397,911 | 425,198,955 | 425,198,955 | 425,198,955 | 2026-09-30 | 2026-09-30 | untried |
 | sound uncarried two-segment endings top32000 | 2 | 2 | 9 | 3,866,104,812 | 429,567,201 | 386,610,481 | 483,263,101 | 2026-09-09 | 2026-09-09 | live |
 | confirmed-only all-boundary black ops 4 cores x uncarried endings | 1 | 3 | 41 | 17,821,278,211 | 434,665,322 | 118,435,559 | 118,435,559 | 2026-08-29 | 2026-08-31 | live |
+| ab snowball r5 visual: new cores x every known tail | 1 | 3 | 21 | 9,189,021,255 | 437,572,440 | 66,736,746 | 1,331,293,302 | 2026-10-01 | 2026-10-05 | spent |
 | cold war confirmed-only all-boundary uncarried two-segment endings | 1 | 1 | 16 | 7,124,171,241 | 445,260,702 | 445,260,702 | 445,260,702 | 2026-08-30 | 2026-08-30 | untried |
 | composed numeric endings | 1 | 2 | 14 | 6,497,838,750 | 464,131,339 | 406,114,921 | 406,114,921 | 2026-08-23 | 2026-08-23 | live |
 | wrapper decorations, prefix side | 1 | 4 | 22 | 10,237,404,404 | 465,336,563 | 39,559,390 | 1,180,777,075 | 2026-08-23 | 2026-08-23 | spent |
 | older-title decorations | 1 | 3 | 20 | 9,365,249,044 | 468,262,452 | 6,372,899 | 6,372,899 | 2026-08-23 | 2026-08-30 | live |
+| ab snowball r6 visual: new cores x every known tail | 1 | 3 | 13 | 6,099,661,184 | 469,204,706 | 293,272,531 | 664,615,248 | 2026-10-01 | 2026-10-05 | live |
+| ab snowball r3 sound: new slotswap cores x all endings | 1 | 1 | 4 | 1,908,319,083 | 477,079,770 | 477,079,770 | 477,079,770 | 2026-10-01 | 2026-10-01 | untried |
 | confirmed-only all-boundary cores x uncarried six-segment endings | 1 | 1 | 8 | 3,962,339,623 | 495,292,452 | 495,292,452 | 495,292,452 | 2026-09-01 | 2026-09-01 | untried |
 | measured tails of length 56 | 1 | 1 | 5 | 2,521,780,812 | 504,356,162 | 504,356,162 | 504,356,162 | 2026-08-25 | 2026-08-25 | untried |
 | all-boundary sound cores x uncarried sound endings, 2 segments, top 200k | 1 | 1 | 634 | 320,548,256,700 | 505,596,619 | 505,596,619 | 505,596,619 | 2026-08-29 | 2026-08-29 | untried |
 | first twenty ceiling-dropped black ops 4 sound beginnings | 1 | 1 | 17 | 8,705,046,735 | 512,061,572 | 512,061,572 | 512,061,572 | 2026-08-29 | 2026-08-29 | untried |
 | scoped all-boundary sound cores x all uncarried 2-segment sound endings (full vocabulary), re-run at grown corpus | 1 | 1 | 54 | 28,168,563,166 | 521,640,058 | 521,640,058 | 521,640,058 | 2026-09-03 | 2026-09-03 | untried |
 | affix sweep | 1 | 1 | 1 | 532,497,168 | 532,497,168 | 532,497,168 | 532,497,168 | 2026-08-20 | 2026-08-20 | untried |
+| ab snowball r5 visual: all cores x new name tails | 1 | 3 | 36 | 19,893,304,174 | 552,591,782 | 84,935,759 | 3,784,225,412 | 2026-10-01 | 2026-10-05 | spent |
 | confirmed-only all-boundary cores x uncarried 1-segment endings, blkops04 | 1 | 1 | 12 | 6,800,804,899 | 566,733,741 | 566,733,741 | 566,733,741 | 2026-09-01 | 2026-09-01 | untried |
+| ab snowball r6 sound: new cores x every known tail | 1 | 2 | 7 | 3,981,074,790 | 568,724,970 | 331,756,232 | 331,756,232 | 2026-10-01 | 2026-10-01 | live |
 | sound all-boundary uncarried endings current | 1 | 2 | 127 | 72,404,724,040 | 570,115,937 | 341,742,866 | 341,742,866 | 2026-09-01 | 2026-09-05 | live |
 | measured heads of length 48 | 1 | 2 | 51 | 30,025,694,930 | 588,739,116 | 428,938,499 | 938,302,966 | 2026-08-25 | 2026-08-25 | live |
 | external bo4 xhash cores under uncarried endings | 1 | 1 | 2 | 1,196,624,742 | 598,312,371 | 598,312,371 | 598,312,371 | 2026-09-01 | 2026-09-01 | untried |
 | all-boundary cores x uncarried endings, 1 segment(s), top 100000 | 1 | 1 | 6 | 3,777,037,770 | 629,506,295 | 629,506,295 | 629,506,295 | 2026-09-02 | 2026-09-02 | untried |
 | all-boundary sound cores x uncarried sound endings, 3 segment(s), top 100000 | 1 | 3 | 83 | 52,864,928,644 | 636,926,851 | 317,511,508 | 317,511,508 | 2026-09-02 | 2026-09-09 | live |
+| ab snowball r6 visual: all cores x new name tails | 1 | 2 | 8 | 5,143,477,968 | 642,934,746 | 514,347,796 | 857,246,328 | 2026-10-01 | 2026-10-01 | live |
 | all-boundary confirmed sound cores x uncarried sound endings | 1 | 6 | 148 | 95,632,345,436 | 646,164,496 | 132,076,779 | 1,655,224,416 | 2026-09-03 | 2026-09-03 | spent |
 | animation transition grid | 1 | 2 | 2 | 1,295,625,020 | 647,812,510 | 647,812,510 | 647,812,510 | 2026-08-23 | 2026-08-23 | live |
+| ab snowball r2 visual: new slotswap cores x all endings | 1 | 6 | 20 | 12,971,143,237 | 648,557,161 | 176,400,588 | 176,400,588 | 2026-09-29 | 2026-10-05 | live |
 | confirmed-only all-boundary cores x uncarried four-segment endings | 1 | 1 | 6 | 3,955,839,558 | 659,306,593 | 659,306,593 | 659,306,593 | 2026-09-01 | 2026-09-01 | untried |
 | cold war sound harvested decorations | 1 | 1 | 105 | 71,392,088,600 | 679,924,653 | 679,924,653 | 679,924,653 | 2026-09-02 | 2026-09-02 | untried |
 | heads of length 3 | 1 | 9 | 717 | 495,967,132,221 | 691,725,428 | 66,983,541 | 53,101,554,920 | 2026-08-22 | 2026-08-29 | spent |
@@ -635,6 +776,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | measured heads of length 40 | 1 | 2 | 116 | 83,913,981,368 | 723,396,391 | 599,385,581 | 912,108,493 | 2026-08-25 | 2026-08-25 | live |
 | confirmed-only all-boundary cores x uncarried 4-segment endings, top 300000, blkops04 | 1 | 1 | 15 | 11,319,937,733 | 754,662,515 | 754,662,515 | 754,662,515 | 2026-09-01 | 2026-09-01 | untried |
 | char double deletions cw | 1 | 1 | 1 | 780,126,906 | 780,126,906 | 780,126,906 | 780,126,906 | 2026-08-24 | 2026-08-24 | untried |
+| ab snowball r2 sound: all cores x new name tails | 1 | 3 | 17 | 13,449,786,945 | 791,163,937 | 703,145,554 | 2,199,458,079 | 2026-10-01 | 2026-10-05 | cooling |
 | confirmed-only all-boundary cores x uncarried one-segment endings | 1 | 2 | 10 | 7,929,679,296 | 792,967,929 | 495,917,459 | 495,917,459 | 2026-09-01 | 2026-09-01 | live |
 | confirmed-only all-boundary sound cores x uncarried 2-segment sound endings, blkops04 | 1 | 1 | 30 | 23,859,316,386 | 795,310,546 | 795,310,546 | 795,310,546 | 2026-09-01 | 2026-09-01 | untried |
 | confirmed-only all-boundary cold war sound cores x uncarried sound endings | 1 | 1 | 17 | 14,337,543,374 | 843,384,904 | 843,384,904 | 843,384,904 | 2026-08-29 | 2026-08-29 | untried |
@@ -642,7 +784,10 @@ table under a name you would not have guessed is the thing you are about to rebu
 | confirmed-only all-boundary uncarried five-segment sound endings bo4 | 1 | 1 | 18 | 15,379,053,789 | 854,391,877 | 854,391,877 | 854,391,877 | 2026-09-02 | 2026-09-02 | untried |
 | cold war sound files, core tails of length 1 and 2 | 1 | 1 | 1 | 881,657,430 | 881,657,430 | 881,657,430 | 881,657,430 | 2026-08-23 | 2026-08-23 | untried |
 | heads of length 2, head-measured alphabet | 1 | 2 | 3 | 2,730,823,702 | 910,274,567 | 682,705,925 | 1,365,411,851 | 2026-09-08 | 2026-09-08 | live |
+| execution quips, topic word x 150k common words, one speaker | 1 | 1 | 1 | 919,500,000 | 919,500,000 | 919,500,000 | 919,500,000 | 2026-10-06 | 2026-10-06 | untried |
 | all-boundary cores with uncarried three-segment endings | 2 | 3 | 58 | 53,493,592,404 | 922,303,317 | 446,051,682 | 1,943,570,114 | 2026-08-30 | 2026-08-31 | cooling |
+| ab snowball r3 visual: new slotswap cores x all endings | 1 | 3 | 15 | 13,976,746,589 | 931,783,105 | 235,700,785 | 6,634,822,116 | 2026-10-01 | 2026-10-01 | spent |
+| rule-substituted cores sound delta 2026-09-30 | 1 | 1 | 3 | 2,833,728,337 | 944,576,112 | 944,576,112 | 944,576,112 | 2026-09-30 | 2026-09-30 | untried |
 | general ceiling-dropped beginnings cross-title | 1 | 1 | 44 | 43,531,074,800 | 989,342,609 | 989,342,609 | 989,342,609 | 2026-09-09 | 2026-09-09 | untried |
 | family walking, numbers in place | 1 | 40 | 1,753 | 261,210,988,962 | 996,988,507 | 200,051,105 | 3,557,728,643 | 2026-08-19 | 2026-09-22 | spent |
 | all-boundary general cores x top-100k uncarried endings, refreshed 2026-09-20 | 1 | 2 | 375 | 375,311,953,082 | 1,000,831,874 | 579,185,112 | 579,185,112 | 2026-09-20 | 2026-09-20 | live |
@@ -650,7 +795,9 @@ table under a name you would not have guessed is the thing you are about to rebu
 | confirmed-only all-boundary uncarried sound endings cw | 1 | 1 | 15 | 15,363,253,631 | 1,024,216,908 | 1,024,216,908 | 1,024,216,908 | 2026-09-02 | 2026-09-02 | untried |
 | confirmed-only all-boundary uncarried three-segment sound endings bo4 | 1 | 1 | 15 | 15,368,253,681 | 1,024,550,245 | 1,024,550,245 | 1,024,550,245 | 2026-09-02 | 2026-09-02 | untried |
 | all-boundary sound cores x uncarried sound endings, 2 segment(s), top 100000 | 1 | 5 | 265 | 271,741,317,386 | 1,025,438,933 | 247,119,354 | 247,119,354 | 2026-08-31 | 2026-09-09 | live |
+| ab snowball r1 visual: all cores x new name tails | 1 | 9 | 31 | 31,790,314,044 | 1,025,494,001 | 107,819,718 | 5,534,631,186 | 2026-09-30 | 2026-10-06 | spent |
 | confirmed-only all-boundary uncarried endings cw snowball | 1 | 1 | 4 | 4,115,041,150 | 1,028,760,287 | 1,028,760,287 | 1,028,760,287 | 2026-09-02 | 2026-09-02 | untried |
+| every tail of names confirmed since 2026-09-25 x all-boundary cores | 1 | 2 | 27 | 28,017,699,060 | 1,037,692,557 | 737,307,870 | 1,751,106,191 | 2026-09-30 | 2026-09-30 | live |
 | uncarried four-segment endings over all-boundary cores | 1 | 2 | 381 | 400,012,766,734 | 1,049,902,274 | 1,020,440,731 | 1,020,440,731 | 2026-08-23 | 2026-08-23 | live |
 | char insertions bo4 sounds | 1 | 1 | 1 | 1,068,730,763 | 1,068,730,763 | 1,068,730,763 | 1,068,730,763 | 2026-08-24 | 2026-08-24 | untried |
 | confirmed-only all-boundary sound cores x uncarried 1-segment sound endings, blkops04 | 1 | 1 | 4 | 4,300,971,681 | 1,075,242,920 | 1,075,242,920 | 1,075,242,920 | 2026-09-02 | 2026-09-02 | untried |
@@ -663,7 +810,8 @@ table under a name you would not have guessed is the thing you are about to rebu
 | black ops 4 confirmed-only all-boundary uncarried three-segment endings | 1 | 1 | 17 | 21,379,271,264 | 1,257,604,192 | 1,257,604,192 | 1,257,604,192 | 2026-08-30 | 2026-08-30 | untried |
 | all-boundary sound cores x uncarried sound endings, 1 segment, top 300k | 1 | 1 | 46 | 58,151,913,260 | 1,264,172,027 | 1,264,172,027 | 1,264,172,027 | 2026-08-29 | 2026-08-29 | untried |
 | measured heads of length 12 | 2 | 4 | 160 | 204,300,194,532 | 1,276,876,215 | 579,736,120 | 3,832,699,909 | 2026-08-25 | 2026-08-25 | cooling |
-| tails of length 3 | 1 | 153 | 3,950 | 5,261,937,446,206 | 1,332,136,062 | 35,873,048 | 39,453,286,212 | 2026-08-22 | 2026-09-28 | spent |
+| ab snowball r1 visual: new slotswap cores x all endings | 1 | 9 | 43 | 55,237,984,126 | 1,284,604,282 | 259,200,864 | 3,490,061,633 | 2026-09-29 | 2026-10-06 | spent |
+| ab snowball r1 visual: old slotswap cores x new endings | 1 | 3 | 3 | 3,929,287,822 | 1,309,762,607 | 455,192,348 | 2,351,501,010 | 2026-09-29 | 2026-10-01 | cooling |
 | measured tails of length 64 | 1 | 1 | 1 | 1,336,663,110 | 1,336,663,110 | 1,336,663,110 | 1,336,663,110 | 2026-08-25 | 2026-08-25 | untried |
 | v2 xanim borrowed endings, ranks 1001-2000 | 1 | 2 | 21 | 28,271,743,500 | 1,346,273,500 | 738,975,078 | 7,115,608,500 | 2026-08-28 | 2026-08-29 | cooling |
 | uncarried five-segment endings over all-boundary cores | 1 | 2 | 597 | 804,758,082,518 | 1,348,003,488 | 906,259,101 | 906,259,101 | 2026-08-23 | 2026-08-23 | live |
@@ -672,8 +820,10 @@ table under a name you would not have guessed is the thing you are about to rebu
 | heads of length 2 | 1 | 1 | 1 | 1,419,111,216 | 1,419,111,216 | 1,419,111,216 | 1,419,111,216 | 2026-09-03 | 2026-09-03 | untried |
 | measured heads of length 10 | 2 | 4 | 94 | 134,357,271,610 | 1,429,332,676 | 965,246,055 | 1,093,886,252 | 2026-08-25 | 2026-08-25 | live |
 | confirmed-only all-boundary sound cores x uncarried 3-segment sound endings, blkops04 | 1 | 1 | 30 | 44,393,847,979 | 1,479,794,932 | 1,479,794,932 | 1,479,794,932 | 2026-09-01 | 2026-09-01 | untried |
+| tails of length 3 | 1 | 170 | 3,996 | 5,934,454,192,310 | 1,485,098,646 | 35,873,048 | 19,823,138,976 | 2026-08-22 | 2026-10-05 | spent |
 | cold war sound all-boundary uncarried two-segment endings current | 1 | 1 | 22 | 35,173,151,728 | 1,598,779,624 | 1,598,779,624 | 1,598,779,624 | 2026-09-01 | 2026-09-01 | untried |
 | measured heads of length 8 | 2 | 3 | 30 | 48,116,742,888 | 1,603,891,429 | 1,199,252,869 | 1,199,252,869 | 2026-08-25 | 2026-08-25 | live |
+| ab snowball r2 visual: old slotswap cores x new endings | 1 | 2 | 2 | 3,229,316,196 | 1,614,658,098 | 1,614,658,098 | 1,614,658,098 | 2026-10-01 | 2026-10-01 | live |
 | uncarried one-segment endings over all-boundary cores | 1 | 2 | 316 | 522,511,859,758 | 1,653,518,543 | 1,326,172,232 | 2,195,427,982 | 2026-08-23 | 2026-08-23 | live |
 | scoped all-boundary cores x all uncarried 3-segment endings, refreshed lists, 2026-09-04 | 1 | 1 | 82 | 139,188,724,500 | 1,697,423,469 | 1,697,423,469 | 1,697,423,469 | 2026-09-04 | 2026-09-04 | untried |
 | sound uncarried two-segment endings top256000 | 1 | 1 | 6 | 10,185,055,660 | 1,697,509,276 | 1,697,509,276 | 1,697,509,276 | 2026-09-09 | 2026-09-09 | untried |
@@ -685,13 +835,16 @@ table under a name you would not have guessed is the thing you are about to rebu
 | scoped all-boundary cores (published+confirmed) x uncarried 2-segment endings, top 300000 | 1 | 3 | 83 | 151,735,705,784 | 1,828,141,033 | 1,097,599,310 | 8,438,228,127 | 2026-09-02 | 2026-09-02 | cooling |
 | family walking, whole words | 1 | 77 | 16,801 | 17,397,932,476,760 | 1,984,705,963 | 149,450,943 | 4,187,188,266 | 2026-08-19 | 2026-09-21 | spent |
 | scoped all-boundary cores x all uncarried 2-segment endings | 1 | 1 | 41 | 83,095,021,328 | 2,026,707,837 | 2,026,707,837 | 2,026,707,837 | 2026-09-03 | 2026-09-03 | untried |
+| ab snowball r1 sound: new cores x every known tail | 1 | 6 | 30 | 61,445,246,358 | 2,048,174,878 | 31,002,204 | 29,111,070,345 | 2026-09-30 | 2026-10-06 | spent |
 | measured heads of length 16 | 2 | 4 | 170 | 356,008,257,188 | 2,094,166,218 | 870,303,956 | 29,590,334,512 | 2026-08-25 | 2026-08-25 | spent |
 | all-boundary sound cores x 1-segment uncarried sound endings, 2026-09-20 | 1 | 2 | 84 | 177,531,391,422 | 2,113,468,945 | 1,305,377,878 | 1,305,377,878 | 2026-09-20 | 2026-09-20 | live |
 | all-boundary sound cores x uncarried sound endings, 1 segment(s), top 300000 | 1 | 2 | 54 | 116,405,048,396 | 2,155,649,044 | 1,662,912,897 | 3,063,320,893 | 2026-08-29 | 2026-08-29 | live |
 | first twenty ceiling-dropped cold war sound beginnings | 1 | 1 | 4 | 8,704,378,914 | 2,176,094,728 | 2,176,094,728 | 2,176,094,728 | 2026-08-29 | 2026-08-29 | untried |
 | confirmed-only all-boundary uncarried six-segment sound endings bo4 | 1 | 1 | 7 | 15,384,053,839 | 2,197,721,977 | 2,197,721,977 | 2,197,721,977 | 2026-09-02 | 2026-09-02 | untried |
+| ab snowball r1 sound: new slotswap cores x all endings | 1 | 7 | 12 | 26,807,968,077 | 2,233,997,339 | 255,602,556 | 2,309,863,098 | 2026-09-29 | 2026-10-06 | cooling |
 | sound harvested decorations | 1 | 1 | 21 | 47,049,001,300 | 2,240,428,633 | 2,240,428,633 | 2,240,428,633 | 2026-09-02 | 2026-09-02 | untried |
 | cold war uncarried two-segment endings current depth-matched | 1 | 1 | 5 | 11,227,712,276 | 2,245,542,455 | 2,245,542,455 | 2,245,542,455 | 2026-09-01 | 2026-09-01 | untried |
+| ab snowball r6 sound: all cores x new name tails | 1 | 1 | 1 | 2,271,469,570 | 2,271,469,570 | 2,271,469,570 | 2,271,469,570 | 2026-10-01 | 2026-10-01 | untried |
 | sound alias cores borrowed, sound alias decorations measured | 1 | 6 | 838 | 1,969,209,530,400 | 2,349,892,041 | 69,920,243 | 2,962,280,400 | 2026-08-24 | 2026-08-30 | spent |
 | cold war all-boundary uncarried endings current | 1 | 1 | 14 | 33,666,336,660 | 2,404,738,332 | 2,404,738,332 | 2,404,738,332 | 2026-09-01 | 2026-09-01 | untried |
 | uncarried endings ranks 3001-6000 over published cores | 1 | 1 | 1 | 2,409,887,028 | 2,409,887,028 | 2,409,887,028 | 2,409,887,028 | 2026-08-26 | 2026-08-26 | untried |
@@ -703,6 +856,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | sound all-boundary cores with uncarried two-segment endings | 2 | 2 | 13 | 33,006,930,066 | 2,538,994,620 | 2,062,883,128 | 3,300,773,007 | 2026-08-30 | 2026-08-30 | live |
 | confirmed-only all-boundary uncarried four-segment sound endings bo4 | 1 | 1 | 6 | 15,374,753,746 | 2,562,458,957 | 2,562,458,957 | 2,562,458,957 | 2026-09-02 | 2026-09-02 | untried |
 | measured heads of length 24 | 1 | 2 | 114 | 296,486,731,600 | 2,600,760,803 | 1,629,047,975 | 6,445,363,730 | 2026-08-25 | 2026-08-25 | cooling |
+| ab snowball r5 visual: new slotswap cores x all endings | 1 | 2 | 2 | 5,461,518,205 | 2,730,759,102 | 719,702,399 | 4,741,815,806 | 2026-10-01 | 2026-10-05 | cooling |
 | sound all-boundary cores with uncarried three-segment endings | 2 | 2 | 12 | 33,009,330,090 | 2,750,777,507 | 2,063,120,631 | 2,063,120,631 | 2026-08-30 | 2026-08-30 | live |
 | sound all-boundary cores with uncarried four-segment endings | 1 | 1 | 6 | 16,506,165,060 | 2,751,027,510 | 2,751,027,510 | 2,751,027,510 | 2026-08-30 | 2026-08-30 | untried |
 | measured tails of length 8 | 2 | 6 | 271 | 753,428,154,966 | 2,780,177,693 | 1,435,820,931 | 2,357,317,948 | 2026-08-25 | 2026-08-25 | live |
@@ -711,9 +865,11 @@ table under a name you would not have guessed is the thing you are about to rebu
 | scoped all-boundary cores (published+confirmed) x uncarried 3-segment endings, top 300000 | 1 | 3 | 54 | 151,763,305,876 | 2,810,431,590 | 1,009,989,366 | 50,638,368,794 | 2026-09-02 | 2026-09-03 | spent |
 | all-boundary general cores x top-100k 3-segment uncarried endings, 2026-09-20 | 1 | 2 | 133 | 375,404,754,010 | 2,822,592,135 | 2,040,243,228 | 2,040,243,228 | 2026-09-20 | 2026-09-20 | live |
 | cold war sound all-boundary uncarried one-segment endings current | 1 | 2 | 16 | 45,395,181,202 | 2,837,198,825 | 729,559,242 | 17,590,675,905 | 2026-09-01 | 2026-09-01 | spent |
+| ab snowball r3 visual: old slotswap cores x new endings | 1 | 2 | 2 | 6,070,227,000 | 3,035,113,500 | 2,949,113,412 | 2,949,113,412 | 2026-10-01 | 2026-10-01 | live |
 | confirmed-only all-boundary uncarried sound endings cw snowball | 1 | 1 | 5 | 15,368,153,680 | 3,073,630,736 | 3,073,630,736 | 3,073,630,736 | 2026-09-02 | 2026-09-02 | untried |
 | all-boundary sound cores x top-100k uncarried sound endings, refreshed 2026-09-20 | 1 | 2 | 160 | 505,364,053,590 | 3,158,525,334 | 1,844,394,356 | 1,844,394,356 | 2026-09-20 | 2026-09-20 | live |
 | all-boundary sound cores x uncarried sound endings, 2 segment(s), top 200000 | 1 | 4 | 222 | 706,593,023,282 | 3,182,851,456 | 1,889,437,774 | 3,569,271,122 | 2026-08-29 | 2026-09-09 | live |
+| ab snowball r6 sound: new slotswap cores x all endings | 1 | 1 | 1 | 3,222,432,224 | 3,222,432,224 | 3,222,432,224 | 3,222,432,224 | 2026-10-01 | 2026-10-01 | untried |
 | all-boundary sound cores x uncarried sound endings | 1 | 64 | 1,788 | 6,234,167,318,119 | 3,486,670,759 | 304,356,933 | 59,321,595,135 | 2026-08-25 | 2026-09-01 | spent |
 | measured tails of length 28 | 1 | 2 | 57 | 199,395,031,004 | 3,498,158,438 | 1,917,259,913 | 1,917,259,913 | 2026-08-25 | 2026-08-25 | live |
 | v2 xanim borrowed endings, ranks 3001-4000 | 1 | 2 | 8 | 28,690,662,000 | 3,586,332,750 | 2,009,436,000 | 14,624,610,000 | 2026-08-28 | 2026-09-01 | cooling |
@@ -723,10 +879,12 @@ table under a name you would not have guessed is the thing you are about to rebu
 | measured tails of length 32 | 1 | 2 | 46 | 178,589,946,540 | 3,882,390,142 | 2,289,614,699 | 2,289,614,699 | 2026-08-25 | 2026-08-25 | live |
 | rule-substituted all-boundary endings, visual | 1 | 2 | 4 | 15,634,952,992 | 3,908,738,248 | 3,908,738,248 | 3,908,738,248 | 2026-09-26 | 2026-09-26 | live |
 | measured heads of length 56 | 1 | 2 | 3 | 12,027,546,336 | 4,009,182,112 | 3,006,886,584 | 3,006,886,584 | 2026-08-25 | 2026-08-25 | live |
+| slotswap-substituted all-boundary cores, visual, delta 2026-09-29 | 1 | 2 | 6 | 24,946,883,156 | 4,157,813,859 | 4,157,813,859 | 4,157,813,859 | 2026-09-29 | 2026-09-29 | live |
 | measured tails of length 9 | 1 | 2 | 64 | 266,568,581,576 | 4,165,134,087 | 3,920,126,199 | 4,442,809,692 | 2026-08-25 | 2026-08-25 | live |
 | scoped all-boundary cores (published+confirmed) x uncarried 4-segment endings, top 300000 | 1 | 1 | 12 | 50,524,368,414 | 4,210,364,034 | 4,210,364,034 | 4,210,364,034 | 2026-09-02 | 2026-09-02 | untried |
 | all-boundary sound cores x uncarried sound endings, 3 segment(s), top 200000, blkops04 | 1 | 1 | 8 | 34,537,372,686 | 4,317,171,585 | 4,317,171,585 | 4,317,171,585 | 2026-09-01 | 2026-09-01 | untried |
 | general beginnings the 700 ceiling drops | 1 | 8 | 103 | 453,678,445,820 | 4,404,645,105 | 177,450,092 | 588,650,610 | 2026-08-29 | 2026-09-03 | cooling |
+| ab snowball r4 visual: all cores x new name tails | 1 | 1 | 4 | 17,679,454,619 | 4,419,863,654 | 4,419,863,654 | 4,419,863,654 | 2026-10-05 | 2026-10-05 | untried |
 | uncarried two-segment endings | 1 | 1 | 23 | 102,361,883,258 | 4,450,516,663 | 4,450,516,663 | 4,450,516,663 | 2026-08-26 | 2026-08-26 | untried |
 | uncarried endings ranks 60001-120000 over published cores | 1 | 2 | 21 | 95,849,557,466 | 4,564,264,641 | 2,995,298,670 | 9,584,955,746 | 2026-08-23 | 2026-08-23 | cooling |
 | sound ceiling-dropped beginnings | 1 | 1 | 5 | 23,995,372,275 | 4,799,074,455 | 4,799,074,455 | 4,799,074,455 | 2026-09-09 | 2026-09-09 | untried |
@@ -734,11 +892,13 @@ table under a name you would not have guessed is the thing you are about to rebu
 | measured tails of length 5 | 2 | 8 | 105 | 533,600,850,606 | 5,081,912,862 | 2,214,417,335 | 4,556,006,356 | 2026-08-25 | 2026-08-25 | live |
 | confirmed-only all-boundary uncarried five-segment sound endings cw | 1 | 1 | 3 | 15,379,053,789 | 5,126,351,263 | 5,126,351,263 | 5,126,351,263 | 2026-09-02 | 2026-09-02 | untried |
 | measured tails of length 7 | 1 | 3 | 51 | 262,284,435,218 | 5,142,832,063 | 3,013,818,603 | 12,497,565,171 | 2026-08-25 | 2026-08-25 | cooling |
+| core ring 20260915-20260924 x all tails | 1 | 2 | 6 | 30,864,257,112 | 5,144,042,852 | 5,144,042,852 | 5,144,042,852 | 2026-09-30 | 2026-09-30 | live |
 | measured tails of length 10 | 2 | 7 | 262 | 1,357,535,317,614 | 5,181,432,509 | 2,868,533,268 | 11,751,144,491 | 2026-08-25 | 2026-08-25 | cooling |
 | all-boundary cores x confirmed-only-discovered endings (general), 2026-09-22 | 1 | 2 | 14 | 73,282,859,660 | 5,234,489,975 | 3,331,039,075 | 3,331,039,075 | 2026-09-22 | 2026-09-22 | live |
 | cross-title ceiling-dropped sound beginnings | 1 | 1 | 12 | 64,376,209,800 | 5,364,684,150 | 5,364,684,150 | 5,364,684,150 | 2026-09-09 | 2026-09-09 | untried |
 | all-boundary sound cores x uncarried sound endings, 2 segments | 1 | 1 | 37 | 198,601,685,997 | 5,367,613,135 | 5,367,613,135 | 5,367,613,135 | 2026-08-23 | 2026-08-23 | untried |
 | all-boundary cores x confirmed-only-discovered 3-segment endings (general), 2026-09-22 | 1 | 2 | 22 | 118,250,103,816 | 5,375,004,718 | 3,477,944,229 | 3,477,944,229 | 2026-09-22 | 2026-09-22 | live |
+| ab snowball r4 sound: new cores x every known tail | 1 | 2 | 7 | 38,467,723,626 | 5,495,389,089 | 645,992,250 | 6,303,621,896 | 2026-10-01 | 2026-10-05 | cooling |
 | xanim cores borrowed, xanim decorations measured | 1 | 14 | 391 | 2,379,936,774,200 | 6,086,794,818 | 26,167,942 | 50,169,424,421 | 2026-08-24 | 2026-08-31 | spent |
 | measured heads of length 14 | 1 | 2 | 15 | 92,163,619,882 | 6,144,241,325 | 5,760,226,242 | 6,583,115,705 | 2026-08-25 | 2026-08-25 | live |
 | all-boundary cores x uncarried endings, 2 segment(s), top 300000 | 1 | 3 | 257 | 1,627,767,625,874 | 6,333,726,170 | 2,467,636,992 | 21,036,254,736 | 2026-08-29 | 2026-09-09 | cooling |
@@ -752,6 +912,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | confirmed-only all-boundary bo4 sound cores x uncarried endings | 1 | 1 | 2 | 14,335,743,356 | 7,167,871,678 | 7,167,871,678 | 7,167,871,678 | 2026-08-29 | 2026-08-29 | untried |
 | all-boundary cores x uncarried endings, 2 segment(s), top 100000 | 1 | 5 | 77 | 552,927,929,224 | 7,180,882,197 | 311,036,443 | 9,114,946,148 | 2026-08-31 | 2026-09-09 | spent |
 | measured tails of length 18 | 1 | 2 | 51 | 370,685,626,016 | 7,268,345,608 | 5,451,259,206 | 10,902,518,412 | 2026-08-25 | 2026-08-25 | live |
+| core ring 20260901-20260914 x all tails | 1 | 2 | 7 | 51,607,375,144 | 7,372,482,163 | 6,450,921,893 | 8,601,229,190 | 2026-09-30 | 2026-09-30 | live |
 | confirmed-only all-boundary sound cores x uncarried 4-segment sound endings, blkops04 | 1 | 1 | 6 | 44,437,348,124 | 7,406,224,687 | 7,406,224,687 | 7,406,224,687 | 2026-09-02 | 2026-09-02 | untried |
 | uncarried two-segment endings current depth-matched | 1 | 2 | 3 | 22,455,424,552 | 7,485,141,517 | 5,613,856,138 | 5,613,856,138 | 2026-09-01 | 2026-09-01 | live |
 | scoped all-boundary cores (published+confirmed) x uncarried 1-segment endings | 1 | 1 | 4 | 30,324,661,319 | 7,581,165,329 | 7,581,165,329 | 7,581,165,329 | 2026-09-02 | 2026-09-02 | untried |
@@ -825,6 +986,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | images derived from materials | 1 | 23 | 6,555 | 34,890,725,561,940 | 26,777,226,064 | 13,498,822,351 | 47,834,576,565 | 2026-08-19 | 2026-09-10 | cooling |
 | all-boundary sound cores x top-100k 4-segment uncarried sound endings, 2026-09-20 | 1 | 2 | 18 | 505,520,655,156 | 28,084,480,842 | 15,797,520,473 | 15,797,520,473 | 2026-09-20 | 2026-09-20 | live |
 | confirmed-only sound all-boundary uncarried endings current | 1 | 1 | 1 | 30,069,300,690 | 30,069,300,690 | 30,069,300,690 | 30,069,300,690 | 2026-09-01 | 2026-09-01 | untried |
+| slotswap sound cores shared with the visual list, slices 2-8, x sound endings | 1 | 1 | 14 | 461,196,811,922 | 32,942,629,423 | 32,942,629,423 | 32,942,629,423 | 2026-09-30 | 2026-09-30 | untried |
 | sound beginnings the 700 ceiling drops | 1 | 14 | 219 | 7,418,556,758,288 | 33,874,688,394 | 1,235,117,520 | 478,682,361,787 | 2026-08-29 | 2026-09-20 | spent |
 | v2 material borrowed endings, ranks 1001-2000 | 1 | 2 | 12 | 426,823,897,500 | 35,568,658,125 | 23,561,037,500 | 71,591,520,000 | 2026-08-25 | 2026-08-28 | cooling |
 | all-boundary sound cores x confirmed-only-discovered 4-segment sound endings, 2026-09-22 | 1 | 2 | 14 | 506,410,464,054 | 36,172,176,003 | 23,018,657,457 | 23,018,657,457 | 2026-09-22 | 2026-09-22 | live |
@@ -833,6 +995,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | xmodel cores under borrowed xmodel endings | 1 | 2 | 71 | 2,638,444,407,000 | 37,161,188,830 | 29,316,048,966 | 50,739,315,519 | 2026-08-24 | 2026-08-24 | live |
 | uncarried beginnings | 1 | 18 | 121 | 4,685,401,723,688 | 38,722,328,294 | 6,897,183,362 | 42,547,681,320 | 2026-08-23 | 2026-09-08 | cooling |
 | uncarried beginnings, optics and prefixed families | 1 | 2 | 7 | 271,475,197,760 | 38,782,171,108 | 27,147,519,776 | 67,868,799,440 | 2026-08-22 | 2026-08-22 | live |
+| slotswap-substituted all-boundary cores, visual, slices 2-8 | 1 | 1 | 235 | 9,191,496,338,219 | 39,112,750,375 | 39,112,750,375 | 39,112,750,375 | 2026-09-28 | 2026-09-28 | untried |
 | image cores borrowed wide, stripped shallow | 1 | 2 | 6 | 243,078,381,000 | 40,513,063,500 | 30,384,797,625 | 30,384,797,625 | 2026-08-24 | 2026-08-24 | live |
 | all-boundary general cores x top-100k uncarried endings, refresh 2026-09-25 | 1 | 2 | 9 | 375,974,959,712 | 41,774,995,523 | 37,597,495,971 | 46,996,869,964 | 2026-09-24 | 2026-09-24 | live |
 | all-boundary general cores x top-300k 3-segment uncarried endings, 2026-09-20b | 1 | 2 | 26 | 1,126,471,954,894 | 43,325,844,419 | 31,290,887,635 | 31,290,887,635 | 2026-09-21 | 2026-09-21 | live |
@@ -852,6 +1015,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | all-boundary cores x uncarried endings, 4 segment(s), top 200000 | 1 | 1 | 6 | 364,632,423,153 | 60,772,070,525 | 60,772,070,525 | 60,772,070,525 | 2026-09-09 | 2026-09-09 | untried |
 | confirmed-only sound endings x cores, after +18k merge, 2026-09-25 | 1 | 1 | 3 | 186,860,385,789 | 62,286,795,263 | 62,286,795,263 | 62,286,795,263 | 2026-09-25 | 2026-09-25 | untried |
 | material cores under borrowed material endings | 1 | 4 | 128 | 8,470,420,821,000 | 66,175,162,664 | 35,223,652,406 | 101,779,003,800 | 2026-08-24 | 2026-08-24 | live |
+| slotswap-substituted all-boundary cores, visual | 1 | 1 | 151 | 10,504,567,415,108 | 69,566,671,623 | 69,566,671,623 | 69,566,671,623 | 2026-09-29 | 2026-09-29 | untried |
 | all-boundary general cores x top-300k uncarried endings, after +18k merge, 2026-09-25 | 1 | 2 | 14 | 1,133,518,978,384 | 80,965,641,313 | 47,229,957,432 | 283,379,744,596 | 2026-09-25 | 2026-09-25 | cooling |
 | ceiling-dropped sound beginnings over current sound cores | 1 | 1 | 1 | 81,366,616,800 | 81,366,616,800 | 81,366,616,800 | 81,366,616,800 | 2026-09-01 | 2026-09-01 | untried |
 | v2 sound alias borrowed endings, ranks 8001-16000 | 1 | 2 | 4 | 334,133,761,500 | 83,533,440,375 | 57,019,126,500 | 57,019,126,500 | 2026-08-25 | 2026-08-26 | live |
@@ -865,6 +1029,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | v2 xanim borrowed endings, ranks 72001-80000 | 1 | 2 | 2 | 221,415,673,500 | 110,707,836,750 | 108,865,606,500 | 112,550,067,000 | 2026-08-25 | 2026-08-28 | live |
 | rule-substituted all-boundary cores, sound | 1 | 1 | 26 | 2,893,174,431,455 | 111,275,939,671 | 111,275,939,671 | 111,275,939,671 | 2026-09-25 | 2026-09-25 | untried |
 | v2 xanim borrowed endings, ranks 8001-16000 | 1 | 2 | 2 | 222,651,828,000 | 111,325,914,000 | 108,889,609,500 | 113,762,218,500 | 2026-08-25 | 2026-08-29 | live |
+| sound files and aliases | 1 | 83 | 54,258 | 2,865,470,869,780,563 | 113,808,518,142 | 5,134,885,824 | 5,134,885,824 | 2026-08-19 | 2026-10-08 | live |
 | measured shells, head 6 tail 6, top 1600 | 1 | 3 | 33 | 4,127,396,973,451 | 125,072,635,559 | 62,447,265,963 | 459,905,757,026 | 2026-09-03 | 2026-09-04 | cooling |
 | image cores under borrowed image endings | 1 | 4 | 66 | 8,319,045,063,000 | 126,046,137,318 | 47,775,902,275 | 173,376,335,343 | 2026-08-24 | 2026-08-24 | cooling |
 | v2 material borrowed endings, ranks 8001-9000 | 1 | 3 | 5 | 644,545,902,000 | 128,909,180,400 | 107,346,739,500 | 107,463,105,750 | 2026-08-27 | 2026-08-28 | live |
@@ -909,7 +1074,6 @@ table under a name you would not have guessed is the thing you are about to rebu
 | v2 material borrowed endings, ranks 64001-72000 | 1 | 3 | 7 | 5,089,812,147,000 | 727,116,021,000 | 565,158,636,000 | 566,326,782,000 | 2026-08-26 | 2026-08-26 | live |
 | v2 image borrowed endings, ranks 16001-24000 | 1 | 3 | 5 | 4,199,720,899,500 | 839,944,179,900 | 468,370,539,000 | 1,405,111,617,000 | 2026-08-26 | 2026-08-28 | live |
 | measured shells, head 5 tail 7, top 1600 | 1 | 2 | 3 | 2,644,392,954,876 | 881,464,318,292 | 661,098,238,719 | 1,322,196,477,438 | 2026-09-03 | 2026-09-03 | live |
-| sound files and aliases | 1 | 82 | 31,935 | 2,750,844,813,513,427 | 963,518,323,472 | 166,345,024,102 | 68,076,041,437,260 | 2026-08-19 | 2026-09-10 | spent |
 | v2 material borrowed endings, ranks 48001-56000 | 1 | 3 | 5 | 5,090,196,195,000 | 1,018,039,239,000 | 565,186,639,500 | 1,699,076,358,000 | 2026-08-25 | 2026-08-26 | cooling |
 | v2 material borrowed endings, ranks 72001-80000 | 1 | 2 | 3 | 3,394,432,251,000 | 1,131,477,417,000 | 847,761,957,000 | 1,698,908,337,000 | 2026-08-26 | 2026-08-26 | live |
 | v2 material borrowed endings, ranks 40001-48000 | 1 | 2 | 3 | 3,413,430,625,500 | 1,137,810,208,500 | 859,169,382,750 | 859,169,382,750 | 2026-08-26 | 2026-08-28 | live |
@@ -918,7 +1082,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | measured shells, head 6 tail 7, top 1600 | 1 | 1 | 1 | 1,313,248,342,747 | 1,313,248,342,747 | 1,313,248,342,747 | 1,313,248,342,747 | 2026-09-03 | 2026-09-03 | untried |
 | measured shells, head 8 tail 6, top 1600 | 1 | 1 | 1 | 1,360,231,817,077 | 1,360,231,817,077 | 1,360,231,817,077 | 1,360,231,817,077 | 2026-09-03 | 2026-09-03 | untried |
 | v2 material borrowed endings, ranks 32001-40000 | 1 | 1 | 1 | 1,695,955,968,000 | 1,695,955,968,000 | 1,695,955,968,000 | 1,695,955,968,000 | 2026-08-25 | 2026-08-25 | untried |
-| not recorded | 1 | 116 | 4,797 | - | - | - | - | 2026-08-19 | 2026-09-28 | unmeasured |
+| not recorded | 1 | 139 | 5,003 | - | - | - | - | 2026-08-19 | 2026-10-05 | unmeasured |
 | bo3 techset tag sweep | 1 | 2 | 1,673 | - | - | - | - | 2026-08-18 | 2026-08-19 | unmeasured |
 | general search, confirmed seeds only | 1 | 4 | 531 | - | - | - | - | 2026-08-20 | 2026-08-31 | unmeasured |
 | cutting at underscores and recombining | 1 | 1 | 435 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
@@ -941,7 +1105,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-863 distinct methods, run 960 ways between them, across 3180 runs. `names` is what each run
+1027 distinct methods, run 1125 ways between them, across 3718 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->

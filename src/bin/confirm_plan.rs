@@ -95,14 +95,16 @@ fn values_of(value: &str, base: &Path) -> Result<Vec<String>, String> {
     let text = std::fs::read_to_string(&path)
         .map_err(|error| format!("{} could not be read: {error}", path.display()))?;
 
-    let lines: Vec<String> = text
+    let table=path.file_stem().and_then(|s|s.to_str()).unwrap_or("");
+    let database_csv=path.extension().and_then(|s|s.to_str())==Some("csv") && table.starts_with("fnv1a_");
+    let lines: Vec<String> = if database_csv { slasher::database::names(table,&text) } else { text
         .lines()
         .map(|line| line.trim())
         .filter(|line| !line.is_empty() && !line.starts_with('#'))
         // A `hash,name` line is accepted and the name taken, exactly as `confirm_list` does, so a
         // findings file can be used as a stem list without being reshaped first.
         .map(|line| line.split_once(',').map_or(line, |(_, name)| name.trim()).to_owned())
-        .collect();
+        .collect() };
 
     if lines.is_empty() {
         return Err(format!("{} held no usable lines", path.display()));

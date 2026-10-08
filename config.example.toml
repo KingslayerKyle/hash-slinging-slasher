@@ -3,32 +3,17 @@
 
 [search]
 
-# Which game to grind -- and normally, neither, because the two take turns on their own.
-#
-# `start` counts how many passes each game has had on this machine and sends the next one to
-# whichever has had fewer, writing its choice to state/game.txt so every search picks it up with
-# no flag to remember. That exists because the old behaviour was a single default nobody changed:
-# every contributor ground Cold War, and Black Ops 4 -- which has MORE unnamed assets in the five
-# types that matter -- was ground by exactly one person, once.
-#
-#   BLKOPSCW   Black Ops Cold War, 1,626,209 assets. 136,467 unnamed in the five types that
-#              matter. The game most of the work has gone into: 81% of its images are named.
-#   BLKOPS04   Black Ops 4, 1,023,902 assets. 141,889 unnamed in the five types -- more than Cold
-#              War -- and far less picked over: 64% of images and 59% of materials named. Its
-#              sound pool holds a hundred assets in total, so sound work belongs in Cold War.
-#
-# The `game` line below does NOT stop the turn-taking, deliberately. This file once shipped with
-# it uncommented, so anybody who copied the template months ago still has it -- and treating that
-# as a decision would pin those contributors to Cold War forever, silently, which is the exact
-# problem the turn-taking fixes. It is only consulted when the turn-taking is switched off.
-# game = "BLKOPSCW"
-
-# Stop the turn-taking and grind only the game named above.
-#
-# Worth setting once one of the two is finished enough not to care about; until then, splitting
-# effort is the point. `--game BLKOPS04` on any search forces one game for one run without
-# touching this.
+# Available complete captures take turns. Modern mode pairs must first be merged by type.
+# Tags: BLKOPS04, BLKOPSCW, MODWAR22 (MWII), YAMYAMOK (MWIII), BLACKOP6, BLACKOP7,
+# and MODWAR7 when its complete capture is installed. Missing captures are skipped.
+# start selects a game after its checks; next_game selects locally without network checks.
+# The rotation advances one slot independently of historical pass counts.
+# Restrict it optionally:
+# games = ["BLKOPS04", "BLKOPSCW", "BLACKOP6"]
+# Pin one game instead:
 # alternate_games = false
+# game = "BLACKOP6"
+# --game <TAG> also pins a command; it does not consume a rotation turn.
 
 # The asset types to hunt. A pass costs what it costs because of how many ids it is looking
 # for, so hunting every pool when five hold what you want makes every pass several times
@@ -55,7 +40,8 @@ all_pools = false
 
 [paths]
 
-# All of these default to folders inside the repository, so a fresh clone works untouched.
+# Defaults sit inside the repository. For newer captures, use an ignored local-captures folder
+# containing one .ids/.pools.txt pair per game, including the legacy snapshot pairs.
 # Set them only if you keep things somewhere else.
 # tables      = "tables"
 # snapshots   = "snapshots"

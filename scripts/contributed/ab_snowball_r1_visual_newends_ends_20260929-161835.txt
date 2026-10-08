@@ -1,0 +1,12 @@
+_beige_r
+_bench_04
+_dark_pd
+_glyph_05
+_glyph_06
+_player5_knife
+_player5_pistol
+_player6_pistol
+_sh050_bruno
+_single_npc
+_single_plr
+_skirt_gradient

@@ -20,6 +20,7 @@ pub mod config;
 pub mod disk;
 pub mod github;
 pub mod tables;
+pub mod database;
 pub mod paths;
 pub mod snapshot;
 pub mod search;
@@ -43,6 +44,8 @@ pub mod cordycep;
 pub mod memory;
 
 /// The hash the tools use: FNV-1a, 64 bit.
+pub mod games;
+
 pub const BASIS: u64 = 0xCBF2_9CE4_8422_2325;
 pub const PRIME: u64 = 0x0000_0100_0000_01B3;
 
@@ -284,7 +287,9 @@ pub fn pools() -> &'static [&'static str] {
 pub fn pools_for(game: &str) -> &'static [&'static str] {
     match game {
         "BLKOPS04" => BO4_POOLS,
-        _ => POOLS,
+        "BLKOPSCW" => POOLS,
+        game if games::modern(game) => games::pools_for(game),
+        other => panic!("unsupported game {other}"),
     }
 }
 
@@ -296,7 +301,7 @@ pub fn pools_for(game: &str) -> &'static [&'static str] {
 /// than guessing.
 pub fn pool_label(index: usize) -> String {
     match pools().get(index) {
-        Some(name) => (*name).to_owned(),
+        Some(name) => games::canonical(name).to_owned(),
         None => format!("pool_{index}"),
     }
 }
@@ -313,7 +318,7 @@ pub fn pool_label(index: usize) -> String {
 /// are the ones where the games genuinely chose different words. Black Ops 4 has no separate
 /// `sound_asset` at all, so it falls back to its one `sound` pool.
 const ALIASES: &[&[&str]] = &[
-    &["sound_asset", "sound"],
+    &["sound_asset", "sound", "sndasset"],
     &["com_map", "comworld"],
     &["game_map", "gameworld"],
     &["gfx_map", "gfxworld"],
@@ -563,6 +568,12 @@ pub fn read_rows(path: &Path) -> Vec<(u64, String)> {
 
 /// The names out of a 'hash,name' file, or the plain lines of one that is not.
 pub fn read_names(path: &Path) -> Vec<String> {
+    if path.extension().and_then(|s|s.to_str()) == Some("csv") {
+        let table=path.file_stem().and_then(|s|s.to_str()).unwrap_or("");
+        if table.starts_with("fnv1a_") {
+            return database::names(table,&fs::read_to_string(path).unwrap_or_default());
+        }
+    }
     fs::read_to_string(path)
         .unwrap_or_default()
         .lines()
@@ -609,7 +620,8 @@ pub fn read_list(path: &Path) -> Vec<String> {
 
 /// The names one table holds.
 pub fn table_names(table: &str) -> Vec<String> {
-    read_names(&tables::csv_folder(&paths::tables()).join(format!("{table}.csv")))
+    let path = tables::csv_folder(&paths::tables()).join(format!("{table}.csv"));
+    database::names(table, &fs::read_to_string(path).unwrap_or_default())
 }
 
 /// Every name every table holds.
@@ -628,7 +640,7 @@ pub fn all_table_names() -> Vec<String> {
     for entry in entries.flatten() {
         let path = entry.path();
         if path.extension().and_then(|e| e.to_str()) == Some("csv") {
-            names.extend(read_names(&path));
+            names.extend(table_names(path.file_stem().and_then(|s| s.to_str()).unwrap_or("")));
         }
     }
 
@@ -641,38 +653,28 @@ pub fn all_table_names() -> Vec<String> {
 /// new find whoever it belongs to. Both the stored key and the hash of the stored name are taken,
 /// since a table can hold one at a different width from the other.
 pub fn table_keys() -> HashSet<u64> {
+    database_keys(&tables::csv_folder(&paths::tables()), &config::game())
+}
+
+/// Stored keys always exclude known assets. Rehashed names must first reproduce their source key.
+pub fn database_keys(folder: &Path, game: &str) -> HashSet<u64> {
     let mut known = HashSet::new();
-
-    let Ok(entries) = fs::read_dir(tables::csv_folder(&paths::tables())) else {
-        return known;
-    };
-
+    let Ok(entries) = fs::read_dir(folder) else { return known; };
     for entry in entries.flatten() {
         let path = entry.path();
-        if path.extension().and_then(|e| e.to_str()) != Some("csv") {
-            continue;
-        }
-
-        let Ok(text) = fs::read_to_string(&path) else {
-            continue;
-        };
-
-        for line in text.lines() {
-            let Some((key, name)) = line.split_once(',') else {
-                continue;
-            };
-
-            if let Ok(value) = u64::from_str_radix(key.trim(), 16) {
-                known.insert(value);
-                known.insert(value & ID_MASK);
+        if path.extension().and_then(|e| e.to_str()) != Some("csv") { continue; }
+        let table = path.file_stem().and_then(|s| s.to_str()).unwrap_or("");
+        if games::modern(game) && !games::MODERN_TABLES.contains(&table) { continue; }
+        let Ok(text) = fs::read_to_string(&path) else { continue; };
+        for row in text.lines() {
+            let Some((key,display)) = row.split_once(',') else { continue; };
+            let Ok(key) = u64::from_str_radix(key.trim(),16) else { continue; };
+            known.extend([key,key & ID_MASK]);
+            if let Some((full,_)) = database::verified_row(table,key,display) {
+                known.extend([full,full & ID_MASK]);
             }
-
-            let hash = hash64(name.trim());
-            known.insert(hash);
-            known.insert(hash & ID_MASK);
         }
     }
-
     known
 }
 
@@ -931,7 +933,7 @@ impl Results {
     pub fn ids(&self) -> HashSet<u64> {
         self.by_kind
             .values()
-            .flat_map(|rows| rows.keys().copied())
+            .flat_map(|rows| rows.keys().map(|id| id & ID_MASK))
             .collect()
     }
 
@@ -1011,6 +1013,12 @@ impl Results {
             println!("  unusual, kept: {id:x},{name}\n    {why}");
         }
 
+        let game = config::game();
+        let id = if games::modern(&game) && kind == "sound_alias" {
+            let expected = games::output_key(&game, kind, &name, !self.keep_spelling);
+            assert_eq!(expected & ID_MASK, id & ID_MASK, "alias name does not reproduce captured id");
+            expected
+        } else { id };
         let rows = self.by_kind.entry(kind.to_owned()).or_default();
 
         if rows.contains_key(&id) {

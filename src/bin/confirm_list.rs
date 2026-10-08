@@ -31,7 +31,7 @@ use slasher::fingerprint::{Fingerprint, SketchStream};
 use slasher::loader::{loaded_assets, wanted_for_search};
 use slasher::{futility, 
     config, feed, feed_raw, low_value_reason, paths, pool_label, readiness, recon, table_keys,
-    tables_look_complete, Filter, Results, RunNote, BASIS, ID_MASK,
+    tables_look_complete, Filter, Results, RunNote, ID_MASK,
 };
 
 /// Pools no rule can reach. A mesh name ends in twenty-six characters of base32 that are a hash
@@ -145,6 +145,7 @@ fn main() {
 
     // The filter answers the overwhelming majority of candidates without touching the map, which
     // is what lets this keep up with a generator rather than becoming the bottleneck itself.
+    let policies = slasher::games::groups(&wanted);
     let filter = Filter::sized(wanted.keys(), wanted.len());
 
     // A run that did not fold must keep its names spelled exactly as they were hashed;
@@ -167,6 +168,10 @@ fn main() {
     for source in &sources {
         let mut reader: Box<dyn Read> = if source == "-" {
             Box::new(std::io::stdin())
+        } else if Path::new(source).extension().and_then(|s|s.to_str()) == Some("csv")
+            && Path::new(source).file_stem().and_then(|s|s.to_str()).is_some_and(|s|s.starts_with("fnv1a_")) {
+            // A source database CSV contains export paths, not necessarily original names.
+            Box::new(std::io::Cursor::new(slasher::read_names(Path::new(source)).join("\n").into_bytes()))
         } else {
             match std::fs::File::open(source) {
                 Ok(file) => Box::new(file),
@@ -219,7 +224,7 @@ fn main() {
                 }
             }
 
-            let (hits, counted, chunk_digest) = sweep(&text, &filter, &wanted, threads, fold);
+            let (hits, counted, chunk_digest) = sweep(&text, &filter, &wanted, threads, fold, &policies);
             digest = digest.wrapping_add(chunk_digest);
             seen.fetch_add(counted, Ordering::Relaxed);
             matched += file_them(hits, &wanted, &mut results);
@@ -244,7 +249,7 @@ fn main() {
 
         if !carry.is_empty() {
             carry.push(b'\n');
-            let (hits, counted, chunk_digest) = sweep(&carry, &filter, &wanted, threads, fold);
+            let (hits, counted, chunk_digest) = sweep(&carry, &filter, &wanted, threads, fold, &policies);
             digest = digest.wrapping_add(chunk_digest);
             seen.fetch_add(counted, Ordering::Relaxed);
             matched += file_them(hits, &wanted, &mut results);
@@ -377,9 +382,10 @@ fn fill(reader: &mut Box<dyn Read>, buffer: &mut [u8]) -> usize {
 fn sweep(
     text: &[u8],
     filter: &Filter,
-    wanted: &HashMap<u64, usize>,
+    _wanted: &HashMap<u64, usize>,
     threads: usize,
     fold: bool,
+    policies: &[(u64, HashMap<u64, usize>)],
 ) -> (Vec<(u64, String)>, u64, u64) {
     // Split the text into as many pieces as there are threads, each ending on a line boundary.
     let mut bounds = vec![0_usize];
@@ -424,16 +430,13 @@ fn sweep(
 
                     // Lower cased always; backslashes folded unless this is the one pool whose
                     // names keep them. See `slasher::feed_raw`.
-                    let hash = if fold {
-                        feed(BASIS, candidate)
-                    } else {
-                        feed_raw(BASIS, candidate)
-                    };
-                    digest = digest.wrapping_add(hash);
-
-                    let id = hash & ID_MASK;
-                    if filter.may_hold(id) && wanted.contains_key(&id) {
-                        found.push((id, String::from_utf8_lossy(candidate).into_owned()));
+                    for (basis, targets) in policies {
+                        let hash = if fold { feed(*basis, candidate) } else { feed_raw(*basis, candidate) };
+                        digest = digest.wrapping_add(hash);
+                        let id = hash & ID_MASK;
+                        if filter.may_hold(id) && targets.contains_key(&id) {
+                            found.push((id, String::from_utf8_lossy(candidate).into_owned()));
+                        }
                     }
                 }
 
@@ -557,6 +560,26 @@ fn argument(arguments: &[String], flag: &str) -> Option<String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn streaming_candidates_follow_the_target_pools_hash_policy() {
+        let asset = "iw9.dst.iw9_dst_street_barricade_03.ln.75.48000.all";
+        let alias = "test_alias";
+        let asset_id = slasher::feed(slasher::games::IW_BASIS, asset.as_bytes()) & ID_MASK;
+        let alias_id = slasher::hash64(alias) & ID_MASK;
+        let ordinary = HashMap::from([(asset_id, 17)]);
+        let aliases = HashMap::from([(alias_id, 364)]);
+        let wanted = HashMap::from([(asset_id, 17), (alias_id, 364)]);
+        let policies = vec![(slasher::games::IW_BASIS, ordinary), (slasher::BASIS, aliases)];
+        let filter = Filter::new(wanted.keys());
+        let text = format!("{asset}\r\n{alias}\nunknown_fixture\n");
+        let (hits, counted, _) = sweep(text.as_bytes(), &filter, &wanted, 2, true, &policies);
+        assert_eq!(counted, 3);
+        assert_eq!(hits.into_iter().collect::<HashMap<_, _>>(), HashMap::from([(asset_id, asset.to_owned()), (alias_id, alias.to_owned())]));
+        // A hash at the right value in a pool belonging to the other policy is not a find.
+        let swapped = vec![(slasher::BASIS, HashMap::from([(asset_id, 17)])), (slasher::games::IW_BASIS, HashMap::from([(alias_id, 364)]))];
+        assert!(sweep(text.as_bytes(), &filter, &wanted, 2, true, &swapped).0.is_empty());
+    }
 
     fn args(list: &[&str]) -> Vec<String> {
         list.iter().map(|value| (*value).to_owned()).collect()

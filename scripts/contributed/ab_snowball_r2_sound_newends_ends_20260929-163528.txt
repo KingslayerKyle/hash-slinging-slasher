@@ -1,0 +1,6 @@
+_bowling_c
+_bowling_g
+_sh030_door
+_shelter_dirt
+_shelter_rust
+_vial_01

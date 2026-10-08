@@ -11,7 +11,7 @@ use std::collections::HashMap;
 use std::sync::atomic::{AtomicBool, AtomicU64, AtomicUsize, Ordering};
 use std::time::{Duration, Instant};
 
-use crate::{expected_by_chance, feed, feed_raw, hash64, hash64_raw, peel, peel_raw, Filter, BASIS, ID_MASK};
+use crate::{expected_by_chance, feed, feed_raw, peel, peel_raw, Filter, BASIS, ID_MASK};
 
 /// How many entries a batch of peeled endings is allowed to reach.
 ///
@@ -49,6 +49,8 @@ pub struct Meet<'a> {
     /// search that matches nothing at all and looks entirely healthy doing it. One flag, six
     /// places derived from it, no way for them to drift apart.
     fold: bool,
+    basis: u64,
+    explicit_basis: bool,
 }
 
 /// One batch of endings, peeled off every wanted id.
@@ -114,17 +116,25 @@ impl<'a> Meet<'a> {
     }
 
     fn with_fold(openings: &[String], endings: &'a [String], fold: bool) -> Self {
+        let mut result = Self::with_basis(openings, endings, BASIS, fold);
+        result.explicit_basis = false;
+        result
+    }
+
+    pub fn with_basis(openings: &[String], endings: &'a [String], basis: u64, fold: bool) -> Self {
         Self {
             openings: openings
                 .iter()
                 .map(|opening| {
-                    let hash = if fold { hash64(opening) } else { hash64_raw(opening) };
+                    let hash = if fold { feed(basis, opening.as_bytes()) } else { feed_raw(basis, opening.as_bytes()) };
                     (opening.clone(), hash)
                 })
                 .collect(),
             endings,
             bare: true,
             fold,
+            basis,
+            explicit_basis: true,
         }
     }
 
@@ -168,6 +178,16 @@ impl<'a> Meet<'a> {
         wanted: &HashMap<u64, usize>,
         checkpoint: &mut dyn FnMut(&[(u64, String)]),
     ) -> Vec<(u64, String)> {
+        if !self.explicit_basis && crate::games::modern(&crate::config::game()) {
+            let openings: Vec<_> = self.openings.iter().map(|(s, _)| s.clone()).collect();
+            let mut all = Vec::new();
+            for (basis, targets) in crate::games::groups(wanted) {
+                let mut search = Self::with_basis(&openings, self.endings, basis, self.fold);
+                search.bare = self.bare;
+                all.extend(search.run_checkpointed(stems, &targets, checkpoint));
+            }
+            return all;
+        }
         let threads = std::thread::available_parallelism()
             .map(|count| count.get())
             .unwrap_or(8);
@@ -321,7 +341,7 @@ impl<'a> Meet<'a> {
 
             if self.bare {
                 counted += 1;
-                if peeled.holds(self.feed(BASIS, piece)) {
+                if peeled.holds(self.feed(self.basis, piece)) {
                     reached.push(Self::mark(base + offset, BARE));
                 }
             }
@@ -379,7 +399,7 @@ impl<'a> Meet<'a> {
             let stem = stem.as_ref();
 
             let (prefix, base) = if opening == BARE {
-                ("", BASIS)
+                ("", self.basis)
             } else {
                 let (text, hash) = &self.openings[opening];
                 (text.as_str(), *hash)
@@ -426,17 +446,27 @@ pub struct Search {
     /// It is for a scraped string, which may already be the whole name; it is not where the stem
     /// is a fragment that is known to need dressing.
     bare: bool,
+    basis: u64,
+    explicit_basis: bool,
 }
 
 impl Search {
     pub fn new(openings: &[String], endings: &[String]) -> Self {
+        let mut result = Self::with_basis(openings, endings, BASIS);
+        result.explicit_basis = false;
+        result
+    }
+
+    pub fn with_basis(openings: &[String], endings: &[String], basis: u64) -> Self {
         Self {
             openings: openings
                 .iter()
-                .map(|opening| (opening.clone(), hash64(opening)))
+                .map(|opening| (opening.clone(), feed(basis, opening.as_bytes())))
                 .collect(),
             endings: endings.to_vec(),
             bare: true,
+            basis,
+            explicit_basis: true,
         }
     }
 
@@ -463,6 +493,16 @@ impl Search {
         stems: &[S],
         wanted: &HashMap<u64, usize>,
     ) -> Vec<(u64, String)> {
+        if !self.explicit_basis && crate::games::modern(&crate::config::game()) {
+            let openings: Vec<_> = self.openings.iter().map(|(s, _)| s.clone()).collect();
+            let mut all = Vec::new();
+            for (basis, targets) in crate::games::groups(wanted) {
+                let mut search = Self::with_basis(&openings, &self.endings, basis);
+                search.bare = self.bare;
+                all.extend(search.run(stems, &targets));
+            }
+            return all;
+        }
         let filter = Filter::new(wanted.keys());
 
         let threads = std::thread::available_parallelism()
@@ -572,7 +612,7 @@ impl Search {
             let piece = stem.as_bytes();
 
             if self.bare {
-                let plain = feed(BASIS, piece);
+                let plain = feed(self.basis, piece);
                 test!(plain, stem.to_string());
 
                 for ending in &self.endings {
@@ -685,7 +725,7 @@ pub fn run_best<S: AsRef<str> + Sync>(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::id_of;
+    use crate::{id_of, hash64, hash64_raw};
 
     /// The whole of the fast search rests on the hash running backwards exactly, so this is the
     /// test that matters most: peeling a string off a hash has to give back what was there

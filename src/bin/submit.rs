@@ -23,7 +23,7 @@ use std::process::{Command, Stdio};
 use std::sync::OnceLock;
 
 use slasher::{
-    config, expected_by_chance, github, hash64, low_value_reason, paths, recon, stamp, strip_stamp,
+    config, expected_by_chance, github, low_value_reason, paths, recon, stamp, strip_stamp,
     tables, ID_MASK,
 };
 
@@ -155,17 +155,6 @@ fn main() {
         }
     };
 
-    let known = known_hashes(&table_folder);
-    if known.len() < 1_000_000 {
-        eprintln!(
-            "the tables read short at {} hashes, which means they moved rather than that the game \
-             got smaller. Not submitting.",
-            known.len()
-        );
-        std::process::exit(1);
-    }
-    println!("{} hashes already published", known.len());
-
     // 4b. What everybody else has claimed, asked of GitHub *now*.
     //
     //     The tables only know what has been merged and published upstream, which lags by days.
@@ -203,7 +192,8 @@ fn main() {
     //    and that is what groups them here.
     let mut by_game: std::collections::BTreeMap<String, Vec<PathBuf>> = Default::default();
     for folder in pending {
-        let game = paths::game_of(&folder).unwrap_or_else(config::game);
+        let game = paths::game_of(&folder).expect("run must live under its game's findings directory");
+        assert!(config::GAMES.contains(&game.as_str()), "unsupported submission game {game}");
         by_game.entry(game).or_default().push(folder);
     }
 
@@ -212,6 +202,12 @@ fn main() {
 
     for (game, runs) in &by_game {
         println!("\n--- {game} ---");
+        let known = known_hashes(&table_folder, game);
+        if !slasher::tables_look_complete(&known) {
+            eprintln!("{game}: tables read short at {} hashes; refusing to submit", known.len());
+            std::process::exit(1);
+        }
+        println!("{} hashes already published for {game}'s hash family", known.len());
 
         if let Some(url) = send(game, runs, &repo, &outbox, &who, &known, &landscape, &cached) {
             println!("\nsubmitted: {url}");
@@ -226,18 +222,16 @@ fn main() {
     }
 }
 
-/// Sends one game's runs, and returns the pull request it opened.
-#[allow(clippy::too_many_arguments)]
-fn send(
-    game: &str,
-    pending: &[PathBuf],
-    repo: &str,
-    outbox: &Path,
-    who: &str,
-    known: &HashSet<u64>,
-    landscape: &recon::Landscape,
-    cached: &HashSet<u64>,
-) -> Option<String> {
+/// Pure local part of submission, shared with offline regression tests.
+struct PreparedBatch {
+    rows: Vec<(String, u64, String)>,
+    dropped: usize,
+    claimed_elsewhere: usize,
+    claimed_names: HashSet<String>,
+    worthless: std::collections::BTreeMap<String, usize>,
+}
+
+fn prepare_batch(game: &str, pending: &[PathBuf], known: &HashSet<u64>, landscape: &recon::Landscape, cached: &HashSet<u64>) -> PreparedBatch {
     // Drop anything already claimed: published in the tables, merged into submissions, or sitting
     // in somebody's open pull request. This is the cheap part and the whole reason a long grind
     // does not have to be redone when the world moves under it.
@@ -266,7 +260,7 @@ fn send(
             // the one that keeps its backslashes they are the same number, and for that one they
             // are not. Excluding on either is right: a name already published is already
             // published however it was reached.
-            let hash = hash64(&name);
+            let hash = slasher::games::hash(game, &kind, &name, true);
             let seen = |set: &HashSet<u64>| {
                 set.contains(&id) || set.contains(&hash) || set.contains(&(hash & ID_MASK))
             };
@@ -285,6 +279,42 @@ fn send(
             batch.push((kind, id, name));
         }
     }
+
+    batch.sort();
+    batch.dedup();
+    PreparedBatch { rows: batch, dropped, claimed_elsewhere, claimed_names, worthless }
+}
+
+/// Serialize the exact matched keys; do not rehash display paths or truncate aliases.
+fn write_batch_files(folder: &Path, when: &str, batch: &[(String,u64,String)]) -> std::io::Result<std::collections::BTreeMap<String, Vec<(u64,String)>>> {
+    fs::create_dir_all(folder)?;
+    let mut by_kind: std::collections::BTreeMap<String, Vec<(u64,String)>> = Default::default();
+    for (kind,id,name) in batch { by_kind.entry(kind.clone()).or_default().push((*id,name.clone())); }
+    for (kind,names) in &by_kind {
+        let mut text=String::new();
+        for (id,name) in names { text.push_str(&format!("{id:x},{name}\n")); }
+        fs::write(folder.join(format!("{kind}_{when}.txt")),text)?;
+    }
+    Ok(by_kind)
+}
+
+fn submission_title(game: &str, who: &str, when: &str, names: usize) -> String {
+    format!("[{game}] findings from {who}, {when} ({names} names)")
+}
+
+/// Sends one game's runs, and returns the pull request it opened.
+#[allow(clippy::too_many_arguments)]
+fn send(
+    game: &str,
+    pending: &[PathBuf],
+    repo: &str,
+    outbox: &Path,
+    who: &str,
+    known: &HashSet<u64>,
+    landscape: &recon::Landscape,
+    cached: &HashSet<u64>,
+) -> Option<String> {
+    let PreparedBatch { rows: mut batch, dropped, claimed_elsewhere, claimed_names, worthless } = prepare_batch(game, pending, known, landscape, cached);
 
     for (kind, count) in &worthless {
         println!(
@@ -364,27 +394,12 @@ fn send(
         std::process::exit(1);
     }
 
-    let mut by_kind: std::collections::BTreeMap<String, Vec<(u64, String)>> = Default::default();
-    for (kind, id, name) in &batch {
-        by_kind.entry(kind.clone()).or_default().push((*id, name.clone()));
-    }
-
+    let by_kind = write_batch_files(&folder, &when, &batch).unwrap_or_else(|error| {
+        eprintln!("could not write {}: {error}", folder.display());
+        std::process::exit(1);
+    });
     println!("\n{:<24} {:>8}", "type", "names");
-    for (kind, names) in &by_kind {
-        let path = folder.join(format!("{kind}_{when}.txt"));
-        let mut text = String::new();
-        for (id, name) in names {
-            // The id the run actually matched, never a fresh hash of the name. See `names_in`.
-            text.push_str(&format!("{id:x},{name}\n"));
-        }
-
-        if let Err(error) = fs::write(&path, text) {
-            eprintln!("could not write {}: {error}", path.display());
-            std::process::exit(1);
-        }
-
-        println!("{kind:<24} {:>8}", names.len());
-    }
+    for (kind,names) in &by_kind { println!("{kind:<24} {:>8}", names.len()); }
 
     // The collision estimate, recorded rather than enforced. It is vanishingly small for any
     // seeded method; it is worth carrying so a strange batch can be traced afterwards.
@@ -725,7 +740,7 @@ fn per_type(batch: &[(String, u64, String)]) -> String {
 /// and the submission should say so rather than pick one.
 ///
 /// The point is traceability. If a GPU backend is ever found to have a fault, the batches it
-/// produced can be identified and re-checked rather than guessed at — and provenance is cheap to
+/// produced can be identified and re-checked rather than guessed at â€” and provenance is cheap to
 /// write now and impossible to reconstruct afterwards.
 fn platforms_used(runs: &[PathBuf]) -> String {
     field_across(runs, "- platform: ", "not recorded (run predates this field)")
@@ -920,7 +935,7 @@ fn recover_stranded(findings: &Path, outbox: &Path) -> Vec<PathBuf> {
         //
         // An earlier version guessed Cold War for them. That is wrong and measurably so: the
         // largest of them, `GoastcraftHD_20260819-045229`, is the 13,858-name Black Ops 4 grind
-        // CLAUDE.md §4 describes -- 2,968 of its 3,026 xmodel ids are in `findings/blkops04`.
+        // CLAUDE.md Â§4 describes -- 2,968 of its 3,026 xmodel ids are in `findings/blkops04`.
         // Guessing made those names account for Cold War, where a genuinely stranded Cold War
         // name matching one of the 13,858 strings would then never be recovered. Silent loss, in
         // the function written to prevent it, and reachable through the 1,653 names both games
@@ -1136,7 +1151,7 @@ fn names_in(folder: &Path) -> Vec<(String, u64, String)> {
 
             let (id, name) = match line.split_once(',') {
                 Some((key, name)) => match u64::from_str_radix(key.trim(), 16) {
-                    Ok(id) => (id & ID_MASK, name.trim()),
+                    Ok(id) => (id, name.trim()),
                     Err(_) => continue,
                 },
                 None => continue,
@@ -1152,36 +1167,8 @@ fn names_in(folder: &Path) -> Vec<(String, u64, String)> {
 }
 
 /// Every hash the tables resolve: the stored key, and the hash of the stored name.
-fn known_hashes(folder: &Path) -> HashSet<u64> {
-    let mut known = HashSet::new();
-    let Ok(entries) = fs::read_dir(folder) else {
-        return known;
-    };
-
-    for entry in entries.flatten() {
-        let path = entry.path();
-        if path.extension().and_then(|e| e.to_str()) != Some("csv") {
-            continue;
-        }
-
-        let Ok(bytes) = fs::read(&path) else { continue };
-        for line in String::from_utf8_lossy(&bytes).lines() {
-            let Some((key, name)) = line.split_once(',') else {
-                continue;
-            };
-
-            if let Ok(value) = u64::from_str_radix(key.trim(), 16) {
-                known.insert(value);
-                known.insert(value & ID_MASK);
-            }
-
-            let hash = hash64(name.trim());
-            known.insert(hash);
-            known.insert(hash & ID_MASK);
-        }
-    }
-
-    known
+fn known_hashes(folder: &Path, game: &str) -> HashSet<u64> {
+    slasher::database_keys(folder,game)
 }
 
 fn already_sent(outbox: &Path) -> HashSet<String> {
@@ -1300,7 +1287,7 @@ fn open_pull_request(
     // The game leads the title. It is the first thing a reviewer needs, and a list of pull
     // requests cannot otherwise show which title a submission is for -- which matters now that
     // both games are ground rather than only whichever one the config happened to default to.
-    let title = format!("[{game}] findings from {who}, {when} ({names} names)");
+    let title = submission_title(game,who,when,names);
 
     // Push into a fork, unless this is the maintainer submitting to their own repository, where
     // there is nothing to fork and the branch simply goes straight in.
@@ -1453,7 +1440,7 @@ fn open_pull_request(
     };
 
     let body = format!(
-        "**{game}** — {names} asset names, confirmed against that game's own loaded assets.\n\n\
+        "**{game}** â€” {names} asset names, confirmed against that game's own loaded assets.\n\n\
 {breakdown}\n\
          **Checked against, at the moment of sending:** the community hash tables (refreshed \
          first), every merged submission in this repository, and every pull request open right \
@@ -1712,6 +1699,114 @@ fn base64(bytes: &[u8]) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use slasher::hash64;
+
+    #[test]
+    fn submission_exclusions_use_each_games_hash_family() {
+        let root = std::env::temp_dir().join(format!("submit_scopes_{}", std::process::id()));
+        fs::create_dir_all(&root).unwrap();
+        let name = "modern_asset_name";
+        let modern = slasher::games::hash("MODWAR22","image",name,true);
+        let legacy = hash64(name);
+        // Stored keys are authoritative; the spelling also excludes its correct hash family.
+        fs::write(root.join("fnv1a_ximages_v2.csv"), format!("{:x},{name}\n",modern&ID_MASK)).unwrap();
+        fs::write(root.join("fnv1a_ximages.csv"), "2,legacy_only_fixture\n").unwrap();
+        fs::write(root.join("fnv1a_soundbanks_aliases_v2.csv"), "92b109bc210b8729,alias_fixture\n").unwrap();
+        fs::write(root.join("fnv1a_xsounds_v2.csv"), "123,saluki/display/path.ln.75.all\n").unwrap();
+        for game in config::GAMES {
+            let known = known_hashes(&root,game);
+            if slasher::games::modern(game) {
+                assert!(known.contains(&modern) && known.contains(&(modern & ID_MASK)));
+                assert!(!known.contains(&legacy) && !known.contains(&2));
+                assert!(!known.contains(&(slasher::games::hash(game,"sound_asset","saluki/display/path.ln.75.all",true)&ID_MASK)));
+            } else { assert!(!known.contains(&legacy) && known.contains(&2)); }
+            assert!(known.contains(&0x92b109bc210b8729) && known.contains(&(0x92b109bc210b8729 & ID_MASK)));
+            assert!(known.contains(&0x123));
+        }
+        fs::remove_dir_all(root).unwrap();
+    }
+
+    #[test]
+    fn all_seven_games_preserve_matched_keys_paths_and_titles() {
+        let root = std::env::temp_dir().join(format!("submit_seven_games_{}", std::process::id()));
+        for game in config::GAMES {
+            let run = root.join(game.to_lowercase()).join("run_20261008-010000_test");
+            fs::create_dir_all(&run).unwrap();
+            let alias="fly_npc_ar_able18_ubgl_reload_07";
+            let sound=if game == &"BLKOPS04" { "amb\\environment\\water\\waves\\crash\\wave_crash_01.ln100.pc.snd" } else { "sound.fixture.ln.75.48000.all" };
+            let rows = vec![
+                ("image".to_owned(),slasher::games::output_key(game,"image","test_image",true),"test_image".to_owned()),
+                ("sound_alias".to_owned(),slasher::games::output_key(game,"sound_alias",alias,true),alias.to_owned()),
+                ("sound_asset".to_owned(),slasher::games::output_key(game,"sound_asset",sound,game != &"BLKOPS04"),sound.to_owned()),
+            ];
+            for (kind,id,name) in &rows { fs::write(run.join(format!("{kind}.txt")),format!("{id:x},{name}\n")).unwrap(); }
+            let prepared=prepare_batch(game,&[run.clone()],&HashSet::new(),&recon::Landscape::default(),&HashSet::new());
+            assert_eq!(prepared.rows.len(),3);
+            let into=root.join(format!("contributor_{game}_20261008-010000"));
+            write_batch_files(&into,"20261008-010000",&prepared.rows).unwrap();
+            let roundtrip:HashSet<_>=names_in(&into).into_iter().map(|(kind,id,name)|(strip_stamp(&kind).to_owned(),id,name)).collect();
+            assert_eq!(roundtrip,rows.into_iter().collect());
+            assert!(submission_title(game,"contributor","20261008-010000",3).starts_with(&format!("[{game}]")));
+            let alias_row=roundtrip.iter().find(|(kind,_,_)|kind=="sound_alias").unwrap();
+            assert_eq!(alias_row.1> ID_MASK,slasher::games::modern(game));
+        }
+        assert_eq!(run_folders(&root).len(),7);
+        fs::remove_dir_all(root).unwrap();
+    }
+
+    /// Optional offline audit against external captures and local tables. Never invokes main,
+    /// authentication, refresh, GitHub, commits, branches or the submission ledger.
+    #[test]
+    #[ignore]
+    fn offline_real_discovery_batches() {
+        let discoveries=PathBuf::from(std::env::var("HSS_TEST_DISCOVERIES").expect("HSS_TEST_DISCOVERIES required"));
+        let csv=PathBuf::from(std::env::var("HSS_TEST_CSV").expect("HSS_TEST_CSV required"));
+        let claims=PathBuf::from(std::env::var("HSS_TEST_CLAIMS").expect("HSS_TEST_CLAIMS required"));
+        let out=PathBuf::from(std::env::var("HSS_TEST_OUT").expect("HSS_TEST_OUT required"));
+        assert!(!out.exists(),"preserving existing audit output");
+        let cached:HashSet<_>=fs::read_to_string(claims).unwrap().lines().filter_map(|x|u64::from_str_radix(x.trim(),16).ok()).collect();
+        let mut summary=String::from("game,packaged,note\n");
+        for game in config::GAMES {
+            let run=discoveries.join(game.to_lowercase());
+            let expected:HashSet<_>=names_in(&run).into_iter().collect();
+            assert!(!expected.is_empty());
+            let known=known_hashes(&csv,game);
+            assert!(slasher::tables_look_complete(&known));
+            // The external database can advance after these names were discovered. Its
+            // stored capture keys decide which fixtures should now be held back.
+            let unpublished:HashSet<_>=expected.iter().filter(|(_,id,_)|
+                !known.contains(id) && !known.contains(&(id&ID_MASK)) &&
+                !cached.contains(id) && !cached.contains(&(id&ID_MASK))).cloned().collect();
+            let prepared=prepare_batch(game,&[run.clone(),run.clone()],&known,&recon::Landscape::default(),&cached);
+            assert_eq!(prepared.rows.iter().cloned().collect::<HashSet<_>>(),unpublished,"{game}: unpublished discoveries dropped or mutated, or published names retained");
+            // A cached claim must exclude exactly its one matched row, including full-width aliases.
+            if !prepared.rows.is_empty() {
+            let mut one_claim=cached.clone();
+            one_claim.insert(prepared.rows[0].1&ID_MASK);
+            let filtered=prepare_batch(game,&[run],&known,&recon::Landscape::default(),&one_claim);
+            assert_eq!(filtered.rows.len()+1,prepared.rows.len());
+            }
+            let into=out.join(format!("offline_{game}_20261008-010000"));
+            write_batch_files(&into,"20261008-010000",&prepared.rows).unwrap();
+            let roundtrip:HashSet<_>=names_in(&into).into_iter().map(|(kind,id,name)|(strip_stamp(&kind).to_owned(),id,name)).collect();
+            assert_eq!(roundtrip,unpublished);
+            summary.push_str(&format!("{game},{},passed exact serialization and claim exclusion; {} fixture(s) already published or claimed\n",prepared.rows.len(),expected.len()-unpublished.len()));
+        }
+        fs::write(out.join("audit.csv"),summary).unwrap();
+    }
+
+    #[test]
+    fn reading_a_modern_alias_does_not_clear_its_top_bit() {
+        let folder = std::env::temp_dir().join(format!("hss_alias_width_{}", std::process::id()));
+        fs::create_dir_all(&folder).unwrap();
+        let file = folder.join("sound_alias.txt");
+        fs::write(&file, "92b109bc210b8729,fly_npc_ar_able18_ubgl_reload_07\n").unwrap();
+        let rows = names_in(&folder);
+        assert_eq!(rows.len(), 1);
+        assert_eq!(rows[0].1, 0x92b109bc210b8729);
+        fs::remove_file(file).unwrap();
+        fs::remove_dir(folder).unwrap();
+    }
 
     /// A run killed mid-flight is sent by nobody and recovered by somebody.
     ///

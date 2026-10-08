@@ -1,0 +1,12 @@
+7190a4b7d72f284,wpn\smg\drum\plr\wpn_smg_drum_loop_act.ll100.pc.snd
+1b0010197ea54aa0,wpn\smg\drum\plr\wpn_smg_drum_stop_act.ln100.pc.snd
+29c8374bfcd2fa01,zmb\ai\gladiator\destroyer\vox\shrug\vox_shrug_02.ln100.pc.snd
+37421f71c42cd036,zmb\ai\gladiator\destroyer\vox\shrug\vox_shrug_01.ln100.pc.snd
+42505745809d37d5,wpn\smg\drum\plr\wpn_smg_drum_start.ln100.pc.snd
+457b45704c3630d5,wpn\smg\drum\plr\wpn_smg_drum_stop.ln100.pc.snd
+4b275d595c6262ee,wpn\smg\drum\lfe\wpn_smg_drum_loop_lfe.ll100.pc.snd
+4b51fd7f5cc10853,zmb\ai\gladiator\destroyer\vox\shrug\vox_shrug_00.ln100.pc.snd
+4b726a06492441a0,wpn\smg\drum\plr\wpn_smg_drum_start_act.ln100.pc.snd
+54dd9d731e9971bb,wpn\smg\drum\dist\wpn_smg_drum_loop_distant.ll100.pc.snd
+683d536c9710f8dd,wpn\smg\drum\lfe\wpn_smg_drum_lfe.ln100.pc.snd
+7bb5f4c3e07479b5,wpn\smg\drum\plr\wpn_smg_drum_loop.ll100.pc.snd

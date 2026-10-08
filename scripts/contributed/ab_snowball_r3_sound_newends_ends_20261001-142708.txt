@@ -1,0 +1,4 @@
+_decal_iconcatch
+_decalyellow_dirty
+_engine_decalyellow
+_machine_decalplastic

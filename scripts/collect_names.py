@@ -1,55 +1,22 @@
-"""The names this project has recovered, as one sorted file per game and asset type.
+"""Build hash-correct contribution lists, split by game and asset type.
 
     python scripts/collect_names.py            rebuild all_names/ from submissions/
-    python scripts/collect_names.py --check    say what would change, write nothing
+    python scripts/collect_names.py --check    report changes without writing
 
-Run by `.github/workflows/registry.yml` -- the `derived files` workflow -- whenever a submission
-lands, so `all_names/` in the repository root is always current. Running it by hand is only useful
-for checking it.
+The derived-files workflow rebuilds these lists on submissions and hash/capture changes.
+BO4, Cold War, MWII, MWIII, BO6, BO7 and MW7 each have one folder for their combined modes.
+Only merged submissions contribute names; private findings and community CSVs do not.
 
-## What it is for
+Tagged rows must reproduce their keys under the game's asset-type policy. Export-friendly
+separators are restored only when the supplied key proves them. Historical invalid rows stay
+in submissions and are listed in unverified.json, excluded from usable lists and counts.
 
-`submissions/` is the record of *who found what, when, and how* -- one folder per batch, and by
-2026-08-22 there were 280 of them. That shape is right for provenance and wrong for every other
-purpose. Anybody who wants "the names" -- to seed a generator, to hand a batch upstream, to check
-whether something is already known -- has to walk several hundred folders and merge them, and
-everybody has written that loop separately. So it is written once, here, and the answer committed.
+Older untagged rows are restored with the legacy policy, then rehashed per game and checked
+against the correct pool in each snapshot. A matching name is filed with each game's own key.
+Modern aliases retain 64-bit output keys while snapshot lookup always uses 63 bits.
 
-## Only the five types worth searching
-
-Submissions carry names for 105 asset types, because a general pass files whatever it lands on:
-`craftbackground`, `uimodeldatastruct`, `winddef`, one row each. Those are real names and they
-stay in `submissions/`, which is the record. They are not what anybody comes here for, and 99
-files holding a hundred rows between them would bury the six that matter. See `WANTED`.
-
-## Why it is split by game
-
-`AGENTS.md` §4 is blunt about this and it is not tidiness. The two games number their asset types
-differently -- `xmodel` is pool 6 in Cold War and 4 in Black Ops 4 -- so a file mixing them
-mislabels every row in it. The evidence is in the submissions themselves: both `clipmap` and
-`clip_map` appear, and both `localizeentry` and `localize_entry`, because those are the two games'
-own names for one pool.
-
-The same name appearing under both games is correct rather than duplication: Cold War carries a
-great deal of Black Ops 4's content, so a name confirmed against both games' ids is a fact about
-both.
-
-## The submissions that never said which game they were
-
-Twenty-three of them, from before the game went into the folder name, and they are not a rounding
-error -- 19,286 of the rows in the five wanted types. There is exactly one way to place them, and
-it is the way `games_holding` does it: **hash the name and ask each game's `.ids` snapshot whether
-it holds an asset under it.** That is the same question that made the name a find in the first
-place, asked again, so it is authoritative rather than a guess -- and a name both snapshots hold
-is filed under both, because it is genuinely a fact about both.
-
-`unplaced/` would hold anything neither snapshot carries. Nothing currently lands there.
-
-## The format
-
-`hash,name`, exactly as the submissions store it, sorted by name. Sorted for two reasons: it makes
-each rebuild a diff git can delta down to the lines that changed rather than storing 4 MB again,
-and it makes a name findable by eye.
+The six searchable asset types are emitted in name order, with deterministic tie breaking.
+Supported games with no merged findings have empty files and zero contribution counts.
 """
 import argparse
 import collections
@@ -92,9 +59,7 @@ STAMPED = re.compile(r"^(?P<who>.+?)_(?:(?P<game>[A-Z0-9]+)_)?(?P<when>\d{8}-\d{
 # the record; they are not what anybody comes here for, and a folder of 105 files where 99 hold
 # fewer than a hundred rows between them buries the six that matter.
 #
-# Both spellings of each, because the two games name their pools differently: Cold War writes
-# `localize_entry` where Black Ops 4 writes `localizeentry`, and the same split runs through the
-# map pools. Where a type has one spelling in both, one entry covers it.
+# Pool names are canonicalized before filtering; modern sndasset is sound_asset.
 WANTED = (
     "xmodel",
     "material",
@@ -120,41 +85,72 @@ def game_of(folder, files):
     return None
 
 
+SUPPORTED = ("BLKOPS04", "BLKOPSCW", "MODWAR22", "YAMYAMOK", "BLACKOP6", "BLACKOP7", "MODWAR7")
+
+
+def output_row(game, kind, name):
+    """Hash-correct spelling and output width, matching the search/submission tools."""
+    name = name.strip().lower()
+    if not (game == "BLKOPS04" and kind == "sound_asset"):
+        name = name.replace(chr(92), "/")
+    value = snapshot.fnv1a_nofold(name) if game == "BLKOPS04" and kind == "sound_asset" else snapshot.fnv1a(name, game, kind)
+    if not (game in snapshot.MODERN and kind == "sound_alias"):
+        value &= snapshot.ID_MASK
+    return "%x,%s" % (value, name)
+
+
+def verified_row(game, kind, row):
+    """Undo export separators only when the supplied game/type key proves the spelling."""
+    key, sep, display = row.partition(",")
+    if not sep or not display.strip():
+        return None
+    try:
+        key = int(key.strip(), 16)
+    except ValueError:
+        return None
+    for name in dict.fromkeys((display, display.replace(chr(92), "/"),
+                              display.replace("/", ".").replace(chr(92), "."),
+                              display.replace("/", chr(92)))):
+        canonical = output_row(game, kind, name)
+        if int(canonical.partition(",")[0], 16) == key:
+            return canonical
+    return None
+
+
 def snapshots_by_game():
-    """{game: {id}} for every snapshot the repository ships."""
+    """{game: {asset type: set of captured 63-bit ids}}; pool indexes are game-local."""
     held = {}
     for path in snapshot.snapshots():
         shot = snapshot.read(path)
-        held[shot.game.lower()] = {asset_id for asset_id, _ in shot.records}
+        if shot.game not in SUPPORTED:
+            raise ValueError("unsupported snapshot game: " + shot.game)
+        held[shot.game.lower()] = {kind: set(ids) for kind, ids in shot.by_pool().items() if kind in WANTED}
     return held
 
 
-def games_holding(row, held):
-    """Which games actually hold an asset under this row's name.
-
-    The fallback for the 23 submissions that predate the game going into the folder name -- 24,212
-    names, a quarter of the corpus, which would otherwise sit in an `unknown/` bucket nobody can
-    seed from. Filing them by *which game holds the id* is not a guess: it is the same question
-    that made the name a find in the first place, asked again.
-
-    A name can come back for both, and that is the right answer rather than a duplicate. Cold War
-    carries a great deal of Black Ops 4's content, so a great many names are genuinely facts about
-    both games.
-    """
-    _, _, name = row.partition(",")
-    name = name.strip()
-    if not name:
-        return []
-
-    value = snapshot.fnv1a(name)
-    masked = value & snapshot.ID_MASK
-
-    return [game for game, ids in held.items() if value in ids or masked in ids]
+def games_holding(row, held, kind):
+    """Restore an untagged legacy row, then confirm its game-specific hash in the right pool."""
+    # Untagged submissions predate modern support. Preserve BO4's literal sound paths.
+    legacy = verified_row("BLKOPS04", kind, row) or verified_row("BLKOPSCW", kind, row)
+    if legacy is None:
+        raise ValueError("untagged submission row does not reproduce its legacy key")
+    name = legacy.partition(",")[2]
+    holders = []
+    for game, pools in held.items():
+        canonical = output_row(game.upper(), kind, name)
+        key = int(canonical.partition(",")[0], 16) & snapshot.ID_MASK
+        if key in pools.get(kind, set()):
+            holders.append((game, canonical))
+    return holders
 
 
-def collect():
+def collect(unverified=None):
     """{(game, type): {row}} across every submission on disk."""
     gathered = collections.defaultdict(set)
+    # Empty files make supported games visible before their first merged submission.
+    for tag in SUPPORTED:
+        for kind in WANTED:
+            gathered[(tag.lower(), kind)]
     skipped = collections.Counter()
     held = snapshots_by_game()
     resolved = unresolved = 0
@@ -165,12 +161,15 @@ def collect():
 
         files = sorted(glob.glob(os.path.join(folder, "*")))
         game = game_of(folder, files)
+        if game and game.upper() not in SUPPORTED:
+            raise ValueError("unsupported submission game: " + game)
 
         for path in files:
             if not path.endswith(".txt"):
                 continue
 
             kind = re.sub(r"_\d{8}-\d{6}$", "", os.path.splitext(os.path.basename(path))[0])
+            kind = "sound_asset" if kind == "sndasset" else kind
             if kind not in WANTED:
                 skipped[kind] += 1
                 continue
@@ -182,31 +181,39 @@ def collect():
                         continue
 
                     if game:
-                        gathered[(game, kind)].add(line)
+                        canonical = verified_row(game.upper(), kind, line)
+                        if canonical is None:
+                            if unverified is not None:
+                                unverified.append({"source": os.path.relpath(path, ROOT).replace(chr(92), "/"),
+                                                   "game": game, "type": kind, "row": line})
+                            continue
+                        gathered[(game, kind)].add(canonical)
                         continue
 
-                    # No game recorded anywhere in this submission: ask the snapshots instead.
-                    #
-                    # Filed under **every** game that holds it, not the first. If Black Ops 4's
-                    # snapshot holds an asset under this name's hash then the name is a fact about
-                    # Black Ops 4, whoever happened to confirm it and against whichever game.
-                    holders = games_holding(line, held)
-                    for holder in holders:
-                        gathered[(holder, kind)].add(line)
+                    # No game recorded: rehash for each game and confirm the same asset type.
+                    try:
+                        holders = games_holding(line, held, kind)
+                    except ValueError:
+                        if unverified is not None:
+                            unverified.append({"source": os.path.relpath(path, ROOT).replace(chr(92), "/"),
+                                               "game": None, "type": kind, "row": line})
+                        continue
+                    for holder, canonical in holders:
+                        gathered[(holder, kind)].add(canonical)
 
                     if holders:
                         resolved += 1
                     else:
-                        # Neither snapshot holds it. Almost certainly a pool the snapshots do not
+                        # No snapshot holds it. Almost certainly a pool the snapshots do not
                         # carry rather than a bad name, so it is kept and labelled rather than
                         # dropped -- results only ever grow.
-                        gathered[("unplaced", kind)].add(line)
+                        gathered[("unplaced", kind)].add(verified_row("BLKOPS04", kind, line) or verified_row("BLKOPSCW", kind, line))
                         unresolved += 1
 
     if skipped:
         print(
             "  %d file(s) across %d other asset type(s) left in submissions/ only; %s holds the "
-            "five that matter." % (sum(skipped.values()), len(skipped), FOLDER)
+            "six that matter." % (sum(skipped.values()), len(skipped), FOLDER)
         )
 
     if resolved or unresolved:
@@ -238,7 +245,7 @@ def write(gathered, check):
     written = []
 
     for (game, kind), rows in sorted(gathered.items()):
-        body = "\n".join(sorted(rows, key=sort_key)) + "\n"
+        body = "\n".join(sorted(rows, key=sort_key)) + ("\n" if rows else "")
         path = os.path.join(ROOT, FOLDER, game, kind + ".txt")
 
         existing = ""
@@ -246,7 +253,7 @@ def write(gathered, check):
             with open(path, encoding="utf-8", errors="replace") as handle:
                 existing = handle.read()
 
-        if existing != body:
+        if not os.path.exists(path) or existing != body:
             changed += 1
             if not check:
                 os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -371,15 +378,19 @@ def write_index(written, check):
 
     # The tables first and side by side. They are the reason anybody opens this file, and stacked
     # they pushed every word of explanation below two screens of whitespace.
-    lines += ["<table><tr>"]
-    for game in games:
+    lines += ["<table>"]
+    for index, game in enumerate(games):
+        if index % 2 == 0:
+            lines.append("<tr>")
         rows = in_display_order(by_game[game])
         lines.append('<td valign="top">')
         lines.append("")
         lines += game_table(game, rows, coverage)
         lines.append("")
         lines.append("</td>")
-    lines += ["</tr></table>", ""]
+        if index % 2 == 1 or index == len(games) - 1:
+            lines.append("</tr>")
+    lines += ["</table>", ""]
 
     if coverage:
         measured = ""
@@ -468,20 +479,22 @@ def write_index(written, check):
         "",
         "## Why it is split by game",
         "",
-        "The two games number their asset types differently -- `xmodel` is pool 6 in Cold War and 4 in",
-        "Black Ops 4 -- so a file mixing them mislabels every row. You can see it in the type names",
-        "themselves: both `clipmap` and `clip_map` appear, and both `localizeentry` and",
-        "`localize_entry`, because those are the two games' own names for one pool.",
+        "Each game has its own asset pools and hash rules, including injected sound pools.",
+        "The supported games are BO4, Cold War, MWII, MWIII, BO6, BO7 and MW7. Each game's",
+        "MP/SP modes share one snapshot and one output folder.",
         "",
-        "A name appearing under both games is not duplication. Cold War carries a great deal of Black",
-        "Ops 4's content, and a name confirmed against both games' ids is a fact about both.",
+        "Older submissions without a game tag are placed by rehashing each original name for",
+        "each game and checking the matching asset type in its snapshot. A name held by several",
+        "games appears in each, with that game's own hash. Modern sound aliases retain all 64 bits.",
         "",
-        "Twenty-three submissions predate the game going into the folder name. They are placed by",
-        "hashing each name and asking each game's `.ids` snapshot whether it holds an asset under it",
-        "-- the same question that made the name a find. A name both snapshots hold is filed under",
-        "both, because it is genuinely a fact about both.",
+        "Export-friendly separators are restored only when they reproduce the stored key.",
+        "Every published row's name hashes back to its hash using its game and asset type rules.",
+        "Games with no merged findings yet have empty files and a zero found-here count.",
+        "Local findings and cod-name-db names are not copied into these contribution lists.",
+        "Historical rows that cannot reproduce their keys remain in the submissions and are",
+        "listed in `unverified.json`; they are excluded from the usable lists and counts.",
         "",
-        "Only the five asset types worth searching are here. Submissions carry names for 105 types;",
+        "Only the six asset types worth searching are here. Other submitted asset types are retained in the history;",
         "the rest stay in `submissions/`, which is the record.",
         "",
     ]
@@ -508,7 +521,7 @@ def write_index(written, check):
 def write_summary(written, check):
     """The same figures as the README, as JSON, for anything that is not a person.
 
-    The README is HTML so it can put two tables side by side, which is right for a reader and
+    The README is HTML so it can put game tables side by side, which is right for a reader and
     wrong for a program: scraping it would break the next time anybody touches the layout. So the
     numbers are written once more in a shape a bot can read, and the two never have to agree by
     hand because both come from this function's caller.
@@ -566,7 +579,8 @@ def main(argv):
     parser.add_argument("--check", action="store_true", help="report what would change, write nothing")
     options = parser.parse_args(argv)
 
-    gathered = collect()
+    unverified = []
+    gathered = collect(unverified)
     if not gathered:
         raise SystemExit(
             "no submissions on disk, so there is nothing to collect. Run `start` first -- the\n"
@@ -576,6 +590,19 @@ def main(argv):
     changed, written = write(gathered, options.check)
     changed += write_index(written, options.check)
     changed += write_summary(written, options.check)
+    audit_path = os.path.join(ROOT, FOLDER, "unverified.json")
+    audit_body = json.dumps(unverified, indent=2, sort_keys=True) + "\n"
+    existing_audit = ""
+    if os.path.exists(audit_path):
+        with open(audit_path, encoding="utf-8") as handle:
+            existing_audit = handle.read()
+    if existing_audit != audit_body:
+        changed += 1
+        if not options.check:
+            with open(audit_path, "w", encoding="utf-8", newline="\n") as handle:
+                handle.write(audit_body)
+    if unverified:
+        print("  %d unverified historical row(s) preserved in unverified.json, excluded from counts." % len(unverified))
 
     names = sum(count for _, _, count in written)
     games = len({game for game, _, _ in written})

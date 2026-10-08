@@ -4,7 +4,7 @@
     python scripts/announce_names.py --dry-run  print the payload, send nothing
 
 Reads `all_names/summary.json`, which `collect_names.py` writes beside the README. The README is
-HTML so it can put two tables side by side, which is right for a reader and wrong for a program:
+HTML so it can put game tables side by side, which is right for a reader and wrong for a program:
 scraping it would break the next time anybody touches the layout. This reads the JSON instead, so
 the page and the announcement can each change without the other noticing.
 
@@ -41,9 +41,11 @@ REPO = "https://github.com/KingslayerKyle/hash-slinging-slasher"
 #
 # Kept short on purpose. These become the heading of an inline embed field, which is about half
 # the card's width, and a heading that wraps to a second line pushes that column's rows down --
-# so the two games stop lining up with each other. "Black Ops Cold War" wrapped; "Cold War" does
+# so game columns stay easy to compare. "Black Ops Cold War" wrapped; "Cold War" does
 # not. Check the card after changing one.
-NICE = {"blkops04": "Black Ops 4", "blkopscw": "Cold War"}
+NICE = {"blkops04": "Black Ops 4", "blkopscw": "Cold War",
+        "modwar22": "Modern Warfare II", "yamyamok": "Modern Warfare III",
+        "blackop6": "Black Ops 6", "blackop7": "Black Ops 7", "modwar7": "MW7"}
 
 # GitHub green, so the card reads as a repository update rather than an alert.
 COLOUR = 0x2EA043

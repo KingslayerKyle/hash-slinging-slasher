@@ -15,7 +15,7 @@ use std::path::Path;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::time::Instant;
 
-use slasher::{feed, hash64, read_list, ID_MASK};
+use slasher::{feed, read_list, ID_MASK};
 
 const HEX: [u8; 16] = *b"0123456789abcdef";
 const SEPARATORS: [&str; 5] = ["#", "", "_", ".", "@"];
@@ -63,7 +63,7 @@ fn sweep(seed: u64, target: u64, label: &str) {
 
 fn main() {
     let began = Instant::now();
-    assert_eq!(feed(hash64("mc/a"), b"bc#0"), hash64("mc/abc#0"));
+    assert_eq!(feed(slasher::games::hash(&slasher::config::game(), "techset", "mc/a", true), b"bc#0"), slasher::games::hash(&slasher::config::game(), "techset", "mc/abc#0", true));
 
     let list = std::env::args().nth(1).expect("a file of target_hex,bo3_name lines");
     let pairs: Vec<(u64, String, String)> = read_list(Path::new(&list))
@@ -81,7 +81,7 @@ fn main() {
 
     // First the literal BO3 names, tag and all -- if BO4 kept them verbatim, done already.
     for (target, _, original) in &pairs {
-        if hash64(original) & ID_MASK == *target {
+        if slasher::games::hash(&slasher::config::game(), "techset", original, true) & ID_MASK == *target {
             println!("  MATCH: BO4 kept the BO3 name verbatim: {original}");
         }
     }
@@ -110,7 +110,7 @@ fn main() {
             scope.spawn(|| loop {
                 let index = next.fetch_add(1, Ordering::Relaxed);
                 let Some((target, prefix, label)) = jobs.get(index) else { break };
-                sweep(hash64(prefix), *target, label);
+                sweep(slasher::games::hash(&slasher::config::game(), "techset", prefix, true), *target, label);
             });
         }
     });

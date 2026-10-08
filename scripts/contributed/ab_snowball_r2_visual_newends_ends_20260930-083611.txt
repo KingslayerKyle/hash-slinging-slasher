@@ -1,0 +1,7 @@
+_double_seam
+_sh190_vial
+_sh210_vial
+_sh215_key
+_sh220_sword
+_sh550_passenger
+_view_glass

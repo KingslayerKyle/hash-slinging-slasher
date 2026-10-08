@@ -1,0 +1,7 @@
+f42013e950db7cd,vox_rushmore_declaration_rush_0
+11150d7d8bb08b6d,vox_gauntlet_donkey_orac_0
+29a6a6f61dd21d77,zmb_vocals_destroyer_shrug
+372c81df781f0287,vox_gauntlet_falls_orac_0
+428483633a07e0a7,fly_emote_fem_disgusted
+458884a9a017b726,vox_s1_eleven_ncom_0
+4abf648b6de2b3ae,fly_emote_male_disgusted

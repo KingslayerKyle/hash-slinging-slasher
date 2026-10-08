@@ -37,6 +37,10 @@ fn main() {
     // tool is to work for any title, and the game it captured is recorded in the file itself so
     // a snapshot can never be mistaken for another game's.
     let game = instance.game_id();
+    if slasher::games::modern(&game) {
+        eprintln!("Use hash-capture for modern native pools and injected sounds; combined snapshot indexes are not live pool indexes.");
+        std::process::exit(1);
+    }
     println!("the loader has {game} open");
 
     let out = std::env::args().nth(1).map(PathBuf::from).unwrap_or_else(|| {

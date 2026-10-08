@@ -1,0 +1,2 @@
+3a0579b802aa321f,pt_ninja_blade_male_stand_react_radiation_2
+3a057ab802aa33d2,pt_ninja_blade_male_stand_react_radiation_1

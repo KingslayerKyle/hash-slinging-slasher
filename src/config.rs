@@ -99,7 +99,7 @@ pub fn path(key: &str) -> Option<std::path::PathBuf> {
 }
 
 /// The tags a snapshot can carry, and therefore the games that can be ground.
-pub const GAMES: &[&str] = &["BLKOPSCW", "BLKOPS04"];
+pub const GAMES: &[&str] = &["BLKOPSCW", "BLKOPS04", "MODWAR22", "YAMYAMOK", "BLACKOP6", "BLACKOP7", "MODWAR7"];
 
 /// Where `start` records which game it chose, so a search does not have to be told.
 ///
@@ -124,9 +124,9 @@ pub fn alternates() -> bool {
 
 /// Which game to grind, as the tag a snapshot carries internally.
 ///
-/// The hash and the normalisation are identical across these games, and the tables are a plain
-/// hash to name mapping with no game in them, so nothing about a search is Cold War specific
-/// except which ids it is hunting. That is a snapshot, and a snapshot is a setting.
+/// The selected game determines its snapshot, pool census and hash policies. Modern ordinary
+/// assets and aliases use different offsets; shared database readers select the source table
+/// family without treating export-directory spellings as original names.
 ///
 /// Four places are asked, most explicit first:
 ///
@@ -346,4 +346,12 @@ mod tests {
         assert_eq!(value_of("# pools = [\"no\"]\npools = [\"yes\"]", "pools").unwrap(), "[\"yes\"]");
         assert_eq!(flag("all_pools = false # not yet", "all_pools"), Some(false));
     }
+}
+
+/// Optional subset of captured games to rotate. Absent means every installed capture.
+pub fn rotation_games() -> Vec<String> {
+    let text = fs::read_to_string(crate::paths::root().join(CONFIG)).unwrap_or_default();
+    let games = list(&text, "games");
+    for game in &games { assert!(GAMES.contains(&game.as_str()), "unsupported rotation game {game}"); }
+    games
 }

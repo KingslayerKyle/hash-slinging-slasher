@@ -133,6 +133,15 @@ path = "src/bin/confirm_sounds.rs"
 name = "images_from_materials"
 path = "src/bin/images_from_materials.rs"
 
+# Local game selection and isolated known-name replay; neither contacts external services.
+[[bin]]
+name = "next_game"
+path = "src/bin/next_game.rs"
+
+[[bin]]
+name = "verify_capture"
+path = "src/bin/verify_capture.rs"
+
 [profile.release]
 opt-level = 3
 lto = "thin"

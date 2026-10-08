@@ -1,0 +1,2 @@
+2bcbfabb7965901d,wpn_reaper_lmg_single_lfe_plr
+73489cc2d7b7a878,wpn_reaper_lmg_single_npc_lfe

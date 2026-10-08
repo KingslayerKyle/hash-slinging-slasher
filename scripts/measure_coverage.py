@@ -60,22 +60,26 @@ def our_ids():
 
 
 def measure():
-    known = snapshot.known_hashes()
-    if not known:
-        raise SystemExit(
-            "no published tables found. They live in `cod-name-db/`, which `start` fetches --\n"
-            "run `start` first, or this would write a baseline of zero."
-        )
-
     mine = our_ids()
     out = {"measured": time.strftime("%Y-%m-%d"), "games": {}}
+    known_by_family = {}
 
     for path in snapshot.snapshots():
-        game = os.path.basename(path).replace(".ids", "").lower()
         snap = snapshot.read(path)
+        game = snap.game.lower()
+        # Games within a hash family read the same table set. Verify those rows once,
+        # while keeping modern and legacy exclusion policies separate.
+        family = "modern" if snap.game in snapshot.MODERN else "legacy"
+        if family not in known_by_family:
+            known_by_family[family] = snapshot.known_hashes(game=snap.game)
+        known = known_by_family[family]
+        if not known:
+            raise SystemExit("no published tables found for %s; refusing a baseline of zero" % snap.game)
         types = {}
         for kind, ids in snap.by_pool().items():
-            ours = mine.get(game, {}).get(kind, set())
+            ids = set(ids)
+            ours = {value & snapshot.ID_MASK for value in mine.get(game, {}).get(kind, set())}
+            ours &= ids
             named = 0
             for asset_id in ids:
                 if asset_id in known or (asset_id & snapshot.ID_MASK) in known or asset_id in ours:
@@ -87,7 +91,7 @@ def measure():
                 # What this project held when that union was counted. `collect_names.py` adds
                 # anything found since, which cannot already be inside `named` -- see the module
                 # docstring.
-                "ours_at_baseline": len(ours),
+                "ours_at_baseline": len(mine.get(game, {}).get(kind, set())),
             }
         out["games"][game] = types
 
