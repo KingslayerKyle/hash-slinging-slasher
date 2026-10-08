@@ -3,9 +3,9 @@
 Written 2026-10-08 from a first MWII (`MODWAR22`) grind. Four entries and one dead end, in the shape
 `METHODS.md` uses. Every number here was measured on this machine against MWII's own capture.
 
-## The context: MWII had never been searched at all
+## The context: the local MWII vocabulary had not been derived
 
-`state/swept.txt` held 3,434 exhausted configurations and **not one of them was a modern game**:
+`state/swept.txt` on this contributor's machine held these exhausted configurations:
 1,821 Black Ops 4, 1,605 Cold War, 5 MW7, and zero for MWII, MWIII, BO6 or BO7. The reason is not
 that nobody chose MWII. `confirm_cw` reads its vocabulary from `data/modern/<game>/`, and **no
 `data/modern/` directory existed at all** before `python scripts/derive_modern_lists.py --game
@@ -156,7 +156,7 @@ same exclusions, same fingerprint inputs — asked in the cheaper order.
 ## 7. Sound files: what it returned, and where it is spent
 
 `plans/mwii_shared.txt`, 188,237,814,336 candidates at 0.0150 expected coincidental matches,
-16 batches, **364 names** from 188 trillion candidates — one per 516 million. Per-batch it decayed
+16 batches, **364 names** from 188 billion candidates — one per 516 million. Per-batch it decayed
 78, 49, 92, 63, 172, 25, 21, 0: real but thin, and thinning.
 
 Harvesting the tails cross-game — heads still restricted to directories MWII has actually been seen
@@ -166,7 +166,7 @@ to 13,663 and the encodings from 22 to 53. That is the plan still worth running.
 
 **It did find what only MWII could have held.** Crossing MWII's directories against sound cores
 harvested from the other modern games produced `iw9.uin.main_iw8.iw8_leavelobby_alert_v1.ln.75.48000.all`
-— a Black Ops 4-era IW8 asset still shipping inside MWII — alongside `mp.emp_expl_npc_lfe.ln.75.48000.all`
+— an IW8 asset still shipping inside MWII — alongside `mp.emp_expl_npc_lfe.ln.75.48000.all`
 and `iw9.exp.exp_105mm_boom3.ln.75.48000.all`.
 
 ## 8. An honest limit on aiming
