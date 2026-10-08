@@ -14,7 +14,6 @@ use std::collections::BTreeMap;
 use std::fs;
 
 use slasher::snapshot::Snapshot;
-use slasher::{BO4_POOLS, GAME, POOLS};
 
 fn main() {
     let folder = slasher::paths::snapshots();
@@ -42,7 +41,7 @@ fn main() {
 
         // The names belong to the game the file says it holds, never to whatever this machine is
         // configured to grind. Getting that wrong is the whole bug being fixed here.
-        let names: &[&str] = if snapshot.game() == GAME { POOLS } else { BO4_POOLS };
+        let names = slasher::pools_for(snapshot.game());
 
         let mut counts: BTreeMap<usize, usize> = BTreeMap::new();
         for (_, pool) in snapshot.records() {

@@ -142,7 +142,7 @@ a65670a3e649d61,amb_comp_reel_2
 3d2df28b0da58c7,amb_comp_room
 2ae9cd7531214678,amb_comp_squawk
 4a39ac976cfe6a42,amb_comp_static
-34276381fec188aa,amb_comp_TICKER
+34276381fec188aa,amb_comp_ticker
 163d79f5c5508c4a,amb_comp_tv
 62ff8bc7bbe0477b,amb_computer_glitch
 6de6207353e93287,amb_cooler_lp

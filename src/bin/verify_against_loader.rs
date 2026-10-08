@@ -14,7 +14,7 @@ use std::fs;
 use std::path::PathBuf;
 
 use slasher::cordycep::CordycepInstance;
-use slasher::{config, id_of, pool_index, pools_for, read_rows, ID_MASK};
+use slasher::{config, pool_index, pools_for, read_rows, ID_MASK};
 
 /// A full load of this game. Well short of it means the loader is still mapping files, and a
 /// name reported missing would be missing only because it has not got there yet.
@@ -117,7 +117,7 @@ fn main() {
 
         for (stated, name) in read_rows(&path) {
             rows += 1;
-            let actual = id_of(&name);
+            let actual = slasher::games::output_key(&game, &kind, &name, true);
 
             // The row has to be right about itself before anything else means much.
             if stated != actual {
@@ -126,7 +126,7 @@ fn main() {
                 continue;
             }
 
-            match loaded.get(&actual) {
+            match loaded.get(&(actual & ID_MASK)) {
                 None => {
                     absent += 1;
                     missing.push((kind.clone(), name));

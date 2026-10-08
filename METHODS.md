@@ -217,6 +217,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | \ bo4 image siblings from confirmed materials 20260830\ | 1 | 1 | 135 | 2,163,297 | 16,024 | 16,024 | 16,024 | 2026-08-30 | 2026-08-30 | untried |
 | alias slot substitution | 4 | 9 | 1,354 | 21,780,323 | 16,085 | 6,535 | 2,047,927 | 2026-08-20 | 2026-08-21 | spent |
 | zombies vo: gpu 3-token gap fill complete (112 prefixes) + 67 four-token suffixes (gapfill4 on the 3090) -> grids + aliases | 1 | 1 | 355 | 6,030,376 | 16,986 | 16,986 | 16,986 | 2026-09-11 | 2026-09-11 | untried |
+| mw7 verified numeric and texture siblings | 1 | 1 | 114 | 1,963,655 | 17,225 | 17,225 | 17,225 | 2026-10-08 | 2026-10-08 | untried |
 | rare-token-compound-splice-anim | 1 | 3 | 30 | 521,194 | 17,373 | 10,849 | 17,385 | 2026-08-20 | 2026-08-20 | live |
 | black ops 4 final-byte solve after refreshed tables | 1 | 2 | 2 | 35,304 | 17,652 | 17,652 | 17,652 | 2026-08-27 | 2026-08-27 | live |
 | black ops 3 build names, verbatim | 1 | 1 | 4 | 73,303 | 18,325 | 18,325 | 18,325 | 2026-08-22 | 2026-08-22 | untried |
@@ -643,6 +644,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | per-prefix continuations depth2 cap24 | 1 | 1 | 1 | 41,529,671 | 41,529,671 | 41,529,671 | 41,529,671 | 2026-08-27 | 2026-08-27 | untried |
 | three-word slots, corpus triples ranked 20k+ | 1 | 3 | 286 | 12,012,991,070 | 42,003,465 | 36,031,182 | 36,031,182 | 2026-10-01 | 2026-10-01 | live |
 | compound word slots, glove-ranked halves | 1 | 1 | 5 | 212,515,946 | 42,503,189 | 42,503,189 | 42,503,189 | 2026-10-01 | 2026-10-01 | untried |
+| sound files and aliases, confirmed seeds only | 1 | 1 | 149 | 6,478,589,425 | 43,480,465 | 43,480,465 | 43,480,465 | 2026-10-08 | 2026-10-08 | untried |
 | \ cold war material token edits cap50 minseen1 20260830\ | 1 | 1 | 3 | 132,268,164 | 44,089,388 | 44,089,388 | 44,089,388 | 2026-08-30 | 2026-08-30 | untried |
 | two mined substitutions composed | 1 | 1 | 1 | 45,000,000 | 45,000,000 | 45,000,000 | 45,000,000 | 2026-08-25 | 2026-08-25 | untried |
 | measured image channels | 1 | 2 | 2 | 90,670,236 | 45,335,118 | 45,049,731 | 45,620,505 | 2026-08-27 | 2026-08-31 | live |
@@ -1027,6 +1029,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | v2 xanim borrowed endings, ranks 72001-80000 | 1 | 2 | 2 | 221,415,673,500 | 110,707,836,750 | 108,865,606,500 | 112,550,067,000 | 2026-08-25 | 2026-08-28 | live |
 | rule-substituted all-boundary cores, sound | 1 | 1 | 26 | 2,893,174,431,455 | 111,275,939,671 | 111,275,939,671 | 111,275,939,671 | 2026-09-25 | 2026-09-25 | untried |
 | v2 xanim borrowed endings, ranks 8001-16000 | 1 | 2 | 2 | 222,651,828,000 | 111,325,914,000 | 108,889,609,500 | 113,762,218,500 | 2026-08-25 | 2026-08-29 | live |
+| sound files and aliases | 1 | 83 | 54,258 | 2,865,470,869,780,563 | 113,808,518,142 | 5,134,885,824 | 5,134,885,824 | 2026-08-19 | 2026-10-08 | live |
 | measured shells, head 6 tail 6, top 1600 | 1 | 3 | 33 | 4,127,396,973,451 | 125,072,635,559 | 62,447,265,963 | 459,905,757,026 | 2026-09-03 | 2026-09-04 | cooling |
 | image cores under borrowed image endings | 1 | 4 | 66 | 8,319,045,063,000 | 126,046,137,318 | 47,775,902,275 | 173,376,335,343 | 2026-08-24 | 2026-08-24 | cooling |
 | v2 material borrowed endings, ranks 8001-9000 | 1 | 3 | 5 | 644,545,902,000 | 128,909,180,400 | 107,346,739,500 | 107,463,105,750 | 2026-08-27 | 2026-08-28 | live |
@@ -1071,7 +1074,6 @@ table under a name you would not have guessed is the thing you are about to rebu
 | v2 material borrowed endings, ranks 64001-72000 | 1 | 3 | 7 | 5,089,812,147,000 | 727,116,021,000 | 565,158,636,000 | 566,326,782,000 | 2026-08-26 | 2026-08-26 | live |
 | v2 image borrowed endings, ranks 16001-24000 | 1 | 3 | 5 | 4,199,720,899,500 | 839,944,179,900 | 468,370,539,000 | 1,405,111,617,000 | 2026-08-26 | 2026-08-28 | live |
 | measured shells, head 5 tail 7, top 1600 | 1 | 2 | 3 | 2,644,392,954,876 | 881,464,318,292 | 661,098,238,719 | 1,322,196,477,438 | 2026-09-03 | 2026-09-03 | live |
-| sound files and aliases | 1 | 82 | 31,935 | 2,750,844,813,513,427 | 963,518,323,472 | 166,345,024,102 | 68,076,041,437,260 | 2026-08-19 | 2026-09-10 | spent |
 | v2 material borrowed endings, ranks 48001-56000 | 1 | 3 | 5 | 5,090,196,195,000 | 1,018,039,239,000 | 565,186,639,500 | 1,699,076,358,000 | 2026-08-25 | 2026-08-26 | cooling |
 | v2 material borrowed endings, ranks 72001-80000 | 1 | 2 | 3 | 3,394,432,251,000 | 1,131,477,417,000 | 847,761,957,000 | 1,698,908,337,000 | 2026-08-26 | 2026-08-26 | live |
 | v2 material borrowed endings, ranks 40001-48000 | 1 | 2 | 3 | 3,413,430,625,500 | 1,137,810,208,500 | 859,169,382,750 | 859,169,382,750 | 2026-08-26 | 2026-08-28 | live |
@@ -1103,7 +1105,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1025 distinct methods, run 1123 ways between them, across 3715 runs. `names` is what each run
+1027 distinct methods, run 1125 ways between them, across 3718 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->

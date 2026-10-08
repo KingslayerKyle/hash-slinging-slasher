@@ -396,28 +396,12 @@ fn report(landscape: &recon::Landscape) {
 
 /// Which game to grind next, and why -- chosen rather than asked.
 ///
-/// This project is called a Cold War **and** Black Ops 4 solver, and until now it was neither by
-/// default: `config.toml` does not exist in a fresh clone, the fallback is Cold War, and so every
-/// contributor ground the same title. Black Ops 4 has **more** unnamed assets in the five types
-/// that matter -- 141,889 against 136,467 -- and is far less picked over: 64% of its images are
-/// named against 81% of Cold War's.
-///
-/// Asking would be the obvious fix and it is the wrong one. The whole instruction to an assistant
-/// here is *do not stop and ask*, and a question at the top of every session is both a
-/// contradiction and one more thing for a tired user to get wrong at four in the morning.
-///
-/// So it alternates, per clone, by **how many passes each game has had here** -- and passes
-/// rather than names on purpose. Counting names starves whichever game yields fewer of them: one
-/// good Cold War night puts it thousands ahead, and a rule chasing the smaller number would send
-/// every pass to Black Ops 4 until it caught up, which could be weeks. Counting passes gives each
-/// game every other run whatever they return, which is the behaviour actually wanted.
-///
-/// A fresh clone has none of either, and the tie goes to Black Ops 4: it has more unnamed assets
-/// in the five types that matter (141,889 against 136,467) and is much less picked over -- 64% of
-/// its images are named against 81% of Cold War's -- and exactly one contributor has ever ground
-/// it, because switching meant editing a file most people never create.
-///
-/// Nobody chooses, both get ground, and one flag overrides it for anybody who cares.
+/// Captured games take turns, using a separate cursor so a CLI pin does not consume a turn.
+/// Local game selection, also exposed independently of network startup checks.
+pub fn select_game() -> String {
+    which_game()
+}
+
 fn which_game() -> String {
     // `start --game X` means X, and it has to be written down as well as obeyed. Without this the
     // flag was accepted, silently ignored, and then *contradicted*: the turn-taking overwrote
@@ -429,7 +413,7 @@ fn which_game() -> String {
 
         println!(
             "grinding {chosen}, because `--game` said so. That holds for the searches that follow \
-             too.\n\n  Run `start` with no flag to go back to the two taking turns.\n"
+             too.\n\n  Run `start` with no flag to go back to available captures taking turns.\n"
         );
         return chosen;
     }
@@ -439,78 +423,26 @@ fn which_game() -> String {
         let chosen = config::game();
         println!(
             "grinding {chosen} only: config.toml says `alternate_games = false`.\n\n  \
-             Remove that line and the two games take turns again, so neither is left behind.\n"
+             Remove that line and available captures take turns again, so neither is left behind.\n"
         );
         return chosen;
     }
 
-    // Black Ops 4 first in the list, so it wins a tie without needing a special case.
-    let order = ["BLKOPS04", "BLKOPSCW"];
-
-    let mut standings: Vec<(usize, &str)> = order
-        .iter()
-        .filter(|game| config::GAMES.contains(game))
-        .map(|game| (passes_here(game), *game))
-        .collect();
-
-    standings.sort_by_key(|(passes, _)| *passes);
-
-    let least = standings[0].1;
-
-    // Written down rather than merely announced, so the searches pick it up without anybody
-    // having to carry a flag across from an earlier command's output.
-    let _ = config::choose_game(least);
-
-    println!("what to grind next:\n");
-
-    // No "<- configured" marker here on purpose: reaching this point means nothing was chosen,
-    // and pointing at the fallback as though it were a decision is how the fallback came to be
-    // treated as one.
-    for (passes, game) in &standings {
-        println!(
-            "  {game:<10} {passes:>4} pass(es) on this machine, {} name(s) confirmed",
-            confirmed_here(game)
-        );
-    }
-
-    println!(
-        "\n  Grinding {least} next -- it has had the fewer passes here, so the two take turns and\n  \
-         neither is left behind. Every search below picks this up on its own; no flag needed.\n  \
-         Findings are kept per game, so switching costs nothing.\n\n  \
-         `--game <TAG>` forces one game for one run, when there is a reason to. To stop the\n  \
-         turn-taking altogether, put `alternate_games = false` in config.toml."
-    );
-
-    println!();
-    least.to_owned()
-}
-
-/// How many search passes this machine has run for one game.
-fn passes_here(game: &str) -> usize {
-    let folder = paths::findings_root().join(game.to_lowercase());
-
-    std::fs::read_dir(&folder)
-        .into_iter()
-        .flatten()
-        .flatten()
-        .filter(|entry| {
-            entry.path().is_dir()
-                && entry.file_name().to_string_lossy().starts_with("run_")
-        })
-        .count()
-}
-
-/// How many names this machine has confirmed for one game. Reported, never used to choose.
-fn confirmed_here(game: &str) -> usize {
-    let folder = paths::findings_root().join(game.to_lowercase());
-
-    std::fs::read_dir(&folder)
-        .into_iter()
-        .flatten()
-        .flatten()
-        .filter(|entry| entry.path().extension().and_then(|e| e.to_str()) == Some("txt"))
-        .map(|entry| std::fs::read_to_string(entry.path()).unwrap_or_default().lines().count())
-        .sum()
+    let order = ["BLKOPS04", "BLKOPSCW", "MODWAR22", "YAMYAMOK", "BLACKOP6", "BLACKOP7", "MODWAR7"];
+    let requested = config::rotation_games();
+    let available: Vec<_> = order.into_iter().filter(|game| {
+        (requested.is_empty() || requested.iter().any(|g| g == game))
+        && crate::games::capture(game).is_ok()
+        && (!crate::games::modern(game) || crate::games::capture(game).is_ok_and(|p| crate::games::read_pools(&p.with_extension("pools.txt")).is_ok()))
+    }).collect();
+    // Carry the current choice forward when upgrading the old two-game selector.
+    let previous = std::fs::read_to_string(paths::state().join("rotation.txt"))
+        .or_else(|_| std::fs::read_to_string(paths::state().join("game.txt"))).ok();
+    let chosen = crate::games::next_game(&available, previous.as_deref().map(str::trim)).expect("no usable captures for rotation");
+    config::choose_game(chosen).expect("could not save game choice");
+    std::fs::write(paths::state().join("rotation.txt"), chosen).expect("could not save rotation position");
+    println!("Grinding {chosen}; available captures take turns: {}", available.join(", "));
+    chosen.to_owned()
 }
 
 /// Everything already in the script library, printed before anything suggests inventing.

@@ -244,3 +244,11 @@ mod tests {
         let _ = borrowed();
     }
 }
+
+/// Vocabulary measured from this game's capture, separate from the committed legacy corpus.
+pub fn vocabulary(list: &str) -> PathBuf {
+    let game = crate::config::game();
+    if crate::games::modern(&game) {
+        root().join("data/modern").join(game.to_lowercase()).join(std::path::Path::new(list).file_name().unwrap())
+    } else { root().join(list) }
+}

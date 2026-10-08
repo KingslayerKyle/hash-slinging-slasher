@@ -23,10 +23,15 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 use slasher::snapshot::Snapshot;
-use slasher::{id_of, paths, strip_stamp, tables};
+use slasher::{paths, strip_stamp, tables};
 
 fn main() {
-    let targets: Vec<PathBuf> = std::env::args().skip(1).map(PathBuf::from).collect();
+    let mut args = std::env::args().skip(1);
+    let mut targets = Vec::new();
+    while let Some(arg) = args.next() {
+        if arg == "--game" { args.next().expect("--game needs a tag"); continue; }
+        targets.push(PathBuf::from(arg));
+    }
 
     let files = if targets.is_empty() {
         submission_files(&paths::submissions())
@@ -110,28 +115,19 @@ fn main() {
             //    Ops 4's SAB sound names keep their backslashes and the game holds the hash of
             //    the unfolded string. Checking only the folded form would reject every genuine
             //    Black Ops 4 sound name -- 70,878 of them -- as a bad hash.
-            let folded = id_of(name);
-            let raw = slasher::hash64_raw(name) & slasher::ID_MASK;
-
-            let id = match u64::from_str_radix(claimed.trim(), 16) {
-                Ok(said) if said == folded => folded,
-                Ok(said) if said == raw => raw,
-                Ok(said) => {
-                    bad.push(format!(
-                        "{where_}: says {said:x} but {name} hashes to {folded:x} (or {raw:x}                          unfolded)"
-                    ));
-                    continue;
-                }
-                Err(_) => {
-                    bad.push(format!("{where_}: {} is not a hash", claimed.trim()));
-                    continue;
-                }
+            let said = match u64::from_str_radix(claimed.trim(), 16) {
+                Ok(id) => id,
+                Err(_) => { bad.push(format!("{where_}: {} is not a hash", claimed.trim())); continue; }
             };
-
-            // 2. The claim itself: some game holds this id. Which one is not asked, because the
-            //    submission does not say and a contributor should not have to know.
-            let holders: Vec<&Snapshot> =
-                snapshots.iter().filter(|snapshot| snapshot.holds(id)).collect();
+            let id = said & slasher::ID_MASK;
+            let pinned = std::env::args().any(|arg| arg == "--game");
+            let holders: Vec<&Snapshot> = snapshots.iter().filter(|snapshot| {
+                if pinned && snapshot.game() != slasher::config::game() { return false; }
+                let folded = slasher::games::output_key(snapshot.game(), &kind, name, true);
+                let raw_allowed = snapshot.game() == "BLKOPS04" && matches!(kind.as_str(), "sound_asset" | "sound");
+                (said == folded || (raw_allowed && said == slasher::games::output_key(snapshot.game(), &kind, name, false)))
+                    && snapshot.holds(id)
+            }).collect();
 
             if holders.is_empty() {
                 bad.push(format!("{where_}: no snapshot holds {id:x} ({name})"));
@@ -294,30 +290,9 @@ fn snapshots() -> Vec<Snapshot> {
 /// Every hash the published tables resolve, if the tables are here at all.
 fn published_hashes() -> Option<HashSet<u64>> {
     let folder = tables::csv_folder(&paths::tables());
-    if !folder.is_dir() {
-        return None;
-    }
-
-    let mut known = HashSet::new();
-
-    for entry in fs::read_dir(&folder).into_iter().flatten().flatten() {
-        let path = entry.path();
-        if path.extension().and_then(|e| e.to_str()) != Some("csv") {
-            continue;
-        }
-
-        let Ok(text) = fs::read_to_string(&path) else { continue };
-        for line in text.lines() {
-            let Some((key, name)) = line.split_once(',') else { continue };
-
-            if let Ok(value) = u64::from_str_radix(key.trim(), 16) {
-                known.insert(value & slasher::ID_MASK);
-            }
-
-            known.insert(id_of(name.trim()));
-        }
-    }
-
+    if !folder.is_dir() { return None; }
+    // Validation can cover several games at once, so read every table family.
+    let known = slasher::database_keys(&folder,"BLKOPSCW");
     (!known.is_empty()).then_some(known)
 }
 
@@ -333,6 +308,7 @@ fn short(path: &Path) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use slasher::id_of;
 
     /// The asset type has to survive a stamp being appended, and `sound_asset` is the case that
     /// a naive split on the first underscore gets wrong.

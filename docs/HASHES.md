@@ -76,65 +76,19 @@ bit 63 cleared: `key = hash & 0x7FFFFFFFFFFFFFFF`. The exceptions are in the tab
 
 ## What this means for this repository
 
-**Only the non-`_v2` files are our games.** `src/bin/confirm_cw.rs` has the list, as
-`COLD_WAR_TABLES`. Reading a `_v2` table for *vocabulary* teaches the wrong conventions and is a
-known dead end. Reading every table for *exclusion* is free and correct, and `table_keys()` does
-exactly that — it re-hashes the stored name as well as taking the stored key, which covers all
-three masks without having to know which file used which.
+The solver routes ordinary modern asset searches through the IW offset and modern sound aliases through the Treyarch offset. It compares 63-bit capture ids but writes modern aliases at full width. Legacy BO4/CW hashes and the BO4 SAB backslash exception retain their existing policies. See [modern capture setup](MODERN_CAPTURES.md).
 
-**The twelve per-language sound tables are this game and were being missed.** Until this was
-found, `COLD_WAR_TABLES` named only the legacy `fnv1a_xsounds.csv` — 57,593 names. The twelve
-files Saluki actually loads hold **825,316 distinct names** between them, and their overlap with
-the legacy file is **exactly zero rows**: the legacy names end `.ln75.pc.all.snd` and the current
-ones end `.rn75.pc.<lang>.snd`. Sound names are the richest seed material in the whole set — full
-directory paths, speaker codes, and dotted tails no other table carries. Every general pass run
-before this fix had one fourteenth of the sound vocabulary available to it.
-
-Reproduce that:
-
-```
-cd cod-name-db/csv
-wc -l fnv1a_xsounds.csv                                  # 57593
-cat fnv1a_*_xsounds.csv | cut -d, -f2- | sort -u | wc -l # 825316
-comm -12 <(cut -d, -f2- fnv1a_xsounds.csv | sort -u) \
-         <(cut -d, -f2- fnv1a_english_xsounds.csv | sort -u) | wc -l   # 0
-```
-
-**A note on `fnv1a_xsounds_v2.csv`:** where the full original path is known, keys verify as the
-IW-offset hash of the lowercased, forward-slashed path at 63 bits. Many rows carry
-community-reconstructed display names whose exact spelling differs, so not every existing row
-re-hashes. New contributions should.
-
-## Verifying a contribution by hand
-
-```python
-def fnv1a64(name, offset):
-    h = offset
-    for b in name.lower().replace("\\", "/").encode():
-        h = ((h ^ b) * 0x100000001B3) & 0xFFFFFFFFFFFFFFFF
-    return h
-
-TREYARCH = 0xCBF29CE484222325
-IW       = 0x47F5817A5EF961BA
-
-# BO4 / BOCW asset:                 fnv1a64(name, TREYARCH) & 0x7FFFFFFFFFFFFFFF
-# MWII/MWIII/BO6/BO7/WZM asset:     fnv1a64(name, IW)       & 0x7FFFFFFFFFFFFFFF
-# BOCW string:                      fnv1a64(name, TREYARCH) & 0x0FFFFFFFFFFFFFFF
-# soundbank aliases v2 / bones v2:  fnv1a64(name, TREYARCH)
-```
-
-`scripts/snapshot.py` implements the BO4/BOCW case as `snapshot.fnv1a`.
-
-## Types with no home yet
-
-cod-name-db carries tables for models, anims, images, materials and sounds. Some identified asset
-types have **no destination file at all** — a confirmed `technique_set` name has nowhere upstream
-to land, and Black Ops 4 alone holds 3,597 of them with zero previously named.
-
-Proposing and seeding those tables upstream is the most valuable non-grinding contribution
-available, because it turns whole pools' worth of findings from unpublishable into publishable.
+Published sound strings may be Saluki display paths rather than their original hash spellings. Their stored database keys are authoritative for exclusion. A restored spelling is used as a seed or result only after it reproduces that key; written findings always contain the actual verified spelling. The live legacy snapshot utility cannot capture modern games or their injected pools; use hash-capture and then merge mode captures by type.
 
 ---
 
 *Source: the cod-name-db README by its author, cross-checked against Saluki's loading code. Last
 verified against the repository contents 2026-08-19 (33 csv files present).*
+
+## Reading original database spellings
+
+Resolved FNV names pass through one source-table-aware conversion in the Rust table readers, direct CSV candidate/plan readers, Python table readers, vocabulary derivation, submission exclusions and validator published-name checks. Correct spellings are kept; export-directory separators are restored to periods or original BO4 sound backslashes only when the candidate reproduces the stored source key. The database files themselves are read-only.
+
+The source table determines its offset, width and case rules, independent of the game currently selected for searching. Legacy CSVs also contain earlier 60-bit and case-sensitive entries; these are verified under their original source rules. Modern full-width aliases still require all 64 bits.
+
+A row that cannot be restored is skipped as a resolved-name seed. Its stored key is always retained for exclusion, so it is never reported as an unknown asset merely because its export spelling differs. Display paths that do not reproduce their key are never rehashed into additional exclusion keys. Written findings retain the actual spelling verified against their game capture.

@@ -1,5 +1,30 @@
 # Read this first
 
+## Modern-games support
+
+This solver supports BO4 (`BLKOPS04`), Cold War (`BLKOPSCW`), MWII (`MODWAR22`),
+MWIII (`YAMYAMOK`), BO6 (`BLACKOP6`), BO7 (`BLACKOP7`) and MW7 (`MODWAR7`).
+The older two-game counts and examples below are historical. Startup rotates all seven
+installed captures; explicit game selection leaves the rotation cursor unchanged.
+
+Search the six default types: models, animations, images, materials, sound assets and
+sound aliases. Modern ordinary assets use offset `0x47F5817A5EF961BA`; modern aliases
+use `0xCBF29CE484222325`. Lookup uses 63 bits; modern alias output keeps all 64 bits.
+BO4 SAB sound names retain their literal backslashes. Use the shared game policies rather
+than reusing a legacy hash for modern candidates. Pool indexes come from the capture's
+adjacent census, including injected sound pools, rather than another game's native enum.
+
+Each game has one combined snapshot. MWII, MWIII and BO6 combine captured MP/SP modes by
+asset type. MW7 keeps one canonical filename when its build is replaced. Source-mode captures
+and private extraction notes stay outside tracked source. No game needs to be launched to search.
+
+Database keys exclude resolved assets even when Saluki's display paths use different separators.
+Read verified original spellings through the shared database readers; never submit an export
+path spelling unless it hashes back to the key. Unrestorable rows still exclude their stored key.
+The collection, coverage, Discord report and submission paths all handle the seven game tags.
+See [capture setup and policies](docs/MODERN_CAPTURES.md) and [table policies](docs/HASHES.md).
+
+
 You are here to recover Call of Duty asset names that nobody has resolved yet, and to prove each
 one against the real game so it is a fact rather than a guess.
 

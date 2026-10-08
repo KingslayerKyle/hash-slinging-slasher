@@ -209,7 +209,6 @@ fn main() {
         println!("hashing without folding backslashes (Black Ops 4 SAB sound names)");
     }
 
-    let root = paths::root();
     // Which vocabulary this pass draws on. A sound pass and a general pass are different runs
     // with different targets, so they read different lists -- see `paths::SOUND_SUFFIX_LIST`.
     let (suffix_list, prefix_list) = if sounds {
@@ -218,8 +217,8 @@ fn main() {
         (paths::SUFFIX_LIST, paths::PREFIX_LIST)
     };
 
-    let mut endings = read_list(&root.join(suffix_list));
-    let mut prefixes = read_list(&root.join(prefix_list));
+    let mut endings = read_list(&paths::vocabulary(suffix_list));
+    let mut prefixes = read_list(&paths::vocabulary(prefix_list));
 
     // The measured lists are kept in one canonical form, with forward slashes, because a sound
     // path's *shape* is identical in both games and only the separator differs. Measured across
@@ -371,7 +370,7 @@ fn main() {
         let vocabulary = if every_table {
             all_table_names()
         } else {
-            COLD_WAR_TABLES.iter().flat_map(|table| table_names(table)).collect()
+            (if slasher::games::modern(&config::game()) { slasher::games::MODERN_TABLES } else { COLD_WAR_TABLES }).iter().flat_map(|table| table_names(table)).collect()
         };
         println!(
             "names {} tables already resolve: {}",
