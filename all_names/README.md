@@ -95,14 +95,14 @@
 
 <table>
 <tr><th align="left"><code>modwar7/</code></th>
-<th align="right" colspan="2">27,199 names in 6 file(s)</th>
+<th align="right" colspan="2">27,249 names in 6 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>xmodel</code></td><td align="right">0</td><td align="right">230 / 3,926 &nbsp;(5.9%)</td></tr>
 <tr><td><code>material</code></td><td align="right">359</td><td align="right">3,999 / 7,809 &nbsp;(51.2%)</td></tr>
 <tr><td><code>image</code></td><td align="right">1,809</td><td align="right">16,682 / 37,365 &nbsp;(44.6%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">2,446</td><td align="right">28,375 / 35,164 &nbsp;(80.7%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">2,496</td><td align="right">28,425 / 35,164 &nbsp;(80.8%)</td></tr>
 <tr><td><code>sound_asset</code></td><td align="right">12,467</td><td align="right">36,921 / 130,464 &nbsp;(28.3%)</td></tr>
 <tr><td><code>sound_alias</code></td><td align="right">10,118</td><td align="right">17,641 / 73,962 &nbsp;(23.9%)</td></tr>
 </table>

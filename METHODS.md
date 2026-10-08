@@ -320,6 +320,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | sound files from aliases, after wide triples | 1 | 1 | 35 | 11,813,019 | 337,514 | 337,514 | 337,514 | 2026-10-06 | 2026-10-06 | untried |
 | sound files from aliases, after wiki probe | 1 | 1 | 35 | 11,833,282 | 338,093 | 338,093 | 338,093 | 2026-10-07 | 2026-10-07 | untried |
 | token insertion and deletion | 5 | 21 | 1,164 | 394,291,167 | 338,738 | 34,598 | 3,459,022 | 2026-08-20 | 2026-09-08 | spent |
+| mw7 expanded numeric siblings for materials animations images | 1 | 1 | 50 | 16,974,722 | 339,494 | 339,494 | 339,494 | 2026-10-08 | 2026-10-08 | untried |
 | deep image channel completion after pr977 | 1 | 1 | 11 | 3,767,092 | 342,462 | 342,462 | 342,462 | 2026-08-27 | 2026-08-27 | untried |
 | sound-alias context length completion | 1 | 1 | 1 | 353,063 | 353,063 | 353,063 | 353,063 | 2026-09-04 | 2026-09-04 | untried |
 | external bo4-source core respelling | 1 | 2 | 9 | 3,192,200 | 354,688 | 319,220 | 319,220 | 2026-08-28 | 2026-08-28 | live |
@@ -1105,7 +1106,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1027 distinct methods, run 1125 ways between them, across 3720 runs. `names` is what each run
+1028 distinct methods, run 1126 ways between them, across 3721 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->
