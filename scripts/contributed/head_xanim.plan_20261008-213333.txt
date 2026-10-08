@@ -1,0 +1,4 @@
+label: xanim head swap -- measured xanim beginnings x every known remainder
+describe: top 1783 1-2 segment beginnings of known xanim names, crossed with every remainder a known xanim name leaves after its first 1-2 segments; see contrib/type_segments.py --heads
+stem: @contrib/head_xanim_begins.txt
+end: @contrib/head_xanim_rests.txt

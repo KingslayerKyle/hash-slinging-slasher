@@ -1,0 +1,5 @@
+label: twc terrain-blend grid, quads over the top 600 tokens
+describe: twc/*<a>_<b>_<c>_<d> over the 600 most frequent numeric tokens (which cover 67% of published 4-token twc names)
+begin: @contrib/twc_begin4.txt
+stem: @contrib/twc_top600.txt
+end: @contrib/twc_top600_end.txt
