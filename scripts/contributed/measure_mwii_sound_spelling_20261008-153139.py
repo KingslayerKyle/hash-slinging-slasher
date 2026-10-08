@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import settings
 import snapshot
@@ -38,6 +38,7 @@ def main():
     for kind, table in tables:
         tally = collections.Counter()
         ids = held.get(kind, set())
+        source_mask = snapshot.database_policy(table)[1]
         for line in (Path(settings.tables_csv()) / (table + ".csv")).open(encoding="utf-8"):
             key, sep, display = line.strip().partition(",")
             if not sep:
@@ -46,11 +47,11 @@ def main():
                 key = int(key, 16)
             except ValueError:
                 continue
-            if key & snapshot.ID_MASK not in ids:
+            if key not in ids and (key & snapshot.ID_MASK) not in ids:
                 continue
             found = None
             for label, candidate in spellings(display):
-                if snapshot.database_source_hash(table, candidate) & snapshot.ID_MASK == key:
+                if snapshot.database_source_hash(table, candidate) & source_mask == key:
                     found = label
                     break
             tally[found or "unrestorable"] += 1
