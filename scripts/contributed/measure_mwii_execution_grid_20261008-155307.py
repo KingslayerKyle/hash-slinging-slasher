@@ -21,7 +21,7 @@ import re
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import settings
 import snapshot
@@ -88,8 +88,8 @@ def main():
     print("take indices observed      : %s"
           % sorted(((int(t), c) for t, c in takes.items())))
     print("takes per core: max %d, mean %.2f"
-          % (max(len(v) for v in cores_by_take.values()),
-             sum(len(v) for v in cores_by_take.values()) / len(cores_by_take)))
+          % (max((len(v) for v in cores_by_take.values()), default=0),
+             sum(len(v) for v in cores_by_take.values()) / max(1, len(cores_by_take))))
     print()
     for width in (20, 30, 40, 60, 100):
         product = len(cores) * width * len(encodings)
