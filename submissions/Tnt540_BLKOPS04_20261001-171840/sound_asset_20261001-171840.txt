@@ -1,0 +1,2 @@
+bb97ab6c71ca413,en\vox\scripted\mpl\zero\vox_zero_ae_vis_pulse_threat_03.sn100.pc.snd
+5a7f6351fbcf7b5a,en\vox\scripted\mpl\prop\vox_prop_ae_vis_pulse_threat_04.sn100.pc.snd
