@@ -1,0 +1,4 @@
+label: xanim segment plan -- xanim stems x measured xanim endings
+describe: every underscore-prefix of every known xanim name, crossed with the top 12000 1-3 segment endings xanim names carry; see contrib/type_segments.py
+stem: @contrib/seg_xanim_stems.txt
+end: @contrib/seg_xanim_ends.txt
