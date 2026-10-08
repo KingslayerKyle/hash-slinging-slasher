@@ -762,8 +762,8 @@ table under a name you would not have guessed is the thing you are about to rebu
 | measured tails of length 56 | 1 | 1 | 5 | 2,521,780,812 | 504,356,162 | 504,356,162 | 504,356,162 | 2026-08-25 | 2026-08-25 | untried |
 | all-boundary sound cores x uncarried sound endings, 2 segments, top 200k | 1 | 1 | 634 | 320,548,256,700 | 505,596,619 | 505,596,619 | 505,596,619 | 2026-08-29 | 2026-08-29 | untried |
 | first twenty ceiling-dropped black ops 4 sound beginnings | 1 | 1 | 17 | 8,705,046,735 | 512,061,572 | 512,061,572 | 512,061,572 | 2026-08-29 | 2026-08-29 | untried |
+| mwii sound heads x shared tails | 1 | 3 | 433 | 223,497,815,827 | 516,161,237 | 428,872,158 | 428,872,158 | 2026-10-08 | 2026-10-08 | live |
 | scoped all-boundary sound cores x all uncarried 2-segment sound endings (full vocabulary), re-run at grown corpus | 1 | 1 | 54 | 28,168,563,166 | 521,640,058 | 521,640,058 | 521,640,058 | 2026-09-03 | 2026-09-03 | untried |
-| mwii sound heads x shared tails | 1 | 2 | 380 | 200,767,591,453 | 528,335,766 | 517,136,852 | 783,111,069 | 2026-10-08 | 2026-10-08 | live |
 | affix sweep | 1 | 1 | 1 | 532,497,168 | 532,497,168 | 532,497,168 | 532,497,168 | 2026-08-20 | 2026-08-20 | untried |
 | ab snowball r5 visual: all cores x new name tails | 1 | 3 | 36 | 19,893,304,174 | 552,591,782 | 84,935,759 | 3,784,225,412 | 2026-10-01 | 2026-10-05 | spent |
 | confirmed-only all-boundary cores x uncarried 1-segment endings, blkops04 | 1 | 1 | 12 | 6,800,804,899 | 566,733,741 | 566,733,741 | 566,733,741 | 2026-09-01 | 2026-09-01 | untried |
@@ -1115,7 +1115,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1037 distinct methods, run 1135 ways between them, across 3737 runs. `names` is what each run
+1037 distinct methods, run 1135 ways between them, across 3738 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->

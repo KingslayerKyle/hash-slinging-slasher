@@ -78,7 +78,7 @@
 
 <table>
 <tr><th align="left"><code>modwar22/</code></th>
-<th align="right" colspan="2">3,663 names in 6 file(s)</th>
+<th align="right" colspan="2">3,716 names in 6 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
@@ -86,7 +86,7 @@
 <tr><td><code>material</code></td><td align="right">0</td><td align="right">100,669 / 230,876 &nbsp;(43.6%)</td></tr>
 <tr><td><code>image</code></td><td align="right">0</td><td align="right">118,484 / 307,431 &nbsp;(38.5%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">0</td><td align="right">44,996 / 55,778 &nbsp;(80.7%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">383</td><td align="right">46,294 / 249,863 &nbsp;(18.5%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">436</td><td align="right">46,347 / 249,863 &nbsp;(18.5%)</td></tr>
 <tr><td><code>sound_alias</code></td><td align="right">3,274</td><td align="right">13,193 / 147,867 &nbsp;(8.9%)</td></tr>
 </table>
 
