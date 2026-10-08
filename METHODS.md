@@ -1060,6 +1060,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | rule-substituted all-boundary cores, sound, unfolded | 1 | 1 | 10 | 2,893,174,431,455 | 289,317,443,145 | 289,317,443,145 | 289,317,443,145 | 2026-09-27 | 2026-09-27 | untried |
 | bo3 mod tools vocabulary under measured decorations | 1 | 2 | 19 | 5,624,859,212,000 | 296,045,221,684 | 281,242,960,600 | 312,492,178,444 | 2026-08-24 | 2026-08-24 | live |
 | measured shells, head 8 tail 8, top 800 | 1 | 1 | 1 | 310,731,213,906 | 310,731,213,906 | 310,731,213,906 | 310,731,213,906 | 2026-09-02 | 2026-09-02 | untried |
+| general search | 2 | 114 | 121,959 | 5,340,315,064,562,252 | 405,521,684,604 | 25,274,434,642 | 25,274,434,642 | 2026-08-19 | 2026-10-08 | live |
 | measured shells, head 6 tail 5, top 1600 | 1 | 2 | 7 | 2,852,940,114,638 | 407,562,873,519 | 356,617,514,329 | 356,617,514,329 | 2026-09-03 | 2026-09-03 | live |
 | v2 material borrowed endings, ranks 56001-64000 | 1 | 2 | 8 | 3,394,468,255,500 | 424,308,531,937 | 339,049,575,900 | 566,406,792,000 | 2026-08-26 | 2026-08-26 | live |
 | v2 material borrowed endings, ranks 80001-88000 | 1 | 1 | 4 | 1,698,956,343,000 | 424,739,085,750 | 424,739,085,750 | 424,739,085,750 | 2026-08-26 | 2026-08-26 | untried |
@@ -1068,7 +1069,6 @@ table under a name you would not have guessed is the thing you are about to rebu
 | v2 material borrowed endings, ranks 1-8000 | 1 | 1 | 3 | 1,694,983,846,500 | 564,994,615,500 | 564,994,615,500 | 564,994,615,500 | 2026-08-25 | 2026-08-25 | untried |
 | newer-title cores respelled | 1 | 2 | 61 | 34,510,658,565,958 | 565,748,501,081 | 367,134,665,595 | 1,232,523,520,212 | 2026-08-22 | 2026-08-22 | cooling |
 | mw19 middles decorated | 1 | 1 | 51 | 29,134,495,063,900 | 571,264,609,096 | 571,264,609,096 | 571,264,609,096 | 2026-08-24 | 2026-08-24 | untried |
-| general search | 2 | 113 | 117,346 | 5,223,724,097,556,777 | 610,533,438,237 | 35,073,084,706 | 12,124,741,707,120 | 2026-08-19 | 2026-09-11 | spent |
 | broad all-boundary uncarried sound four-segment endings current | 1 | 1 | 2 | 1,229,240,297,454 | 614,620,148,727 | 614,620,148,727 | 614,620,148,727 | 2026-09-03 | 2026-09-03 | untried |
 | borrowed decorations over held cores | 1 | 5 | 33 | 21,060,872,662,800 | 638,208,262,509 | 22,720,788,300 | 947,724,507,000 | 2026-08-24 | 2026-08-31 | spent |
 | v2 material borrowed endings, ranks 64001-72000 | 1 | 3 | 7 | 5,089,812,147,000 | 727,116,021,000 | 565,158,636,000 | 566,326,782,000 | 2026-08-26 | 2026-08-26 | live |
@@ -1105,7 +1105,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1027 distinct methods, run 1125 ways between them, across 3719 runs. `names` is what each run
+1027 distinct methods, run 1125 ways between them, across 3720 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->
