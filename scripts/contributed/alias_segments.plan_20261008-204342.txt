@@ -1,0 +1,4 @@
+label: alias segment plan -- alias stems x measured alias endings
+describe: stems from sound-file basenames and trimmed known aliases (all games), crossed with the 1-3 segment endings known aliases carry; see contrib/alias_segments.py
+stem: @contrib/alias_stems.txt
+end: @contrib/alias_ends.txt
