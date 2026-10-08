@@ -1,0 +1,5 @@
+label: tw-family terrain grids, triples over the top 1500 tokens
+describe: tw/ twcj/ twck/ wc/ twj/ twk/ w/ *<a>_<b>_<c> over the 1,500 most frequent numeric twc tokens
+begin: @contrib/tw_begin3.txt
+stem: @contrib/tw_top1500.txt
+end: @contrib/tw_top1500_end.txt
