@@ -170,7 +170,7 @@
     },
     "modwar22": {
       "files": 6,
-      "names": 2121,
+      "names": 3122,
       "types": {
         "image": {
           "found_pct": 38.5,
@@ -185,9 +185,9 @@
           "total": 230876
         },
         "sound_alias": {
-          "found_pct": 8.1,
-          "named": 12036,
-          "names": 2117,
+          "found_pct": 8.8,
+          "named": 13037,
+          "names": 3118,
           "total": 147867
         },
         "sound_asset": {
@@ -305,6 +305,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 296747
+    "names": 297748
   }
 }
