@@ -1,0 +1,4 @@
+label: other types' stems as image stems x measured image endings
+describe: underscore-prefixes of known anims, aliases and sound basenames (not already image stems) crossed with the image segment endings
+stem: @contrib/xtype_stems.txt
+end: @contrib/seg_image_ends.txt

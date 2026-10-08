@@ -1,0 +1,4 @@
+label: material bases as image stems x measured image endings
+describe: every known material base (directory dropped) crossed with the image segment plan's endings, plus the bare base
+stem: @contrib/mat_bases.txt
+end: @contrib/seg_image_ends.txt
