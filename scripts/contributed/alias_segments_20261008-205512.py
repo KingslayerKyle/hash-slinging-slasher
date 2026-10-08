@@ -18,6 +18,11 @@ ROOT = Path(__file__).resolve().parent
 while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
     ROOT = ROOT.parent
 CONTRIB = ROOT / "contrib"
+HERE = Path(__file__).resolve().parent
+STAMP = Path(__file__).stem.removeprefix("alias_segments")
+SOURCE = HERE / ("alias_from_files" + STAMP + ".py")
+if not SOURCE.is_file():
+    SOURCE = HERE / "alias_from_files.py"
 
 
 def known_aliases():
@@ -36,7 +41,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ends", type=int, default=3000)
     a = ap.parse_args()
-    stems = set(subprocess.run([sys.executable, str(CONTRIB / "alias_from_files.py")],
+    if not SOURCE.is_file():
+        raise SystemExit("alias_from_files.py must be beside this script (with the same submission stamp)")
+    CONTRIB.mkdir(parents=True, exist_ok=True)
+    stems = set(subprocess.run([sys.executable, str(SOURCE)],
                                capture_output=True, text=True, check=True).stdout.split())
     ends = collections.Counter()
     for alias in set(known_aliases()):

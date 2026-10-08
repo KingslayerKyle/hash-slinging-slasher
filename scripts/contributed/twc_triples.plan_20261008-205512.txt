@@ -1,5 +1,5 @@
 label: twc terrain-blend grid, triples
 describe: twc/*<a>_<b>_<c> over the 5,489 numeric tokens every published twc name is built from
-begin: @contrib/twc_begin3.txt
-stem: @contrib/twc_tokens.txt
-end: @contrib/twc_tokens_end.txt
+begin: @scripts/contributed/twc_begin3_20261008-205512.txt
+stem: @scripts/contributed/twc_tokens_20261008-205512.txt
+end: @scripts/contributed/twc_tokens_end_20261008-205512.txt
