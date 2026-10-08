@@ -23,16 +23,16 @@
 
 <table>
 <tr><th align="left"><code>blackop7/</code></th>
-<th align="right" colspan="2">34,798 names in 6 file(s)</th>
+<th align="right" colspan="2">44,881 names in 6 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>xmodel</code></td><td align="right">0</td><td align="right">9,202 / 206,371 &nbsp;(4.5%)</td></tr>
-<tr><td><code>material</code></td><td align="right">1</td><td align="right">105,286 / 388,231 &nbsp;(27.1%)</td></tr>
-<tr><td><code>image</code></td><td align="right">2</td><td align="right">62,968 / 839,489 &nbsp;(7.5%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">165</td><td align="right">81,686 / 97,260 &nbsp;(84.0%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">4,801</td><td align="right">104,426 / 399,776 &nbsp;(26.1%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">29,829</td><td align="right">52,333 / 254,502 &nbsp;(20.6%)</td></tr>
+<tr><td><code>material</code></td><td align="right">2,955</td><td align="right">108,240 / 388,231 &nbsp;(27.9%)</td></tr>
+<tr><td><code>image</code></td><td align="right">69</td><td align="right">63,035 / 839,489 &nbsp;(7.5%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">355</td><td align="right">81,876 / 97,260 &nbsp;(84.2%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">4,929</td><td align="right">104,554 / 399,776 &nbsp;(26.2%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">36,573</td><td align="right">59,077 / 254,502 &nbsp;(23.2%)</td></tr>
 </table>
 
 </td>
