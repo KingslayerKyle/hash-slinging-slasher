@@ -2,36 +2,36 @@
   "games": {
     "blackop6": {
       "files": 6,
-      "names": 0,
+      "names": 20600,
       "types": {
         "image": {
           "found_pct": 12.2,
-          "named": 47384,
-          "names": 0,
+          "named": 47405,
+          "names": 21,
           "total": 389526
         },
         "material": {
           "found_pct": 37.8,
-          "named": 70369,
-          "names": 0,
+          "named": 70400,
+          "names": 31,
           "total": 186048
         },
         "sound_alias": {
-          "found_pct": 7.2,
-          "named": 14883,
-          "names": 0,
+          "found_pct": 14.6,
+          "named": 30320,
+          "names": 15437,
           "total": 207980
         },
         "sound_asset": {
-          "found_pct": 24.2,
-          "named": 79244,
-          "names": 0,
+          "found_pct": 25.8,
+          "named": 84299,
+          "names": 5055,
           "total": 327081
         },
         "xanim": {
           "found_pct": 77.9,
-          "named": 68229,
-          "names": 0,
+          "named": 68285,
+          "names": 56,
           "total": 87620
         },
         "xmodel": {
@@ -305,6 +305,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 367480
+    "names": 388080
   }
 }
