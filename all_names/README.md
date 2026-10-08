@@ -6,16 +6,16 @@
 
 <table>
 <tr><th align="left"><code>blackop6/</code></th>
-<th align="right" colspan="2">20,600 names in 6 file(s)</th>
+<th align="right" colspan="2">30,514 names in 6 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>xmodel</code></td><td align="right">0</td><td align="right">7,643 / 102,982 &nbsp;(7.4%)</td></tr>
-<tr><td><code>material</code></td><td align="right">31</td><td align="right">70,400 / 186,048 &nbsp;(37.8%)</td></tr>
-<tr><td><code>image</code></td><td align="right">21</td><td align="right">47,405 / 389,526 &nbsp;(12.2%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">56</td><td align="right">68,285 / 87,620 &nbsp;(77.9%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">5,055</td><td align="right">84,299 / 327,081 &nbsp;(25.8%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">15,437</td><td align="right">30,320 / 207,980 &nbsp;(14.6%)</td></tr>
+<tr><td><code>material</code></td><td align="right">5,130</td><td align="right">75,499 / 186,048 &nbsp;(40.6%)</td></tr>
+<tr><td><code>image</code></td><td align="right">36</td><td align="right">47,420 / 389,526 &nbsp;(12.2%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">274</td><td align="right">68,503 / 87,620 &nbsp;(78.2%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">5,224</td><td align="right">84,468 / 327,081 &nbsp;(25.8%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">19,850</td><td align="right">34,733 / 207,980 &nbsp;(16.7%)</td></tr>
 </table>
 
 </td>
@@ -136,9 +136,9 @@ the community tables, against every id the game holds.
 
 They are not the same measure, and the second is much the larger.
 
-Where `image` under `blackop6/` reads 21 and 47,405 / 389,526:
-this project found 21 of the 47,405 names anybody has for that pool, and
-342,121 of its ids are still nameless. The percentage is the fraction named,
+Where `image` under `blackop6/` reads 36 and 47,420 / 389,526:
+this project found 36 of the 47,420 names anybody has for that pool, and
+342,106 of its ids are still nameless. The percentage is the fraction named,
 not the fraction found here.
 
 The emptiest pool is `xmodel` under `blackop7/`: 9,202 of 206,371 named,
