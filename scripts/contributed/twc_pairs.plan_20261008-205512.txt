@@ -1,0 +1,5 @@
+label: twc terrain-blend grid, pairs
+describe: twc/*<a>_<b> over the 5,489 numeric tokens (e.g. 53n, 261dn) every published twc name is built from
+begin: twc/*
+stem: @scripts/contributed/twc_tokens_20261008-205512.txt
+end: @scripts/contributed/twc_tokens_end_20261008-205512.txt
