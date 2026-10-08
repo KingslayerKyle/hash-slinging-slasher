@@ -1,0 +1,6 @@
+29fd7b6097a7b3b9,m/att_rex_ammo_545s_hp
+29fd7d6097a7b71f,m/att_rex_ammo_545s_hv
+2a0e796097b62386,m/att_rex_ammo_545s_op
+2a14856097baa398,m/att_rex_ammo_545s_ap
+2a258d6097c92463,m/att_rex_ammo_545s_df
+2a2c956097cf50a9,m/att_rex_ammo_545s_fn

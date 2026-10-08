@@ -1,0 +1,2 @@
+17605751bc5af854,rex_base_male_arm_r_skintone_03_m0_v2
+6c6e245c34d02791,rex_base_male_arm_r_skintone_03_thermalmap
