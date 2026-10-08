@@ -217,6 +217,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | \ bo4 image siblings from confirmed materials 20260830\ | 1 | 1 | 135 | 2,163,297 | 16,024 | 16,024 | 16,024 | 2026-08-30 | 2026-08-30 | untried |
 | alias slot substitution | 4 | 9 | 1,354 | 21,780,323 | 16,085 | 6,535 | 2,047,927 | 2026-08-20 | 2026-08-21 | spent |
 | zombies vo: gpu 3-token gap fill complete (112 prefixes) + 67 four-token suffixes (gapfill4 on the 3090) -> grids + aliases | 1 | 1 | 355 | 6,030,376 | 16,986 | 16,986 | 16,986 | 2026-09-11 | 2026-09-11 | untried |
+| mw7 verified numeric and texture siblings | 1 | 1 | 114 | 1,963,655 | 17,225 | 17,225 | 17,225 | 2026-10-08 | 2026-10-08 | untried |
 | rare-token-compound-splice-anim | 1 | 3 | 30 | 521,194 | 17,373 | 10,849 | 17,385 | 2026-08-20 | 2026-08-20 | live |
 | black ops 4 final-byte solve after refreshed tables | 1 | 2 | 2 | 35,304 | 17,652 | 17,652 | 17,652 | 2026-08-27 | 2026-08-27 | live |
 | black ops 3 build names, verbatim | 1 | 1 | 4 | 73,303 | 18,325 | 18,325 | 18,325 | 2026-08-22 | 2026-08-22 | untried |
@@ -1103,7 +1104,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1025 distinct methods, run 1123 ways between them, across 3715 runs. `names` is what each run
+1026 distinct methods, run 1124 ways between them, across 3716 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->
