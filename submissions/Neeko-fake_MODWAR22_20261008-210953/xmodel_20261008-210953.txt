@@ -1,0 +1,1 @@
+27a79fda0e85ddfe,equipment_wm_tripwire
