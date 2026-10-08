@@ -1,0 +1,4 @@
+label: image all-boundary segment plan -- cut at underscores and letter/digit edges
+describe: every known image name cut at every underscore and letter/digit boundary; stems x the top 5000 endings; see contrib/type_segments.py --all-cuts
+stem: @contrib/seg_image_ab_stems.txt
+end: @contrib/seg_image_ab_ends.txt
