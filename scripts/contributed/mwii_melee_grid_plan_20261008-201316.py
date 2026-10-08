@@ -33,7 +33,10 @@ import re
 import sys
 from pathlib import Path
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "scripts"))
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+sys.path.insert(0, str(ROOT / "scripts"))
 
 import settings
 import snapshot
