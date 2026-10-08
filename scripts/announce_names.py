@@ -59,7 +59,10 @@ def embed(summary):
     rank = {kind: index for index, kind in enumerate(order)}
 
     fields = []
-    for game, data in sorted(summary["games"].items()):
+    # Follow the display-name mapping: older games first, then the modern releases.
+    game_rank = {game: index for index, game in enumerate(NICE)}
+    for game, data in sorted(summary["games"].items(),
+                             key=lambda item: (game_rank.get(item[0], len(game_rank)), item[0])):
         rows = sorted(
             data["types"].items(),
             key=lambda pair: (rank.get(pair[0], len(rank)), pair[0]),
