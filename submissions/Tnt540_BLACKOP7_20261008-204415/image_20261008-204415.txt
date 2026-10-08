@@ -1,0 +1,2 @@
+1c0c4fc5577347d1,hud_zombie_afterlife_icon_white
+68d0b3e141d003d3,hud_zombie_afterlife_icon
