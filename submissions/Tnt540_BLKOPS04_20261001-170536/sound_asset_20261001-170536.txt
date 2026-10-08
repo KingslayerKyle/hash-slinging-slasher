@@ -1,0 +1,3 @@
+a3d76fac2530e50,fly\emotes\emote_bbq.pl100.pc.snd
+44355ee13fb25add,en\vox\scripted\zmb\orange\vox_oran_apot_flesh_mysteries_0.sn100.pc.snd
+6c799562c28cb9c7,en\vox\scripted\zmb\orange\vox_oran_apot_heart_bounded_0.sn100.pc.snd
