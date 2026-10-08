@@ -31,6 +31,7 @@ ae1d8046c9a7122,core.fly.foot.step_walk_water_06.ln.75.48000.all
 4fbf2b3e27bba0e3,core.fly.wpfoly_mike4_raise_quick.ln.85.48000.all
 31e6cfacfc3ce0ac,core.fly.wpfoly_mike4_reload_empty_magin_v2_01.ln.85.48000.all
 540d0dbaeca2a0f5,core.fly.wpfoly_mike4_reload_empty_magin_v2_02.ln.85.48000.all
+f6d0907c9744547,core.fly.wpfoly_mike4_reload_end_v2.ln.85.48000.all
 1200ffa58d3ed4e5,core.fly.wpfoly_mike4_reload_fast_magin_v2_01.ln.85.48000.all
 13ede4da5960981c,core.fly.wpfoly_mike4_reload_fast_magin_v2_02.ln.85.48000.all
 29937bd2b5178af2,core.fly.wpfoly_mike4_reload_magin_v2_01.ln.85.48000.all
@@ -40,6 +41,7 @@ ae1d8046c9a7122,core.fly.foot.step_walk_water_06.ln.75.48000.all
 6ba229e4faea4fce,cp.foley.elevator.scn_cp_elevator_in_use_lp.sl.75.48000.all
 6a710c52215e7e81,cp.foley.elevator.scn_cp_elevator_in_use_lp.sl.85.48000.all
 f8ab919b89a4441,cp.foley.elevator.scn_cp_elevator_open.ln.75.48000.all
+465d6619c77b1729,cp.foley.elevator.scn_cp_elevator_stop_dist.sn.75.48000.all
 5621ee44280ad405,equipment.armor_plates.eqp_armor_plates_close_01.sn.85.48000.all
 ca562de43a1819c,equipment.armor_plates.eqp_armor_plates_close_02.sn.85.48000.all
 5f2f797c304eb74f,equipment.armor_plates.eqp_armor_plates_close_03.sn.85.48000.all
@@ -159,6 +161,7 @@ f3ad003be0f9b82,iw9.amb.amb_emitters.water.waves.emt_boat_dock_creak_lp_02.sl.75
 43dcb00dbccaad39,iw9.amb.amb_emitters_iw9.fire.emt_gp_fire_metal_lrg_lp.sl.75.48000.all
 7a470e16f68963e3,iw9.amb.amb_emitters_iw9.fire.emt_gp_fire_metal_med_lp.ll.75.48000.all
 3a07991b597b971e,iw9.amb.amb_emitters_iw9.fire.emt_gp_fire_metal_med_lp.sl.75.48000.all
+3173826af8f2ab2f,iw9.amb.amb_emitters_iw9.fire.emt_gp_fire_wood_med_lp.ll.75.48000.all
 44e22acb4949c68a,iw9.amb.amb_emitters_iw9.lights.emt_iw9_light_buzz_on.ln.75.48000.all
 5ad08e39db866b2f,iw9.amb.amb_emitters_iw9.lights.emt_iw9_light_hum_fluro_01_lp.ll.75.48000.all
 79bdf28920cd33d2,iw9.amb.amb_emitters_iw9.lights.emt_iw9_light_hum_fluro_01_lp.sl.75.48000.all
@@ -200,6 +203,8 @@ f3ad003be0f9b82,iw9.amb.amb_emitters.water.waves.emt_boat_dock_creak_lp_02.sl.75
 7dea259b5fc6abae,iw9.amb.amb_emitters_iw9.velocity.vel_emt_tree_04_lp.ll.75.48000.all
 1723d39ed9c2d6eb,iw9.amb.amb_emitters_iw9.velocity.vel_emt_tree_lrg_lp.ll.75.48000.all
 2f4cdbbeeddfe633,iw9.amb.amb_emitters_iw9.water.emt_iw9_water_lapping_sm_lp.ll.75.48000.all
+3ae34a42b247fa50,iw9.amb.ambient_iw9.amb_mp_delta_industrial_hallway_lr.sl.75.48000.all
+42c2d9d00d788ad0,iw9.amb.ambient_iw9.amb_mp_delta_industrial_hallway_lsrs.sl.75.48000.all
 6d0808cee3716845,iw9.amb.ambient_iw9.amb_mp_hydro_ext_lr.sl.75.48000.all
 27836b92469badd1,iw9.amb.ambient_iw9.amb_mp_hydro_ext_lsrs.sl.75.48000.all
 3c0a3710ce82f0b3,iw9.amb.ambient_iw9.amb_mp_hydro_night_ext_03_lr.sl.85.48000.all
@@ -259,6 +264,7 @@ cd9d03d0d98591,iw9.dst.dst_iw9_soda_bottle_spray_01.ln.75.48000.all
 1ce73a3d05db0292,iw9.lvl.party.elevator.prty_elevator_button_press_02.ln.75.48000.all
 cef9eb6eea134e7,iw9.lvl.party.elevator.prty_elevator_run_int_start_01.ln.75.48000.all
 7b3317a6bfe61aef,iw9.lvl.stolen.rpg.stolen_rpg_veh_explo_1.ln.85.48000.all
+785e2ea29abe10e5,iw9.lvl.stolen.rpg.stolen_rpg_veh_explo_1_lfe.ln.85.48000.all
 2df5743d93e52aeb,iw9.mp.events.the_boys.iw9_event_tb_electric_discharge_lfe.sn.85.48000.all
 347b343c47a65ae7,iw9.mp.ext_balloon.iw9_mp_extraction_balloon_idle_lp.pl.75.48000.all
 5667af2ce00d72ed,iw9.mp.infil.blima_infil.mp_infil_blima_heli_int_quad_front.sn.75.48000.all
@@ -301,6 +307,7 @@ d16375dd69341f2,iw9.mp.infil.crossing_infil.infil_crossing_civ_foot3_1.ln.75.480
 6a9956d28118e211,iw9.mp.infil.palfa_infil.mp_infil_palfa_heli_interior_rear.sn.75.48000.all
 6b02db01bc6f2811,iw9.mp.infil.palfa_infil.mp_infil_palfa_heli_pre.sl.75.48000.all
 4c6957255f3f66f2,iw9.uin.br.defcon.uin_iw9_mp_defcon_one_full_a.sn.85.48000.all
+160ce2f45325d9b2,iw9.uin.dmz.mission_progress.uin_iw9_aar_dmz_mission_comp_check_center.ln.75.48000.all
 14bf1114a2bd4a41,iw9.uin.dmz.mission_progress.uin_iw9_aar_dmz_mission_comp_check_right.ln.75.48000.all
 5dc38a4cf07d4b3d,iw9.uin.main_iw8.iw8_leavelobby_alert_v1.ln.75.48000.all
 5eea4829a78d7720,iw9.veh.c17.veh_c17_flyby.sn.85.48000.all
@@ -318,6 +325,8 @@ d16375dd69341f2,iw9.mp.infil.crossing_infil.infil_crossing_civ_foot3_1.ln.75.480
 6fcd2950484e52d,iw9.veh.suspension.iw9_veh_dirt_bike_suspension_16.ln.75.48000.all
 70faefcd0de9ec12,iw9.veh.suspension.iw9_veh_dirt_bike_suspension_17.ln.75.48000.all
 71378ad745f11967,iw9.veh.suspension.iw9_veh_dirt_bike_suspension_18.ln.75.48000.all
+209266ee19961614,iw9.veh.suspension.iw9_veh_dirt_bike_suspension_19.ln.75.48000.all
+602efcf34d52dabb,iw9.veh.suspension.iw9_veh_dirt_bike_suspension_21.ln.75.48000.all
 70106ad592742b1a,iw9.veh.suspension.iw9_veh_dirt_bike_suspension_22.ln.75.48000.all
 19dc06ceb4f0b3a8,iw9.veh.truck_highway.veh_truck_highway_engine_lp_01.sl.75.48000.all
 4131bb3a41d3e963,iw9.veh.water_physics.veh_boat_wake_speed_03_lp.ll.85.48000.all
@@ -394,6 +403,7 @@ debf82807eed43f,iw9.wpn.mama2.weap_mama2_fire_plr_mech_06.ln.85.48000.all
 7c0a48f594738e73,iw9.wpn.reloads.iw8_mike32.wfoly_plr_la_mike32_reload_grab2.ln.85.48000.all
 4b1563126b6f4a01,iw9.wpn.reloads.iw8_mike32.wfoly_plr_la_mike32_reload_open_01.ln.85.48000.all
 77bb1241b8524bc3,iw9.wpn.reloads.iw8_mike32.wfoly_plr_la_mike32_reload_rattle.ln.85.48000.all
+61929d0eb7ada5ee,iw9.wpn.reloads.iw8_mike32.wfoly_plr_la_mike32_reload_smack.ln.85.48000.all
 32b24ad8f620a633,iw9.wpn.reloads.iw8_mike32.wfoly_plr_la_mike32_reload_start.ln.85.48000.all
 28393ba0737dc6fb,iw9.wpn.reloads.iw9_fecho.npc.p06_ar_fecho_reload_empty_boltcharge_npc.ln.75.48000.all
 35f9332d564d2a5e,iw9.wpn.reloads.iw9_fecho.npc.p06_ar_fecho_reload_empty_magin_npc.ln.75.48000.all
