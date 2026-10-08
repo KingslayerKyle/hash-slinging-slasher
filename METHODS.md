@@ -233,7 +233,6 @@ table under a name you would not have guessed is the thing you are about to rebu
 | reversible endpoint token swaps | 1 | 1 | 2 | 49,872 | 24,936 | 24,936 | 24,936 | 2026-09-04 | 2026-09-04 | untried |
 | sound files from aliases, after cross fill | 1 | 1 | 460 | 11,480,155 | 24,956 | 24,956 | 24,956 | 2026-10-05 | 2026-10-05 | untried |
 | bo3 mod tools gdt asset names | 1 | 2 | 3 | 84,078 | 28,026 | 21,019 | 42,039 | 2026-08-22 | 2026-08-22 | live |
-| mwii sound alias heads x shared tails | 1 | 2 | 4,169 | 118,892,800 | 28,518 | 14,786 | 42,739 | 2026-10-08 | 2026-10-08 | live |
 | sound files from aliases, after topic x common quips | 1 | 1 | 386 | 11,662,505 | 30,213 | 30,213 | 30,213 | 2026-10-06 | 2026-10-06 | untried |
 | sound files from aliases, after web-bigram aliases | 1 | 1 | 357 | 11,024,773 | 30,881 | 30,881 | 30,881 | 2026-10-05 | 2026-10-05 | untried |
 | rare shared-token splices family size 13-30 | 1 | 1 | 10 | 325,039 | 32,503 | 32,503 | 32,503 | 2026-08-28 | 2026-08-28 | untried |
@@ -297,6 +296,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | image siblings closure followup | 1 | 1 | 13 | 2,309,889 | 177,683 | 177,683 | 177,683 | 2026-09-02 | 2026-09-02 | untried |
 | sound language and encoding variants | 1 | 2 | 53 | 9,914,264 | 187,061 | 113,060 | 374,530 | 2026-08-20 | 2026-09-11 | cooling |
 | rare shared-token splices family sizes 10201-10500 | 1 | 1 | 14 | 2,725,854 | 194,703 | 194,703 | 194,703 | 2026-08-28 | 2026-08-28 | untried |
+| mwii sound alias heads x shared tails | 1 | 3 | 5,889 | 1,165,843,231 | 197,969 | 14,786 | 608,692 | 2026-10-08 | 2026-10-08 | spent |
 | numbered designation slots | 1 | 1 | 16 | 3,352,846 | 209,552 | 209,552 | 209,552 | 2026-10-01 | 2026-10-01 | untried |
 | modern warfare 2 build names, verbatim | 1 | 1 | 1 | 209,784 | 209,784 | 209,784 | 209,784 | 2026-08-22 | 2026-08-22 | untried |
 | rare compound image splice | 1 | 1 | 1 | 223,738 | 223,738 | 223,738 | 223,738 | 2026-09-04 | 2026-09-04 | untried |
@@ -1114,7 +1114,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1036 distinct methods, run 1134 ways between them, across 3732 runs. `names` is what each run
+1036 distinct methods, run 1134 ways between them, across 3733 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->
