@@ -1,0 +1,2 @@
+f29997e2bcb8b0a,c_t10_zmb_zombie_fem_pants_merc_tan_thermalmap
+4546041dbe1059dc,c_t10_zmb_zombie_fem_pants_merc_grey_thermalmap
