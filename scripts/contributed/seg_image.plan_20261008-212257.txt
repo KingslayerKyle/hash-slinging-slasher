@@ -1,0 +1,4 @@
+label: image segment plan -- image stems x measured image endings
+describe: every underscore-prefix of every known image name, crossed with the top 3000 1-3 segment endings image names carry; see contrib/type_segments.py
+stem: @contrib/seg_image_stems.txt
+end: @contrib/seg_image_ends.txt
