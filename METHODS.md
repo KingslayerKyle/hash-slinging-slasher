@@ -4491,6 +4491,13 @@ typed visual/animation delta candidates added another **16**: BO6 eleven,
 MWIII four and MWII one. The additional Cold War alias was already claimed by
 the modern harvest. Modern models remained excluded throughout.
 
+Exact-name reuse of the three new BO7 alias candidate sets (92,154 names) added
+**six further unique aliases**: BO6 five and MWIII one. All 3,936 BO7 matches
+were reserved first; current tables, history, findings and live open-PR claims
+excluded prior work. Four BO6 names and the MWIII name came from the original
+paired seed delta; the last BO6 name came from the verified-frontier candidates.
+The continuation set added none elsewhere. No rules were retrained or widened.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
