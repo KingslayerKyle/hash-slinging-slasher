@@ -1415,6 +1415,7 @@ fa807e66245c601,impulse_responses/jup/ir_semi_open_between_buildings.wav
 1662a375eb937255,iw9/amb/amb_emitters/air/emt_steam_plume_05_lp.dnl.85.48000.all
 f3a44ca4c87303e,iw9/amb/amb_emitters/animal/amb_seagull_emitters_01.dnl.75.48000.all
 196a79071b322f61,iw9/amb/amb_emitters/animal/amb_seagull_emitters_02.dnl.75.48000.all
+1a83bccc3683d3f4,iw9/amb/amb_emitters/animal/amb_seagull_emitters_03.dnl.75.48000.all
 602884cca718112f,iw9/amb/amb_emitters/animal/amb_seagull_emitters_04.dnl.75.48000.all
 521c35f40c5ffbea,iw9/amb/amb_emitters/animal/amb_seagull_emitters_05.dnl.75.48000.all
 379f33f604eb962d,iw9/amb/amb_emitters/animal/amb_seagull_emitters_06.dnl.75.48000.all
@@ -1724,6 +1725,7 @@ a63671d5b2e2fe4,iw9/amb/amb_emitters/stressmetal/emt_small_metal_creak_04.dnn.85
 10fe8a80daed7c2d,iw9/amb/amb_emitters/stresswood/emt_wood_creak_ster_08.snn.75.48000.all
 6126bb41828af037,iw9/amb/amb_emitters/stresswood/emt_wood_creak_ster_09.dnn.75.48000.all
 7a8a3644996ca040,iw9/amb/amb_emitters/stresswood/emt_wood_creak_ster_09.snn.75.48000.all
+4c26ccb2724dbcf9,iw9/amb/amb_emitters/stresswood/emt_wood_creak_ster_10.dnn.75.48000.all
 7f9ff31d3d035ba2,iw9/amb/amb_emitters/tarps/emt_iw8_plastic_tarp_flap_01.dnn.75.48000.all
 7176bb1edac1ac7d,iw9/amb/amb_emitters/tarps/emt_iw8_plastic_tarp_flap_01.dnn.85.48000.all
 2f6ad77d61848ae5,iw9/amb/amb_emitters/tarps/emt_iw8_plastic_tarp_flap_02.dnn.75.48000.all
@@ -3887,6 +3889,10 @@ d5a1bb9ed4d7f64,jup/fly/footsteps/wood_solid/fs_wood_solid_walk_01.lnn.75.48000.
 4f9663c1b10a07f7,jup/wpn/sh/spapa12/reloads/p38_sh_spapa12_pump_forward_metal_02.lnn.75.48000.all
 580dc85e18de57df,jup/wpn/sh/spapa12/reloads/p38_sh_spapa12_pump_forward_metal_02.tnn.75.48000.all
 774e5f140233d1e2,jup/wpn/sh/spapa12/reloads/p38_sh_spapa12_pump_forward_metal_03.lnn.75.48000.all
+f0fb8f06c458eda,jup/wpn/sh/spapa12/reloads/p38_sh_spapa12_pump_forward_metal_03.tnn.75.48000.all
+1d3497e59bd4ab71,jup/wpn/sh/spapa12/reloads/p38_sh_spapa12_pump_forward_metal_04.tnn.75.48000.all
+17328a344c650084,jup/wpn/sh/spapa12/reloads/p38_sh_spapa12_pump_forward_metal_05.tnn.75.48000.all
+21e260ca0f5a93e3,jup/wpn/sh/spapa12/reloads/p38_sh_spapa12_pump_forward_metal_06.tnn.75.48000.all
 702bde0d9fcad4cc,jup/wpn/sm/talpham/reloads/p25_ar_talpha95_inspect_boltclose.tnn.75.48000.all
 2655dbe89daf942e,jup/wpn/sm/talpham/reloads/p25_ar_talpha95_inspect_magdown.tnn.75.48000.all
 1660ae91260bbc20,jup/wpn/sm/talpham/reloads/p25_ar_talpha95_inspect_maggrab.tnn.75.48000.all

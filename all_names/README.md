@@ -6,15 +6,15 @@
 
 <table>
 <tr><th align="left"><code>blackop6/</code></th>
-<th align="right" colspan="2">127,687 names in 5 file(s)</th>
+<th align="right" colspan="2">128,145 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>material</code></td><td align="right">49,405</td><td align="right">119,774 / 186,048 &nbsp;(64.4%)</td></tr>
-<tr><td><code>image</code></td><td align="right">10,073</td><td align="right">57,457 / 389,526 &nbsp;(14.8%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">4,113</td><td align="right">72,342 / 87,620 &nbsp;(82.6%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">8,209</td><td align="right">87,453 / 327,081 &nbsp;(26.7%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">55,887</td><td align="right">70,770 / 207,980 &nbsp;(34.0%)</td></tr>
+<tr><td><code>material</code></td><td align="right">49,528</td><td align="right">119,897 / 186,048 &nbsp;(64.4%)</td></tr>
+<tr><td><code>image</code></td><td align="right">10,286</td><td align="right">57,670 / 389,526 &nbsp;(14.8%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">4,158</td><td align="right">72,387 / 87,620 &nbsp;(82.6%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">8,215</td><td align="right">87,459 / 327,081 &nbsp;(26.7%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">55,958</td><td align="right">70,841 / 207,980 &nbsp;(34.1%)</td></tr>
 </table>
 
 </td>
@@ -22,15 +22,15 @@
 
 <table>
 <tr><th align="left"><code>blackop7/</code></th>
-<th align="right" colspan="2">138,081 names in 5 file(s)</th>
+<th align="right" colspan="2">138,773 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>material</code></td><td align="right">40,493</td><td align="right">145,778 / 388,231 &nbsp;(37.5%)</td></tr>
-<tr><td><code>image</code></td><td align="right">6,820</td><td align="right">69,786 / 839,489 &nbsp;(8.3%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">5,658</td><td align="right">87,179 / 97,260 &nbsp;(89.6%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">6,339</td><td align="right">105,964 / 399,776 &nbsp;(26.5%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">78,771</td><td align="right">101,275 / 254,502 &nbsp;(39.8%)</td></tr>
+<tr><td><code>material</code></td><td align="right">40,544</td><td align="right">145,829 / 388,231 &nbsp;(37.6%)</td></tr>
+<tr><td><code>image</code></td><td align="right">7,285</td><td align="right">70,251 / 839,489 &nbsp;(8.4%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">5,757</td><td align="right">87,278 / 97,260 &nbsp;(89.7%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">6,345</td><td align="right">105,970 / 399,776 &nbsp;(26.5%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">78,842</td><td align="right">101,346 / 254,502 &nbsp;(39.8%)</td></tr>
 </table>
 
 </td>
@@ -131,13 +131,13 @@ the community tables, against every id the game holds.
 
 They are not the same measure, and the second is much the larger.
 
-Where `image` under `blackop6/` reads 10,073 and 57,457 / 389,526:
-this project found 10,073 of the 57,457 names anybody has for that pool, and
-332,069 of its ids are still nameless. The percentage is the fraction named,
+Where `image` under `blackop6/` reads 10,286 and 57,670 / 389,526:
+this project found 10,286 of the 57,670 names anybody has for that pool, and
+331,856 of its ids are still nameless. The percentage is the fraction named,
 not the fraction found here.
 
-The emptiest pool is `image` under `blackop7/`: 69,786 of 839,489 named,
-so 769,703 ids carry no name at all. That is the largest unworked ground
+The emptiest pool is `image` under `blackop7/`: 70,251 of 839,489 named,
+so 769,238 ids carry no name at all. That is the largest unworked ground
 here, and it is invisible from a count on its own.
 
 The community half of that is measured against `cod-name-db` on 2026-10-08 and stored in

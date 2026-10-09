@@ -2,72 +2,72 @@
   "games": {
     "blackop6": {
       "files": 5,
-      "names": 127687,
+      "names": 128145,
       "types": {
         "image": {
           "found_pct": 14.8,
-          "named": 57457,
-          "names": 10073,
+          "named": 57670,
+          "names": 10286,
           "total": 389526
         },
         "material": {
           "found_pct": 64.4,
-          "named": 119774,
-          "names": 49405,
+          "named": 119897,
+          "names": 49528,
           "total": 186048
         },
         "sound_alias": {
-          "found_pct": 34.0,
-          "named": 70770,
-          "names": 55887,
+          "found_pct": 34.1,
+          "named": 70841,
+          "names": 55958,
           "total": 207980
         },
         "sound_asset": {
           "found_pct": 26.7,
-          "named": 87453,
-          "names": 8209,
+          "named": 87459,
+          "names": 8215,
           "total": 327081
         },
         "xanim": {
           "found_pct": 82.6,
-          "named": 72342,
-          "names": 4113,
+          "named": 72387,
+          "names": 4158,
           "total": 87620
         }
       }
     },
     "blackop7": {
       "files": 5,
-      "names": 138081,
+      "names": 138773,
       "types": {
         "image": {
-          "found_pct": 8.3,
-          "named": 69786,
-          "names": 6820,
+          "found_pct": 8.4,
+          "named": 70251,
+          "names": 7285,
           "total": 839489
         },
         "material": {
-          "found_pct": 37.5,
-          "named": 145778,
-          "names": 40493,
+          "found_pct": 37.6,
+          "named": 145829,
+          "names": 40544,
           "total": 388231
         },
         "sound_alias": {
           "found_pct": 39.8,
-          "named": 101275,
-          "names": 78771,
+          "named": 101346,
+          "names": 78842,
           "total": 254502
         },
         "sound_asset": {
           "found_pct": 26.5,
-          "named": 105964,
-          "names": 6339,
+          "named": 105970,
+          "names": 6345,
           "total": 399776
         },
         "xanim": {
-          "found_pct": 89.6,
-          "named": 87179,
-          "names": 5658,
+          "found_pct": 89.7,
+          "named": 87278,
+          "names": 5757,
           "total": 97260
         }
       }
@@ -275,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 735228
+    "names": 736378
   }
 }
