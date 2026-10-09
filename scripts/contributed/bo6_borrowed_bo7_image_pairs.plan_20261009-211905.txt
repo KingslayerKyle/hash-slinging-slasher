@@ -1,0 +1,8 @@
+label: BLACKOP6 images from frozen verified modern-image pairs witnessed in BO7
+describe: transfer the previously BO7-only image product to the distinct BO6 image capture; unchanged verified modern-image prefixes and complete pair/suffix evidence measured in BO7 by contrib/image_stem_pair_suffix_plan.py; this is borrowed vocabulary, not a claim of BO6 convention witnesses; image pool only
+game: BLACKOP6
+begin: @contrib/image_stem_pair_suffix_plan/blackop7/begin.txt
+stem: @contrib/image_stem_pair_suffix_plan/blackop7/stem.txt
+end: @contrib/image_stem_pair_suffix_plan/blackop7/end.txt
+bare: no
+fold: yes
