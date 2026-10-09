@@ -1,0 +1,3 @@
+c8cbc6a0830397f,rex_vm_me_defibrillator_raise
+4dfb8e19306a62f8,rex_vm_me_defibrillator_drop
+7aa1642af39a73b5,rex_vm_me_defibrillator_fire
