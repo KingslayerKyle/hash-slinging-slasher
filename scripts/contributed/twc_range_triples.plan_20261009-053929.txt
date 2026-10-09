@@ -1,0 +1,5 @@
+label: twc terrain-blend grid, triples over the full 0..4000 numeric range
+describe: twc/*a_b_c with every token 0n..4000n (99% of known BO6/BO7 triples have all tokens <=3958); the earlier triple plan crossed only observed tokens, so numbers nobody had seen were never tried
+begin: @contrib/twc_t4000_begin.txt
+stem: @contrib/twc_t4000_end.txt
+end: @contrib/twc_t4000_end.txt

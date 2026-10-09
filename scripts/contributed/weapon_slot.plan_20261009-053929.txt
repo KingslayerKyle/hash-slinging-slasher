@@ -1,0 +1,5 @@
+label: weapon-slot plan -- beginnings before a weapon x every weapon x endings after one
+describe: 1181 beginnings, 258 <class>_<weapon> codes, 28932 endings measured around every known modern weapon occurrence; see contrib/weapon_slot_plan.py
+begin: @contrib/weapon_slot_begins.txt
+stem: @contrib/weapon_slot_weapons.txt
+end: @contrib/weapon_slot_ends.txt

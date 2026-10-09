@@ -1,0 +1,5 @@
+label: twc terrain-blend grid, quads over the full 0..800 numeric range
+describe: twc/*a_b_c_d with every token 0n..800n (95% of known BO6/BO7 quads have all tokens <=574); the earlier quad plan used the top 600 tokens by frequency and so skipped gaps in the range
+begin: @contrib/twc_q800_begin2.txt
+stem: @contrib/twc_q800_end.txt
+end: @contrib/twc_q800_end.txt
