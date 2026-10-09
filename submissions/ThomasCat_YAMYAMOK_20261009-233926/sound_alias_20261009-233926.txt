@@ -1,0 +1,2 @@
+c4710a746a53562c,veh_tank_cougar_tread_plr_right
+c5b52a6f30977323,veh_tank_cougar_tread_plr_left
