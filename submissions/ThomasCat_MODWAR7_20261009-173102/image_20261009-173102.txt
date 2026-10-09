@@ -1,0 +1,3 @@
+3d6d1b02f481b425,hud_sat_reticle_med_04_mp_circle_h
+3d6d1c02f481b5d8,hud_sat_reticle_med_04_mp_circle_g
+3f516d924714f755,hud_reticle_s55queen_shoot_h
