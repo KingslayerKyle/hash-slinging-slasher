@@ -813,8 +813,9 @@ mod tests {
             wanted.insert(id_of(&format!("nothing reaches this {number}")), 0);
         }
 
-        let mut plain = Search::new(&openings, &endings).run(&stems, &wanted);
-        let mut fast = Meet::new(&openings, &endings).run(&stems, &wanted);
+        // These fixture ids use the legacy basis, independent of this machine's selected game.
+        let mut plain = Search::with_basis(&openings, &endings, BASIS).run(&stems, &wanted);
+        let mut fast = Meet::with_basis(&openings, &endings, BASIS, true).run(&stems, &wanted);
 
         plain.sort();
         fast.sort();
@@ -845,8 +846,8 @@ mod tests {
             );
         }
 
-        let mut plain = Search::new(&openings, &endings).dressed_only().run(&stems, &wanted);
-        let mut fast = Meet::new(&openings, &endings).dressed_only().run(&stems, &wanted);
+        let mut plain = Search::with_basis(&openings, &endings, BASIS).dressed_only().run(&stems, &wanted);
+        let mut fast = Meet::with_basis(&openings, &endings, BASIS, true).dressed_only().run(&stems, &wanted);
 
         plain.sort();
         fast.sort();
@@ -875,8 +876,8 @@ mod tests {
             wanted.insert(id_of(stem), 0);
         }
 
-        let mut plain = Search::new(&openings, &endings).run(&stems, &wanted);
-        let mut fast = Meet::new(&openings, &endings).run(&stems, &wanted);
+        let mut plain = Search::with_basis(&openings, &endings, BASIS).run(&stems, &wanted);
+        let mut fast = Meet::with_basis(&openings, &endings, BASIS, true).run(&stems, &wanted);
 
         plain.sort();
         fast.sort();
@@ -901,7 +902,7 @@ mod tests {
             wanted.insert(id_of(&format!("{}{stem}", openings[index % 2])), 29);
         }
 
-        let found = Meet::new(&openings, &[]).dressed_only().run(&stems, &wanted);
+        let found = Meet::with_basis(&openings, &[], BASIS, true).dressed_only().run(&stems, &wanted);
 
         assert_eq!(found.len(), stems.len());
     }
