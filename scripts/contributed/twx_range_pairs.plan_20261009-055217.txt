@@ -1,0 +1,4 @@
+label: tw-family terrain grids (tw twcj twck wc twj twk w), pairs over the full 0..9999 n/dn range
+describe: <dir>/*a_b for the seven non-twc star-token material dirs with every token 0..9999 as n and dn; the earlier tw plans crossed only observed tokens; see contrib/twx_range_begin.txt
+stem: @contrib/twx_range_begin.txt
+end: @contrib/twx_range_end.txt

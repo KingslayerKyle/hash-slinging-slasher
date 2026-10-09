@@ -1,0 +1,12 @@
+fly_plr_
+fly_npc_
+wfoly_plr_
+wfoly_npc_
+wpn_
+wfoly_rex_plr_
+wfoly_rex_npc_
+wfoly_
+weap_
+fly_sat_
+wfoly_jup_
+fly_
