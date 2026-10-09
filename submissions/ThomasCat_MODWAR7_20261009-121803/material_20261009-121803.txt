@@ -1,0 +1,12 @@
+6e6cefea0b854fb,m/att_rex_lens_reflex01_ads
+1d5a6f254b32141a,m/att_rex_lens_reflex02_ads
+26e861b8433743b1,m/att_rex_laser_pstl03_v0
+6822cfd7d151f25d,m/att_rex_laser_pstl04_trans_v0
+68a129c35470f9ff,m/rex_base_male_muscular_arm_l_skintone_10_wm
+739de78e88982a8a,m/att_rex_laser_pstl04_v0
+73ae396cd0f5db42,m/att_rex_ammo_5x21_hp
+73b84b6cd0fe4e5d,m/att_rex_ammo_5x21_op
+73cd2f6cd1107ad3,m/att_rex_ammo_5x21_ap
+73d02b6cd112a9de,m/att_rex_ammo_5x21_fn
+73d7336cd118d624,m/att_rex_ammo_5x21_df
+78ed96b739f3c462,m/att_rex_laser_pstl03_trans_v0
