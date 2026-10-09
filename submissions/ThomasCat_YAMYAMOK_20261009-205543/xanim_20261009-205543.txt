@@ -1,2 +1,0 @@
-1b1a91b14d6dad6e,cap_sdr_patrol_jltv_check_point_hold01_sdr1_single_loop
-4aad04f8976873a9,cap_sdr_patrol_jltv_check_point_hold02_sdr1_single_loop
