@@ -4376,6 +4376,11 @@ cores. Simultaneously harvested materials are removed from baseline vocabulary
 and convention evidence. **16,107 candidates confirmed 57 new BO7 materials**.
 Final generation had 348 supported triples and 21,080 pair controls.
 
+The later 293-image prefix delta supplied a separate fresh source set. Its 361
+currently witnessed triples produced 2,066 candidates; removing two previously
+tested names left **2,064 candidates and 25 new BO7 materials**. The earlier
+material harvest remained in the verified baseline and exclusions.
+
 Both generators verify the capture game, input spelling and supplied findings
 keys. **Spent by:** these delta bases and witnessed correlated wrappers. This is
 new source vocabulary opening an established relation, not a renamed full rerun.
@@ -4452,6 +4457,31 @@ contaminated baselines and records all supplied input digests.
 **Spent by:** the frozen baseline, explicit application seeds and earlier tested
 candidate sets. Any further continuation needs an actual verified new frontier;
 this is not a driver that repeats existing methods.
+
+## Frozen alias rules traversed through verified matches — 2026-10-09
+
+`contrib/verified_alias_frontier.py` turns the same fixed rule relation into a
+finite graph search. Only the 1,180 newly confirmed continuation aliases start
+the queue. A generated name enters the queue only after its recomputed hash
+matches the selected capture's actual alias pool and passes all current key
+exclusions. Unmatched intermediate strings never expand. Each name and key
+expands once; descendants never train rules.
+
+The original 125,367-name baseline and rule counts remain unchanged, with all
+3,353 original seeds, 2,677 first descendants and 1,180 current seeds excluded
+from training. Earlier candidate sets exclude 71,163 strings. **20,991 new
+candidate attempts confirmed and submitted 79 BO7 aliases**, with gains by
+verified depth of 70, seven, one and one. Eight matches required paths using
+more than one distinct position pair. The queue emptied naturally after 1,259
+verified vertices, below the explicit 100,000-attempt cap.
+
+The generator records input digests and parent/root/position provenance. A
+budget stop reports partial work rather than claiming exhaustion. Replay and
+invariant checks covered unmatched intermediates, exclusions, cycles, key
+deduplication, multiple verified depths and budget termination.
+
+**Spent by:** this explicit verified frontier, frozen rules and prior candidate
+sets. The frontier is empty; another round on these inputs cannot add anything.
 
 ## Reusing the external vocabulary across modern captures — 2026-10-09
 
