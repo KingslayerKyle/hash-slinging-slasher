@@ -1,0 +1,5 @@
+e908905b9e09ce9,rex/eqp/sam_turret/kls_sam_turret_pre_destroy_01.dnn.75.48000.all
+31b9ccb7885de541,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_shot_03.hnn.85.48000.all
+44fee1615685bda5,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_swt_03.hnn.85.48000.all
+51afb2ad9c2d03a6,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_swt_04.hnn.85.48000.all
+6327ec473dd0116a,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_shot_04.hnn.85.48000.all
