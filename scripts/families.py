@@ -42,13 +42,23 @@ import snapshot
 # written at -- `_007` and `_7` are different names and only one of them is right.
 NUMBERED = re.compile(r"^(.*?)(\d+)([^0-9]*)$")
 
+# Sound takes sit before the encoding tail, whose quality/rate fields also contain digits.
+# Prefer that take only for the recognised modern or legacy tail shapes; otherwise keep the
+# ordinary final-number rule. Captures preserve the original spelling and zero-padding.
+SOUND_TAKE = re.compile(
+    r"^(.*_)(\d{1,3})("
+    r"\.[a-z]{1,4}\d*\.\d+\.\d+\.[a-z_]+"
+    r"|\.[a-z]{2}\d+\.pc(?:\.[a-z_]+)?\.snd"
+    r")$", re.IGNORECASE | re.ASCII
+)
+
 
 def families(names):
     """{(before, width, after): {numbers seen}} over every name carrying a number."""
     found = collections.defaultdict(set)
 
     for name in names:
-        match = NUMBERED.match(name)
+        match = SOUND_TAKE.match(name) or NUMBERED.match(name)
         if not match:
             continue
 
