@@ -1,0 +1,2 @@
+3ccf17bdbf566869,sat_ui_icon_xp_player_active_lg
+49c3954c57e0df44,sat_ui_menu_progress_bar_fine
