@@ -4303,6 +4303,164 @@ subsequent work should follow the numeric/UI signal rather than widen blindly.
 An unrun full three-byte product was sized at 834.943 billion candidates with
 4.793% overlap against width two; sizing is not a yield measurement.
 
+## BO7 numeric image families from pair-pass evidence — 2026-10-09
+
+`contrib/image_numeric_triple_family_plan.py` follows the numeric signal from
+the complete stem-pair pass. It selects the first-two-token families of verified
+numeric pair findings, removes three actual trailing digits from verified image
+cores, and recombines only complete numeric triples witnessed in those target
+families. Suffixes retain the global three-sibling-core witness requirement and
+must also occur on numeric images in the selected family.
+
+715 prefixes × 170 witnessed triples × 83 suffixes, plus bare cores, covered
+**10,210,200 candidates and confirmed 3 new BO7 images**. There were 2,148 known
+target numeric controls and 6,487,908 candidates beyond the executed pair plan.
+The compact plan inputs total 29 KB.
+
+**Spent by:** these evidence families and exact lists. This targeted positive
+does not justify an unrestricted numeric range or a blind three-byte expansion.
+
+## BO7 known model vocabulary to visual wrappers: negative — 2026-10-09
+
+The available model history contains no embedded-name dump for BO7. Source-
+verified historical modern and published legacy model names supplied only 462
+already-known names represented in its model capture. These were vocabulary
+seeds only; no modern models were searched or reported as recoveries.
+
+A probe removed up to two leading/trailing underscore tokens, kept long cores
+(at least three tokens and twelve characters), and learned source-wrapper to
+visual-wrapper translations supported by at least three distinct shared cores.
+Material rules supplied 357 known controls and 9,338 candidates; the one image
+rule supplied three controls and 446 candidates. **Neither produced a new match**
+after current database, history, findings and open-claim exclusions.
+
+This target-held wrapper restriction is closed on the available model vocabulary.
+An actual new verified embedded-model source would be a reason to revisit it;
+widening the old source wrappers is not.
+
+## External CSV names, independently rehashed by capture and type — 2026-10-09
+
+`contrib/external_csv_capture_names.py` reads only a CSV's `name` column.
+Supplied hashes, shortened keys, function labels and category metadata are never
+evidence. It applies the shared game/type hash policy and requires membership
+in the requested capture pool before emitting candidates for `confirm_list`.
+It rejects unsupported pools and modern models. The confirmer and submitter
+retain their normal table, history and open-PR exclusions.
+
+A 163,102-row external export supplied **9,951 new BO7 keys**, confirmed and
+submitted as 3,717 materials, 2,234 images, 643 animations, 3,353 sound aliases
+and four sound files. Another 80 image rows genuinely shared keys with materials
+but were excluded at submission after those material keys were claimed. Modern
+model matches were omitted. All 37 applicable game/pool extraction checks agreed
+with an independent rehash. The raw export remains outside tracked source; source
+SHA-256 and extraction counts are recorded locally, and verified findings supply
+the reusable vocabulary.
+
+**Spent by:** the same raw names and capture/hash policies. Wrong source keys
+cannot create finds, and unmatched raw strings are not seeds for later methods.
+
+## Fresh material/image vocabulary through witnessed wrappers — 2026-10-09
+
+`contrib/verified_material_image_delta.py` extracts material bases absent from
+the prior verified corpus. It learns complete image prefix/suffix pairs from
+at least three distinct target-held material/image cores, preserving each pair's
+correlation. The external harvest supplied 3,391 new material bases. With 203
+witnessed wrapper pairs, **688,373 candidates confirmed 692 new BO7 images**.
+The original frozen-corpus probe used 196 pairs; seven additional current pairs
+did not change the final new-name count.
+
+`contrib/verified_image_material_delta.py` performs the reciprocal derivation
+on only the fresh image seeds. It retains complete prefix/suffix/material-directory
+triples, including marker directories, supported by three independent prior
+cores. Simultaneously harvested materials are removed from baseline vocabulary
+and convention evidence. **16,107 candidates confirmed 57 new BO7 materials**.
+Final generation had 348 supported triples and 21,080 pair controls.
+
+Both generators verify the capture game, input spelling and supplied findings
+keys. **Spent by:** these delta bases and witnessed correlated wrappers. This is
+new source vocabulary opening an established relation, not a renamed full rerun.
+
+## Further measured negatives after the external harvest — 2026-10-09
+
+- Alias-to-file prefix inference on the 3,353 new aliases added 815 witnessed
+  rules, 3,073 inferred families and 30,010 candidates beyond the prior alias
+  corpus, but **zero new sound files** after complete exclusions. Do not widen
+  this same delta.
+- Raw plan lists discard lines beginning with `#`, including material marker
+  directories. A focused probe of 64,466 image cores omitted by older raw swaps
+  crossed with 80 target-held marker-directory/end combinations tested 5,157,280
+  candidates, reproduced four controls and found **zero new materials**. Use
+  `0,value` plan-list rows to retain leading markers; this negative does not
+  justify a global replay.
+
+## Two independent animation deltas from the external vocabulary — 2026-10-09
+
+`contrib/verified_animation_context_delta.py` removes the 643 new verified clips
+from its counterfactual baseline, then applies only paired-token rules that cross
+the three-independent-frame threshold because of those clips. The 438 newly
+eligible directed rules produced 30,829 candidates; removing 27 previously tested
+names left **30,802 candidates and 16 new BO7 animations**.
+
+The complementary `contrib/verified_animation_source_delta.py` keeps independently
+witnessed old rules and applies them only to the 643 new clips. Training excludes
+the clips and the 16 prior descendants. It removed 450 previously generated names
+from 5,989 candidates, leaving **5,539 candidates and 10 new BO7 animations**.
+
+**Spent by:** the explicit seed set, baseline support and prior candidate spaces.
+New context support and new application vocabulary are distinct deltas; neither
+requires rerunning every old rule over every old name.
+
+## Frozen image-pair factors with genuinely new prefixes — 2026-10-09
+
+`contrib/image_stem_pair_prefix_delta_plan.py` uses only the 2,314 verified CSV
+images and 692 material-wrapper recoveries as source vocabulary. It retains the
+executed pair plan's exact 677 complete fragments and 5,306 witnessed suffixes.
+One of the 1,497 proposed prefixes was already present, leaving 1,496 new ones.
+
+**5,374,887,144 candidates confirmed 293 new BO7 images.** There were 2,252 known
+target controls, including 2,223 source controls. The prior aligned one-byte
+product covered none; aligned numeric-family overlap was 1,932 candidates. These
+are aligned-factor overlap counts, not a proof against every alternative suffix
+decomposition. Expected coincidences: 0.000446.
+
+The small family-sibling delta in `contrib/image_family_sibling_delta.py` had
+28,070 candidates and four provisional fresh matches. All four were covered by
+this prefix pass before its confirmation was queued, so it was not rerun.
+
+**Spent by:** these new prefixes and frozen pairs/suffixes. Revalidate witnesses
+and supplied seed keys; a larger alphabet is a different, unmeasured search.
+
+## Jointly witnessed alias substitutions on verified new seeds — 2026-10-09
+
+`contrib/verified_alias_paired_seed_delta.py` carries the atomic paired-token
+relation into sound aliases. Both nonadjacent tokens change together at distance
+2..6; at least three independent baseline sibling frames must witness each
+change. All 3,353 CSV aliases are held out of training and only those names are
+application seeds. Independent per-slot offers are never multiplied.
+
+**29,352 candidates confirmed 2,677 aliases; 2,676 were submitted** after the
+remaining already-claimed key was dropped. The frozen baseline contains 125,367
+target-held aliases, of which 124,441 meet the token-length bounds.
+
+`contrib/verified_alias_paired_continuation.py` applied the unchanged original
+rules once to those 2,677 confirmed descendants. The baseline excludes both
+original seeds and descendants; its frame/rule counts agree exactly with the
+first pass. After removing 4,590 earlier candidates, **41,811 additional
+candidates confirmed and submitted 1,180 new BO7 aliases**. The generator rejects
+contaminated baselines and records all supplied input digests.
+
+**Spent by:** the frozen baseline, explicit application seeds and earlier tested
+candidate sets. Any further continuation needs an actual verified new frontier;
+this is not a driver that repeats existing methods.
+
+## Reusing the external vocabulary across modern captures — 2026-10-09
+
+After reserving BO7 matches first, direct raw-name validation added **94 unique
+keys** elsewhere: BO6 nine, MW7 26, MWIII 34 and MWII 25. Rechecking the exact
+typed visual/animation delta candidates added another **16**: BO6 eleven,
+MWIII four and MWII one. The additional Cold War alias was already claimed by
+the modern harvest. Modern models remained excluded throughout.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
