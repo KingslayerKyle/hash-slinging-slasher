@@ -1,0 +1,5 @@
+ad5723dad66fc9e,t10.wpn.pistol.usugar9.lfe.wpn_pi_usugar_lfe_00.ln.100.48000.all
+c6a5936e62145d9,vo_efforts.fplr.plr_fem_cough_3_02.pn.75.48000.all
+191a61e115743e28,vo_efforts.plr.plr_cough_3_02.pn.75.48000.all
+325347d54554ed96,vo_efforts.plr.plr_cough_1_02.pn.75.48000.all
+54835dfad3ad6209,vo_efforts.plr.plr_cough_1_03.pn.75.48000.all
