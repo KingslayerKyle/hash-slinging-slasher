@@ -1,0 +1,15 @@
+7dbd0d3f89f3156,rex/wpn/ar_kilo2/weap_rex_kilo2_fire_npc_swt_08.hnn.85.48000.all
+b912d5baa134530,iw9/wpn/pi_tango9/weap_tango9_sup_npc_07.hnn.85.48000.all
+e5c5daf05758aea,rex/dth/deaths_door_death_lfe.snn.75.48000.all
+1e3090ad1651482b,rex/eqp/sam_turret/kls_sam_turret_plant_01.lnn.85.48000.all
+1e44b9f36622e329,rex/wpn/ar_kilo2/weap_rex_kilo2_fire_npc_shot_07.hnn.85.48000.all
+24940142160dbd32,rex/wpn/ar_kilo2/weap_rex_kilo2_sup_npc_shot_08.hnn.85.48000.all
+2cb797040cb7c204,rex/wpn/ar_kilo2/weap_rex_kilo2_fire_npc_mech_07.hnn.85.48000.all
+3f7d0f44e54c9745,rex/wpn/ar_kilo2/weap_rex_kilo2_sup_npc_swt_07.hnn.85.48000.all
+4888d960103396ad,rex/wpn/ar_kilo2/weap_rex_kilo2_fire_npc_swt_07.hnn.85.48000.all
+4a5d08526f73b61e,rex/wpn/ar_kilo2/weap_rex_kilo2_sup_npc_swt_08.hnn.85.48000.all
+549cc0b91498c1f7,rex/wpn/ar_kilo2/weap_rex_kilo2_fire_npc_mech_08.hnn.85.48000.all
+58493b8b852242d2,mp/equip/iw8_mp_adrenaline_use_stim_sfx.lnn.75.48000.all
+6f3a558bedfbbdd5,iw9/wpn/pi_tango9/weap_tango9_fire_npc_med_07.hnn.85.48000.all
+729b424ad1d7b88a,rex/eqp/sam_turret/kls_sam_turret_raise_01.lnn.85.48000.all
+748791cbf95855fa,rex/wpn/ar_kilo2/weap_rex_kilo2_fire_npc_shot_08.hnn.85.48000.all
