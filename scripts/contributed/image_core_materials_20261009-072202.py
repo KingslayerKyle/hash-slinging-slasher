@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parent
 while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
     ROOT = ROOT.parent
 CONTRIB = ROOT / "contrib"
+CONTRIB.mkdir(parents=True, exist_ok=True)
 MODERN = ("blackop6", "blackop7", "yamyamok", "modwar22", "modwar7")
 NL = chr(10)
 
