@@ -6,15 +6,15 @@
 
 <table>
 <tr><th align="left"><code>blackop6/</code></th>
-<th align="right" colspan="2">30,514 names in 5 file(s)</th>
+<th align="right" colspan="2">108,386 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>material</code></td><td align="right">5,130</td><td align="right">75,499 / 186,048 &nbsp;(40.6%)</td></tr>
-<tr><td><code>image</code></td><td align="right">36</td><td align="right">47,420 / 389,526 &nbsp;(12.2%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">274</td><td align="right">68,503 / 87,620 &nbsp;(78.2%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">5,224</td><td align="right">84,468 / 327,081 &nbsp;(25.8%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">19,850</td><td align="right">34,733 / 207,980 &nbsp;(16.7%)</td></tr>
+<tr><td><code>material</code></td><td align="right">39,712</td><td align="right">110,081 / 186,048 &nbsp;(59.2%)</td></tr>
+<tr><td><code>image</code></td><td align="right">10,028</td><td align="right">57,412 / 389,526 &nbsp;(14.7%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">3,758</td><td align="right">71,987 / 87,620 &nbsp;(82.2%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">8,102</td><td align="right">87,346 / 327,081 &nbsp;(26.7%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">46,786</td><td align="right">61,669 / 207,980 &nbsp;(29.7%)</td></tr>
 </table>
 
 </td>
@@ -131,9 +131,9 @@ the community tables, against every id the game holds.
 
 They are not the same measure, and the second is much the larger.
 
-Where `image` under `blackop6/` reads 36 and 47,420 / 389,526:
-this project found 36 of the 47,420 names anybody has for that pool, and
-342,106 of its ids are still nameless. The percentage is the fraction named,
+Where `image` under `blackop6/` reads 10,028 and 57,412 / 389,526:
+this project found 10,028 of the 57,412 names anybody has for that pool, and
+332,114 of its ids are still nameless. The percentage is the fraction named,
 not the fraction found here.
 
 The emptiest pool is `sound_alias` under `yamyamok/`: 11,671 of 166,718 named,
