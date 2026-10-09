@@ -22,14 +22,14 @@
 
 <table>
 <tr><th align="left"><code>blackop7/</code></th>
-<th align="right" colspan="2">116,961 names in 5 file(s)</th>
+<th align="right" colspan="2">117,048 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>material</code></td><td align="right">35,537</td><td align="right">140,822 / 388,231 &nbsp;(36.3%)</td></tr>
 <tr><td><code>image</code></td><td align="right">6,485</td><td align="right">69,451 / 839,489 &nbsp;(8.3%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">5,112</td><td align="right">86,633 / 97,260 &nbsp;(89.1%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">6,246</td><td align="right">105,871 / 399,776 &nbsp;(26.5%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">6,333</td><td align="right">105,958 / 399,776 &nbsp;(26.5%)</td></tr>
 <tr><td><code>sound_alias</code></td><td align="right">63,581</td><td align="right">86,085 / 254,502 &nbsp;(33.8%)</td></tr>
 </table>
 
@@ -76,11 +76,11 @@
 
 <table>
 <tr><th align="left"><code>modwar22/</code></th>
-<th align="right" colspan="2">4,278 names in 5 file(s)</th>
+<th align="right" colspan="2">76,054 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>material</code></td><td align="right">63</td><td align="right">100,732 / 230,876 &nbsp;(43.6%)</td></tr>
+<tr><td><code>material</code></td><td align="right">71,839</td><td align="right">172,508 / 230,876 &nbsp;(74.7%)</td></tr>
 <tr><td><code>image</code></td><td align="right">8</td><td align="right">118,492 / 307,431 &nbsp;(38.5%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">15</td><td align="right">45,011 / 55,778 &nbsp;(80.7%)</td></tr>
 <tr><td><code>sound_asset</code></td><td align="right">446</td><td align="right">46,357 / 249,863 &nbsp;(18.6%)</td></tr>
@@ -110,15 +110,15 @@
 
 <table>
 <tr><th align="left"><code>yamyamok/</code></th>
-<th align="right" colspan="2">1,840 names in 5 file(s)</th>
+<th align="right" colspan="2">56,962 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>material</code></td><td align="right">0</td><td align="right">116,042 / 221,679 &nbsp;(52.3%)</td></tr>
-<tr><td><code>image</code></td><td align="right">0</td><td align="right">142,419 / 436,889 &nbsp;(32.6%)</td></tr>
+<tr><td><code>material</code></td><td align="right">49,361</td><td align="right">165,403 / 221,679 &nbsp;(74.6%)</td></tr>
+<tr><td><code>image</code></td><td align="right">1,652</td><td align="right">144,071 / 436,889 &nbsp;(33.0%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">0</td><td align="right">62,214 / 64,407 &nbsp;(96.6%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">1,106</td><td align="right">153,655 / 291,343 &nbsp;(52.7%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">734</td><td align="right">12,405 / 166,718 &nbsp;(7.4%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">1,607</td><td align="right">154,156 / 291,343 &nbsp;(52.9%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">4,342</td><td align="right">16,013 / 166,718 &nbsp;(9.6%)</td></tr>
 </table>
 
 </td>
@@ -136,8 +136,8 @@ this project found 10,028 of the 57,412 names anybody has for that pool, and
 332,114 of its ids are still nameless. The percentage is the fraction named,
 not the fraction found here.
 
-The emptiest pool is `sound_alias` under `yamyamok/`: 12,405 of 166,718 named,
-so 154,313 ids carry no name at all. That is the largest unworked ground
+The emptiest pool is `image` under `blackop7/`: 69,451 of 839,489 named,
+so 770,038 ids carry no name at all. That is the largest unworked ground
 here, and it is invisible from a count on its own.
 
 The community half of that is measured against `cod-name-db` on 2026-10-08 and stored in
