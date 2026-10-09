@@ -1,0 +1,4 @@
+679839cddbf9d9,m/wpn_rex_railgun_frame_v0
+2d93d090b147ff52,m/wpn_rex_railgun_ammo_v0
+4171d1737077c906,m/wpn_rex_railgun_handle_v0
+6fd56547146e3cde,m/att_rex_scope_arxvz01_v0

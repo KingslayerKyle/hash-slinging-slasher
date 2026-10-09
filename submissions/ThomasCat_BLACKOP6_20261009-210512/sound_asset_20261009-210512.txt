@@ -1,0 +1,8 @@
+186cc29df8830d84,jup/wpn/lm/rpapa20/wpn_lm_rpapa20_plr_trans_04.tnn.85.48000.all
+42bc3c4b20199a45,iw9/amb/amb_emitters/water/emt_light_drips_03_lp.dnl.85.48000.all
+4d6402b84631b20a,iw9/amb/amb_emitters/water/emt_light_drips_02_lp.dnl.85.48000.all
+50ce0c1fac79e2e4,iw9/amb/amb_emitters/water/emt_light_drips_04_lp.dnl.85.48000.all
+543494520d4dd64f,t10/wpn/smg/lisbon/reloads/fly_plr_sm_lisbon_semiselect_off_mvmnt.tnn.75.48000.all
+54388c185e141456,iw9/dst/dst_water_barrel_puncture_stream_stop_01.tnn.75.48000.all
+6bf00582533cae7a,iw9/amb/amb_emitters/water/emt_light_drips_02_lp.snl.75.48000.all
+6d19cc6ffc01bf40,iw9/amb/amb_emitters/debris_rock/emt_med_rock_debris_05_mono.dnn.75.48000.all
