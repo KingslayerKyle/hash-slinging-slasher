@@ -17,6 +17,9 @@ path = "src/lib.rs"
 # is pure computation over two data files and compiles anywhere.
 default = []
 
+# Optional native forward-search backend. Only this feature requires an installed CUDA SDK.
+cuda = []
+
 # Attaching to Cordycep to capture a snapshot. Only whoever owns the game needs this, and it
 # is the only part that is Windows-only. Everything under it is feature-gated so that a
 # contributor on Linux is never asked to build a process-memory reader they cannot use.

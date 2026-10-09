@@ -72,8 +72,33 @@ rode along in the next submission. A binary cannot be merged, so each one confli
 whatever was built here in the meantime. Submissions carry findings and generators; nothing under
 `bin/` should ever appear in one, and CI now says so if it does.
 
-To build it yourself instead, install Rust and run `cargo run --release --bin start`. There are no
-dependencies, so it takes about a minute.
+To build it yourself instead, install Rust and run `cargo run --release --bin start`. The default
+build has no external dependencies, so it takes about a minute.
+
+## Optional NVIDIA GPU search
+
+CPU remains the default and needs no NVIDIA software. On supported 64-bit Windows or Linux
+machines, an optional `cuda` feature can accelerate large forward products in `confirm_plan`
+and `confirm_cw`. `--backend auto` keeps cheap and inverse (`Meet`) searches on CPU and checks
+GPU support and measured performance before selecting CUDA. `confirm_list` remains a CPU stream.
+
+```text
+cargo build --release --features cuda --bin confirm_plan --bin confirm_cw
+```
+
+Use the new executable under `target/release`, for example on Windows:
+
+```powershell
+.\target\release\confirm_plan.exe --gpu-check
+.\target\release\confirm_plan.exe plans/example.txt --backend auto
+```
+
+Run normal `start` before a search; the standalone `--gpu-check` needs no startup or capture.
+The committed portable binaries under `bin/` are unchanged. Building CUDA support requires a
+compatible Toolkit and C++ compiler; running it uses the NVIDIA driver and statically linked
+CUDA runtime. A supported GPU is not necessarily faster. The
+[GPU guide](docs/GPU.md) covers eligibility, installation, automatic CPU fallback, explicit
+backend selection, and the scope of the benchmark results.
 
 ## Getting started
 

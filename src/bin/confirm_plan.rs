@@ -53,7 +53,8 @@ use std::time::Instant;
 
 use slasher::fingerprint::{Fingerprint, Sketch};
 use slasher::loader::{loaded_assets, wanted_for_search};
-use slasher::search::{candidate_space, run_best};
+use slasher::search::{candidate_space, run_best_with_backend_checkpointed};
+use slasher::gpu;
 use slasher::{futility, 
     config, paths, pool_label, readiness, recon, stamp, table_keys, tables_look_complete, Results,
     RunNote,
@@ -185,36 +186,42 @@ fn read_plan(path: &Path) -> Result<Plan, String> {
 }
 
 fn main() {
+    let mut arguments: Vec<String> = std::env::args().skip(1).collect();
+    if arguments.iter().any(|argument| argument == "--help" || argument == "-h") {
+        usage();
+        return;
+    }
+    let (backend, gpu_check) = gpu::parse_backend_options(&mut arguments).unwrap_or_else(|reason| {
+        eprintln!("{reason}");
+        std::process::exit(2);
+    });
+    if gpu_check {
+        if !arguments.is_empty() {
+            eprintln!("--gpu-check is a standalone diagnostic; omit plan, game, and search arguments.");
+            std::process::exit(2);
+        }
+        match gpu::probe(backend.device) {
+            Ok(device) => {
+                println!("{device}");
+                println!("CUDA support check passed. --backend auto also checks workload cost before selecting the GPU.");
+            }
+            Err(reason) => {
+                eprintln!("{reason}\nCPU searches remain available. See docs/GPU.md for setup and build instructions.");
+                std::process::exit(1);
+            }
+        }
+        return;
+    }
+    let path = plan_path(&arguments).unwrap_or_else(|reason| {
+        eprintln!("{reason}");
+        usage();
+        std::process::exit(2);
+    });
     readiness::require();
     futility::require();
     let began = Instant::now();
 
-    let arguments: Vec<String> = std::env::args().skip(1).collect();
     let size_only = arguments.iter().any(|argument| argument == "--size");
-
-    let Some(path) = arguments
-        .iter()
-        .find(|argument| !argument.starts_with("--") && !argument.is_empty())
-        .filter(|argument| {
-            // Not the value belonging to `--game`, which is the only flag here that takes one.
-            argument_is_not_a_value(&arguments, argument)
-        })
-        .map(PathBuf::from)
-    else {
-        eprintln!(
-            "usage: confirm_plan <plan file> [--game TAG] [--size]\n\n\
-             A plan is the three lists the engine multiplies -- beginnings, stems, endings -- \
-             chosen by you\nrather than compiled in. One `key: value` per line; `@path` reads a \
-             file, anything else is\na literal; `begin`, `stem` and `end` may repeat.\n\n    \
-             label: zombie character bodies\n    \
-             begin: @data/prefixes.txt\n    \
-             stem:  @contrib/zombie_cores.txt\n    \
-             end:   @data/suffixes.txt\n\n\
-             `--size` prints what it would cost and stops, which is worth doing before an hour \
-             of machine."
-        );
-        std::process::exit(2);
-    };
 
     let plan = match read_plan(&path) {
         Ok(plan) => plan,
@@ -334,8 +341,16 @@ fn main() {
     }
 
     let when = stamp();
-    let slices = SLICES.min(plan.stems.len().max(1));
+    // Optional backends choose against the complete workload, then checkpoint bounded
+    // batches internally. Pre-slicing would disguise a useful GPU job as tiny CPU jobs.
+    let slices = if backend.backend == gpu::Backend::Cpu {
+        SLICES.min(plan.stems.len().max(1))
+    } else {
+        1
+    };
     let size = plan.stems.len().div_ceil(slices).max(1);
+    let mut last_saved = Instant::now();
+    gpu::reset_usage();
 
     for (index, slice) in plan.stems.chunks(size).enumerate() {
         println!(
@@ -345,9 +360,32 @@ fn main() {
             slice.len()
         );
 
-        for (id, name) in run_best(&plan.beginnings, &plan.endings, slice, &wanted, plan.bare) {
-            results.add(&pool_label(wanted[&id]), id, name);
-        }
+        run_best_with_backend_checkpointed(
+            &plan.beginnings, &plan.endings, slice, &wanted, plan.bare, plan.fold, &backend,
+            &mut |batch| {
+                for (id, name) in batch {
+                    results.add(&pool_label(wanted[id]), *id, name.clone());
+                }
+                if last_saved.elapsed().as_secs() >= 60 {
+                    last_saved = Instant::now();
+                    if let Err(error) = results.write(paths::findings()) {
+                        eprintln!("  the aggregate files could not be checkpointed: {error}");
+                    }
+                    if let Err(error) = results.write_run_as(paths::findings(), "plan", &when) {
+                        eprintln!("  the run folder could not be checkpointed: {error}");
+                    }
+                }
+            },
+        ).unwrap_or_else(|reason| {
+            if let Err(error) = results.write(paths::findings()) {
+                eprintln!("could not save verified results: {error}");
+            }
+            if let Err(error) = results.write_run_as(paths::findings(), "plan", &when) {
+                eprintln!("could not save the incomplete run: {error}");
+            }
+            eprintln!("search failed: {reason}\nEarlier verified batches were checkpointed; this run is incomplete.");
+            std::process::exit(1);
+        });
 
         // The aggregate first, then the run folder. A checkpointed folder carries `.incomplete`
         // and is skipped by every walk until it is sealed, so between the two writes the
@@ -390,6 +428,7 @@ fn main() {
             let _ = Results::note_run(
                 &folder,
                 &RunNote::new(plan.label.clone(), describe, began.elapsed())
+                    .computed_on(gpu::usage_summary())
                     .measured("game", config::game())
                     .measured("beginnings", plan.beginnings.len())
                     .measured("endings", plan.endings.len())
@@ -427,18 +466,59 @@ fn main() {
     }
 }
 
-/// Whether this positional argument is the plan file rather than a flag's value.
-fn argument_is_not_a_value(arguments: &[String], candidate: &String) -> bool {
-    let Some(at) = arguments.iter().position(|argument| argument == candidate) else {
-        return true;
-    };
+fn usage() {
+    println!(
+        "usage: confirm_plan <plan file> [--game TAG] [--size]\n\
+         [--backend cpu|auto|cuda] [--cuda-device N] [--gpu-min-candidates N]\n\
+         confirm_plan --gpu-check [--cuda-device N]\n\n\
+         CPU is the default. Auto checks support and workload cost before selecting CUDA.\n\
+         --gpu-check checks support without searching; --size describes a plan without searching.\n\
+         A plan contains label:, begin:, stem:, and end: lines; @path reads a factor list.\n\
+         See plans/example.txt and docs/GPU.md."
+    );
+}
 
-    at == 0 || arguments[at - 1] != "--game"
+/// GPU flags and their values have already been removed by the shared parser.
+fn plan_path(arguments: &[String]) -> Result<PathBuf, String> {
+    let mut path = None;
+    let mut args = arguments.iter();
+    while let Some(argument) = args.next() {
+        match argument.as_str() {
+            "--game" => match args.next() {
+                Some(value) if !value.starts_with('-') && !value.is_empty() => (),
+                _ => return Err("--game requires a game tag".into()),
+            },
+            "--size" | "--anyway" => (),
+            flag if flag.starts_with('-') => return Err(format!("unknown argument: {flag}")),
+            value if !value.is_empty() && path.is_none() => path = Some(PathBuf::from(value)),
+            other => return Err(format!("unexpected argument: {other}")),
+        }
+    }
+    path.ok_or_else(|| "a plan file is required".into())
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn backend_and_game_values_cannot_be_mistaken_for_a_plan() {
+        let mut args: Vec<String> = ["--game", "BLACKOP7", "--backend", "auto", "--cuda-device", "0",
+            "--gpu-min-candidates", "100000000", "plans/example.txt", "--size"]
+            .iter().map(|value| (*value).into()).collect();
+        let (options, check) = gpu::parse_backend_options(&mut args).unwrap();
+        assert_eq!(options.backend, gpu::Backend::Auto);
+        assert!(!check);
+        assert_eq!(plan_path(&args).unwrap(), PathBuf::from("plans/example.txt"));
+    }
+
+    #[test]
+    fn malformed_plan_arguments_are_rejected_before_searching() {
+        for args in [vec!["--game"], vec!["--game", "--size"], vec!["one", "two"],
+            vec!["--backned", "cuda", "one"], vec!["--size"]] {
+            assert!(plan_path(&args.into_iter().map(String::from).collect::<Vec<_>>()).is_err());
+        }
+    }
 
     fn plan_from(text: &str) -> Result<Plan, String> {
         let path = std::env::temp_dir().join(format!("plan_{}_{}.txt", std::process::id(), text.len()));

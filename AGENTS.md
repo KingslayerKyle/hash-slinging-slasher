@@ -123,6 +123,33 @@ Never read a results file to count it — count the lines. Never paste found nam
 reasoning to "check" them; the tools already verified them against the game, which is what
 confirmation *is*.
 
+## Optional CUDA for worthwhile forward products
+
+CPU is the default, requires no CUDA software, and never probes a GPU. A source build with
+`cargo build --release --features cuda --bin confirm_plan --bin confirm_cw` adds an optional
+NVIDIA backend to those two tools. Use the new executables in `target/release`; the committed
+portable binaries in `bin/` do not gain CUDA support from installing a Toolkit. `confirm_list`
+continues to stream on the CPU.
+
+Prefer `--backend auto` when CUDA is available. It retains cheap and inverse (`Meet`) searches
+on CPU, then checks support and calibrates performance before selecting the GPU for a large
+forward product. An eligible GPU can still be slower. `--backend cuda` explicitly forces the
+forward backend and reports an error if it cannot run; `auto` falls back to CPU. The default
+automatic threshold is 100 million candidates; `--gpu-min-candidates N` accepts a positive
+override, and `--cuda-device N` chooses the zero-based device ordinal.
+
+`confirm_plan --gpu-check` or `confirm_cw --gpu-check` is a standalone diagnostic: no search,
+capture, startup refresh, or findings run. `confirm_plan --size` does not probe CUDA. Missing
+support is explained; CPU work remains available. Consult [the GPU guide](docs/GPU.md) for
+compatible NVIDIA hardware, Toolkit/build tools, driver setup, and the distinction between
+build requirements and runtime requirements. Nothing installs drivers or a Toolkit automatically.
+Do not install CUDA for AMD, Apple, or NVIDIA GPUs below compute capability 7.5.
+
+Hardware selection does not change candidates, game/type hashing, exclusions, fingerprints,
+findings, or submission. **A backend change never makes a spent method new.** Continue to run
+`start`, invent grounded methods, honor fingerprint/futility guards, and submit each completed
+job as before. GPU speed is useful only after deciding a pass is worthwhile.
+
 ## Thinking is the engine. Do not economise on it
 
 **The thinking is what keeps this open-ended.** Every method here exists because somebody worked
@@ -615,7 +642,7 @@ resort.
 | `scripts/README.md` | the script library, and what to put in a contributed one |
 | `docs/SETUP.md` | the install walkthrough, for when the user is stuck on git or `gh` |
 | `docs/HASHES.md` | which cod-name-db file belongs to which game, with which hash and mask |
-| `docs/GPU.md` | whether a GPU would help here. Measured, not assumed |
+| `docs/GPU.md` | optional CUDA setup, backend selection, and scoped measurements |
 | `src/lib.rs` | the hash, the filter, the results type, `LOW_VALUE_POOLS` |
 | `src/search.rs` | the peeling engine. Read the comments before changing anything |
 | `src/bin/confirm_plan.rs` | the plan format, and why a cross product should never be printed |
