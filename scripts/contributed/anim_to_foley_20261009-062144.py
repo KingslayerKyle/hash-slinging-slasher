@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parent
 while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
     ROOT = ROOT.parent
 CONTRIB = ROOT / "contrib"
+CONTRIB.mkdir(parents=True, exist_ok=True)
 MODERN = ("blackop6", "blackop7", "yamyamok", "modwar22", "modwar7")
 # Short classes (sat_/t10_/iw9_ weapons) and the long ones BO6-era foley spells out.
 CLS = "ar|sm|pi|sh|lm|br|dm|sn|me|la|smg|pistol|lmg|dmr|shotgun|sniper|rifle|launcher|melee|special"
