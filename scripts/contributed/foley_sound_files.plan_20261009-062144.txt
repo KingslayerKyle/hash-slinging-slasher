@@ -1,0 +1,5 @@
+label: weapon sound files -- per-weapon heads x weapon events x sub-event+tail endings
+describe: 1419 dir+prefix heads ending in a weapon code (measured on known modern weapon sound files) x the events contrib/anim_to_foley.py measures x top 4000 endings; see contrib/foley_sound_files.py
+begin: @contrib/foley_sound_heads.txt
+stem: @contrib/anim_to_foley_x_events.txt
+end: @contrib/foley_sound_ends.txt
