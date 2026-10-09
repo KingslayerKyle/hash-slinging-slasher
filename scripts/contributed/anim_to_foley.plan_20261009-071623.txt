@@ -1,0 +1,5 @@
+label: weapon foley aliases from weapon animation events x take numbers
+describe: 72176 <class>_<weapon>_<event> stems (61338 from vm/wm animations, the rest from known foley aliases) x fly/wfoly plr/npc x bare and _01.._60; see contrib/anim_to_foley.py
+begin: @contrib/anim_to_foley_begins.txt
+stem: @contrib/anim_to_foley_stems.txt
+end: @contrib/anim_to_foley_ends.txt

@@ -1,0 +1,5 @@
+label: weapon animations -- per-weapon anim heads x weapon events x short endings
+describe: 789 heads ending in a weapon code (measured on known modern animations) x the events contrib/anim_to_foley.py measures x bare and the top 60 short endings; see contrib/anim_events.py
+begin: @contrib/anim_events_heads.txt
+stem: @contrib/anim_to_foley_x_events.txt
+end: @contrib/anim_events_ends.txt
