@@ -1,0 +1,4 @@
+label: image head swap -- measured image beginnings x every known remainder
+describe: top 3000 1-2 segment beginnings of known image names, crossed with every remainder a known image name leaves after its first 1-2 segments; see contrib/type_segments.py --heads
+stem: @contrib/head_image_begins.txt
+end: @contrib/head_image_rests.txt

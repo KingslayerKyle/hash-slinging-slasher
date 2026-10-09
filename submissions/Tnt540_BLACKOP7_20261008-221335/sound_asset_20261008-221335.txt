@@ -1,0 +1,13 @@
+e0755a7dd35d441,iw9/amb/amb_emitters/fire/emt_fire_med_lp_02.dnl.85.48000.all
+f38733ab6c1a58e,iw9/amb/amb_emitters/fire/emt_fire_med_lp_02.dnl.75.48000.all
+1228466fa42c745e,iw9/amb/amb_emitters/fire/emt_fire_large_lp_01.dnl.75.48000.all
+2545b55f7819bd36,core/fly/mvmt/vestheavy/gear/military_med/iw9_mvmtstep_gear_military_med_plr_jumpland_08.tnn.75.48000.all
+2945ff3566b2b111,iw9/amb/amb_emitters/fire/emt_fire_large_lp_01.dnl.85.48000.all
+29abc64491071beb,core/fly/mvmt/vestheavy/gear/military_med/iw9_mvmtstep_gear_military_med_plr_jumpland_09.tnn.75.48000.all
+2e7ff9d726c0ed01,iw9/amb/amb_emitters/fire/emt_fire_large_lp_02.dnl.75.48000.all
+2fb1176a004cbe4e,iw9/amb/amb_emitters/fire/emt_fire_large_lp_02.dnl.85.48000.all
+4cf1eba87d40d91c,iw9/amb/amb_emitters/humsstatic/emt_appliance_hum_lp_01.dnl.85.48000.all
+573a340c5883ab91,iw9/amb/amb_emitters/humsstatic/emt_light_hum_lp_01.dnl.85.48000.all
+61a8e05dddae5cbd,core/fly/mvmt/vestheavy/gear/military_med/iw9_mvmtstep_gear_military_med_plr_jumpland_07.tnn.75.48000.all
+625963a6750054ff,iw9/dst/dst_balloon_pop_02.tnn.75.48000.all
+67389fcd9322387a,iw9/dst/dst_balloon_pop_03.tnn.75.48000.all

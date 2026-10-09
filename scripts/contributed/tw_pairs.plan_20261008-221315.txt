@@ -1,0 +1,5 @@
+label: tw-family terrain grids, pairs
+describe: tw/ twcj/ twck/ wc/ twj/ twk/ w/ *<a>_<b> over the 5,489 numeric twc tokens
+begin: @contrib/tw_begin2.txt
+stem: @contrib/twc_tokens.txt
+end: @contrib/twc_tokens_end.txt

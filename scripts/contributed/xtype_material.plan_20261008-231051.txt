@@ -1,0 +1,4 @@
+label: other types' stems as material bases under every material directory
+describe: underscore-prefixes of known anims, aliases and sound basenames under each of the ~50 material directories
+begin: @contrib/mat_dirs.txt
+stem: @contrib/xtype_stems.txt

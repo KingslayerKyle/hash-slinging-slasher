@@ -1,0 +1,5 @@
+label: sound directory swap -- known sound dirs x known basenames x modern tails
+describe: every known modern sound directory, crossed with every known sound basename (take kept) and every modern tail; see contrib/sound_dir_swap.py
+begin: @contrib/sdir_dirs.txt
+stem: @contrib/sdir_bases.txt
+end: @contrib/sdir_tails.txt
