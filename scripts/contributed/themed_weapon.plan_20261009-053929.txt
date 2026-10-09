@@ -1,0 +1,5 @@
+label: themed weapon codenames -- guessed BO7 weapons through the weapon-slot plan
+describe: 3538 <class>_<word> codes from each class's codename theme (birds, animals, dog breeds, seas, stars, myth) plus <known>exotic, x top 400 beginnings / 3000 endings measured around known weapons; see contrib/themed_weapons.py
+begin: @contrib/themed_weapon_begins.txt
+stem: @contrib/themed_weapon_codes.txt
+end: @contrib/themed_weapon_ends.txt

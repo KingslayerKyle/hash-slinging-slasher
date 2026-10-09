@@ -1,0 +1,4 @@
+label: sound_alias head swap -- measured sound_alias beginnings x every known remainder
+describe: top 4428 1-2 segment beginnings of known sound_alias names, crossed with every remainder a known sound_alias name leaves after its first 1-2 segments; see contrib/type_segments.py --heads
+stem: @contrib/head_sound_alias_begins.txt
+end: @contrib/head_sound_alias_rests.txt

@@ -1,0 +1,5 @@
+label: twc terrain-blend grid, full numeric token range, pairs
+describe: twc/* + token + _token where tokens are every 0..7000 with n/dn plus every observed token; the earlier twc plans crossed only observed tokens; see contrib/twc_range_tokens.txt
+begin: twc/*
+stem: @contrib/twc_range_tokens.txt
+end: @contrib/twc_range_tokens_end.txt

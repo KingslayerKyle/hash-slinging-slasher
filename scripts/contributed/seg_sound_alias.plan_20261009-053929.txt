@@ -1,0 +1,4 @@
+label: sound_alias segment plan -- sound_alias stems x measured sound_alias endings
+describe: every underscore-prefix of every known sound_alias name, crossed with the top 12000 1-3 segment endings sound_alias names carry; see contrib/type_segments.py
+stem: @contrib/seg_sound_alias_stems.txt
+end: @contrib/seg_sound_alias_ends.txt
