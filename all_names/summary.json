@@ -2,7 +2,7 @@
   "games": {
     "blackop6": {
       "files": 5,
-      "names": 111892,
+      "names": 114825,
       "types": {
         "image": {
           "found_pct": 14.7,
@@ -11,15 +11,15 @@
           "total": 389526
         },
         "material": {
-          "found_pct": 60.6,
-          "named": 112659,
-          "names": 42290,
+          "found_pct": 60.8,
+          "named": 113141,
+          "names": 42772,
           "total": 186048
         },
         "sound_alias": {
-          "found_pct": 30.0,
-          "named": 62478,
-          "names": 47595,
+          "found_pct": 31.2,
+          "named": 64929,
+          "names": 50046,
           "total": 207980
         },
         "sound_asset": {
@@ -275,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 703326
+    "names": 706259
   }
 }
