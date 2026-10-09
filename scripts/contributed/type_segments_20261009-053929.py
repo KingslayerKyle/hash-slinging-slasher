@@ -58,6 +58,7 @@ def main():
     ap.add_argument("--seed-dir", action="append", default=[],
                     help="extra folder of hash,name files (e.g. open pull requests' names) to seed from")
     a = ap.parse_args()
+    CONTRIB.mkdir(parents=True, exist_ok=True)
     SEED_DIRS.extend(a.seed_dir)
     if a.heads:
         return heads(a)

@@ -111,6 +111,7 @@ def main():
     ap.add_argument("--begins", type=int, default=400)
     ap.add_argument("--ends", type=int, default=3000)
     a = ap.parse_args()
+    CONTRIB.mkdir(parents=True, exist_ok=True)
     codes = set()
     for cls, words in THEMES.items():
         for w in set(words):

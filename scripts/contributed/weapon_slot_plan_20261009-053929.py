@@ -52,6 +52,7 @@ def main():
     ap.add_argument("--max-begins", type=int, default=0)
     ap.add_argument("--max-ends", type=int, default=0)
     a = ap.parse_args()
+    CONTRIB.mkdir(parents=True, exist_ok=True)
     known = {n for n in names() if n and "~" not in n and "&" not in n and not n.startswith("twc/")}
     wre = re.compile(r"(?:^|[_/])(?:%s)_((?:%s)_[a-z][a-z0-9]+)" % ("|".join(CODES), "|".join(CLASSES)))
     weapons = set()
