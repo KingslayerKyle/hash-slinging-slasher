@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parent
 while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
     ROOT = ROOT.parent
 CONTRIB = ROOT / "contrib"
+CONTRIB.mkdir(parents=True, exist_ok=True)
 NL = chr(10)
 DIR = "twc"
 args = sys.argv[1:]
