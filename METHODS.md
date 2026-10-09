@@ -4498,6 +4498,231 @@ excluded prior work. Four BO6 names and the MWIII name came from the original
 paired seed delta; the last BO6 name came from the verified-frontier candidates.
 The continuation set added none elsewhere. No rules were retrained or widened.
 
+## New alias rules witnessed by independent source vocabulary — 2026-10-09
+
+`contrib/verified_alias_external_rule_delta_20261010.py` measures rule growth
+from the original 3,353 independently rehashed external aliases. Those names
+had been held out of the earlier paired-rule training. Add them to the frozen
+125,367-name baseline and retain only paired rules whose support crosses from
+below three to at least three independent sibling frames. Token gaps 2..6,
+4..18-token names, the 2..24-filler frame bound and joint two-token changes
+remain unchanged. All 3,936 generated descendants stay out of training.
+
+The independent delta supplied 1,086 new directed rules. Applying only those
+rules once to 132,656 verified target aliases, then removing all 92,154 earlier
+candidate strings, left **24,289 candidates and 787 officially confirmed and
+submitted BO7 aliases** ([PR #2531](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2531)).
+The reusable generator requires explicit baseline, witness and application
+files, records their digests, and preserves full table/history/findings/claim
+exclusions. Replay reproduced the diagnostic candidate file byte for byte;
+six invariant checks covered threshold crossing, old-rule exclusion, application
+holdout, prior candidates, bounded termination and disjoint training inputs.
+
+**Spent by:** these independent witnesses, fixed baseline, application names and
+prior candidate files. Generated descendants are not new training evidence.
+
+A separate finite traversal with `contrib/verified_alias_frontier.py` then used
+the 787 confirmed aliases as its only root frontier. Its expanded baseline was
+fixed at **128,720 independently sourced names** (125,367 original plus 3,353
+external); descendants never trained rules. Removing 116,443 prior strings left
+**26,714 new attempts and 742 officially confirmed and submitted aliases**
+([PR #2533](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2533)),
+recorded in `findings/blackop7/run_20261009-212444_list`. The 1,529 verified vertices produced
+725, 16 and one new match by depth, and the frontier emptied without reaching
+the bound. This closes that explicit frontier under those frozen rules; it does
+not justify retraining on its output or repeating the same traversal.
+
+Exact-name reuse of the 24,289 independent-rule-delta candidates then confirmed
+and submitted **78 additional unique MWIII aliases**
+([PR #2534](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2534)).
+All BO7-reserved keys, all games' history and live claims were excluded first.
+This used the same generator output without new candidates or rule training;
+it is spent for that candidate file on the MWIII alias capture.
+
+## Material-witnessed complete interior image blocks — 2026-10-09
+
+`contrib/material_witnessed_image_blocks.py` learns complete two- or three-token
+interior substitutions from target-held modern material basenames. Each rule
+needs three distinct original basename pairs; copies under different material
+directories do not count separately. The immediate left/right anchors remain
+fixed when transferring a rule into a target-held image. Same-width changes to
+only one token are excluded, and individual slot alphabets are never crossed.
+
+150,888 held materials and 75,053 held images supplied 7,604 directed rules and
+3,009 eligible source images. There were 1,497 known image reconstruction
+controls. **6,801 unseen candidates confirmed and submitted 23 BO7 images**
+([PR #2532](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2532));
+none of those 23 belongs to the four earlier byte/pair/numeric image products.
+The candidates form 3,777 mostly single-prefix groups, so a name list is more
+practical than thousands of compiled plans.
+
+**Spent by:** unchanged material rule witnesses and image source frames. This is
+material-only joint evidence transferred to images, not an independent token
+cross product or a rerun of the earlier image suffix plans.
+
+A review found that overlapping repeated-token cuts could count the same two
+basenames more than once. Support now deduplicates the original basename pair,
+with an embedded doctest for repeated cuts, directory copies and three actual
+pairs. Reconstructing the exact original 150,888-material/75,053-image corpus
+reproduced the original candidates byte for byte after the fix: all 7,604 rules,
+6,801 candidates and 23 submitted keys retain support. The corrected generator
+was published to its original carrying PR #2531; no findings were removed.
+
+## Frozen BO7 image-pair vocabulary transferred to BO6 — 2026-10-09
+
+`contrib/bo6_borrowed_bo7_image_pairs.plan.txt` reuses the exact frozen factors
+from `contrib/image_stem_pair_suffix_plan.py`: 61,925 prefixes, 677 complete
+pairs and 5,306 suffixes, plus the engine's empty ending. Those conventions
+were witnessed in BO7. **No BO6 witness claim is made**; this is borrowed
+verified modern-image vocabulary tested against BO6's separate image capture.
+
+**222,486,555,075 candidates confirmed and submitted 15 BO6 images**
+([PR #2530](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2530)).
+`--backend auto` selected CUDA after workload calibration; hash policy,
+validation, exclusions and candidate scope remained the normal image search.
+
+**Spent by:** these exact factor files on this BO6 capture. The different backend
+does not make an already tested product new, and the transfer does not authorize
+widening its alphabet or claiming target-specific naming evidence.
+
+## Further BO7 animation and sound-file negatives — 2026-10-09
+
+All four measurements below used verified source spellings, the selected
+capture's typed pool and shared hash policy, and current table/history/findings/
+open-claim exclusions. They wrote diagnostics only; no confirming pass or
+reusable generator was warranted. Each is closed for its stated witnesses and
+inputs; do not tune or widen the same negative on unchanged material.
+
+- **Separated animation triples:** atomic changes at three positions, gaps 2..6
+  and total span at least six, needed three independent target-held sibling
+  frames. Every changed token differed, and repeated-identifier-only triples
+  were excluded. 71,414 eligible held seeds produced 12,001 unseen candidates;
+  prior paired/package/context/source spaces removed 6,459, leaving **5,542
+  candidates and zero new animations** against 7,422 unresolved IDs.
+  Evidence: `logs/bo7_animation_triples_probe/report.json`.
+- **Fresh weapon-alias event tails to animations:** 7,288 verified post-harvest
+  aliases supplied 197 weapon bodies and 103 event tails, including 58 absent
+  from the old 7,769-event plan. Its frozen 61 endings produced 3,532 completed
+  tails outside the old product. Crossed only with 588 animation heads having
+  three held-clip witnesses, this gave **2,076,816 cells, 23 prior candidates
+  skipped, one held control and zero new animations**. Evidence:
+  `logs/bo7_alias_event_animation_delta/report.json`.
+- **Inside-token animation pairs with frozen suffixes:** complete two-byte
+  fragments occurred with the same one/two-token suffix on BO7; cuts stayed
+  inside alphanumeric tokens. Each suffix needed three sibling cores, each
+  with at least two tails. 155,103 verified names supplied 3,581 tails, 173,484
+  frames and 173,191 known controls. Removing 3,341 prior candidates from
+  6,895,467 left **6,892,126 candidates and zero new animations**. Evidence:
+  `logs/bo7_animation_frozen_pair_probe/report.json`.
+- **Alias-to-file token reordering:** correlated alias/file prefixes, exact
+  directory and nonidentity core permutation needed three distinct target-held
+  alias/file witnesses. Cores had 3..12 unique tokens after at most three literal
+  leading tokens; repeated-token ambiguity was excluded. Common core anchors
+  and that directory's recorded take/encoding tails remained mandatory. 133,443
+  held aliases and 108,893 file representations supplied 549 rules and 235
+  known-file controls. **1,700 unseen candidates matched zero unresolved sound
+  files**. Evidence: `logs/bo7_alias_file_reordering_20261010/report.json`;
+  diagnostic: `logs/measure_bo7_alias_file_reordering_20261010.py`.
+
+## Image triples conditioned on family and exact suffix: negative — 2026-10-09
+
+A separate probe kept each image's first-two-token family and exact suffix,
+offering complete three-byte interior stem endings with at least three
+independent prefix witnesses. Each source prefix needed two observed variants;
+no independent character alphabet was multiplied. Fifteen groups covered
+11,949 cells and reconstructed 1,399 controls with each control's own prefix
+held out of its witnesses. Every control was already expressible by prior plans.
+
+Exact exclusion against every suffix decomposition of the executed byte, pair,
+pair-prefix-delta and numeric-triple products removed 9,887 cells. The remaining
+**2,062 frozen candidates had zero held BO7 image matches, even before known-key
+exclusion**. Reports: `logs/bo7_image_conditioned_triples_recon/report.json` and
+`probe.json`. The scratch scripts remain under `logs/`.
+
+**Spent by:** these family/suffix witnesses and residual frames. This result
+does not support a global triple expansion or parameter tuning of the same seam.
+
+## Embedded model vocabulary supplies new visual source cores — 2026-10-09
+
+`contrib/verified_model_visual_source_delta.py` independently rehashes raw source
+strings into the BO7 model capture solely to obtain embedded-name vocabulary.
+It never searches or reports modern models as recoveries. The 1,588 supplied
+strings were absent from the earlier 462-model source baseline. Complete visual
+wrappers require three target-held shared-core witnesses; source and target
+prefix/suffix pairs remain correlated, and prior candidates are excluded.
+
+**8,313 candidates confirmed and submitted 97 BO7 images**
+([PR #2535](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2535));
+**47,590 candidates confirmed and submitted seven materials**
+([PR #2537](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2537)).
+The measurement reconstructed 157 image and 177 material controls. Supplied-key,
+capture-membership, source-delta and correlated-wrapper checks passed.
+
+The 97 images plus the 23 material-block images then supplied 38 proposed
+pair-plan prefixes. Excluding the union of **both** executed beginning lists
+(61,925 plus 1,496, disjoint) left 37 genuinely new prefixes. The unchanged 677
+pairs and 5,306 suffixes gave **132,935,043 candidates and eight new BO7 images**
+([PR #2536](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2536)).
+`image_stem_pair_prefix_delta_plan.py` built the factors and `--backend auto`
+selected CUDA. There were 31 known seed controls; four results trace to block
+source prefixes and four to model-source prefixes. The block witness correction
+above preserves every ancestor. No alphabet or suffix was expanded.
+
+**Spent by:** these explicit source strings, witnessed wrappers and new-prefix
+factors. New application vocabulary does not authorize retraining on descendants.
+
+## Independently witnessed atomic alias interior blocks — 2026-10-09
+
+`contrib/verified_alias_interior_blocks.py` learns canonical complete adjacent or
+variable-length interior replacements of one to three tokens. Each rule needs
+three distinct original name pairs spanning at least six names, fixed immediate
+anchors, and a frame holding at most 24 variants. Single-token edits and the
+nonadjacent two-token changes already covered by paired rules are omitted.
+
+The fixed 128,720-name independent baseline trained 71,936 directed rules;
+5,465 descendants were application-only. Applying once to 134,185 held aliases
+reconstructed 97,750 controls and removed 6,768 earlier candidates. **557,984
+new candidates confirmed and submitted 514 BO7 aliases**
+([PR #2538](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2538)).
+Seven provenance, scope and input-validation checks passed; replay reproduced
+the exact ordered candidate output. Modern alias confirmation keeps all 64 bits.
+
+**Spent by:** the immutable baseline, explicit application and prior candidate
+files. Neither unmatched candidates nor descendants become training witnesses.
+
+`contrib/verified_alias_union_frontier.py` then used exactly those 514 confirmed
+aliases as roots for one finite graph containing both unchanged paired-token and
+complete-block relations. Both train once on the same digest-checked 128,720-name
+independent baseline. Six previous candidate spaces are excluded; only fresh
+same-capture matches can expand, and each name/key expands once.
+
+**14,824 new attempts confirmed 89 BO7 aliases**: 72 at depth one and 17 at depth
+two. Of these, 86 arrived via paired edges and three via block edges; no successful
+path after its root happened to require both relations. The 603 verified vertices
+exhausted the frontier without reaching the 100,000-attempt bound. Seven targeted
+traversal/provenance checks passed and replay matched the diagnostic byte for
+byte. This explicit frontier is closed; there is no pending continuation.
+
+## Joint image prefix and suffix translations — 2026-10-09
+
+`contrib/verified_image_joint_wrappers.py` changes both complete wrappers while
+preserving an intact body of at least three tokens. The 71,519-image frozen
+baseline supplied 1,435 translations, each supported by three disjoint original
+name pairs with different bodies. There were 4,099 controls after excluding each
+control's own pair from its evidence. Neither wrapper is empty and their token
+alphabets are never multiplied independently.
+
+Of 45,192 unseen candidates, exact previous byte/pair/numeric products removed
+15,976 and prior lists removed none. **29,216 residual candidates confirmed and
+submitted three BO7 images**
+([PR #2539](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2539)).
+Five invariant checks passed and the generator reproduced the diagnostic names.
+This irregular, small product used CPU confirmation.
+
+**Spent by:** the explicit frozen baseline and previous candidate spaces. A
+separate underscore join/split idea had only two material source pairs, neither
+meeting three independent witnesses, so no confirming pass was run.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
