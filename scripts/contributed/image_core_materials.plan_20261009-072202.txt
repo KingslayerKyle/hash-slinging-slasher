@@ -1,0 +1,5 @@
+label: materials from image cores, image prefix and channel both stripped
+describe: 38 material dirs x 137224 image cores (measured prefix and last 1-2 segments removed) x bare and the top 400 material tails; see contrib/image_core_materials.py
+begin: @contrib/icm_dirs.txt
+stem: @contrib/icm_cores.txt
+end: @contrib/icm_ends.txt
