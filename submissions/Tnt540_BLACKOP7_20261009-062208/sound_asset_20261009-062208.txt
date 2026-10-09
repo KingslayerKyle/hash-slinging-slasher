@@ -1,0 +1,6 @@
+15b1401e9ee3e2e9,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_on_open.tnn.75.48000.all
+433adc494f46c1e9,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_on_start.tnn.75.48000.all
+460b2d80e678033e,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_on_end.tnn.75.48000.all
+47c91395d8695a32,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_off_end.tnn.75.48000.all
+4c01532b2c6662c5,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_off_start.tnn.75.48000.all
+4f70e60deec6c1c9,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_off_close.tnn.75.48000.all
