@@ -236,6 +236,7 @@ f6b567905dc21c4,core/fly/ai_takedowns/sdr_com_melee_takedown02_attackerwins_earl
 13e43ec3dec95d9d,core/fly/ai_takedowns/sdr_com_melee_takedown03_defwins_early_defender_8_gear_01.pnn.50.48000.all
 50b11b24878dbd12,core/fly/ai_takedowns/sdr_com_melee_takedown03_defwins_early_defender_8_gear_02.pnn.50.48000.all
 76b15303d9e39d98,core/fly/case/wpfoly_case_bomb_button_beep1.lnn.75.48000.all
+35e0515ed4aa0567,core/fly/case/wpfoly_case_bomb_button_beep2.lnn.75.48000.all
 64ca9621b363e28f,core/fly/case/wpfoly_case_bomb_button_press1.lnn.75.48000.all
 f8c312289472e20,core/fly/case/wpfoly_case_bomb_button_press2.lnn.75.48000.all
 79712be6a53ad4d,core/fly/case/wpfoly_case_bomb_button_press3.lnn.75.48000.all
@@ -13042,6 +13043,8 @@ b4be68e5dd8b49f,physics/rock/iw9_rock_bounce_soft_02.lnn.75.48000.all
 16e30061ba013ba1,physics/rock/iw9_rock_bounce_soft_04.lnn.75.48000.all
 5e116f233f4d134,physics/rock/iw9_rock_bounce_soft_05.lnn.75.48000.all
 5242808a508a8293,physics/rock/iw9_rock_bounce_soft_06.lnn.75.48000.all
+32b50e7b8830a85d,rex/eqp/molotov/rex_weap_molotov_burn_lp_plr_01.dnl.75.48000.all
+7c32e937555dc5a,rex/eqp/molotov/rex_weap_molotov_burn_lp_plr_02.dnl.75.48000.all
 58e28e047dd90045,rex/eqp/sam_turret/kls_sam_turret_launch_atmo_ext_01.vnn.85.48000.all
 321eaddb25ddc122,rex/eqp/sam_turret/kls_sam_turret_launch_atmo_ext_02.vnn.85.48000.all
 f9776bdaffbec7,rex/eqp/sam_turret/kls_sam_turret_launch_atmo_ext_03.vnn.85.48000.all
@@ -13104,6 +13107,7 @@ d23c7b7c8082e91,rex/eqp/sam_turret/kls_sam_turret_missile_expl_atmo_ext_04.vnn.8
 565d49f0bc2a8167,rex/eqp/sam_turret/kls_sam_turret_missile_launch_04.vnn.85.48000.all
 73b00cc4c6b341be,rex/eqp/sam_turret/kls_sam_turret_pickup_01.lnn.85.48000.all
 1e3090ad1651482b,rex/eqp/sam_turret/kls_sam_turret_plant_01.lnn.85.48000.all
+e908905b9e09ce9,rex/eqp/sam_turret/kls_sam_turret_pre_destroy_01.dnn.75.48000.all
 729b424ad1d7b88a,rex/eqp/sam_turret/kls_sam_turret_raise_01.lnn.85.48000.all
 6dfc7e78f7f1e96c,rex/eqp/sam_turret/kls_sam_turret_rotate_lp_01.dnl.85.48000.all
 279fa2a4c2ede5e3,rex/eqp/sam_turret/kls_sam_turret_target_found_01.dnn.75.48000.all
@@ -13591,6 +13595,10 @@ de652969e7435cf,rex/wpn/br_golf28/weap_rex_golf28_fire_npc_shot_dist_05.hnn.85.4
 2787cc44a4e05271,rex/wpn/dm_findia/wpn_rex_findia_apex_knives_throw_prop_plr_07.vnn.85.48000.all
 2ddb8698b562934a,rex/wpn/dm_findia/wpn_rex_findia_apex_knives_throw_prop_plr_08.vnn.85.48000.all
 3b381e95c6f41c2f,rex/wpn/dm_findia/wpn_rex_findia_apex_knives_throw_prop_plr_09.vnn.85.48000.all
+31b9ccb7885de541,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_shot_03.hnn.85.48000.all
+6327ec473dd0116a,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_shot_04.hnn.85.48000.all
+44fee1615685bda5,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_swt_03.hnn.85.48000.all
+51afb2ad9c2d03a6,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_swt_04.hnn.85.48000.all
 3e1b12862c0a9677,rex/wpn/la_juliet/weap_rex_juliet_fire_plr_lfe.hnn.100.48000.all
 24f679b109f63ae3,rex/wpn/la_juliet/weap_rex_juliet_fire_plr_prefire_03.hnn.85.48000.all
 11b306ba042e98e0,rex/wpn/la_juliet/weap_rex_juliet_fire_plr_prefire_04.hnn.85.48000.all

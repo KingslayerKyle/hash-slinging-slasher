@@ -90,6 +90,13 @@ table under a name you would not have guessed is the thing you are about to rebu
 | image: gpu 1-2 token gap fill widened to all 20000 image prefixes | 1 | 1 | 216 | 216 | 1 | 1 | 1 | 2026-09-11 | 2026-09-11 | untried |
 | xmodel+sound alias: gpu three-token meet-in-the-middle gap fill | 1 | 1 | 672 | 672 | 1 | 1 | 1 | 2026-09-11 | 2026-09-11 | untried |
 | bo4: composition grids - attachment unique, weapon camo, player outfit from already-named weapons, attachments, specialists | 1 | 1 | 937 | 937 | 1 | 1 | 1 | 2026-09-13 | 2026-09-13 | untried |
+| mw4-sound-byte-before-encoding | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| mw4-typed-image-final-byte | 1 | 1 | 9 | 9 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| mw4-image-byte-before-channels | 1 | 1 | 15 | 15 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| mw4-image-stem-pair | 1 | 1 | 18 | 18 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| mwiii-typed-image-final-byte | 1 | 1 | 7 | 7 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| mwiii-image-byte-before-channels | 1 | 1 | 416 | 416 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| mwiii-image-stem-pair | 1 | 1 | 149 | 149 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | sound final byte solved backwards | 1 | 1 | 7 | 7 | 1 | 1 | 1 | 2026-08-31 | 2026-08-31 | untried |
 | xmodel: gpu 1-2 token gap fill over xmodel prefixes x xmodel tokens x xmodel endings | 1 | 1 | 451 | 452 | 1 | 1 | 1 | 2026-09-11 | 2026-09-11 | untried |
 | xanim: gpu 1-2 token gap fill over animation prefixes x animation tokens x animation endings | 1 | 1 | 273 | 274 | 1 | 1 | 1 | 2026-09-11 | 2026-09-11 | untried |
@@ -178,6 +185,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | voice phrase grids, fill after wiki probe | 1 | 1 | 33 | 19,057 | 577 | 577 | 577 | 2026-10-07 | 2026-10-07 | untried |
 | weapon anim grid | 1 | 2 | 77 | 46,426 | 602 | 446 | 927 | 2026-09-03 | 2026-09-03 | live |
 | cinematic shot grid, round 3 | 1 | 1 | 70 | 46,414 | 663 | 663 | 663 | 2026-10-01 | 2026-10-01 | untried |
+| mw4-file-to-alias-prefixes | 1 | 1 | 4 | 2,845 | 711 | 711 | 711 | 2026-10-09 | 2026-10-09 | untried |
 | zombies vo grid round 3: all 5 aether/dotn maps x plr 0-24 x events (csv + common + mitm rounds 1-3), plus mitm round-3 hits | 1 | 1 | 1,678 | 1,258,928 | 750 | 750 | 750 | 2026-09-10 | 2026-09-10 | untried |
 | black market character spray tag images | 1 | 1 | 10 | 8,316 | 831 | 831 | 831 | 2026-09-04 | 2026-09-04 | untried |
 | gaps | 2 | 5 | 376 | 346,722 | 922 | 190 | 50,180 | 2026-08-20 | 2026-08-27 | spent |
@@ -277,6 +285,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | learned coordinated repeated identifiers sound | 1 | 2 | 34 | 1,366,822 | 40,200 | 21,356 | 341,705 | 2026-09-22 | 2026-09-22 | spent |
 | sound alias head swap | 1 | 10 | 240,859 | 10,323,473,232 | 42,861 | 21,799 | 17,981,430 | 2026-10-08 | 2026-10-09 | spent |
 | external source filenames | 1 | 1 | 28 | 1,226,186 | 43,792 | 43,792 | 43,792 | 2026-08-27 | 2026-08-27 | untried |
+| mw4-target-alias-file-paths | 1 | 1 | 5 | 221,329 | 44,265 | 44,265 | 44,265 | 2026-10-09 | 2026-10-09 | untried |
 | zombies vo grids with suffixes cracked from the zm scripts' hashed vo say/function a2bd5a0c arguments | 1 | 1 | 67 | 3,073,427 | 45,872 | 45,872 | 45,872 | 2026-09-10 | 2026-09-10 | untried |
 | weapon foley aliases from weapon animation events x take numbers | 1 | 15 | 52,487 | 2,529,126,540 | 48,185 | 6,551 | 49,703 | 2026-10-09 | 2026-10-09 | cooling |
 | image interior counterparts after richkiller | 1 | 1 | 18 | 904,787 | 50,265 | 50,265 | 50,265 | 2026-09-04 | 2026-09-04 | untried |
@@ -414,6 +423,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | cold war same-directory token graft | 1 | 2 | 10 | 6,114,860 | 611,486 | 611,486 | 611,486 | 2026-08-27 | 2026-08-27 | live |
 | mw4-image-context | 1 | 1 | 28 | 17,426,028 | 622,358 | 622,358 | 622,358 | 2026-10-09 | 2026-10-09 | untried |
 | rare shared token splice 481 960 current | 1 | 2 | 118 | 74,610,250 | 632,290 | 414,501 | 1,332,325 | 2026-09-02 | 2026-09-02 | cooling |
+| mw4-linked-sound-namespaces | 1 | 1 | 2 | 1,322,411 | 661,205 | 661,205 | 661,205 | 2026-10-09 | 2026-10-09 | untried |
 | twc terrain-blend grid, full numeric token range, pairs | 1 | 2 | 1,243 | 827,195,120 | 665,482 | 409,908 | 409,908 | 2026-10-09 | 2026-10-09 | live |
 | templates | 3 | 5 | 395 | 265,290,228 | 671,620 | 286,113 | 3,386,404 | 2026-08-20 | 2026-09-03 | spent |
 | high-control terminal token counterparts | 1 | 2 | 6 | 4,130,040 | 688,340 | 516,254 | 516,254 | 2026-09-04 | 2026-09-04 | live |
@@ -1242,7 +1252,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1164 distinct methods, run 1263 ways between them, across 4104 runs. `names` is what each run
+1174 distinct methods, run 1273 ways between them, across 4114 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->

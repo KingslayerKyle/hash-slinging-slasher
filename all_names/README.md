@@ -92,15 +92,15 @@
 
 <table>
 <tr><th align="left"><code>modwar7/</code></th>
-<th align="right" colspan="2">62,120 names in 5 file(s)</th>
+<th align="right" colspan="2">62,174 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>material</code></td><td align="right">1,207</td><td align="right">4,847 / 7,809 &nbsp;(62.1%)</td></tr>
-<tr><td><code>image</code></td><td align="right">4,812</td><td align="right">19,685 / 37,365 &nbsp;(52.7%)</td></tr>
+<tr><td><code>image</code></td><td align="right">4,854</td><td align="right">19,727 / 37,365 &nbsp;(52.8%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">5,616</td><td align="right">31,545 / 35,164 &nbsp;(89.7%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">17,358</td><td align="right">41,812 / 130,464 &nbsp;(32.0%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">33,127</td><td align="right">40,650 / 73,962 &nbsp;(55.0%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">17,366</td><td align="right">41,820 / 130,464 &nbsp;(32.1%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">33,131</td><td align="right">40,654 / 73,962 &nbsp;(55.0%)</td></tr>
 </table>
 
 </td>
@@ -110,12 +110,12 @@
 
 <table>
 <tr><th align="left"><code>yamyamok/</code></th>
-<th align="right" colspan="2">63,650 names in 5 file(s)</th>
+<th align="right" colspan="2">64,222 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>material</code></td><td align="right">55,778</td><td align="right">171,820 / 221,679 &nbsp;(77.5%)</td></tr>
-<tr><td><code>image</code></td><td align="right">1,918</td><td align="right">144,337 / 436,889 &nbsp;(33.0%)</td></tr>
+<tr><td><code>image</code></td><td align="right">2,490</td><td align="right">144,909 / 436,889 &nbsp;(33.2%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">0</td><td align="right">62,214 / 64,407 &nbsp;(96.6%)</td></tr>
 <tr><td><code>sound_asset</code></td><td align="right">1,612</td><td align="right">154,161 / 291,343 &nbsp;(52.9%)</td></tr>
 <tr><td><code>sound_alias</code></td><td align="right">4,342</td><td align="right">16,013 / 166,718 &nbsp;(9.6%)</td></tr>
