@@ -4965,6 +4965,8 @@ largest gap in any game). Spent by: the corpora as they stand; each snowballs af
 |---|---|---|
 | `long_channel_grid.py` | material / image core + any measured channel up to three segments. The seam scripts cut channels with `[a-z]{1,4}\d?`, so BO7's most common one (`_thermalmap`, 3,843 named on a material core) and every two-segment one (`_m0_v2`, `_dmg_v2`) were never offered. Writes two plans; `_rev` puts the 49 measured material directories on every core | **348 images + 394 materials**, then 11 + 18 after the corpus grew |
 | `slot_swap.py --kind <k>` | fixed beginning P, one token slot after it swapped for every value siblings under P take, every sibling tail kept. Unlike shared-tails it transfers a tail attested once | **721** (316 img, 291 mat, 60 alias, 52 anim, 2 snd); `--max-slot 3000 --max-tails 30000` added 43 |
+| `slot_swap.py --width 2`, `--also material` | a two-token slot (class + weapon); and image candidates built over the image + material-core corpus | **112** (80 mat, 17 img, 10 anim, 4 snd, 1 alias); `--also` **20** images |
+| closure of all of the above | re-run in turn until a round adds nothing | **+38**, then **0** -- converged 2026-10-09 |
 | `title_prefix_swap.py --kind <k>` | leading codename (`jup_`, `sat_`, `cer_`, `iw9_` ...) swapped, dropped or added -- the first token `slot_swap` cannot vary | **71** (57 mat, 10 img, 4 alias, 0 anim) |
 | `sound_tail_swap.py` | every sound-file stem under the 40 most common encoding tails (`.tnn.75.48000.all` ...) | **35** sound files |
 | `packed_material_codes.py` | `twc/*<k>n_<k>dn[_...]` numeric material codes, k < 2,500 | 2 tokens **25**; 3 tokens (1.7T candidates, 0.26 chance matches) ran past 30 min, ~240 recovered by `submit` |
