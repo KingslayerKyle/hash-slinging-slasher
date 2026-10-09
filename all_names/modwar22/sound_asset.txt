@@ -68,6 +68,8 @@ c85a907f83223f4,iw9.amb.amb_elements.wind.elm_wind_close_06.sn.75.48000.all
 67a4fb43647aad87,iw9.amb.amb_elements.wind.elm_wind_close_07.sn.75.48000.all
 706b1b96988d826c,iw9.amb.amb_emitters.animal.emt_anml_frog_02_lp.ll.75.48000.all
 f7aeea4f24deea9,iw9.amb.amb_emitters.animal.emt_anml_frog_03_lp.ll.75.48000.all
+3003d790f226d69e,iw9.amb.amb_emitters.animal.emt_crix_single_01_close_lp.ll.75.48000.all
+70434c8c8f34a363,iw9.amb.amb_emitters.animal.emt_crix_single_01_close_lp.sl.75.48000.all
 1685ce41d06d408a,iw9.amb.amb_emitters.animal.emt_fly_single_03_lp.ll.75.48000.all
 f2375d957e66c1f,iw9.amb.amb_emitters.animal.emt_village_beehive_lp_03.ll.75.48000.all
 1d3ead27f7d376a4,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_01.ln.75.48000.all
@@ -100,6 +102,7 @@ bb00da6029a3e17,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_03.sn.75.48000.a
 356dbe9e336f40ee,iw9.amb.amb_emitters.fire.emt_fire_small_lp_03.ll.75.48000.all
 37471b63a8133103,iw9.amb.amb_emitters.humsstatic.emt_appliance_hum_lp_01.ll.75.48000.all
 6427461cb16c1b7f,iw9.amb.amb_emitters.humsstatic.emt_computer_hum.sl.75.48000.all
+6588df1b58fd2a70,iw9.amb.amb_emitters.humsstatic.emt_light_hum_lp_01.ll.75.48000.all
 6797e53b2a6e29e8,iw9.amb.amb_emitters.humsstatic.emt_server_whine_lp_01.ll.75.48000.all
 60f2e320a1d2cff1,iw9.amb.amb_emitters.mp_dam.emt_dam_powergenerator_lp_02.sl.75.48000.all
 3c68c6f76efdadba,iw9.amb.amb_emitters.mp_dam.emt_dam_powergenerator_lp_03.sl.75.48000.all
@@ -165,6 +168,7 @@ f3ad003be0f9b82,iw9.amb.amb_emitters.water.waves.emt_boat_dock_creak_lp_02.sl.75
 44e22acb4949c68a,iw9.amb.amb_emitters_iw9.lights.emt_iw9_light_buzz_on.ln.75.48000.all
 5ad08e39db866b2f,iw9.amb.amb_emitters_iw9.lights.emt_iw9_light_hum_fluro_01_lp.ll.75.48000.all
 79bdf28920cd33d2,iw9.amb.amb_emitters_iw9.lights.emt_iw9_light_hum_fluro_01_lp.sl.75.48000.all
+6783ee45a2d53a3c,iw9.amb.amb_emitters_iw9.stress_metal.emt_metal_large_groan_07.ln.75.48000.all
 7570e6be0d3cd0c,iw9.amb.amb_emitters_iw9.stress_metal.emt_metal_stress_01.sn.75.48000.all
 22e525a43ef19405,iw9.amb.amb_emitters_iw9.stress_wood.emt_wood_creak_01_int_01.ln.75.48000.all
 234aee928bd136a8,iw9.amb.amb_emitters_iw9.stress_wood.emt_wood_creak_01_int_02.ln.75.48000.all
@@ -203,6 +207,19 @@ f3ad003be0f9b82,iw9.amb.amb_emitters.water.waves.emt_boat_dock_creak_lp_02.sl.75
 7dea259b5fc6abae,iw9.amb.amb_emitters_iw9.velocity.vel_emt_tree_04_lp.ll.75.48000.all
 1723d39ed9c2d6eb,iw9.amb.amb_emitters_iw9.velocity.vel_emt_tree_lrg_lp.ll.75.48000.all
 2f4cdbbeeddfe633,iw9.amb.amb_emitters_iw9.water.emt_iw9_water_lapping_sm_lp.ll.75.48000.all
+238f905fa12dbe04,iw9.amb.amb_emitters_iw9.waves.emt_wave_hit_splash_lrg_01.ln.75.48000.all
+75ea38fb706dea01,iw9.amb.amb_emitters_iw9.waves.emt_wave_hit_splash_lrg_02.ln.75.48000.all
+2ce7aad222187f16,iw9.amb.amb_emitters_iw9.waves.emt_wave_hit_splash_lrg_03.ln.75.48000.all
+500acca4252970bb,iw9.amb.amb_emitters_iw9.waves.emt_wave_hit_splash_lrg_04.ln.75.48000.all
+3eb9e69a6ea1aa18,iw9.amb.amb_emitters_iw9.waves.emt_wave_hit_splash_lrg_05.ln.75.48000.all
+1c156ee107a918bf,iw9.amb.amb_mp_donetsk_indu_hallway_lr.sl.75.48000.all
+77fd68d7f733a273,iw9.amb.amb_mp_donetsk_indu_hallway_lsrs.sl.75.48000.all
+730ef86c47f52c32,iw9.amb.amb_mp_donetsk_indu_lg_room_lr.sl.75.48000.all
+48eb9f765964f652,iw9.amb.amb_mp_donetsk_indu_lg_room_lsrs.sl.75.48000.all
+61c1a765e5d9691b,iw9.amb.amb_mp_donetsk_indu_sm_room_lr.sl.75.48000.all
+54f0e9eba891f8cf,iw9.amb.amb_mp_donetsk_indu_sm_room_lsrs.sl.75.48000.all
+799aaba98b56bec9,iw9.amb.amb_mp_donetsk_resi_lg_room_lr.sl.75.48000.all
+77604c435069ec95,iw9.amb.amb_mp_donetsk_resi_lg_room_lsrs.sl.75.48000.all
 3ae34a42b247fa50,iw9.amb.ambient_iw9.amb_mp_delta_industrial_hallway_lr.sl.75.48000.all
 42c2d9d00d788ad0,iw9.amb.ambient_iw9.amb_mp_delta_industrial_hallway_lsrs.sl.75.48000.all
 6d0808cee3716845,iw9.amb.ambient_iw9.amb_mp_hydro_ext_lr.sl.75.48000.all
@@ -210,6 +227,8 @@ f3ad003be0f9b82,iw9.amb.amb_emitters.water.waves.emt_boat_dock_creak_lp_02.sl.75
 3c0a3710ce82f0b3,iw9.amb.ambient_iw9.amb_mp_hydro_night_ext_03_lr.sl.85.48000.all
 3e82e83c30b7464c,iw9.amb.border.amb_border_suburbs_ext_lr.sl.75.48000.all
 4607e862d6ac5fac,iw9.amb.border.amb_border_suburbs_ext_lsrs.sl.75.48000.all
+2ca86eb230ef56cf,iw9.dst.dst_iw9_mason_jar_lantern_04.ln.75.48000.all
+7fe9064766ff6cfc,iw9.dst.dst_iw9_mason_jar_lantern_05.ln.75.48000.all
 cd9d03d0d98591,iw9.dst.dst_iw9_soda_bottle_spray_01.ln.75.48000.all
 3ab07768b9cbfbd4,iw9.dst.dst_iw9_soda_bottle_spray_02.ln.75.48000.all
 617a9e4e6c838c27,iw9.dst.dst_iw9_soda_bottle_spray_03.ln.75.48000.all
@@ -309,6 +328,9 @@ d16375dd69341f2,iw9.mp.infil.crossing_infil.infil_crossing_civ_foot3_1.ln.75.480
 4c6957255f3f66f2,iw9.uin.br.defcon.uin_iw9_mp_defcon_one_full_a.sn.85.48000.all
 160ce2f45325d9b2,iw9.uin.dmz.mission_progress.uin_iw9_aar_dmz_mission_comp_check_center.ln.75.48000.all
 14bf1114a2bd4a41,iw9.uin.dmz.mission_progress.uin_iw9_aar_dmz_mission_comp_check_right.ln.75.48000.all
+75420a173f2d6c0,iw9.uin.frontend_firingrange.uin_firingrange_target_rise_01.ln.75.48000.all
+54f5b5f543f196fd,iw9.uin.frontend_firingrange.uin_firingrange_target_rise_02.ln.75.48000.all
+28d56e7a1299c3e2,iw9.uin.frontend_firingrange.uin_firingrange_target_rise_03.ln.75.48000.all
 5dc38a4cf07d4b3d,iw9.uin.main_iw8.iw8_leavelobby_alert_v1.ln.75.48000.all
 5eea4829a78d7720,iw9.veh.c17.veh_c17_flyby.sn.85.48000.all
 1aae6fc326632723,iw9.veh.suspension.iw9_veh_dirt_bike_suspension_03.ln.75.48000.all
@@ -389,6 +411,7 @@ debf82807eed43f,iw9.wpn.mama2.weap_mama2_fire_plr_mech_06.ln.85.48000.all
 3a8f5cc17fa619f,iw9.wpn.mortar.weap_mortar_fire_dist_04.ln.85.48000.all
 2d266820966a842c,iw9.wpn.mortar.weap_mortar_fire_dist_05.ln.85.48000.all
 4f4ca62e86d04475,iw9.wpn.mortar.weap_mortar_fire_dist_06.ln.85.48000.all
+29428d8d2f1e852f,iw9.wpn.mortar.weap_mortar_flare_launch_01.ln.85.48000.all
 586868bc479ac299,iw9.wpn.mortar.weap_mortar_incoming_01.ln.85.48000.all
 286c86a0de012430,iw9.wpn.mortar.weap_mortar_incoming_02.ln.85.48000.all
 7884480ebbaebb3,iw9.wpn.mortar.weap_mortar_incoming_03.ln.85.48000.all
@@ -442,5 +465,11 @@ f72dcacd75484a7,iw9.wpn.romeo870.weap_romeo870_fire_plr_06.ln.85.48000.all
 63e6c79e5f5eadb8,mgl.wpn.ar_scharlie.wfoly_plr_ar_scharlie_v1_reload_mageject.ln.75.48000.all
 3714ffe921e00dea,mp.emp_expl_npc_lfe.ln.75.48000.all
 2cff99b77972ae8c,mp.executions.iw9.exec_033_dog_robo_jump_02.pn.75.48000.all
+e05dbc037228cc,mp.executions.iw9.exec_034_dog_approach_laststand.pn.75.48000.all
+4f340bb0a581de92,mp.executions.iw9.exec_034_dog_approach_prone.pn.75.48000.all
+260554eb0cc6bbc,mp.executions.iw9.exec_034_dog_approach_stand.pn.75.48000.all
+32af1efc8a4a1c7b,mp.iw9_boys_superjump_lg_lfe_01.sn.85.48000.all
 f3081c4c2853947,mp.killstreaks.nuke.iw8_mp_nuke_alarm_lp.sl.85.48000.all
 613189d086bbe419,mp.mp_iw9_level_up.sn.75.48000.all
+73c8d68980f7b2c2,vo_efforts.plr.plr_breath_pain_init_10.ln.85.48000.all
+2d970834017a0e34,vo_efforts.plr.plr_breath_pain_init_12.ln.85.48000.all

@@ -1577,6 +1577,7 @@ cb0402294757c10,t10.wpn.ar.coslo723.plr.ads.wpn_ar_coslo723_ads_01.ln.85.48000.a
 1a72d008ce5c7998,t10.wpn.ar.coslo723.plr.mech.wpn_ar_coslo723_mech_01.ln.85.48000.all
 6c3e7f2aa6498581,t10.wpn.ar.coslo723.plr.mech.wpn_ar_coslo723_mech_02.ln.85.48000.all
 53c855e314ae3b36,t10.wpn.ar.coslo723.plr.mech.wpn_ar_coslo723_mech_03.ln.85.48000.all
+ad5723dad66fc9e,t10.wpn.pistol.usugar9.lfe.wpn_pi_usugar_lfe_00.ln.100.48000.all
 17c57848d7496ec5,t10.wpn.pistol.usugar9.plr.fire.wpn_pi_usugar9_fire_00.ln.85.48000.all
 66fd1989f0b8340a,t10.wpn.pistol.usugar9.plr.fire.wpn_pi_usugar9_fire_01.ln.85.48000.all
 576ed8dba71e63ef,t10.wpn.pistol.usugar9.plr.fire.wpn_pi_usugar9_fire_02.ln.85.48000.all
@@ -1585,6 +1586,7 @@ cb0402294757c10,t10.wpn.ar.coslo723.plr.ads.wpn_ar_coslo723_ads_01.ln.85.48000.a
 20adfadcbb42e117,t10.wpn.pistol.usugar9.plr.mech.wpn_pi_usugar9_mech_02.ln.85.48000.all
 187c4587920f9e0e,vo_efforts.fplr.plr_fem_cough_1_01.pn.75.48000.all
 41632cedb094a174,vo_efforts.fplr.plr_fem_cough_3_01.pn.75.48000.all
+c6a5936e62145d9,vo_efforts.fplr.plr_fem_cough_3_02.pn.75.48000.all
 50560c3fa61a71a8,vo_efforts.plr.plr_breath_pain_init_10.sn.75.48000.all
 9e2ca4cb2330b8a,vo_efforts.plr.plr_breath_pain_init_12.sn.75.48000.all
 792978fb666ce12a,vo_efforts.plr.plr_breathing_better_01.ln.75.48000.all
@@ -1593,7 +1595,10 @@ cb0402294757c10,t10.wpn.ar.coslo723.plr.ads.wpn_ar_coslo723_ads_01.ln.85.48000.a
 6757eaa2e310191,vo_efforts.plr.plr_breathing_better_04.ln.75.48000.all
 3815923958edeb66,vo_efforts.plr.plr_breathing_better_05.ln.75.48000.all
 c7c5855a9bb317f,vo_efforts.plr.plr_cough_1_01.pn.75.48000.all
+325347d54554ed96,vo_efforts.plr.plr_cough_1_02.pn.75.48000.all
+54835dfad3ad6209,vo_efforts.plr.plr_cough_1_03.pn.75.48000.all
 1dd0dda73e99c1cd,vo_efforts.plr.plr_cough_3_01.pn.75.48000.all
+191a61e115743e28,vo_efforts.plr.plr_cough_3_02.pn.75.48000.all
 4f88216f40b96159,vo_efforts.plrgm.plr_breath_pain_init_10_gm.sn.75.48000.all
 76175db2a814c667,vo_efforts.plrgm.plr_breath_pain_init_12_gm.sn.75.48000.all
 66de232aa1ff2274,vo_efforts.zmb.zmb_npc_breath_sprint_exh_01.lnn.75.48000.all
