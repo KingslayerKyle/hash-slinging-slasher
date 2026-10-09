@@ -12,14 +12,26 @@ slotswap_cores.py's and fresh_slotswap.py's own, unchanged.
 from pathlib import Path
 import argparse
 import sys
+import importlib.util
 
 ROOT = Path(__file__).resolve().parent
 while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
     ROOT = ROOT.parent
 sys.path.insert(0, str(ROOT / "scripts"))
-sys.path.insert(0, str(ROOT / "contrib"))
-import slotswap_cores as sc  # noqa: E402
-from fresh_slotswap import substitutions  # noqa: E402
+
+
+def _companion(name, filename):
+    """Load the reviewed, versioned companion shipped with this repository."""
+    spec = importlib.util.spec_from_file_location(
+        name, ROOT / "scripts" / "contributed" / filename)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
+
+sc = _companion("slotswap_cores", "slotswap_cores_20260926-073306.py")
+_fresh = _companion("fresh_slotswap", "fresh_slotswap_20260930-083611.py")
+substitutions = _fresh.substitutions
 
 MODERN_GAMES = ("blackop6", "blackop7", "modwar22", "modwar7", "yamyamok")
 
