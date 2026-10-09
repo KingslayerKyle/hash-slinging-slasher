@@ -1,0 +1,4 @@
+2ffda95b1b9549fc,wpn_dmr_sierra552_fire_npc_far
+7f9f265b4928fb2f,wpn_dmr_sierra552_fire_npc_med
+e73ea142e542267c,wpn_dmr_sierra552_fire_npc_far_atmo
+f534af3efb4e0dbd,wpn_dmr_sierra552_fire_npc_dist_atmo
