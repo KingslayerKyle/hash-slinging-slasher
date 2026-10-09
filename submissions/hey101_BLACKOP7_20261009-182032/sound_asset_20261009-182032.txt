@@ -1,0 +1,3 @@
+4de16baee132d5a6,t10/wpn/sl/wand/reloads/fly_plr_sl_artifact_raise_first_quick.lnn.75.48000.all
+6386a2fe2b5a2b1e,t10/wpn/sl/wand/reloads/fly_plr_sl_artifact_raise_first_quick.tnn.75.48000.all
+6ff9076f21686b14,sat/wpn/sl/sargas/fly/fly_plr_sl_sargas_rechamber.tnn.75.48000.all
