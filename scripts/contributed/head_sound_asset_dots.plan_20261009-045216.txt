@@ -1,0 +1,4 @@
+label: sound-file head swap -- measured sound beginnings x every known remainder+tail
+describe: top 7852 dir+1-2 segment beginnings of known modern sound files, crossed with every remainder+tail a known one leaves; see contrib/sound_segments.py --heads
+stem: @contrib/head_sound_asset_dots_begins.txt
+end: @contrib/head_sound_asset_dots_rests.txt

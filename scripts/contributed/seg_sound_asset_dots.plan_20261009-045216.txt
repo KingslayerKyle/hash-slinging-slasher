@@ -1,0 +1,4 @@
+label: sound-file segment plan -- modern sound stems x measured endings with format tail
+describe: every underscore-prefix of every known modern sound file (xsounds_v2 + modern findings), crossed with the top 12000 1-3 segment endings+tails those files carry; see contrib/sound_segments.py
+stem: @contrib/seg_sound_asset_dots_stems.txt
+end: @contrib/seg_sound_asset_dots_ends.txt
