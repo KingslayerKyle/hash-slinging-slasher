@@ -345,6 +345,12 @@ pub fn pool_index_in(table: &'static [&'static str], kind: &str) -> Option<usize
         return Some(found);
     }
 
+    // sndasset is the sound-file pool, even when a bank pool named sound also exists.
+    // Resolve canonical spellings before the older cross-game fallback aliases.
+    if let Some(found) = table.iter().position(|pool| games::canonical(pool) == games::canonical(kind)) {
+        return Some(found);
+    }
+
     let flattened = |name: &str| name.replace('_', "");
     if let Some(found) = table.iter().position(|pool| flattened(pool) == flattened(kind)) {
         return Some(found);
@@ -1398,6 +1404,15 @@ mod tests {
         assert_eq!(pool_index_in(POOLS, "sound"), Some(17));
         assert_eq!(pool_index_in(POOLS, "xmodel"), Some(6));
         assert_eq!(pool_index_in(POOLS, "streamkey"), Some(184));
+    }
+
+    #[test]
+    fn canonical_sound_files_win_over_the_bank_fallback() {
+        for table in [&["sound", "sndasset"][..], &["sound", "sound_asset"][..]] {
+            assert_eq!(pool_index_in(table, "sound_asset"), Some(1));
+            assert_eq!(pool_index_in(table, "sndasset"), Some(1));
+            assert_eq!(pool_index_in(table, "sound"), Some(0));
+        }
     }
 
     /// And the same five in Black Ops 4, where the numbering is different and `sound_asset` has
