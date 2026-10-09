@@ -1,0 +1,12 @@
+10382dbd9b51ccc,vo_efforts/plrgm/plr_breath_idle_walk_inh_02_gm.tnn.20.48000.all
+94137d63c79f2ea,vo_efforts/plrgm/plr_breath_sniper_inh_03_gm.tnn.20.48000.all
+e66f8453d2f4a56,vo_efforts/fplrgm/plr_fem_breath_idle_walk_inh_07_gm.tnn.20.48000.all
+2897aa5a54390d96,vo_efforts/fplrgm/plr_fem_breath_sniper_inh_02_gm.tnn.20.48000.all
+298a8ba00afc514d,vo_efforts/fplrgm/plr_fem_breath_idle_walk_inh_06_gm.tnn.20.48000.all
+3412dc9700496c23,vo_efforts/plrgm/plr_breath_idle_walk_inh_03_gm.tnn.20.48000.all
+3c6023b3f0867878,vo_efforts/fplrgm/plr_fem_breath_idle_walk_inh_05_gm.tnn.20.48000.all
+55af7f988723a43a,vo_efforts/fplrgm/plr_fem_breath_idle_walk_inh_03_gm.tnn.20.48000.all
+563a42b507c09816,vo_efforts/plrgm/plr_breath_idle_walk_inh_04_gm.tnn.20.48000.all
+5669699240263b01,vo_efforts/plrgm/plr_breath_sniper_inh_02_gm.tnn.20.48000.all
+7bd39b048bb22f8f,vo_efforts/fplrgm/plr_fem_breath_sniper_inh_01_gm.tnn.20.48000.all
+7dbeffe11a846cd1,vo_efforts/plrgm/plr_breath_idle_walk_inh_01_gm.tnn.20.48000.all
