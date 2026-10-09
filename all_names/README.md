@@ -6,14 +6,14 @@
 
 <table>
 <tr><th align="left"><code>blackop6/</code></th>
-<th align="right" colspan="2">108,386 names in 5 file(s)</th>
+<th align="right" colspan="2">108,493 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>material</code></td><td align="right">39,712</td><td align="right">110,081 / 186,048 &nbsp;(59.2%)</td></tr>
 <tr><td><code>image</code></td><td align="right">10,028</td><td align="right">57,412 / 389,526 &nbsp;(14.7%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">3,758</td><td align="right">71,987 / 87,620 &nbsp;(82.2%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">8,102</td><td align="right">87,346 / 327,081 &nbsp;(26.7%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">8,209</td><td align="right">87,453 / 327,081 &nbsp;(26.7%)</td></tr>
 <tr><td><code>sound_alias</code></td><td align="right">46,786</td><td align="right">61,669 / 207,980 &nbsp;(29.7%)</td></tr>
 </table>
 

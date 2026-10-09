@@ -2,7 +2,7 @@
   "games": {
     "blackop6": {
       "files": 5,
-      "names": 108386,
+      "names": 108493,
       "types": {
         "image": {
           "found_pct": 14.7,
@@ -24,8 +24,8 @@
         },
         "sound_asset": {
           "found_pct": 26.7,
-          "named": 87346,
-          "names": 8102,
+          "named": 87453,
+          "names": 8209,
           "total": 327081
         },
         "xanim": {
@@ -275,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 686669
+    "names": 686776
   }
 }
