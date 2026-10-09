@@ -6,15 +6,15 @@
 
 <table>
 <tr><th align="left"><code>blackop6/</code></th>
-<th align="right" colspan="2">114,825 names in 5 file(s)</th>
+<th align="right" colspan="2">120,460 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>material</code></td><td align="right">42,772</td><td align="right">113,141 / 186,048 &nbsp;(60.8%)</td></tr>
 <tr><td><code>image</code></td><td align="right">10,038</td><td align="right">57,422 / 389,526 &nbsp;(14.7%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">3,760</td><td align="right">71,989 / 87,620 &nbsp;(82.2%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">4,052</td><td align="right">72,281 / 87,620 &nbsp;(82.5%)</td></tr>
 <tr><td><code>sound_asset</code></td><td align="right">8,209</td><td align="right">87,453 / 327,081 &nbsp;(26.7%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">50,046</td><td align="right">64,929 / 207,980 &nbsp;(31.2%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">55,389</td><td align="right">70,272 / 207,980 &nbsp;(33.8%)</td></tr>
 </table>
 
 </td>
@@ -22,15 +22,15 @@
 
 <table>
 <tr><th align="left"><code>blackop7/</code></th>
-<th align="right" colspan="2">127,242 names in 5 file(s)</th>
+<th align="right" colspan="2">132,994 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>material</code></td><td align="right">36,156</td><td align="right">141,441 / 388,231 &nbsp;(36.4%)</td></tr>
 <tr><td><code>image</code></td><td align="right">6,698</td><td align="right">69,664 / 839,489 &nbsp;(8.3%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">5,182</td><td align="right">86,703 / 97,260 &nbsp;(89.1%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">6,333</td><td align="right">105,958 / 399,776 &nbsp;(26.5%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">72,873</td><td align="right">95,377 / 254,502 &nbsp;(37.5%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">5,560</td><td align="right">87,081 / 97,260 &nbsp;(89.5%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">6,339</td><td align="right">105,964 / 399,776 &nbsp;(26.5%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">78,241</td><td align="right">100,745 / 254,502 &nbsp;(39.6%)</td></tr>
 </table>
 
 </td>

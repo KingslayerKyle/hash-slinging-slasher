@@ -5890,6 +5890,12 @@ e88884b16fe5553,t10/wpn/shotgun/_shared/fcg/wpn_sh_dryfire_plr_ads_02.lnn.85.480
 3362837dfcc42439,t10/wpn/smg/perth/reloads/fly_plr_smg_perth_reload_transition_empty_fast01_flip_02.tnn.75.48000.all
 554fc1ccdfadbabc,t10/wpn/smg/perth/reloads/fly_plr_smg_perth_reload_transition_empty_fast02_02.tnn.75.48000.all
 7d9dff449a84ef8f,t10/wpn/smg/saug/reloads/fly_ply_p28_sm_saug_transition_reload_empty_end.tnn.75.48000.all
+4f70e60deec6c1c9,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_off_close.tnn.75.48000.all
+47c91395d8695a32,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_off_end.tnn.75.48000.all
+4c01532b2c6662c5,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_off_start.tnn.75.48000.all
+460b2d80e678033e,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_on_end.tnn.75.48000.all
+15b1401e9ee3e2e9,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_on_open.tnn.75.48000.all
+433adc494f46c1e9,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_on_start.tnn.75.48000.all
 3152e6201b1ebb37,t10/wpn/sniper/hugo/plr/fire/wpn_sn_hugo_fire_plr_lfe.tnn.85.48000.all
 5b8d886408fe3c09,t10/wpn/sniper/ultiger/plr/fire/wpn_sn_ultiger_fire_00.pnn.85.48000.all
 23a5d51c80a21c77,t10/wpn/sniper/ultiger/plr/mech/wpn_sn_ultiger_mech_06.pnn.85.48000.all
