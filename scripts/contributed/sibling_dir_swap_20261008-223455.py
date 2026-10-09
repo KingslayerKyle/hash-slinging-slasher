@@ -17,12 +17,24 @@ import argparse
 import collections
 import re
 import sys
+import importlib.util
 
 ROOT = Path(__file__).resolve().parent
 while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
     ROOT = ROOT.parent
-sys.path.insert(0, str(ROOT / "contrib"))
-from sound_tail_swap import MODERN, all_names  # noqa: E402
+
+
+def _companion(name, filename):
+    """Load the reviewed, versioned companion shipped with this repository."""
+    spec = importlib.util.spec_from_file_location(
+        name, ROOT / "scripts" / "contributed" / filename)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
+
+_sound = _companion("sound_tail_swap", "sound_tail_swap_20261008-205512.py")
+MODERN, all_names = _sound.MODERN, _sound.all_names
 
 
 def main():
