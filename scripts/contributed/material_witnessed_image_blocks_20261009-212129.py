@@ -2,8 +2,9 @@
 
 Only target-held modern material basenames train the substitutions. Two complete
 interior blocks of two or three underscore tokens must occur between identical
-material prefix/suffix frames on at least three independent basenames. Directory
-copies are not independent witnesses. The rule preserves its immediate left and
+material prefix/suffix frames in at least three distinct original basename pairs.
+Directory copies and overlapping cuts of one pair are not independent witnesses.
+The rule preserves its immediate left and
 right anchors and substitutes the complete block in a target-held image. A pair
 that differs in only one same-position token is omitted because ordinary slot
 substitution already expresses it. No individual token alphabets are crossed.
@@ -16,12 +17,15 @@ exclusions. None of the 23 lies in the four earlier byte/pair/numeric image plan
 products. The related 2026-08-20 legacy correlated-block method has no retained
 generator; this is specifically material-only joint evidence transferred into
 image-only application frames, measured on the modern target capture.
+The distinct-basename-pair correction was replayed on the exact original corpus:
+all 6,801 candidates and all 23 submitted keys retained independent support.
 
 The exact product representation has 3,777 mostly one-prefix groups, so emitting
 the 6,801 names is more efficient than thousands of separate compiled plans.
 Spent by: unchanged held material rule witnesses and held image source frames.
 
   python contrib/material_witnessed_image_blocks.py --game BLACKOP7 --size
+  python -B -m doctest contrib/material_witnessed_image_blocks.py
   python contrib/material_witnessed_image_blocks.py --game BLACKOP7 \
       --output logs/material-witnessed-image-blocks.txt
   confirm_list logs/material-witnessed-image-blocks.txt --game BLACKOP7 \
@@ -81,6 +85,25 @@ def cuts(parts):
 
 
 def learn(materials):
+    """Require distinct original basename pairs, not distinct token cuts.
+
+    Regression: overlapping 2-to-3-token insertions yield three matching cuts
+    in one pair, but must not pass the three-pair threshold. Directory copies
+    do not change that result; three actual basename pairs do enable the rule.
+
+    >>> key = (('a', 'a'), ('a', 'a'))
+    >>> repeated = {'mc/p_a_a_a_a_a_a_z', 'wc/p_a_a_a_a_a_a_a_z'}
+    >>> bool(learn(repeated)[0].get(key))
+    False
+    >>> copies = {d + '/' + n.rsplit('/', 1)[-1]
+    ...           for d in ('mc', 'wc', 'clt') for n in repeated}
+    >>> bool(learn(copies)[0].get(key))
+    False
+    >>> pairs = {'mc/' + family + '_' + '_'.join(['a'] * count) + '_z'
+    ...          for family in ('p', 'q', 'r') for count in (6, 7)}
+    >>> ('a', 'a', 'a') in learn(pairs)[0].get(key, set())
+    True
+    """
     frames = defaultdict(set)
     for parts in {tokens(n) for n in materials} - {()}:
         for prefix, block, suffix in cuts(parts):
@@ -98,7 +121,10 @@ def learn(materials):
         for left, right in combinations(sorted(blocks), 2):
             if len(left) == len(right) and sum(a != b for a, b in zip(left, right)) < 2:
                 continue
-            supports[context, left, right].add(frame)
+            # Repeated tokens can give the same two basenames several matching
+            # cuts. Count the original pair once, regardless of cut or directory.
+            pair = tuple(sorted((prefix + left + suffix, prefix + right + suffix)))
+            supports[context, left, right].add(pair)
     rules = defaultdict(set)
     eligible_pairs = 0
     witness_count = 0
@@ -110,7 +136,7 @@ def learn(materials):
             witness_count += len(witnesses)
     return rules, {'material_frames': len(frames), 'ambiguous_frames_skipped': ambiguous,
                    'undirected_block_rules': eligible_pairs,
-                   'independent_rule_frame_witnesses': witness_count,
+                   'independent_rule_basename_pair_witnesses': witness_count,
                    'directed_rules': sum(map(len, rules.values()))}
 
 
