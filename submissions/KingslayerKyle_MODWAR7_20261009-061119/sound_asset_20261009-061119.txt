@@ -1,0 +1,5 @@
+14c9d017575caaf2,iw9/op/atom/dx_op_atom_bttl_atom_kone_approvalgrunt.snn.75.48000.english
+2480d7a03f394d28,iw9/op/nickmercs/dx_op_nckm_bttl_nckm_cfal_frustratedgrunt_01.snn.75.48000.english
+58493b8b852242d2,mp/equip/iw8_mp_adrenaline_use_stim_sfx.lnn.75.48000.all
+6e7e79e24d73c3ec,iw9/op/nickmercs/dx_op_nckm_bttl_nckm_cfal_frustratedgrunt.snn.75.48000.english
+7b773829a88fa666,iw9/op/atom/dx_op_atom_bttl_atom_kone_approvalgrunt_01.snn.75.48000.english
