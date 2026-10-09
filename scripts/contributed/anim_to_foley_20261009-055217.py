@@ -48,6 +48,7 @@ def main():
     ap.add_argument("--double", type=int, default=0, help="also _NN_MM takes, MM up to this")
     ap.add_argument("--cross", action="store_true", help="every weapon x every event (anim_to_foley_x.plan.txt)")
     a = ap.parse_args()
+    CONTRIB.mkdir(parents=True, exist_ok=True)
     stems = set()
     for n in rows("xanim", "fnv1a_xanims_v2"):
         m = ANIM.match(n)
