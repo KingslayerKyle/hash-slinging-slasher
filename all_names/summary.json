@@ -38,36 +38,36 @@
     },
     "blackop7": {
       "files": 5,
-      "names": 44881,
+      "names": 116961,
       "types": {
         "image": {
-          "found_pct": 7.5,
-          "named": 63035,
-          "names": 69,
+          "found_pct": 8.3,
+          "named": 69451,
+          "names": 6485,
           "total": 839489
         },
         "material": {
-          "found_pct": 27.9,
-          "named": 108240,
-          "names": 2955,
+          "found_pct": 36.3,
+          "named": 140822,
+          "names": 35537,
           "total": 388231
         },
         "sound_alias": {
-          "found_pct": 23.2,
-          "named": 59077,
-          "names": 36573,
+          "found_pct": 33.8,
+          "named": 86085,
+          "names": 63581,
           "total": 254502
         },
         "sound_asset": {
-          "found_pct": 26.2,
-          "named": 104554,
-          "names": 4929,
+          "found_pct": 26.5,
+          "named": 105871,
+          "names": 6246,
           "total": 399776
         },
         "xanim": {
-          "found_pct": 84.2,
-          "named": 81876,
-          "names": 355,
+          "found_pct": 89.1,
+          "named": 86633,
+          "names": 5112,
           "total": 97260
         }
       }
@@ -275,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 407892
+    "names": 479972
   }
 }
