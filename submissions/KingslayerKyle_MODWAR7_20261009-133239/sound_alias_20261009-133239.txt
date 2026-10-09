@@ -1,0 +1,4 @@
+3d5fd72e5f3e833d,weap_m230_fire_npc_shot_far
+d986a6b9ca389a3c,weap_m230_fire_npc_shot_dist
+eb86b0006596824a,weap_m230_fire_npc_shot_med_mech
+edbe622e31aadfa2,weap_m230_fire_npc_shot_med
