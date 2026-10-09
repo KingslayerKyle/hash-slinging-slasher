@@ -362,6 +362,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | images for every material prefix x measured channel endings | 1 | 2 | 105 | 41,331,480 | 393,633 | 251,442 | 1,399,903 | 2026-10-06 | 2026-10-06 | cooling |
 | \ refreshed mcdp material core redecorations\ | 1 | 1 | 3 | 1,199,830 | 399,943 | 399,943 | 399,943 | 2026-08-29 | 2026-08-29 | untried |
 | rare shared-token splices family size 121-240 | 1 | 2 | 29 | 12,188,574 | 420,295 | 320,751 | 320,751 | 2026-08-28 | 2026-08-28 | live |
+| yamyamok sound alias segments from the refreshed confirmed corpus | 1 | 1 | 734 | 309,075,991 | 421,084 | 421,084 | 421,084 | 2026-10-09 | 2026-10-09 | untried |
 | cross-game sound stem transfer | 1 | 1 | 27 | 11,737,632 | 434,727 | 434,727 | 434,727 | 2026-08-20 | 2026-08-20 | untried |
 | incremented basename digits | 1 | 1 | 2 | 887,360 | 443,680 | 443,680 | 443,680 | 2026-09-04 | 2026-09-04 | untried |
 | two-slot alias slotswap, round 2 | 1 | 2 | 162 | 72,051,094 | 444,759 | 223,603 | 36,050,857 | 2026-10-08 | 2026-10-08 | spent |
@@ -389,6 +390,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | high-control terminal token counterparts | 1 | 2 | 6 | 4,130,040 | 688,340 | 516,254 | 516,254 | 2026-09-04 | 2026-09-04 | live |
 | image interior2 | 1 | 1 | 3 | 2,121,927 | 707,309 | 707,309 | 707,309 | 2026-09-08 | 2026-09-08 | untried |
 | execution quips, glove-topic word pairs on one speaker | 1 | 1 | 13 | 9,290,304 | 714,638 | 714,638 | 714,638 | 2026-10-05 | 2026-10-05 | untried |
+| mwiii verified sound-name transfer after the modern submissions | 1 | 1 | 1 | 722,060 | 722,060 | 722,060 | 722,060 | 2026-10-09 | 2026-10-09 | untried |
 | mined classes over indel-augmented pairs | 1 | 2 | 75 | 55,459,097 | 739,454 | 396,848 | 8,962,006 | 2026-08-25 | 2026-08-25 | spent |
 | correlated-token-blocks-material-image-wide | 1 | 6 | 563 | 425,162,272 | 755,172 | 270,359 | 5,907,185 | 2026-08-20 | 2026-08-20 | spent |
 | corpus-mined substitutions | 7 | 38 | 1,354 | 1,042,097,492 | 769,643 | 25,953 | 1,289,462 | 2026-08-25 | 2026-09-02 | spent |
@@ -653,6 +655,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | confirmed-only all-boundary general cores x committed suffixes, 2026-09-20 | 1 | 2 | 36 | 819,098,610 | 22,752,739 | 11,701,408 | 11,701,408 | 2026-09-20 | 2026-09-20 | live |
 | \\ cold war image token length stream\\ | 1 | 1 | 2 | 45,579,875 | 22,789,937 | 22,789,937 | 22,789,937 | 2026-08-29 | 2026-08-29 | untried |
 | cold war image token insertions and deletions cap8 minseen12 | 1 | 1 | 1 | 22,877,777 | 22,877,777 | 22,877,777 | 22,877,777 | 2026-09-08 | 2026-09-08 | untried |
+| yamyamok sound directories and tails with confirmed modern basenames | 1 | 1 | 1,106 | 26,529,272,280 | 23,986,683 | 23,986,683 | 23,986,683 | 2026-10-09 | 2026-10-09 | untried |
 | image head swap | 1 | 4 | 456 | 11,005,506,000 | 24,134,881 | 12,495,151 | 89,639,032 | 2026-10-08 | 2026-10-08 | cooling |
 | voice phrase grids, probed with wiki dialogue transcripts | 1 | 1 | 2 | 49,396,982 | 24,698,491 | 24,698,491 | 24,698,491 | 2026-10-07 | 2026-10-07 | untried |
 | keyword sweep: zombie models | 1 | 1 | 4 | 100,074,665 | 25,018,666 | 25,018,666 | 25,018,666 | 2026-08-21 | 2026-08-21 | untried |
@@ -1167,7 +1170,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1089 distinct methods, run 1187 ways between them, across 3941 runs. `names` is what each run
+1092 distinct methods, run 1190 ways between them, across 3944 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->

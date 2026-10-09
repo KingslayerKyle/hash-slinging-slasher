@@ -230,7 +230,7 @@
     },
     "yamyamok": {
       "files": 5,
-      "names": 0,
+      "names": 1840,
       "types": {
         "image": {
           "found_pct": 32.6,
@@ -245,15 +245,15 @@
           "total": 221679
         },
         "sound_alias": {
-          "found_pct": 7.0,
-          "named": 11671,
-          "names": 0,
+          "found_pct": 7.4,
+          "named": 12405,
+          "names": 734,
           "total": 166718
         },
         "sound_asset": {
-          "found_pct": 52.4,
-          "named": 152549,
-          "names": 0,
+          "found_pct": 52.7,
+          "named": 153655,
+          "names": 1106,
           "total": 291343
         },
         "xanim": {
@@ -275,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 557844
+    "names": 559684
   }
 }

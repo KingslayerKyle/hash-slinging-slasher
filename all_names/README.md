@@ -110,15 +110,15 @@
 
 <table>
 <tr><th align="left"><code>yamyamok/</code></th>
-<th align="right" colspan="2">0 names in 5 file(s)</th>
+<th align="right" colspan="2">1,840 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>material</code></td><td align="right">0</td><td align="right">116,042 / 221,679 &nbsp;(52.3%)</td></tr>
 <tr><td><code>image</code></td><td align="right">0</td><td align="right">142,419 / 436,889 &nbsp;(32.6%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">0</td><td align="right">62,214 / 64,407 &nbsp;(96.6%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">0</td><td align="right">152,549 / 291,343 &nbsp;(52.4%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">0</td><td align="right">11,671 / 166,718 &nbsp;(7.0%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">1,106</td><td align="right">153,655 / 291,343 &nbsp;(52.7%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">734</td><td align="right">12,405 / 166,718 &nbsp;(7.4%)</td></tr>
 </table>
 
 </td>
@@ -136,8 +136,8 @@ this project found 10,028 of the 57,412 names anybody has for that pool, and
 332,114 of its ids are still nameless. The percentage is the fraction named,
 not the fraction found here.
 
-The emptiest pool is `sound_alias` under `yamyamok/`: 11,671 of 166,718 named,
-so 155,047 ids carry no name at all. That is the largest unworked ground
+The emptiest pool is `sound_alias` under `yamyamok/`: 12,405 of 166,718 named,
+so 154,313 ids carry no name at all. That is the largest unworked ground
 here, and it is invisible from a count on its own.
 
 The community half of that is measured against `cod-name-db` on 2026-10-08 and stored in
