@@ -1,0 +1,5 @@
+2211b081fda78dee,rex_wm_shockstick_prepare_stand
+278052113a9fc1d0,rex_wm_thermite_prepare_supine
+4a6f54420c1a6840,rex_wm_shockstick_prepare_crouch
+5a7897b1b7e8c1b8,rex_wm_shockstick_prepare_prone
+5d8aff0cab7179ec,rex_wm_shockstick_prepare_supine

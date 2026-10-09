@@ -1,0 +1,5 @@
+1f405000dd736a61,ai_t9_zombie_dog_trot_turn_l_180
+20dfa2e61b7cfe0b,ai_t9_zombie_dog_trot_turn_l_90
+51d69be948e5b502,ai_t9_zombie_dog_trot_01
+5965a62d8c50e6f1,ai_t9_zombie_dog_trot_turn_r_90
+73dc586546abd963,ai_t9_zombie_dog_trot_turn_r_180

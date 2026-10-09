@@ -1,0 +1,9 @@
+b0afdf5b72698ae,vo_efforts.zmb.zmb_npc_effort_attack_08.snn.75.48000.all
+1ff05adba0f1bf0b,vo_efforts.zmb.zmb_npc_effort_attack_01.snn.75.48000.all
+22c82daadfa79d19,vo_efforts.zmb.zmb_npc_effort_attack_03.snn.75.48000.all
+22e62204b38546ff,vo_efforts.zmb.zmb_npc_effort_attack_05.snn.75.48000.all
+2de12e3fd0a4800c,vo_efforts.zmb.zmb_npc_effort_attack_02.snn.75.48000.all
+470f1b6fe9905010,vo_efforts.zmb.zmb_npc_effort_attack_06.snn.75.48000.all
+574a45d20ec19423,vo_efforts.zmb.zmb_npc_effort_attack_09.snn.75.48000.all
+656399d42ee247ca,vo_efforts.zmb.zmb_npc_effort_attack_04.snn.75.48000.all
+7998718db36305fd,vo_efforts.zmb.zmb_npc_effort_attack_07.snn.75.48000.all
