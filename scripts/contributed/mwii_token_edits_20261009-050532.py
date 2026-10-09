@@ -49,7 +49,10 @@ import re
 import sys
 from pathlib import Path
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "scripts"))
+ROOT = Path(__file__).resolve().parent
+while ROOT != ROOT.parent and not (ROOT / "scripts" / "snapshot.py").is_file():
+    ROOT = ROOT.parent
+sys.path.insert(0, str(ROOT / "scripts"))
 
 import settings
 import snapshot
@@ -99,20 +102,20 @@ def corpus(game, pool):
 
 
 def split(name, dotted):
-    """(prefix, tokens): prefix is everything outside the editable basename.
+    """(directory, tokens, encoding suffix), retaining the original order.
 
     For a sound file that is the dotted directory **and** the encoding tail, because the tail is
     not part of the name and must not be edited -- `_03.ln.75.48000.all` is one fixed string, and
     treating its dots as separators is how a variant index becomes an extra token.
     """
     if not dotted:
-        return "", name.split("_")
+        return "", name.split("_"), ""
     match = TAIL.search(name)
     if not match:
-        return "", name.split("_")
+        return "", name.split("_"), ""
     prefix = name[: match.start()]
     directory, _, base = prefix.rpartition(".")
-    return (directory + "." if directory else "") + name[match.start():], base.split("_")
+    return (directory + "." if directory else ""), base.split("_"), name[match.start():]
 
 
 def vocabulary(parsed, cap, min_seen):
@@ -123,7 +126,7 @@ def vocabulary(parsed, cap, min_seen):
     would reach almost nothing.
     """
     seen = collections.defaultdict(collections.Counter)
-    for _, tokens in parsed:
+    for _, tokens, _ in parsed:
         if len(tokens) > MAX_TOKENS:
             continue
         head = tokens[0]
@@ -155,7 +158,7 @@ def main():
 
     seen = set()
     made = 0
-    for prefix, tokens in parsed:
+    for prefix, tokens, suffix in parsed:
         if len(tokens) < 2 or len(tokens) > MAX_TOKENS:
             continue
 
@@ -163,7 +166,7 @@ def main():
             shorter = tokens[:position] + tokens[position + 1:]
             if not shorter:
                 continue
-            candidate = prefix + "_".join(shorter)
+            candidate = prefix + "_".join(shorter) + suffix
             if candidate not in known and candidate not in seen:
                 seen.add(candidate)
                 made += 1
@@ -177,7 +180,7 @@ def main():
         for position in range(1, len(tokens) + 1):
             for word in words.get((head, min(position, len(tokens) - 1)), ()):
                 longer = tokens[:position] + [word] + tokens[position:]
-                candidate = prefix + "_".join(longer)
+                candidate = prefix + "_".join(longer) + suffix
                 if candidate not in known and candidate not in seen:
                     seen.add(candidate)
                     made += 1
