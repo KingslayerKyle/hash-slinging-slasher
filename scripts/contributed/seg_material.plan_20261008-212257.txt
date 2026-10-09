@@ -1,0 +1,4 @@
+label: material segment plan -- material stems x measured material endings
+describe: every underscore-prefix of every known material name, crossed with the top 3000 1-3 segment endings material names carry; see contrib/type_segments.py
+stem: @contrib/seg_material_stems.txt
+end: @contrib/seg_material_ends.txt
