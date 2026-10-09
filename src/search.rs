@@ -67,7 +67,12 @@ impl Peeled {
     /// ending on it. That is a separate question from whether a stem may stand with no beginning:
     /// one is about the end of a name and the other about its start, and a search that treats
     /// them as one loses every name that carries a beginning and no ending.
-    fn build(wanted: &HashMap<u64, usize>, endings: &[&String], no_ending: bool, fold: bool) -> Self {
+    fn build(
+        wanted: &HashMap<u64, usize>,
+        endings: &[&String],
+        no_ending: bool,
+        fold: bool,
+    ) -> Self {
         let mut hashes: Vec<u64> =
             Vec::with_capacity(wanted.len() * (endings.len() + usize::from(no_ending)) * 2);
 
@@ -126,7 +131,11 @@ impl<'a> Meet<'a> {
             openings: openings
                 .iter()
                 .map(|opening| {
-                    let hash = if fold { feed(basis, opening.as_bytes()) } else { feed_raw(basis, opening.as_bytes()) };
+                    let hash = if fold {
+                        feed(basis, opening.as_bytes())
+                    } else {
+                        feed_raw(basis, opening.as_bytes())
+                    };
                     (opening.clone(), hash)
                 })
                 .collect(),
@@ -274,9 +283,8 @@ impl<'a> Meet<'a> {
                     let forward = &forward;
                     let base = index * size;
 
-                    workers.push(
-                        scope.spawn(move || this.sweep(piece, base, peeled, done, forward)),
-                    );
+                    workers
+                        .push(scope.spawn(move || this.sweep(piece, base, peeled, done, forward)));
                 }
 
                 for worker in workers {
@@ -292,6 +300,9 @@ impl<'a> Meet<'a> {
             // that trying every ending forward costs nothing.
             let before = collected.len();
             collected.extend(self.name_them(&reached, stems, &slice, wanted, number == 0));
+            if forward.load(Ordering::Relaxed) != 0 {
+                crate::gpu::record_cpu();
+            }
 
             // Handed over now rather than at the end, so a run that is cut off keeps what it had
             // already found.
@@ -426,7 +437,6 @@ impl<'a> Meet<'a> {
     }
 }
 
-
 /// A run takes long enough that silence is indistinguishable from a hang.
 const REPORT_EVERY: Duration = Duration::from_secs(30);
 
@@ -549,7 +559,11 @@ impl Search {
                         share * 100.0,
                         candidates as f64 / 1e9,
                         candidates as f64 / elapsed / 1e6,
-                        if share > 0.0 { elapsed / share - elapsed } else { 0.0 },
+                        if share > 0.0 {
+                            elapsed / share - elapsed
+                        } else {
+                            0.0
+                        },
                     );
                 }
             });
@@ -580,6 +594,10 @@ impl Search {
             started.elapsed().as_secs_f64(),
             collected.len()
         );
+
+        if tried.load(Ordering::Relaxed) != 0 {
+            crate::gpu::record_cpu();
+        }
 
         collected
     }
@@ -697,7 +715,9 @@ pub fn run_best<S: AsRef<str> + Sync>(
     let breadth = stems.len() as u64 * width;
     let peeled = wanted.len() as u64 * 2;
 
-    let batches = (endings.len() as u64 * peeled).div_ceil(PEELED_BATCH as u64).max(1);
+    let batches = (endings.len() as u64 * peeled)
+        .div_ceil(PEELED_BATCH as u64)
+        .max(1);
     let meet = batches * breadth + endings.len() as u64 * peeled * PEEL_COST;
     let plain = candidate_space(openings.len(), endings.len(), stems.len(), bare);
 
@@ -722,10 +742,522 @@ pub fn run_best<S: AsRef<str> + Sync>(
     }
 }
 
+/// Optional backend routing without changing the historical CPU entry point.
+/// Returned keys are lookup IDs; Results applies the game's output-width policy.
+pub fn run_best_with_backend<S: AsRef<str> + Sync>(
+    openings: &[String],
+    endings: &[String],
+    stems: &[S],
+    wanted: &HashMap<u64, usize>,
+    bare: bool,
+    fold: bool,
+    options: &crate::gpu::BackendOptions,
+) -> Result<Vec<(u64, String)>, String> {
+    run_best_with_backend_checkpointed(
+        openings,
+        endings,
+        stems,
+        wanted,
+        bare,
+        fold,
+        options,
+        &mut |_| {},
+    )
+}
+
+/// Checkpoint only completely validated batches. A failed GPU batch never reaches
+/// the callback; Auto recomputes it on CPU, while explicit CUDA returns an error.
+pub fn run_best_with_backend_checkpointed<S: AsRef<str> + Sync>(
+    openings: &[String],
+    endings: &[String],
+    stems: &[S],
+    wanted: &HashMap<u64, usize>,
+    bare: bool,
+    fold: bool,
+    options: &crate::gpu::BackendOptions,
+    checkpoint: &mut dyn FnMut(&[(u64, String)]),
+) -> Result<Vec<(u64, String)>, String> {
+    let mut driver = crate::gpu::NativeCuda;
+    let groups = crate::games::groups(wanted);
+    // Explicit CUDA remains an explicit request even for an empty target set.
+    if groups.is_empty() && options.backend == crate::gpu::Backend::Cuda {
+        crate::gpu::CudaDriver::probe(&mut driver, options.device)?;
+    }
+    let mut all = Vec::new();
+    for (basis, targets) in groups {
+        all.extend(run_group_with_backend(
+            openings,
+            endings,
+            stems,
+            &targets,
+            bare,
+            fold,
+            basis,
+            options,
+            &mut driver,
+            checkpoint,
+        )?);
+    }
+    Ok(all)
+}
+
+fn prefers_meet(openings: usize, endings: usize, stems: usize, targets: usize, bare: bool) -> bool {
+    let width = (openings as u128 + u128::from(bare)).max(1);
+    let breadth = stems as u128 * width;
+    let peeled = targets as u128 * 2;
+    let batches = (endings as u128 * peeled)
+        .div_ceil(PEELED_BATCH as u128)
+        .max(1);
+    let meet = batches
+        .saturating_mul(breadth)
+        .saturating_add(endings as u128 * peeled * PEEL_COST as u128);
+    let plain = stems as u128 * (openings as u128 + u128::from(bare)) * (endings as u128 + 1);
+    meet < plain
+}
+
+const CHECKPOINT_CANDIDATES: u64 = 1_000_000_000;
+
+fn stems_for_budget(openings: usize, endings: usize, bare: bool, budget: u64) -> usize {
+    let per_stem = (openings as u128 + u128::from(bare)) * (endings as u128 + 1);
+    if per_stem == 0 {
+        return usize::MAX;
+    }
+    ((budget as u128 / per_stem).max(1).min(usize::MAX as u128)) as usize
+}
+
+fn cpu_group<S: AsRef<str> + Sync>(
+    openings: &[String],
+    endings: &[String],
+    stems: &[S],
+    wanted: &HashMap<u64, usize>,
+    bare: bool,
+    fold: bool,
+    basis: u64,
+    meet: bool,
+    checkpoint: &mut dyn FnMut(&[(u64, String)]),
+) -> Vec<(u64, String)> {
+    if stems.is_empty() || wanted.is_empty() || (!bare && openings.is_empty()) {
+        return Vec::new();
+    }
+    if meet || !fold {
+        let search = Meet::with_basis(openings, endings, basis, fold);
+        let search = if bare { search } else { search.dressed_only() };
+        search.run_checkpointed(stems, wanted, checkpoint)
+    } else {
+        let search = Search::with_basis(openings, endings, basis);
+        let search = if bare { search } else { search.dressed_only() };
+        // Preserve the caller's historical CPU batching. Every Search::run has
+        // a progress reporter; slicing further imposes a fixed startup cost.
+        let found = search.run(stems, wanted);
+        checkpoint(&found);
+        found
+    }
+}
+
+fn run_group_with_backend<S: AsRef<str> + Sync>(
+    openings: &[String],
+    endings: &[String],
+    stems: &[S],
+    wanted: &HashMap<u64, usize>,
+    bare: bool,
+    fold: bool,
+    basis: u64,
+    options: &crate::gpu::BackendOptions,
+    driver: &mut dyn crate::gpu::CudaDriver,
+    checkpoint: &mut dyn FnMut(&[(u64, String)]),
+) -> Result<Vec<(u64, String)>, String> {
+    use crate::gpu::{Backend, PackedRequest};
+    let width = (openings.len() as u64)
+        .checked_add(u64::from(bare))
+        .ok_or("candidate beginning count overflow")?;
+    let height = (endings.len() as u64)
+        .checked_add(1)
+        .ok_or("candidate ending count overflow")?;
+    let total = crate::gpu::checked_space(width, stems.len() as u64, height)?;
+    let meet = !fold
+        || prefers_meet(
+            openings.len(),
+            endings.len(),
+            stems.len(),
+            wanted.len(),
+            bare,
+        );
+    if options.backend == Backend::Cpu
+        || (options.backend == Backend::Auto
+            && (meet || total < options.min_candidates || total == 0 || wanted.is_empty()))
+    {
+        return Ok(cpu_group(
+            openings, endings, stems, wanted, bare, fold, basis, meet, checkpoint,
+        ));
+    }
+    let prepared = (|| {
+        let info = driver.probe(options.device)?;
+        let request = PackedRequest::new(
+            openings,
+            endings,
+            stems,
+            wanted,
+            bare,
+            fold,
+            basis,
+            options.device,
+        )?;
+        let budget = if options.backend == Backend::Cuda {
+            Some(CHECKPOINT_CANDIDATES)
+        } else {
+            driver.prefer_gpu(&request, &info)?
+        };
+        Ok::<_, String>(budget)
+    })();
+    let mut budget = match prepared {
+        Ok(Some(budget)) => budget,
+        Ok(None) => {
+            println!("CPU selected: CUDA did not establish a clear workload-specific advantage");
+            return Ok(cpu_group(
+                openings, endings, stems, wanted, bare, fold, basis, meet, checkpoint,
+            ));
+        }
+        Err(error) if options.backend == Backend::Auto => {
+            eprintln!("CUDA unavailable for this workload; continuing on CPU: {error}");
+            return Ok(cpu_group(
+                openings, endings, stems, wanted, bare, fold, basis, meet, checkpoint,
+            ));
+        }
+        Err(error) => return Err(error),
+    };
+    let mut all = Vec::new();
+    let mut from = 0;
+    while from < stems.len() {
+        let count = stems_for_budget(openings.len(), endings.len(), bare, budget);
+        let to = from.saturating_add(count).min(stems.len());
+        let chunk = &stems[from..to];
+        let result = (|| {
+            let request = PackedRequest::new(
+                openings,
+                endings,
+                chunk,
+                wanted,
+                bare,
+                fold,
+                basis,
+                options.device,
+            )?;
+            let validated = request.validate(driver.execute(&request)?)?;
+            if request.total != 0 && !request.targets.is_empty() {
+                crate::gpu::record_cuda();
+            }
+            if let Some(next) = crate::gpu::checkpoint_budget(request.total, &validated) {
+                budget = next;
+            }
+            Ok::<_, String>(request.names(validated))
+        })();
+        match result {
+            Ok(found) => {
+                checkpoint(&found);
+                all.extend(found);
+            }
+            Err(error) if options.backend == Backend::Auto => {
+                eprintln!("CUDA batch discarded; continuing this group on CPU: {error}");
+                all.extend(cpu_group(
+                    openings,
+                    endings,
+                    &stems[from..],
+                    wanted,
+                    bare,
+                    fold,
+                    basis,
+                    meet,
+                    checkpoint,
+                ));
+                break;
+            }
+            Err(error) => return Err(error),
+        }
+        from = to;
+    }
+    Ok(all)
+}
+
+#[cfg(test)]
+mod backend_tests {
+    use super::*;
+    use crate::gpu::{
+        fixture_execution, Backend, BackendOptions, CudaDriver, DeviceInfo, Execution,
+        PackedRequest,
+    };
+
+    #[derive(Default)]
+    struct MockCuda {
+        probes: usize,
+        calibrations: usize,
+        calls: usize,
+        probe_fails: bool,
+        fail_at: Option<usize>,
+        corrupt_at: Option<usize>,
+        budget: Option<u64>,
+    }
+
+    impl CudaDriver for MockCuda {
+        fn probe(&mut self, _: usize) -> Result<DeviceInfo, String> {
+            self.probes += 1;
+            if self.probe_fails {
+                return Err("injected unavailable device".into());
+            }
+            Ok(DeviceInfo {
+                ordinal: 0,
+                name: "fixture".into(),
+                major: 8,
+                minor: 0,
+                total_memory: 16 << 30,
+                free_memory: 16 << 30,
+                driver_version: 0,
+                runtime_version: 0,
+            })
+        }
+        fn execute(&mut self, request: &PackedRequest) -> Result<Execution, String> {
+            self.calls += 1;
+            if self.fail_at == Some(self.calls) {
+                return Err("injected allocation/kernel error".into());
+            }
+            let mut result = fixture_execution(request);
+            if self.corrupt_at == Some(self.calls) {
+                result.candidates = u64::MAX;
+            }
+            Ok(result)
+        }
+        fn prefer_gpu(&mut self, _: &PackedRequest, _: &DeviceInfo) -> Result<Option<u64>, String> {
+            self.calibrations += 1;
+            Ok(self.budget)
+        }
+    }
+
+    fn fixture_run(
+        backend: Backend,
+        min_candidates: u64,
+        fold: bool,
+        basis: u64,
+        mock: &mut MockCuda,
+        checkpoint: &mut dyn FnMut(&[(u64, String)]),
+    ) -> Result<Vec<(u64, String)>, String> {
+        let openings = vec!["AMB\\".into()];
+        let endings = vec![".WAV".into()];
+        let stems = ["one", "two", "three"];
+        let wanted = stems
+            .iter()
+            .map(|stem| {
+                let name = format!("AMB\\{stem}.WAV");
+                let full = if fold {
+                    feed(basis, name.as_bytes())
+                } else {
+                    feed_raw(basis, name.as_bytes())
+                };
+                (full & ID_MASK, 0)
+            })
+            .collect();
+        run_group_with_backend(
+            &openings,
+            &endings,
+            &stems,
+            &wanted,
+            false,
+            fold,
+            basis,
+            &BackendOptions {
+                backend,
+                device: 0,
+                min_candidates,
+            },
+            mock,
+            checkpoint,
+        )
+    }
+
+    #[test]
+    fn cpu_and_ineligible_auto_never_touch_cuda() {
+        for (backend, threshold) in [(Backend::Cpu, 1), (Backend::Auto, 100)] {
+            let mut mock = MockCuda {
+                probe_fails: true,
+                ..MockCuda::default()
+            };
+            let found =
+                fixture_run(backend, threshold, true, BASIS, &mut mock, &mut |_| {}).unwrap();
+            assert_eq!(found.len(), 3);
+            assert_eq!((mock.probes, mock.calibrations, mock.calls), (0, 0, 0));
+        }
+        let mut mock = MockCuda {
+            probe_fails: true,
+            ..MockCuda::default()
+        };
+        let ends: Vec<_> = (0..100).map(|n| format!("_{n}")).collect();
+        let stems: Vec<_> = (0..500).map(|n| format!("stem_{n}")).collect();
+        let wanted = HashMap::from([(crate::id_of("stem_1_5"), 0)]);
+        assert!(prefers_meet(0, ends.len(), stems.len(), wanted.len(), true));
+        let found = run_group_with_backend(
+            &[],
+            &ends,
+            &stems,
+            &wanted,
+            true,
+            true,
+            BASIS,
+            &BackendOptions {
+                backend: Backend::Auto,
+                min_candidates: 1,
+                ..BackendOptions::default()
+            },
+            &mut mock,
+            &mut |_| {},
+        )
+        .unwrap();
+        assert_eq!(found.len(), 1);
+        assert_eq!(mock.probes, 0);
+    }
+
+    #[test]
+    fn explicit_cuda_forces_small_and_unfolded_products_without_calibration() {
+        for basis in [BASIS, crate::games::IW_BASIS] {
+            for fold in [false, true] {
+                let mut mock = MockCuda::default();
+                let mut actual = fixture_run(
+                    Backend::Cuda,
+                    100_000_000,
+                    fold,
+                    basis,
+                    &mut mock,
+                    &mut |_| {},
+                )
+                .unwrap();
+                let mut expected = fixture_run(
+                    Backend::Cpu,
+                    1,
+                    fold,
+                    basis,
+                    &mut MockCuda::default(),
+                    &mut |_| {},
+                )
+                .unwrap();
+                actual.sort();
+                expected.sort();
+                assert_eq!(actual, expected);
+                assert_eq!(actual.len(), 3);
+                assert!(actual.iter().all(|(_, name)| name.contains('\\')));
+                assert_eq!((mock.probes, mock.calibrations, mock.calls), (1, 0, 1));
+            }
+        }
+    }
+
+    #[test]
+    fn auto_calibrates_once_and_checkpoints_each_validated_batch() {
+        let mut mock = MockCuda {
+            budget: Some(2),
+            ..MockCuda::default()
+        };
+        let mut saved = Vec::new();
+        let mut callbacks = 0;
+        let actual = fixture_run(Backend::Auto, 1, true, BASIS, &mut mock, &mut |batch| {
+            callbacks += 1;
+            saved.extend_from_slice(batch);
+        })
+        .unwrap();
+        assert_eq!(actual, saved);
+        assert_eq!(actual.len(), 3);
+        assert_eq!(callbacks, 3);
+        assert_eq!((mock.probes, mock.calibrations, mock.calls), (1, 1, 3));
+    }
+
+    #[test]
+    fn auto_discards_failed_gpu_batches_and_cpu_completes_remaining_work() {
+        for corrupt in [false, true] {
+            let mut mock = MockCuda {
+                budget: Some(2),
+                fail_at: (!corrupt).then_some(2),
+                corrupt_at: corrupt.then_some(2),
+                ..MockCuda::default()
+            };
+            let mut saved = Vec::new();
+            let mut actual = fixture_run(Backend::Auto, 1, true, BASIS, &mut mock, &mut |batch| {
+                saved.extend_from_slice(batch)
+            })
+            .unwrap();
+            let mut expected = fixture_run(
+                Backend::Cpu,
+                1,
+                true,
+                BASIS,
+                &mut MockCuda::default(),
+                &mut |_| {},
+            )
+            .unwrap();
+            actual.sort();
+            expected.sort();
+            saved.sort();
+            assert_eq!(actual, expected);
+            assert_eq!(actual, saved);
+            assert_eq!(
+                mock.calls, 2,
+                "a failed backend must not be retried within the group"
+            );
+            assert_eq!(mock.calibrations, 1);
+        }
+        for probe_fails in [false, true] {
+            let mut mock = MockCuda {
+                probe_fails,
+                ..MockCuda::default()
+            };
+            assert_eq!(
+                fixture_run(Backend::Auto, 1, true, BASIS, &mut mock, &mut |_| {})
+                    .unwrap()
+                    .len(),
+                3
+            );
+            assert_eq!(mock.calls, 0);
+        }
+    }
+
+    #[test]
+    fn explicit_cuda_errors_without_checkpoints_for_unverified_results() {
+        for (probe_fails, fail_at, corrupt_at) in [
+            (true, None, None),
+            (false, Some(1), None),
+            (false, None, Some(1)),
+        ] {
+            let mut mock = MockCuda {
+                probe_fails,
+                fail_at,
+                corrupt_at,
+                ..MockCuda::default()
+            };
+            let mut callbacks = 0;
+            assert!(
+                fixture_run(Backend::Cuda, 1, true, BASIS, &mut mock, &mut |_| {
+                    callbacks += 1
+                })
+                .is_err()
+            );
+            assert_eq!(callbacks, 0);
+        }
+    }
+
+    #[test]
+    fn unfolded_auto_retains_cpu_meet_and_literal_backslashes() {
+        let mut mock = MockCuda {
+            probe_fails: true,
+            ..MockCuda::default()
+        };
+        let found = fixture_run(Backend::Auto, 1, false, BASIS, &mut mock, &mut |_| {}).unwrap();
+        assert_eq!(found.len(), 3);
+        assert_eq!(mock.probes, 0);
+        for (id, name) in found {
+            assert_eq!(id, feed_raw(BASIS, name.as_bytes()) & ID_MASK);
+            assert_ne!(id, feed(BASIS, name.as_bytes()) & ID_MASK);
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::{id_of, hash64, hash64_raw};
+    use crate::{hash64, hash64_raw, id_of};
 
     /// The whole of the fast search rests on the hash running backwards exactly, so this is the
     /// test that matters most: peeling a string off a hash has to give back what was there
@@ -739,7 +1271,11 @@ mod tests {
 
         // And the two normalisations must genuinely differ on a backslash, or the flag is a lie.
         assert_ne!(hash64(r"a\b"), hash64_raw(r"a\b"));
-        assert_eq!(hash64("a/b"), hash64_raw("a/b"), "no backslash, no difference");
+        assert_eq!(
+            hash64("a/b"),
+            hash64_raw("a/b"),
+            "no backslash, no difference"
+        );
 
         let before = hash64("mc/mtl_wpn_t9_ak47");
         assert_eq!(peel(feed(before, b"_barrel_c"), b"_barrel_c"), before);
@@ -753,10 +1289,7 @@ mod tests {
         let whole = hash64("i_mtl_wpn_t9_ak47_barrel_c");
 
         assert_eq!(peel(whole, b"_c"), hash64("i_mtl_wpn_t9_ak47_barrel"));
-        assert_eq!(
-            peel(whole, b"wpn_t9_ak47_barrel_c"),
-            hash64("i_mtl_")
-        );
+        assert_eq!(peel(whole, b"wpn_t9_ak47_barrel_c"), hash64("i_mtl_"));
     }
 
     /// The candidate count is a number that goes into a submission and gets ranked against every
@@ -785,7 +1318,10 @@ mod tests {
         assert_eq!(candidate_space(0, 4, 7, true), 35);
 
         // A real pass: 30.6M pieces, 700 beginnings, 4,800 endings. This must not wrap.
-        assert_eq!(candidate_space(700, 4800, 30_660_024, true), 103_186_341_432_024);
+        assert_eq!(
+            candidate_space(700, 4800, 30_660_024, true),
+            103_186_341_432_024
+        );
     }
 
     /// The two searches ask the same question and must give the same answer. The faster one is
@@ -841,13 +1377,20 @@ mod tests {
             let opening = &openings[index % openings.len()];
             wanted.insert(id_of(&format!("{opening}{stem}")), 29);
             wanted.insert(
-                id_of(&format!("{opening}{stem}{}", endings[index % endings.len()])),
+                id_of(&format!(
+                    "{opening}{stem}{}",
+                    endings[index % endings.len()]
+                )),
                 29,
             );
         }
 
-        let mut plain = Search::with_basis(&openings, &endings, BASIS).dressed_only().run(&stems, &wanted);
-        let mut fast = Meet::with_basis(&openings, &endings, BASIS, true).dressed_only().run(&stems, &wanted);
+        let mut plain = Search::with_basis(&openings, &endings, BASIS)
+            .dressed_only()
+            .run(&stems, &wanted);
+        let mut fast = Meet::with_basis(&openings, &endings, BASIS, true)
+            .dressed_only()
+            .run(&stems, &wanted);
 
         plain.sort();
         fast.sort();
@@ -894,7 +1437,10 @@ mod tests {
     /// matches.
     #[test]
     fn a_search_with_no_endings_still_sweeps() {
-        let openings: Vec<String> = ["arena/", "menu/"].iter().map(|t| (*t).to_owned()).collect();
+        let openings: Vec<String> = ["arena/", "menu/"]
+            .iter()
+            .map(|t| (*t).to_owned())
+            .collect();
         let stems: Vec<String> = (0..100).map(|number| format!("key_{number}")).collect();
 
         let mut wanted: HashMap<u64, usize> = HashMap::new();
@@ -902,7 +1448,9 @@ mod tests {
             wanted.insert(id_of(&format!("{}{stem}", openings[index % 2])), 29);
         }
 
-        let found = Meet::with_basis(&openings, &[], BASIS, true).dressed_only().run(&stems, &wanted);
+        let found = Meet::with_basis(&openings, &[], BASIS, true)
+            .dressed_only()
+            .run(&stems, &wanted);
 
         assert_eq!(found.len(), stems.len());
     }

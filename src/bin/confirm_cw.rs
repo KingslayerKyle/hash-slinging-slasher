@@ -28,6 +28,7 @@ use std::time::{Duration, Instant};
 use slasher::fingerprint::{Fingerprint, Sketch};
 use slasher::loader::{loaded_assets, unnamed, wanted_for_search};
 use slasher::search::{self, Meet};
+use slasher::gpu;
 use slasher::{futility, 
     all_table_names, config, folder_names, hash64, paths, read_list, readiness, recon, table_keys,
     table_names, tables_look_complete, Results, RunNote, pool_label,
@@ -180,7 +181,58 @@ fn stems(lines: &[String]) -> Vec<Box<str>> {
     pieces
 }
 
+fn validate_arguments(arguments: &[String]) -> Result<(), String> {
+    let mut args = arguments.iter();
+    while let Some(argument) = args.next() {
+        match argument.as_str() {
+            "--game" => match args.next() {
+                Some(value) if !value.starts_with('-') && !value.is_empty() => (),
+                _ => return Err("--game requires a game tag".into()),
+            },
+            "seeds" | "all-tables" | "--sounds" | "--no-fold" | "--anyway" => (),
+            other => return Err(format!("unknown argument: {other}")),
+        }
+    }
+    Ok(())
+}
+
 fn main() {
+    let mut arguments: Vec<String> = std::env::args().skip(1).collect();
+    if arguments.iter().any(|argument| argument == "--help" || argument == "-h") {
+        println!(
+            "usage: confirm_cw [seeds] [all-tables] [--game TAG] [--sounds] [--no-fold]\n\
+             [--backend cpu|auto|cuda] [--cuda-device N] [--gpu-min-candidates N]\n\
+             confirm_cw --gpu-check [--cuda-device N]\n\n\
+             CPU is the default. Auto checks support and workload cost before selecting CUDA.\n\
+             --gpu-check checks support without searching. See docs/GPU.md."
+        );
+        return;
+    }
+    let (backend, gpu_check) = gpu::parse_backend_options(&mut arguments).unwrap_or_else(|reason| {
+        eprintln!("{reason}");
+        std::process::exit(2);
+    });
+    if gpu_check {
+        if !arguments.is_empty() {
+            eprintln!("--gpu-check is a standalone diagnostic; omit game and search arguments.");
+            std::process::exit(2);
+        }
+        match gpu::probe(backend.device) {
+            Ok(device) => {
+                println!("{device}");
+                println!("CUDA support check passed. --backend auto also checks workload cost before selecting the GPU.");
+            }
+            Err(reason) => {
+                eprintln!("{reason}\nCPU searches remain available. See docs/GPU.md for setup and build instructions.");
+                std::process::exit(1);
+            }
+        }
+        return;
+    }
+    validate_arguments(&arguments).unwrap_or_else(|reason| {
+        eprintln!("{reason}\nUse --help for supported options.");
+        std::process::exit(2);
+    });
     // Refuses to start on a clone that has not been brought up to date and checked against what
     // other people already have in flight. This is the whole of the duplicate problem, and it is
     // enforced here rather than requested in a document because requesting it did not work.
@@ -188,7 +240,6 @@ fn main() {
     futility::require();
 
     let began = Instant::now();
-    let arguments: Vec<String> = std::env::args().skip(1).collect();
     let sources = if arguments.iter().any(|value| value == "seeds") {
         Sources::Seeds
     } else {
@@ -470,14 +521,9 @@ fn main() {
     // gigabytes over a pass to protect work that is at most sixty seconds old.
     // Black Ops 4's SAB sound names keep their backslashes and their ids are the hash of exactly
     // that, so folding matches nothing. `Meet::unfolded` switches the peel and the feed together.
-    let search = if no_fold {
-        Meet::unfolded(&prefixes, &endings)
-    } else {
-        Meet::new(&prefixes, &endings)
-    };
     let mut last_saved = Instant::now();
 
-    let found = search.run_checkpointed(&pieces, &wanted, &mut |batch| {
+    let mut checkpoint = |batch: &[(u64, String)]| {
         for (id, name) in batch {
             results.add(&pool_label(wanted[id]), *id, name.clone());
         }
@@ -499,6 +545,33 @@ fn main() {
                 eprintln!("  the run folder could not be checkpointed: {error}");
             }
         }
+    };
+    gpu::reset_usage();
+    let searched = if backend.backend == gpu::Backend::Cpu {
+        // Preserve the established CPU path, including peeled-batch checkpoints.
+        let search = if no_fold {
+            Meet::unfolded(&prefixes, &endings)
+        } else {
+            Meet::new(&prefixes, &endings)
+        };
+        Ok(search.run_checkpointed(&pieces, &wanted, &mut checkpoint))
+    } else {
+        search::run_best_with_backend_checkpointed(
+            &prefixes, &endings, &pieces, &wanted, true, !no_fold, &backend, &mut checkpoint,
+        )
+    };
+    drop(checkpoint);
+    let found = searched.unwrap_or_else(|reason| {
+        // The failed batch was discarded by the engine; preserve earlier verified batches
+        // even when the periodic checkpoint timer has not fired yet. Leave the run unsealed.
+        if let Err(error) = results.write(paths::findings()) {
+            eprintln!("could not save verified results: {error}");
+        }
+        if let Err(error) = results.write_run_as(paths::findings(), label, &when) {
+            eprintln!("could not save the incomplete run: {error}");
+        }
+        eprintln!("search failed: {reason}\nEarlier verified batches were checkpointed; this run is incomplete.");
+        std::process::exit(1);
     });
 
     // Matches and names are different numbers and this used to print the first under the second's
@@ -544,6 +617,7 @@ fn main() {
                      ending, each candidate hashed and looked up among the game's unnamed ids",
                     began.elapsed(),
                 )
+                .computed_on(gpu::usage_summary())
                 .measured("game", config::game())
                 .measured("pools searched", config::targets().describe())
                 .measured("seed lines", seeds)
@@ -612,6 +686,25 @@ fn run_label(sounds: bool, sources: Sources) -> &'static str {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn backend_values_are_not_vocabulary_flags() {
+        let mut args: Vec<String> = ["--backend", "auto", "--game", "BLKOPS04", "--sounds",
+            "--no-fold", "seeds", "--gpu-min-candidates", "100000000"]
+            .iter().map(|value| (*value).into()).collect();
+        let (options, check) = gpu::parse_backend_options(&mut args).unwrap();
+        assert_eq!(options.backend, gpu::Backend::Auto);
+        assert!(!check);
+        assert!(validate_arguments(&args).is_ok());
+        assert!(!args.iter().any(|value| value == "auto" || value == "100000000"));
+    }
+
+    #[test]
+    fn malformed_flags_fail_before_a_grind() {
+        for values in [vec!["--game"], vec!["--game", "--sounds"], vec!["--backned", "auto"]] {
+            assert!(validate_arguments(&values.into_iter().map(String::from).collect::<Vec<_>>()).is_err());
+        }
+    }
 
     /// Every pass this binary can run must be distinguishable on disk from every other, and from
     /// the other binaries' labels. `start` reads nothing but these strings to decide what is left

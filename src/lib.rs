@@ -24,6 +24,7 @@ pub mod database;
 pub mod paths;
 pub mod snapshot;
 pub mod search;
+pub mod gpu;
 
 // Everything that has to happen before a search, and the gate that makes it happen. Kept
 // together because they are one idea: a night is wasted by a stale clone far more often than by
