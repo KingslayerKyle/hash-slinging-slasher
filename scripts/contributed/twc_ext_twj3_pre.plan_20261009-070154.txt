@@ -1,0 +1,4 @@
+label: twj 3-token names: prepended token + known 2-token name
+describe: every known 2-token twc name with one token 0..7000 (n and dn) added; 85% of known 4-token / 88% of 3-token twc names contain a known shorter one; see contrib/twc_extend.py
+begin: @contrib/twc_ext_twj_tok_begin.txt
+stem: @contrib/twc_ext_twj3_base_stem.txt
