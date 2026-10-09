@@ -1,0 +1,2 @@
+6c4b808bd2cf4c8,ui_battlepass_infopanel_blackcell_backer
+3f516e924714f908,hud_reticle_s55queen_shoot_g
