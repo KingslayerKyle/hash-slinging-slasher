@@ -1,0 +1,2 @@
+9f03571b6a00267,ui_rex_icon_reticle_reflex03
+5819631cb2b5f610,att_rex_scope_sn02_v0_dmg
