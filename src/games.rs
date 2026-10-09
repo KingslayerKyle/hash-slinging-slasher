@@ -91,7 +91,9 @@ pub fn read_pools(path: &Path) -> Result<Vec<String>, String> {
         let fields: Vec<_> = line.split(|c: char| c.is_whitespace() || c == ',').filter(|x| !x.is_empty()).collect();
         if fields.len() != 3 { continue; }
         if let (Ok(index), Ok(_count)) = (fields[0].parse::<usize>(), fields[2].parse::<u64>()) {
-            if index > u16::MAX as usize || rows.insert(index, fields[1].to_owned()).is_some() || !names.insert(fields[1].to_owned()) {
+            // Use one asset-type spelling downstream without changing captured indexes.
+            let name = canonical(fields[1]).to_owned();
+            if index > u16::MAX as usize || rows.insert(index, name.clone()).is_some() || !names.insert(name) {
                 return Err(format!("{}: duplicate or invalid pool mapping", path.display()));
             }
         }
@@ -135,6 +137,16 @@ pub fn next_game<'a>(available: &'a [&str], previous: Option<&str>) -> Option<&'
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test] fn modern_census_sound_files_keep_their_captured_indexes() {
+        for (game, sound_index) in [("modwar22", 197), ("yamyamok", 193),
+            ("blackop6", 193), ("blackop7", 186), ("modwar7", 186)] {
+            let path = Path::new(env!("CARGO_MANIFEST_DIR"))
+                .join("snapshots").join(format!("{game}.pools.txt"));
+            let pools = read_pools(&path).unwrap();
+            assert_eq!(pools[sound_index], "sound_asset", "{game}");
+            assert!(!pools.iter().any(|name| name == "sndasset"), "{game}");
+        }
+    }
     #[test] fn rotation_visits_every_game() {
         let order = ["BLKOPS04", "BLKOPSCW", "MODWAR22", "YAMYAMOK", "BLACKOP6", "BLACKOP7", "MODWAR7"];
         assert_eq!(next_game(&[], None), None);

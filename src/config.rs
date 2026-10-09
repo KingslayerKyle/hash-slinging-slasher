@@ -225,7 +225,7 @@ fn targets_from_text(text: &str, game: &str, table: &[&str]) -> Targets {
 
     let mut pools = HashSet::new();
     for name in &names {
-        match table.iter().position(|kind| *kind == crate::games::canonical(name)) {
+        match table.iter().position(|kind| crate::games::canonical(kind) == crate::games::canonical(name)) {
             Some(index) => {
                 if allowed(table[index]) { pools.insert(index); }
             }
@@ -303,6 +303,32 @@ mod tests {
             let only_model = targets_from_text("pools = [\"xmodel\"]", game, &table);
             assert_eq!(only_model.wants(0), !crate::games::modern(game));
             assert!(!only_model.wants(1), "exclusion must not widen a configured search");
+        }
+    }
+
+    #[test]
+    fn modern_censuses_resolve_sound_files_and_keep_models_opt_in() {
+        for game in GAMES.iter().copied().filter(|game| crate::games::modern(game)) {
+            let path = Path::new(env!("CARGO_MANIFEST_DIR"))
+                .join("snapshots").join(format!("{}.pools.txt", game.to_lowercase()));
+            let pools = crate::games::read_pools(&path).unwrap();
+            // Exercise raw census spelling too, so config lookup remains safe for callers
+            // that have not passed through read_pools.
+            for raw in [false, true] {
+                let table: Vec<&str> = pools.iter().map(|kind| {
+                    if raw && kind == "sound_asset" { "sndasset" } else { kind.as_str() }
+                }).collect();
+                let files = table.iter().position(|kind| crate::games::canonical(kind) == "sound_asset").unwrap();
+                let models = table.iter().position(|kind| *kind == "xmodel").unwrap();
+                let defaults = targets_from_text("", game, &table);
+                assert!(defaults.wants(files), "{game}: raw={raw}");
+                assert!(!defaults.wants(models), "{game}: models require opt-in");
+                for name in ["sound_asset", "sndasset"] {
+                    let selected = targets_from_text(&format!("pools = [\"{name}\"]"), game, &table);
+                    assert!(selected.wants(files), "{game}: {name}, raw={raw}");
+                    assert!(!selected.wants(models));
+                }
+            }
         }
     }
 
