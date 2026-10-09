@@ -1,0 +1,5 @@
+label: prefixed material bases as images -- measured image prefixes x material bases x image endings
+describe: top 58 prefixes images put before a known material base, x 104053 material bases, x top 3000 image endings; see contrib/prefixed_mat_images.py
+begin: @contrib/pmi_prefixes.txt
+stem: @contrib/pmi_bases.txt
+end: @contrib/pmi_ends.txt
