@@ -194,12 +194,12 @@
     },
     "modwar7": {
       "files": 5,
-      "names": 61664,
+      "names": 61773,
       "types": {
         "image": {
           "found_pct": 52.5,
-          "named": 19600,
-          "names": 4727,
+          "named": 19603,
+          "names": 4730,
           "total": 37365
         },
         "material": {
@@ -216,8 +216,8 @@
         },
         "sound_asset": {
           "found_pct": 31.8,
-          "named": 41441,
-          "names": 16987,
+          "named": 41547,
+          "names": 17093,
           "total": 130464
         },
         "xanim": {
@@ -230,7 +230,7 @@
     },
     "yamyamok": {
       "files": 5,
-      "names": 61851,
+      "names": 63464,
       "types": {
         "image": {
           "found_pct": 33.0,
@@ -239,9 +239,9 @@
           "total": 436889
         },
         "material": {
-          "found_pct": 76.7,
-          "named": 170026,
-          "names": 53984,
+          "found_pct": 77.4,
+          "named": 171639,
+          "names": 55597,
           "total": 221679
         },
         "sound_alias": {
@@ -275,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 709243
+    "names": 710965
   }
 }

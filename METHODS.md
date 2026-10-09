@@ -226,6 +226,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | black market loot stream, itemshop, and contract icons | 1 | 1 | 7 | 43,712 | 6,244 | 6,244 | 6,244 | 2026-09-04 | 2026-09-04 | untried |
 | anim game cross | 1 | 1 | 4 | 26,532 | 6,633 | 6,633 | 6,633 | 2026-09-03 | 2026-09-03 | untried |
 | twc terrain-blend grid, pairs | 1 | 4 | 35,796 | 241,076,880 | 6,734 | 4,148 | 4,148 | 2026-10-08 | 2026-10-09 | live |
+| mw4-target-image-gaps | 1 | 1 | 2 | 13,945 | 6,972 | 6,972 | 6,972 | 2026-10-09 | 2026-10-09 | untried |
 | final byte closure, guard cleared | 1 | 1 | 2 | 15,218 | 7,609 | 7,609 | 7,609 | 2026-08-25 | 2026-08-25 | untried |
 | mp/blackout: aliases cracked from mpdialog bundles | 1 | 1 | 28 | 223,097 | 7,967 | 7,967 | 7,967 | 2026-09-11 | 2026-09-11 | untried |
 | image siblings | 3 | 5 | 529 | 4,621,863 | 8,736 | 1,734 | 68,329 | 2026-08-20 | 2026-08-21 | spent |
@@ -340,6 +341,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | modern warfare 2 build names, verbatim | 1 | 1 | 1 | 209,784 | 209,784 | 209,784 | 209,784 | 2026-08-22 | 2026-08-22 | untried |
 | yamyamok verified material-to-image channel seam | 1 | 1 | 266 | 57,678,684 | 216,837 | 216,837 | 216,837 | 2026-10-09 | 2026-10-09 | untried |
 | rare compound image splice | 1 | 1 | 1 | 223,738 | 223,738 | 223,738 | 223,738 | 2026-09-04 | 2026-09-04 | untried |
+| modwar7 verified sound takes width 2 | 1 | 1 | 101 | 23,305,893 | 230,751 | 230,751 | 230,751 | 2026-10-09 | 2026-10-09 | untried |
 | sound tail swap, two-letter-codec stems included | 1 | 2 | 244 | 56,537,832 | 231,712 | 200,488 | 200,488 | 2026-10-08 | 2026-10-08 | live |
 | cross-game verbatim transfer | 1 | 1 | 3 | 702,081 | 234,027 | 234,027 | 234,027 | 2026-08-25 | 2026-08-25 | untried |
 | token edits anim | 1 | 1 | 13 | 3,067,026 | 235,925 | 235,925 | 235,925 | 2026-09-03 | 2026-09-03 | untried |
@@ -555,6 +557,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | confirmed-only sound all-boundary cores, refreshed | 1 | 2 | 47 | 202,544,928 | 4,309,466 | 2,596,729 | 2,596,729 | 2026-08-29 | 2026-08-29 | live |
 | edits model | 2 | 4 | 12 | 52,757,566 | 4,396,463 | 1,876,636 | 6,607,769 | 2026-08-20 | 2026-08-20 | cooling |
 | execution quips, deep chained phrases on one speaker | 1 | 1 | 6 | 26,713,251 | 4,452,208 | 4,452,208 | 4,452,208 | 2026-10-05 | 2026-10-05 | untried |
+| mw4-sound-file-context | 1 | 1 | 5 | 22,594,207 | 4,518,841 | 4,518,841 | 4,518,841 | 2026-10-09 | 2026-10-09 | untried |
 | open-slot embedding neighbours | 1 | 2 | 44 | 199,716,612 | 4,539,013 | 3,633,293 | 3,633,293 | 2026-10-01 | 2026-10-01 | live |
 | rare shared-token splices families 12901-13200 | 1 | 2 | 6 | 27,286,700 | 4,547,783 | 3,410,837 | 3,410,837 | 2026-08-28 | 2026-08-28 | live |
 | rare shared-token splices family sizes 6001-6300 | 1 | 2 | 3 | 14,089,319 | 4,696,439 | 3,522,329 | 3,522,329 | 2026-08-28 | 2026-08-28 | live |
@@ -725,6 +728,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | heads of length 1 | 1 | 1 | 1 | 36,707,544 | 36,707,544 | 36,707,544 | 36,707,544 | 2026-08-27 | 2026-08-27 | untried |
 | cold war sound, uncarried 1-segment endings | 1 | 2 | 560 | 20,953,836,251 | 37,417,564 | 29,431,729 | 29,431,729 | 2026-08-23 | 2026-08-23 | live |
 | two-word slots, corpus pairs ranked 120k+ | 1 | 2 | 116 | 4,412,385,691 | 38,037,807 | 37,680,211 | 37,680,211 | 2026-10-01 | 2026-10-01 | live |
+| modwar7 verified material-to-image channel seam | 1 | 1 | 1 | 38,528,896 | 38,528,896 | 38,528,896 | 38,528,896 | 2026-10-09 | 2026-10-09 | untried |
 | sound uncarried two-segment endings top1000 | 2 | 2 | 5 | 196,436,240 | 39,287,248 | 33,992,458 | 60,466,406 | 2026-09-09 | 2026-09-09 | live |
 | ab snowball r4 visual: new cores x all endings | 1 | 4 | 27 | 1,071,603,572 | 39,689,021 | 1,931,256 | 484,051,613 | 2026-10-01 | 2026-10-05 | spent |
 | black ops 4, uncarried three-segment endings | 1 | 2 | 1,058 | 42,578,054,890 | 40,243,908 | 16,329,961 | 157,676,083 | 2026-08-23 | 2026-08-23 | cooling |
@@ -850,13 +854,16 @@ table under a name you would not have guessed is the thing you are about to rebu
 | confirmed-only all-boundary cores x uncarried six-segment endings | 1 | 1 | 8 | 3,962,339,623 | 495,292,452 | 495,292,452 | 495,292,452 | 2026-09-01 | 2026-09-01 | untried |
 | measured tails of length 56 | 1 | 1 | 5 | 2,521,780,812 | 504,356,162 | 504,356,162 | 504,356,162 | 2026-08-25 | 2026-08-25 | untried |
 | all-boundary sound cores x uncarried sound endings, 2 segments, top 200k | 1 | 1 | 634 | 320,548,256,700 | 505,596,619 | 505,596,619 | 505,596,619 | 2026-08-29 | 2026-08-29 | untried |
+| yamyamok terrain numeric domain 0..1000, first untested layer 1 | 1 | 1 | 913 | 463,850,310,924 | 508,050,723 | 508,050,723 | 508,050,723 | 2026-10-09 | 2026-10-09 | untried |
 | first twenty ceiling-dropped black ops 4 sound beginnings | 1 | 1 | 17 | 8,705,046,735 | 512,061,572 | 512,061,572 | 512,061,572 | 2026-08-29 | 2026-08-29 | untried |
 | scoped all-boundary sound cores x all uncarried 2-segment sound endings (full vocabulary), re-run at grown corpus | 1 | 1 | 54 | 28,168,563,166 | 521,640,058 | 521,640,058 | 521,640,058 | 2026-09-03 | 2026-09-03 | untried |
 | affix sweep | 1 | 1 | 1 | 532,497,168 | 532,497,168 | 532,497,168 | 532,497,168 | 2026-08-20 | 2026-08-20 | untried |
+| yamyamok terrain numeric domain 0..1000, first untested layer 2 | 1 | 1 | 469 | 249,765,552,036 | 532,549,151 | 532,549,151 | 532,549,151 | 2026-10-09 | 2026-10-09 | untried |
 | ab snowball r5 visual: all cores x new name tails | 1 | 3 | 36 | 19,893,304,174 | 552,591,782 | 84,935,759 | 3,784,225,412 | 2026-10-01 | 2026-10-05 | spent |
 | confirmed-only all-boundary cores x uncarried 1-segment endings, blkops04 | 1 | 1 | 12 | 6,800,804,899 | 566,733,741 | 566,733,741 | 566,733,741 | 2026-09-01 | 2026-09-01 | untried |
 | ab snowball r6 sound: new cores x every known tail | 1 | 2 | 7 | 3,981,074,790 | 568,724,970 | 331,756,232 | 331,756,232 | 2026-10-01 | 2026-10-01 | live |
 | sound all-boundary uncarried endings current | 1 | 2 | 127 | 72,404,724,040 | 570,115,937 | 341,742,866 | 341,742,866 | 2026-09-01 | 2026-09-05 | live |
+| yamyamok terrain numeric domain 0..1000, first untested layer 3 | 1 | 1 | 231 | 134,489,143,404 | 582,204,084 | 582,204,084 | 582,204,084 | 2026-10-09 | 2026-10-09 | untried |
 | measured heads of length 48 | 1 | 2 | 51 | 30,025,694,930 | 588,739,116 | 428,938,499 | 938,302,966 | 2026-08-25 | 2026-08-25 | live |
 | external bo4 xhash cores under uncarried endings | 1 | 1 | 2 | 1,196,624,742 | 598,312,371 | 598,312,371 | 598,312,371 | 2026-09-01 | 2026-09-01 | untried |
 | all-boundary cores x uncarried endings, 1 segment(s), top 100000 | 1 | 1 | 6 | 3,777,037,770 | 629,506,295 | 629,506,295 | 629,506,295 | 2026-09-02 | 2026-09-02 | untried |
@@ -1204,7 +1211,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1126 distinct methods, run 1224 ways between them, across 4012 runs. `names` is what each run
+1133 distinct methods, run 1231 ways between them, across 4019 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->
