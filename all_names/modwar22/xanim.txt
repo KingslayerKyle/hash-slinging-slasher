@@ -1,3 +1,5 @@
+5dba60307748e04c,boss_injured_search_exposed_aim_4
+5dba61307748e1ff,boss_injured_search_exposed_aim_5
 4df01e2e3ba8df8f,civ_casual_jog
 5f01d808037fbb09,emb_def_civ_table_idle_civ01
 5f01d508037fb5f0,emb_def_civ_table_idle_civ02

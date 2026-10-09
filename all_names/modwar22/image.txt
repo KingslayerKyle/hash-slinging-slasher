@@ -1,3 +1,5 @@
+61749dd8026a87c3,decal_mask_graffiti_arabic_17_c~atlas_decalvolmask
+5a5e4697d747f9e8,decal_mask_graffiti_arabic_18_c~atlas_decalvolmask
 2dfbfbc87986afe6,icon_difficulty_regular
 4dfc8334ef64922a,ui_bp_aar_topography_trs
 b347c8c06e09ef0,ui_bp_pip_fill_l
