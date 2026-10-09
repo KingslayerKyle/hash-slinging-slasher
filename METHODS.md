@@ -4147,6 +4147,162 @@ promote thin frames past the threshold), so it refills a little after any pass, 
 step only comes from a new vocabulary: a deeper word list, proper nouns (places, people, units),
 other languages' words where the game uses them.
 
+## BO7 target-witnessed nonadjacent animation pairs — 2026-10-09
+
+`contrib/verified_modern_animation_pairs.py` transfers coupled two-token changes
+only when at least three otherwise identical BO7-held animation frames witness
+that same change. It preserves token distance and every unchanged token, using
+source-verified modern animation names and the shared game hash policy.
+
+**Reaches:** simultaneous nonadjacent edits that one-token substitutions and
+short head/tail replacements cannot express. This adapts the legacy paired-rule
+idea to modern tables and restricts rule evidence to the selected capture.
+
+The first BO7 pass, gaps 2–6, used 153,884 verified seeds and 88,704 eligible
+target-held names. **1,137,241 distinct candidates confirmed 140 new animations**,
+after table, merged-submission and open-PR exclusions. Expected chance matches
+rounded to 0.0000. The generator also records known-name reconstruction controls.
+
+**Spent by:** an unchanged source corpus, target-held witness frames and distance
+band. Regenerating the same candidates under a different label does not reopen it.
+
+## BO7 terrain layer order permutations — 2026-10-09
+
+`contrib/terrain_layer_permutations.py` preserves a target-held terrain material's
+directory and complete two-to-four-layer token multiset, including `n`/`dn`
+qualifiers, and enumerates its distinct orders. Numeric identities are never
+invented or crossed between unrelated materials. Shared readers verify every
+source spelling against its stored key.
+
+**Reaches:** order changes omitted by numeric identity substitution and triple
+insertion. The BO7 pass measured 77,921 layer multisets across eight directories,
+reconstructed 87,279 known orders, and **confirmed 129 new materials from 376,350
+unseen candidates**. Confirmation excluded authoritative table keys, merged names
+and open submissions; expected chance matches rounded to 0.0000.
+
+**Spent by:** all permutations of the current target-held multisets. New order
+finds alone do not justify rerunning because they retain the same multisets.
+A separate qualifier-completion diagnostic tested 98,919 candidates and found
+zero unclaimed matches; that seam is measured negative on this BO7 corpus.
+
+## BO7 package-witnessed animation modifiers — 2026-10-09
+
+`contrib/verified_animpkg_clip_modifiers.py` uses source-verified animation-package
+names as per-weapon attachment vocabulary. Both package and base clip must be held
+in BO7. An insertion boundary must be witnessed by three distinct existing
+clip/base/modifier relationships; the candidate retains the source weapon identity.
+
+**Reaches:** complete modifier blocks present in package names but absent from
+the corresponding animation family. On this BO7 corpus, 2,985 held packages
+provided modifiers for 245 weapon families. 15,159 known relationships supported
+213 insertion contexts. **1,228,982 candidates confirmed 89 new animations.**
+
+**Spent by:** unchanged package/clip names and target-held boundary evidence.
+Dictionary widening alone provides no new evidence.
+
+## BO7 sound files from witnessed alias-prefix translations — 2026-10-09
+
+`contrib/verified_alias_file_prefixes.py` reverses witnessed file-to-alias prefix
+translations. Each rule needs three distinct shared bodies and retains the exact
+directory and common body anchors. Reconstructed file families receive only that
+directory's observed take/encoding tails. It changes a proven namespace prefix,
+unlike the existing unchanged-alias-to-file method.
+
+**493,482 candidates confirmed three new BO7 sound files.** This follows an
+18-alias file-to-alias pass and a separate 39-file basename-byte solve. The source
+sound-pool canonicalization regression was repaired before sound-file confirmation.
+Some earlier contributors used builds that already searched sound files, so the
+regression is not evidence that historical BO7 sound methods are unspent.
+
+**Spent by:** unchanged rule witnesses, directory-specific encoding/take tails and
+target-held aliases. Mirroring the namespace rule at the suffix instead measured
+61,044 unseen candidates and zero unclaimed matches on this corpus.
+
+## BO7 frozen image suffix with witnessed preceding byte — 2026-10-09
+
+`contrib/frozen_image_suffix_byte.py` keeps each image's suffix intact and changes
+only its preceding stem byte. The suffix must have three BO7-held sibling-core
+witnesses and exceed three characters; replacement bytes must occur at that same
+position with that exact suffix on BO7. It reuses the verified source/cut helpers
+from the library's byte-before-channel method.
+
+**1,715,197 candidates confirmed 47 new images**, with 104,853 known frame/byte
+controls. This bounded in-place subset avoids the broader inverse method's
+billions of Python reverse queries. **Spent by:** unchanged source frames and
+suffix-specific alphabets; it does not measure the full cross-suffix space.
+
+## Additional BO7 negative measurements — 2026-10-09
+
+- Paired animation rules at disjoint gaps 7–17: 11,233 candidates, zero unclaimed
+  matches. Gaps 12–17 had no supported rules. Do not refine this band on the same corpus.
+- Witnessed image-prefix reordering: 23,856 candidates, zero unclaimed matches.
+- Atomic repeated image identifiers: no rules supported by two independent sibling
+  witnesses; no confirming pass warranted.
+- Nonweapon sound-alias to animation prefix translations: 27 witnessed rules,
+  6,312 candidates and zero unclaimed matches, using 35,968 BO7-held nonweapon
+  clips and 31,157 aliases. Do not widen this namespace seam on the same evidence.
+- Paired-rule closure over the 89 new package-derived animation names: 680
+  previously untested candidates, zero unclaimed matches. The opposite direction
+  was already included in the package pass; no redundant rerun was necessary.
+
+## BO7 sound basename endings inside tokens — 2026-10-09
+
+`contrib/verified_sound_basename_tails.py` builds compiled plans that cut four
+characters before the encoding tail, strictly inside an alphanumeric basename
+token. Prefixes come from verified modern sound names; endings, including original
+encoding, occur in target-held sounds. It neither enumerates a character alphabet
+nor repeats the underscore-boundary cuts of historical sound segment plans.
+
+112,204 prefixes and 5,478 observed endings produced **614,765,716 engine
+candidates and two new BO7 sound files**. Positive controls reconstructed 80,056
+known target files; 11,123 target prefixes had multiple observed basename endings.
+The measured plan had no material overlap in the recorded plan sketches.
+**Spent by:** these source prefixes and target endings at the selected cut width.
+The small yield is a measurement, not a reason to widen the same idea repeatedly.
+
+A directory-witnessed closure of this session's 44 fresh sound files added one
+more sound file from 95 candidates. `contrib/verified_sound_delta_closure.py`
+accepts a frozen seed file, verifies every seed against the selected sound-file
+pool, and uses only the same directory's observed codec/language and same-width
+take endings. The original 44-row seed file was checksummed for reproducibility;
+this was a delta over new names, not a repeat of the old full-corpus sound sweep.
+
+## BO7 compiled image stem-byte and witnessed-suffix product — 2026-10-09
+
+`contrib/image_stem_byte_suffix_plan.py` expresses the full compact byte-before-
+suffix relation as a compiled three-list plan. Verified image cores minus their
+last byte supply the beginnings; the byte alphabet occurs at that position in
+BO7; suffixes have three distinct target-held sibling-core witnesses. It extends
+the suffix-preserving method to other witnessed suffixes without emitting billions
+of Python strings. The engine selects forward hashing on these dimensions.
+
+**63,229 beginnings × 36 bytes × 5,303 suffixes**, plus unsuffixed cores,
+yielded **12,073,198,176 candidates and 112 new BO7 images** after the earlier
+47-image pass. Inputs occupied 2.22 MB. The estimated chance-match count was
+0.0010. Structural measurement found 2,197,863 expanded cores absent from current
+all-boundary stems and 3,164 suffixes absent from saved image-ending lists.
+
+**Spent by:** these exact three lists. The byte/suffix relation is established;
+unchanged-list reruns or new labels cannot recover additional names.
+
+## BO7 complete image stem-pair product — 2026-10-09
+
+`contrib/image_stem_pair_suffix_plan.py` replaces the final two stem bytes with
+complete two-byte fragments actually witnessed on target-held image cores.
+It retains the same three-sibling-core suffix evidence as the one-byte method;
+it never builds a Cartesian character alphabet.
+
+61,925 prefixes × 677 witnessed pairs × 5,306 suffixes, plus bare repaired
+cores, produced **222,486,555,075 candidates and 73 new BO7 images**. Only 3.630%
+overlapped the current one-byte product. Expected coincidental matches: 0.0185.
+All 73 additions fit the intended plan shape; 59 used two digits, 13 two letters,
+and one a letter/digit pair. UI charms accounted for 36 additions.
+
+**Spent by:** the exact lists. The yield declined from the one-byte product;
+subsequent work should follow the numeric/UI signal rather than widen blindly.
+An unrun full three-byte product was sized at 834.943 billion candidates with
+4.793% overlap against width two; sizing is not a yield measurement.
+
 ## Candidates worth building, with the measurement that decides each
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
