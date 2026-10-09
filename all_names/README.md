@@ -22,15 +22,15 @@
 
 <table>
 <tr><th align="left"><code>blackop7/</code></th>
-<th align="right" colspan="2">117,048 names in 5 file(s)</th>
+<th align="right" colspan="2">118,597 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>material</code></td><td align="right">35,537</td><td align="right">140,822 / 388,231 &nbsp;(36.3%)</td></tr>
-<tr><td><code>image</code></td><td align="right">6,485</td><td align="right">69,451 / 839,489 &nbsp;(8.3%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">5,112</td><td align="right">86,633 / 97,260 &nbsp;(89.1%)</td></tr>
+<tr><td><code>material</code></td><td align="right">35,862</td><td align="right">141,147 / 388,231 &nbsp;(36.4%)</td></tr>
+<tr><td><code>image</code></td><td align="right">6,678</td><td align="right">69,644 / 839,489 &nbsp;(8.3%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">5,166</td><td align="right">86,687 / 97,260 &nbsp;(89.1%)</td></tr>
 <tr><td><code>sound_asset</code></td><td align="right">6,333</td><td align="right">105,958 / 399,776 &nbsp;(26.5%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">63,581</td><td align="right">86,085 / 254,502 &nbsp;(33.8%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">64,558</td><td align="right">87,062 / 254,502 &nbsp;(34.2%)</td></tr>
 </table>
 
 </td>
@@ -92,15 +92,15 @@
 
 <table>
 <tr><th align="left"><code>modwar7/</code></th>
-<th align="right" colspan="2">61,077 names in 5 file(s)</th>
+<th align="right" colspan="2">61,664 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>material</code></td><td align="right">1,207</td><td align="right">4,847 / 7,809 &nbsp;(62.1%)</td></tr>
-<tr><td><code>image</code></td><td align="right">4,699</td><td align="right">19,572 / 37,365 &nbsp;(52.4%)</td></tr>
+<tr><td><code>image</code></td><td align="right">4,727</td><td align="right">19,600 / 37,365 &nbsp;(52.5%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">5,616</td><td align="right">31,545 / 35,164 &nbsp;(89.7%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">16,486</td><td align="right">40,940 / 130,464 &nbsp;(31.4%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">33,069</td><td align="right">40,592 / 73,962 &nbsp;(54.9%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">16,987</td><td align="right">41,441 / 130,464 &nbsp;(31.8%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">33,127</td><td align="right">40,650 / 73,962 &nbsp;(55.0%)</td></tr>
 </table>
 
 </td>
@@ -110,12 +110,12 @@
 
 <table>
 <tr><th align="left"><code>yamyamok/</code></th>
-<th align="right" colspan="2">56,962 names in 5 file(s)</th>
+<th align="right" colspan="2">61,308 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>material</code></td><td align="right">49,361</td><td align="right">165,403 / 221,679 &nbsp;(74.6%)</td></tr>
-<tr><td><code>image</code></td><td align="right">1,652</td><td align="right">144,071 / 436,889 &nbsp;(33.0%)</td></tr>
+<tr><td><code>material</code></td><td align="right">53,441</td><td align="right">169,483 / 221,679 &nbsp;(76.5%)</td></tr>
+<tr><td><code>image</code></td><td align="right">1,918</td><td align="right">144,337 / 436,889 &nbsp;(33.0%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">0</td><td align="right">62,214 / 64,407 &nbsp;(96.6%)</td></tr>
 <tr><td><code>sound_asset</code></td><td align="right">1,607</td><td align="right">154,156 / 291,343 &nbsp;(52.9%)</td></tr>
 <tr><td><code>sound_alias</code></td><td align="right">4,342</td><td align="right">16,013 / 166,718 &nbsp;(9.6%)</td></tr>
@@ -136,8 +136,8 @@ this project found 10,028 of the 57,412 names anybody has for that pool, and
 332,114 of its ids are still nameless. The percentage is the fraction named,
 not the fraction found here.
 
-The emptiest pool is `image` under `blackop7/`: 69,451 of 839,489 named,
-so 770,038 ids carry no name at all. That is the largest unworked ground
+The emptiest pool is `image` under `blackop7/`: 69,644 of 839,489 named,
+so 769,845 ids carry no name at all. That is the largest unworked ground
 here, and it is invisible from a count on its own.
 
 The community half of that is measured against `cod-name-db` on 2026-10-08 and stored in
