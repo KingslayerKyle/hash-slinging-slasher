@@ -1,0 +1,5 @@
+label: tw-family terrain grids (tw twcj twck), triples over the full 0..3000 n range
+describe: <dir>/*a_b_c with every token 0n..3000n for tw, twcj and twck; see contrib/twx_t3000_begin.txt
+begin: @contrib/twx_t3000_begin.txt
+stem: @contrib/twx_t3000_end.txt
+end: @contrib/twx_t3000_end.txt
