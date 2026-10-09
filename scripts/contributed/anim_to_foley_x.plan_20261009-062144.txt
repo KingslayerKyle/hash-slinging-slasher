@@ -1,0 +1,5 @@
+label: weapon foley, every weapon x every animation/foley event x take numbers
+describe: 12 foley prefixes x 480 weapons, x 16215 events cut from animations and foley aliases, x bare and take numbers; see contrib/anim_to_foley.py --cross
+begin: @contrib/anim_to_foley_x_begins.txt
+stem: @contrib/anim_to_foley_x_events.txt
+end: @contrib/anim_to_foley_ends.txt
