@@ -1,0 +1,2 @@
+7c32e937555dc5a,rex/eqp/molotov/rex_weap_molotov_burn_lp_plr_02.dnl.75.48000.all
+32b50e7b8830a85d,rex/eqp/molotov/rex_weap_molotov_burn_lp_plr_01.dnl.75.48000.all
