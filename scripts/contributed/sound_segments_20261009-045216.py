@@ -65,6 +65,7 @@ def split(name):
 
 
 def main():
+    CONTRIB.mkdir(parents=True, exist_ok=True)
     ap = argparse.ArgumentParser()
     ap.add_argument("--ends", type=int, default=12000)
     ap.add_argument("--min-stem", type=int, default=4)
