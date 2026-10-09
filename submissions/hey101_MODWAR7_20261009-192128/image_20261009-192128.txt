@@ -1,0 +1,1 @@
+3e02d642a002efa3,ui_rex_inventory_empty_icon
