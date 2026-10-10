@@ -239,6 +239,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | independently witnessed atomic alias interior blocks | 1 | 1 | 514 | 557,984 | 1,085 | 1,085 | 1,085 | 2026-10-09 | 2026-10-09 | untried |
 | uncarried sound grid two | 1 | 1 | 1 | 1,114 | 1,114 | 1,114 | 1,114 | 2026-09-07 | 2026-09-07 | untried |
 | figglefx bo4 verified general exports | 1 | 1 | 134 | 159,569 | 1,190 | 1,190 | 1,190 | 2026-09-04 | 2026-09-04 | untried |
+| mw4 material wrappers from verified embedded model vocabulary | 1 | 1 | 22 | 28,655 | 1,302 | 1,302 | 1,302 | 2026-10-10 | 2026-10-10 | untried |
 | modern slotswap: method 10 over every modern name, first run on the modern games | 1 | 2 | 62,350 | 84,017,186 | 1,347 | 1,113 | 1,113 | 2026-10-08 | 2026-10-08 | live |
 | reverse final-byte solve after source refresh | 1 | 1 | 3 | 4,051 | 1,350 | 1,350 | 1,350 | 2026-09-03 | 2026-09-03 | untried |
 | numbered sound templates, every number | 1 | 1 | 772 | 1,055,896 | 1,367 | 1,367 | 1,367 | 2026-10-05 | 2026-10-05 | untried |
@@ -1318,7 +1319,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1240 distinct methods, run 1339 ways between them, across 4185 runs. `names` is what each run
+1241 distinct methods, run 1340 ways between them, across 4186 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->
