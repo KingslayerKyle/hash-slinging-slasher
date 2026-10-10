@@ -1,0 +1,8 @@
+1ec3833346cb4308,physics/iw9/iw9_phy_plastic_bin_01.lnn.85.48000.all
+2f102e36c5e0ecd1,physics/iw9/iw9_phy_plastic_bin_04.lnn.85.48000.all
+32fcb19cda135f5b,jup/wpn/sn/moscar/reloads/npc/p35_sn_moscar_inspect_cloth_mvmt_05_npc.tnn.75.48000.all
+48864b9d9de3a583,physics/iw9/iw9_phy_plastic_bin_06.lnn.85.48000.all
+48b6c98cc37347c4,physics/iw9/iw9_phy_plastic_bin_05.lnn.85.48000.all
+4d2556e4cc3ad577,physics/iw9/iw9_phy_plastic_bin_02.lnn.85.48000.all
+5f033d5083d7a6c2,physics/iw9/iw9_phy_plastic_bin_03.lnn.85.48000.all
+7f1681a0a927dc6e,physics/iw9/iw9_phy_plastic_bin_07.lnn.85.48000.all
