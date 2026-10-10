@@ -38,7 +38,7 @@
     },
     "blackop7": {
       "files": 5,
-      "names": 163596,
+      "names": 163714,
       "types": {
         "image": {
           "found_pct": 8.8,
@@ -53,9 +53,9 @@
           "total": 388231
         },
         "sound_alias": {
-          "found_pct": 46.2,
-          "named": 117702,
-          "names": 95198,
+          "found_pct": 46.3,
+          "named": 117820,
+          "names": 95316,
           "total": 254502
         },
         "sound_asset": {
@@ -275,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 763600
+    "names": 763718
   }
 }
