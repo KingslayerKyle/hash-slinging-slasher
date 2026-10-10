@@ -76,6 +76,7 @@ c76a48f110709d4,mc/uk_shipping_crate_wood_01
 23013e394a0b515e,tm/building_doorframe_plaster_01_red_lod
 5d53020f788b39ec,tm/concrete_plates_04
 20f77faafb787520,tm/ee_window_wood_painted_green_02
+aa5419c7a30d79d,tm/flash_grenade_pouch_01
 5701b47f17c9a7ee,tm/me_rock_large_01_tan
 339f27f0337789b2,tm/me_wall_cinder_block_old_02
 763ab00195482376,tm/me_wall_plaster_adobe_01_wet
@@ -127,12 +128,14 @@ bf99364f8a14b7c,tw/*1193n_1178n
 2ede9c7ee4061f14,tw/*1570n_309n
 1ef9f9e0458f6f94,tw/*1615n_1625n
 4def8c8347f1c03f,tw/*1619n_27n
+1d84775348fbbfa3,tw/*163n_585n
 64fbb05c51720760,tw/*1909n_28n
 3d36ecf1635c400,tw/*1940n_1912n
 ddf26a8c3b10449,tw/*2485n_313n
 5060a1010376b5bf,tw/*2883n_10n
 25fd41f24691fbe2,tw/*2884n_85n
 2c8760708118ab02,tw/*4n_135n
+160ead0246fed32b,tw/*50n_52n
 3f20d97568e1618a,tw/*994n_1183n
 6d78d3c92cb80e64,tw/ceramic_floor_tile_12
 1fb7b3b69248af3a,tw/dirt_stones_eroded_01_dsp

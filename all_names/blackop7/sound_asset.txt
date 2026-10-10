@@ -2977,6 +2977,7 @@ daf942b4b78bbad,iw9/amb/amb_emitters_iw9/water/emt_iw9_water_lapping_sm_02.dnn.7
 66d64ce81a1ff763,iw9/amb/amb_emitters_iw9/waves/emt_wave_hit_splash_lrg_09.dnn.85.48000.all
 697e1000065903eb,iw9/amb/amb_emitters_iw9/waves/emt_wave_hit_splash_lrg_09.lnn.85.48000.all
 347c5ce1ddc193a5,iw9/amb/amb_emitters_iw9/waves/emt_wave_hit_splash_lrg_10.dnn.85.48000.all
+4cff0899a8729b6d,iw9/amb/amb_emitters_iw9/waves/emt_wave_hit_splash_lrg_10.lnn.85.48000.all
 3318d9e08c3380a8,iw9/amb/amb_emitters_iw9/wind/emt_wind_draft_int_01.dnn.85.48000.all
 193442830b11d87,iw9/amb/amb_emitters_iw9/wind/emt_wind_draft_int_02.dnn.85.48000.all
 66fae3a0c39844e2,iw9/amb/amb_emitters_iw9/wind/emt_wind_draft_int_03.dnn.85.48000.all
@@ -5443,6 +5444,7 @@ a71ab5f87b8bc27,s6/op/operator_gulag/dx_op_opgu_bttl_gula_apro_settingmine.snn.2
 28659af25c3c93d7,s6/op/operator_void/dx_op_void_bttl_voyd_apro_settingmine.snn.20.48000.english
 3cc608baf6cd175c,s6/op/operator_void/dx_op_void_ping_voyd_pkge_thiskillstreakisoneo.snn.20.48000.english
 12c14a616e191928,s6/op/operator_whiskey/dx_op_owhs_ping_whis_pkge_friendlykillstreakhe_opg2.snn.20.48000.english
+5a3d6b9dad14cfd3,sat/wpn/ar/emu/reloads/fly_plr_ar_emu_inspect_empty_mvmt4.tnn.75.48000.all
 67203805c6704c1a,sat/wpn/ar/heron/reloads/fly_plr_ar_heron_branched_reload_empty_fast01_02.tnn.75.48000.all
 25afccae8b22b567,sat/wpn/dm/oman/reloads/fly_plr_pi_pyork_inspect_spin2.lnn.75.48000.all
 c671a3359e4dbaf,sat/wpn/dm/oman/reloads/fly_plr_pi_pyork_inspect_spin2.tnn.75.48000.all
@@ -5500,6 +5502,7 @@ ad4b546ad6457d7,sat/wpn/sh/corso/plr/mech/wpn_sh_corso_mech_01.pnn.85.48000.all
 405e03e133dedc92,sat/wpn/sl/sargas/fly/fly_plr_sl_sargas_ads_down.tnn.75.48000.all
 7b64ba3ab516d5e9,sat/wpn/sl/sargas/fly/fly_plr_sl_sargas_ads_up.tnn.75.48000.all
 780ba666b5cae44f,sat/wpn/sl/sargas/fly/fly_plr_sl_sargas_raise.lnn.75.48000.all
+6ff9076f21686b14,sat/wpn/sl/sargas/fly/fly_plr_sl_sargas_rechamber.tnn.75.48000.all
 4c5730f85e982dcc,sat/wpn/sm/gecko/reloads/fly_plr_sm_gecko_raise.lnn.75.48000.all
 65c0d5750a43fa25,sat/wpn/sm/komodo/reloads/fly_plr_sm_lisbon_inspect_ext02_drumout.tnn.75.48000.all
 53f118b32747c1ef,sat/wpn/sm/komodo/reloads/fly_plr_sm_lisbon_reload_ext02_drumin.tnn.75.48000.all
@@ -5525,6 +5528,8 @@ a976057a4161433,sat/wpn/sn/_shared/fcg/wpn_sn_dryfire_plr_01.lnn.85.48000.all
 765659ceaaff66a6,sat/wpn/sn/caspian/reloads/p10_sh_moslo500_reload_empty_chamber_start_boltclose.tnn.75.48000.all
 1669fc2779527794,sat/wpn/sn/caspian/reloads/p10_sh_moslo500_reload_empty_chamber_start_boltopen.tnn.75.48000.all
 19bddba52fb7e530,sat/wpn/sn/drake/reloads/wfoly_plr_sn_drake_transition_reload_empty_xlrg_03_start.tnn.75.48000.all
+4b809d0ab5451248,scarab_armorbox_lobby_riverside
+161e0376ab129f53,sprint1_zombieradius_sanctum_
 e011f1acbdd832f,t10/eqp/c4/eqp_c4_foly_detonate_cloth_a.tnn.75.48000.all
 2157235c0a29957b,t10/eqp/molotov/iw9_molotov_fire_lp_end_01.dnn.75.48000.all
 7c7f79b27454757c,t10/eqp/molotov/iw9_molotov_fire_lp_end_01.dnn.85.48000.all
@@ -5926,6 +5931,8 @@ e88884b16fe5553,t10/wpn/shotgun/_shared/fcg/wpn_sh_dryfire_plr_ads_02.lnn.85.480
 6462ac8d6820f009,t10/wpn/sl/blauncher/reloads/fly_plr_sl_blauncher_reload_empty_mag_in.tnn.85.48000.all
 1408bf22b7671f24,t10/wpn/sl/blauncher/reloads/fly_plr_sl_blauncher_reload_empty_mag_out.tnn.85.48000.all
 7667c6ad2d887445,t10/wpn/sl/olove/reloads/fly_plr_sh_olove_transition_reload_empty_fast_end.tnn.75.48000.all
+4de16baee132d5a6,t10/wpn/sl/wand/reloads/fly_plr_sl_artifact_raise_first_quick.lnn.75.48000.all
+6386a2fe2b5a2b1e,t10/wpn/sl/wand/reloads/fly_plr_sl_artifact_raise_first_quick.tnn.75.48000.all
 249815a15c36f66e,t10/wpn/smg/_shared/fcg/wpn_sm_dryfire_plr_ads_01.tnn.85.48000.all
 52e9c30718e2b211,t10/wpn/smg/_shared/fcg/wpn_sm_dryfire_plr_ads_02.tnn.85.48000.all
 56cf9407512c604,t10/wpn/smg/_shared/fcg/wpn_sm_dryfire_plr_ads_03.tnn.85.48000.all
@@ -5951,6 +5958,7 @@ e88884b16fe5553,t10/wpn/shotgun/_shared/fcg/wpn_sh_dryfire_plr_ads_02.lnn.85.480
 6ad5270745107010,t10/wpn/zmb/raygun/fly/raygun_reload_close.lnn.85.48000.all
 7c50b04f79cb00c0,temp_hitmarker_tests/hit_marker_cu_a_v1.lnn.85.48000.all
 465ba9b4a11139bf,test_tones/pop1k.tnn.75.48000.all
+f13e1f5778d646f,v6_53d5a8c1ca64773674b586d6492_721508a36ef2aa4f0a5577c42_
 1528d62cc4acf599,vo_efforts/ac/male_npc_ac_pain_02.pnn.85.48000.all
 29d117dca13b1b1b,vo_efforts/al/female_npc_al_pain_01.pnn.85.48000.all
 6c08a70f3d6c79d2,vo_efforts/al/female_npc_al_pain_04.pnn.85.48000.all
@@ -6383,3 +6391,4 @@ dd6c29f26964b3a,vo_efforts/tb/male_npc_tb_breath_run_07_gm.lnn.20.48000.all
 61db268aed85c7dd,vo_efforts/zmb/zmb_npc_effort_death_07.tnn.85.48000.all
 30a23c90de76809e,vo_efforts/zmb/zmb_npc_effort_death_08.tnn.85.48000.all
 131353fbad152e33,vo_efforts/zmb/zmb_npc_effort_death_09.tnn.85.48000.all
+6ad293a4c16b6db3,wpn_p02_sm_sdelta_rail_v3_p02_sm_sdelta_rail_tome_sable
