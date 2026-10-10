@@ -1,0 +1,4 @@
+9f03371b69fff01,ui_rex_icon_reticle_reflex05
+459f3407c6c70115,ui_rex_icon_reticle_snscope02
+7ba5f3f8d90133e9,ui_rex_icon_reticle_holo03
+7ba5f4f8d901359c,ui_rex_icon_reticle_holo04
