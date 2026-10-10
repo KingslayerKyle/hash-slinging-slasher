@@ -559,13 +559,17 @@ impl Filter {
 
 /// One 'hash,name' file, as pairs.
 pub fn read_rows(path: &Path) -> Vec<(u64, String)> {
+    read_rows_with_mask(path, ID_MASK)
+}
+
+fn read_rows_with_mask(path: &Path, mask: u64) -> Vec<(u64, String)> {
     fs::read_to_string(path)
         .unwrap_or_default()
         .lines()
         .filter_map(|line| {
             let (key, name) = line.trim().split_once(',')?;
             Some((
-                u64::from_str_radix(key.trim(), 16).ok()? & ID_MASK,
+                u64::from_str_radix(key.trim(), 16).ok()? & mask,
                 name.to_owned(),
             ))
         })
@@ -876,6 +880,10 @@ impl Results {
     /// rather than a diff. Every one of them is read back here, because the question a run asks
     /// is whether a name is new to *all* of them.
     pub fn load(directory: impl AsRef<Path>) -> Self {
+        Self::load_for_game(directory, &config::game())
+    }
+
+    fn load_for_game(directory: impl AsRef<Path>, game: &str) -> Self {
         let directory = directory.as_ref();
         let mut by_kind: HashMap<String, HashMap<u64, String>> = HashMap::new();
 
@@ -905,10 +913,22 @@ impl Results {
                     continue;
                 };
 
+                let modern_alias = games::modern(game) && kind == "sound_alias";
+                let mask = if modern_alias { u64::MAX } else { ID_MASK };
                 by_kind
                     .entry(kind.to_owned())
                     .or_default()
-                    .extend(read_rows(&path));
+                    .extend(read_rows_with_mask(&path, mask).into_iter().map(|(id, name)| {
+                        // Keep full-width stored alias keys. Upgrade an old masked key only
+                        // when its name proves it, respecting folded and no-fold searches.
+                        let id = if modern_alias && id & !ID_MASK == 0 {
+                            [true, false].into_iter()
+                                .map(|fold| games::output_key(game, kind, &name, fold))
+                                .find(|key| key & ID_MASK == id)
+                                .unwrap_or(id)
+                        } else { id };
+                        (id, name)
+                    }));
             }
         }
 
@@ -995,6 +1015,10 @@ impl Results {
     /// A name already held is not an addition, however it was arrived at, so a run's own folder
     /// stays a list of what that run was the first to reach.
     pub fn add(&mut self, kind: &str, id: u64, name: String) {
+        self.add_for_game(kind, id, name, &config::game());
+    }
+
+    fn add_for_game(&mut self, kind: &str, id: u64, name: String, game: &str) {
         // A scraped line may separate its directories with backslashes. Where the hash folded
         // them, both spellings reach the same asset and only one is the spelling the published
         // tables use, so that is the one written down.
@@ -1019,9 +1043,8 @@ impl Results {
             println!("  unusual, kept: {id:x},{name}\n    {why}");
         }
 
-        let game = config::game();
-        let id = if games::modern(&game) && kind == "sound_alias" {
-            let expected = games::output_key(&game, kind, &name, !self.keep_spelling);
+        let id = if games::modern(game) && kind == "sound_alias" {
+            let expected = games::output_key(game, kind, &name, !self.keep_spelling);
             assert_eq!(expected & ID_MASK, id & ID_MASK, "alias name does not reproduce captured id");
             expected
         } else { id };
@@ -1251,6 +1274,68 @@ pub fn expected_by_chance(candidates: u64, wanted: usize) -> f64 {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn reloaded_aliases_keep_their_output_width_and_are_not_new() {
+        let examples = [
+            (true, true, "test_alias_reload_"),
+            (true, false, "test_alias_reload_"),
+            (false, true, r"test_alias\reload_"),
+        ];
+        let root = std::env::temp_dir().join(format!("alias_reload_{}", std::process::id()));
+        fs::create_dir(&root).unwrap();
+        for game in config::GAMES {
+            let folder = root.join(game);
+            let run = folder.join("run_fixture");
+            fs::create_dir_all(&run).unwrap();
+            let path = run.join("sound_alias.txt");
+            for (fold, high, prefix) in examples {
+                let name = (0..100).map(|i| format!("{prefix}{i}"))
+                    .find(|name| (games::hash(game, "sound_alias", name, fold) & !ID_MASK != 0) == high).unwrap();
+                let full = games::hash(game, "sound_alias", &name, fold);
+                let masked = full & ID_MASK;
+                for stored in [full, masked] {
+                    fs::write(&path, format!("{stored:x},{name}\n")).unwrap();
+                    let mut results = Results::load_for_game(&folder, game);
+                    if !fold { results = results.keeping_spelling(); }
+                    let expected = games::output_key(game, "sound_alias", &name, fold);
+                    assert_eq!(results.by_kind["sound_alias"].keys().copied().collect::<Vec<_>>(), vec![expected]);
+                    assert!(results.ids().contains(&masked));
+                    results.add_for_game("sound_alias", masked, name.clone(), game);
+                    assert_eq!(results.added(), 0);
+                    assert_eq!(results.len(), 1);
+                    fs::remove_file(&path).unwrap();
+                    results.write(&folder).unwrap();
+                    let written = folder.join("sound_alias.txt");
+                    assert_eq!(fs::read_to_string(&written).unwrap(), format!("{expected:x},{name}\n"));
+                    fs::remove_file(written).unwrap();
+                }
+            }
+            fs::remove_dir(run).unwrap();
+            fs::remove_dir(folder).unwrap();
+        }
+        fs::remove_dir(root).unwrap();
+    }
+
+    #[test]
+    fn alias_reload_preserves_unproven_keys_and_masks_ordinary_assets() {
+        let root = std::env::temp_dir().join(format!("alias_reload_unproven_{}", std::process::id()));
+        fs::create_dir(&root).unwrap();
+        let name = "unproven_alias_reload_name";
+        let full = (hash64(name) ^ 1) | !ID_MASK;
+        let masked = full & ID_MASK;
+        for stored in [full, masked] {
+            fs::write(root.join("sound_alias.txt"), format!("{stored:x},{name}\n")).unwrap();
+            fs::write(root.join("image.txt"), format!("{stored:x},{name}\n")).unwrap();
+            let results = Results::load_for_game(&root, "MODWAR7");
+            assert_eq!(results.by_kind["sound_alias"].keys().copied().collect::<Vec<_>>(), vec![stored]);
+            assert_eq!(results.by_kind["image"].keys().copied().collect::<Vec<_>>(), vec![masked]);
+            assert_eq!(read_rows(&root.join("sound_alias.txt")), vec![(masked, name.to_owned())]);
+        }
+        fs::remove_file(root.join("sound_alias.txt")).unwrap();
+        fs::remove_file(root.join("image.txt")).unwrap();
+        fs::remove_dir(root).unwrap();
+    }
 
     /// A checkpoint marks its folder unfinished; the end of the run clears it.
     ///
