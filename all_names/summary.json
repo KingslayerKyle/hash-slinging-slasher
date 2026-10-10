@@ -230,7 +230,7 @@
     },
     "yamyamok": {
       "files": 5,
-      "names": 84147,
+      "names": 84149,
       "types": {
         "image": {
           "found_pct": 33.7,
@@ -252,8 +252,8 @@
         },
         "sound_asset": {
           "found_pct": 53.2,
-          "named": 154869,
-          "names": 2320,
+          "named": 154871,
+          "names": 2322,
           "total": 291343
         },
         "xanim": {
@@ -275,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 841179
+    "names": 841181
   }
 }

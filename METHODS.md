@@ -239,6 +239,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | alias family grid round 2, head 3 | 5 | 5 | 5,339 | 3,574,040 | 669 | 342 | 357,404 | 2026-10-09 | 2026-10-09 | spent |
 | alias family grid round 1, head 3 | 5 | 5 | 5,337 | 3,574,020 | 669 | 342 | 357,402 | 2026-10-09 | 2026-10-09 | spent |
 | mw4-file-to-alias-prefixes | 1 | 1 | 4 | 2,845 | 711 | 711 | 711 | 2026-10-09 | 2026-10-09 | untried |
+| mwiii sound variants opened by verified public seed batch | 1 | 1 | 2 | 1,466 | 733 | 733 | 733 | 2026-10-10 | 2026-10-10 | untried |
 | zombies vo grid round 3: all 5 aether/dotn maps x plr 0-24 x events (csv + common + mitm rounds 1-3), plus mitm round-3 hits | 1 | 1 | 1,678 | 1,258,928 | 750 | 750 | 750 | 2026-09-10 | 2026-09-10 | untried |
 | alias family grid snowball r1 h3 | 5 | 28 | 25,331 | 20,843,630 | 822 | 271 | 1,734 | 2026-10-09 | 2026-10-09 | cooling |
 | black market character spray tag images | 1 | 1 | 10 | 8,316 | 831 | 831 | 831 | 2026-09-04 | 2026-09-04 | untried |
@@ -1588,7 +1589,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1510 distinct methods, run 1879 ways between them, across 5055 runs. `names` is what each run
+1511 distinct methods, run 1880 ways between them, across 5056 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->

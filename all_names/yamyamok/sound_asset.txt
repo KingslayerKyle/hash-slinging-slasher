@@ -203,7 +203,9 @@ af5e1237f5f4de2,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_08.snn.75.48000.
 16c63820d5546a9b,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_long_03.dnn.75.48000.all
 47c4be53e593133c,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_long_03.snn.75.48000.all
 112599b0135ec38,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_long_04.dnn.75.48000.all
+309f721aa2bf6faf,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_long_04.snn.75.48000.all
 4fab3a6428df98d5,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_long_05.dnn.75.48000.all
+6e3ad14ef35d0a7a,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_long_05.snn.75.48000.all
 44c86ae86d04a25,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_wind_01.lnn.75.48000.all
 1d67d7dcade61a42,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_wind_01.snn.75.48000.all
 25235347f0fde2b2,iw9.amb.amb_emitters.debris_rock.emt_sand_metal_wind_02.lnn.75.48000.all
