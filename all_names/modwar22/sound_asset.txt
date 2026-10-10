@@ -11,6 +11,10 @@ ae1d8046c9a7122,core.fly.foot.step_walk_water_06.ln.75.48000.all
 6af15b00bc750696,core.fly.hand.iw9_ledgehang_concrete_hard_02.ln.75.48000.all
 33f3e92a0aca7181,core.fly.hand.iw9_ledgehang_concrete_hard_03.ln.75.48000.all
 7cc396c908fe3198,core.fly.hand.iw9_ledgehang_concrete_hard_04.ln.75.48000.all
+97a8dbda0579b9e,core.fly.hand.iw9_ledgehang_mantle_over_01.ln.75.48000.all
+152ba65210de8bf,core.fly.hand.iw9_ledgehang_mantle_over_02.ln.75.48000.all
+66b92dfab3f2bd2c,core.fly.hand.iw9_ledgehang_mantle_over_03.ln.75.48000.all
+6009229c1b6e149d,core.fly.hand.iw9_ledgehang_mantle_over_04.ln.75.48000.all
 1ff475b45d76647f,core.fly.hand.iw9_ledgehang_metal_thick_hard_01.ln.75.48000.all
 9f0763c9059295e,core.fly.hand.iw9_ledgehang_metal_thick_hard_02.ln.75.48000.all
 77128418e1467de9,core.fly.hand.iw9_ledgehang_metal_thick_hard_03.ln.75.48000.all
@@ -701,8 +705,16 @@ f531edfc32b7b46,iw9.wpn.reloads.iw9_papa90.npc.p07_sm_papa90_reload_empty_raise_
 10340d77d4045a5d,iw9.wpn.romeo870.weap_romeo870_fire_plr_04.ln.85.48000.all
 57c2f590b2408042,iw9.wpn.romeo870.weap_romeo870_fire_plr_05.ln.85.48000.all
 f72dcacd75484a7,iw9.wpn.romeo870.weap_romeo870_fire_plr_06.ln.85.48000.all
+3a32ea8aa7c2baf9,mgl.amb.amb_emitters.water.emt_water_drips_close_01.sn.75.48000.all
+355e8dced18c9dbc,mgl.amb.amb_emitters.water.emt_water_drips_close_02.sn.75.48000.all
+7f4ab5ec1dc0cb6f,mgl.amb.amb_emitters.water.emt_water_drips_close_03.sn.75.48000.all
+41eef2d7bc7104a,mgl.amb.amb_emitters.water.emt_water_drips_close_04.sn.75.48000.all
+6d36826bbd36ec25,mgl.amb.amb_emitters.water.emt_water_drips_close_05.sn.75.48000.all
+658f00fe05b62d68,mgl.amb.amb_emitters.water.emt_water_drips_close_06.sn.75.48000.all
+43653a3256041f0b,mgl.amb.amb_emitters.water.emt_water_drips_close_07.sn.75.48000.all
 63e6c79e5f5eadb8,mgl.wpn.ar_scharlie.wfoly_plr_ar_scharlie_v1_reload_mageject.ln.75.48000.all
 3714ffe921e00dea,mp.emp_expl_npc_lfe.ln.75.48000.all
+47e6dd69abe5826e,mp.equip.iw8_mp_adrenaline_use_fly.ln.75.48000.all
 2cff99b77972ae8c,mp.executions.iw9.exec_033_dog_robo_jump_02.pn.75.48000.all
 e05dbc037228cc,mp.executions.iw9.exec_034_dog_approach_laststand.pn.75.48000.all
 4f340bb0a581de92,mp.executions.iw9.exec_034_dog_approach_prone.pn.75.48000.all

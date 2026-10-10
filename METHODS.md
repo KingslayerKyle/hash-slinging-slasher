@@ -108,6 +108,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | mwiii-image-byte-before-channels | 1 | 1 | 416 | 416 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | mwiii-image-stem-pair | 1 | 1 | 149 | 149 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | mwiii new fourth terminal alias byte with witnessed prefixes | 1 | 1 | 30 | 30 | 1 | 1 | 1 | 2026-10-10 | 2026-10-10 | untried |
+| mwii witnessed animation pairs probe hits | 1 | 1 | 28 | 28 | 1 | 1 | 1 | 2026-10-10 | 2026-10-10 | untried |
 | sound final byte solved backwards | 1 | 1 | 7 | 7 | 1 | 1 | 1 | 2026-08-31 | 2026-08-31 | untried |
 | unclaimed bo6 images from bo7 frozen suffix byte candidates | 1 | 1 | 3 | 3 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | shared verified animation deltas: bo6-only remaining names | 1 | 1 | 3 | 3 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
@@ -499,6 +500,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | rare compound image splice | 1 | 1 | 1 | 223,738 | 223,738 | 223,738 | 223,738 | 2026-09-04 | 2026-09-04 | untried |
 | modwar7 verified sound takes width 2 | 1 | 1 | 101 | 23,305,893 | 230,751 | 230,751 | 230,751 | 2026-10-09 | 2026-10-09 | untried |
 | sound tail swap, two-letter-codec stems included | 1 | 2 | 244 | 56,537,832 | 231,712 | 200,488 | 200,488 | 2026-10-08 | 2026-10-08 | live |
+| mwii sound directory spellings | 1 | 1 | 12 | 2,800,349 | 233,362 | 233,362 | 233,362 | 2026-10-10 | 2026-10-10 | untried |
 | cross-game verbatim transfer | 1 | 1 | 3 | 702,081 | 234,027 | 234,027 | 234,027 | 2026-08-25 | 2026-08-25 | untried |
 | slot swap from end w1 sound alias r1 | 2 | 3 | 131 | 30,784,079 | 234,992 | 119,669 | 119,669 | 2026-10-09 | 2026-10-09 | live |
 | token edits anim | 1 | 1 | 13 | 3,067,026 | 235,925 | 235,925 | 235,925 | 2026-09-03 | 2026-09-03 | untried |
@@ -1208,6 +1210,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | ab snowball r1 sound: all cores x new name tails | 1 | 4 | 14 | 5,326,857,858 | 380,489,847 | 77,911,182 | 77,911,182 | 2026-10-01 | 2026-10-05 | live |
 | ab snowball r5 sound: new slotswap cores x all endings | 1 | 1 | 1 | 394,303,943 | 394,303,943 | 394,303,943 | 394,303,943 | 2026-10-01 | 2026-10-01 | untried |
 | yamyamok terrain numeric domain 0..1000, first untested layer 4 | 1 | 1 | 181 | 72,501,549,197 | 400,561,045 | 400,561,045 | 400,561,045 | 2026-10-09 | 2026-10-09 | untried |
+| modwar22 alias terminal-3 from witnessed prefixes | 1 | 1 | 4 | 1,609,412,100 | 402,353,025 | 402,353,025 | 402,353,025 | 2026-10-10 | 2026-10-10 | untried |
 | measured heads of length 4 | 2 | 3 | 15 | 6,149,861,538 | 409,990,769 | 115,289,728 | 3,152,328,598 | 2026-08-25 | 2026-08-25 | spent |
 | sound uncarried three-segment endings top256000 | 2 | 2 | 46 | 18,883,657,764 | 410,514,299 | 393,409,536 | 393,409,536 | 2026-09-09 | 2026-09-09 | live |
 | sound uncarried three-segment endings top128000 | 2 | 2 | 23 | 9,441,865,764 | 410,515,902 | 236,046,644 | 1,573,644,294 | 2026-09-09 | 2026-09-09 | cooling |
@@ -1296,6 +1299,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | uncarried five-segment endings over all-boundary cores | 1 | 2 | 597 | 804,758,082,518 | 1,348,003,488 | 906,259,101 | 906,259,101 | 2026-08-23 | 2026-08-23 | live |
 | sound all-boundary cores with uncarried one-segment endings | 2 | 2 | 7 | 9,456,617,520 | 1,350,945,360 | 1,182,077,190 | 1,576,102,920 | 2026-08-30 | 2026-08-30 | live |
 | confirmed-only endings x cores, after +18k merge, general, 2026-09-25 | 1 | 2 | 86 | 118,067,284,226 | 1,372,875,397 | 797,751,920 | 797,751,920 | 2026-09-25 | 2026-09-25 | live |
+| modwar22 alias terminal-4 from witnessed prefixes | 1 | 1 | 37 | 52,135,605,522 | 1,409,070,419 | 1,409,070,419 | 1,409,070,419 | 2026-10-10 | 2026-10-10 | untried |
 | heads of length 2 | 1 | 1 | 1 | 1,419,111,216 | 1,419,111,216 | 1,419,111,216 | 1,419,111,216 | 2026-09-03 | 2026-09-03 | untried |
 | measured heads of length 10 | 2 | 4 | 94 | 134,357,271,610 | 1,429,332,676 | 965,246,055 | 1,093,886,252 | 2026-08-25 | 2026-08-25 | live |
 | confirmed-only all-boundary sound cores x uncarried 3-segment sound endings, blkops04 | 1 | 1 | 30 | 44,393,847,979 | 1,479,794,932 | 1,479,794,932 | 1,479,794,932 | 2026-09-01 | 2026-09-01 | untried |
@@ -1589,7 +1593,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1511 distinct methods, run 1880 ways between them, across 5083 runs. `names` is what each run
+1515 distinct methods, run 1884 ways between them, across 5087 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->
