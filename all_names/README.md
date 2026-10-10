@@ -6,7 +6,7 @@
 
 <table>
 <tr><th align="left"><code>blackop6/</code></th>
-<th align="right" colspan="2">128,188 names in 5 file(s)</th>
+<th align="right" colspan="2">128,286 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
@@ -14,7 +14,7 @@
 <tr><td><code>image</code></td><td align="right">10,307</td><td align="right">57,691 / 389,526 &nbsp;(14.8%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">4,161</td><td align="right">72,390 / 87,620 &nbsp;(82.6%)</td></tr>
 <tr><td><code>sound_asset</code></td><td align="right">8,215</td><td align="right">87,459 / 327,081 &nbsp;(26.7%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">55,971</td><td align="right">70,854 / 207,980 &nbsp;(34.1%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">56,069</td><td align="right">70,952 / 207,980 &nbsp;(34.1%)</td></tr>
 </table>
 
 </td>
@@ -110,7 +110,7 @@
 
 <table>
 <tr><th align="left"><code>yamyamok/</code></th>
-<th align="right" colspan="2">64,371 names in 5 file(s)</th>
+<th align="right" colspan="2">64,401 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
@@ -118,7 +118,7 @@
 <tr><td><code>image</code></td><td align="right">2,508</td><td align="right">144,927 / 436,889 &nbsp;(33.2%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">17</td><td align="right">62,231 / 64,407 &nbsp;(96.6%)</td></tr>
 <tr><td><code>sound_asset</code></td><td align="right">1,612</td><td align="right">154,161 / 291,343 &nbsp;(52.9%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">4,455</td><td align="right">16,126 / 166,718 &nbsp;(9.7%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">4,485</td><td align="right">16,156 / 166,718 &nbsp;(9.7%)</td></tr>
 </table>
 
 </td>

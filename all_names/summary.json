@@ -2,7 +2,7 @@
   "games": {
     "blackop6": {
       "files": 5,
-      "names": 128188,
+      "names": 128286,
       "types": {
         "image": {
           "found_pct": 14.8,
@@ -18,8 +18,8 @@
         },
         "sound_alias": {
           "found_pct": 34.1,
-          "named": 70854,
-          "names": 55971,
+          "named": 70952,
+          "names": 56069,
           "total": 207980
         },
         "sound_asset": {
@@ -230,7 +230,7 @@
     },
     "yamyamok": {
       "files": 5,
-      "names": 64371,
+      "names": 64401,
       "types": {
         "image": {
           "found_pct": 33.2,
@@ -246,8 +246,8 @@
         },
         "sound_alias": {
           "found_pct": 9.7,
-          "named": 16126,
-          "names": 4455,
+          "named": 16156,
+          "names": 4485,
           "total": 166718
         },
         "sound_asset": {
@@ -275,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 763472
+    "names": 763600
   }
 }
