@@ -1,0 +1,2 @@
+8605f0ca086af98,jup/wpn/dm/compound/reloads/npc/p31_dm_compound_raise_first_npc_01.tnn.75.48000.all
+5fd20fdab747836b,t10/wpn/zmb/staff_ice/fly_ice_staff_upg_first_raise.lnn.75.48000.all
