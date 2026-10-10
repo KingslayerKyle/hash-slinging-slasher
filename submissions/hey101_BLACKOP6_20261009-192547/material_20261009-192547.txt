@@ -1,0 +1,6 @@
+16b371f86f779faa,m/c_t10_zmb_zombie_female_pants
+32df52e0e47ee2a0,tm/c_t10_zmb_heavy_armored_zombie_pants
+4ecc75319a721ec5,tm/t10_hst_pillar_canals_01_01
+596238edfded9b5c,m/c_t10_zmb_zombie_biker_belt
+5f965c5c10b51515,tm/c_t10_zmb_zombie_fem_labcoat_shirt
+721c9b5f24678d0c,m/t10_zm_opal_ritual_statues_amalgam_dynreveal
