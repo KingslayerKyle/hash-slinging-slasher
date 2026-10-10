@@ -101,6 +101,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | mw4-image-stem-pair | 1 | 1 | 18 | 18 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | mw4 new third terminal alias byte with witnessed prefixes | 1 | 1 | 390 | 390 | 1 | 1 | 1 | 2026-10-10 | 2026-10-10 | untried |
 | mw4 new fourth terminal alias byte with witnessed prefixes | 1 | 1 | 580 | 580 | 1 | 1 | 1 | 2026-10-10 | 2026-10-10 | untried |
+| mw4 new fifth terminal alias byte with witnessed prefixes | 1 | 1 | 46 | 46 | 1 | 1 | 1 | 2026-10-10 | 2026-10-10 | untried |
 | mwiii-typed-image-final-byte | 1 | 1 | 7 | 7 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | mwiii-image-byte-before-channels | 1 | 1 | 416 | 416 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | mwiii-image-stem-pair | 1 | 1 | 149 | 149 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
@@ -1317,7 +1318,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1239 distinct methods, run 1338 ways between them, across 4184 runs. `names` is what each run
+1240 distinct methods, run 1339 ways between them, across 4185 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->
