@@ -1,5 +1,3 @@
 4d6fd7aaf383e2e4,ui_map_icon_electrical_box
-4f037384daade7b5,ui_icon_error
-5d211be599b7d148,ui_icon_document
 77b1956996b41c91,sat_water_flowing_01
 7b66e82723131a29,sky_mp_sat_ob_leo_transition

@@ -15,7 +15,10 @@ from pathlib import Path
 import argparse
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = next((p for p in Path(__file__).resolve().parents
+             if (p / 'scripts/snapshot.py').is_file()), None)
+if ROOT is None:
+    raise SystemExit('Run this generator from a solver checkout')
 TABLES = {"image": "fnv1a_ximages*.csv", "material": "fnv1a_xmaterials*.csv",
           "sound_alias": "fnv1a_soundbanks_aliases*.csv", "xanim": "fnv1a_xanims*.csv"}
 CODES = ["jup", "sat", "cer", "saw", "iw9", "iw8", "t10", "t9", "s6", "s4", "mp", "zm", "wz",

@@ -1,3 +1,0 @@
-19694cf5456f6f94,t10_wm_p46_sn_hugo_inspect_stand_xmag1
-311f203dcdee8220,t10_wm_p46_sn_hugo_inspect_supine_xmag1
-424c8f35bfa4d3f8,t10_wm_p46_sn_hugo_inspect_crouch_xmag1

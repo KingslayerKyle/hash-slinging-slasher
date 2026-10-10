@@ -41,7 +41,6 @@ f563c7c4bedff45,tm/mtl_veh_t10_mil_ru_tank_aa_tread_dst
 1619c3646d24c65f,twcj/*175dn_115n_115n_116n
 1626d7e7d65e2ea5,m/c_t10_gear_female_driving_gloves_01
 162950924711b6ea,tmo/t10_ava_signage_government_sign_01
-16b371f86f779faa,m/c_t10_zmb_zombie_female_pants
 17c3d00a74258ce1,tm/t10_stationary_box_train_01_decal_tint
 181735201bb92b19,twcj/*3dn_61n_63dn_4dn
 18ffd92d34eee246,tmo/t10_electronics_camcorder_glass_01

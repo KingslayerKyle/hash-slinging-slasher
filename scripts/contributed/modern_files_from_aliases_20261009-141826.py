@@ -15,7 +15,10 @@ import argparse
 import re
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = next((p for p in Path(__file__).resolve().parents
+             if (p / 'scripts/snapshot.py').is_file()), None)
+if ROOT is None:
+    raise SystemExit('Run this generator from a solver checkout')
 TAKE = re.compile(r"^(.*?)(_\d+[a-z]?)?$")
 MODERN = ("modwar22", "yamyamok", "blackop6", "blackop7", "modwar7")
 
@@ -62,7 +65,7 @@ def main():
         if not base.exists():
             continue
         for path in base.rglob("*.txt"):
-            low = str(path).lower()
+            low = path.as_posix().lower()
             if not any(g in low for g in MODERN):
                 continue
             if "/sound_asset" in low or "/sndasset" in low:

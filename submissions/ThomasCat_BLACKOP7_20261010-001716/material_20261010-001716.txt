@@ -31,7 +31,6 @@ ef13145d02b7fbf,twck/*711dn_708n_710n_712n
 1849b968fe8da9a1,twcj/*659n_663n_664dn_662dn
 18a9af654a6b30b5,mh/mtl_veh_sat_civ_car_supercar_glass_in
 19eba7826028df0e,m/mtl_veh_sat_civ_car_supercar_interior_yellow
-1b004099764d1445,tm/ee_stone_cliff_mix_02_snow
 1d7fe181496e9c8d,m/mtl_veh_sat_civ_car_supercar_under
 20426483da4d70ea,elc/vfx_elec_bolt_trail_anim_1_ad
 24d463b6c5eadfac,twcj/*448dn_1128n_174n_163n
@@ -45,7 +44,6 @@ ef13145d02b7fbf,twck/*711dn_708n_710n_712n
 32aee0555fdebbea,twc/*794n_937n_374n_959n
 331511acc77dc832,twc/*784n_1128n_891n_168n
 3409414c246430b1,m/mtl_veh_sat_civ_car_supercar_under_dst
-3621209bbba27d39,m/mtl_veh_sat_mil_drone_rcxd_under_dst
 36f4d458f6d5af8d,twc/*1082n_1061n_402_402
 38b9e2d16267add2,twc/*1097dn_1095n_1095n_1099dn
 38cee8dddd1b9a24,tw/sat_al_dirt_rocks_01_tnd

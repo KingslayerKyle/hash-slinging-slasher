@@ -13,7 +13,10 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = next((p for p in Path(__file__).resolve().parents
+             if (p / 'scripts/snapshot.py').is_file()), None)
+if ROOT is None:
+    raise SystemExit('Run this generator from a solver checkout')
 R = re.compile(r"^([a-z0-9]+)/op/([^/]+)/dx_op_([a-z0-9]+)_([a-z]+)_([a-z0-9]+)_([a-z0-9]+)_(.+?)(_opg\d+)?"
                r"(\.[a-z]+\.\d+\.\d+\.[a-z_]+)$")
 

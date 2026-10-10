@@ -17,7 +17,10 @@ from pathlib import Path
 import argparse
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = next((p for p in Path(__file__).resolve().parents
+             if (p / 'scripts/snapshot.py').is_file()), None)
+if ROOT is None:
+    raise SystemExit('Run this generator from a solver checkout')
 KINDS = ("xanims", "ximages", "xmaterials", "soundbanks_aliases", "xsounds")
 
 

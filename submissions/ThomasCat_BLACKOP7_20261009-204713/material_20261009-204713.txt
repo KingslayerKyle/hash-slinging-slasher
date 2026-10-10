@@ -2,7 +2,6 @@
 5b1090db19522c2,tw/wires_steel_cable_01
 a8f3a8b9eeaf98c,tw/metal_wall_tiles_exterior_02_red
 da0d29c736a9f68,twk/*898dn_828n_694n_123n
-10b813ead289d354,tw/macro_stone_lime_clean
 1c6bb28672aa6315,twj/*1093n_1095n_1099dn
 232536112e5e8c95,twc/t10_brick_old_worn_02_tnd
 23c833bc62c36cd2,twc/masonry_brick_wall_dirty_01_painted_white

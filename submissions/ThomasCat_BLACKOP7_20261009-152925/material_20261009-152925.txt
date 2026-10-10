@@ -6,13 +6,10 @@
 38f3c454ee49c6b,terrain_decal_edge_dirt_road_01_b
 38f3d454ee49e1e,terrain_decal_edge_dirt_road_01_a
 3b6d3bb3612bc3f,m/c_t10_civ_base_female_body_arm
-3baddd0f5f8908f,twc/*416n_476n_86n_83n
 3ca74e9ead3d153,twc/*1524n_403_320n_320n
 3d75358022d9ec7,elcq/vfx_blast_smoke_omni_lrg_anim_1
-4cdedef61959553,twc/*1731n_212n_1095n_1110n
 5b2c0d1b10c9158,twc/*1045n_204n_1195n_1195n
 5d7bbddbfd628ea,twc/*1123n_1140n_1101n_1195n
-5e7f8a25da5a714,m/t10_mp_perk_patch_scavenger
 696d6697d745b33,tw/case_texture_01_white_02_nogrid
 69ca63971480611,mc/mtl_offhand_sat_walkie_screen
 6b91c2508ec56fb,tm/mtl_veh_sat_civ_truck_mini_exterior_dst_blue
@@ -25,11 +22,9 @@
 a8c6f00fc414909,twc/*260n_353n_1519n_1335n
 a9d3f04588fc66e,tml8/case_texture_01_green_03_nogrid
 b91a91a0b787c50,elcq/vfx_fluid_oil_front_sheet_1
-bd6cc45ec8d1730,twc/*46n_1116n_1119n_209n
 cdf4f63c49e9dd7,elcq/vfx_fluid_oil_flingsplat_1
 cebf3fe266c718a,twc/*951n_1051n_1550n_1080n
 d66b9df5cb8c2c7,twc/*1427n_498n_1097n_1118n
-f640b64714fb782,twc/*448n_1138n_1138n_303n
 101dfe1d9cb63b12,twc/*1306n_1213n_1213n_185n
 105dd67e62f27486,twc/*749n_1042n_293n_645n
 10c3d22fa799d0d0,elcq/vfx_fluid_water_screen_drops_sheet_2
@@ -40,7 +35,6 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 1365ce60949e2f76,water_mesh_prepass_tile_opaque_single
 13ff073b1d6bcd7b,m/mtl_veh_sat_civ_truck_mini_exterior_dst_yellow
 1418179640728b56,compass_map_mp_saw_sierra
-14b8e0b1b7818522,tm/t10_decor_marble_panther_01
 14ee3f85c59db151,twc/*1063n_1064n_208n_1195n
 15526de0ef83156c,m/c_t10_civ_base_male_body_arm
 15588399d41325da,twc/*749n_752n_1150n_38n
@@ -63,16 +57,13 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 1aa963789b709436,twc/*978n_980n_1016n_980n
 1ac3e5b493da6599,twc/*1056n_1059n_1060n_124n
 1af83ba8340d4400,tm/un_foliage_weeds_bluelupin_flag
-1d0b791ded3f4f2a,m/mtl_offhand_sat_walkie_screen
 1d31dbd34e904d94,m/c_t10_usa_hero_adler_head
 1dd2ad3d41ac94b6,tm/sat_storage_container_vines_roof_blue_03
 1dd2ae3d41ac9669,tm/sat_storage_container_vines_roof_blue_02
-1e1f59e82a5d5cfa,m/c_t10_zmb_triton_arms_damage_off
 1ed971b60bf93f93,twc/*813n_1116n_742_1170n
 1ff59aa008bd837a,twc/*1078n_719n_719n_695n
 20629916b815c699,tw/metal_wall_tiles_stadium_square_grey_light
 206307af402a5157,twc/*890n_1199n_350n_772n
-20e913534ed35f94,twc/*1427n_1427n_498n_209n
 21f3fb7c9daef09e,twc/*245n_1043n_1150n_208n
 21f5c7343fa10d59,twc/*1658n_1575n_1575n_982n
 2395ad0200b8abb1,m/c_sat_nzl_pl_rose_sp_gun_elt
@@ -85,7 +76,6 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 27890a0275210b48,m/c_t10_civ_base_male_body_arm_mideast
 27c799f265333de6,twc/*310n_127n_1010n_1010n
 287f3bb01dbf4244,twc/*618n_210n_2007n_2007n
-28df0c4527fe0445,twc/*1057n_1055n_727n_973n
 28dfc4a0e74bfe7c,twc/*307n_1116n_1102n_379n
 29634bd927fc1f48,tw/case_texture_01_green_03_nogrid
 29cde632f2ff74ef,twc/*1078n_1014n_720n_695n
@@ -113,17 +103,14 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 3424a77fa6d57317,tm/container_soil_bag_soil_01_english
 34955546466cb3d8,tm/li_jup_foliage_tree_fanpalm_medium_01
 35c3a253f1efb855,twc/*765n_1048n_348n_1048n
-362cf8e4861bf8fb,m/mtl_veh_t10_mil_us_truck_med_canvas_green
 36dd184b9b7baaaf,wc/t10_ava_grass_dry_01_tnd
 37496c0826e9d5f0,twc/*1124n_1052n_1052n_765n
 383f7727c2b56693,m8/concrete_slabs_04b_painted_navy
-389bf30ce539d0dd,twc/*947n_937n_959n_1169n
 38e765f86e1f3c54,twc/*1080n_1191n_1092n_209n
 38fc65f98637565d,tm/mtl_veh_sat_civ_truck_med_box_attach_red_dust
 393829585e2becd4,twc/*202n_1201n_854n_904n
 39d5365ee8730fa6,twc/*1032n_1138n_208n_1545n
 39fce29d675de926,tmr/un_foliage_bush_cypress_reactive
-3a16cb592bc21258,twc/*1731n_1732n_1545n_1195n
 3ada59056c179cb8,tw/t10_metal_aluminum_02_trim
 3ade91b7e6e4bdad,twc/*781n_1128n_854n_352n
 3b912d79f29a98a6,elcq/vfx_elec_bolt_omni_anim_1
@@ -138,7 +125,6 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 3e0de45a7da9abd4,twc/*740n_744n_751n_214n
 3e95f6c6b7d1a734,twc/*1062n_1138n_1138n_1721n
 3e965de6d25976e5,twc/*1691n_1665n_1686n_375n
-3f26db2e1805a65b,tm/t10_window_wood_painted_white_shutter_01_orange
 3f2c11d36b8375a1,twc/*1524n_403_212n_320n
 3fb5060ecd60a07f,tm/container_soil_bag_soil_01_japan
 40500ef7b2c3ff16,tm/sat_storage_container_vines_roof_yellow_03
@@ -153,8 +139,6 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 436475dd10a5b37f,wc/dirt_mud_reeds_01_dsp
 43baddbeac78b3a0,twc/*2023n_204n_1337n_212n
 43f0d04f3259362e,ecv/vfx_spark_trail_sparse_1_purple
-43f11697515d47d0,m/mtl_veh_sat_mil_air_cargo_b_dst_gray
-442e178cc37b55b2,twc/*1216n_1212n_861n_1130n
 4436f33bf7af64c0,twc/*1080n_210n_317n_317n
 443d5a16e266db64,twc/*721n_684n_1010n_1010n
 44f3a8760414eaa9,m/mtl_veh_sat_mil_truck_att_turret_police_dst
@@ -193,7 +177,6 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 53fd04aa773db235,twc/*1032n_1138n_208n_208n
 544a912b4ca5f9f1,tml8/concrete_slabs_04b_painted_navy
 5469a1218bb6f805,twc/*1876n_1877n_1191n_1155n
-54e43fcde06c30c1,m/t10_zm_ancient_book_set
 55eb05ff1408c7ed,m/mtl_veh_sat_civ_truck_med_box_attach_red_dust
 55ef6c8341bf0987,twc/*1055n_976_1060n_124n
 56a8e1b426d7df9c,tm/sat_storage_container_vines_roof_green_02
@@ -201,12 +184,10 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 56bbc42460fe0b62,twc/*883n_336n_336n_937n
 56bd41217f74826d,tm/un_foliage_tree_greymangrove_canopy_reactive_flag
 56be3ebbde98cb79,twc/*1524n_1545n_320n_1545n
-56e7bf82a0718ae6,twc/*290n_185_185_159n
 57f57291ac5e99f3,tw/case_texture_01_beige_03_nogrid
 596ff03a811b22b9,ecv/vfx_spark_trail_sparse_1_desat
 59c390f464959661,elcq/vfx_blast_smoke_dir_lrg_anim_1
 59dc7e826f2d46ae,m/c_sat_nzl_pl_rose_sp_gun_buckle
-5a52f89f7e866e24,tm/t10_zm_opal_dark_aether_mushroom_middle_01_top
 5b29bab24b9210b4,tm/un_foliage_tree_greymangrove_trunk_reactive
 5bdd3bf1be8c144b,twc/*1659n_1631n_1890n_1903n
 5c4e2205ec98d0f6,twc/*416n_164n_83n_478n
@@ -225,7 +206,6 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 628bbc3c0c995dc1,twc/*1093n_1096n_1099dn_128n
 6295187ed4ea560c,twc/*1427n_1877n_1191n_1097n
 62a37497e34cecab,tw/concrete_slabs_04b_painted_red_maroon
-6360c05b836c2d41,twc/*448n_1138n_1138n_212n
 6481365f221cb433,twc/*649n_127n_127n_1010n
 648464d24f22cf4d,twc/*1729n_1110n_208n_1721n
 6610eba56759608e,tm/sat_storage_container_vines_exterior_blue_03
@@ -242,7 +222,6 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 6af1d93474ef8f57,twc/*1057n_1059n_694n_123n
 6b0a7dfe26914a6f,tm/t10_decor_soccer_award_championship_trophy_01_plaque
 6b74c8c1d0f588aa,twc/*740n_756n_214n_1584n
-6dbad3043ec47556,twc/*1080n_1149n_1138n_209n
 6e95d5dc076a67b5,twc/*446n_1970n_384n_1150n
 6ebfa89b31f2ffe3,twc/*1033n_1108n_411n_1337n
 6eed2ad7cac5e299,twc/*1267n_1270n_1273dn_163n
@@ -268,7 +247,6 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 7544d25467389d0f,tm/mtl_s4_ger_sign_warning_01
 754c8c97280cf307,twc/*1216n_1199n_1212n_164n
 755d8a97281b62d4,twc/*1216n_1199n_1212n_163n
-75900a1148f9c7ac,twc/*1076n_1138n_1149n_1199n
 75cedd8bbfa4a1fb,twc/*676n_672_672_327n
 7603751f56a70932,twc/*416n_164n_478n_478n
 7660cfc8f4528b8e,m/t10_military_stash_crate_ally_gr_crimson
@@ -280,7 +258,6 @@ f640b64714fb782,twc/*448n_1138n_1138n_303n
 7a06429a577cdb81,twc/*1042n_1054n_1061n_1195n
 7a330ac68b6f8260,twc/*655n_1044n_295n_133n
 7a41c15404135024,twc/*1055n_1059n_1059n_1060n
-7a4a9c990bdb02e3,m/mtl_parts_jup_lowerbody_legholster_ghostdesert_buckles
 7a6ad77d0fbf8863,tm/sat_leo_rocks_gravel_mix_red_01
 7ac8b8ff2684ec62,tm/li_t10_decor_plant_kumquat_01
 7b20a8c366b486c9,tm/un_foliage_tree_greymangrove_shadowcaster_reactive_flag

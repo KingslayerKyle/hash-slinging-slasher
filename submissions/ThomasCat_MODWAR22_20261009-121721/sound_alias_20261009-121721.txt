@@ -108,7 +108,6 @@ fee7df99d651535,dx_op_ping_pok1_nymr
 2e8ac192228a571f,dx_op_ping_pod1_zimo
 2e9edcf650fbe5eb,dx_op_ping_pox1_ghos
 2f7f185f31cf8717,dx_op_ping_poc3_ntky
-30b082b0552bcff8,dx_op_ping_plc2_soap
 320c9d75c8dfcba1,dx_op_ping_pod2_drnt
 32188653a350d3dd,dx_op_ping_poa1_mssi
 3256e02de73ce2ec,dx_op_ping_pod2_rmms
@@ -157,7 +156,6 @@ fee7df99d651535,dx_op_ping_pok1_nymr
 4e7f4643e569d434,dx_op_ping_pox1_luna
 4f137b9e0febc725,dx_op_ping_poe1_drnt
 4f8c6661bed375c4,dx_op_ping_pod1_pric
-50ecea3e614012bc,dx_op_ping_plc2_aksl
 514775b5cd9676cb,dx_op_ping_pog1_gazz
 516e48032555e0f5,dx_op_ping_poa2_kleo
 517c2e032561f223,dx_op_ping_poa2_klau
@@ -233,7 +231,6 @@ fee7df99d651535,dx_op_ping_pok1_nymr
 737c52692608c05b,dx_op_ping_poe1_nymr
 748c0108caf5561c,dx_op_ping_poe1_ryes
 74b22f801051d7c7,dx_op_ping_poa2_zeus
-74b5b25667a1ce71,dx_op_ping_plc2_ntky
 74bd1380105bafb8,dx_op_ping_poa2_zero
 7574018cf8545778,dx_op_ping_por1_chli
 7578d933cf12346f,dx_op_ping_pod2_luna
@@ -250,10 +247,7 @@ fee7df99d651535,dx_op_ping_pok1_nymr
 79d174dead4f4f8a,dx_op_ping_pod1_chli
 79ec2ea83c8c343d,dx_op_ping_poc1_nymr
 7b2412476027fe6c,dx_op_ping_poc3_rmms
-7b650a55daf372f9,dx_op_ping_plc2_nikt
 7c0b2417f4e071a9,dx_op_ping_poa1_drnt
-7c8d9f3e7a0ce7c5,dx_op_ping_plc2_alej
-7c8dad3e7a0cff8f,dx_op_ping_plc2_alex
 7cd2cf9aa4b6a635,dx_op_ping_poc3_gus1
 7cdbf742233d067d,dx_op_ping_poa1_chli
 7e23116a3a1fc6c4,dx_op_ping_por1_gazz
@@ -290,7 +284,6 @@ fee7df99d651535,dx_op_ping_pok1_nymr
 8bed57495e7b39ca,dx_op_ping_poa2_cdef
 8c3ad1f68587d2b6,dx_op_ping_pox1_gus1
 8d6e6e476ac99763,dx_op_ping_poc3_roze
-8da95f55e590945d,dx_op_ping_plc2_nova
 8f465e422dfb15b4,dx_op_ping_poa1_cnnr
 900cd6c54dbf355a,dx_op_ping_poa1_stlt
 905f875682b68044,dx_op_ping_poa2_alej
@@ -325,8 +318,6 @@ fee7df99d651535,dx_op_ping_pok1_nymr
 9deb6b2a43b8f97e,dx_op_ping_poa1_fend
 9ecaf62706561b66,dx_op_ping_pox1_alex
 9ecb042706563330,dx_op_ping_pox1_alej
-9fc9f06de1d9a44a,dx_op_ping_plc2_klau
-9fd7d66de1e5b578,dx_op_ping_plc2_kleo
 9fe95c6e7d92e1cd,dx_op_ping_pod1_vand
 9ff0276e7d98a66c,dx_op_ping_pod1_vale
 9ffafe624ea0ef3c,dx_op_ping_pox1_hthr
@@ -359,7 +350,6 @@ aee047c64932e8bf,dx_op_ping_poa2_rmms
 aee4c3f965ee91fd,dx_op_ping_pok1_ntky
 af0777cc6b9d1674,dx_op_ping_pox1_zero
 af185bcc6bab5a13,dx_op_ping_pox1_zeus
-b17c198670217710,dx_op_ping_plc2_htch
 b34a4f1c867a8263,dx_op_ping_pod2_pric
 b35b735b7f8d3f3f,dx_op_ping_pox1_klau
 b3688d5b7f97f5c9,dx_op_ping_pox1_kleo
@@ -403,7 +393,6 @@ cdb42d1ccbc9bb06,dx_op_ping_pok1_ryes
 cdb62c0879d12faa,dx_op_ping_pod1_drnt
 cde3dd42f667b38e,dx_op_ping_poc1_ryes
 cf3bcae3b3c79d4f,dx_op_ping_poc1_gazz
-cfaac3b01db92d18,dx_op_ping_plc2_stlt
 d04927bfcf46737b,dx_op_ping_poc1_clst
 d0ab55d8483f70d6,dx_op_ping_pog1_cdem
 d0ab5cd8483f7cbb,dx_op_ping_pog1_cdef
@@ -437,7 +426,6 @@ e2576dbfd9b5ebf2,dx_op_ping_poc1_cnnr
 e34e1b27d5978977,dx_op_ping_poe1_vale
 e3551e27d59dad3e,dx_op_ping_poe1_vand
 e40f8b9f70ae60a0,dx_op_ping_pok1_aksl
-e483fe868cc4f18a,dx_op_ping_plc2_hrng
 e5388f4fd868c055,dx_op_ping_pod1_rnin
 e5ce660f6190586a,dx_op_ping_pod1_emso
 e671bae978813614,dx_op_ping_poc1_fend

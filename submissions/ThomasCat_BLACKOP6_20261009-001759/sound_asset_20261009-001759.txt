@@ -1,6 +1,5 @@
 9bfd63d347c7330,iw9/wpn/mortar/weap_mortar_flare_burst_02.lnn.85.48000.all
 d81d2ae737197ab,iw9/wpn/mortar/weap_mortar_flare_launch_02.lnn.85.48000.all
-1d94aa4370eb60cc,iw9/wpn/mortar/weap_mortar_flare_launch_01.lnn.85.48000.all
 358ff20da7e6993f,iw9/wpn/mortar/weap_mortar_flare_burst_01.lnn.85.48000.all
 3e1d760a1935007d,iw9/wpn/mortar/weap_mortar_flare_burst_03.lnn.85.48000.all
 3fd04d3984948116,iw9/wpn/mortar/weap_mortar_flare_burst_04.lnn.85.48000.all

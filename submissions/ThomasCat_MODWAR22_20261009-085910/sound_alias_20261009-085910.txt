@@ -21,7 +21,5 @@ ba20a55bdd13acd6,dx_op_ping_prre_htch
 c37ca2d2daf162e7,dx_op_ping_phas_htch
 c38d8ad2daffad52,dx_op_ping_phas_hthr
 d8a56bf1fc873df8,dx_op_ping_plch_hrng
-dde7c509f16c0ee5,dx_op_ping_plms_hrng
-f04e4209fc265aa7,dx_op_ping_plms_htch
 f6e8a65bff8bd66c,dx_op_ping_prre_hmln
 fce8d1d26aa67ea5,dx_op_ping_phas_hmln

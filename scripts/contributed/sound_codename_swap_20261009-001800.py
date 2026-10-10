@@ -12,7 +12,10 @@ from pathlib import Path
 import re
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = next((p for p in Path(__file__).resolve().parents
+             if (p / 'scripts/snapshot.py').is_file()), None)
+if ROOT is None:
+    raise SystemExit('Run this generator from a solver checkout')
 CODES = ["iw9", "jup", "s6", "t10", "sat", "rex", "core", "iw8", "s4", "t9"]
 TOKEN = re.compile(r"(?<![a-z0-9])(" + "|".join(CODES) + r")(?![a-z0-9])")
 

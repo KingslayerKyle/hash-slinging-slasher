@@ -14,7 +14,10 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = next((p for p in Path(__file__).resolve().parents
+             if (p / 'scripts/snapshot.py').is_file()), None)
+if ROOT is None:
+    raise SystemExit('Run this generator from a solver checkout')
 TAIL = re.compile(r"^(.*)(\.[a-z]+\.\d+\.\d+\.[a-z_]+)$")
 PCODE = re.compile(r"(?<![a-z0-9])p\d\d(?=_)")
 

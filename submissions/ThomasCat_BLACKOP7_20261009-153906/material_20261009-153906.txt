@@ -6,7 +6,6 @@
 a31befef862b183,tm/t10_cloth_burlap
 c88d13ed8dc000a,tm/t10_mtl_berlin_hotel_lights_wall2
 d6872bfac18e2cc,tw/sat_asphalt_roof_shingle_01
-d73908ca5505ef1,m/t10_mission_tablet_01_screen_timedrun
 fa9f5fa7a9e8a75,tw/t10_marble_ornate_floor_02
 10b84bac33827be8,m8/t10_dirt_mud_grassy_01
 128f89f064217beb,tml8/sat_plastic_wall_siding_01_black
@@ -20,7 +19,6 @@ fa9f5fa7a9e8a75,tw/t10_marble_ornate_floor_02
 2b6a2555b33c1a4d,tw/t10_marble_black_02_smooth
 2c8ee7de7f1a4fa8,tw/t10_paper_restaurant_ceiling_01
 2da971c7dff74e88,tw/t10_dirt_sand_base_01
-2ebfc24cae81ccc7,tm/zm_me_rock_cliff_01_tan
 2fd91b6f4105fee7,tm/sat_ee_foliage_fallen_tree_trunk_large_02_snow
 31be8eab19a6fc4e,tw/sat_rubber_coin_grip_01_gray
 32506a50406af9d4,tw/sat_emissive_generic_am_01_blue
@@ -43,7 +41,6 @@ fa9f5fa7a9e8a75,tw/t10_marble_ornate_floor_02
 5ed28d20a51f8f82,t10_terrain_decal_dirt_dusty_04
 5fc041c56174e3a2,tm/zm_rock_nordic_coastal_cliff_02_dark
 6244745864aab4ad,tw/sat_plastic_wall_siding_01_black
-6666cdd76a4ce1d5,m/t10_mission_tablet_01_screen_assassination
 673a68d8508b9e05,wc/t10_dirt_roots_01_rvl
 69a5630512f02a91,i/sat_decal_snow_tire_track_01
 69a5660512f02faa,i/sat_decal_snow_tire_track_04
@@ -51,7 +48,6 @@ fa9f5fa7a9e8a75,tw/t10_marble_ornate_floor_02
 6d30df77a240f7b5,tw/t10_marble_ornate_floor_02_red
 6de6eaadafa5cd4c,tml8/t10_marble_ornate_floor_02_bright
 6ea143186a7df3a8,tm/jup_server_console_standing
-703a50efe4ded1aa,tm/zm_me_rock_cliff_01_tan_low
 73285410b419af54,tm/sat_window_frame_ship_deck
 7a34cc3fe7915ef8,m/jup_server_console_standing
 7e80483a8afa00b5,i/jup_decal_gravel_muddy_01

@@ -17,7 +17,10 @@ from pathlib import Path
 import re
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = next((p for p in Path(__file__).resolve().parents
+             if (p / 'scripts/snapshot.py').is_file()), None)
+if ROOT is None:
+    raise SystemExit('Run this generator from a solver checkout')
 CHANNEL = re.compile(r"^(.+)_([a-z]{1,4}\d?)$")
 SKIP_DIRS = {"twc", "tw", "twcj"}
 
