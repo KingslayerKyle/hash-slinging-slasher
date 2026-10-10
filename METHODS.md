@@ -90,6 +90,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | image: gpu 1-2 token gap fill widened to all 20000 image prefixes | 1 | 1 | 216 | 216 | 1 | 1 | 1 | 2026-09-11 | 2026-09-11 | untried |
 | xmodel+sound alias: gpu three-token meet-in-the-middle gap fill | 1 | 1 | 672 | 672 | 1 | 1 | 1 | 2026-09-11 | 2026-09-11 | untried |
 | bo4: composition grids - attachment unique, weapon camo, player outfit from already-named weapons, attachments, specialists | 1 | 1 | 937 | 937 | 1 | 1 | 1 | 2026-09-13 | 2026-09-13 | untried |
+| bo7 new third terminal alias byte with witnessed prefixes | 1 | 1 | 25 | 25 | 1 | 1 | 1 | 2026-10-10 | 2026-10-10 | untried |
 | mw4-sound-byte-before-encoding | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | mw4-typed-image-final-byte | 1 | 1 | 9 | 9 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | mw4-image-byte-before-channels | 1 | 1 | 15 | 15 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
@@ -1253,7 +1254,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1175 distinct methods, run 1274 ways between them, across 4116 runs. `names` is what each run
+1176 distinct methods, run 1275 ways between them, across 4117 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->

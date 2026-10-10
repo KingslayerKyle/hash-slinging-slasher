@@ -22,7 +22,7 @@
 
 <table>
 <tr><th align="left"><code>blackop7/</code></th>
-<th align="right" colspan="2">138,773 names in 5 file(s)</th>
+<th align="right" colspan="2">138,798 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
@@ -30,7 +30,7 @@
 <tr><td><code>image</code></td><td align="right">7,285</td><td align="right">70,251 / 839,489 &nbsp;(8.4%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">5,757</td><td align="right">87,278 / 97,260 &nbsp;(89.7%)</td></tr>
 <tr><td><code>sound_asset</code></td><td align="right">6,345</td><td align="right">105,970 / 399,776 &nbsp;(26.5%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">78,842</td><td align="right">101,346 / 254,502 &nbsp;(39.8%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">78,867</td><td align="right">101,371 / 254,502 &nbsp;(39.8%)</td></tr>
 </table>
 
 </td>
