@@ -1063,6 +1063,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | ab snowball r5 visual: new cores x all endings | 1 | 3 | 18 | 548,101,827 | 30,450,101 | 4,000,013 | 476,101,587 | 2026-10-01 | 2026-10-05 | spent |
 | rare shared-token splices families 21301-21600 | 1 | 2 | 3 | 91,884,529 | 30,628,176 | 22,971,132 | 22,971,132 | 2026-08-29 | 2026-08-29 | live |
 | \ cold war material token edits cap70 minseen1 20260830\ | 1 | 1 | 6 | 184,036,838 | 30,672,806 | 30,672,806 | 30,672,806 | 2026-08-30 | 2026-08-30 | untried |
+| blackop7 sound basename endings inside tokens, width 4 | 1 | 2 | 40 | 1,231,471,333 | 30,786,783 | 16,229,095 | 16,229,095 | 2026-10-09 | 2026-10-10 | live |
 | xanim heads x tails shared by >= 2 heads | 1 | 6 | 1,289 | 40,529,097,611 | 31,442,278 | 12,196,226 | 3,400,655,625 | 2026-10-09 | 2026-10-10 | spent |
 | image token edits after new findings | 1 | 1 | 1 | 31,952,764 | 31,952,764 | 31,952,764 | 31,952,764 | 2026-08-26 | 2026-08-26 | untried |
 | image token insertion and deletion after pr984 | 1 | 1 | 1 | 31,982,799 | 31,982,799 | 31,982,799 | 31,982,799 | 2026-08-27 | 2026-08-27 | untried |
@@ -1191,7 +1192,6 @@ table under a name you would not have guessed is the thing you are about to rebu
 | all-boundary confirmed cores x uncarried endings | 1 | 8 | 243 | 70,412,103,724 | 289,761,743 | 22,567,795 | 2,875,461,397 | 2026-09-03 | 2026-09-03 | spent |
 | ab snowball r1 visual: new cores x every known tail | 1 | 11 | 109 | 31,956,685,870 | 293,180,604 | 4,603,553 | 1,177,660,445 | 2026-09-30 | 2026-10-06 | spent |
 | twc terrain-blend grid, triples over the full 0..4000 numeric range | 1 | 2 | 432 | 128,160,064,008 | 296,666,814 | 165,154,721 | 1,456,364,363 | 2026-10-09 | 2026-10-09 | cooling |
-| blackop7 sound basename endings inside tokens, width 4 | 1 | 1 | 2 | 614,765,716 | 307,382,858 | 307,382,858 | 307,382,858 | 2026-10-09 | 2026-10-09 | untried |
 | measured heads of length 5 | 1 | 3 | 31 | 9,541,037,394 | 307,775,399 | 210,743,705 | 210,743,705 | 2026-08-25 | 2026-08-26 | live |
 | tw 3-token names: prepended token + known 2-token name | 1 | 1 | 1 | 320,628,087 | 320,628,087 | 320,628,087 | 320,628,087 | 2026-10-09 | 2026-10-09 | untried |
 | sound uncarried two-segment endings top16000 | 2 | 2 | 6 | 1,933,112,812 | 322,185,468 | 241,639,101 | 241,639,101 | 2026-09-09 | 2026-09-09 | live |
@@ -1593,7 +1593,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1515 distinct methods, run 1884 ways between them, across 5087 runs. `names` is what each run
+1515 distinct methods, run 1884 ways between them, across 5088 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->
