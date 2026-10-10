@@ -95,10 +95,18 @@ table under a name you would not have guessed is the thing you are about to rebu
 | mw4-typed-image-final-byte | 1 | 1 | 9 | 9 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | mw4-image-byte-before-channels | 1 | 1 | 15 | 15 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | mw4-image-stem-pair | 1 | 1 | 18 | 18 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| mw4 new third terminal alias byte with witnessed prefixes | 1 | 1 | 390 | 390 | 1 | 1 | 1 | 2026-10-10 | 2026-10-10 | untried |
 | mwiii-typed-image-final-byte | 1 | 1 | 7 | 7 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | mwiii-image-byte-before-channels | 1 | 1 | 416 | 416 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | mwiii-image-stem-pair | 1 | 1 | 149 | 149 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | sound final byte solved backwards | 1 | 1 | 7 | 7 | 1 | 1 | 1 | 2026-08-31 | 2026-08-31 | untried |
+| external csv raw aliases unique to bo6 | 1 | 1 | 8 | 8 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| bo7 alias source-delta names in bo6 capture | 1 | 1 | 4 | 4 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| bo7 sound basename byte after sound pool repair | 1 | 1 | 39 | 39 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| external csv raw aliases unique after bo7-first validation | 1 | 1 | 24 | 24 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| external csv material unique after bo7-first validation | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| unclaimed mwiii images from bo7 frozen suffix byte candidates | 1 | 1 | 15 | 15 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
+| shared verified visual delta remaining in yamyamok image | 1 | 1 | 3 | 3 | 1 | 1 | 1 | 2026-10-09 | 2026-10-09 | untried |
 | xmodel: gpu 1-2 token gap fill over xmodel prefixes x xmodel tokens x xmodel endings | 1 | 1 | 451 | 452 | 1 | 1 | 1 | 2026-09-11 | 2026-09-11 | untried |
 | xanim: gpu 1-2 token gap fill over animation prefixes x animation tokens x animation endings | 1 | 1 | 273 | 274 | 1 | 1 | 1 | 2026-09-11 | 2026-09-11 | untried |
 | light description: editor default names new<31-bit int>, exhaustive digit sweep on gpu | 1 | 1 | 548 | 552 | 1 | 1 | 1 | 2026-09-13 | 2026-09-13 | untried |
@@ -146,6 +154,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | aliases from sound-file basenames, two-letter-codec files included | 1 | 2 | 61,096 | 1,482,617 | 24 | 20 | 20 | 2026-10-08 | 2026-10-08 | live |
 | zombies vo: gpu 1-2 token gap fill over all crew/npc speaker prefixes | 1 | 1 | 1,507 | 38,338 | 25 | 25 | 25 | 2026-09-10 | 2026-09-10 | untried |
 | sound alias: gpu 1-2 token gap fill over 4500 alias prefixes x 10k alias-token vocabulary x the real alias endings | 1 | 1 | 325 | 9,655 | 29 | 29 | 29 | 2026-09-11 | 2026-09-11 | untried |
+| independently sourced alias paired-rule support delta | 1 | 1 | 787 | 24,289 | 30 | 30 | 30 | 2026-10-09 | 2026-10-09 | untried |
 | bo4: composition grids round 2 - attachment unique with expanded weapon bases and attachment tokens | 1 | 1 | 31 | 968 | 31 | 31 | 31 | 2026-09-13 | 2026-09-13 | untried |
 | music: dead of the night the ride v1 mas under mus/zm/red/the ride | 1 | 1 | 1 | 33 | 33 | 33 | 33 | 2026-09-13 | 2026-09-13 | untried |
 | music: voyage of despair easter-egg song drowning mix 16 | 1 | 1 | 1 | 34 | 34 | 34 | 34 | 2026-09-13 | 2026-09-13 | untried |
@@ -161,6 +170,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | zombies aether-story vo grid, blood of the dead (bod, plr 0-16), events from cracked vox csv + common table | 1 | 1 | 1,143 | 88,672 | 77 | 77 | 77 | 2026-09-10 | 2026-09-10 | untried |
 | final byte current 20260907 | 1 | 1 | 15 | 1,316 | 87 | 87 | 87 | 2026-09-07 | 2026-09-07 | untried |
 | mp/blackout specialist vo: gpu 1-2 token gap fill over en\vox\scripted\{mpl,wz}\<spec>\vox <spec> | 1 | 1 | 463 | 41,415 | 89 | 89 | 89 | 2026-09-10 | 2026-09-10 | untried |
+| bo7 directory-witnessed encoding closure of 44 fresh sound files | 1 | 1 | 1 | 95 | 95 | 95 | 95 | 2026-10-09 | 2026-10-09 | untried |
 | sound alias two byte solve | 1 | 1 | 5 | 521 | 104 | 104 | 104 | 2026-09-02 | 2026-09-02 | untried |
 | sound files: directory probe | 1 | 1 | 98 | 10,731 | 109 | 109 | 109 | 2026-09-11 | 2026-09-11 | untried |
 | voice phrase grids, fill after long-phrase probe | 1 | 1 | 165 | 18,751 | 113 | 113 | 113 | 2026-10-05 | 2026-10-05 | untried |
@@ -177,6 +187,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | vo sound files derived from known vox  sound aliases: en\vox\scripted\<mode>\<map>\<alias> <n> | 1 | 1 | 12,846 | 3,180,688 | 247 | 247 | 247 | 2026-09-10 | 2026-09-10 | untried |
 | mwiii-terrain-overlap | 1 | 1 | 54 | 14,881 | 275 | 275 | 275 | 2026-10-09 | 2026-10-09 | untried |
 | voice phrase grids, fill after probe | 1 | 1 | 66 | 18,604 | 281 | 281 | 281 | 2026-10-05 | 2026-10-05 | untried |
+| verified image vocabulary delta to witnessed material directories | 1 | 1 | 57 | 16,107 | 282 | 282 | 282 | 2026-10-09 | 2026-10-09 | untried |
 | build strings, lpc fast files | 1 | 1 | 7 | 2,135 | 305 | 305 | 305 | 2026-08-24 | 2026-08-24 | untried |
 | mwiii-alias-codename | 1 | 1 | 40 | 13,642 | 341 | 341 | 341 | 2026-10-09 | 2026-10-09 | untried |
 | build strings, casc blte 0.5gb probe | 1 | 1 | 10 | 3,637 | 363 | 363 | 363 | 2026-08-24 | 2026-08-24 | untried |
@@ -206,6 +217,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | sound tail swap: known stems x bo7 encoding tails | 1 | 1 | 4,002 | 7,657,578 | 1,913 | 1,913 | 1,913 | 2026-10-08 | 2026-10-08 | untried |
 | zombies vo: english-dictionary mitm on the last csv/script suffixes (bo4 mitm dict english.cpp) + mitm round 4 mansion/common + gpu 3-token progress | 1 | 1 | 1,657 | 3,173,167 | 1,915 | 1,915 | 1,915 | 2026-09-10 | 2026-09-10 | untried |
 | zombies player-line aliases placed into every map's voice folder | 1 | 1 | 370 | 763,091 | 2,062 | 2,062 | 2,062 | 2026-10-05 | 2026-10-05 | untried |
+| bo7 witnessed file-to-alias prefix rules | 1 | 1 | 18 | 38,612 | 2,145 | 2,145 | 2,145 | 2026-10-09 | 2026-10-09 | untried |
 | hashindex bo4 bocw global and script labels | 1 | 1 | 160 | 352,925 | 2,205 | 2,205 | 2,205 | 2026-09-04 | 2026-09-04 | untried |
 | final-byte-after-xanim-seed | 1 | 1 | 16 | 35,919 | 2,244 | 2,244 | 2,244 | 2026-08-29 | 2026-08-29 | untried |
 | black ops 4 final byte after upstream corpus refresh | 1 | 1 | 1 | 2,267 | 2,267 | 2,267 | 2,267 | 2026-09-01 | 2026-09-01 | untried |
@@ -241,6 +253,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | image siblings | 3 | 5 | 529 | 4,621,863 | 8,736 | 1,734 | 68,329 | 2026-08-20 | 2026-08-21 | spent |
 | early cold war source literals | 1 | 1 | 3 | 26,471 | 8,823 | 8,823 | 8,823 | 2026-08-26 | 2026-08-26 | untried |
 | blackout character banter grid: vox <spk> <idx> banter <c1> <c2> <line> <nn> over the ~60 named blackout speakers | 1 | 1 | 276 | 2,628,096 | 9,522 | 9,522 | 9,522 | 2026-09-10 | 2026-09-10 | untried |
+| independently witnessed joint image prefix and suffix translations | 1 | 1 | 3 | 29,216 | 9,738 | 9,738 | 9,738 | 2026-10-09 | 2026-10-09 | untried |
 | operator voice-line grid: every known phrase x every known operator | 1 | 1 | 253 | 2,606,300 | 10,301 | 10,301 | 10,301 | 2026-10-08 | 2026-10-08 | untried |
 | channels | 2 | 4 | 916 | 9,598,953 | 10,479 | 2,732 | 602,442 | 2026-08-20 | 2026-08-20 | spent |
 | paired-token-blocks-anim | 1 | 1 | 33 | 410,321 | 12,433 | 12,433 | 12,433 | 2026-08-20 | 2026-08-20 | untried |
@@ -287,6 +300,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | sound alias head swap | 1 | 10 | 240,859 | 10,323,473,232 | 42,861 | 21,799 | 17,981,430 | 2026-10-08 | 2026-10-09 | spent |
 | external source filenames | 1 | 1 | 28 | 1,226,186 | 43,792 | 43,792 | 43,792 | 2026-08-27 | 2026-08-27 | untried |
 | mw4-target-alias-file-paths | 1 | 1 | 5 | 221,329 | 44,265 | 44,265 | 44,265 | 2026-10-09 | 2026-10-09 | untried |
+| bo7 witnessed animation pairs shared with mwiii | 1 | 1 | 25 | 1,137,241 | 45,489 | 45,489 | 45,489 | 2026-10-09 | 2026-10-09 | untried |
 | zombies vo grids with suffixes cracked from the zm scripts' hashed vo say/function a2bd5a0c arguments | 1 | 1 | 67 | 3,073,427 | 45,872 | 45,872 | 45,872 | 2026-09-10 | 2026-09-10 | untried |
 | weapon foley aliases from weapon animation events x take numbers | 1 | 15 | 52,487 | 2,529,126,540 | 48,185 | 6,551 | 49,703 | 2026-10-09 | 2026-10-09 | cooling |
 | image interior counterparts after richkiller | 1 | 1 | 18 | 904,787 | 50,265 | 50,265 | 50,265 | 2026-09-04 | 2026-09-04 | untried |
@@ -558,6 +572,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | token edits anim cap30 | 1 | 2 | 4 | 13,523,498 | 3,380,874 | 3,380,865 | 3,380,883 | 2026-09-03 | 2026-09-03 | live |
 | material head swap | 1 | 4 | 2,459 | 8,343,111,990 | 3,392,888 | 1,718,907 | 10,562,770 | 2026-10-08 | 2026-10-08 | cooling |
 | twcj 4-token names: prepended token + known 3-token name | 1 | 1 | 1 | 3,400,510 | 3,400,510 | 3,400,510 | 3,400,510 | 2026-10-09 | 2026-10-09 | untried |
+| blackop7 evidence-family image numeric stem triples | 1 | 1 | 3 | 10,210,200 | 3,403,400 | 3,403,400 | 3,403,400 | 2026-10-09 | 2026-10-09 | untried |
 | rare shared-token splices families 33901-34000 | 1 | 1 | 29 | 100,204,390 | 3,455,323 | 3,455,323 | 3,455,323 | 2026-08-29 | 2026-08-29 | untried |
 | cold war amb sound family | 1 | 1 | 2 | 6,956,252 | 3,478,126 | 3,478,126 | 3,478,126 | 2026-08-30 | 2026-08-30 | untried |
 | all-boundary refresh 2026-09-29, new cores x all endings | 1 | 2 | 200 | 696,002,320 | 3,480,011 | 2,161,497 | 8,923,106 | 2026-09-29 | 2026-09-29 | cooling |
@@ -1254,7 +1269,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1176 distinct methods, run 1275 ways between them, across 4117 runs. `names` is what each run
+1191 distinct methods, run 1290 ways between them, across 4132 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->
