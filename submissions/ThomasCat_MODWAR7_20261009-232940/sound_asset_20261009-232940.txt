@@ -1,0 +1,6 @@
+20d567192fb3e0fa,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_med_shot_03.hnn.85.48000.all
+3bc0fd84de8f16ec,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_far_shot_04.hnn.85.48000.all
+4c55f055d63ee2d1,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_med_shot_04.hnn.85.48000.all
+5198c517622ff0f7,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_far_shot_03.hnn.85.48000.all
+6bcafdea5b68551a,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_dist_shot_03.hnn.85.48000.all
+7b5f878e6fe9d871,rex/wpn/la_juliet/weap_rex_juliet_fire_npc_dist_shot_04.hnn.85.48000.all
