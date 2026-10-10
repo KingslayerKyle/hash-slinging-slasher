@@ -110,12 +110,12 @@
 
 <table>
 <tr><th align="left"><code>yamyamok/</code></th>
-<th align="right" colspan="2">84,149 names in 5 file(s)</th>
+<th align="right" colspan="2">84,154 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
 <tr><td><code>material</code></td><td align="right">70,016</td><td align="right">186,058 / 221,679 &nbsp;(83.9%)</td></tr>
-<tr><td><code>image</code></td><td align="right">4,939</td><td align="right">147,358 / 436,889 &nbsp;(33.7%)</td></tr>
+<tr><td><code>image</code></td><td align="right">4,944</td><td align="right">147,363 / 436,889 &nbsp;(33.7%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">494</td><td align="right">62,708 / 64,407 &nbsp;(97.4%)</td></tr>
 <tr><td><code>sound_asset</code></td><td align="right">2,322</td><td align="right">154,871 / 291,343 &nbsp;(53.2%)</td></tr>
 <tr><td><code>sound_alias</code></td><td align="right">6,378</td><td align="right">18,049 / 166,718 &nbsp;(10.8%)</td></tr>

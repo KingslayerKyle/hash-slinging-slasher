@@ -177,7 +177,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | bo4: exhaustive 9-character enumeration, decode fixed | 1 | 1 | 4 | 71 | 17 | 17 | 17 | 2026-09-13 | 2026-09-13 | untried |
 | sound alias: mp/blackout dialog aliases cracked from the mpdialog player script bundles | 1 | 1 | 30 | 570 | 19 | 19 | 19 | 2026-09-11 | 2026-09-11 | untried |
 | bo4: player outfit grid with outfit tokens harvested from loot tables, unlockable items and subtitles | 1 | 1 | 52 | 1,020 | 19 | 19 | 19 | 2026-09-13 | 2026-09-13 | untried |
-| final byte solved backwards | 1 | 220 | 206,105 | 4,894,072 | 23 | 2 | 4 | 2026-08-22 | 2026-10-09 | live |
+| final byte solved backwards | 1 | 232 | 234,567 | 5,130,003 | 21 | 2 | 8 | 2026-08-22 | 2026-10-09 | cooling |
 | aliases from sound-file basenames, two-letter-codec files included | 1 | 2 | 61,096 | 1,482,617 | 24 | 20 | 20 | 2026-10-08 | 2026-10-08 | live |
 | zombies vo: gpu 1-2 token gap fill over all crew/npc speaker prefixes | 1 | 1 | 1,507 | 38,338 | 25 | 25 | 25 | 2026-09-10 | 2026-09-10 | untried |
 | sound alias: gpu 1-2 token gap fill over 4500 alias prefixes x 10k alias-token vocabulary x the real alias endings | 1 | 1 | 325 | 9,655 | 29 | 29 | 29 | 2026-09-11 | 2026-09-11 | untried |
@@ -338,9 +338,9 @@ table under a name you would not have guessed is the thing you are about to rebu
 | bo7 animation package modifiers at witnessed clip boundaries | 1 | 1 | 89 | 1,228,982 | 13,808 | 13,808 | 13,808 | 2026-10-09 | 2026-10-09 | untried |
 | black ops 3 build names, verbatim, full harvest | 1 | 2 | 177 | 2,462,622 | 13,913 | 8,858 | 32,402 | 2026-08-22 | 2026-08-22 | cooling |
 | cold war source filenames and text | 1 | 1 | 151 | 2,102,012 | 13,920 | 13,920 | 13,920 | 2026-08-27 | 2026-08-27 | untried |
-| family gap filling | 1 | 101 | 1,237 | 17,415,029 | 14,078 | 654 | 44,523 | 2026-08-19 | 2026-10-09 | spent |
 | xanim family grid round 2, head 2 | 3 | 3 | 628 | 8,869,731 | 14,123 | 9,693 | 10,712 | 2026-10-09 | 2026-10-09 | live |
 | every-game transfer after worker finds | 1 | 1 | 429 | 6,221,800 | 14,503 | 14,503 | 14,503 | 2026-10-09 | 2026-10-09 | untried |
+| family gap filling | 1 | 103 | 1,258 | 19,646,089 | 15,616 | 654 | 1,115,535 | 2026-08-19 | 2026-10-09 | spent |
 | \ bo4 image siblings from confirmed materials 20260830\ | 1 | 1 | 135 | 2,163,297 | 16,024 | 16,024 | 16,024 | 2026-08-30 | 2026-08-30 | untried |
 | material family grid: middle x final token | 3 | 3 | 1,476 | 23,740,011 | 16,084 | 9,244 | 282,619 | 2026-10-09 | 2026-10-09 | spent |
 | alias slot substitution | 4 | 9 | 1,354 | 21,780,323 | 16,085 | 6,535 | 2,047,927 | 2026-08-20 | 2026-08-21 | spent |
@@ -414,7 +414,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | edits anim | 2 | 5 | 208 | 12,868,629 | 61,868 | 15,318 | 15,318 | 2026-08-20 | 2026-08-20 | live |
 | mwiii-material-context | 1 | 1 | 348 | 21,755,781 | 62,516 | 62,516 | 62,516 | 2026-10-09 | 2026-10-09 | untried |
 | sound files from aliases, after long-phrase quips | 1 | 1 | 176 | 11,236,875 | 63,845 | 63,845 | 63,845 | 2026-10-05 | 2026-10-05 | untried |
-| image siblings of confirmed materials | 1 | 210 | 7,450 | 478,100,316 | 64,174 | 393 | 192,897 | 2026-08-19 | 2026-10-09 | spent |
+| image siblings of confirmed materials | 1 | 211 | 7,524 | 484,091,736 | 64,339 | 393 | 80,965 | 2026-08-19 | 2026-10-09 | spent |
 | cold war animation token edits after new findings | 2 | 2 | 93 | 5,989,742 | 64,405 | 32,080 | 3,038,360 | 2026-08-26 | 2026-08-31 | spent |
 | image family grid: middle x final token | 5 | 5 | 396 | 26,031,120 | 65,735 | 22,060 | 1,735,408 | 2026-10-09 | 2026-10-09 | spent |
 | image family grid snowball r2 h2 | 3 | 3 | 236 | 15,640,395 | 66,272 | 27,439 | 27,439 | 2026-10-09 | 2026-10-09 | live |
@@ -1048,11 +1048,11 @@ table under a name you would not have guessed is the thing you are about to rebu
 | \ per-suffix precedents cw 20260830\ | 1 | 1 | 11 | 307,102,800 | 27,918,436 | 27,918,436 | 27,918,436 | 2026-08-30 | 2026-08-30 | untried |
 | pooled context swap sound alias r1 | 1 | 1 | 1 | 28,008,296 | 28,008,296 | 28,008,296 | 28,008,296 | 2026-10-09 | 2026-10-09 | untried |
 | pooled context swap sound alias r2 | 1 | 1 | 1 | 28,217,204 | 28,217,204 | 28,217,204 | 28,217,204 | 2026-10-10 | 2026-10-10 | untried |
+| tails of length 3 | 1 | 204 | 264,370 | 7,480,988,739,324 | 28,297,419 | 1,196,677 | 21,887,436 | 2026-08-22 | 2026-10-09 | spent |
 | rare splice 961 1920 | 1 | 2 | 5 | 142,066,503 | 28,413,300 | 17,758,312 | 17,758,312 | 2026-09-03 | 2026-09-03 | live |
 | context swap r3 | 2 | 2 | 10 | 284,741,161 | 28,474,116 | 19,664,339 | 107,762,107 | 2026-10-09 | 2026-10-09 | cooling |
 | sibling token substitution with digits, re-run on grown corpus | 1 | 1 | 6 | 172,336,688 | 28,722,781 | 28,722,781 | 28,722,781 | 2026-09-09 | 2026-09-09 | untried |
 | cold war, uncarried four-segment endings | 1 | 1 | 645 | 18,715,524,480 | 29,016,317 | 29,016,317 | 29,016,317 | 2026-08-23 | 2026-08-23 | untried |
-| tails of length 3 | 1 | 192 | 237,638 | 6,903,687,076,830 | 29,051,275 | 1,196,677 | 27,504,340 | 2026-08-22 | 2026-10-09 | spent |
 | material interior character substitutions refreshed | 1 | 1 | 17 | 496,757,656 | 29,221,038 | 29,221,038 | 29,221,038 | 2026-08-27 | 2026-08-27 | untried |
 | image siblings wide | 1 | 2 | 8 | 241,732,438 | 30,216,554 | 20,144,369 | 20,144,369 | 2026-09-03 | 2026-09-03 | live |
 | sound uncarried two-segment endings top500 | 1 | 1 | 1 | 30,263,406 | 30,263,406 | 30,263,406 | 30,263,406 | 2026-09-09 | 2026-09-09 | untried |
@@ -1589,7 +1589,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1511 distinct methods, run 1880 ways between them, across 5056 runs. `names` is what each run
+1511 distinct methods, run 1880 ways between them, across 5083 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->

@@ -230,12 +230,12 @@
     },
     "yamyamok": {
       "files": 5,
-      "names": 84149,
+      "names": 84154,
       "types": {
         "image": {
           "found_pct": 33.7,
-          "named": 147358,
-          "names": 4939,
+          "named": 147363,
+          "names": 4944,
           "total": 436889
         },
         "material": {
@@ -275,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 841181
+    "names": 841186
   }
 }
