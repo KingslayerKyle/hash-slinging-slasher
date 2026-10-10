@@ -1,0 +1,2 @@
+358a8a95326af2e5,jup/wpn/lm/rpapa20/npc/wpn_lm_rpapa20_sup_npc_shot_10.tnn.85.48000.all
+4e82f031c271b823,jup/wpn/lm/rpapa20/npc/wpn_lm_rpapa20_sup_npc_shot_09.tnn.85.48000.all

@@ -1,0 +1,7 @@
+2186dae2dd3d3c,mgl/amb/amb_emitters/water/emt_water_drips_close_02.dnn.85.48000.all
+1aa8bab3ae687de9,mgl/amb/amb_emitters/water/emt_water_drips_close_03.dnn.85.48000.all
+2a49c05f72f011d0,mgl/amb/amb_emitters/water/emt_water_drips_close_06.dnn.85.48000.all
+4fcfc8300e0dcbef,mgl/amb/amb_emitters/water/emt_water_drips_close_05.dnn.85.48000.all
+5b84c823a79a880a,mgl/amb/amb_emitters/water/emt_water_drips_close_04.dnn.85.48000.all
+6520f9e9596e743b,mgl/amb/amb_emitters/water/emt_water_drips_close_01.dnn.85.48000.all
+66f6a941be6c41cd,mgl/amb/amb_emitters/water/emt_water_drips_close_07.dnn.85.48000.all

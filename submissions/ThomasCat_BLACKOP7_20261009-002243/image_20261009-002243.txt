@@ -1,0 +1,5 @@
+3f80e2c6ef77b6fa,decal_mask_splatter_01_c
+58296a7dc4bdf75b,mtl_jup_jp25_ar_talpha95_screen_201_dm
+775cbb9dc90738d9,misc_taser_dmg
+790b885cc1fa72d2,misc_taser_m0
+790b895cc1fa7485,misc_taser_m1

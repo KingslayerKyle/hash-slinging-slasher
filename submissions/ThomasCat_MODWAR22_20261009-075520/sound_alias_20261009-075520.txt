@@ -1,0 +1,10 @@
+26fc6a1a76173c7,dst_bread_box
+2589b25e02da1763,dst_chicken_idle
+4332382233b592ba,impact_dlc_4
+653c686854360331,dst_fire_alarm_spark
+6a0ae845f72cbc56,emt_metal_groan_med
+bdb0d49e44887b51,dst_coffee_mug
+c7affc371b1635a8,br_pickup_cash_lyr
+ccfa43b8c24f595d,emt_wood_creak_ster_both
+de6c6f5abc2ea7cb,mp_dmz_cargo_destroyed_debris
+e7ad5c6807a89573,dst_espresso_machine

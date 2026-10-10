@@ -1,0 +1,10 @@
+dc4468e72766733,iw9/amb/amb_emitters/sparks/emt_spark_pop_04.dnn.75.48000.all
+1290cfecf48e86f1,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_on_end.tnn.85.48000.all
+14de796cf88513da,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_off_start.tnn.85.48000.all
+26f105866eafce7e,iw9/amb/amb_emitters/sparks/emt_spark_pop_05.dnn.75.48000.all
+2aaa2a91cb2e4a21,iw9/amb/amb_emitters/sparks/emt_spark_pop_06.dnn.75.48000.all
+3f985502a9793506,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_on_start.tnn.85.48000.all
+41362f348efca9d0,iw9/amb/amb_emitters/sparks/emt_spark_pop_03.dnn.75.48000.all
+559094581a65054d,iw9/amb/amb_emitters/sparks/emt_spark_pop_02.dnn.75.48000.all
+6942bff2ef6d892a,iw9/amb/amb_emitters/sparks/emt_spark_pop_01.dnn.75.48000.all
+7f8cbdbf0190404d,t10/wpn/smg/sroger3/reloads/fly_plr_sm_sroger3_hybrid_off_end.tnn.85.48000.all

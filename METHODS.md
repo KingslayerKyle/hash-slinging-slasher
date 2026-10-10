@@ -5108,12 +5108,33 @@ of what is actually on this disk:
 Ranking methods by past yield will not find these, because a ranking cannot rank a method nobody
 has written, and everything it *can* rank is a seam somebody is already finishing.
 
+## Black Ops 7 seams the short-channel scripts could not express -- 2026-10-09
+
+Four generators, all in `scripts/contributed/`, measured on BLACKOP7 (images 8.5% named, the
+largest gap in any game). Spent by: the corpora as they stand; each snowballs after the others.
+
+| method | what it reaches | BO7 result |
+|---|---|---|
+| `long_channel_grid.py` | material / image core + any measured channel up to three segments. The seam scripts cut channels with `[a-z]{1,4}\d?`, so BO7's most common one (`_thermalmap`, 3,843 named on a material core) and every two-segment one (`_m0_v2`, `_dmg_v2`) were never offered. Writes two plans; `_rev` puts the 49 measured material directories on every core | **348 images + 394 materials**, then 11 + 18 after the corpus grew |
+| `slot_swap.py --kind <k>` | fixed beginning P, one token slot after it swapped for every value siblings under P take, every sibling tail kept. Unlike shared-tails it transfers a tail attested once | **721** (316 img, 291 mat, 60 alias, 52 anim, 2 snd); `--max-slot 3000 --max-tails 30000` added 43 |
+| `slot_swap.py --width 2`, `--also material` | a two-token slot (class + weapon); and image candidates built over the image + material-core corpus | **112** (80 mat, 17 img, 10 anim, 4 snd, 1 alias); `--also` **20** images |
+| closure of all of the above | re-run in turn until a round adds nothing | **+38**, then **0** -- converged 2026-10-09 |
+| `title_prefix_swap.py --kind <k>` | leading codename (`jup_`, `sat_`, `cer_`, `iw9_` ...) swapped, dropped or added -- the first token `slot_swap` cannot vary | **71** (57 mat, 10 img, 4 alias, 0 anim) |
+| `sound_tail_swap.py` | every sound-file stem under the 40 most common encoding tails (`.tnn.75.48000.all` ...) | **35** sound files |
+| `packed_material_codes.py` | `twc/*<k>n_<k>dn[_...]` numeric material codes, k < 2,500 | 2 tokens **25**; 3 tokens (1.7T candidates, 0.26 chance matches) ran past 30 min, ~240 recovered by `submit` |
+
 ## Dead ends
 
 Do not spend a night rediscovering these. Each cost real time.
 
 | Tried | Outcome |
 |---|---|
+| **BO7 packed image suffix as a non-FNV hash**, 2026-10-09 | 300 `A&B~N` names from `fnv1a_ximages_v2` (45% of that table is packed): N against xxh64 (seed 0 and the modern basis), xxh3, murmur3 x64 both halves, md5/sha1/sha256 first 8 bytes in both byte orders, and both FNV bases, over the whole text, the parts joined bare / by newline / by comma, and each part alone, upper and lower case, masked 64/63/32: **0 hits.** Likely a content hash; packed images are unreachable from names. |
+| **BO7 terrain tile grid**, 2026-10-09 | `saw_sierra_<hex>_<x>_<y>_<z>_emissivitymap`: every integer x,y in [-400,400] under the 16 known hexes, z -8..8, 16 channels: **0.** Each hex names one tile. |
+| **BO7 weapon sound files across sibling weapons**, 2026-10-09 | `weapon_sound_swap.py`: 66,280 `<title>/wpn/<class>/{W}/...` templates filled with every weapon of the class (436k): **0.** Same result as Cold War's weapon event grid. |
+| **BO7 operator voice files: operator x line**, 2026-10-09 | `operator_vo_files.py`: 827 operators x 21,786 (ctx, code, phrase) lines of their root (9.8M): **0.** Phrases are written per operator. |
+| **BO7 voice files in other languages**, 2026-10-09 | 2,000 named `.english` stems under 15 language tails: **0.** The capture holds English only. |
+| **BO7 model names as image cores**, 2026-10-09 | 175k published xmodel names against BO7's named images: 73 have one as core (14 not also a material core). Not worth a pass. |
 | **Public dialogue transcripts as vocabulary** (Call of Duty wiki), 2026-10-07 | 68 quote, intel and transcript pages (Cold War zombies intel, campaign transcripts, character quotes, the BO4 zombies maps' quotes) pulled as wikitext through the wiki API, split into sentences, and every run of 1-5 words kept as written and with function words dropped: 425,839 phrases, 64,142 word pairs, 2,771 uncommon words. Phrase probe of every shared voice category, then fill and files: **2 phrases -> 33 aliases + 35 files** (Cold War; 0 Black Ops 4); the pairs in every two-word slot (~1B a game): **5 / 0**; the uncommon words in every word slot: **4 / 0.** The game does not name its lines from their text: apart from the execution quips, voice names are event codes (`ss_uav_dstr`, `zm_ping_perk_juggernog`, `mq_def_count_final`), so a transcript is the wrong key. |
 | **Shared visual grids: camo icons, camo names, vehicle paint jobs**, 2026-10-06 | Looking for another "detect once, fill the cast" grid like the execution quips. Black Ops 4 camo icons `<weapon>_t8_camo_<camo>_icon` (56 weapons x 107 camos, 2,710 holes): **0**; new camo names on the weapon with the most (`ar_accurate`), 540k candidates from 60k words with `dlc<N>_`, `_zm`, `_wz` forms: **0**; Cold War vehicle materials `<part>_mpx_<skin>`, every part x every skin within each of 88 vehicle families (86k): **0.** The visual pools' shared grids are complete; a camo or skin covers exactly the weapons and parts it was made for. |
 | **Character skins: part grid and new skin names**, 2026-10-05 | `contrib/skin_part_grid.py`: every `c_t9_`/`c_t8_` skin key x every part ending (`_viewarms`, `_lowerbody_viewbody`, `_torso_sy`, ...) its faction uses: **12,027 Cold War + 620 Black Ops 4 candidates, 0.** Then each of 27 Cold War operators' skin slot (`c_t9_<faction>_pl_<op>_<skin>_viewarms`) probed with every word of wordfreq and GloVe (397k): **7.5M, 0.** Skins are complete as grids, and the unnamed ones are not single dictionary words. |

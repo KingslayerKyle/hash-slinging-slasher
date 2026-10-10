@@ -1,0 +1,7 @@
+3f14361fbe90d3f,p1_perk
+52fc9da243cfb221,p3_perk
+55190feb200da7bf,uin_iw9_gulag_victory_slam
+892b0e31f66a000b,p5_perk
+a0897206eaa02567,scn_infil_palfa_walk
+e23b0c84f34c6c9c,p2_perk
+fc356d15b79007e6,p4_perk

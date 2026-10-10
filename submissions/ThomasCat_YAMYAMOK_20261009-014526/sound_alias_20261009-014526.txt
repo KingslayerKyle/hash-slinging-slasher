@@ -1,0 +1,5 @@
+5c3c519a47ca49b8,amb_emt_pipe_pops
+71019877efad9228,amb_emt_fire_metal_lp_03
+af22192e5feb134c,eqp_tracker_mine_explode_proj
+d285f3a517ba7ab1,evt_harvester_orb_portal_despawn
+e27ebb4a110a9364,eqp_fug_aethershroud_deactivate

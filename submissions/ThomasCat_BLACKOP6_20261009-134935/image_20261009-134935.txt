@@ -1,0 +1,4 @@
+197944c20848198b,hud_reticle_med09wz
+19d13ac208927e63,hud_reticle_med09mp
+240c79c20ed07834,hud_reticle_med08mp
+572b5bc22b86cc76,hud_reticle_med02mp
