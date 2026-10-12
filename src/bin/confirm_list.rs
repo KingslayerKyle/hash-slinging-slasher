@@ -274,7 +274,7 @@ fn main() {
 
     // Recorded whatever the outcome, including nothing: a run that finds nothing is a
     // real result, and three of them in a row is a loop. See `futility`.
-    futility::record(results.added());
+    futility::record(results.added(), Some(candidates as u64));
 
 
     // Only knowable now: a list run is defined by the candidates it was given, and they arrive on

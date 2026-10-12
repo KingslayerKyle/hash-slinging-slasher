@@ -368,7 +368,7 @@ fn main() {
 
     // Recorded whatever the outcome, including nothing: a run that finds nothing is a
     // real result, and three of them in a row is a loop. See `futility`.
-    futility::record(results.added());
+    futility::record(results.added(), None);
 
 
     if let Err(error) = results.write(paths::findings()) {
