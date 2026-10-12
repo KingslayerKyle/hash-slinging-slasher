@@ -1,0 +1,6 @@
+label: model-name stems inside measured image wrappers (m/mtl_, tm/li_, li_i_mtl_, cm_, ...)
+describe: every 2+ segment prefix of BO7's model names behind each head known modern image names put in front of a model name 3+ times (contrib/model_log_stems.py), then the image segment endings
+begin: @contrib/modellog_image_wraps.txt
+bare: no
+stem: @contrib/modellog_stems.txt
+end: @contrib/seg_image_ends.txt

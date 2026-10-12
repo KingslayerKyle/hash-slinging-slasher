@@ -1,0 +1,6 @@
+label: li_ image family -- li_ x model/material bases x measured middles and channels
+describe: li_<base>[_middle]_<channel>; bases from BO7 model names, material bases and known li_ names, middles and channels measured on known li_ images; see contrib/li_family.py
+begin: li_
+bare: no
+stem: @contrib/li_stems.txt
+end: @contrib/li_ends.txt
