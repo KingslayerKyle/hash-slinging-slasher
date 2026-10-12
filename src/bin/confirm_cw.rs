@@ -29,13 +29,44 @@ use slasher::fingerprint::{Fingerprint, Sketch};
 use slasher::loader::{loaded_assets, unnamed, wanted_for_search};
 use slasher::search::{self, Meet};
 use slasher::{futility, 
-    all_table_names, config, folder_names, hash64, paths, read_list, readiness, recon, table_keys,
+    all_table_names, config, folder_names, games, hash64, paths, read_list, readiness, recon, table_keys,
     table_names, tables_look_complete, Results, RunNote, pool_label,
 };
 
 /// The shortest piece of a line worth trying. Anything shorter matches by accident as often as
 /// it matches for a reason.
 const SHORTEST: usize = 3;
+
+/// The game's measured beginnings and endings, or the exact command that makes them.
+///
+/// A modern game's vocabulary is measured from its own capture and written to `data/modern/<game>/`,
+/// which `.gitignore` keeps out of the clone, so a fresh checkout holds readable snapshots for five
+/// games it cannot search. `read_list` panics with the operating system's own words for a missing
+/// path, which is all a contributor got for it: exit 101, a message about a path that nothing in the
+/// documentation had told them to create, and no hint that the fix is a script already in the
+/// repository. Reproduced 2026-10-12 on a clone that had never derived them.
+fn load_vocabulary(list: &str) -> Vec<String> {
+    let path = paths::vocabulary(list);
+    if path.exists() {
+        return read_list(&path);
+    }
+
+    let game = config::game();
+    if games::modern(&game) {
+        eprintln!(
+            "{} is missing, and {game} cannot be searched without it.\n\n\
+             Its beginnings and endings are measured from its own capture rather than borrowed from \
+             Black Ops 4 or Cold War, and that measurement is not in the clone. Build it with:\n\n\
+             \x20   python scripts/derive_modern_lists.py --game {game}\n\n\
+             It reads the capture and the published tables, needs no game launched, and takes well \
+             under a minute.",
+            path.display()
+        );
+        std::process::exit(2);
+    }
+
+    read_list(&path)
+}
 
 /// The tables that are this game rather than a newer one. A newer game's names teach the wrong
 /// conventions and mostly yield nothing.
@@ -217,8 +248,8 @@ fn main() {
         (paths::SUFFIX_LIST, paths::PREFIX_LIST)
     };
 
-    let mut endings = read_list(&paths::vocabulary(suffix_list));
-    let mut prefixes = read_list(&paths::vocabulary(prefix_list));
+    let mut endings = load_vocabulary(suffix_list);
+    let mut prefixes = load_vocabulary(prefix_list);
 
     // The measured lists are kept in one canonical form, with forward slashes, because a sound
     // path's *shape* is identical in both games and only the separator differs. Measured across
