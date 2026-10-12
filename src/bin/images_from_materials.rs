@@ -217,7 +217,8 @@ fn main() {
 
     // Recorded whatever the outcome, including nothing: a run that finds nothing is a
     // real result, and three of them in a row is a loop. See `futility`.
-    futility::record(results.added(), None);
+    futility::record(results.added(),
+        Some(candidate_space(openings.len(), endings.len(), stems.len(), false)));
 
     // Not `expect`. The loop above tolerates this write failing, and then the identical call
     // here panicked on it -- skipping `write_run_as`, `note_run` and `seal_run`, so the folder
