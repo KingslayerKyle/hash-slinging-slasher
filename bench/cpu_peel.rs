@@ -64,6 +64,10 @@ fn main() {
         .get(3)
         .and_then(|value| value.parse().ok())
         .unwrap_or(1);
+    if threads == 0 || !matches!(mode, "peel" | "probe") {
+        eprintln!("mode must be peel or probe, with at least one thread");
+        std::process::exit(2);
+    }
 
     if mode == "peel" {
         let count: usize = args

@@ -152,15 +152,21 @@ to save the expensive side's, which is backwards.
 **What the GPU is actually good at here is the peel itself.** It is a dependent 64-bit multiply
 chain per (id, ending) with **no random access at all**: sequential reads, coalesced writes,
 123× the CPU measured. `Peeled::build` is peel, sort, dedup and filter fill, and the first two are
-where a modern pass's wall clock goes on a plan-shaped search. The filter's two bitmap probes stay
-the bottleneck for the *forward* sweep and no GPU changes that, for the reason this file already
-gives: 95% of that work is the probe, and 32-byte sector granularity turns an 8-byte random read
+where a modern pass's wall clock goes on a plan-shaped search. The filter's two bitmap probes are
+still a potential bottleneck for the *forward* sweep: this harness does not measure them. The
+earlier CPU profile attributes 95% of that work to the probe, and 32-byte sector granularity turns an 8-byte random read
 into four bytes of useful work per byte moved.
 
-So the experiment worth running next is not a forward-sweep port. It is `Peeled::build` on the GPU
+An experiment worth running next is `Peeled::build` on the GPU
 behind a cargo feature — peel **and** sort, which is where the 37.6 B actually is — with the CPU
 keeping `holds` and the sweep, and `run_best` picking the backend off measured rates the way it
 picks a direction today.
+
+These are component measurements, not an end-to-end grind speedup or proof that a forward GPU
+backend cannot help. The sorted-search rows also use different query populations: the CPU probes
+pseudorandom keys, while the GPU control queries the table's own lowest keys. Their ratio is not
+a CPU/GPU speedup for an identical workload. A backend decision needs matched input, exclusions,
+hash output, transfer/setup costs and complete grind timings on each supported platform.
 
 Two things this file already said that the run confirmed, and one it did not predict:
 

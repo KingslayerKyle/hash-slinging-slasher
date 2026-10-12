@@ -100,8 +100,10 @@ def endings_packed():
     with open(os.path.join("data", "suffixes.txt"), encoding="utf-8") as handle:
         for line in handle:
             line = line.strip()
-            if line and len(line) <= MAX_ENDING:
+            if line:
                 raw = line.encode("utf-8")
+                if len(raw) > MAX_ENDING:
+                    continue
                 rows.append(raw + b"\0" * (MAX_ENDING - len(raw)))
                 lengths.append(len(raw))
     return np.frombuffer(b"".join(rows), dtype=np.uint8), np.array(lengths, dtype=np.uint8)
@@ -125,8 +127,12 @@ def host_peel(value, ending, endings_bytes, lengths):
 
 def peel_bench(queue, device):
     ids_count = int(os.environ.get("IDS", "100000"))
+    if ids_count < 2 or ids_count > np.iinfo(np.uint32).max:
+        raise SystemExit("IDS must be between 2 and the uint32 limit")
     endings_bytes, lengths = endings_packed()
     n_endings = len(lengths)
+    if not n_endings:
+        raise SystemExit("No supported endings in data/suffixes.txt")
     ids = xorshift_ids(ids_count)
 
     mf = cl.mem_flags
@@ -134,6 +140,8 @@ def peel_bench(queue, device):
     end_buf = cl.Buffer(queue.context, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=endings_bytes)
     len_buf = cl.Buffer(queue.context, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=lengths)
     total = ids_count * n_endings
+    if total * 8 > min(device.max_mem_alloc_size, device.global_mem_size * 3 // 4):
+        raise SystemExit("Peel output exceeds this device's memory budget; reduce IDS")
     out = cl.Buffer(queue.context, mf.WRITE_ONLY, total * 8)
 
     kernel = cl.Kernel(cl.Program(queue.context, PEEL_KERNEL).build(), "peel")
@@ -149,7 +157,7 @@ def peel_bench(queue, device):
     got = np.empty(total, dtype=np.uint64)
     cl.enqueue_copy(queue, got, out).wait()
     checked = 0
-    for ending in (0, 1, 7, n_endings // 3, n_endings - 1):
+    for ending in sorted({0, min(1, n_endings - 1), min(7, n_endings - 1), n_endings // 3, n_endings - 1}):
         for index in (0, 1, ids_count // 2, ids_count - 1):
             want = host_peel(int(ids[index]), ending, endings_bytes, lengths)
             if int(got[ending * ids_count + index]) != want:
@@ -168,9 +176,13 @@ def peel_bench(queue, device):
 
 def probe_bench(queue, device):
     table_mb = int(os.environ.get("TABLE_MB", "480"))
+    if table_mb < 1:
+        raise SystemExit("TABLE_MB must be positive")
     entries = table_mb * 1024 * 1024 // 8
+    if entries * 8 > min(device.max_mem_alloc_size, device.global_mem_size // 2):
+        raise SystemExit("Probe table exceeds this device's memory budget; reduce TABLE_MB")
     table = np.sort(xorshift_ids(entries))
-    probes = 20_000_000
+    probes = min(20_000_000, entries)
     keys = np.random.default_rng(4).permutation(table[:probes])
 
     mf = cl.mem_flags
@@ -178,8 +190,8 @@ def probe_bench(queue, device):
     key_buf = cl.Buffer(queue.context, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=keys)
     hits = np.zeros(1, dtype=np.uint32)
     ran = np.zeros(1, dtype=np.uint64)
-    hits_buf = cl.Buffer(queue.context, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=hits)
-    ran_buf = cl.Buffer(queue.context, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=ran)
+    hits_buf = cl.Buffer(queue.context, mf.READ_WRITE | mf.COPY_HOST_PTR, hostbuf=hits)
+    ran_buf = cl.Buffer(queue.context, mf.READ_WRITE | mf.COPY_HOST_PTR, hostbuf=ran)
 
     kernel = cl.Kernel(cl.Program(queue.context, PROBE_KERNEL).build(), "probe")
     args = (table_buf, np.uint64(entries), key_buf, np.uint64(probes), hits_buf, ran_buf)
