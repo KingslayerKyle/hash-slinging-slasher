@@ -96,11 +96,16 @@ impl Snapshot {
 
         let count = u64::from_le_bytes(
             bytes[at..at + 8].try_into().map_err(|_| bad("bad count"))?,
-        ) as usize;
+        );
+        let count = usize::try_from(count).map_err(|_| bad("snapshot record count is too large"))?;
         at += 8;
 
-        if bytes.len() < at + count * RECORD {
-            return Err(bad("snapshot is truncated: fewer records than it claims"));
+        let end = count
+            .checked_mul(RECORD)
+            .and_then(|size| at.checked_add(size))
+            .ok_or_else(|| bad("snapshot record count is too large"))?;
+        if bytes.len() != end {
+            return Err(bad("snapshot payload length does not match its record count"));
         }
 
         let mut records = Vec::with_capacity(count);
@@ -110,6 +115,9 @@ impl Snapshot {
                 bytes[start..start + 8].try_into().map_err(|_| bad("bad id"))?,
             );
             let pool = u16::from_le_bytes([bytes[start + 8], bytes[start + 9]]);
+            if records.last().is_some_and(|(previous, _)| *previous > id) {
+                return Err(bad("snapshot ids are not sorted"));
+            }
             records.push((id, pool));
         }
 
@@ -162,6 +170,54 @@ impl Snapshot {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    fn encoded_snapshot(count: u64, records: &[Record]) -> Vec<u8> {
+        let mut bytes = Vec::new();
+        bytes.extend_from_slice(MAGIC);
+        bytes.extend_from_slice(&VERSION.to_le_bytes());
+        bytes.extend_from_slice(&8u16.to_le_bytes());
+        bytes.extend_from_slice(b"BLKOPSCW");
+        bytes.extend_from_slice(&count.to_le_bytes());
+        for (id, pool) in records {
+            bytes.extend_from_slice(&id.to_le_bytes());
+            bytes.extend_from_slice(&pool.to_le_bytes());
+        }
+        bytes
+    }
+
+    #[test]
+    fn an_oversized_record_count_is_refused_without_panicking() {
+        for count in [u64::MAX, u64::MAX / RECORD as u64] {
+            let error = Snapshot::parse(&encoded_snapshot(count, &[]))
+                .err()
+                .expect("an impossible record count must be refused");
+            assert_eq!(error.kind(), io::ErrorKind::InvalidData);
+        }
+    }
+
+    #[test]
+    fn records_not_claimed_by_the_header_are_refused() {
+        let error = Snapshot::parse(&encoded_snapshot(0, &[(1, 6)]))
+            .err()
+            .expect("a payload inconsistent with its count must be refused");
+        assert_eq!(error.kind(), io::ErrorKind::InvalidData);
+    }
+
+    #[test]
+    fn unsorted_ids_are_refused_before_a_lookup_can_miss_them() {
+        let error = Snapshot::parse(&encoded_snapshot(3, &[(3, 6), (2, 6), (1, 6)]))
+            .err()
+            .expect("binary search requires ids in ascending order");
+        assert_eq!(error.kind(), io::ErrorKind::InvalidData);
+    }
+
+    #[test]
+    fn sorted_ids_keep_every_pool_even_without_canonical_pool_order() {
+        let records = [(1, 8), (1, 6), (1, 6), (2, 10)];
+        let snapshot = Snapshot::parse(&encoded_snapshot(records.len() as u64, &records)).unwrap();
+        assert_eq!(snapshot.pools_of(1), &records[..3]);
+        assert!(snapshot.holds(2));
+    }
 
     fn round_trip(game: &str, records: Vec<Record>) -> Snapshot {
         let dir = std::env::temp_dir().join(format!("snap_{}_{}", std::process::id(), game));

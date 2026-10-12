@@ -28,6 +28,15 @@ pub fn receipt() -> PathBuf {
     crate::paths::state().join("ready.txt")
 }
 
+/// Invalidates the previous receipt before startup changes the claims cache it authorises.
+pub fn revoke() -> std::io::Result<()> {
+    match std::fs::remove_file(receipt()) {
+        Ok(()) => Ok(()),
+        Err(error) if error.kind() == std::io::ErrorKind::NotFound => Ok(()),
+        Err(error) => Err(error),
+    }
+}
+
 /// Records that the startup checks passed, with what they were passed against.
 pub fn write(commit: &str, tables: usize, claimed: usize) -> std::io::Result<()> {
     let path = receipt();

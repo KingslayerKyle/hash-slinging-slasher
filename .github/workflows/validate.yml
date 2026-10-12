@@ -84,6 +84,7 @@ jobs:
             # then failed would set `any=false` here -- reporting "no submission files changed"
             # and skipping the re-verification this workflow exists for, on a green check.
             git fetch --no-tags origin "${{ github.base_ref }}"
+            comparison=("$base...HEAD")
           else
             base="${{ github.event.before }}"
 
@@ -93,14 +94,18 @@ jobs:
             if ! git cat-file -e "${base}^{commit}" 2>/dev/null; then
               base=$(git hash-object -t tree /dev/null)
             fi
+            # Pushes compare the two trees directly. The fallback is a tree, not a commit,
+            # and unrelated histories after a force push may have no merge base.
+            comparison=("$base" HEAD)
           fi
 
-          # Added and modified only. A submission being deleted is a maintainer tidying up.
+          # Added, modified and renamed files need verification under their current names.
+          # A submission being deleted is a maintainer tidying up.
           #
           # No `|| true`. A diff that fails must stop the run, not report an empty list: an empty
           # list is indistinguishable from "no submissions in this change", and that answer skips
           # the re-verification of names this whole workflow exists to perform.
-          if ! files=$(git diff --name-only --diff-filter=AM "$base"...HEAD -- 'submissions/**/*.txt'); then
+          if ! files=$(git diff --name-only --diff-filter=AMR "${comparison[@]}" -- 'submissions/**/*.txt'); then
             echo "could not diff against $base -- refusing to report 'nothing changed' on a failed diff"
             exit 1
           fi

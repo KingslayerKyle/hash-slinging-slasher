@@ -119,13 +119,27 @@ pub fn survey(repo: &str, submissions: &Path) -> Landscape {
 
 /// Writes the landscape where the other programs can read it without asking GitHub again.
 pub fn save(landscape: &Landscape) -> std::io::Result<()> {
-    let path = cache();
+    save_to(landscape, &cache(), &swept_cache())
+}
+
+fn save_to(landscape: &Landscape, path: &Path, swept_path: &Path) -> std::io::Result<()> {
+    let mut claimed = landscape.claimed.clone();
+    let mut swept = landscape.swept.clone();
+    // A failed survey contains freshly merged submissions only. Retain the previous in-flight
+    // claims as well, until a complete survey can replace them with GitHub's current state.
+    if landscape.offline.is_some() {
+        claimed.extend(cached_claims_at(path)?);
+        for (fingerprint, who) in cached_swept_at(swept_path)? {
+            swept.entry(fingerprint).or_insert(who);
+        }
+    }
+
     if let Some(parent) = path.parent() {
         std::fs::create_dir_all(parent)?;
     }
 
-    let mut text = String::with_capacity(landscape.claimed.len() * 18);
-    let mut ordered: Vec<&u64> = landscape.claimed.iter().collect();
+    let mut text = String::with_capacity(claimed.len() * 18);
+    let mut ordered: Vec<&u64> = claimed.iter().collect();
     ordered.sort_unstable();
 
     for id in ordered {
@@ -134,32 +148,46 @@ pub fn save(landscape: &Landscape) -> std::io::Result<()> {
 
     std::fs::write(path, text)?;
 
-    let mut swept = String::new();
-    for (fingerprint, who) in &landscape.swept {
-        swept.push_str(&format!("{fingerprint},{who}\n"));
+    let mut swept_text = String::new();
+    for (fingerprint, who) in &swept {
+        swept_text.push_str(&format!("{fingerprint},{who}\n"));
     }
-    std::fs::write(swept_cache(), swept)
+    std::fs::write(swept_path, swept_text)
 }
 
 /// The claimed ids from a previous survey, for a program that could not reach GitHub itself.
 pub fn load_cached() -> HashSet<u64> {
-    std::fs::read_to_string(cache())
-        .unwrap_or_default()
+    cached_claims_at(&cache()).unwrap_or_default()
+}
+
+fn cached_claims_at(path: &Path) -> std::io::Result<HashSet<u64>> {
+    Ok(read_cache(path)?
         .lines()
         .filter_map(|line| u64::from_str_radix(line.trim(), 16).ok())
-        .collect()
+        .collect())
 }
 
 /// The swept fingerprints from a previous survey.
 pub fn load_cached_swept() -> BTreeMap<String, String> {
-    std::fs::read_to_string(swept_cache())
-        .unwrap_or_default()
+    cached_swept_at(&swept_cache()).unwrap_or_default()
+}
+
+fn cached_swept_at(path: &Path) -> std::io::Result<BTreeMap<String, String>> {
+    Ok(read_cache(path)?
         .lines()
         .filter_map(|line| {
             let (fingerprint, who) = line.trim().split_once(',')?;
             Some((fingerprint.to_owned(), who.to_owned()))
         })
-        .collect()
+        .collect())
+}
+
+fn read_cache(path: &Path) -> std::io::Result<String> {
+    match std::fs::read_to_string(path) {
+        Ok(text) => Ok(text),
+        Err(error) if error.kind() == std::io::ErrorKind::NotFound => Ok(String::new()),
+        Err(error) => Err(error),
+    }
 }
 
 /// Stops a search that somebody has already run to exhaustion under identical inputs.
@@ -251,9 +279,17 @@ fn claim_all_offsets(into: &mut HashSet<u64>, name: &str) {
 /// instead of one per file, and it carries only what the branch *adds*, so a pull request that
 /// happens to touch an existing file does not claim that whole file's contents.
 fn open_pull_requests(repo: &str) -> Result<Vec<OpenSubmission>, String> {
-    let listed = gh(&[
+    open_pull_requests_with(repo, gh)
+}
+
+fn open_pull_requests_with(
+    repo: &str,
+    mut run: impl FnMut(&[&str]) -> Result<String, String>,
+) -> Result<Vec<OpenSubmission>, String> {
+    let listed = run(&[
         "api",
         &format!("repos/{repo}/pulls?state=open&per_page=100"),
+        "--paginate",
         "--jq",
         r#".[] | "\(.number)\t\(.user.login)\t\(.title)""#,
     ])?;
@@ -268,7 +304,8 @@ fn open_pull_requests(repo: &str) -> Result<Vec<OpenSubmission>, String> {
         let author = fields.next().unwrap_or("somebody").to_owned();
         let title = fields.next().unwrap_or("").to_owned();
 
-        let diff = gh(&["pr", "diff", &number.to_string(), "--repo", repo]).unwrap_or_default();
+        let diff = run(&["pr", "diff", &number.to_string(), "--repo", repo])
+            .map_err(|why| format!("could not read open pull request #{number}: {why}"))?;
         let (names, fingerprints) = added_by(&diff);
 
         open.push(OpenSubmission { number, author, title, names, fingerprints });
@@ -405,6 +442,101 @@ fn gh(arguments: &[&str]) -> Result<String, String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn every_open_pull_request_page_is_requested_and_read() {
+        let mut commands = Vec::new();
+        let open = open_pull_requests_with("owner/repo", |arguments| {
+            commands.push(arguments.iter().map(|argument| (*argument).to_owned()).collect::<Vec<_>>());
+            match arguments[0] {
+                "api" => {
+                    assert!(arguments.contains(&"--paginate"), "claims after the first 100 PRs must not be omitted");
+                    Ok("1\tfirst\tfirst page\n101\tsecond\tsecond page\n".to_owned())
+                }
+                "pr" if arguments[2] == "1" => Ok("+1,first_claim\n".to_owned()),
+                "pr" if arguments[2] == "101" => Ok("+2,later_claim\n+- fingerprint: later_search\n".to_owned()),
+                _ => panic!("unexpected command: {arguments:?}"),
+            }
+        }).unwrap();
+
+        assert_eq!(commands.len(), 3);
+        assert_eq!(open.len(), 2);
+        assert_eq!(open[0].names, ["first_claim"]);
+        assert_eq!(open[1].names, ["later_claim"]);
+        assert_eq!(open[1].fingerprints, ["later_search"]);
+    }
+
+    #[test]
+    fn an_unreadable_diff_makes_the_survey_incomplete() {
+        let result = open_pull_requests_with("owner/repo", |arguments| {
+            match arguments[0] {
+                "api" => Ok("1\tfirst\treadable\n2\tsecond\tunreadable\n".to_owned()),
+                "pr" if arguments[2] == "1" => Ok("+1,already_claimed\n".to_owned()),
+                "pr" if arguments[2] == "2" => Err("HTTP 503".to_owned()),
+                _ => panic!("unexpected command: {arguments:?}"),
+            }
+        });
+
+        let error = result.err().expect("a partial list must not be reported as a successful survey");
+        assert!(error.contains("#2"), "identify which diff failed: {error}");
+        assert!(error.contains("HTTP 503"), "preserve the dependency's diagnosis: {error}");
+    }
+
+    #[test]
+    fn an_offline_survey_preserves_the_last_successful_cache() {
+        let directory = std::env::temp_dir().join(format!("slasher_recon_cache_{}", std::process::id()));
+        std::fs::create_dir_all(&directory).unwrap();
+        let claims = directory.join("claimed.txt");
+        let swept = directory.join("swept.txt");
+        let initial = Landscape {
+            claimed: HashSet::from([0x123, 0x456]),
+            swept: BTreeMap::from([("open_search".to_owned(), "contributor (open #2)".to_owned())]),
+            ..Landscape::default()
+        };
+        save_to(&initial, &claims, &swept).unwrap();
+
+        let offline = Landscape {
+            claimed: HashSet::from([0x999]),
+            swept: BTreeMap::from([("merged_search".to_owned(), "merged_contributor".to_owned())]),
+            offline: Some("could not read open pull request #2: HTTP 503".to_owned()),
+            ..Landscape::default()
+        };
+        save_to(&offline, &claims, &swept).unwrap();
+        assert_eq!(cached_claims_at(&claims).unwrap(), HashSet::from([0x123, 0x456, 0x999]));
+        let cached_swept = cached_swept_at(&swept).unwrap();
+        assert_eq!(cached_swept.get("open_search"), initial.swept.get("open_search"));
+        assert_eq!(cached_swept.get("merged_search"), offline.swept.get("merged_search"));
+
+        let recovered = Landscape { claimed: HashSet::from([0x999]), ..Landscape::default() };
+        save_to(&recovered, &claims, &swept).unwrap();
+        assert_eq!(std::fs::read_to_string(&claims).unwrap(), "999\n");
+        assert_eq!(std::fs::read_to_string(&swept).unwrap(), "");
+        std::fs::remove_file(claims).unwrap();
+        std::fs::remove_file(swept).unwrap();
+        std::fs::remove_dir(directory).unwrap();
+    }
+
+    #[test]
+    fn an_offline_survey_does_not_replace_an_unreadable_cache() {
+        let directory = std::env::temp_dir().join(format!("slasher_recon_bad_cache_{}", std::process::id()));
+        std::fs::create_dir_all(&directory).unwrap();
+        let claims = directory.join("claimed.txt");
+        let swept = directory.join("swept.txt");
+        std::fs::write(&claims, "123\n").unwrap();
+        std::fs::write(&swept, [0xff]).unwrap();
+        let offline = Landscape {
+            claimed: HashSet::from([0x999]),
+            offline: Some("HTTP 503".to_owned()),
+            ..Landscape::default()
+        };
+
+        assert!(save_to(&offline, &claims, &swept).is_err());
+        assert_eq!(std::fs::read(&claims).unwrap(), b"123\n");
+        assert_eq!(std::fs::read(&swept).unwrap(), [0xff]);
+        std::fs::remove_file(claims).unwrap();
+        std::fs::remove_file(swept).unwrap();
+        std::fs::remove_dir(directory).unwrap();
+    }
 
     /// A diff yields the rows it adds and nothing else -- not the file headers, not removed
     /// rows, and not the prose around them.
