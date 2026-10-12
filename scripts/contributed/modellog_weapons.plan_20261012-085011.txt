@@ -1,0 +1,5 @@
+label: weapon-slot plan over weapon codes from BO7 model names
+describe: <class>_<name> codes seen in 3+ BO7 model names and missing from weapon_slot_weapons.txt (contrib/model_log_weapons.py), between weapon_slot's measured beginnings and endings
+begin: @contrib/weapon_slot_begins.txt
+stem: @contrib/modellog_weapons.txt
+end: @contrib/weapon_slot_ends.txt

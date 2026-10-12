@@ -1,0 +1,6 @@
+8fbdb30e6d7e980,m/mtl_wpn_t10_p01_sn_sroger25_barrel
+2bac9cf5aaf4f458,m/mtl_wpn_t10_p01_sn_sroger25_scope
+2e7ac691e80c67f3,m/mtl_wpn_t10_p01_sn_sroger25_mag
+4a220b086c599c59,m/mtl_wpn_t10_p01_sn_sroger25_receiver
+65c2dc0adbacee45,m/mtl_veh_t10_civ_polaris_utv_phantom_under_rzr
+6950599962228d96,m/mtl_wpn_t10_p01_sn_sroger25_handguard
