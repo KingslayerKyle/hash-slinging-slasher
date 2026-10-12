@@ -1,0 +1,5 @@
+label: model-name stems as animations -- model prefixes x animation endings
+describe: every 2+ segment underscore-prefix of BO7's model names (contrib/model_log_stems.py), crossed with the animation segment plan's endings (`_fxsim`, `_open`, `_idle`, ...)
+bare: yes
+stem: @contrib/modellog_stems.txt
+end: @contrib/seg_xanim_ends.txt

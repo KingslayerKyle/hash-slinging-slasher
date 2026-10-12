@@ -1,0 +1,6 @@
+label: model-name remainders under measured image beginnings (head swap)
+describe: each BO7 model-name prefix minus its first 1-2 segments (contrib/model_log_stems.py), behind the top 3000 image beginnings (contrib/head_image_begins.txt), then the top 300 image endings
+begin: @contrib/head_image_begins.txt
+bare: no
+stem: @contrib/modellog_rests.txt
+end: @contrib/modellog_image_ends300.txt

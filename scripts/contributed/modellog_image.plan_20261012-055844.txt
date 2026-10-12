@@ -1,0 +1,5 @@
+label: model-name stems as images -- model prefixes x image endings
+describe: every 2+ segment underscore-prefix of BO7's model names (contrib/model_log_stems.py), crossed with the image segment plan's endings (`_m0_v2`, `_thermalmap`, ...)
+bare: yes
+stem: @contrib/modellog_stems.txt
+end: @contrib/seg_image_ends.txt

@@ -1,0 +1,6 @@
+label: model-name remainders under measured material beginnings (head swap)
+describe: each BO7 model-name prefix minus its first 1-2 segments (contrib/model_log_stems.py), behind the top 3000 material beginnings (contrib/head_material_begins.txt), then the top 300 material endings
+begin: @contrib/head_material_begins.txt
+bare: no
+stem: @contrib/modellog_rests.txt
+end: @contrib/modellog_material_ends300.txt
