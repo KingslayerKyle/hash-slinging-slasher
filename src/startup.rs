@@ -324,11 +324,37 @@ pub fn run() -> bool {
         return false;
     }
 
-    let _ = readiness::write(&update::head(repo), table_count, landscape.claimed.len());
-    let _ = recon::save(&landscape);
+    if let Err(why) = persist_startup_state(
+        readiness::revoke,
+        || recon::save(&landscape),
+        || readiness::write(&update::head(repo), table_count, landscape.claimed.len()),
+    ) {
+        println!("  [BLOCKED] {why}");
+        println!("Startup state could not be saved in {}; fix it and run `start` again.", paths::state().display());
+        return false;
+    }
 
     report(&landscape);
     true
+}
+
+fn persist_startup_state(
+    mut revoke_receipt: impl FnMut() -> std::io::Result<()>,
+    save_cache: impl FnOnce() -> std::io::Result<()>,
+    write_receipt: impl FnOnce() -> std::io::Result<()>,
+) -> Result<(), String> {
+    // A previous receipt must not authorise a cache that a failed write leaves incomplete.
+    revoke_receipt().map_err(|error| format!("could not revoke the previous readiness receipt: {error}"))?;
+    save_cache().map_err(|error| format!("could not save claimed names and search fingerprints: {error}"))?;
+    if let Err(error) = write_receipt() {
+        let mut why = format!("could not save the readiness receipt: {error}");
+        // A failed file write can leave a readable prefix; remove that partial receipt too.
+        if let Err(cleanup) = revoke_receipt() {
+            why.push_str(&format!("; could not remove the partial receipt: {cleanup}"));
+        }
+        return Err(why);
+    }
+    Ok(())
 }
 
 /// Reads the open pull requests and the merged submissions, and says what that means for tonight.
@@ -343,8 +369,9 @@ fn survey(warned: &mut Vec<String>) -> recon::Landscape {
     if let Some(why) = &landscape.offline {
         println!("  [warn]    open pull requests could not be read");
         warned.push(format!(
-            "GitHub would not answer ({why}), so only merged submissions could be excluded. \
-             Anything found tonight may duplicate a pull request that is open right now."
+            "GitHub would not answer ({why}), so fresh merged submissions and the last cached \
+             claims will be excluded. Newer open pull requests are unknown; anything found \
+             tonight may duplicate one of them."
         ));
     } else {
         println!(
@@ -809,6 +836,60 @@ fn install(package: &str, tool: &str) -> bool {
 
 #[cfg(test)]
 mod tests {
+    use super::persist_startup_state;
+    use std::cell::RefCell;
+    use std::io::{Error, ErrorKind};
+
+    #[test]
+    fn readiness_is_issued_only_after_the_cache_is_saved() {
+        let steps = RefCell::new(Vec::new());
+        persist_startup_state(
+            || { steps.borrow_mut().push("revoke"); Ok(()) },
+            || { steps.borrow_mut().push("cache"); Ok(()) },
+            || { steps.borrow_mut().push("receipt"); Ok(()) },
+        ).unwrap();
+        assert_eq!(*steps.borrow(), ["revoke", "cache", "receipt"]);
+    }
+
+    #[test]
+    fn a_cache_write_failure_does_not_issue_readiness() {
+        let steps = RefCell::new(Vec::new());
+        let result = persist_startup_state(
+            || { steps.borrow_mut().push("revoke"); Ok(()) },
+            || { steps.borrow_mut().push("cache"); Err(Error::new(ErrorKind::PermissionDenied, "cache is read-only")) },
+            || { steps.borrow_mut().push("receipt"); Ok(()) },
+        );
+        let error = result.unwrap_err();
+        assert!(error.contains("cache is read-only"));
+        assert_eq!(*steps.borrow(), ["revoke", "cache"]);
+    }
+
+    #[test]
+    fn a_readiness_write_failure_revokes_any_partial_receipt() {
+        let steps = RefCell::new(Vec::new());
+        let result = persist_startup_state(
+            || { steps.borrow_mut().push("revoke"); Ok(()) },
+            || { steps.borrow_mut().push("cache"); Ok(()) },
+            || { steps.borrow_mut().push("receipt"); Err(Error::new(ErrorKind::WriteZero, "disk is full")) },
+        );
+        let error = result.unwrap_err();
+        assert!(error.contains("disk is full"));
+        assert_eq!(*steps.borrow(), ["revoke", "cache", "receipt", "revoke"]);
+    }
+
+    #[test]
+    fn a_receipt_that_cannot_be_revoked_stops_before_cache_mutation() {
+        let steps = RefCell::new(Vec::new());
+        let result = persist_startup_state(
+            || { steps.borrow_mut().push("revoke"); Err(Error::new(ErrorKind::PermissionDenied, "receipt is read-only")) },
+            || { steps.borrow_mut().push("cache"); Ok(()) },
+            || { steps.borrow_mut().push("receipt"); Ok(()) },
+        );
+        let error = result.unwrap_err();
+        assert!(error.contains("receipt is read-only"));
+        assert_eq!(*steps.borrow(), ["revoke"]);
+    }
+
     /// The repository submissions go to is also the one whose open pull requests are read, since
     /// a duplicate is only a duplicate against the place it is being sent.
     #[test]

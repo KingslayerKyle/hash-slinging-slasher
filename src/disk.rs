@@ -73,10 +73,21 @@ pub fn human(bytes: u64) -> String {
 /// re-fetched, because a tool that offers to free space and takes something irreplaceable is worse
 /// than a full disk.
 pub fn leftovers(root: &Path) -> Vec<Leftover> {
+    leftovers_preserving(root, &crate::paths::findings_root())
+}
+
+fn leftovers_preserving(root: &Path, configured_findings: &Path) -> Vec<Leftover> {
+    let findings: Vec<PathBuf> = [root.join(crate::paths::DEFAULT_FINDINGS), configured_findings.to_path_buf()]
+        .into_iter()
+        .filter_map(|path| fs::canonicalize(path).ok())
+        .collect();
     let mut found = Vec::new();
 
     let mut consider = |relative: &str, because: &'static str| {
         let path = root.join(relative);
+        if touches_findings(&path, &findings) {
+            return;
+        }
         let bytes = size(&path);
         if bytes > 0 {
             found.push(Leftover { path, bytes, because });
@@ -95,7 +106,10 @@ pub fn leftovers(root: &Path) -> Vec<Leftover> {
     // A clone that died partway leaves a directory git will not use and cannot resume. Its
     // presence is the whole signal, since a healthy checkout has a HEAD.
     let checkout = root.join("tables").join("cod-name-db");
-    if checkout.exists() && !checkout.join(".git").join("HEAD").exists() {
+    if checkout.exists()
+        && !checkout.join(".git").join("HEAD").exists()
+        && !touches_findings(&checkout, &findings)
+    {
         let bytes = size(&checkout);
         if bytes > 0 {
             found.push(Leftover {
@@ -107,7 +121,7 @@ pub fn leftovers(root: &Path) -> Vec<Leftover> {
     }
 
     // Partial writes from a run that was killed mid-file.
-    for temporary in scan_for(root, &[".tmp", ".partial", ".part"]) {
+    for temporary in scan_for(root, &[".tmp", ".partial", ".part"], &findings) {
         let bytes = size(&temporary);
         found.push(Leftover {
             path: temporary,
@@ -120,15 +134,35 @@ pub fn leftovers(root: &Path) -> Vec<Leftover> {
     found
 }
 
+/// A result subtree and a directory containing it are both irreplaceable. Resolve paths so a
+/// configured relative path or a link cannot make the same findings look like a disposable tree.
+fn touches_findings(path: &Path, findings: &[PathBuf]) -> bool {
+    if findings.is_empty() {
+        return false;
+    }
+    let Ok(path) = fs::canonicalize(path) else {
+        return true;
+    };
+    findings
+        .iter()
+        .any(|root| path.starts_with(root) || root.starts_with(&path))
+}
+
 /// Files anywhere under a folder whose name ends in one of these, not following into the build
-/// directory, which has thousands of its own and is handled whole.
-fn scan_for(root: &Path, endings: &[&str]) -> Vec<PathBuf> {
+/// directory, which has thousands of its own and is handled whole, or into protected findings.
+fn scan_for(root: &Path, endings: &[&str], findings: &[PathBuf]) -> Vec<PathBuf> {
     let mut found = Vec::new();
-    walk(root, endings, &mut found, 0);
+    walk(root, endings, findings, &mut found, 0);
     found
 }
 
-fn walk(directory: &Path, endings: &[&str], found: &mut Vec<PathBuf>, depth: usize) {
+fn walk(
+    directory: &Path,
+    endings: &[&str],
+    findings: &[PathBuf],
+    found: &mut Vec<PathBuf>,
+    depth: usize,
+) {
     // Deep enough for the layout this uses, shallow enough that a stray symlink cannot spin.
     if depth > 6 {
         return;
@@ -143,14 +177,14 @@ fn walk(directory: &Path, endings: &[&str], found: &mut Vec<PathBuf>, depth: usi
         let name = entry.file_name().to_string_lossy().to_lowercase();
 
         if path.is_dir() {
-            if name == "target" || name == ".git" {
+            if name == "target" || name == ".git" || touches_findings(&path, findings) {
                 continue;
             }
-            walk(&path, endings, found, depth + 1);
+            walk(&path, endings, findings, found, depth + 1);
             continue;
         }
 
-        if endings.iter().any(|ending| name.ends_with(ending)) {
+        if endings.iter().any(|ending| name.ends_with(ending)) && !touches_findings(&path, findings) {
             found.push(path);
         }
     }
@@ -216,5 +250,53 @@ mod tests {
         assert!(listed.iter().any(|l| l.path.ends_with("xmodel.txt.partial")));
 
         let _ = fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn partial_findings_are_never_listed_as_removable() {
+        let dir = std::env::temp_dir().join(format!("disk_partial_findings_{}", std::process::id()));
+        let findings = dir.join("findings");
+        let run = findings.join("blackop6").join("run_test");
+        fs::create_dir_all(&run).unwrap();
+        for ending in ["tmp", "partial", "part"] {
+            fs::write(
+                run.join(format!("image.txt.{ending}")),
+                b"1a,confirmed_name\n",
+            )
+            .unwrap();
+        }
+        fs::write(dir.join("scratch.part"), b"disposable").unwrap();
+
+        let listed = leftovers(&dir);
+        let includes_findings = listed.iter().any(|item| item.path.starts_with(&findings));
+        let includes_scratch = listed.iter().any(|item| item.path == dir.join("scratch.part"));
+        fs::remove_dir_all(&dir).unwrap();
+
+        assert!(
+            !includes_findings,
+            "even partial findings must remain recoverable"
+        );
+        assert!(includes_scratch, "unprotected partial files remain removable");
+    }
+
+    #[test]
+    fn configured_findings_and_their_parent_are_never_removable() {
+        let dir = std::env::temp_dir().join(format!("disk_custom_findings_{}", std::process::id()));
+        let findings = dir.join("logs").join("recovered_names");
+        fs::create_dir_all(&findings).unwrap();
+        fs::write(findings.join("image.txt.part"), b"1a,confirmed_name\n").unwrap();
+        fs::create_dir_all(dir.join("target")).unwrap();
+        fs::write(dir.join("target").join("compiled"), b"disposable").unwrap();
+
+        let listed = leftovers_preserving(&dir, &findings);
+        let includes_logs = listed.iter().any(|item| item.path.starts_with(dir.join("logs")));
+        let includes_target = listed.iter().any(|item| item.path == dir.join("target"));
+        fs::remove_dir_all(&dir).unwrap();
+
+        assert!(
+            !includes_logs,
+            "removing the parent would also remove configured findings"
+        );
+        assert!(includes_target, "unprotected build output remains removable");
     }
 }

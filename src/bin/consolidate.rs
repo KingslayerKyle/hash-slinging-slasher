@@ -527,7 +527,8 @@ mod tests {
     /// A pool this project never named is filed under its index rather than dropped.
     #[test]
     fn an_unnamed_pool_is_named_for_its_index() {
-        assert_eq!(pool_name(184), "pool_184");
+        let unknown = POOLS.len();
+        assert_eq!(pool_name(unknown), format!("pool_{unknown}"));
         assert_eq!(pool_name(6), "xmodel");
     }
 
