@@ -28,8 +28,16 @@ use slasher::{paths, strip_stamp, tables};
 fn main() {
     let mut args = std::env::args().skip(1);
     let mut targets = Vec::new();
+    let mut explicit_game = None;
     while let Some(arg) = args.next() {
-        if arg == "--game" { args.next().expect("--game needs a tag"); continue; }
+        if arg == "--game" {
+            let Some(game) = args.next().filter(|game| GAME_TAGS.contains(&game.as_str())) else {
+                eprintln!("--game needs a supported game tag");
+                std::process::exit(2);
+            };
+            explicit_game = Some(game);
+            continue;
+        }
         targets.push(PathBuf::from(arg));
     }
 
@@ -44,9 +52,9 @@ fn main() {
         return;
     }
 
-    // Every snapshot in the repository. A name is being claimed of *a* game, not of a particular
-    // one, so it is enough that some game holds it -- the submission files do not say which, and
-    // a contributor should not have to know.
+    // Modern submission directories name their game. Require that exact capture; accepting a
+    // name held only by another game lets a stale or mislabelled client contaminate its tables.
+    // Untagged historical submissions retain the older any-capture behaviour.
     let snapshots = snapshots();
     if snapshots.is_empty() {
         eprintln!("no snapshots found in {}. Nothing can be verified.", paths::snapshots().display());
@@ -73,6 +81,10 @@ fn main() {
     let mut untyped = 0_usize;
 
     for file in &files {
+        let required_game = match submission_game(file, explicit_game.as_deref()) {
+            Ok(game) => game,
+            Err(why) => { bad.push(format!("{}: {why}", file.display())); continue; }
+        };
         let kind = file
             .file_stem()
             .and_then(|stem| stem.to_str())
@@ -120,17 +132,13 @@ fn main() {
                 Err(_) => { bad.push(format!("{where_}: {} is not a hash", claimed.trim())); continue; }
             };
             let id = said & slasher::ID_MASK;
-            let pinned = std::env::args().any(|arg| arg == "--game");
             let holders: Vec<&Snapshot> = snapshots.iter().filter(|snapshot| {
-                if pinned && snapshot.game() != slasher::config::game() { return false; }
-                let folded = slasher::games::output_key(snapshot.game(), &kind, name, true);
-                let raw_allowed = snapshot.game() == "BLKOPS04" && matches!(kind.as_str(), "sound_asset" | "sound");
-                (said == folded || (raw_allowed && said == slasher::games::output_key(snapshot.game(), &kind, name, false)))
-                    && snapshot.holds(id)
+                snapshot_accepts(snapshot, &kind, said, name, required_game.as_deref())
             }).collect();
 
             if holders.is_empty() {
-                bad.push(format!("{where_}: no snapshot holds {id:x} ({name})"));
+                let scope = required_game.as_deref().unwrap_or("any captured game");
+                bad.push(format!("{where_}: {scope} does not hold the claimed hash/name {id:x} ({name})"));
                 continue;
             }
 
@@ -187,6 +195,10 @@ fn main() {
                     }
 
                     if !checkable {
+                        if let Some(game) = required_game.as_deref() {
+                            bad.push(format!("{where_}: {kind} is not a mapped asset type in {game}"));
+                            continue;
+                        }
                         untyped += 1;
                     } else if !fits {
                         bad.push(format!(
@@ -251,6 +263,29 @@ fn main() {
     std::process::exit(1);
 }
 
+const GAME_TAGS: &[&str] = &["BLKOPS04", "BLKOPSCW", "MODWAR22", "YAMYAMOK", "BLACKOP6", "BLACKOP7", "MODWAR7"];
+
+fn submission_game(file: &Path, explicit: Option<&str>) -> Result<Option<String>, String> {
+    // The immediate batch directory is authoritative. Do not infer a game from an arbitrary
+    // ancestor such as a contributor's checkout name or from metadata the PR can misrepresent.
+    let batch = file.parent().and_then(Path::file_name).and_then(|name| name.to_str()).unwrap_or("");
+    let games: HashSet<_> = batch.split('_').filter(|part| GAME_TAGS.contains(part)).collect();
+    if games.len() > 1 { return Err("submission directory names more than one game".into()); }
+    let inferred = games.into_iter().next();
+    if let (Some(inferred), Some(explicit)) = (inferred, explicit) {
+        if inferred != explicit { return Err(format!("directory claims {inferred}, but --game selects {explicit}")); }
+    }
+    Ok(inferred.or(explicit).map(str::to_owned))
+}
+
+fn snapshot_accepts(snapshot: &Snapshot, kind: &str, claimed: u64, name: &str, required: Option<&str>) -> bool {
+    if required.is_some_and(|game| game != snapshot.game()) { return false; }
+    let folded = slasher::games::output_key(snapshot.game(), kind, name, true);
+    let raw_allowed = snapshot.game() == "BLKOPS04" && matches!(kind, "sound_asset" | "sound");
+    (claimed == folded || (raw_allowed && claimed == slasher::games::output_key(snapshot.game(), kind, name, false)))
+        && snapshot.holds(claimed & slasher::ID_MASK)
+}
+
 /// Every `.txt` under a path, which may be one file or a whole submission folder.
 fn submission_files(path: &Path) -> Vec<PathBuf> {
     if path.is_file() {
@@ -309,6 +344,45 @@ fn short(path: &Path) -> String {
 mod tests {
     use super::*;
     use slasher::id_of;
+
+    #[test]
+    fn tagged_submissions_cannot_be_checked_as_another_game() {
+        for game in GAME_TAGS {
+            let file = PathBuf::from(format!("submissions/contributor_{game}_20261012-123456/image.txt"));
+            assert_eq!(submission_game(&file, None).unwrap().as_deref(), Some(*game));
+            assert_eq!(submission_game(&file, Some(game)).unwrap().as_deref(), Some(*game));
+            let other = if *game == "BLACKOP6" { "BLACKOP7" } else { "BLACKOP6" };
+            assert!(submission_game(&file, Some(other)).is_err());
+        }
+        assert!(submission_game(Path::new("submissions/user_BLACKOP6_BLACKOP7_batch/image.txt"), None).is_err());
+        assert_eq!(submission_game(Path::new("checkout_BLACKOP6/submissions/old_batch/image.txt"), None).unwrap(), None);
+    }
+
+    #[test]
+    fn a_real_name_in_another_capture_cannot_validate_a_tagged_submission() {
+        let path = std::env::temp_dir().join(format!("validate_game_{}.ids", std::process::id()));
+        let name = "verified_name";
+        let claimed = slasher::games::output_key("BLKOPSCW", "image", name, true);
+        slasher::snapshot::write(&path, "BLKOPSCW", [(claimed, 8)].into_iter()).unwrap();
+        let snapshot = Snapshot::read(&path).unwrap();
+        fs::remove_file(&path).unwrap();
+        assert!(snapshot_accepts(&snapshot, "image", claimed, name, Some("BLKOPSCW")));
+        assert!(!snapshot_accepts(&snapshot, "image", claimed, name, Some("BLKOPS04")));
+        assert!(snapshot_accepts(&snapshot, "image", claimed, name, None));
+    }
+
+    #[test]
+    fn modern_alias_validation_requires_the_full_output_key() {
+        let path = std::env::temp_dir().join(format!("validate_alias_{}.ids", std::process::id()));
+        let name = r"Mixed\Path";
+        let full = slasher::games::output_key("BLACKOP6", "sound_alias", name, true);
+        assert!(full > slasher::ID_MASK);
+        slasher::snapshot::write(&path, "BLACKOP6", [(full & slasher::ID_MASK, 315)].into_iter()).unwrap();
+        let snapshot = Snapshot::read(&path).unwrap();
+        fs::remove_file(&path).unwrap();
+        assert!(snapshot_accepts(&snapshot, "sound_alias", full, &name, Some("BLACKOP6")));
+        assert!(!snapshot_accepts(&snapshot, "sound_alias", full & slasher::ID_MASK, &name, Some("BLACKOP6")));
+    }
 
     /// The asset type has to survive a stamp being appended, and `sound_asset` is the case that
     /// a naive split on the first underscore gets wrong.
