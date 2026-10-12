@@ -1,2 +1,1 @@
-6f24b63bec7cf9b4,mc/character_sp_ally_police_tx_pants_3_1
-7599cf3bef85426f,mc/character_sp_ally_police_tx_pants_2_1
+
