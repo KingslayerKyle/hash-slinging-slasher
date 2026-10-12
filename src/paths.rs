@@ -247,8 +247,14 @@ mod tests {
 
 /// Vocabulary measured from this game's capture, separate from the committed legacy corpus.
 pub fn vocabulary(list: &str) -> PathBuf {
-    let game = crate::config::game();
-    if crate::games::modern(&game) {
+    vocabulary_for(&crate::config::game(), list)
+}
+
+/// The same for a named game, so `start` can check the captures on disk that are *not* the one
+/// currently selected. Answering this twice -- once here, once in the search -- is how a check
+/// ends up green for a file the search then fails to read.
+pub fn vocabulary_for(game: &str, list: &str) -> PathBuf {
+    if crate::games::modern(game) {
         root().join("data/modern").join(game.to_lowercase()).join(std::path::Path::new(list).file_name().unwrap())
     } else { root().join(list) }
 }

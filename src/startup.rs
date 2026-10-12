@@ -247,6 +247,51 @@ pub fn run() -> bool {
         );
     }
 
+    // 4b. The per-game vocabulary. A modern title's beginnings and endings are measured from its
+    //     own capture into `data/modern/<game>/`, which `.gitignore` keeps out of the clone -- so a
+    //     fresh checkout has seven readable snapshots and only two games it can actually search.
+    //     Checked here because the search itself used to meet it as a panic: the contributor is at
+    //     the keyboard at midnight with `start` saying nothing will stop a grind, and a raw OS error
+    //     for a path no documentation mentioned. See `confirm_cw::load_vocabulary`.
+    let mut unmeasured: Vec<String> = Vec::new();
+    for game in &games {
+        if !crate::games::modern(game) {
+            continue;
+        }
+        let missing = [
+            paths::PREFIX_LIST,
+            paths::SUFFIX_LIST,
+            paths::SOUND_PREFIX_LIST,
+            paths::SOUND_SUFFIX_LIST,
+        ]
+        .iter()
+        .any(|list| !paths::vocabulary_for(game, list).exists());
+
+        if missing {
+            unmeasured.push(game.clone());
+        }
+    }
+
+    if unmeasured.is_empty() {
+        let measured = games.iter().filter(|game| crate::games::modern(game)).count();
+        println!("  [ok]      vocabulary measured from every modern capture ({measured})");
+    } else {
+        println!(
+            "  [warn]    {} modern capture(s) installed with no measured vocabulary: {}",
+            unmeasured.len(),
+            unmeasured.join(", ")
+        );
+        for game in &unmeasured {
+            println!("            python scripts/derive_modern_lists.py --game {game}");
+        }
+        warned.push(format!(
+            "{} modern game(s) cannot be searched until their vocabulary is measured -- each command \
+             above reads the capture and the published tables, needs no game launched, and takes well \
+             under a minute. Black Ops 4 and Cold War are unaffected.",
+            unmeasured.len()
+        ));
+    }
+
     // 5. The tables. A search that cannot read them reports every published name in the game as
     //    a discovery, which looks exactly like success.
     let mut table_count = 0;
