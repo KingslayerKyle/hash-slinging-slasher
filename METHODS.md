@@ -1,7 +1,7 @@
 # Methods
 
 `AGENTS.md` says how to run. This says **what to run, what it reaches that nothing else does, and
-how to tell when it is spent** â€” so that a fresh assistant with no memory of last night does not
+how to tell when it is spent** — so that a fresh assistant with no memory of last night does not
 run whichever method is listed first and re-sweep ground that is already bare.
 
 Read this before choosing. Then check what has already been done:
@@ -17,24 +17,24 @@ python scripts/coverage.py --five                where the unnamed assets actual
 
 | # | method | reaches | run it with | status |
 |---|---|---|---|---|
-| 1 | general search | anything as *beginning + stem + ending* | `confirm_cw` | **exhausted at the committed lists, and re-measuring them does not reopen it** â€” see below |
-| 2 | per-prefix continuations | families the global lists cannot express | `scripts/continuations.py` â†’ `confirm_list` | reaches 496 the general search misses, but only **5** were new to the community |
-| 3 | materials â†’ images | `image`, through the strongest measured cross-type seam | `images_from_materials` | productive after any material gain |
+| 1 | general search | anything as *beginning + stem + ending* | `confirm_cw` | **exhausted at the committed lists, and re-measuring them does not reopen it** — see below |
+| 2 | per-prefix continuations | families the global lists cannot express | `scripts/continuations.py` → `confirm_list` | reaches 496 the general search misses, but only **5** were new to the community |
+| 3 | materials → images | `image`, through the strongest measured cross-type seam | `images_from_materials` | productive after any material gain |
 | 4 | numbers in place | family members whose number sits mid-name | `confirm_variants` | productive; widen with `swaps` |
-| 5 | family gap filling | holes between confirmed family members | `scripts/families.py --gaps` â†’ `confirm_list` | thin (1 new in 22,594) â€” mostly covered by 4 |
-| 6 | cross-type spelling | one type's cores spelled as another's | `scripts/cross_type.py` â†’ `confirm_list` | **measure the seam first.** Only 2 of 12 pairs are worth it |
-| 7 | sound dotted tails | everything past the first dot | `confirm_sounds` | reopened â€” see the sound vocabulary note |
-| 8 | reading the tables and extending | whatever the community half-finished | any generator â†’ `confirm_list` | never exhausts; depends on noticing |
+| 5 | family gap filling | holes between confirmed family members | `scripts/families.py --gaps` → `confirm_list` | thin (1 new in 22,594) — mostly covered by 4 |
+| 6 | cross-type spelling | one type's cores spelled as another's | `scripts/cross_type.py` → `confirm_list` | **measure the seam first.** Only 2 of 12 pairs are worth it |
+| 7 | sound dotted tails | everything past the first dot | `confirm_sounds` | reopened — see the sound vocabulary note |
+| 8 | reading the tables and extending | whatever the community half-finished | any generator → `confirm_list` | never exhausts; depends on noticing |
 | 9 | cross-game techset pairs | `techset` / `technique_set` | `techset_probe`, `techset_pair` | BO4 productive; Cold War conclusively ruled out |
-| 10 | sibling token substitution | one **non-numeric** token in the *middle*, both sides kept | `scripts/contributed/slotswap_20260819-225818.py` â†’ `confirm_list` | productive: 2,789 names over four runs. Widen with `--cap`, `--context` |
-| 11 | family column cross product | names differing in **two or more** places at once | `scripts/contributed/templates_20260819-220821.py` â†’ `confirm_list` | 115 on top of a freshly-swept slotswap. Narrow ground, real ground |
-| 12 | sound language and encoding variants | the same sound in the other eleven languages | `scripts/sound_languages.py` â†’ `confirm_list` | Black Ops 4 only: 38. Cold War returns 0 â€” its language tables are already complete |
-| 13 | image channel completion | the other channels of an image we hold one channel of | `scripts/image_channels.py` â†’ `confirm_list` | 456 BO4, 59 CW. Compounds with method 3, which seeds from the other side |
-| 14 | token insertion and deletion | names one token **longer or shorter** than a known name | `scripts/token_edits.py` â†’ `confirm_list` | 700 BO4, 384 CW across all four types. The only method that changes a name's length |
-| 15 | affix sweep | affixes used **once** in the game, which no measured list can hold | `scripts/affix_sweep.py` â†’ `confirm_list` | **targeted only.** Blind: 1 name per 532 M candidates. Aimed at a family you suspect: the only thing that reaches it |
-| 16 | final byte solved backwards | any name one **final character** from a known one, at any of 256 bytes | `scripts/final_byte.py` â†’ `confirm_list` | **1 name per 18 candidates â€” the best measured here.** In `derive_closure`, so it re-runs free after any pass |
-| 17 | tails of length k | any name that is a known one with its **last k characters** replaced | `scripts/tails.py` â†’ `confirm_plan` | k=3: **1,151 in 21s a game.** Subsumes k=1 and 2; `--length 4` for more |
-| 18 | heads of length k | any name that is a known one with its **first k characters** replaced | `scripts/tails.py --head` â†’ `confirm_plan` | **692 on Cold War in one pass.** The mirror of 17, untried until 2026-08-22 |
+| 10 | sibling token substitution | one **non-numeric** token in the *middle*, both sides kept | `scripts/contributed/slotswap_20260819-225818.py` → `confirm_list` | productive: 2,789 names over four runs. Widen with `--cap`, `--context` |
+| 11 | family column cross product | names differing in **two or more** places at once | `scripts/contributed/templates_20260819-220821.py` → `confirm_list` | 115 on top of a freshly-swept slotswap. Narrow ground, real ground |
+| 12 | sound language and encoding variants | the same sound in the other eleven languages | `scripts/sound_languages.py` → `confirm_list` | Black Ops 4 only: 38. Cold War returns 0 — its language tables are already complete |
+| 13 | image channel completion | the other channels of an image we hold one channel of | `scripts/image_channels.py` → `confirm_list` | 456 BO4, 59 CW. Compounds with method 3, which seeds from the other side |
+| 14 | token insertion and deletion | names one token **longer or shorter** than a known name | `scripts/token_edits.py` → `confirm_list` | 700 BO4, 384 CW across all four types. The only method that changes a name's length |
+| 15 | affix sweep | affixes used **once** in the game, which no measured list can hold | `scripts/affix_sweep.py` → `confirm_list` | **targeted only.** Blind: 1 name per 532 M candidates. Aimed at a family you suspect: the only thing that reaches it |
+| 16 | final byte solved backwards | any name one **final character** from a known one, at any of 256 bytes | `scripts/final_byte.py` → `confirm_list` | **1 name per 18 candidates — the best measured here.** In `derive_closure`, so it re-runs free after any pass |
+| 17 | tails of length k | any name that is a known one with its **last k characters** replaced | `scripts/tails.py` → `confirm_plan` | k=3: **1,151 in 21s a game.** Subsumes k=1 and 2; `--length 4` for more |
+| 18 | heads of length k | any name that is a known one with its **first k characters** replaced | `scripts/tails.py --head` → `confirm_plan` | **692 on Cold War in one pass.** The mirror of 17, untried until 2026-08-22 |
 | 19 | uncarried directories | material directories the twelve-directory list omits | `scripts/contributed/mcdp_cores_20260823-023310.py` -> `confirm_plan` | **2,846 on Cold War in one pass.** `mcdp/` is Cold War's second largest material directory and nothing here could emit it |
 | 20 | black ops 3 sab sounds, black ops 4 spelling | Black Ops 4 `sound_asset`, the largest pool in either game | `scripts/contributed/bo3_sab_to_bo4_20260823-030223.py` -> `confirm_plan --no-fold` | Black Ops 3's SAB paths lower cased, language directory dropped, every Black Ops 4 tail put back on |
 | 21 | recovering a pool's seed corpus | any pool whose ids were injected rather than loaded | `scripts/contributed/sound_takes_20260823-030223.py` | **not a search -- it is what every sound search should have been seeded from.** Cold War `sound_asset`: `all_names/` holds 148, the tables hold 39,199 |
@@ -44,12 +44,12 @@ python scripts/coverage.py --five                where the unnamed assets actual
 | 25 | all-boundary cores | every method built as core x ending | `scripts/contributed/uncarried_endings_allboundary_20260823-134935.py` -> `confirm_plan` | **the most productive change measured on 2026-08-23.** Not a new method -- a fix to how every ending sweep builds its cores. Turned 2,065 names into 2,553 while using five times fewer endings, and 1,385 sound names into 1,746 in a single pass |
 | 30 | family grid completion | `sound_alias` above all | `scripts/unnamed_profile.py --grid`, `contrib/family_grid.py` -> `confirm_list` | **23 on Black Ops 4, and `derive_closure` turned those into 102 more.** Rank families by tails shared across more than one axis value, not by raw product: `i_` looks like 158 M cells and collapses to 694 K under that, because it is not a grid, it is every name beginning `i_`. **10 more on Cold War, 2026-09-14, from families beyond the top 20 -- see below** |
 | 31 | beginnings the ceiling drops | any type, through the beginnings `data/prefixes.txt` measures and then **discards for want of a slot** | `scripts/contributed/ceiling_dropped_begins_20260829-064955.py` -> `confirm_plan` | **9 on Cold War sound, and `derive_closure` turned them into 18 more; 1 more on the general half.** Distinct from 22/23: those are endings the list never measured, these are beginnings it *did* measure and the 700 ceiling threw away. Spent by nothing yet; re-run after any pass that grows the corpus, since the cut list changes |
-| â€” | localize unfolding | `localizeentry` | `confirm_localize` | **off, and refuses to run.** Worthless â€” see dead ends |
+| — | localize unfolding | `localizeentry` | `confirm_localize` | **off, and refuses to run.** Worthless — see dead ends |
 
 ### Every method that has actually been run
 
 The table above is hand-written, and it holds fifteen methods. **One hundred and four have been
-run.** The gap is not neglect â€” it is that keeping a registry by hand means keeping it by hand,
+run.** The gap is not neglect — it is that keeping a registry by hand means keeping it by hand,
 and nobody did, so the ninety methods missing from it were invisible to everybody who arrived
 afterwards and several were invented twice.
 
@@ -61,7 +61,7 @@ python scripts/methods_report.py --registry --write
 ```
 
 Read it **before inventing anything**. A method already here under a name you would not have
-guessed is the thing you are about to build again â€” `ways` counts how many labels one method has
+guessed is the thing you are about to build again — `ways` counts how many labels one method has
 already been run under, and the largest are five and six.
 
 The two halves answer different questions and neither replaces the other. Above: what a method
@@ -1722,24 +1722,24 @@ Per pool, the five types, unnamed / total:
 | `xanim` | 12,386 / 28,468 | 10,001 / 21,968 |
 | `sound_asset` (files) | 19,301 / 97,217 | **70,878 / 79,263** |
 | `sound_alias` (alias names) | **43,603 / 50,890** | 23,790 / 50,043 |
-| `sound` (banks â€” not wanted) | â€” | 99 / 100 |
+| `sound` (banks — not wanted) | — | 99 / 100 |
 
 **The two sound pools are not loader assets and had to be put there.** Sound files live in SAB
 files Cordycep never opens; alias names live inside the bank assets as hashes. Both were read out
-of the games â€” the SABs directly, the aliases through Amadeus, which knows those record layouts â€”
+of the games — the SABs directly, the aliases through Amadeus, which knows those record layouts —
 and injected. Cold War's aliases are only **14.3% named**, which makes them the least-worked
 ground in either game.
 
-They go to *different* tables upstream â€” files to `fnv1a_xsounds.csv`, aliases to
-`fnv1a_soundbanks_aliases.csv` â€” so the pools must not be confused. Aliases need no `--no-fold`;
+They go to *different* tables upstream — files to `fnv1a_xsounds.csv`, aliases to
+`fnv1a_soundbanks_aliases.csv` — so the pools must not be confused. Aliases need no `--no-fold`;
 their names carry no backslashes.
 
 Nobody has come close to finishing either, and the two games are not the same problem:
 
 - **Cold War** is where most of the work has been done, and its sound pool is worth 19,301 names.
 - **Black Ops 4 is now the bigger prize outright.** It is image and material rich and under 60%
-  named in both, and its `sound_asset` pool â€” injected from the SAB files, since the loader never
-  sees those sounds â€” is **70,878 unnamed of 79,263, only 10.6% named**. That is the single largest
+  named in both, and its `sound_asset` pool — injected from the SAB files, since the loader never
+  sees those sounds — is **70,878 unnamed of 79,263, only 10.6% named**. That is the single largest
   untouched pool in either game. Grind it with `--no-fold`.
 
 Both games use the same hash and the same normalisation, so one implementation serves both, and
@@ -1757,7 +1757,7 @@ in `config.toml` turns the alternation off and that choice is then respected.
 > **`xmodelmesh` in Cold War is 271,840 ids, not 827,935.** The larger figure came from a line in
 > `confirm_cw` that subtracted the wanted set from *every* unnamed id and attributed the whole
 > difference to the mesh pool. Most of that difference was pools the machine simply was not asked
-> to search â€” `streamkey` alone is 420,229. The line now reports the two separately.
+> to search — `streamkey` alone is 420,229. The line now reports the two separately.
 
 > **An earlier version called Black Ops 4 an animation goldmine, worthless for materials, citing
 > xanim 259,051 and material 100.** The pool counts had been labelled with Cold War's enum, and
@@ -1785,7 +1785,7 @@ it finds, which makes a first pass look spectacular and means almost nothing: th
 search returns on a fresh clone are the same 430 that five contributors have already submitted,
 and the honest figure for them is **zero**.
 
-Measured here, 2026-08-19 â€” four Cold War runs on a clone that started with no findings at all:
+Measured here, 2026-08-19 — four Cold War runs on a clone that started with no findings at all:
 
 | run | found | new to the community |
 |---|---|---|
@@ -1795,7 +1795,7 @@ Measured here, 2026-08-19 â€” four Cold War runs on a clone that started wi
 | general search, widened sound corpus | 102 | **24** |
 | **distinct across all four** | **1,029** | **30** |
 
-`submit` gets this right on its own â€” it drops everything already merged or sitting in an open pull
+`submit` gets this right on its own — it drops everything already merged or sitting in an open pull
 request, so those four runs send 30 names rather than 1,029. The trap is in the *reporting*: a run
 note saying `new: 496` means new to this machine, and quoting that as the method's yield overstates
 it by two orders of magnitude. That is exactly how the entry for method 2 above came to be wrong
@@ -1807,7 +1807,7 @@ And the same pass on Black Ops 4, where the gap is far starker:
 |---|---|---|
 | general search, Black Ops 4, 51 minutes | 15,747 | **16** |
 
-Fifty minutes of every core, and 15,731 of those names were already claimed â€” almost the whole of
+Fifty minutes of every core, and 15,731 of those names were already claimed — almost the whole of
 GoastcraftHD's earlier 13,858-name submission, re-derived from scratch.
 
 **Judge a method by what `submit` actually sent.** And note which way the surprise ran on Cold War:
@@ -1817,8 +1817,8 @@ the strongest by a factor of five.
 ### The searches now exclude claimed names too, which is why that pass could happen
 
 That Black Ops 4 run was possible because `wanted` was built from the **published tables alone**.
-The tables lag the community by days, so a name merged into `submissions/` here â€” or sitting in an
-open pull request â€” was still "unnamed" as far as cod-name-db was concerned, and the search kept
+The tables lag the community by days, so a name merged into `submissions/` here — or sitting in an
+open pull request — was still "unnamed" as far as cod-name-db was concerned, and the search kept
 hunting it.
 
 `loader::wanted_for_search` now also drops everything in `state/claimed.txt`, which `start` writes.
@@ -1837,8 +1837,8 @@ a run's own figures honest by construction rather than by the reader remembering
 
 ## Duplicates are now handled by the software
 
-The long instruction that used to live here â€” check `submissions/`, remove what somebody else
-already sent â€” was correct and did not work, because a contributor cannot see a pull request that
+The long instruction that used to live here — check `submissions/`, remove what somebody else
+already sent — was correct and did not work, because a contributor cannot see a pull request that
 is still open. It is now enforced instead of requested:
 
 - `start` reads every open pull request and every merged submission, and writes what is claimed.
@@ -1852,10 +1852,10 @@ Independent rediscovery is still not a finding. You no longer have to remember t
 
 ## How to read a method
 
-- **Builds from** â€” what raw material it recombines. Never thin air.
-- **Reaches** â€” the slice of unnamed ids only this gets at. The reason to run it.
-- **Run it with** â€” the command.
-- **Spent when** â€” the signal it has stopped paying.
+- **Builds from** — what raw material it recombines. Never thin air.
+- **Reaches** — the slice of unnamed ids only this gets at. The reason to run it.
+- **Run it with** — the command.
+- **Spent when** — the signal it has stopped paying.
 
 ---
 
@@ -1868,17 +1868,17 @@ other game.
 **Reaches** anything expressible as *beginning + stem + ending*. The workhorse and the widest net.
 
 **Run it with** `confirm_cw` for models, materials, images and anims, and `confirm_cw --sounds`
-for sound files and aliases â€” two passes, not one. Add `--no-fold` to a Black Ops 4 sound pass.
+for sound files and aliases — two passes, not one. Add `--no-fold` to a Black Ops 4 sound pass.
 
 They are separate because a sound ending tried against a model id can only ever be a coincidence,
 never a match: the vocabularies cannot reach each other's targets. Sharing one run made both
-halves worse, and sharing one capped list made them worse again â€” sound displaced endings covering
+halves worse, and sharing one capped list made them worse again — sound displaced endings covering
 115,606 published names while contributing endings the general pass could never use. Apart, each
 gets its own measured pair (`data/sound.*.txt`), its own full ceiling, and hunts only the ids it
 can reach: 121,549 and 94,668 on Black Ops 4 rather than 216,217 mixed.
 
 **Check the ceiling before blaming the method.** `python scripts/reach.py` reports what share of
-*known* names each list pair could rebuild â€” if it cannot express a name we already have, it will
+*known* names each list pair could rebuild — if it cannot express a name we already have, it will
 never find the unnamed ones beside it. That measurement found Black Ops 4's sound names 19.2%
 reachable: deep paths were contributing one hyper-specific beginning each, `fly/footsteps/
 stakeout_overrides/asphalt_walk/` heading 158 names, and never `fly/`, which heads thousands.
@@ -1893,13 +1893,13 @@ to run in minutes and worth repeating after a long pass to pick up siblings.
 12,395,196 distinct pieces   41.72 T equivalent candidates   1058 s   430 names
 ```
 
-**Spent â€” and this is the important part.** That 430 is the same 430 for everybody. Five
+**Spent — and this is the important part.** That 430 is the same 430 for everybody. Five
 contributors have submitted it, **byte for byte identical in every file**, because the method is
 deterministic and a fresh clone gives everyone identical inputs. Two more submitted the same 372
 from method 3 the same way. The fingerprint now stops the sixth.
 
 **"Spent" here is not temporary, and re-measuring the lists does not undo it.** This paragraph
-used to say the opposite â€” one command, new lists, new fingerprint, a genuinely different search â€”
+used to say the opposite — one command, new lists, new fingerprint, a genuinely different search —
 and it was measured false: three consecutive folds returned 55 names, then 294, then 51, the last
 on a corpus two and a half times larger. A new fingerprint is a new *name* for the search, not new
 ground for it, and the guard that reads the fingerprint cannot tell the difference. Between them,
@@ -1921,7 +1921,7 @@ runs backwards. Read the comments in `src/search.rs` before touching any of it.
 ## 2. Per-prefix continuations
 
 **Builds from** every prefix that occurs in a known name, and the tokens measured to follow *that
-prefix* â€” not the tokens that are common overall.
+prefix* — not the tokens that are common overall.
 
 **Reaches** the families the global lists structurally cannot express. The general search offers
 `mc/` and `i_c_t8_mp_spe_` the same 700 beginnings and 4,800 endings, when what actually follows
@@ -1942,10 +1942,10 @@ python scripts/continuations.py --depth 2 --cap 24 \n    | confirm_list - --labe
 It reaches ground the general search's committed lists do not: 496 names in 51 seconds against 430
 from an 18-minute exhaustive pass. **But only 5 of those 496 were new to the community.** The other
 491 had already been found by other contributors, mostly through `images_from_materials` and
-`confirm_variants`. So this reaches *differently*, not *further* â€” worth running because it gets at
+`confirm_variants`. So this reaches *differently*, not *further* — worth running because it gets at
 families the global lists cannot express, not because it out-yields what already exists.
 
-The generator was the bottleneck, not the search â€” `confirm_list` sustains 64.3 M candidates/s from
+The generator was the bottleneck, not the search — `confirm_list` sustains 64.3 M candidates/s from
 a file and saw 0.8 M/s through a Python pipe.
 
 Directory prefixes are given the entire vocabulary rather than a capped list, because there are
@@ -1960,13 +1960,13 @@ Then raise `--depth` or `--cap`, which is a different search again.
 **Builds from** confirmed and published material names.
 
 **Reaches** `image`, through the strongest cross-type relationship there is. **Measured**:
-material and image share **15,770 cores â€” 11.7% of material's, 12.8% of image's**, far above any
+material and image share **15,770 cores — 11.7% of material's, 12.8% of image's**, far above any
 other pair. Strip `mtl_`, try `i_` plus every semantic suffix (`_c _n _g _o _m _s _r`, which are
 image's seven commonest trailing tokens by a distance), and also try it with no prefix at all.
 
 **Run it with** `images_from_materials`.
 
-**Spent when** the confirmed material set has not grown. Purely derivative â€” it yields exactly
+**Spent when** the confirmed material set has not grown. Purely derivative — it yields exactly
 nothing on unchanged input, so run it *after* a general pass, never before.
 
 > **RUN TO COMPLETION, 2026-08-21. The measurement the note below asked for now exists.**
@@ -1987,7 +1987,7 @@ nothing on unchanged input, so run it *after* a general pass, never before.
 > and now mark them `.incomplete` until the run ends; this does neither.
 
 Material names are paths, and there are **twelve** directories: `mc/ wc/ clt/ splm/ vd/ mcs/ ei/
-cltp/ vdd/ el/ mcp/ ec/`. Verified against the tables â€” `mc/` heads 496,666 names and `ec/` heads
+cltp/ vdd/ el/ mcp/ ec/`. Verified against the tables — `mc/` heads 496,666 names and `ec/` heads
 25. Popularity ranking keeps the first two and discards the naming of everything under the other
 ten. Carry all twelve.
 
@@ -2002,31 +2002,31 @@ no prefix or suffix rule can vary.
 **Run it with** `confirm_variants`, or `confirm_variants swaps` to substitute whole tokens.
 
 **This is the method that fits `xanim`.** Published xanim names run to ten and more segments, so
-an ends-only rule under-reaches them badly â€” the middle of a ten-segment name only exists as a
+an ends-only rule under-reaches them badly — the middle of a ten-segment name only exists as a
 stem if a nearly identical sibling was already cut. The tables hold 50,427 whole xanim names, and
 walking their numbered fields in place is exactly what this does.
 
 **Spent when** the ranges around known members have been walked past their natural end. Widen with
 `swaps` before concluding it is finished.
 
-### `swaps`' own token-pool size is a second, independent widening knob â€” measured 2026-09-10
+### `swaps`' own token-pool size is a second, independent widening knob — measured 2026-09-10
 
 `confirm_variants swaps` takes an optional trailing number: the count of most-used tokens it
 substitutes at every position (default 1,024, per `COMMON_TOKENS` in `src/bin/confirm_variants.rs`).
 This is completely separate from the general search's beginning/ending lists, and had never been
 pushed past the default on this machine. Measured on Cold War, against the corpus as it stood at
 each step (so later runs benefit from earlier ones' seeds too, and the counts are not directly
-comparable for that reason alone â€” but the trend held anyway):
+comparable for that reason alone — but the trend held anyway):
 
 | token pool | candidates | new names |
 |---|---|---|
 | 1,024 (default) | not recorded exactly, order 160M | 5 |
 | 4,000 | 172,336,688 | 6 |
-| 4,000 (re-run later same session, grown corpus) | 121,811,572,000Â¹ | 24 |
+| 4,000 (re-run later same session, grown corpus) | 121,811,572,000¹ | 24 |
 | 8,000 | 243,624,552,000 | 122 |
 | 16,000 | 487,268,192,000 | 128 |
 
-Â¹ This jump in candidate count between the two 4,000-token rows is not the token pool changing --
+¹ This jump in candidate count between the two 4,000-token rows is not the token pool changing --
 it is the corpus's own vocabulary growing between runs (each `swaps` invocation re-measures its
 common-token list and its seed names from whatever is confirmed *at that moment*, so a run late in
 a productive session sees a materially larger `names to vary` list than one early in it). Read the
@@ -2144,7 +2144,7 @@ no popularity-ranked ending list can match.
 **Run it with** `python scripts/families.py --gaps | confirm_list - --label "family gap filling"`.
 
 **Measured**: 22,594 candidates, under a second, **1 new name**. Thin, because method 4 already
-walks numbered families thoroughly. Worth running anyway â€” it costs a second and it works across
+walks numbered families thoroughly. Worth running anyway — it costs a second and it works across
 contributors, which `confirm_variants` does not. Do not spend a night on it.
 
 `python scripts/families.py` with no arguments is the more valuable half: it reports the shape of
@@ -2152,22 +2152,22 @@ what has been found, which is what suggests the next generator.
 
 ## 6. Cross-type spelling
 
-**Builds from** the *cores* of one asset type's names â€” the name with its own type's decorations
-stripped â€” spelled with another type's decorations.
+**Builds from** the *cores* of one asset type's names — the name with its own type's decorations
+stripped — spelled with another type's decorations.
 
 **Reaches** assets whose sibling in another type is already named. **Measure the seam first**, with
 `python scripts/cross_type.py --measure`. Measured shared cores, 2026-08-19:
 
-| from â†’ to | shared cores | share of source |
+| from → to | shared cores | share of source |
 |---|---|---|
-| material â†” image | 15,770 | 11.7% / 12.8% |
-| xmodel â†” material | 3,318 | 3.5% / 2.5% |
-| xanim â†’ xmodel | 478 | 3.7% |
-| xmodel â†’ image | 195 | 0.2% |
-| material â†” xanim | 22 | 0.0% |
-| image â†” xanim | 13 | 0.0% |
+| material ↔ image | 15,770 | 11.7% / 12.8% |
+| xmodel ↔ material | 3,318 | 3.5% / 2.5% |
+| xanim → xmodel | 478 | 3.7% |
+| xmodel → image | 195 | 0.2% |
+| material ↔ xanim | 22 | 0.0% |
+| image ↔ xanim | 13 | 0.0% |
 
-**Two pairs are worth mining and the rest are not.** A modelâ†’image method or anything involving
+**Two pairs are worth mining and the rest are not.** A model→image method or anything involving
 `xanim` and a non-model type would be a night thrown away, and that is now a measurement rather
 than an opinion.
 
@@ -2195,11 +2195,11 @@ scripts/coverage.py` is how to tell those two cases apart, and it is what to run
 anything.
 
 **Reopened.** The tail vocabulary was measured from a table holding 57,593 names when 825,316 were
-available, and the two use *different* tail conventions â€” `.ln75.pc.all.snd` against
+available, and the two use *different* tail conventions — `.ln75.pc.all.snd` against
 `.rn75.pc.<lang>.snd`. Cold War's `sound_asset` has 19,301 unnamed.
 
 **Black Ops 4's sounds were invisible and now are not.** Its `sound` pool holds a hundred assets
-because that pool is *banks* â€” the one entry of it that resolves is `mp_embassy.all` â€” while the
+because that pool is *banks* — the one entry of it that resolves is `mp_embassy.all` — while the
 individual sounds live in SAB files the loader never opens. Confirmed against a live Cordycep
 session with a full 1,023,902-asset load, matching the committed snapshot exactly.
 
@@ -2211,11 +2211,11 @@ either game. Three things about them are not optional:
 - **Their names keep their backslashes**, and the id is the hash of exactly that. Grind them with
   `--no-fold`. Measured: 8,385 of 8,385 known names reproduce unfolded, **0** folded. Without the
   flag the search matches nothing and looks completely healthy doing it.
-- **The dotted-tail method still applies** â€” these names end `.ln100.pc.snd` and the like.
+- **The dotted-tail method still applies** — these names end `.ln100.pc.snd` and the like.
 
 ## 8. Reading the tables and extending them
 
-**Builds from** what the tables already resolve â€” read for shape, then generate the neighbours that
+**Builds from** what the tables already resolve — read for shape, then generate the neighbours that
 are missing.
 
 **Reaches** whatever the community half-finished. If a table holds `..._01` through `..._07` and
@@ -2226,7 +2226,7 @@ somebody *looking* and noticing.
 That is now a script rather than a Rust binary, which is the whole reason this method is worth
 listing.
 
-**Spent when** â€” it does not, in the way the others do. It depends on noticing, and the tables grow.
+**Spent when** — it does not, in the way the others do. It depends on noticing, and the tables grow.
 
 **One trap, already paid for.** Feeding the tables in as candidate *input* is a closed loop: every
 name in a table is resolved by definition, so it cannot be a find. It was 87% of `consolidate`'s
@@ -2241,7 +2241,7 @@ exported from two games pairs a plain name with the newer game's hash. Three suc
 found transformation into a proof.
 
 **Reaches** the techset pools, which nothing else touches. A techset name is `<base>#<8 hex>`, and
-the tag is a 32-bit compile stamp that cannot be predicted â€” but 32 bits is small enough to
+the tag is a 32-bit compile stamp that cannot be predicted — but 32 bits is small enough to
 **sweep whole**: with per-digit hash-state reuse, all 4.29 billion tags for one base cost about two
 seconds. A base is therefore *proved or conclusively ruled out*, never merely unswept.
 
@@ -2254,14 +2254,14 @@ Established 2026-08-18/19:
   with BO3's base vocabulary. Material-class sets carry `mc/` (`mc/lit_backlit#f4b74e85`);
   screen/2d/compute sets are bare (`zombie_blood#a60c435b`). Tags are per-permutation and
   `#a60c435b` is commonest. 1,322 names fell in the first 53-minute sweep.
-- **BO4 simplified BO3's stems** â€” `lit_weapon` â†’ `lit`, `lit_emissive_scroll` â†’ `lit_emissive` â€”
+- **BO4 simplified BO3's stems** — `lit_weapon` → `lit`, `lit_emissive_scroll` → `lit_emissive` —
   so trailing-qualifier truncation of known stems is a real seed transform.
 - **Cold War** `techset` (7,096 unnamed): *not* reachable from BO3 stems under any 32-bit tag.
-  Full sweeps of every stem Ã— every tag came back empty, which is a conclusive no for that shape.
+  Full sweeps of every stem × every tag came back empty, which is a conclusive no for that shape.
 
 **Spent when** the base vocabulary stops growing. The tag side is never the problem.
 
-> These names currently have **nowhere upstream to land** â€” cod-name-db has no techset table.
+> These names currently have **nowhere upstream to land** — cod-name-db has no techset table.
 > Proposing one is worth more than another night of grinding. See `docs/HASHES.md`.
 
 ---
@@ -2331,7 +2331,7 @@ python scripts/contributed/templates_20260819-220821.py | bin\windows\confirm_li
     --label "family column cross product" --script scripts/contributed/templates_20260819-220821.py
 ```
 
-Returned **115** on Black Ops 4 (`20260819-220550`) â€” immediately after method 10 had swept the
+Returned **115** on Black Ops 4 (`20260819-220550`) — immediately after method 10 had swept the
 same corpus, so that number is what multi-axis reached *on top of* single-axis, which is the only
 honest way to read it.
 
@@ -2346,7 +2346,7 @@ volume0_state0_gi_xyz_texture_mip2_f788ac97_3        187,200 cells
 
 where `f788ac97` is a **content hash**. Treated as an axis it has 32 attested values and looks
 perfectly healthy, and the grid is densely populated, so a fill-ratio check passes it too. The
-result would be 187,200 candidates spent guessing hash tails â€” unpredictable by construction. That
+result would be 187,200 candidates spent guessing hash tails — unpredictable by construction. That
 is `streamkey` in a new costume, and an upper bound on column alphabet is the only thing that
 stops it.
 
@@ -2360,7 +2360,7 @@ not a prefix are never compared. Re-run with a different `--key` before calling 
 **Builds from** the fact that every shipped language is a separate asset with its own id, and the
 name differs by two characters. Measured across the twelve per-language tables: `en` 123,368,
 `ru` 121,209, `es` 121,207, `fj` 121,155, `fr` 121,115, `ea` 121,097, `bp` 121,083, `ge` 121,082,
-`ko` 121,032, `po` 121,011, `it` 120,930, `ms` 112,060. Those being so close is the argument â€” the
+`ko` 121,032, `po` 121,011, `it` 120,930, `ms` 112,060. Those being so close is the argument — the
 sets are near-parallel, so a name in one is evidence about eleven ids.
 
 **Reaches** `sound_asset`, and it is the only method that gets there without rebuilding the whole
@@ -2368,11 +2368,11 @@ path from the lists.
 
 **Run it with** `python scripts/sound_languages.py | confirm_list - --no-fold` (Black Ops 4).
 
-Measured: **38 on Black Ops 4, 0 on Cold War.** The zero is the useful half â€” Cold War's twelve
+Measured: **38 on Black Ops 4, 0 on Cold War.** The zero is the useful half — Cold War's twelve
 language tables are already complete, so this is spent there and will stay spent. Black Ops 4's
 SAB names have **no language segment at all** (`fly\emotes	eddybear_in.ln100.pc.snd` is stem,
 encoding, platform), and a first version that required one silently skipped every Black Ops 4
-name â€” that is, it skipped the entire pool it was written for while looking like it ran.
+name — that is, it skipped the entire pool it was written for while looking like it ran.
 
 **Spent by** the language tables being complete. Re-run only after a pass that confirms new sound
 files.
@@ -2411,8 +2411,8 @@ p9_rus_apartment_tower_sign_01
 p9_rus_apartment_stone_tower_sign_01      an insertion -- reachable by nothing else
 ```
 
-That shape is common here because artists qualify a name as an asset set grows â€” a `wall` becomes
-a `stone_wall` when a second material appears â€” and both spellings survive in the build.
+That shape is common here because artists qualify a name as an asset set grows — a `wall` becomes
+a `stone_wall` when a second material appears — and both spellings survive in the build.
 
 **Reaches** all four of model, material, image and anim.
 
@@ -2423,7 +2423,7 @@ Measured, one pass each: Black Ops 4 **model 139, material 423, image 72, anim 6
 
 Deletions need no vocabulary and are the higher-precision half (`--no-insert`). Insertions are
 seeded per position *and per leading token*, so a name beginning `p9_` is offered what follows
-`p9_` elsewhere rather than the type's globally common words â€” a global vocabulary at every
+`p9_` elsewhere rather than the type's globally common words — a global vocabulary at every
 position produces more candidates than the general search and reaches less.
 
 **Spent by** `--cap` and the corpus. Deletions exhaust in one pass against a fixed corpus;
@@ -2437,14 +2437,14 @@ insertions reopen whenever either changes.
 measured before it can be offered.
 
 **Builds from** nothing but the alphabet. For each stem it emits every combination of a short
-leading and trailing token â€” `a_stem_a`, `a_stem_b`, â€¦ `aa_stem_a`, â€¦ `aba_stem_zz` â€” over the
+leading and trailing token — `a_stem_a`, `a_stem_b`, … `aa_stem_a`, … `aba_stem_zz` — over the
 36 characters real affixes actually use.
 
 **Reaches** a permanent blind spot in every other method. Everything else recombines *measured*
 vocabulary, and a frequency-ranked list of 4,800 endings structurally **cannot hold a token used
 once**. Measured across the four general tables there are 341 distinct leading tokens of one to
 three characters and 2,044 trailing ones; the common ones are carried by every list, and the long
-tail â€” which is most of the distinct values â€” is carried by none.
+tail — which is most of the distinct values — is carried by none.
 
 Brute force is the *right* tool here, and only here, because the space is genuinely small: 36
 characters over four positions is 1.7 million, a rounding error beside the 2^63 that makes word
@@ -2458,7 +2458,7 @@ python scripts/affix_sweep.py --type model --stems 200 | bin\windows\confirm_lis
     --label "affix sweep" --script scripts/affix_sweep.py
 ```
 
-### Targeted, not scheduled â€” and the measurement says so plainly
+### Targeted, not scheduled — and the measurement says so plainly
 
 A blind run on Black Ops 4 models: **62 stems, 532,497,168 candidates, 1 name.**
 
@@ -2467,23 +2467,23 @@ A blind run on Black Ops 4 models: **62 stems, 532,497,168 candidates, 1 name.**
 | `token_edits` | 1 per 94,000 |
 | **affix sweep, blind** | **1 per 532,000,000** |
 
-That is roughly **5,600Ã— less efficient per candidate**, and it is the whole argument. An hour buys
-about 500 stems against a corpus of 250,000 â€” 0.2% coverage. As a rotation item it is poor value
+That is roughly **5,600× less efficient per candidate**, and it is the whole argument. An hour buys
+about 500 stems against a corpus of 250,000 — 0.2% coverage. As a rotation item it is poor value
 next to almost anything else here.
 
 **Its value is entirely in choosing the stems.** Use it when you have a reason to believe a
-particular family holds more â€” a set a pass has just cracked open, a map whose assets are half
-recovered â€” and sweep *those* stems exhaustively. It answers "is there more here?" completely,
+particular family holds more — a set a pass has just cracked open, a map whose assets are half
+recovered — and sweep *those* stems exhaustively. It answers "is there more here?" completely,
 which no other method can, rather than "what is there?" cheaply, which several do better.
 
 The one it found blind shows the shape it reaches:
-`c_t8_zmb_dlc3_mannequin_female_static_standpose_body_color_01` â€” a common `c_` prefix *and* a
+`c_t8_zmb_dlc3_mannequin_female_static_standpose_body_color_01` — a common `c_` prefix *and* a
 common `_01` suffix, on the same stem, which needs both ends varying at once on a stem the general
 search never cut as a piece.
 
 **A negative result here is worth recording.** A targeted sweep is exhaustive over its stems, so if
 a family you expected to be productive returns nothing, that is a strong measured statement about
-that family rather than a shrug â€” and it is expensive to rediscover.
+that family rather than a shrug — and it is expensive to rediscover.
 
 ### Sized before it runs, and it refuses to exceed it
 
@@ -2494,12 +2494,12 @@ longer sweep, because one that takes a fortnight is not a method, it is a mistak
 for a fortnight.
 
 **Do not reach for this when a pass returns little.** Low findings usually mean the *lists* need
-re-measuring, not that brute force is needed â€” re-measuring took sound-file ending reach from 27.8%
+re-measuring, not that brute force is needed — re-measuring took sound-file ending reach from 27.8%
 to 96.7% in one command. Running a sweep when a starved list is the real problem burns an hour and
 finds nothing.
 
 **Separators are gated per type, and that is measured.** `/` appears 98,384 times in short material
-affixes but always closing a directory code (`mc/`, `wc/`), never scattered through one â€” so it is
+affixes but always closing a directory code (`mc/`, `wc/`), never scattered through one — so it is
 applied as a separator rather than swept as a character, which is both correct and 1.12x cheaper at
 L=4. `.` is swept nowhere: sound dots live in long fixed tails the endings list already reaches.
 
@@ -2508,7 +2508,7 @@ returns exactly what it returned before; re-running over new ones is a new searc
 
 ---
 
-## 17. The build itself, read off this disk â€” 2026-08-24
+## 17. The build itself, read off this disk — 2026-08-24
 
 **Every dead end recorded against Black Ops 4 `sound_asset` ends with the same sentence:**
 *"anything reaching this pool has to come from outside the naming -- the SAB files, a build, or
@@ -2534,19 +2534,19 @@ structure in the first place. Do not spend a session extracting SABs for names; 
 
 | | |
 |---|---|
-| `LPC/*.ff` â€” twelve loose fast files, 10.4 MB | **2,135 name-shaped strings â†’ 7 new names, 1 per 305** |
-| `Data/data/data.NNN` â€” 148 CASC archives, 141 GB | first 0.5 GB of one archive: 3,637 strings â†’ **10 new names, 1 per 364** |
+| `LPC/*.ff` — twelve loose fast files, 10.4 MB | **2,135 name-shaped strings → 7 new names, 1 per 305** |
+| `Data/data/data.NNN` — 148 CASC archives, 141 GB | first 0.5 GB of one archive: 3,637 strings → **10 new names, 1 per 364** |
 
 **1 per 305 is the second-best rate ever measured here**, behind `final_byte` at 1 per 18 and
-ahead of image siblings at 1 per 394 â€” and unlike either it is not bounded by the corpus, because
+ahead of image siblings at 1 per 394 — and unlike either it is not bounded by the corpus, because
 its vocabulary is not drawn from the corpus at all. `outfit_northern_lights_legendary3_firebreak`
 and `loot_ui_icon_stickers_safari_animals_4_large` are not recombinations of anything this project
-holds. That is the whole point of Â§1473: *what finds names is a method whose vocabulary comes from
+holds. That is the whole point of §1473: *what finds names is a method whose vocabulary comes from
 outside the region the named corpus already covers.*
 
 `contrib/harvest_bo4.py` does it, and three details are the method:
 
-- **Oodle.** Black Ops 4 fast files are the same block chain Cold War uses â€” four little-endian
+- **Oodle.** Black Ops 4 fast files are the same block chain Cold War uses — four little-endian
   words per block, the last of which is the block's own offset, which is what proves the chain was
   found rather than guessed. The game ships its own decompressor (`oo2core_6_win64.dll`), and Cold
   War's `oo2core_8` reads Black Ops 4's streams too.
@@ -2565,7 +2565,7 @@ outside the region the named corpus already covers.*
 **Nothing decompressed is written down.** A chunk is decompressed into memory, scanned, and
 dropped; the only output is the name list.
 
-### What the same harvester says about the rest of the build â€” 2026-08-24
+### What the same harvester says about the rest of the build — 2026-08-24
 
 Measured while the archive sweep ran, so nobody repeats any of it:
 
@@ -2573,13 +2573,13 @@ Measured while the archive sweep ran, so nobody repeats any of it:
 |---|---|
 | **Cold War's archives** | 105 archives, 100 GB, same layout, same reader: **5,795 strings, 0 matched.** Cold War fast files are AES-256-CTR encrypted (already recorded in the dead ends), so the frames reassemble and hold nothing readable. Black Ops 4's are not. **The harvestable game is Black Ops 4.** |
 | `BlackOps4.exe`, the launcher, `Data/ecache`, `Data/viper`, `Data/indices`, `Data/config` | 117 MB, 5,493 strings, **0 matched.** Consistent with the loader-string-pool dead end: an asset is reachable from the binary only if the engine addresses it by name, and these are addressed by hash. |
-| `KAPI` frames â€” Black Ops 4's xpak containers, 135 in one archive | Cold War keeps its real asset names in an xpak's plain-text metadata section, so these looked like the richest thing in the build. **They are not: 3,763 strings and every one is noise** (`b57/.mk`, `sgxd/cp`). Black Ops 4's xpak has no plaintext metadata section. The 60% printable gate was right to drop them. |
-| Frames dropped for size | 276 of 2,101, all of them entries over 256 MB â€” payload, not zones. The one sampled that did reassemble (953 chunks, 244 MB) yielded nothing. |
+| `KAPI` frames — Black Ops 4's xpak containers, 135 in one archive | Cold War keeps its real asset names in an xpak's plain-text metadata section, so these looked like the richest thing in the build. **They are not: 3,763 strings and every one is noise** (`b57/.mk`, `sgxd/cp`). Black Ops 4's xpak has no plaintext metadata section. The 60% printable gate was right to drop them. |
+| Frames dropped for size | 276 of 2,101, all of them entries over 256 MB — payload, not zones. The one sampled that did reassemble (953 chunks, 244 MB) yielded nothing. |
 | Coverage | **2,101 frames across 141 GB, 1,825 reassembled (87%), 532 fast files walked.** One frame per 67 MB: these archives hold whole zones as single entries, so this is close to complete rather than a sample. |
 
 **And where the names land is the useful part.** Of the first 92, **56 were `sound_alias`** against 18 image and 18 material. Black Ops 4 sound aliases are written in plaintext inside the zones, which is precisely the pool three recombination shapes and 379 billion candidates could not touch. No backslash-bearing sound *file* paths appear anywhere in the build, so `sound_asset` is still not reached this way.
 
-### The other builds on the disk, and what each one is worth â€” 2026-08-24
+### The other builds on the disk, and what each one is worth — 2026-08-24
 
 Once the Black Ops 4 reader worked, the question stopped being *"is a build readable"* and became
 *"which builds are on this machine, and what does each cost to read"*. Steam and Battle.net between
@@ -2588,7 +2588,7 @@ them hold ten Call of Duty installs here. Measured, all against both games' unna
 | source | what it is | names it printed | verbatim | under `data/prefixes.txt` x `data/suffixes.txt` |
 |---|---|---|---|---|
 | **Black Ops 4 zones** | Oodle block chains inside CASC BLTE frames, 141 GB | 273,138 | **145 matched, 92 new** | **6 new** |
-| **Black Ops 3 mod tools** | ~~the source assets Steam ships beside the game~~ | ~~867,766~~ | 11 + 11 | 10 + 9 | **retired â€” the tree is not the shipped game. See below.** |
+| **Black Ops 3 mod tools** | ~~the source assets Steam ships beside the game~~ | ~~867,766~~ | 11 + 11 | 10 + 9 | **retired — the tree is not the shipped game. See below.** |
 | **`.iwd` archives** | 208 ZIP files across Black Ops, World at War, Modern Warfare 1-3 and Remastered | 528,740 | **0 both games** | -- |
 | **Cold War zones** | same CASC layout, fast files AES-256-CTR | 5,795 | 0 | -- |
 | **`BlackOps4.exe` and the aux data dirs** | 117 MB raw | 5,493 | 0 | -- |
@@ -2607,7 +2607,7 @@ minutes of work, and **zero**, which is the answer METHODS already predicts for 
 older-title names and is worth having measured on a corpus this size.
 `contrib/harvest_iwd.py`.
 
-### Every install on this machine, and why the unread ones are unread â€” 2026-08-29
+### Every install on this machine, and why the unread ones are unread — 2026-08-29
 
 The table above measured five sources and left the rest looking merely unvisited. They are not
 unvisited. **They are encrypted**, and that is a different problem with a different answer, so
@@ -2639,22 +2639,22 @@ stream at any offset in its header, so they are not merely compressed differentl
 Every unread container on this disk is behind a cipher. The cheap external ground is finished; what
 is left is a key, and Black Ops II is the one with a published key schedule to go and find.
 
-### Do not walk a mod tools install. Only `zone/` is the shipped game â€” 2026-08-24
+### Do not walk a mod tools install. Only `zone/` is the shipped game — 2026-08-24
 
 The first version of this walked the whole Black Ops 3 install and printed 867,766 names, and
 **that was wrong, for a reason worth more than the 41 names it found.**
 
-Most people using this repository *have* the Black Ops 3 mod tools â€” it is largely why they want
+Most people using this repository *have* the Black Ops 3 mod tools — it is largely why they want
 these names unhashed in the first place. And a mod tools tree is not the shipped game: it is a
 working directory. `model_export/`, `source_data/`, `texture_assets/` and `share/raw/` are where
 a modder's own and the community's assets land, in the thousands.
 
-**The only path in a Black Ops 3 install that can be trusted is `zone/` in its root** â€” the
+**The only path in a Black Ops 3 install that can be trusted is `zone/` in its root** — the
 official `.ff`, `.sab` and the rest, which ship and which nobody writes to. `contrib/harvest_bo3.py`
 already reads exactly that, so the safe source was already covered and the walk added only risk.
 
-Measured on the install this was written on, which is **the cleanest in the community** â€” its owner
-uses the tools only to release their own work â€” and therefore a **floor** rather than a typical
+Measured on the install this was written on, which is **the cleanest in the community** — its owner
+uses the tools only to release their own work — and therefore a **floor** rather than a typical
 case: one modder's folder, `model_export/_ninjaman829_bo6_guns/`, contributed **1,216 names**.
 
 They are the dangerous shape, not obvious rubbish:
@@ -2665,19 +2665,19 @@ They are the dangerous shape, not obvious rubbish:
 
 `t10` is **Black Ops 6**. Those read exactly like official Treyarch names, they can never be in
 either title this project searches, and this file already records all eight `_v2` tables as
-**measured dead** â€” so every one of them is waste dressed as vocabulary.
+**measured dead** — so every one of them is waste dressed as vocabulary.
 
 Three things follow, and the third is the one that generalises:
 
 - **Nothing bad was published.** Of the 1,216, **0** reached a submission: a candidate only becomes
   a finding by hashing to a real unnamed id, and a Black Ops 6 name does not. The 41 names the
-  tools vocabulary did find are hash-verified and genuine â€” `i_t7_wood_white_birch_worn_c`,
-  `veh_t7_civ_city_flat_tire_fl` â€” and they stay.
+  tools vocabulary did find are hash-verified and genuine — `i_t7_wood_white_birch_worn_c`,
+  `veh_t7_civ_city_flat_tire_fl` — and they stay.
 - **The waste is the contributor's night**, not the tables. On an install with a real mod library
   this is most of the corpus, and it is being asked about a game it cannot be in.
 - **A method seeded from a user-writable directory is not a method.** It gives a different corpus
-  on every disk, so it cannot be reproduced, and its fingerprint â€” the whole mechanism that stops
-  two people grinding the same ground â€” means nothing. That is the general rule: **seed only from
+  on every disk, so it cannot be reproduced, and its fingerprint — the whole mechanism that stops
+  two people grinding the same ground — means nothing. That is the general rule: **seed only from
   something every contributor has identical bytes of.** Published tables, shipped containers,
   `findings/`. Never a working directory.
 
@@ -2696,11 +2696,11 @@ environment variable the tools set, rather than a hardcoded Steam path, so it wo
 machine.
 
 `scripts/contributed/harvest_bo3_tools_20260824-032954.py` remains as the record of the submission
-that carried the walking version. Do not run it. `contrib/harvest_iwd.py` had the same fault â€” it was reading
-`World at War/mods/HumorModTWO/HumorModTwo.iwd` â€” and now refuses to walk `mods/`, `usermaps/`,
+that carried the walking version. Do not run it. `contrib/harvest_iwd.py` had the same fault — it was reading
+`World at War/mods/HumorModTWO/HumorModTwo.iwd` — and now refuses to walk `mods/`, `usermaps/`,
 `workshop/`, `raw/` or `downloaded/`.
 
-### Black Ops 4 `sound_asset` is not in the shipped build either â€” 2026-08-24
+### Black Ops 4 `sound_asset` is not in the shipped build either — 2026-08-24
 
 Worth stating plainly, because the build was the last place the dead ends pointed and it has now
 been read. **No backslash-bearing sound path appears anywhere in Black Ops 4's 141 GB**, and
@@ -2745,12 +2745,12 @@ ever ship.
 
 ---
 
-## 18. The typed cross: an external corpus, kept type by type â€” 2026-08-24
+## 18. The typed cross: an external corpus, kept type by type — 2026-08-24
 
 **The single change that made an external corpus pay, and it is one line of principle.**
 
 Every cross this project has run pools its stems and asks one beginning list and one ending list
-about all of them. Â§6 already says why that is wrong -- *"Measure conventions, never guess them"* --
+about all of them. §6 already says why that is wrong -- *"Measure conventions, never guess them"* --
 and `snapshot.confirmed_names(kind=...)` exists precisely for it, with a docstring that is blunt:
 *"mixing types silently destroys exactly the measurement being taken."* An image wears `i_` and
 `_c`; a material wears `mc/mtl_`; an xanim wears neither. Pooling them spends almost every
@@ -2767,12 +2767,12 @@ Measured on the same corpus, the same day, against both games:
 | typed, 4,000 x 25,000, depth 5 | 1.1 T | **108 and counting** |
 
 **Zero against fifty on a sixtieth of the machine**, and it keeps climbing as the lists widen --
-which is the *ending list is the bottleneck* result of Â§1355, now confirmed from the outside rather
+which is the *ending list is the bottleneck* result of §1355, now confirmed from the outside rather
 than by re-measuring our own corpus. `scripts/typed_cross.py`.
 
 ### What makes it runnable is a typed external corpus
 
-A cross needs the two halves to come from different places (Â§1473), and the external half has to
+A cross needs the two halves to come from different places (§1473), and the external half has to
 carry its type or there is nothing to keep apart. Black Ops 3's **shipped manifests** are exactly
 that: `zone_source/*/assetlist/*.csv`, one `type,name` row per asset, 247 files across thirteen
 locales, given away with no harvesting at all --
@@ -2821,7 +2821,7 @@ exactly why it had never paid before.
 **`sound_asset` returned 0**, and that is the expected answer rather than a disappointment: the
 sound-file dead ends in this file are extensive, and nothing about typing was going to make a
 recording's path transfer between titles. Note the Black Ops 4 half of that pool needs `fold: no`
--- a plan crossing it folded matches nothing while looking healthy (Â§5), so a zero from a folded
+-- a plan crossing it folded matches nothing while looking healthy (§5), so a zero from a folded
 plan means nothing at all and was not counted here.
 
 ### And it is spent by
@@ -2830,7 +2830,7 @@ Widening its own lists, eventually. Each step has returned more than the last so
 cores *shrink* as the lists widen -- deeper stripping leaves less middle -- so the two move against
 each other and there is a width past which it stops. Nobody has found it yet.
 
-### Why they move against each other: one flag was driving both â€” 2026-08-24
+### Why they move against each other: one flag was driving both — 2026-08-24
 
 The sentence above describes a real effect and gets its cause wrong, and the cause is fixable.
 `typed_cross.py` calls `decorations()` twice with the **same** `(depth, begins, ends)`:
@@ -2864,19 +2864,19 @@ xanim **2,249 cores against 883 at the same 8,000 x 50,000** -- 2.55x the vocabu
 those cores are ones the coupled version cannot express *at any setting*, because the widening that
 would reach them is what destroys them.
 
-The general lesson is the one Â§1272 already records in a different costume: **a method has inputs
+The general lesson is the one §1272 already records in a different costume: **a method has inputs
 as well as a shape, and a flag that means two things measures neither.** Check what a knob is wired
 to before concluding the method has a ceiling.
 
 ---
 
-## 19. Borrowed endings, kept type by type â€” 2026-08-24
+## 19. Borrowed endings, kept type by type — 2026-08-24
 
-**The mirror of Â§18, and the same one-line fix applied to a script that already existed.**
+**The mirror of §18, and the same one-line fix applied to a script that already existed.**
 
 `scripts/borrowed_decorations.py` already takes decorations from a build we are not searching and
 wears them on cores we already hold. It is the right idea and it has no `--kind`: one `--source`,
-one set of beginnings and one set of endings, asked about every asset type at once. Â§18 measured
+one set of beginnings and one set of endings, asked about every asset type at once. §18 measured
 what that costs in the other direction -- pooled 0 against typed 50 -- and nothing had applied the
 result to the mirror.
 
@@ -2922,7 +2922,7 @@ borrowed endings:
 
 The external corpus. Black Ops 3's manifests are 106,836 names and every ending in them is now
 either carried or tried at the 8,000 cap. Widening the cap is the next step and the same
-core-collapse caveat applies -- see Â§18's note on the coupled flags. A second external build with
+core-collapse caveat applies -- see §18's note on the coupled flags. A second external build with
 shipped manifests would reopen it entirely.
 
 ---
@@ -3005,7 +3005,7 @@ and is a decision about shared state rather than a pass.
 
 ---
 
-## 32. Cores from the pools nobody files, dropped into observed frames â€” 2026-09-05
+## 32. Cores from the pools nobody files, dropped into observed frames — 2026-09-05
 
 ```
 python contrib/untargeted_pool_cores.py <untargeted names>... > contrib/untargeted_cores.txt
@@ -3021,11 +3021,11 @@ Two halves, and neither works without the other. That is the whole entry, becaus
 measured alone first and both returned zero.
 
 **The vocabulary.** Every method here seeds from names known to be real, and the sources are
-always the published tables and this project's findings â€” which between them describe only the
+always the published tables and this project's findings — which between them describe only the
 five *targeted* types. But a game holds tens of thousands of assets in types nobody submits: ai
 types, script bundles, fx, characters, vehicles, destructibles, beams, cameras. Those names are
-obtained a different way â€” they are read out of the build rather than cracked, several of those
-pools carrying their name as a plaintext string in the asset â€” and their vocabulary had never
+obtained a different way — they are read out of the build rather than cracked, several of those
+pools carrying their name as a plaintext string in the asset — and their vocabulary had never
 been fed back into the search.
 
 That corpus has the one property the cross-era corpora lack. Re-hashing a newer title's published
@@ -3037,12 +3037,12 @@ games' models, materials and images are named after too.
 
 From 15,114 such names: 9,880 kept after dropping the code-and-data pools (a lua file or a script
 parse tree is named after a **source file**, so its vocabulary describes the program and no model
-is ever named after a widget â€” this filter is worth 5,236 names of pure noise), 39,575 cores, and
+is ever named after a widget — this filter is worth 5,236 names of pure noise), 39,575 cores, and
 **4,008 carrying at least one token no held name has ever used**.
 
 **The frames.** `heads` cuts a name once and keeps the front; `tails` cuts once and keeps the
-back. This keeps **both sides of the same cut** â€” everything before one token, and everything
-after it â€” so the question stops being *what else begins like this* or *what else ends like this*
+back. This keeps **both sides of the same cut** — everything before one token, and everything
+after it — so the question stops being *what else begins like this* or *what else ends like this*
 and becomes **what else goes here**. Cut at every underscore, slash and dot, so a frame can sit
 five segments deep. Measured off 1.66 M names describing Black Ops 4: 528,180 distinct heads and
 3,365,044 tails.
@@ -3050,12 +3050,12 @@ five segments deep. Measured off 1.66 M names describing Black Ops 4: 528,180 di
 **What it reaches that nothing else does:** a name whose every decoration is ordinary and whose
 *subject* is a word only an untargeted asset ever named. `ui_icon_general_feedback_demented_echo_head`
 is unreachable by any method seeded from the targeted types, because nothing they contain says
-`demented_echo` â€” an ai type does. The Cold War pass landed across five asset types off two such
+`demented_echo` — an ai type does. The Cold War pass landed across five asset types off two such
 words, `tormentor` and `demented_echo`, which is the thesis in miniature: a character named in a
 pool nobody files has models, materials, images, anims and sounds named after it.
 
 **Both halves were measured alone and both are zero.** The same 4,008 cores against the committed
-`data/prefixes.txt` Ã— `data/suffixes.txt` â€” 13.0 B candidates â€” returned **0**. The ending list is
+`data/prefixes.txt` × `data/suffixes.txt` — 13.0 B candidates — returned **0**. The ending list is
 short tails (`_c`, `_n`, `_01`), so a candidate could only ever be `<prefix><core>_c` while the
 real name is `ui_icon_general_feedback_<core>_head`; the middle was inexpressible and the core had
 nowhere to land. The lists were not wrong, they were the wrong *shape* for the question. Equally,
@@ -3063,7 +3063,7 @@ frames crossed with the corpus's own vocabulary is just the general search, whic
 since the second day.
 
 **Spent by:** the size of the untargeted corpus, not the frames. 4,008 cores is a small stem list
-by this project's standards and it is the entire supply â€” every further name recovered from a pool
+by this project's standards and it is the entire supply — every further name recovered from a pool
 nobody files widens it, and nothing else does. Widening the frames is the cheap knob and it decays
 the usual way; widening the *vocabulary* is what reopens this.
 
@@ -3074,7 +3074,7 @@ sized in billions out of habit and finished before it was worth watching.
 
 ---
 
-## 33. Sound aliases named from the aliases they point at â€” 2026-09-05
+## 33. Sound aliases named from the aliases they point at — 2026-09-05
 
 ```
 python contrib/alias_edges.py <aliases.csv> | bin\windows\confirm_list.exe - --game BLKOPSCW
@@ -3082,18 +3082,18 @@ python contrib/alias_edges.py <aliases.csv> | bin\windows\confirm_list.exe - --g
 
 `contrib/alias_edges.py` | **3** (CW), 0 (BO4) | 38,993 and 42,606 candidates
 
-**Read the alias definition table first â€” this entry is really about that.** Both games' tables
+**Read the alias definition table first — this entry is really about that.** Both games' tables
 had never been used here: nothing in this file or in `scripts/` referenced them before today, and
 between them they cover the two sound pools completely.
 
 | | Black Ops 4 | Cold War |
 |---|---|---|
-| alias ids in the table | 50,043 â€” **the whole `sound_alias` pool** | 50,890 â€” **the whole pool** |
+| alias ids in the table | 50,043 — **the whole `sound_alias` pool** | 50,890 — **the whole pool** |
 | file ids in the table | 78,609 of 79,263 `sound_asset` | 96,777 |
 | rows | 476,693 | 241,595 |
 
 Every row carries, in **plain text**, the zone the sound is banked in, its bus, its volume group
-and its duck group â€” and in `secondaryaliasname` and `stopalias`, the **hash of another alias**.
+and its duck group — and in `secondaryaliasname` and `stopalias`, the **hash of another alias**.
 That last part is the method. An edge with a known name at one end and an unknown at the other is
 a name you are one edit away from, on the game's own authority rather than on a guess about what
 the corpus looks like.
@@ -3114,70 +3114,70 @@ the open edges.
 
 **What it reaches that nothing else does:** an individual unnamed alias, identified by name, in
 the one pool where every recombination shape has returned a total zero. It does not ask what the
-corpus looks like in general â€” it says *this* unknown is the partner of *that* known one.
+corpus looks like in general — it says *this* unknown is the partner of *that* known one.
 
 **The rate is the reason to keep it.** 3 names from 38,993 candidates is **1 per 13,000**, against
 a registry whose best rows sit between 1 per 810 and 1 per 94,000. Black Ops 4 returned 0 from a
 comparable list, so this is a Cold War result so far.
 
-**Spent by:** the number of known names sitting at the end of an open edge â€” 395 in Cold War, 351
+**Spent by:** the number of known names sitting at the end of an open edge — 395 in Cold War, 351
 in Black Ops 4, out of tens of thousands of edges, because a handful of known aliases anchor most
 of them. That count rises every time an alias is named by any method, so unlike most things here
 this one is refilled by everybody else's work.
 
-**What is still unmined in those tables.** The alias â†’ file mapping. 78,609 real `sound_asset`
+**What is still unmined in those tables.** The alias → file mapping. 78,609 real `sound_asset`
 ids sit in the Black Ops 4 table each attached to a named-or-nameable alias, and `sound_asset` is
 the largest single opportunity in either game at 70,878 unnamed of 79,263. The published relation
-between the two vocabularies is weak â€” 0.7% of file stems are exactly an alias name â€” but nobody
+between the two vocabularies is weak — 0.7% of file stems are exactly an alias name — but nobody
 has tried it *per edge*, with the alias's zone and sequence number in hand, which is a different
 question from the corpus-wide one that measured 0.7%.
 
 
-## 34. Family grid completion, past the top 20 â€” 2026-09-14
+## 34. Family grid completion, past the top 20 — 2026-09-14
 
 ```
 python scripts/family_grid.py --top 30 | bin\windows\confirm_list.exe - --game BLKOPSCW
 ```
 
-Every prior run of this method â€” the original method 30 pass, the `--top 20` generic sweep
+Every prior run of this method — the original method 30 pass, the `--top 20` generic sweep
 (Black Ops 4 only, 2026-09-02), and the twenty hand-written `*_shared_tail_grid_*.py` variants
-(both games, 2026-09-09) â€” stopped at the twenty largest grid-shaped families: `vox`, `i`, `fly`,
+(both games, 2026-09-09) — stopped at the twenty largest grid-shaped families: `vox`, `i`, `fly`,
 `vm`, `ui`, `wpn`, `p8`, `mp`, `p7`, `amb`, `jup`, `p9`, `zmb`, `sat`, `evt`, `callingcards`,
 `icon`, `pt`, `weap`, `mus`. All twenty are recorded dead on Cold War. Nobody had asked
-`family_grid.py --audit` what sits *below* rank 20 â€” `melee` (41,151 cells), `veh` (18,150),
+`family_grid.py --audit` what sits *below* rank 20 — `melee` (41,151 cells), `veh` (18,150),
 `pb` (15,725), `ai` (14,654), `att` (11,592), `volume0` (9,892), `uin` (9,170), `mm` (9,156),
 and others down to rank 30.
 
-`--top 30` re-sweeps the already-dead top 20 (harmless â€” they contribute 0 as before) and reaches
+`--top 30` re-sweeps the already-dead top 20 (harmless — they contribute 0 as before) and reaches
 the ten families below them for the first time. **4,709,171 candidates in 18s, 10 new
 `sound_alias` names.** Every hit landed in a family outside the previously-covered twenty, which
 is the point: the shared-tail grid restriction is not spent in general, only spent on the specific
-families that had actually been tried. `derive_closure` afterward added 0 â€” these ten did not
+families that had actually been tried. `derive_closure` afterward added 0 — these ten did not
 feed any of the seven registered derivations, all of which key off image/material/xmodel.
 
 **Spent by:** all 61 families it can currently find. The obvious next step, `--top 61` (every
 family `family_grid.py --audit` will admit at the standing `--min-members 200` / `--min-axis 3` /
-`--min-tails 20` thresholds), was run immediately after: 4,764,491 candidates, **0 new** â€” ranks
+`--min-tails 20` thresholds), was run immediately after: 4,764,491 candidates, **0 new** — ranks
 31-61 add nothing beyond what the top 30 already found. So this is now fully spent for Cold War
 at this corpus size, not merely spent past rank 20. Reopens only if the corpus grows enough to
 push a currently-too-small family over `--min-members 200`, or if the thresholds themselves are
 loosened. **Re-run for Black Ops 4 immediately after, same 4,764,491 candidates (`--game BLKOPS04`): 0
-new.** Extends the 2026-09-02 `--top 20` Black Ops 4 negative to the full 61-family set â€” ranks
+new.** Extends the 2026-09-02 `--top 20` Black Ops 4 negative to the full 61-family set — ranks
 21-61 do not open anything there either, even though Black Ops 4 is otherwise the far less
 picked-over game (see the `swaps` widening section, where the identical token-pool step returned
 5-20x more on Black Ops 4 than Cold War). So this specific method's ceiling is not a
-picked-over-corpus effect â€” the shared-tail grid restriction itself is what is exhausted here,
+picked-over-corpus effect — the shared-tail grid restriction itself is what is exhausted here,
 on both games, at the current corpus size.
 
 **Loosening the thresholds instead of the rank cutoff was tried next and also closed.**
 `--min-members 80 --min-axis 3 --min-tails 10` (down from the defaults of 200/3/20) admits 97
 families instead of 61, but the extra 36 are so small they add only 14,823 cells on top of the
 4,764,491 the full default sweep already emits. **0 new on both games.** So every knob this
-generator exposes â€” rank cutoff and admission threshold alike â€” is now exhausted at this corpus
+generator exposes — rank cutoff and admission threshold alike — is now exhausted at this corpus
 size; reopening it needs either a much larger corpus or a different notion of "family" than
 `head_<axis>_<tail>` split on the first underscore.
 
-## 35. Saluki's own recovered-hash databases, outside the six wanted pools â€” 2026-09-14
+## 35. Saluki's own recovered-hash databases, outside the six wanted pools — 2026-09-14
 
 ```
 python contrib/saluki_beams.py "path/to/beams_recovered.csv" | bin\windows\confirm_list.exe - --game BLKOPS04
@@ -3211,11 +3211,11 @@ reopens the general search.
 a non-standard pool's ids -- without it the pool is not part of `wanted_for_search` at all, and a
 correct candidate simply will not be checked (not "found nothing," genuinely never asked). Unset
 it again afterward; leaving it on turns every subsequent default search into a much slower
-every-pool sweep, which CLAUDE.md Â§5 explains is the single most reliable way to waste a night.
+every-pool sweep, which CLAUDE.md §5 explains is the single most reliable way to waste a night.
 
-## 36. `name_field_probe`, extended to Black Ops 4 for the first time â€” 2026-09-14
+## 36. `name_field_probe`, extended to Black Ops 4 for the first time — 2026-09-14
 
-`name_field_probe` and `loader_strings` (Â§ "Infrastructure, not generators" above) had only ever
+`name_field_probe` and `loader_strings` (§ "Infrastructure, not generators" above) had only ever
 been run against Cold War, for lack of a live Black Ops 4 loader to point them at. The user
 opened Black Ops 4 in Cordycep for an unrelated reason (the `beam` pool export in method 35) and
 offered the same session for this. No Rust toolchain was available on the machine, so
@@ -3225,28 +3225,28 @@ process involved) rather than installing one.
 
 **Every one of the wanted-adjacent pools stores only its id at a fixed header offset, never a
 name.** `xanim`=3 at `+0x70`, `xmodel`=4/`material`=6 at `+0x00`, `xmodelmesh`=5 at `+0x00`,
-`technique_set`=8 at `+0x00`, `image`=9 at `+0x20` â€” confirmed over 156 of 172 pools, sampling 128
+`technique_set`=8 at `+0x00`, `image`=9 at `+0x20` — confirmed over 156 of 172 pools, sampling 128
 assets per pool then verifying the winning offset over the whole pool (100% coverage in every
 row). The `xanim`-at-`+0x70` figure matches the Rust tool's own docstring exactly, which is the
 strongest evidence the Python reimplementation is faithful. **This closes the "hidden plaintext
 name in the header" hypothesis for the five wanted types on Black Ops 4 the same way it was
-already closed on Cold War** â€” the id really is all the header holds; nothing here would ever
+already closed on Cold War** — the id really is all the header holds; nothing here would ever
 find these names.
 
 **What the header approach did find:** four *other* pools store a name as readable text,
 hash-verified by construction: `sound`=10 (30, bank names like `core_bootstrap.all`), `sanim`=77
-(399), `storagefile`=128 (41), `storecategory`=132 (8) â€” 478 names total. **All 478 already
-published or claimed** (`all_pools = true`, 0 matched) â€” these pools are evidently already well
+(399), `storagefile`=128 (41), `storecategory`=132 (8) — 478 names total. **All 478 already
+published or claimed** (`all_pools = true`, 0 matched) — these pools are evidently already well
 covered by other contributors' "every pool" sweeps (Kenshin9977's submissions already carry
 `sanim`). Zero net names, but a clean, useful negative: the header-text approach is not a source
 of anything new here, on top of confirming it cannot reach the five wanted types at all.
 
 **The bigger implication is the one worth acting on.** Cordycep decrypts whatever it loads before
-this ever touches it â€” so the standing "Cold War's fast files are still AES-256-CTR encrypted,
+this ever touches it — so the standing "Cold War's fast files are still AES-256-CTR encrypted,
 key unknown, single largest untapped source" barrier (see "Why the yield per submission keeps
 falling") does not apply to a live Cordycep session the way it applies to reading the files
 directly. **Nobody has pointed this probe, or `loader_strings`' live string-pool cross-check, at a
-*live Cold War* Cordycep session** â€” only ever at a Cold War session for the header-offset
+*live Cold War* Cordycep session** — only ever at a Cold War session for the header-offset
 question specifically, historically, and never at Black Ops 4 until today. Loading Cold War the
 same way and re-running both scripts is the direct, concrete next step this result points at.
 
@@ -3340,7 +3340,7 @@ about the lists is game-specific, only the wanted-id set checked against them --
 project's own findings/submissions, 85,305 of them, crossed with the *committed* `data/suffixes.txt`
 rather than the uncapped list, 410M candidates) found **35 new Black Ops 4 names**: 9 image, 11
 material, 1 xanim, 14 xmodel. The confirmed-only sound cores crossed the same way against Black Ops
-4 (unfolded, per CLAUDE.md Â§6) added **8 more**: 1 image, 3 material, 2 xanim, 2 xmodel. Submitted
+4 (unfolded, per CLAUDE.md §6) added **8 more**: 1 image, 3 material, 2 xanim, 2 xmodel. Submitted
 together as [#2136](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2136).
 
 **The general lesson from both halves together:** this method's yield tracks the *size of the core
@@ -3486,7 +3486,7 @@ is nearly free): **0 new on Cold War, across all three batches and all 60 beginn
 [#2153](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2153).
 
 **A 100% borrowed-vocabulary share predicted nothing here, the same way high overlap has failed to
-predict yield everywhere else this file has tried it** (materialâ†”image cores, BO3 SAB stems,
+predict yield everywhere else this file has tried it** (material↔image cores, BO3 SAB stems,
 newer-title cores -- see "Structural overlap has now failed to predict yield three times" above,
 now effectively a fourth and fifth instance). `mcdp/` was not a generalisable trick; it was a
 specific, large (second-biggest material directory in Cold War) exception, and the diagnostic that
@@ -3568,7 +3568,7 @@ Ops 4). Small, but the point of re-running this one specifically is that it cost
 total for both games -- worth doing after every large batch regardless of how small the last
 result was, since the cost of checking is close to zero.
 
-## A new method: all-boundary cores crossed with endings this project alone discovered â€” 2026-09-22
+## A new method: all-boundary cores crossed with endings this project alone discovered — 2026-09-22
 
 Every all-boundary run so far (`uncarried_endings_allboundary_20260829-172236.py`, this session's
 segment-depth and `--top`-widening sweeps) takes its ending vocabulary from the *union* of
@@ -3642,7 +3642,7 @@ pattern holds -- this stem list is worth regenerating and re-running on the chea
 configuration any time `start` reports the tables moved, not only after a big session of one's
 own.
 
-## Purely self-referential recombination: dead for general, weakly live for sound â€” 2026-09-24
+## Purely self-referential recombination: dead for general, weakly live for sound — 2026-09-24
 
 Added `--confirmed-only-cores` to `contrib/confirmed_only_endings.py`, so both the core *and*
 ending vocabulary can be restricted to names this project alone confirmed at once -- nothing
@@ -3664,7 +3664,7 @@ a single asset's identity than a material or model core is. **Not worth pursuing
 dedicated method** -- the yield here is small enough that it is better understood as confirming
 where the boundary of "recombination is dead" sits than as a productive method in its own right.
 
-## Segment depth 5, fresh, both halves â€” the all-boundary axis's true floor â€” 2026-09-24
+## Segment depth 5, fresh, both halves — the all-boundary axis's true floor — 2026-09-24
 
 `contrib/ab_sound_cores_seg5.txt`/`ab_sound_ends_seg5.txt` sat in `contrib/` since 2026-09-02,
 evidence depth 5 had been tried before (registry rows exist from 2026-09-01/09), but never
@@ -3682,7 +3682,7 @@ this session, on both the original all-boundary method and its confirmed-only-en
 and the shape holds every time. Submitted as
 [#2184](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2184) (Black Ops 4, 7).
 
-## The third confirmed-only axis, beginnings, is dead â€” 2026-09-24
+## The third confirmed-only axis, beginnings, is dead — 2026-09-24
 
 Cores and endings each had a confirmed-only variant that paid; the natural third leg is
 beginnings. `contrib/confirmed_only_beginnings.py` (new) finds leading segments (the
@@ -3720,7 +3720,7 @@ and now every cap-widening tried, is genuinely at its floor for this corpus size
 this specific axis; the next reopening comes from real corpus growth, not from re-slicing the
 same vocabulary a different way.
 
-## Checking out other contributors' methods, and a real find in one â€” 2026-09-25
+## Checking out other contributors' methods, and a real find in one — 2026-09-25
 
 Rebasing onto three days of upstream merges (301,776 -> 320,090 names, a jump of over 18,000)
 pulled in several new generators from other contributors, registered in the raw efficiency table
@@ -3809,7 +3809,7 @@ reachable at the new size, which can be a different pool entirely.
 Re-run per method 4's own note ("re-measuring the knee position after a large enough gain
 elsewhere is a cheap check") after the corpus grew from 245,673 to 295,855+ merged names via a
 rebase onto three days of upstream PRs. 487.3 billion candidates, 7,139s, **16 matched, 3 new**
-(all `xanim`) â€” submitted as [#2124](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2124).
+(all `xanim`) — submitted as [#2124](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2124).
 Small next to the original 128-name run at this same pool size (2026-08-29), consistent with the
 standing "treat as spent past the knee unless the corpus has grown substantially" guidance: the
 corpus did grow, and it paid a little, not a lot. Plain (non-swap) `confirm_variants` was re-run
@@ -3821,14 +3821,14 @@ siblings of confirmed materials +10" with no corresponding new run folder under
 `findings/blkopscw/`, and the following `submit` found nothing pending. The likely cause: this
 repository is shared by several very active contributors (Kenshin9977 and ImSimpy alone merged
 dozens of pull requests in the hours around this session), and `derive_closure.py` measures a
-derivation's yield as `confirmed_total()` before vs. after â€” a raw count that includes merged
+derivation's yield as `confirmed_total()` before vs. after — a raw count that includes merged
 submissions, not just this run's own output. If somebody else's batch merges in the few seconds
 between those two reads, it is counted as this derivation's gain. `submit`'s own ledger (which
 tracks specific run folders rather than a raw total) is the trustworthy number here, and it said
-zero. Worth fixing in `derive_closure.py` â€” diff the actual run folder's contents, not a global
-total â€” on a repository this actively shared.
+zero. Worth fixing in `derive_closure.py` — diff the actual run folder's contents, not a global
+total — on a repository this actively shared.
 
-## A new idea from reading `coordinated_identifiers.py`: pool the evidence across asset types â€” dead, cleanly â€” 2026-09-25
+## A new idea from reading `coordinated_identifiers.py`: pool the evidence across asset types — dead, cleanly — 2026-09-25
 
 `coordinated_identifiers.py` (previous section) learns its substitution rules once per asset type,
 with each type's names as a closed world: a rule like `usa<->rus` can only be *supported* by two
@@ -3847,42 +3847,42 @@ does not belong in a script touching low millions of rows. Restructured so `grou
 pass over `groups.items()` instead.
 
 Run against the corpus: 1,173,159 known names pooled, 320,048 repeated-token rows, 7,246 supported
-rules, 926,631 candidates (rebuilding 1,557,954 already-known names as a positive control â€” a
-healthy ratio, same shape as the per-type original). But **`cross_kind_supported_pairs: 0`** â€”
+rules, 926,631 candidates (rebuilding 1,557,954 already-known names as a positive control — a
+healthy ratio, same shape as the per-type original). But **`cross_kind_supported_pairs: 0`** —
 of every supported rule, not one drew its two required sibling observations from more than one
 asset kind. Confirmed against the game anyway, all four configurations (Cold War visual, Cold War
-sound, Black Ops 4 visual, Black Ops 4 sound both folds): **0 new names in every case** â€” the
+sound, Black Ops 4 visual, Black Ops 4 sound both folds): **0 new names in every case** — the
 candidate files were classified back down into the same per-type rows as the original method's own
 run and added nothing beyond what it already found.
 
 **The hypothesis was clean and the falsification is just as clean.** Template shape here is the
-*entire* token sequence around the masked position, not just the token itself â€” and each asset
+*entire* token sequence around the masked position, not just the token itself — and each asset
 type's naming convention is specific enough (segment count, which fields sit next to which, which
 separators appear) that a material name and an xmodel name essentially never produce the identical
 template even when they share the exact vocabulary word. Pooling the evidence sets costs nothing to
 try and answers a real question (does this project's naming convention share structure across
 types, at the template-shape granularity `coordinated_identifiers` uses) with a firm no. A future
-attempt at cross-type transfer would need a looser template â€” matching on token identity and
-position-from-edge rather than the full masked sequence â€” to have any chance; that is a different,
+attempt at cross-type transfer would need a looser template — matching on token identity and
+position-from-edge rather than the full masked sequence — to have any chance; that is a different,
 larger rewrite and not attempted here since the per-type original is already registered and the
 loosening could just as easily explode false-positive rule pairs as find real ones.
 
-## A new method: substitution rules applied to fragments, not whole names â€” 2026-09-25
+## A new method: substitution rules applied to fragments, not whole names — 2026-09-25
 
 Built after the cross-type pooling test above closed clean: `coordinated_identifiers.py` learns a
 substitution rule (e.g. a faction code or camo colour interchangeable with another) from two whole
 names sharing an identical masked template, then only ever applies the rule back onto other WHOLE
 names that already contain the token repeated. That is a narrow use of a fact that is not itself
-narrow â€” token A and token B being the same *kind* of thing in this game's naming does not depend
+narrow — token A and token B being the same *kind* of thing in this game's naming does not depend
 on the particular name it was witnessed in.
 
 `contrib/rule_substituted_cores.py` applies each learned rule to every **all-boundary core**
 (method 25: a known name cut at every segment boundary) that carries the token anywhere, repeated
 or not, and keeps only the substituted cores that are **not already in today's base all-boundary
-core list** â€” the base list against these same endings is stale ground this session already
+core list** — the base list against these same endings is stale ground this session already
 measured today, so only the incremental new fragments are worth spending candidates on. Rules are
 still learned **per type** (a fresh test the same day found cross-type template pooling supports
-zero rules â€” see above) but applied to the **pooled** core list, since a core is already
+zero rules — see above) but applied to the **pooled** core list, since a core is already
 type-agnostic in every other all-boundary run here.
 
 Crossed the new fragments only against the standing wide ending lists with the plan engine:
@@ -3954,7 +3954,7 @@ this method. The core-side visual pass returned 0 on Black Ops 4, but the ending
 found 2, so "0 on Black Ops 4" was a property of that one pass rather than of the game, and almost
 all of the rule vocabulary and yield sits on the sound side regardless of game.
 
-## A second fragment-generalisation: slotswap's context vocabulary applied to cores â€” 2026-09-26
+## A second fragment-generalisation: slotswap's context vocabulary applied to cores — 2026-09-26
 
 Method 10 (`slotswap.py` / sibling token substitution) measures, for every token slot in every
 known name, what the corpus has seen filling a slot with the same left/right neighbours -- then
@@ -3983,7 +3983,7 @@ watching stem counts only ever increase within a slice).
 | visual, Cold War | 35,015,108 (from 111,143 slot contexts) | 2 of 8 | 25 (slice 1), slice 2 in progress |
 | sound, Cold War | 30,237,084 (same alphabet) | 4 of 8 | 21 + 2 + 2 = 25 across slices 1/3/4, slice 2 clean |
 
-Submitted incrementally as each slice checkpoints (never wait for the whole run â€” a checkpoint is
+Submitted incrementally as each slice checkpoints (never wait for the whole run — a checkpoint is
 already safe): visual slice 1 in
 [#2206](https://github.com/KingslayerKyle/hash-slinging-slasher/pull/2206) (7 landed of 25 found --
 the rest were claimed by other contributors during an unusually long `submit` queue delay under
@@ -4103,7 +4103,7 @@ crossed each core list with its own endings. Of the 30.2M sound cores, only 5.1M
 cores, and the two endings lists share 25,761 of their 300,000 + 100,000 entries -- so sound cores
 had almost never met the visual endings, although the Cold War sound pass showed they reach
 material paths (54 of its 76). `plans/xcross_soundcores_visualends.txt` is exactly that missing
-block: 25,151,469 sound-only cores Ã— 274,239 visual-only endings, 6.90T, with no overlap with either
+block: 25,151,469 sound-only cores × 274,239 visual-only endings, 6.90T, with no overlap with either
 pass.
 
 **It is dead: 0 names from the first two slices, 1.72T, on Cold War**, against roughly one name per
@@ -4588,7 +4588,7 @@ promote thin frames past the threshold), so it refills a little after any pass, 
 step only comes from a new vocabulary: a deeper word list, proper nouns (places, people, units),
 other languages' words where the game uses them.
 
-## BO7 target-witnessed nonadjacent animation pairs â€” 2026-10-09
+## BO7 target-witnessed nonadjacent animation pairs — 2026-10-09
 
 `contrib/verified_modern_animation_pairs.py` transfers coupled two-token changes
 only when at least three otherwise identical BO7-held animation frames witness
@@ -4599,7 +4599,7 @@ source-verified modern animation names and the shared game hash policy.
 short head/tail replacements cannot express. This adapts the legacy paired-rule
 idea to modern tables and restricts rule evidence to the selected capture.
 
-The first BO7 pass, gaps 2â€“6, used 153,884 verified seeds and 88,704 eligible
+The first BO7 pass, gaps 2–6, used 153,884 verified seeds and 88,704 eligible
 target-held names. **1,137,241 distinct candidates confirmed 140 new animations**,
 after table, merged-submission and open-PR exclusions. Expected chance matches
 rounded to 0.0000. The generator also records known-name reconstruction controls.
@@ -4607,7 +4607,7 @@ rounded to 0.0000. The generator also records known-name reconstruction controls
 **Spent by:** an unchanged source corpus, target-held witness frames and distance
 band. Regenerating the same candidates under a different label does not reopen it.
 
-## BO7 terrain layer order permutations â€” 2026-10-09
+## BO7 terrain layer order permutations — 2026-10-09
 
 `contrib/terrain_layer_permutations.py` preserves a target-held terrain material's
 directory and complete two-to-four-layer token multiset, including `n`/`dn`
@@ -4626,7 +4626,7 @@ finds alone do not justify rerunning because they retain the same multisets.
 A separate qualifier-completion diagnostic tested 98,919 candidates and found
 zero unclaimed matches; that seam is measured negative on this BO7 corpus.
 
-## BO7 package-witnessed animation modifiers â€” 2026-10-09
+## BO7 package-witnessed animation modifiers — 2026-10-09
 
 `contrib/verified_animpkg_clip_modifiers.py` uses source-verified animation-package
 names as per-weapon attachment vocabulary. Both package and base clip must be held
@@ -4641,7 +4641,7 @@ provided modifiers for 245 weapon families. 15,159 known relationships supported
 **Spent by:** unchanged package/clip names and target-held boundary evidence.
 Dictionary widening alone provides no new evidence.
 
-## BO7 sound files from witnessed alias-prefix translations â€” 2026-10-09
+## BO7 sound files from witnessed alias-prefix translations — 2026-10-09
 
 `contrib/verified_alias_file_prefixes.py` reverses witnessed file-to-alias prefix
 translations. Each rule needs three distinct shared bodies and retains the exact
@@ -4659,7 +4659,7 @@ regression is not evidence that historical BO7 sound methods are unspent.
 target-held aliases. Mirroring the namespace rule at the suffix instead measured
 61,044 unseen candidates and zero unclaimed matches on this corpus.
 
-## BO7 frozen image suffix with witnessed preceding byte â€” 2026-10-09
+## BO7 frozen image suffix with witnessed preceding byte — 2026-10-09
 
 `contrib/frozen_image_suffix_byte.py` keeps each image's suffix intact and changes
 only its preceding stem byte. The suffix must have three BO7-held sibling-core
@@ -4672,10 +4672,10 @@ controls. This bounded in-place subset avoids the broader inverse method's
 billions of Python reverse queries. **Spent by:** unchanged source frames and
 suffix-specific alphabets; it does not measure the full cross-suffix space.
 
-## Additional BO7 negative measurements â€” 2026-10-09
+## Additional BO7 negative measurements — 2026-10-09
 
-- Paired animation rules at disjoint gaps 7â€“17: 11,233 candidates, zero unclaimed
-  matches. Gaps 12â€“17 had no supported rules. Do not refine this band on the same corpus.
+- Paired animation rules at disjoint gaps 7–17: 11,233 candidates, zero unclaimed
+  matches. Gaps 12–17 had no supported rules. Do not refine this band on the same corpus.
 - Witnessed image-prefix reordering: 23,856 candidates, zero unclaimed matches.
 - Atomic repeated image identifiers: no rules supported by two independent sibling
   witnesses; no confirming pass warranted.
@@ -4686,7 +4686,7 @@ suffix-specific alphabets; it does not measure the full cross-suffix space.
   previously untested candidates, zero unclaimed matches. The opposite direction
   was already included in the package pass; no redundant rerun was necessary.
 
-## BO7 sound basename endings inside tokens â€” 2026-10-09
+## BO7 sound basename endings inside tokens — 2026-10-09
 
 `contrib/verified_sound_basename_tails.py` builds compiled plans that cut four
 characters before the encoding tail, strictly inside an alphanumeric basename
@@ -4708,7 +4708,7 @@ pool, and uses only the same directory's observed codec/language and same-width
 take endings. The original 44-row seed file was checksummed for reproducibility;
 this was a delta over new names, not a repeat of the old full-corpus sound sweep.
 
-## BO7 compiled image stem-byte and witnessed-suffix product â€” 2026-10-09
+## BO7 compiled image stem-byte and witnessed-suffix product — 2026-10-09
 
 `contrib/image_stem_byte_suffix_plan.py` expresses the full compact byte-before-
 suffix relation as a compiled three-list plan. Verified image cores minus their
@@ -4717,7 +4717,7 @@ BO7; suffixes have three distinct target-held sibling-core witnesses. It extends
 the suffix-preserving method to other witnessed suffixes without emitting billions
 of Python strings. The engine selects forward hashing on these dimensions.
 
-**63,229 beginnings Ã— 36 bytes Ã— 5,303 suffixes**, plus unsuffixed cores,
+**63,229 beginnings × 36 bytes × 5,303 suffixes**, plus unsuffixed cores,
 yielded **12,073,198,176 candidates and 112 new BO7 images** after the earlier
 47-image pass. Inputs occupied 2.22 MB. The estimated chance-match count was
 0.0010. Structural measurement found 2,197,863 expanded cores absent from current
@@ -4726,14 +4726,14 @@ all-boundary stems and 3,164 suffixes absent from saved image-ending lists.
 **Spent by:** these exact three lists. The byte/suffix relation is established;
 unchanged-list reruns or new labels cannot recover additional names.
 
-## BO7 complete image stem-pair product â€” 2026-10-09
+## BO7 complete image stem-pair product — 2026-10-09
 
 `contrib/image_stem_pair_suffix_plan.py` replaces the final two stem bytes with
 complete two-byte fragments actually witnessed on target-held image cores.
 It retains the same three-sibling-core suffix evidence as the one-byte method;
 it never builds a Cartesian character alphabet.
 
-61,925 prefixes Ã— 677 witnessed pairs Ã— 5,306 suffixes, plus bare repaired
+61,925 prefixes × 677 witnessed pairs × 5,306 suffixes, plus bare repaired
 cores, produced **222,486,555,075 candidates and 73 new BO7 images**. Only 3.630%
 overlapped the current one-byte product. Expected coincidental matches: 0.0185.
 All 73 additions fit the intended plan shape; 59 used two digits, 13 two letters,
@@ -4744,7 +4744,7 @@ subsequent work should follow the numeric/UI signal rather than widen blindly.
 An unrun full three-byte product was sized at 834.943 billion candidates with
 4.793% overlap against width two; sizing is not a yield measurement.
 
-## BO7 numeric image families from pair-pass evidence â€” 2026-10-09
+## BO7 numeric image families from pair-pass evidence — 2026-10-09
 
 `contrib/image_numeric_triple_family_plan.py` follows the numeric signal from
 the complete stem-pair pass. It selects the first-two-token families of verified
@@ -4753,7 +4753,7 @@ cores, and recombines only complete numeric triples witnessed in those target
 families. Suffixes retain the global three-sibling-core witness requirement and
 must also occur on numeric images in the selected family.
 
-715 prefixes Ã— 170 witnessed triples Ã— 83 suffixes, plus bare cores, covered
+715 prefixes × 170 witnessed triples × 83 suffixes, plus bare cores, covered
 **10,210,200 candidates and confirmed 3 new BO7 images**. There were 2,148 known
 target numeric controls and 6,487,908 candidates beyond the executed pair plan.
 The compact plan inputs total 29 KB.
@@ -4761,7 +4761,7 @@ The compact plan inputs total 29 KB.
 **Spent by:** these evidence families and exact lists. This targeted positive
 does not justify an unrestricted numeric range or a blind three-byte expansion.
 
-## BO7 known model vocabulary to visual wrappers: negative â€” 2026-10-09
+## BO7 known model vocabulary to visual wrappers: negative — 2026-10-09
 
 The available model history contains no embedded-name dump for BO7. Source-
 verified historical modern and published legacy model names supplied only 462
@@ -4779,7 +4779,7 @@ This target-held wrapper restriction is closed on the available model vocabulary
 An actual new verified embedded-model source would be a reason to revisit it;
 widening the old source wrappers is not.
 
-## External CSV names, independently rehashed by capture and type â€” 2026-10-09
+## External CSV names, independently rehashed by capture and type — 2026-10-09
 
 `contrib/external_csv_capture_names.py` reads only a CSV's `name` column.
 Supplied hashes, shortened keys, function labels and category metadata are never
@@ -4800,7 +4800,7 @@ the reusable vocabulary.
 **Spent by:** the same raw names and capture/hash policies. Wrong source keys
 cannot create finds, and unmatched raw strings are not seeds for later methods.
 
-## Fresh material/image vocabulary through witnessed wrappers â€” 2026-10-09
+## Fresh material/image vocabulary through witnessed wrappers — 2026-10-09
 
 `contrib/verified_material_image_delta.py` extracts material bases absent from
 the prior verified corpus. It learns complete image prefix/suffix pairs from
@@ -4826,7 +4826,7 @@ Both generators verify the capture game, input spelling and supplied findings
 keys. **Spent by:** these delta bases and witnessed correlated wrappers. This is
 new source vocabulary opening an established relation, not a renamed full rerun.
 
-## Further measured negatives after the external harvest â€” 2026-10-09
+## Further measured negatives after the external harvest — 2026-10-09
 
 - Alias-to-file prefix inference on the 3,353 new aliases added 815 witnessed
   rules, 3,073 inferred families and 30,010 candidates beyond the prior alias
@@ -4839,7 +4839,7 @@ new source vocabulary opening an established relation, not a renamed full rerun.
   `0,value` plan-list rows to retain leading markers; this negative does not
   justify a global replay.
 
-## Two independent animation deltas from the external vocabulary â€” 2026-10-09
+## Two independent animation deltas from the external vocabulary — 2026-10-09
 
 `contrib/verified_animation_context_delta.py` removes the 643 new verified clips
 from its counterfactual baseline, then applies only paired-token rules that cross
@@ -4856,7 +4856,7 @@ from 5,989 candidates, leaving **5,539 candidates and 10 new BO7 animations**.
 New context support and new application vocabulary are distinct deltas; neither
 requires rerunning every old rule over every old name.
 
-## Frozen image-pair factors with genuinely new prefixes â€” 2026-10-09
+## Frozen image-pair factors with genuinely new prefixes — 2026-10-09
 
 `contrib/image_stem_pair_prefix_delta_plan.py` uses only the 2,314 verified CSV
 images and 692 material-wrapper recoveries as source vocabulary. It retains the
@@ -4876,7 +4876,7 @@ this prefix pass before its confirmation was queued, so it was not rerun.
 **Spent by:** these new prefixes and frozen pairs/suffixes. Revalidate witnesses
 and supplied seed keys; a larger alphabet is a different, unmeasured search.
 
-## Jointly witnessed alias substitutions on verified new seeds â€” 2026-10-09
+## Jointly witnessed alias substitutions on verified new seeds — 2026-10-09
 
 `contrib/verified_alias_paired_seed_delta.py` carries the atomic paired-token
 relation into sound aliases. Both nonadjacent tokens change together at distance
@@ -4899,7 +4899,7 @@ contaminated baselines and records all supplied input digests.
 candidate sets. Any further continuation needs an actual verified new frontier;
 this is not a driver that repeats existing methods.
 
-## Frozen alias rules traversed through verified matches â€” 2026-10-09
+## Frozen alias rules traversed through verified matches — 2026-10-09
 
 `contrib/verified_alias_frontier.py` turns the same fixed rule relation into a
 finite graph search. Only the 1,180 newly confirmed continuation aliases start
@@ -4924,7 +4924,7 @@ deduplication, multiple verified depths and budget termination.
 **Spent by:** this explicit verified frontier, frozen rules and prior candidate
 sets. The frontier is empty; another round on these inputs cannot add anything.
 
-## Reusing the external vocabulary across modern captures â€” 2026-10-09
+## Reusing the external vocabulary across modern captures — 2026-10-09
 
 After reserving BO7 matches first, direct raw-name validation added **94 unique
 keys** elsewhere: BO6 nine, MW7 26, MWIII 34 and MWII 25. Rechecking the exact
@@ -4939,7 +4939,7 @@ excluded prior work. Four BO6 names and the MWIII name came from the original
 paired seed delta; the last BO6 name came from the verified-frontier candidates.
 The continuation set added none elsewhere. No rules were retrained or widened.
 
-## New alias rules witnessed by independent source vocabulary â€” 2026-10-09
+## New alias rules witnessed by independent source vocabulary — 2026-10-09
 
 `contrib/verified_alias_external_rule_delta_20261010.py` measures rule growth
 from the original 3,353 independently rehashed external aliases. Those names
@@ -4980,7 +4980,7 @@ All BO7-reserved keys, all games' history and live claims were excluded first.
 This used the same generator output without new candidates or rule training;
 it is spent for that candidate file on the MWIII alias capture.
 
-## Material-witnessed complete interior image blocks â€” 2026-10-09
+## Material-witnessed complete interior image blocks — 2026-10-09
 
 `contrib/material_witnessed_image_blocks.py` learns complete two- or three-token
 interior substitutions from target-held modern material basenames. Each rule
@@ -5009,7 +5009,7 @@ reproduced the original candidates byte for byte after the fix: all 7,604 rules,
 6,801 candidates and 23 submitted keys retain support. The corrected generator
 was published to its original carrying PR #2531; no findings were removed.
 
-## Frozen BO7 image-pair vocabulary transferred to BO6 â€” 2026-10-09
+## Frozen BO7 image-pair vocabulary transferred to BO6 — 2026-10-09
 
 `contrib/bo6_borrowed_bo7_image_pairs.plan.txt` reuses the exact frozen factors
 from `contrib/image_stem_pair_suffix_plan.py`: 61,925 prefixes, 677 complete
@@ -5026,7 +5026,7 @@ validation, exclusions and candidate scope remained the normal image search.
 does not make an already tested product new, and the transfer does not authorize
 widening its alphabet or claiming target-specific naming evidence.
 
-## Further BO7 animation and sound-file negatives â€” 2026-10-09
+## Further BO7 animation and sound-file negatives — 2026-10-09
 
 All four measurements below used verified source spellings, the selected
 capture's typed pool and shared hash policy, and current table/history/findings/
@@ -5065,7 +5065,7 @@ inputs; do not tune or widen the same negative on unchanged material.
   files**. Evidence: `logs/bo7_alias_file_reordering_20261010/report.json`;
   diagnostic: `logs/measure_bo7_alias_file_reordering_20261010.py`.
 
-## Image triples conditioned on family and exact suffix: negative â€” 2026-10-09
+## Image triples conditioned on family and exact suffix: negative — 2026-10-09
 
 A separate probe kept each image's first-two-token family and exact suffix,
 offering complete three-byte interior stem endings with at least three
@@ -5083,7 +5083,7 @@ exclusion**. Reports: `logs/bo7_image_conditioned_triples_recon/report.json` and
 **Spent by:** these family/suffix witnesses and residual frames. This result
 does not support a global triple expansion or parameter tuning of the same seam.
 
-## Embedded model vocabulary supplies new visual source cores â€” 2026-10-09
+## Embedded model vocabulary supplies new visual source cores — 2026-10-09
 
 `contrib/verified_model_visual_source_delta.py` independently rehashes raw source
 strings into the BO7 model capture solely to obtain embedded-name vocabulary.
@@ -5112,7 +5112,7 @@ above preserves every ancestor. No alphabet or suffix was expanded.
 **Spent by:** these explicit source strings, witnessed wrappers and new-prefix
 factors. New application vocabulary does not authorize retraining on descendants.
 
-## Independently witnessed atomic alias interior blocks â€” 2026-10-09
+## Independently witnessed atomic alias interior blocks — 2026-10-09
 
 `contrib/verified_alias_interior_blocks.py` learns canonical complete adjacent or
 variable-length interior replacements of one to three tokens. Each rule needs
@@ -5144,7 +5144,7 @@ exhausted the frontier without reaching the 100,000-attempt bound. Seven targete
 traversal/provenance checks passed and replay matched the diagnostic byte for
 byte. This explicit frontier is closed; there is no pending continuation.
 
-## Joint image prefix and suffix translations â€” 2026-10-09
+## Joint image prefix and suffix translations — 2026-10-09
 
 `contrib/verified_image_joint_wrappers.py` changes both complete wrappers while
 preserving an intact body of at least three tokens. The 71,519-image frozen
@@ -5168,7 +5168,7 @@ meeting three independent witnesses, so no confirming pass was run.
 
 **Read this before inventing a method from scratch.** These are ideas that have been thought
 through but not built, each with the cheap check that says whether it is worth the effort. Measuring
-first killed three plausible-sounding ideas in an hour on 2026-08-20 â€” the seams below marked as
+first killed three plausible-sounding ideas in an hour on 2026-08-20 — the seams below marked as
 dead are *measured* dead, not guessed.
 
 ### The ranking metric
@@ -5181,31 +5181,31 @@ Black Ops 4 models:
 | `token_edits` | 1 per 94,000 |
 | `affix_sweep`, run blind | 1 per 532,000,000 |
 
-**5,600Ã— apart.** Estimate this before committing CPU, not after.
+**5,600× apart.** Estimate this before committing CPU, not after.
 
 And note that **pool size does not predict yield**: Black Ops 4 `sound_asset` has 70,878 unnamed ids
-â€” more than anything else â€” and a dedicated pass returned 169, while the general search returned
+— more than anything else — and a dedicated pass returned 169, while the general search returned
 5,869 the same day. Unnamed-id count tells you what is *left*, not what is *reachable*.
 
 ### Measured seams
 
 | seam | measured | verdict |
 |---|---|---|
-| material â†” image cores | **15,770 shared** â€” 11.7% of material's, 12.8% of image's | **strong**, ~60Ã— the model/image pair |
+| material ↔ image cores | **15,770 shared** — 11.7% of material's, 12.8% of image's | **strong**, ~60× the model/image pair |
 | sound alias names as sound file stems | 706 of 101,673 (0.7%) | dead |
 | model cores vs anim cores | **0** shared of 154,525 / 30,337 | dead |
-| anim minus last token â†’ model core | 16 of 30,337 (0.1%) | dead |
+| anim minus last token → model core | 16 of 30,337 (0.1%) | dead |
 | model cores vs material cores | 3,300 of 154,525 / 266,575 (~2%) | too weak to pass |
 | loader string pool as candidates | **0** of the 159,170 ids a Cold War pass hunts | dead |
 | Black Ops 4 SAB paths, recombined from Black Ops 4 names only | **2 new** of 240,000; tail swap **0 new** of 63,165 | dead |
 | Cold War sound paths, recombined -- with a corpus **8x denser** | **0 new** of 400,000; tail swap **0 new** of 36,679 | dead |
 | Black Ops 4 SAB paths, seeded with **BO2/BO3 SAB directories** | BO3 shares **9.18%** of stems, BO2 1.35% | ~~live~~ **dead** -- the overlap is real and the yield is not; see below |
 | Names published for the **newer titles** (`_v2` tables) hashed against our games | **0** of 1,175,524 names, against 336,505 unnamed ids in the two games | dead |
-| loader string pool, all pools | 23,301 of 1,480,510 ids (1.6%), 18,691 unnamed â€” but `scriptbundle` is 17,304 of them | free names, wrong pools |
-| materialâ†’image with a **different reduction each side** (`no head` / `no ends`) | **75,964 shared â€” 59.98% of image**, 5Ã— the row above; 181,466 cores only in material | **relation real, ground dead** â€” see below |
-| materialâ†’xmodel, same treatment (`no ends` / `no tail`) | **15,270 shared â€” 15.57% of xmodel**, 5Ã— the "too weak to pass" row above | **relation real, ground dead** â€” see below |
+| loader string pool, all pools | 23,301 of 1,480,510 ids (1.6%), 18,691 unnamed — but `scriptbundle` is 17,304 of them | free names, wrong pools |
+| material→image with a **different reduction each side** (`no head` / `no ends`) | **75,964 shared — 59.98% of image**, 5× the row above; 181,466 cores only in material | **relation real, ground dead** — see below |
+| material→xmodel, same treatment (`no ends` / `no tail`) | **15,270 shared — 15.57% of xmodel**, 5× the "too weak to pass" row above | **relation real, ground dead** — see below |
 
-### Timings measured on 2026-08-22 between 11:19 and 18:55 are not trustworthy â€” 2026-08-22
+### Timings measured on 2026-08-22 between 11:19 and 18:55 are not trustworthy — 2026-08-22
 
 A background loop was left running for seven and a half hours without anybody realising, competing
 for all sixteen cores with every pass launched in that window. It was believed killed at 11:20:
@@ -5232,7 +5232,7 @@ Two habits worth keeping:
 - **`python scripts/running.py`** answers "is anything grinding right now?" -- worth running before
   timing anything, and before assuming the machine is idle.
 
-### A long unattended runner gets silently blocked at twelve hours â€” 2026-08-22
+### A long unattended runner gets silently blocked at twelve hours — 2026-08-22
 
 Worth knowing before writing one. `readiness::require` refuses to search if `start` last passed
 more than twelve hours ago, which is right: the tables move and other people submit.
@@ -5245,7 +5245,7 @@ looked exactly like an exhausted method. It was noticed only by reading the log 
 If you write a runner that will outlive twelve hours, **re-run `start` between stages**, and check
 that each stage actually reported a result rather than assuming it did.
 
-### Nobody had ever replaced the *front* of a name â€” 2026-08-22
+### Nobody had ever replaced the *front* of a name — 2026-08-22
 
 `tails.py` replaces a known name's last *k* characters and works. It exists in that direction for
 a historical reason and not a principled one: the end is where the hash keeps a resemblance, which
@@ -5269,7 +5269,7 @@ Two things worth taking from it beyond the names:
   stem alone -- a truncation, which is a different method. Getting this wrong does not fail; it
   reports billions of candidates and scans none.
 
-### And it was blind to a third of the corpus, for one character â€” 2026-08-24
+### And it was blind to a third of the corpus, for one character — 2026-08-24
 
 `--head` was added as "the same cross product with the lists swapped", and that is true of the
 stems and the beginnings. It is not true of the **alphabet**. `alphabet_of` counts `name[-4:]`,
@@ -5280,7 +5280,7 @@ Names do not begin the way they end. Measured over 958,424 published and confirm
 
 | | |
 |---|---|
-| characters names end in, top 37 | `_e0lnar1tocsdim2gphw34byku6f5v7x89zjq` â€” alnum and `_` |
+| characters names end in, top 37 | `_e0lnar1tocsdim2gphw34byku6f5v7x89zjq` — alnum and `_` |
 | characters names begin with | the same, plus `/` `*` `[` `$` |
 | first 3 characters inside the tail alphabet | **65.3%** |
 | first 4 characters inside the tail alphabet | **64.1%** |
@@ -5291,19 +5291,19 @@ and the whole of that shortfall is one character:
     blocked in the first four positions:   /  340,786 names    *  3,410    [  354    $  87
 
 `/` is the directory separator. METHODS already records that material names are paths under
-twelve directories and that `mc/` heads 496,666 published names â€” so **every `mc/ wc/ clt/ splm/
+twelve directories and that `mc/` heads 496,666 published names — so **every `mc/ wc/ clt/ splm/
 vd/ mcs/ ei/ cltp/ vdd/ el/ mcp/ ec/ mcdp/` name has a slash inside its first four characters, and
 no head run has ever been able to spell one.** The 692-name pass was blind to a third of the
 ground it was pointed at, and the reach measurement did not show it because `reach.py` measures
 the committed beginning and ending lists rather than a method's own alphabet.
 
 **Fixed in `scripts/tails.py`**: `--head` now widens the alphabet with the characters names begin
-with and never end with, above a floor of 50,000 blocked fronts â€” which carries `/` and correctly
+with and never end with, above a floor of 50,000 blocked fronts — which carries `/` and correctly
 declines `*`, a mesh-hash marker that is unreachable anyway. The cost is `((n+1)/n) ** k`, 11% at
 k=4.
 
 **And the ground itself is cheaper than the fix suggests.** Re-running the widened alphabet redoes
-the 1,874,161 beginnings of 2,085,136 that the narrow one already swept â€” 90% of the work for
+the 1,874,161 beginnings of 2,085,136 that the narrow one already swept — 90% of the work for
 ground already covered. `contrib/heads_slash.py` writes the **complement** instead: only the
 210,975 four-character beginnings that carry a slash. 199 billion candidates, against 899 billion
 if `*`, `[` and `$` are carried too.
@@ -5318,14 +5318,14 @@ Two things worth taking from this beyond the names:
   mirror of anything that works. The mirror was tried; what came with it unexamined was the
   measurement feeding it.
 
-### Structural overlap has now failed to predict yield three times â€” 2026-08-22
+### Structural overlap has now failed to predict yield three times — 2026-08-22
 
 Every time this project has measured that two name sets *share structure* and concluded a method
 was worth building, the method has returned approximately nothing. Three for three:
 
 | what was measured | what it predicted | what it returned |
 |---|---|---|
-| materialâ†”image cores, 75,964 shared, 59.98% of image | a strong seam | **0 matched** in 190 M candidates |
+| material↔image cores, 75,964 shared, 59.98% of image | a strong seam | **0 matched** in 190 M candidates |
 | BO3 shares 9.18% of Black Ops 4's SAB stems | `sabpaths` rated **live** | **0** in 187 B candidates |
 | 2,394,179 newer-title cores absent from our corpus | fresh vocabulary | 61 in 34.5 T -- 1 per 565 billion |
 
@@ -5345,7 +5345,7 @@ Older-title corpora hashed **verbatim** were tested at the same time -- `bo2_sab
 `bo2_ipak`, `cod_constants`, `cod_semantics`, `cod_techsets`, `fnv1a_strings`, 944,345 names: **0
 matched folded on either game, 2 matched unfolded on Black Ops 4.**
 
-### The closure multiplies a method's yield, and nothing measures that â€” 2026-08-22
+### The closure multiplies a method's yield, and nothing measures that — 2026-08-22
 
 `cross_era` returned **61** names for 34.5 trillion candidates, which by every column in
 `methods_report.py` is among the worst methods ever run here.
@@ -5366,26 +5366,26 @@ Two consequences worth acting on:
 - **Do not retire a method on its direct yield alone** if it adds names in families nothing else
   reaches. `cross_era` is not worth its machine time twice, but its 61 names were not the point.
 
-### Recombining *across* names is dead; varying *within* one is not â€” 2026-08-22
+### Recombining *across* names is dead; varying *within* one is not — 2026-08-22
 
 Three independent measurements now say the same thing, and together they are the most useful
 generalisation this file has.
 
-**Dead â€” pieces taken from different names and recombined:**
+**Dead — pieces taken from different names and recombined:**
 
 | what | measured |
 |---|---|
-| cross-type core seams (materialâ†’image, materialâ†’xmodel), the two strongest ever found here | **0 matched ids** in 190 M candidates, both games |
-| head of one name + tail of another, cut at underscores (`scripts/splice.py`) | **7 names in 96 B candidates** â€” 1 per 13.7 billion |
+| cross-type core seams (material→image, material→xmodel), the two strongest ever found here | **0 matched ids** in 190 M candidates, both games |
+| head of one name + tail of another, cut at underscores (`scripts/splice.py`) | **7 names in 96 B candidates** — 1 per 13.7 billion |
 
-**Live â€” one name varied in place:**
+**Live — one name varied in place:**
 
 | what | measured |
 |---|---|
-| `final_byte` â€” last character solved | **1 per 18** |
-| `image siblings` / `image channels` â€” a name respelled for its sibling asset | 1 per 394 / 1 per 5,160 |
-| `tails` â€” last three characters replaced | 1,151 names, **free** (21 s) |
-| `gaps`, `variants` â€” a number moved in place | 1 per 377 |
+| `final_byte` — last character solved | **1 per 18** |
+| `image siblings` / `image channels` — a name respelled for its sibling asset | 1 per 394 / 1 per 5,160 |
+| `tails` — last three characters replaced | 1,151 names, **free** (21 s) |
+| `gaps`, `variants` — a number moved in place | 1 per 377 |
 
 The reading is that asset names are **not freely recombinable**. A head constrains its tail
 semantically, so a head and a tail that never appeared together mostly never will. What is
@@ -5394,13 +5394,13 @@ productive is taking one real name and moving one thing about it.
 `splice.py` was listed under *Candidates worth building* from the beginning and never built,
 because as a generator it is 4.2e13 candidates and a Python generator emits a million a second.
 It is a plan now, it ran in under two minutes a game, and it is dead. **That is the point of the
-plan engine** â€” an idea that sat unbuilt for want of a year and a half of generator time got
+plan engine** — an idea that sat unbuilt for want of a year and a half of generator time got
 settled in four minutes, and the answer is written down instead of waiting for somebody else to
 have the same idea.
 
 Before building anything that joins pieces of different names, weigh it against these numbers.
 
-### How far the final-byte solve extends: two characters, and no further â€” 2026-08-22
+### How far the final-byte solve extends: two characters, and no further — 2026-08-22
 
 The obvious follow-up to the solve below is to extend it to longer tails. It does not extend, and
 this is the measurement so nobody spends an evening finding that out.
@@ -5413,7 +5413,7 @@ against **0.03** for two entirely unrelated names:
 | mean shared leading digits | **4.26** | 1.41 | 0.11 | 0.07 |
 
 One character is strongly visible in the hash. Two is faint. **From three the pair is
-indistinguishable from any two unrelated names** â€” XOR does not commute with the multiply, so each
+indistinguishable from any two unrelated names** — XOR does not commute with the multiply, so each
 further step scatters what the last one left. There is no proximity to filter on and no solve to
 generalise.
 
@@ -5431,7 +5431,7 @@ it. Sizes against 922k names and the 37 characters names end in:
 Each k subsumes the ones below it. **k=3 returned 266 on Cold War and 885 on Black Ops 4, in
 twenty-one seconds each.**
 
-### The hash runs backwards for the final byte, and that is a method â€” 2026-08-22
+### The hash runs backwards for the final byte, and that is a method — 2026-08-22
 
 Contributed as an observation: `p9_example_model_name_1` and `..._2` hash to nearly the same
 number. They do, and the reason is exact rather than approximate.
@@ -5442,12 +5442,12 @@ XOR touches only the low eight bits, so
     h(A) - h(B) = ((h_prefix ^ a) - (h_prefix ^ b)) * prime
 
 and that first term is an integer in [-255, 255]. The difference between the two hashes is always
-an exact small multiple of the prime â€” `_2` is -3x, `_3` is -2x, `_a` is -80x. A few times 1.1e12
+an exact small multiple of the prime — `_2` is -3x, `_3` is -2x, `_a` is -80x. A few times 1.1e12
 apart in a space of 1.8e19, which is what "nearly the same hash" is.
 
 **It holds for the final byte and no other.** One position further in, the difference is carried
 through another XOR, XOR does not commute with the multiply, and the multiplier is already 7.1e18
-â€” random. Do not try to generalise it; that is measured, not assumed.
+— random. Do not try to generalise it; that is measured, not assumed.
 
 **The relation inverts, so this is a solve rather than a search.** The prime is odd, so
 
@@ -5457,7 +5457,7 @@ Take every known name's prefix, ask whether `u * prime_inverse` differs from one
 low eight bits only, and the answer *is* the character. 256 lookups per unnamed id, no strings
 built, no candidates hashed.
 
-**Measured, Black Ops 4: 2,523 candidates, 138 confirmed â€” one name per 18.** The next best method
+**Measured, Black Ops 4: 2,523 candidates, 138 confirmed — one name per 18.** The next best method
 in this file is image siblings at one per 394. Sweeping the same ground the obvious way took
 35,068,642 candidates for 75 names, so solving backwards is ~14,000x cheaper *and* covers more,
 because it tests all 256 bytes rather than the 39 a measured alphabet would carry.
@@ -5471,22 +5471,22 @@ Two traps, both paid for:
 - **Its 138 landed as 3.** A brute sweep of the same ground an hour earlier had already claimed
   them. That is `found` against `landed` in `methods_report.py`, and it is the normal case.
 
-### Cross-type core seams are stronger than recorded and yield nothing â€” 2026-08-22
+### Cross-type core seams are stronger than recorded and yield nothing — 2026-08-22
 
 Both rows above are worth reading carefully, because they are the clearest example in this file of
 a measurement that looks like a find and is not.
 
 `cross_type.py --measure` applies **one** reduction to both sides of a pair. `scripts/seams.py`
-applies every reduction to each side independently, and under the right pair the materialâ†’image
-seam is **75,964 shared cores against the recorded 15,770** â€” 59.98% of every image name in the
+applies every reduction to each side independently, and under the right pair the material→image
+seam is **75,964 shared cores against the recorded 15,770** — 59.98% of every image name in the
 corpus. The relation is real and it was being measured five times too weakly. The spelling is real
 too: **85.9% of those shared cores reconstruct an actual published image name** when spelled
 `begin + core + end` with image's own commonest decorations.
 
 Then it was run. `confirm_plan` put the 181,466 cores material has and image has not through the
-engine with those decorations â€” 113,416,250 candidates against Cold War and the same again against
-Black Ops 4 â€” and matched **0 unnamed ids on either game**. Not zero new: zero matched. The
-materialâ†’xmodel seam, 78,208,750 candidates each way, likewise **0 and 0**.
+engine with those decorations — 113,416,250 candidates against Cold War and the same again against
+Black Ops 4 — and matched **0 unnamed ids on either game**. Not zero new: zero matched. The
+material→xmodel seam, 78,208,750 candidates each way, likewise **0 and 0**.
 
 So the seam is genuine, thoroughly mined, and **its non-overlapping half does not extend**. A core
 that one type has and another has not is overwhelmingly a core the second type never had.
@@ -5494,12 +5494,12 @@ that one type has and another has not is overwhelmingly a core the second type n
 **The lesson is about the headroom column, and it cost four passes to learn.** `seams.py` reports
 `only in A` as what a derivation would produce, and both these seams had six figures of it. It
 predicted nothing. Relation strength says the relation exists; it does not say the missing side is
-missing *because nobody has named it yet*. Only running it says that â€” and running it is now
+missing *because nobody has named it yet*. Only running it says that — and running it is now
 minutes, so **run it rather than reasoning about it**.
 
 ### The two cheapest checks with the biggest upside
 
-**1. Do confirmed image cores appear as material cores?** â€” **built and measured, 2026-08-20.**
+**1. Do confirmed image cores appear as material cores?** — **built and measured, 2026-08-20.**
 See method 16 below. The seam is real and the yield is poor: 7 names in Cold War, 10 in Black Ops
 4. Do not re-derive it.
 
@@ -5507,38 +5507,38 @@ See method 16 below. The seam is real and the yield is poor: 7 names in Cold War
 `src/lib.rs` notes a model id "with the usual `xcollision` and `xskeleton` beside it". If those
 siblings share the model's name, every one of ~6,444 confirmed model names is a free name in two
 more pools. Ten minutes to test: hash confirmed model names and look for the ids in those pools.
-**Ask before grinding it** â€” neither is among the five wanted types, and check cod-name-db has a
+**Ask before grinding it** — neither is among the five wanted types, and check cod-name-db has a
 destination table, since a name with nowhere to land is worth less than one that can be published.
 
 ### Others, briefly
 
-- ~~**`numbered_grids.py`**~~ â€” families numbered on *two* axes. **Built and measured dead,
-  2026-08-24 â€” see the dead ends.** The measurement this line asked for came back healthy (a third
+- ~~**`numbered_grids.py`**~~ — families numbered on *two* axes. **Built and measured dead,
+  2026-08-24 — see the dead ends.** The measurement this line asked for came back healthy (a third
   of the corpus carries two numeric runs) and the pass came back **0 in both games**, on a
   generator whose positive control rebuilds 100% of the observed cells. Do not rebuild it.
-- **`suffix_chains.py`** â€” endings compose (`_01` + `_c`). The list is capped at 4,800 *observed*
+- **`suffix_chains.py`** — endings compose (`_01` + `_c`). The list is capped at 4,800 *observed*
   endings, so rare compositions are structurally absent. Measure: how many pairwise compositions of
   the top 50 endings are already published but missing from `data/suffixes.txt`.
-- **`compound_splice.py`** â€” head of one name, tail of another, joined at a shared token. Distinct
+- **`compound_splice.py`** — head of one name, tail of another, joined at a shared token. Distinct
   from `slotswap` (substitutes in place) and `templates` (crosses within one family). Cap by
   requiring a *rare* shared token or the pair count is quadratic.
-- **`token_order.py`** â€” permute two adjacent middle tokens. Nothing here reorders anything.
+- **`token_order.py`** — permute two adjacent middle tokens. Nothing here reorders anything.
   Measure: do any permutations of confirmed names already appear in the tables? If none do, the
   convention is stable and this finds nothing.
-- **`cross_game.py`** â€” try a name confirmed in one title verbatim in the other. `confirm_cw` seeds
+- **`cross_game.py`** — try a name confirmed in one title verbatim in the other. `confirm_cw` seeds
   *pieces* across games already, but nothing tries whole names. Nearly free: no generation, just
   hashing a list that exists.
-- **`cross_era.py`** â€” the `_v2` tables (Vanguard, MWII, MWIII, BO6, BO7) re-hashed under *this*
-  era's rules. Those games reuse older assets. Note they use a different mask â€” see `docs/HASHES.md`
-  â€” so re-hash their *names*, never reuse their ids.
-- **`map_sets.py`** â€” map prefixes (`p9_` heads 77,248 published names, `p8_` 66,172, `p7_` 42,516)
+- **`cross_era.py`** — the `_v2` tables (Vanguard, MWII, MWIII, BO6, BO7) re-hashed under *this*
+  era's rules. Those games reuse older assets. Note they use a different mask — see `docs/HASHES.md`
+  — so re-hash their *names*, never reuse their ids.
+- **`map_sets.py`** — map prefixes (`p9_` heads 77,248 published names, `p8_` 66,172, `p7_` 42,516)
   crossed with faction codes and confirmed bodies. Overlaps `slotswap`; measure what it reaches that
   slotswap does not.
-- **Black Ops 4 `sound_asset`** â€” 70,878 unnamed and ~102 ever found, the largest untouched ground.
+- **Black Ops 4 `sound_asset`** — 70,878 unnamed and ~102 ever found, the largest untouched ground.
   The general sound pass gets ~169 a time because its beginnings cannot express deep SAB paths.
   Characterise the 8,385 known SAB names first; a generator built from their path structure is the
   most valuable unbuilt thing here *if* the structure is learnable.
-- **`methods_report.py --efficiency`** â€” not a generator. Every run folder records candidates,
+- **`methods_report.py --efficiency`** — not a generator. Every run folder records candidates,
   matches and time. Nothing computes names-per-candidate across them, so the ranking above will go
   stale. Once computed, the rotation could order itself by measured yield.
 
@@ -5546,7 +5546,7 @@ destination table, since a name with nowhere to land is worth less than one that
 
 - **`images_from_materials` has no checkpointed run folder.** `confirm_cw` and `confirm_list` write
   theirs every sixty seconds so a killed pass stays submittable; this one does not. It is also the
-  most expensive slot in the rotation, now measured at 2h15m for 43 names â€” see the note under
+  most expensive slot in the rotation, now measured at 2h15m for 43 names — see the note under
   method 3. The checkpointing is the part still missing.
 - **`--shard i/n` on `confirm_cw`.** Needed before anyone runs several machines. The search is
   deterministic, so N machines running one method produce identical output.
@@ -5554,13 +5554,13 @@ destination table, since a name with nowhere to land is worth less than one that
   never passes it to `suggest`, so every fresh clone is told to do the same thing. Also break the
   fresh-clone game tie randomly rather than by list order.
 - **`snapshot` will silently destroy an injected pool.** Run with no argument it rewrites
-  `snapshots/<game>.ids` purely from the loader â€” which drops Cold War's 50,890 injected
+  `snapshots/<game>.ids` purely from the loader — which drops Cold War's 50,890 injected
   `sound_alias` ids and Black Ops 4's 79,263 SAB `sound_asset` ids, because Cordycep has no pool
   for either. It takes an output path; a guard that refuses to overwrite a file holding pools the
   loader does not have would be better than remembering to pass one.
 - **`name_field_probe` and `loader_strings` need the game open**, and answer two questions that
   have now cost more than one session each: where a pool keeps its name, and what the string pool
-  can reach. Both are Cold War-measured only â€” the Black Ops 4 halves are unrun.
+  can reach. Both are Cold War-measured only — the Black Ops 4 halves are unrun.
 
 ---
 
@@ -5595,14 +5595,14 @@ When you add one:
 Seeded methods first, always. That is where the yield is and they compound.
 
 Exhaustive or random character combination is a legitimate **last** resort once seeded methods are
-genuinely exhausted â€” never a starting point. The arithmetic says why: the median confirmed name
+genuinely exhausted — never a starting point. The arithmetic says why: the median confirmed name
 has seven or eight underscore-separated segments, and the space of sequences that long passes 2^63
 long before the name does. Past four segments the hash stops being a filter and becomes a
 checksum: there are more candidate strings than there are hashes, every one an equally valid
 preimage, and no amount of speed changes that. Only a prior can. Fragment recombination *is* that
 prior.
 
-If you do get there, constrain it with what has been measured â€” known directories, known prefixes,
+If you do get there, constrain it with what has been measured — known directories, known prefixes,
 known segment shapes, known endings. This is also the only regime where collisions matter: a
 41.7 T candidate pass expects 0.617 coincidental matches, and a seeded pass of forty million
 expects 0.0000. Every binary prints the figure.
@@ -5613,15 +5613,15 @@ expects 0.0000. Every binary prints the figure.
 
 `scripts/materials_from_images.py` | **7** (CW), **10** (BO4) | 4.57M candidates per game
 
-The material â†” image seam run backwards. `images_from_materials` (method 3) goes material â†’ image;
-this strips an image name to its core â€” directory, a leading `i_`, one channel suffix â€” and offers
+The material ↔ image seam run backwards. `images_from_materials` (method 3) goes material → image;
+this strips an image name to its core — directory, a leading `i_`, one channel suffix — and offers
 that core as a material under all twelve directories, in both the `mtl_` prefixed and bare
 spellings. Both forms are needed: of 329,846 material names measured, **67.4% carry `mtl_` and
 32.6% do not**, so emitting only the prefixed form gives up a third of the space.
 
 **What it reaches that nothing else does:** material names whose core was only ever confirmed as an
 image. There are far more published image names than confirmed materials, so the reverse direction
-has the larger corpus â€” which is why it looked promising.
+has the larger corpus — which is why it looked promising.
 
 **Spent by:** its own corpus. It reopens only when new image names are confirmed.
 
@@ -5636,7 +5636,7 @@ the tables, or expect to be out by an order of magnitude.
 
 ## The compounding loop, measured over one night
 
-`AGENTS.md` Â§7 says every confirmed name is a new beginning, a new ending and a new numbered
+`AGENTS.md` §7 says every confirmed name is a new beginning, a new ending and a new numbered
 family, so re-measuring the lists reopens a method that reported itself exhausted. That is true.
 This is how much, and how fast it decays -- measured 2026-08-20/21 on one machine, both games,
 the same binary each time.
@@ -5684,7 +5684,7 @@ the ranking is animation transitions: `_to_walk`, `_to_sprint`, `_to_jog`, `_off
 
 ### Why this was not found by re-measuring
 
-CLAUDE.md Â§8 is right that re-running `derive_lists.py` does not reopen ground: it changes what a
+CLAUDE.md §8 is right that re-running `derive_lists.py` does not reopen ground: it changes what a
 search is *called* without changing what it can *reach*. That is exactly why this was invisible.
 The ending list is **capped**, `derive_lists.py` reports what its ceiling cut, and re-measuring
 cannot lift a cap -- so the cut vocabulary was reported honestly every single run and never once
@@ -5696,7 +5696,7 @@ The cores come from the published names with the same number of segments removed
 wears `_c` in the tables can be asked about wearing `_thermalmap`. Two things keep it runnable:
 
   - **Drop dotted endings.** Sound names carry a dotted tail, and at three segments they crowd out
-    every ending the other four types use. Â§5 already says a sound ending tried against a model id
+    every ending the other four types use. §5 already says a sound ending tried against a model id
     can only ever be a coincidence. `--sounds` keeps them if a sound pass wants them.
   - **Restrict the cores to one game past two segments.** The ending vocabulary grows faster than
     the core list shrinks, and the published core list makes the plan unrunnable.
@@ -5754,7 +5754,7 @@ published tables, so no ending sweep had ever crossed them with the ending vocab
     confirmed-only cores x 505,416 endings            746 names
     confirmed-only SOUND cores x 184,215 endings      583 names
 
-This is the distinction Â§8 is drawing and it is worth stating in the positive. Re-running
+This is the distinction §8 is drawing and it is worth stating in the positive. Re-running
 `derive_lists.py` reopens nothing because it renames the same reach. New **material** reopens
 ground properly, and confirming names is the only thing that produces it -- which is why the
 right move after any productive pass is to rebuild the core list and run again, and the wrong
@@ -5780,7 +5780,7 @@ to identify anything. This paragraph originally closed by calling the cross unme
 true when it was written and was overtaken within the day; it is kept because the reasoning that
 motivated it is still the right reasoning, and only its conclusion moved.
 
-### Which segment depth pays, measured across all five â€” 2026-08-29
+### Which segment depth pays, measured across all five — 2026-08-29
 
 Method 25 is usually run at the depth somebody happened to pick. Swept properly against Cold War
 sound on one afternoon, on freshly generated lists each time, the depths are not close:
@@ -5903,7 +5903,7 @@ corpus* returned 7 names and *doubly uncarried* returned 0, because both crossed
 with **Cold War's own** stems -- a corpus recombined with itself, bounded by the region it already
 covers. The cap matters when the stems come from **outside** it.
 
-### And on the sound side the ceiling is the binding constraint, not the measurement â€” 2026-08-29
+### And on the sound side the ceiling is the binding constraint, not the measurement — 2026-08-29
 
 `reach.py` reports `xsounds` at **100% reached and 10.7% named**: the ending list can express
 these names, and the beginning list almost never can. The obvious reading is that the sound
@@ -5927,7 +5927,7 @@ change to the shared lists. Note before building one that the `vox_` families th
 are heavily worked already -- *the `vox_` slot grid* and *vox speaker x line grid* are both in the
 registry and the latter has decayed to 163,662 candidates a name.
 
-### The all-boundary ending sweep's own `--top` cap has the same hole â€” 2026-09-03
+### The all-boundary ending sweep's own `--top` cap has the same hole — 2026-09-03
 
 `scripts/contributed/uncarried_endings_allboundary_20260829-172236.py --top` defaults to 100,000
 and its docstring calls that "the measured sweet spot: 20,000 gave 602 names and 300,000 gave
@@ -5936,18 +5936,18 @@ mistake this file already warns about above: a cap that looked optimal on the co
 measured against silently throws away vocabulary once the corpus grows, and nobody re-checked it.
 
 Run repeatedly against Black Ops 4 alone as the corpus grew through this session, `--top 300000`
-kept paying â€” 46, then 31, then 6, then 4, then 1 name per cycle at 2 segments. That decay reads
+kept paying — 46, then 31, then 6, then 4, then 1 name per cycle at 2 segments. That decay reads
 exactly like a spent method. It was not: it was the same **300,000 endings**, re-offered to a
-slowly growing core list, while the pool of endings the cap was dropping â€” **492,271 uncarried
-2-segment endings existed, 792,271 uncarried at 3 segments, 957,772 at 4** â€” never got touched.
+slowly growing core list, while the pool of endings the cap was dropping — **492,271 uncarried
+2-segment endings existed, 792,271 uncarried at 3 segments, 957,772 at 4** — never got touched.
 
 Passing `--top` high enough to carry the *entire* uncarried-ending list rather than a capped slice
-(`--top 500000` at 2 segments, `--top 900000` at 3, `--top 1000000` at 4 â€” any value at or above
+(`--top 500000` at 2 segments, `--top 900000` at 3, `--top 1000000` at 4 — any value at or above
 the actual count) reopened it immediately: **41 new names at 2 segments, then 621 at 3 segments**
-against Black Ops 4's unnamed ids â€” the single largest result of this project's session on this
+against Black Ops 4's unnamed ids — the single largest result of this project's session on this
 machine, and larger than every other method run that day combined. The 3-segment run landed
 **545 of the 621 in `sound_alias`**, the pool `reach.py` had already flagged as ending-reachable
-but beginning-starved (see above) â€” the wide ending sweep found the matching half of that gap.
+but beginning-starved (see above) — the wide ending sweep found the matching half of that gap.
 
 **The lesson generalises past this one script: any generator with a `--top` / ranked-list cap is
 worth re-running uncapped once the corpus it draws from has grown meaningfully past whatever
@@ -5963,7 +5963,7 @@ past corpus size, not a permanent ceiling. Check what a cap is actually cutting
 published material and image names. A method that swaps a trailing code cannot reach any of them
 while the list is capped, whatever else it gets right.
 
-## Why the yield per submission keeps falling â€” measured 2026-08-29
+## Why the yield per submission keeps falling — measured 2026-08-29
 
 Names per pull request have gone `26 -> 20 -> 15 -> 100 -> 27 -> 9 -> 4` (median, by day) while
 submissions per day rose from 166 to 355. Four explanations were tested against the run record in
@@ -6006,7 +6006,7 @@ More invention, less yield. **Names per new method: 736 -> 166 -> 60 -> 132 -> 3
 ### What it actually is: the reachable set is finite, and the corpus cannot grow it
 
 Sorting every run by what kind of method it was makes it plain. Nearly all yield is *structural*
-â€” methods that exploit a gap between what the lists can express and what the game holds
+— methods that exploit a gap between what the lists can express and what the game holds
 (uncarried endings, all-boundary cores, the final byte, image channels, the beginning ceiling):
 
     2026-08-29   structural 1,032   external 0   perturbation 59   other 23
@@ -6016,14 +6016,14 @@ and the yield of a structural run is collapsing on rising effort:
     names per structural run   199 -> 24 -> 19 -> 11 -> 7
 
 **A structural gap is a seam, not a mine.** Sweeping it consumes it, and the corpus growing does
-not open another â€” a new confirmed name is more of the vocabulary already held, so it deepens a
+not open another — a new confirmed name is more of the vocabulary already held, so it deepens a
 seam nobody can re-sweep rather than cutting a new one. That is why `derive_closure` returned 0 on
 2026-08-29 against a corpus 900 names larger than the run before it, and why re-measuring the
 lists never reopens anything.
 
 ### And the one channel that adds new information is now provably closed
 
-*External* methods â€” reading the build, another title's archives, a mod tools tree â€” are the only
+*External* methods — reading the build, another title's archives, a mod tools tree — are the only
 ones that inject information the corpus does not already contain. They returned 3,020 names on
 2026-08-24 and **zero since**, because the source was read once and finished. That is now measured
 rather than assumed, in both directions:
@@ -6038,7 +6038,7 @@ rather than assumed, in both directions:
 **The project is information-limited, not effort-limited.** More passes, more contributors and
 more scripts do not change the answer, and the record shows exactly what happens when they are
 applied anyway: 336 of the 401 generators contributed on 2026-08-27 were perturbations of a known
-name â€” reversals, rotations, character swaps, rot13, atbash â€” and they returned **121 names, 0.36
+name — reversals, rotations, character swaps, rot13, atbash — and they returned **121 names, 0.36
 per script**, against roughly **16** per script for structural work in the same window. Permuting
 names you already hold cannot tell you a name you do not.
 
@@ -6053,7 +6053,7 @@ of what is actually on this disk:
    schedule. Everything else unread -- Black Ops, World at War, Call of Duty 4, Modern Warfare
    2 and 3, eleven installs surveyed -- is encrypted too, so "walk the builds nobody has
    walked" is not the cheap lead it looks like. See the survey under method 17.
-3. **Anything that reads the game rather than the names** â€” the loader, a memory dump, a running
+3. **Anything that reads the game rather than the names** — the loader, a memory dump, a running
    process.
 
 Ranking methods by past yield will not find these, because a ranking cannot rank a method nobody
@@ -6105,33 +6105,33 @@ Do not spend a night rediscovering these. Each cost real time.
 | **Exhaustive 3-4 character speaker codes, Cold War**, 2026-10-01 | The Black Ops 4 version returned 176 names; Cold War never had one. `contrib/cw_speaker_codes.py`: `vox_` + every unseen code of 3-4 chars from [a-z0-9] (1,726,149) + the 1,054 lines at least three known Cold War speakers share, as a plan: 1.8B candidates, **0.** Cold War's voice cast is fully known at that length; its ~490-line speaker grids are already filled. |
 | **Snapshot order as locality**, 2026-10-01 | Consecutive named records share a 3-token family 52-54% of the time in `image` against 5-9% shuffled, which looks like load-order information. It is not: both snapshots are **sorted by id**, and the locality is FNV's own -- names differing only in their final byte hash to ids a small multiple of 2^40 apart. That is exactly what `final_byte` already solves backwards. The snapshot carries no order beyond the hash. |
 | **The lighting-bake map stamp as a hash of the map name**, 2026-10-01 | The 38 distinct 8-hex stamps in `volume<V>_state<S>_<kind>_<stamp>_<i>` against 841 `mp_`/`zm_`/`cp_`/`wz_` map tokens in seven spellings (`mp_x`, `maps/mp/mp_x.d3dbsp`, ...), under CRC32, FNV-1a 32 and the low, high and 63-bit-shifted halves of FNV-1a 64: **0 matches.** The stamp is a bake identifier, not derivable from the map, so the bake grid's ceiling stays the published maps. |
-| Pooling `coordinated_identifiers.py`'s evidence across asset types instead of per-type, 2026-09-25 | `contrib/coordinated_identifiers_crosstype.py`. Hypothesis: a substitution rule like `usa<->rus` is game vocabulary, not naming-convention vocabulary, so it should be learnable from sibling evidence in *any* asset type, not just the type it is applied to. Pooled all six types' names into one evidence set: 7,246 supported rules, 926,631 candidates, but **`cross_kind_supported_pairs: 0`** â€” no rule's two required sibling frames ever came from different kinds, because the per-type naming convention makes the full masked-template shape (not just the token) type-specific. Confirmed anyway, all four game/fold configurations: **0 new everywhere.** The per-type original already covers this ground; pooling only adds candidates the per-type run already tried under a different fingerprint. |
+| Pooling `coordinated_identifiers.py`'s evidence across asset types instead of per-type, 2026-09-25 | `contrib/coordinated_identifiers_crosstype.py`. Hypothesis: a substitution rule like `usa<->rus` is game vocabulary, not naming-convention vocabulary, so it should be learnable from sibling evidence in *any* asset type, not just the type it is applied to. Pooled all six types' names into one evidence set: 7,246 supported rules, 926,631 candidates, but **`cross_kind_supported_pairs: 0`** — no rule's two required sibling frames ever came from different kinds, because the per-type naming convention makes the full masked-template shape (not just the token) type-specific. Confirmed anyway, all four game/fold configurations: **0 new everywhere.** The per-type original already covers this ground; pooling only adds candidates the per-type run already tried under a different fingerprint. |
 | `sab_plan.py`, the full directory x basename x tail product (not sampled), Black Ops 4, 2026-09-04 | Method 20's generator (`sabpaths`) capped itself at 36.4M candidates to finish as a pipe and returned 5 names. This asks the *same vocabulary, same convention* completely, as a plan the engine runs instead of a piped generator: 13,315 directories x 93,743 basenames x 150 tails, **188.5B candidates, 0 matched.** Extends the existing extensive `sound_asset` dead-end record (numbered takes, directory x basename recombination, all-boundary cores x uncarried endings, cross-title respelling -- all recorded dead above) with the one shape none of them tried: the full product at once, unsampled. Consistent with the standing conclusion that this pool's unnamed 70,697 are not built from pieces the named ~8,600 are built from, under any recombination shape measured so far. |
 | `cross_era.py` with widened `--heads`/`--tails` caps (5,000/20,000, up from the 1,200/6,000 defaults), Black Ops 4, 2026-09-03 | The `--top`-cap lesson above paid off huge for the ending sweep (621 names), so the same fix was tried on `cross_era.py`'s own rank caps -- same shape of parameter, same corpus that had grown 5x since the defaults were last measured. 120T candidates over 8 slices; **5 of 8 slices run (62%), 0 matched in every one.** Not a full run -- `confirm_plan` has no slice-resume flag, so finishing the last 3 would mean redoing the first 5 from scratch, which was not worth it once 5 straight zeros were in. Unlike the ending-sweep cap, widening this one did not reopen anything: the newer titles' vocabulary, respelled with our own decorations, still does not land on Black Ops 4's specific unnamed ids at this corpus size. Consistent with the standing "engines renamed rather than inherited" conclusion. Worth a full 8-slice run if the corpus grows substantially again, but do not expect the same shape of win twice from the same trick. |
 |---|---|
 | `tails.py --head --length 3`, re-run on the 2026-09-06 corpus against BLKOPSCW (1,004,856 known names, up from ~692k when it first returned 692) | The single best invented pass in the project's history, re-tried on the theory that a much larger corpus might reopen it the way it reopened the ending sweep above. 54,872 measured head-alphabet beginnings x 992,714 stems, **54.47B candidates, 0 new.** Matches its `spent` verdict in the registry (last paid 2026-08-29): unlike the ending list, which had a live `--top` cap quietly discarding vocabulary, this generator already offers every known 3-character head over the full measured alphabet, so a bigger corpus mostly just means more of the same short heads repeating. Re-check after the corpus grows by an order of magnitude, not a few thousand names. |
-| `cw_mcdp_redecoration.py`, re-run on the 2026-09-06 corpus (2,827 confirmed, well past the 2026-08-29 corpus that still returned 3) | `mcdp/` is a re-decoration of the general material vocabulary, not a namespace of its own (see method 19 and the redecoration entries above) â€” every re-run offers it the material cores confirmed since the last one. The yield has now gone **2,846 -> 5 -> 5 -> 3 -> 0**: 621,924 material cores, 1,214,373 candidates against BLKOPSCW, **0 new.** Unlike the `--top`-cap fix above, there was no capped list here to widen â€” this generator already offers every known core â€” so the trend is a genuine decay, not a measurement artifact. Re-run again only once a meaningfully larger batch of material names has landed; running it every session is now pure overhead. |
-| Sound **alias** names as sound **file** stems | 706 of 101,673 distinct file stems are exactly an alias name â€” **0.7%**. The two vocabularies are unrelated: aliases are bare underscore names (`amb_computer_loop_1`), files are deep paths with encoding tails. Do not build a generator on this seam. |
+| `cw_mcdp_redecoration.py`, re-run on the 2026-09-06 corpus (2,827 confirmed, well past the 2026-08-29 corpus that still returned 3) | `mcdp/` is a re-decoration of the general material vocabulary, not a namespace of its own (see method 19 and the redecoration entries above) — every re-run offers it the material cores confirmed since the last one. The yield has now gone **2,846 -> 5 -> 5 -> 3 -> 0**: 621,924 material cores, 1,214,373 candidates against BLKOPSCW, **0 new.** Unlike the `--top`-cap fix above, there was no capped list here to widen — this generator already offers every known core — so the trend is a genuine decay, not a measurement artifact. Re-run again only once a meaningfully larger batch of material names has landed; running it every session is now pure overhead. |
+| Sound **alias** names as sound **file** stems | 706 of 101,673 distinct file stems are exactly an alias name — **0.7%**. The two vocabularies are unrelated: aliases are bare underscore names (`amb_computer_loop_1`), files are deep paths with encoding tails. Do not build a generator on this seam. |
 | Model cores against anim cores | **Zero** shared, out of 154,525 model and 30,337 anim cores. Taking an anim's name minus its last token as a model name hits 16 of 30,337 (**0.1%**). There is no model/anim seam to exploit. |
-| Model cores against material cores | 3,300 shared of 154,525 and 266,575 â€” about 2%, against the 15,770 that material and image share. Weak enough not to be worth a pass. |
+| Model cores against material cores | 3,300 shared of 154,525 and 266,575 — about 2%, against the 15,770 that material and image share. Weak enough not to be worth a pass. |
 | Recombining **sound file** paths, in either game, at any corpus density | This is the general form of the Black Ops 4 result below, and it settles what that one could not. Cold War `sound_asset` is **40.3% named** -- 39,178 known of 97,217, against Black Ops 4's 5.3% -- so it has eight times the material to recombine from, 2,679 directories and 38,574 basenames. Directory x basename: **0 new of 400,000**. Tail swap across the four commonest endings: **0 new of 36,679**. Importing Black Ops 2 and 3 basenames under Cold War's own directories: **0 new of 600,000**. So corpus density was never the obstacle, and the earlier "the corpus is too small to rebuild from" was the wrong diagnosis even after it was corrected once. A sound file is a *recording*, and its name belongs to the directory it sits in; basenames and directories are not independently combinable the way a material's core and its directory are. Anything reaching these pools has to come from outside the naming -- the SAB files, a build, or the game's own strings. |
 | Re-hashing the newer titles' names against these two games | Candidate 15 below proposed this as costing "almost nothing -- no generation at all, just hashing an existing list", which was true, and it returns nothing. Every name in all eight `_v2` tables -- Vanguard, MWII, MWIII, BO6, BO7: `xmaterials`, `ximages`, `xanims`, `xsounds`, `soundbanks`, `soundbanks_aliases`, `animpkgs`, `bones`, **1,175,524 names** -- hashed under *our* rules, folded and unfolded, against the **336,505** ids still unnamed in the wanted types across both games. **Zero.** Not a weak seam; an empty one. The newer engines renamed rather than inherited, so their published vocabulary describes nothing these two titles hold. Costs three minutes to reproduce and needs no game. |
 | Recombining Black Ops 4 `sound_asset` (SAB) paths | The largest single opportunity in either game -- **70,876 unnamed of 79,263** -- and recombination does not reach it. Everything anybody knows is **4,212 names, 5.3% of the pool**, and they do not generalise to the rest. Measured 2026-08-20, all against ids nobody can already name: filling holes in numbered families **0 of 1,847**; extending a family past its highest number **0 of 59,052**; swapping the extension tail (`.ln100.pc.snd` -> `.ll100.pc.snd` and the other 15) **78 hits but 0 new** -- every one was a name already published; directory x basename cross product **2 new of 240,000**, or 1 per 120,000, worse than `token_edits` at 1 per 94,000. The structure *is* learnable (24 leading segments, 16 extension tails, depth 2-6) which is what makes this worth writing down: the shape being legible is not the same as the corpus being big enough to rebuild from. Anything that reaches this pool has to come from outside the known names -- the SAB files themselves, or a build. **Corrected 2026-08-21, and the correction is the useful part:** GoastcraftHD's `sabpaths` found that outside source *inside this repository*. `bo2_sab.csv` and `bo3_sab.csv` hold 400,815 Black Ops 2 and 3 audio paths that nothing here had ever used, because they are SDBM-hashed and so are not "our games" for exclusion -- but their *directory* structure transfers, BO3 sharing **9.18%** of its stems against the 0.7% / 0.1% / 0 of the seams recorded dead above. Two further things this measurement got wrong: it read only three sound tables and recovered **4,212** known names where a full sweep finds **8,446**, so "the corpus is too small to rebuild from" was argued from half a corpus; and it tested recombination of Black Ops 4 names against each other, which is the one shape the pool's own structure predicts will fail, since names average 3.7 per directory and a known directory is mostly *unknown* members. Recombining what is already known is dead here. Importing directories from an older title is not. |
-| Harvesting the loader's **script string pool** for candidates | Plausible and completely dead for the grind. Every string the loader holds, hashed against the live game: 23,301 of 1,480,510 ids, **1.6%** â€” and **0 of the 159,170 ids a Cold War pass actually hunts**. The 4,038 hits that do land in targeted pools (2,467 image, 1,567 xmodel) are *all* already in the tables. The reason is structural, not a matter of trying harder: an asset type is reachable from the string pool only if the engine addresses it **by name**, and models, materials and images are addressed by hash. Measure with `loader_strings`. |
+| Harvesting the loader's **script string pool** for candidates | Plausible and completely dead for the grind. Every string the loader holds, hashed against the live game: 23,301 of 1,480,510 ids, **1.6%** — and **0 of the 159,170 ids a Cold War pass actually hunts**. The 4,038 hits that do land in targeted pools (2,467 image, 1,567 xmodel) are *all* already in the tables. The reason is structural, not a matter of trying harder: an asset type is reachable from the string pool only if the engine addresses it **by name**, and models, materials and images are addressed by hash. Measure with `loader_strings`. |
 | Scanning `xsub` files for names | They hold none. 85 GB of nothing. |
 | A NUL-terminated-only string scanner over xpak/ff/fd | Misses roughly 800,000 names. |
-| Suspecting the captured id is a **name pointer** rather than a hash | It is a hash. `snapshot` stores `entry.id`, the loader's own pool-entry field, never a dereferenced header. Measured over every asset in all 202 live Cold War pools: bits 0-62 uniform, bit 63 always clear, 12.5% 8-byte aligned (random gives 1/8), and tens of thousands of published names hash straight into it. Separately, `header+0x00` *is* the id in 180 of 202 pools and something else in 22 â€” `xanim` keeps its id at **+0x70** â€” but nothing reads that field, so it changes nothing. Re-measure with `name_field_probe`. |
+| Suspecting the captured id is a **name pointer** rather than a hash | It is a hash. `snapshot` stores `entry.id`, the loader's own pool-entry field, never a dereferenced header. Measured over every asset in all 202 live Cold War pools: bits 0-62 uniform, bit 63 always clear, 12.5% 8-byte aligned (random gives 1/8), and tens of thousands of published names hash straight into it. Separately, `header+0x00` *is* the id in 180 of 202 pools and something else in 22 — `xanim` keeps its id at **+0x70** — but nothing reads that field, so it changes nothing. Re-measure with `name_field_probe`. |
 | Salsa20 for the encrypted fast files | Wrong cipher. It is AES-256-CTR, little-endian counter. |
 | Training a name classifier on the `_v2` tables | Those are MW2022/BO6 and teach the wrong conventions. |
 | Stripping `_geo_rigid_bs_` as its own rule | Underscore truncation already covers it, and mesh names are unobtainable anyway. |
 | Feeding the hash tables in as candidate input | A closed loop. 87% of `consolidate`'s work, zero names. |
-| Hunting `localizeentry` | The entry holds a pointer to its own unhashed string â€” the plain text is already in the build. 8,667 confirmed in one pass, all worthless. `confirm_localize` now refuses to run. |
+| Hunting `localizeentry` | The entry holds a pointer to its own unhashed string — the plain text is already in the build. 8,667 confirmed in one pass, all worthless. `confirm_localize` now refuses to run. |
 | Hunting `streamkey` | ~290,000 genuine, useless hashes, mostly sequential `d3dbsp` terrain. The largest pool in both games, so anything that "opens up every pool" lands here first. `submit` refuses to send them. |
 | Widening `pools` to ~40 asset types by guesswork | One submission did. Nothing useful came of it, and the real findings were buried among the rest. |
 | Searching four pools because they had "sound" in the name | `sound`, `sound_asset`, `sound_bank`, `sound_duck`. Only `sound_asset` is worth anything, and only in Cold War. |
 | Cross-type generation involving `xanim` and a non-model type | Measured: 13 to 22 shared cores out of tens of thousands. There is no seam. |
 | Recombining the **zombies** family into Black Ops 4 xmodels | `contrib/zombie_models.py`, 20260821: every model name already known to carry `zombie`/`zmb`/`zm_` cut into 46,306 stems and recombined against 24 model beginnings and 407 endings. **452,317,008 candidates, 0 matched** -- not a low yield, a zero, against 20,922 unnamed BO4 model ids. The family's vocabulary is not the constraint: the unnamed models are not spelled out of pieces the named zombies models use. A wider ending set is the obvious next try and the measurement says not to bother with the same stems. |
-| Re-measuring the lists to reopen a spent method | `derive_lists.py` folds the confirmed names in, the fingerprint changes, and the tool stops saying the search is swept â€” so it looks like the method reopened. Three consecutive folds: **55 names, then 294, then 51**, the last on a corpus two and a half times larger. The lists are capped, so a fold displaces as much vocabulary as it adds; what reopens a method is different ground. This was `next_step`'s standing advice for a month and is most of how a 165-name pass became a 2-name one. |
+| Re-measuring the lists to reopen a spent method | `derive_lists.py` folds the confirmed names in, the fingerprint changes, and the tool stops saying the search is swept — so it looks like the method reopened. Three consecutive folds: **55 names, then 294, then 51**, the last on a corpus two and a half times larger. The lists are capped, so a fold displaces as much vocabulary as it adds; what reopens a method is different ground. This was `next_step`'s standing advice for a month and is most of how a 165-name pass became a 2-name one. |
 | Uncarried beginnings crossed with the whole corpus, in general | The shape that returned 2,846 for `mcdp/` returns almost nothing anywhere else. Measured 2026-08-23: all 1,075 uncarried beginnings against the 879,325-core held vocabulary gave **0 on Black Ops 4 and 7 on Cold War** in 945 M candidates. `mcdp/` worked because 692 of 692 of its cores were borrowed from other directories -- it was a re-decoration of a vocabulary already held. Rank by *borrowed share* before building one of these (`scripts/contributed/redecorations_20260823-023757.py`); the rest of the uncarried beginnings have private vocabularies and this shape cannot reach them. |
 | Cold War sound files, numbered takes | 36,971 of the 39,199 recovered basenames end in a number, so this looked like the obvious shape. Swept every index in every measured width against every measured tail on 2026-08-23: **0**. Verified not to be a plumbing failure -- 2,783 of 2,816 numbered seeds reconstruct exactly from the stem and ending lists. The game's take runs are already fully named. |
 | Cold War sound files, directory x basename recombination | The same corpus, 248 real directories x 103,120 cores x the 16 commonest tails, 436 M candidates: **0**. Verified the same way -- 31,842 of 31,845 recovered names reconstruct exactly as directory + basename + tail. A Cold War sound basename does not appear under a directory the tables have not already caught it under. |
@@ -6150,8 +6150,8 @@ Do not spend a night rediscovering these. Each cost real time.
 | Numbered families as grids on **two** axes | `families.py --gaps` walks the *last* numeric run in a name and fills holes in it. A name carrying two numbers sits in a rectangle, and `families.py` keys its family on everything before the last number -- so `p7_..._01` and `p8_..._01` are unrelated families to it and it can never propose a cell by reasoning across them. Listed under *Candidates worth building* as `numbered_grids.py` from the beginning and never built. Built 2026-08-24: roughly **a third of every name in the corpus carries exactly two numeric runs** (material 36.6%, image 36.8%, xmodel 35.4%, xanim 20.8%), giving 983 rectangles of at least 2x2 whose cells the corpus has never shown. 128,899 candidates at margin 2, against **both** games: **0 matched, 0 hits of any kind** -- against 126,331 unnamed Cold War ids and 166,703 Black Ops 4 ones. Positive control passed and is the part worth keeping: **1,482 of 1,482 observed cells, 100.0%**, rebuild byte for byte from the template, and 543 of them (36.6%) hash to an id the Cold War snapshot actually holds -- so the plumbing is sound and the holes are genuinely empty. This is the **fifth** grid to answer this way after the animation transition grid, the `vox_` slot grid and the cosmetic-bundle grid, and it is the most general of them: those three each composed a *semantic* vocabulary, where this composes bare integers and so carries no assumption about meaning at all. Together they close the shape rather than three instances of it -- **an unobserved cell is unobserved because it was never made.** Do not build a sixth. Generator: `scripts/contributed/numbered_grids_20260824-155834.py`. |
 | Reading candidates with `BufRead::lines()` | Not a search dead end but the same lesson: the `String` per candidate *was* the program, capping `confirm_list` at 5.2M/s against 64.3M/s for raw bytes. |
 | `material` cores (`no tail`) spelled as `image` (`no ends`), Black Ops 4 only | `seam_stems.py --from material --from-reduce "no tail" --to image --to-reduce "no ends"` measured 18,868 shared cores and 169,141 only-in-material, which looked promising next to the already-dead `no head`/`no ends` pairing. Capped at 20,000 stems x 24 measured image beginnings x 24 endings, **12.5M candidates against Black Ops 4's unnamed ids only: 0.** Consistent with the existing material/image dead entries above: `seam_stems.py` pools both games' names by default (it has no `--game`/`held` narrowing, unlike `seams.py` itself), so a shared-core count measured across both games overstates what is reachable in one. |
-| `xmodel` cores (`no tail`) spelled as `xanim` (`no tail`), Black Ops 4 only | Untested pairing -- METHODS' dead-seam table only covers material/image and material/xmodel, not xmodel/xanim. `seam_stems.py` measured 537 shared cores of 101,587 xmodel / 16,838 xanim, alphabetically-first 30,000 of the 101,050 xmodel-only cores x 24 measured xanim beginnings/endings. **18.75M candidates against Black Ops 4's unnamed ids: 0.** Matches the existing "cross-type generation involving `xanim` and a non-model type: no seam" entry above; this extends it to modelâ†”anim specifically under the all-boundary reduction pair. |
-| `material` cores (`no head, no numbers`) spelled as `xmodel` (`no numbers`), Black Ops 4 only | The material/xmodel dead entry above only covers the `no ends`/`no tail` reduction pair. This one measured higher overlap -- 13,193 shared of 217,858 material / 135,508 xmodel cores -- so it looked like a different cut of the same seam might reach further. 30,000 of 204,665 material-only cores x 24 measured xmodel beginnings/endings, **18.75M candidates against Black Ops 4: 0.** Third seam-based zero in a row this session (after materialâ†’image and xmodelâ†’xanim above); together they support what METHODS already concluded about the strongest rows here -- shared-core counts under `seam_stems.py` describe both games pooled and do not translate into hits against either game's specific unnamed remainder. |
+| `xmodel` cores (`no tail`) spelled as `xanim` (`no tail`), Black Ops 4 only | Untested pairing -- METHODS' dead-seam table only covers material/image and material/xmodel, not xmodel/xanim. `seam_stems.py` measured 537 shared cores of 101,587 xmodel / 16,838 xanim, alphabetically-first 30,000 of the 101,050 xmodel-only cores x 24 measured xanim beginnings/endings. **18.75M candidates against Black Ops 4's unnamed ids: 0.** Matches the existing "cross-type generation involving `xanim` and a non-model type: no seam" entry above; this extends it to model↔anim specifically under the all-boundary reduction pair. |
+| `material` cores (`no head, no numbers`) spelled as `xmodel` (`no numbers`), Black Ops 4 only | The material/xmodel dead entry above only covers the `no ends`/`no tail` reduction pair. This one measured higher overlap -- 13,193 shared of 217,858 material / 135,508 xmodel cores -- so it looked like a different cut of the same seam might reach further. 30,000 of 204,665 material-only cores x 24 measured xmodel beginnings/endings, **18.75M candidates against Black Ops 4: 0.** Third seam-based zero in a row this session (after material→image and xmodel→xanim above); together they support what METHODS already concluded about the strongest rows here -- shared-core counts under `seam_stems.py` describe both games pooled and do not translate into hits against either game's specific unnamed remainder. |
 | `cross_era.py` (newer-title cores respelled) on Black Ops 4, 2026-09-01, at 1,038 confirmed names | The doc's own pitch for this method is strong -- importing vocabulary from *outside* the corpus is what's measured live, against recombination which is measured dead -- so it looked like the best untried big swing left this session. `python scripts/cross_era.py --write-plan`: 1,178,593 newer-title names (Vanguard/MWII/MWIII/BO6/BO7) reduced to 2,431,781 cores new to us, spelled with our 1,200 measured beginnings and 6,000 endings. **17.5T candidates against Black Ops 4 specifically, run in 8 slices: 0 matched in every slice, 0 total.** This narrows the existing "newer-title `_v2` tables hashed verbatim: 0" dead entry -- that measurement hashed the newer names *as spelled*, and the standing theory was that only the *cores* survive an engine change. Respelling those cores with our own conventions still returns zero against Black Ops 4's specific unnamed remainder. Consistent with the "engines renamed rather than inherited" conclusion already on record; extends it from "verbatim spelling doesn't transfer" to "the underlying vocabulary doesn't obviously transfer either, at this corpus size." The lifetime `cooling` figure in the efficiency table predates this run and mixes in Cold War and an earlier, smaller corpus -- worth re-checking there before assuming this is dead everywhere. |
 | `family_grid.py --top 20`, Black Ops 4 only, 2026-09-02 | Composes the unseen cells of the 20 largest numbered/grid-shaped families (`vox_`, `i_`, `fly_`, `vm_`, `ui_`, `wpn_`, `p8_`, `mp_`, `p7_`, `amb_`, `jup_`, `p9_`, `melee_`, `sat_`, `zmb_`, `callingcards_`, `evt_`, `icon_`, `pt_`, `weap_`) against the 2.2M-name corpus at that point. **4.3M candidates against Black Ops 4: 0.** Consistent with `scripts/contributed/` already carrying dozens of per-family `*_shared_tail_grid_*.py` variants for most of these exact families (`amb`, `att`, `evt`, `fly`, `i`, `icon`, `jup`, `mpl`, `mus`, `p7`, `p8`, `p9`, `pt`, `sat`, `ui`, `uie`, `vm`, `weap`, `wpn`, `zmb`) -- the generic top-N sweep is ground several other contributors have already picked over cell by cell. |
 | Uncarried beginnings (212 of them, everything but `mcdp/`) crossed with the whole corpus, Black Ops 4 only, 2026-09-01 | Re-run of the dead-ends entry above ("uncarried beginnings crossed with the whole corpus, in general") scoped to Black Ops 4 only rather than both games, on the corpus as it stood after this session's other passes (1,038 confirmed). `scripts/uncarried.py --least 20 --write-plan` -- 212 beginnings no cut of which `data/prefixes.txt` carries (`collision_`, `o_`, `icon_`, `ach_`, `s4_`, `electrical_`, `debris_`, `special_`, `core_`, `server_`, `hue_`, `lut_`, `volume14_/15_`, `cob_`, `bo3_`, `day_`, `un_`, ...), 236,465 stems, all 4,629 general endings. **232B candidates, 0 new.** Confirms the earlier finding was not a Cold War artifact: `mcdp/` really was the one uncarried beginning with a re-decoration story (692 of 692 cores borrowed from other directories), and the rest of this list has private vocabulary this shape cannot reach, in Black Ops 4 either. |
@@ -6165,10 +6165,10 @@ Do not spend a night rediscovering these. Each cost real time.
 | `templates.py --max-axes 4`, Cold War, 2026-09-09 at 3,660,894 known names | Default caps at 3 columns varied at once; widening to 4 -- letting a candidate differ from every known name in one more place simultaneously -- produces 62,461,822 candidates against the default's 55,113,580. **146 matched, 0 of them new.** Run right after this session's general search and sound pass had already pulled in 35 fresh names (17 sound_alias, 13 from the general search's xanim/xmodel, 5 from `confirm_variants swaps`), so this had genuinely new seed material to work with and still found nothing beyond what 3 axes already reaches. Widening the axis count is not where this method's remaining reach is, if any is left. |
 | **All twenty `*_shared_tail_grid` generators, both games, 2026-09-09 -- and a real bug found and fixed on the way** | These generators (`amb`, `callingcards`, `emblems`, `evt`, `fly`, `i`, `icon`, `jup`, `mpl`, `mus`, `p7`, `p8`, `p9`, `pt`, `sat`, `ui`, `uie`, `vm`, `weap`, `zmb`) were listed by `start` as part of the script library and had been counted as "already covered ground" earlier in this session on that basis. **They could not actually run.** Every one of them resolves its own path with `ROOT = pathlib.Path(__file__).resolve().parent.parent; sys.path.insert(0, str(ROOT / "scripts"))` -- correct if the file lived two directories above the repository root, which is where `contrib/` scripts sit, but wrong once `submit` promotes a script into `scripts/contributed/`, three directories down: `ROOT` there is already `scripts/`, so the inserted path is a doubled scripts/scripts folder that does not exist, `import snapshot` fails with `ModuleNotFoundError`, and the generator produces nothing at all. Every one of the twenty had this exact bug, meaning **none of them has run successfully since being committed to the library** -- the sibling method that seeded this session's own `mp_shared_tail_grid` (`wpn_shared_tail_grid`) uses the older, robust pattern (`while ROOT != os.path.dirname(ROOT) and not os.path.isfile(...): ROOT = os.path.dirname(ROOT)`), which is why it worked and looked identical in shape to the twenty that did not. **Fixed** with a one-line change per file (`sys.path.insert(0, str(ROOT))`, since `ROOT` already *is* the `scripts/` folder) and verified each runs standalone afterward. Then actually run, all twenty, both games: `amb` 95,089 candidates, `callingcards` 22,655, `emblems` 13,050, `evt` 21,669, `fly` 440,760, `i` 701,768 (the single largest shared-tail grid measured anywhere this session), `icon` 19,291, `jup` 78,586, `mpl` 2,688, `mus` 11,330, `p7` 121,273, `p8` 172,114, `p9` 59,920, `pt` 15,517, `sat` 29,925, `ui` 215,157, `uie` 10,814, `vm` 343,028, `weap` 13,046, `zmb` 40,144 -- roughly 2.43M candidates in total. **0 matched, in every one of the forty runs (twenty generators x two games).** So the shared-tail restriction that works for `wpn_` and `mp_` (both measured dead earlier) does not reach anything for these twenty families either, now that they have actually been asked. The value here is not the zero -- it is that the zero is now a *real* measurement instead of an assumed one, and the fix means the next contributor who reads `start`'s script list and picks one of these twenty gets a working method rather than a silent no-op. |
 | Sound take-number gap filling, both games, 2026-09-08 | `scripts/families.py`'s numbered-family regex matches the **last** run of digits in a whole name, and sound alias/file names routinely end `..._00.rn75.pc.en.snd` -- a fixed codec/language tag whose own digits (`rn75`'s `75`) sit *after* the real take number, so `families.py` groups on the codec tag and the take-number axis is structurally invisible to it. Confirmed directly against the published sound tables (`fnv1a_soundbanks_aliases[_v2]`, `fnv1a_xsounds[_v2]`, all twelve per-language `xsounds` tables) plus this project's confirmed and merged names: **909,650 names** carry a `_<NN>.<anything>` shape across 214 codec/language extension combinations, and of the 285,259 families that shape implies, **219,177 already have two or more members observed** -- a missing take is the common case, not the rare one. Applying `families.py --gaps`'s own algorithm (same margin, same `WIDEST` cap) with a regex anchored on `_(\d{2,3})\.` instead of the last digit run: 915,696 candidates, **0 matched on Cold War, 0 matched on Black Ops 4** -- checked on both since this is exactly the shape of gap that could matter most for Black Ops 4's `sound_asset` pool (70,649 of 79,263 unnamed, the largest in either game), and it did not. A clean, complete zero on real structure at real scale, not a vocabulary or margin problem: the take numbers the game actually shipped are exactly the ones already in the tables, and the gaps between them are gaps in what was recorded, not in what was recorded *of*. Extends the standing "structural overlap has now failed to predict yield three times" lesson to a fourth and fifth case. Worth fixing in `families.py` itself regardless -- it is a real blind spot in a report as well as a generator, and the next family it silently misclassifies may not be a dead end. Generator: `contrib/sound_take_gaps_20260908.py`. |
-| `sound_languages.py`, Black Ops 4, folded and unfolded, 2026-09-10 | `derive_closure.py` runs this derivation labelled "Black Ops 4 only" and has returned 0 every round for days, which raised a real question: `derive_closure.py` never passes `--no-fold` to any derivation it runs, and CLAUDE.md Â§6 measures that Black Ops 4's sound ids only reproduce **unfolded** (8,385 of 8,385 known names reproduce unfolded, 0 folded) -- so every one of those zeros could have been the fold bug rather than a real negative. Tested directly against the corpus as it stood after this session's `images_from_materials` gains (3,369 confirmed): 4,155,817 candidates (13 language codes x 3 encodings, every seed from `fnv1a_english_xsounds` and the eleven other per-language tables plus this machine's confirmed names) run twice, once folded and once with `--no-fold`, both against the same 118,272-id wanted set (`sound_asset` included and confirmed present in both runs' pool list). **0 matched both ways.** So the missing flag was a real gap in `derive_closure.py` worth fixing regardless -- a Black-Ops-4-only derivation that can structurally never match half the time is a bug independent of what it finds -- but it is not the reason this method has returned nothing: the respelling itself does not reach any currently-unnamed Black Ops 4 sound id, fold or unfold. Extends the standing sound-asset dead-end record with the one variant (language/encoding respelling) it had not yet covered under a controlled fold test. |
+| `sound_languages.py`, Black Ops 4, folded and unfolded, 2026-09-10 | `derive_closure.py` runs this derivation labelled "Black Ops 4 only" and has returned 0 every round for days, which raised a real question: `derive_closure.py` never passes `--no-fold` to any derivation it runs, and CLAUDE.md §6 measures that Black Ops 4's sound ids only reproduce **unfolded** (8,385 of 8,385 known names reproduce unfolded, 0 folded) -- so every one of those zeros could have been the fold bug rather than a real negative. Tested directly against the corpus as it stood after this session's `images_from_materials` gains (3,369 confirmed): 4,155,817 candidates (13 language codes x 3 encodings, every seed from `fnv1a_english_xsounds` and the eleven other per-language tables plus this machine's confirmed names) run twice, once folded and once with `--no-fold`, both against the same 118,272-id wanted set (`sound_asset` included and confirmed present in both runs' pool list). **0 matched both ways.** So the missing flag was a real gap in `derive_closure.py` worth fixing regardless -- a Black-Ops-4-only derivation that can structurally never match half the time is a bug independent of what it finds -- but it is not the reason this method has returned nothing: the respelling itself does not reach any currently-unnamed Black Ops 4 sound id, fold or unfold. Extends the standing sound-asset dead-end record with the one variant (language/encoding respelling) it had not yet covered under a controlled fold test. |
 | `final_byte.py`, Cold War, re-run 2026-09-11 at 1,677,099 assets / 8,443,027 resolved hashes | Last run 2026-09-08/09 solved ~10,150 candidates off a smaller table refresh; re-run after this session's clone update and hash-table refresh to see whether the intervening growth reopened it. 12,051 candidates (up from ~10,186), **0 matched, 0 new** -- the extra ~1,900 candidates are ids the backwards solve can now reach that it could not before, and every one of them is either already published or already in this machine's own `findings/`. Consistent with the general pattern that this method is bounded by how many *known-name prefixes* exist to solve against rather than by how many unnamed ids there are, and that count has not moved enough since the last run to open anything new. Free to re-check (12K candidates, under two minutes even sharing the machine with a 173B-candidate pass), so worth re-running after any batch of new confirms lands rather than left for days. |
 | Dedicated Cold War sound pass (`confirm_cw --sounds`), re-run 2026-09-11 less than a day after the 2026-09-10 run (1 new then, off a `sound_asset` vocabulary of 12 confirmed names) | Re-run after `sound_languages.py` more than doubled the confirmed `sound_asset` seed count (12 -> 27) via the closure gain above, on the theory that a vocabulary jump that size might open new stems even on a one-day-old pass. 91.0B forward hashes, **0 matched, 0 new.** The extra confirmed sound names did not translate into new stems or endings the sound-specific lists hadn't already captured. Re-check after a larger or more structurally different batch of sound names lands, not after an ordinary closure round. |
-| `derive_lists.py`, then the Cold War sound pass again immediately after, 2026-09-11 | `python scripts/derive_lists.py` (no `--game`; the lists are shared across both games) reported `sound.prefixes.txt` was **over its 700 cap by 101 measured beginnings**, the largest being `fly_emote_` at 324 names -- a real ceiling cut, not the "re-measuring to dodge a fingerprint" pattern CLAUDE.md Â§8 warns against, since the report itself is what flagged lost vocabulary. The refresh genuinely changed the list (`git diff` shows new deep prefixes such as `vox/scripted/mpl/`, `mpl/mpl_casino/chips/`, `wpn/zmb/freezegun/zombie/shatter/` that were not there before) and produced a fresh fingerprint -- the immediately following sound pass ran clean rather than hitting the exact-duplicate guard. **0 matched anyway**, same 91.0B forward hashes, same 0 new as the run five minutes earlier on the old lists. So this extends the standing "re-measuring the lists is not the way out" lesson one step further: it holds even in the one case that looked like the documented exception (a real, measured ceiling cut rather than routine growth). The displaced vocabulary evidently was not where this pool's remaining names are. |
+| `derive_lists.py`, then the Cold War sound pass again immediately after, 2026-09-11 | `python scripts/derive_lists.py` (no `--game`; the lists are shared across both games) reported `sound.prefixes.txt` was **over its 700 cap by 101 measured beginnings**, the largest being `fly_emote_` at 324 names -- a real ceiling cut, not the "re-measuring to dodge a fingerprint" pattern CLAUDE.md §8 warns against, since the report itself is what flagged lost vocabulary. The refresh genuinely changed the list (`git diff` shows new deep prefixes such as `vox/scripted/mpl/`, `mpl/mpl_casino/chips/`, `wpn/zmb/freezegun/zombie/shatter/` that were not there before) and produced a fresh fingerprint -- the immediately following sound pass ran clean rather than hitting the exact-duplicate guard. **0 matched anyway**, same 91.0B forward hashes, same 0 new as the run five minutes earlier on the old lists. So this extends the standing "re-measuring the lists is not the way out" lesson one step further: it holds even in the one case that looked like the documented exception (a real, measured ceiling cut rather than routine growth). The displaced vocabulary evidently was not where this pool's remaining names are. |
 | `images_from_materials`, Cold War, full run to completion 2026-09-11 (`--anyway`, futility guard cleared -- last 7 confirming runs on this machine were the 2026-09-08/09/10 dead-end measurements recorded above, not carelessness) | The 2026-09-10 attempt at this exact pass got to 96% of its single largest slice and stopped mid-run without a final tally -- interrupted, not measured, since the binary checkpoints its finds but not its slice position. Re-run clean start to finish: 575,703 published materials plus this machine's 141 confirmed, 891,626 stems total, sliced 16 ways over 518,556 endings taken from both the material and image tables, **16 slices x ~173.4B candidates = 2.77T candidates against Cold War's unnamed image/material/xmodel/xanim/sound ids, 0 matched in every slice, 0 total.** Matches `scripts/README.md`'s standing "near-spent: 7 names in Cold War" note and extends it to fully spent at the current corpus and table state -- unlike Black Ops 4, where the same binary is still adding names most times it runs (58 the same week), Cold War's material/image seam has nothing left for this shape at this corpus size. Re-check only after a large batch of new Cold War materials or images lands, not on the ordinary week-to-week growth from table refreshes alone. |
 | General search (`confirm_cw`), Cold War, re-run 2026-09-14 after a stale local clone was rebased onto three days of upstream merges (245,673 -> 295,855 merged names on disk, almost all Black Ops 4 sound_alias/sound_asset from Kenshin9977's and ImSimpy's recent sessions) | Cold War itself had gone untouched by that activity, and `derive_lists.py` re-measured right after the rebase to see whether the influx moved the committed general lists at all -- it barely did (`data/prefixes.txt` and `data/suffixes.txt` each changed by 4 lines; the sound lists did not change at all), which already predicted a thin result before anything was searched. Ran anyway since the fingerprint (method, game, pools, flags, the two lists) had not been exercised by anyone since the refresh: 700 beginnings x 4,800 endings x every stem, sliced 13 ways, **295.6 billion forward hashes in 3,951s, 0 matched, 0 new.** Consistent with the standing "the loop is fed by other people's names, not your own" lesson (the compounding-loop section above) -- three days of a *different* game's sound-alias vocabulary does not move Cold War's general (non-sound) lists, so a rebase alone is not a reason to expect this method to reopen. `submit` correctly reported nothing to send. |
 | Dedicated Cold War sound pass (`confirm_cw --sounds`), re-run 2026-09-14 right after the general search above and the rebase merge | Same shape as the 2026-09-10/09-11 runs recorded above, re-checked once more since the clone had just pulled in three days of upstream merges. 700 beginnings x 3,014 sound endings, sliced 4 ways, **91.0 billion forward hashes in 1,337s, 0 matched, 0 new** -- the exact same candidate count as the 2026-09-11 runs, confirming `derive_lists.py` really did leave `data/sound.prefixes.txt` and `data/sound.suffixes.txt` byte-identical this time (see the general-search entry above: the merge was almost entirely Black Ops 4 vocabulary). A third consecutive zero at an unchanged fingerprint; do not re-run this exact configuration again without a Cold-War-specific vocabulary gain. |
@@ -6235,7 +6235,7 @@ runs along with the right one's. |
 next person who notices the numbers does not spend an evening on it.
 
 `loader::unnamed` maps each id to **one** pool, and the one it keeps is whichever has the lowest
-index â€” `wanted.entry(id).or_insert(pool)`. Where an id sits in two of the five targeted types at
+index — `wanted.entry(id).or_insert(pool)`. Where an id sits in two of the five targeted types at
 once, that choice is arbitrary rather than correct, and the name is written to the wrong file
 locally.
 
@@ -6247,7 +6247,7 @@ python scripts/coverage.py            # per-pool totals
 
 and a short script over `snapshot.read(...).records` grouping pools by id.
 
-**Almost all of it is `image` + `material`** â€” 139 of the 141 in Black Ops 4, 90 of the 94 in Cold
+**Almost all of it is `image` + `material`** — 139 of the 141 in Black Ops 4, 90 of the 94 in Cold
 War. And an id in both pools means exactly what it says: the game holds an image *and* a material
 under that one name, because the id is the hash of the name and both assets carry it. Filing it as
 either is **true**. What happens is that it is not *also* listed under the other, so one CSV
@@ -6258,7 +6258,7 @@ the pool it was filed under, and nothing wrong reaches the community tables. The
 ids across both games are single instances of `xanim`+`xmodel`, `image`+`xmodel` and
 `material`+`xmodel`.
 
-**Fixing it means `wanted` becoming `id -> Vec<pool>` and every search emitting a row per pool** â€”
+**Fixing it means `wanted` becoming `id -> Vec<pool>` and every search emitting a row per pool** —
 a signature change through six binaries, to gain a couple of hundred duplicate rows. Not worth it
 now. If somebody does it, drive the choice from name shape the way `misfiled` does: three separate
 bugs in this codebase have come from guessing an asset type against the wrong evidence, and every
@@ -6269,7 +6269,7 @@ one of them looked perfectly reasonable in the log.
 ## What is still not recorded
 
 The fingerprint records that a *configuration* was swept. It does not record which *ranges* within
-a method were swept â€” so `confirm_variants` walking `_01` to `_64` of one family and stopping is
+a method were swept — so `confirm_variants` walking `_01` to `_64` of one family and stopping is
 still invisible to the next assistant.
 
 That is the obvious next improvement to how this project remembers itself, and it is smaller than
