@@ -48,3 +48,6 @@ __pycache__/
 # Large local mode-combined captures and modern per-game vocabulary.
 /local-captures/
 /data/modern/
+
+# Local builds of the measurement harness in bench/; the source is tracked, the binary is not.
+/bench/*.exe

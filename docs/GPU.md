@@ -118,6 +118,63 @@ collapsed to 1.11 × 10^6/s.
 > re-sweeping the stems once per batch. Whether that trade pays is an open question and the
 > experiment is described below.
 
+### The hypothesis is now measured, and it is the wrong half of the engine to port — 2026-10-12
+
+Harness: `bench/gpu_probe.py` (OpenCL, via `pyopencl`) and `bench/cpu_peel.rs` (`rustc -O`, no
+dependencies, nothing added to `Cargo.toml`). Both run the identical arithmetic to
+`peel_with` at `src/lib.rs:459` over the real `data/suffixes.txt`, so the two sides are comparable
+with each other and the GPU side is comparable with the CPU figures in this file.
+
+Machine: AMD Ryzen 7 9850X3D (8 cores / 16 threads), NVIDIA GeForce RTX 5090 through the
+`NVIDIA CUDA` OpenCL 3.0 ICD, Windows, 2026-10-12. Not the 7800X3D this file's other CPU figures
+were taken on, so read the two halves of each row against each other rather than against 2026-08-19.
+
+| half | CPU, 16 threads | RTX 5090 | work |
+|---|---|---|---|
+| peel (the multiply chain) | **1.37 G peels/s** | **168 G peels/s** | 100,000 ids × 4,800 endings = 0.48 B peels, 3.6 GB of results stored |
+| sorted search (the probe) | **26 M searches/s** | **5,259 M searches/s** | 20 M binary searches into 62,914,560 sorted `u64` (480 MB) |
+
+**(a) Can a peeled batch live in a workgroup's shared memory? No, and the obstacle is the ids, not
+the endings.** `PEELED_BATCH` (`src/search.rs:21`) is 60,000,000 entries and this device reports
+48 KB of local memory per workgroup — 6,144 `u64`. But the batch is `wanted × endings × 2 spellings`
+(`src/search.rs:206`), so even a batch carrying **one** ending is as big as the wanted set:
+Black Ops 7's 1,280,482 unnamed ids are 2.56 M entries, 20 MB. There is no ending-batch size that
+makes the peeled set fit, because shrinking the endings does not shrink that term below the ids.
+The trick `codehash` uses for the flat search does not have a shape this engine can take.
+
+**(b) What re-sweeping the stems per shared-memory batch costs, if the ids are split too.** Slicing
+to 1,024 ids × 3 endings × 2 spellings = 6,144 entries per batch, Black Ops 4's 48,896 wanted ids
+and 4,800 endings become 48 × 1,600 = **76,800 batches, each re-sweeping every stem**, where the
+same search today runs 8. The stems are the cheap half — `confirm_plan` reports the plan that found
+16 names as "about 0.1B of work against 37.6B peeling" — so this trade spends the cheap side's time
+to save the expensive side's, which is backwards.
+
+**What the GPU is actually good at here is the peel itself.** It is a dependent 64-bit multiply
+chain per (id, ending) with **no random access at all**: sequential reads, coalesced writes,
+123× the CPU measured. `Peeled::build` is peel, sort, dedup and filter fill, and the first two are
+where a modern pass's wall clock goes on a plan-shaped search. The filter's two bitmap probes stay
+the bottleneck for the *forward* sweep and no GPU changes that, for the reason this file already
+gives: 95% of that work is the probe, and 32-byte sector granularity turns an 8-byte random read
+into four bytes of useful work per byte moved.
+
+So the experiment worth running next is not a forward-sweep port. It is `Peeled::build` on the GPU
+behind a cargo feature — peel **and** sort, which is where the 37.6 B actually is — with the CPU
+keeping `holds` and the sweep, and `run_best` picking the backend off measured rates the way it
+picks a direction today.
+
+Two things this file already said that the run confirmed, and one it did not predict:
+
+- **Verify every name the GPU proposes.** The peel control re-solves sampled pairs on the host and
+  it caught two real bugs while this harness was being written — a work-item index built as
+  `(gid1 << 32) | gid0` then divided by `n_ids`, and accumulators that carried the warm-up launch's
+  totals into the measured one. Both produced a beautiful rate and a wrong answer.
+- **A rate without its batch size is not reproducible.** Every row above names its entry count,
+  table size and store volume.
+- **Not predicted:** the probe's 5,259 M/s is flattered. The control's keys are the table's own
+  lowest 20 M entries, so the upper levels of every search read the same handful of lines and stay
+  resident. It is a ceiling for a search, not a rate for a filter, and it should not be quoted as
+  one. The peel number has no such caveat — that workload touches memory in order.
+
 ---
 
 ## What to do instead, in order of expected value
