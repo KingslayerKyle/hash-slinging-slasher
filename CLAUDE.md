@@ -220,6 +220,15 @@ one refuses to start** -- see `src/futility.rs`. One empty pass is a real result
 three in a row means whatever is choosing the passes has stopped reacting to what they return, and
 that is true whether the thing choosing is a shell loop or a person.
 
+A run that asked about fewer than ten million candidates does not move that count. The guard is
+counting wasted machine time, and a cheap derivation returning nothing is the normal healthy state
+of `derive_closure.py` -- the script every contributor is told to run after every pass. On 2026-10-12
+one invocation tripped its own ledger after three derivations totalling 9.6M candidates, then refused
+its remaining eight and wrote `6 of 7 derivations refused to run this round, so nothing is known to be
+closed`, which reads like an exhausted corpus and is a bookkeeping artifact. Full passes -- the
+prefix-times-stem-times-suffix runners this exists for -- are orders of magnitude above the floor. See
+`NOT_A_LOSS` in `src/futility.rs`.
+
 It refuses rather than warning, because a warning is read by whoever is at the keyboard and the
 case this exists for is precisely the one where nobody is. `--anyway` overrides it, and any run
 that confirms a single name clears it, so a productive grind never sees it.
