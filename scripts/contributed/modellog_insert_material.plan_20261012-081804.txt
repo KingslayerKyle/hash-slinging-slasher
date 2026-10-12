@@ -1,0 +1,6 @@
+label: whole model-name prefixes under measured material beginnings (code insertion)
+describe: each 2+ segment prefix of BO7's model names, whole, behind the top 3000 material beginnings (contrib/head_material_begins.txt), then the top 300 material endings; see contrib/model_log_stems.py
+begin: @contrib/head_material_begins.txt
+bare: no
+stem: @contrib/modellog_whole.txt
+end: @contrib/modellog_material_ends300.txt
