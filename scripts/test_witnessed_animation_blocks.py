@@ -136,7 +136,7 @@ class WitnessedAnimationBlocksTests(unittest.TestCase):
             with patch.object(sys, "path", list(sys.path)), \
                     patch.dict(sys.modules, {"snapshot": SimpleNamespace()}):
                 relocated = load_generator(moved, "relocated_animation_generator")
-            self.assertEqual(relocated.ROOT, root)
+            self.assertEqual(relocated.ROOT, root.resolve())
 
 
 if __name__ == "__main__":

@@ -186,11 +186,14 @@ fn read_plan(path: &Path) -> Result<Plan, String> {
 
 fn main() {
     readiness::require();
-    futility::require();
     let began = Instant::now();
 
     let arguments: Vec<String> = std::env::args().skip(1).collect();
     let size_only = arguments.iter().any(|argument| argument == "--size");
+    // Sizing does not search or move the empty-run ledger. Full searches retain the guard.
+    if !size_only {
+        futility::require();
+    }
 
     let Some(path) = arguments
         .iter()
