@@ -5638,3 +5638,46 @@ still invisible to the next assistant.
 That is the obvious next improvement to how this project remembers itself, and it is smaller than
 it looks now that `RunNote` carries arbitrary measurements: a method that records the ranges it
 covered into its run note would make this file far more useful than it currently is.
+
+## Method 25's sound half, per game, is not spent in the modern titles -- 2026-10-12
+
+The sound cores are the same construction as the general half -- every name this project has
+confirmed and **no published table holds**, cut at every `_` *and* every path separator -- regenerated
+with `--confirmed-only --sound-pass`: **535,239 cores**. Crossed with each game's *own* measured
+sound endings rather than the shared legacy list: 3,014 endings for Black Ops 4 and Cold War
+(1.61 B candidates) and 4,800 for each modern capture (2.57 B), `bare: yes`, no beginning, and the
+default fold throughout.
+
+| game | added | |
+|---|---|---|
+| MODWAR22 | **1,402** | the largest single sound result recorded here |
+| BLACKOP6 | 261 | |
+| YAMYAMOK | 215 | |
+| BLACKOP7 | 134 | |
+| MODWAR7 | 44 | |
+| BLKOPS04 | 0 | spent, as its `sound_asset` dead ends predicted |
+| BLKOPSCW | 0 | spent |
+
+**2,056 names, expected by chance 0.0001, sent as #2618 through #2622.** `derive_closure.py` then added
+736 more for MWII alone. Both halves were driven per game by two shell drivers, and the counterfactual
+was one plan of the same stems against the legacy list; `submit` carried the drivers with the names, so
+they arrive as contributed scripts rather than paths written here -- the run folders they left behind
+are the reproducible record.
+
+Two things worth keeping from the shape rather than the yield:
+
+- **Per-game endings are what made the modern half pay.** The counterfactual was measured, not
+  assumed: the *same* 535,239 cores against the shared legacy `data/sound.suffixes.txt` (3,014
+  endings) returned **16 names** on MWII where that game's own measured 4,800-entry list returned
+  **1,402** -- eighty-eight times the yield for the identical stems, on one title. The endings a
+  modern game actually uses -- dotted codec and language tails, its own directory components -- are
+  measured into `data/modern/<game>/sound.suffixes.txt` by `derive_modern_lists.py`, and a sound
+  sweep that borrows Cold War's vocabulary is asking a question that list cannot spell.
+- **The legacy half really is closed.** Two games, two full sweeps, zero. The recorded BO4 sound
+  dead ends hold at 535K cores, so this is not a vocabulary starvation artifact.
+
+**Spent by:** the cores it has already crossed with each game's list. It stays unspent as long as
+new confirmations keep arriving -- the general half of the same method went 228,943 -> 229,144 cores
+in one afternoon on 272 fresh names, and the modern titles paid 38/66/76/96/17 from that alone while
+Black Ops 4 and Cold War paid 0, which is the usual decay of a corpus that is nearly named. Regenerate
+before running; the list is the perishable half.
