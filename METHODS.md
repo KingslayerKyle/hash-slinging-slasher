@@ -6321,3 +6321,55 @@ new confirmations keep arriving -- the general half of the same method went 228,
 in one afternoon on 272 fresh names, and the modern titles paid 38/66/76/96/17 from that alone while
 Black Ops 4 and Cold War paid 0, which is the usual decay of a corpus that is nearly named. Regenerate
 before running; the list is the perishable half.
+
+## Language substitution is not a method on the `_v2` sound tables -- 2026-10-13
+
+The idea was the obvious one after the sound half paid: Black Ops 4 ships twelve per-language
+`xsounds` tables, so a known sound's language segment should be replaceable with the other eleven,
+and MW7's `sound_asset` pool is the largest single untouched thing on the least-contested game
+(88,345 of 130,464 unnamed).
+
+Measured first, in sixty seconds, over every published modern sound-file row
+(`fnv1a_xsounds_v2`, 520,620 rows), splitting on `.`, `/` and `_` and looking for a language token:
+
+| | rows | share |
+|---|---|---|
+| no language token anywhere in the name | 474,218 | **91.09%** |
+| `ar` | 46,322 | 8.90% |
+| `pl` | 60 | 0.01% |
+| `jp` | 20 | 0.00% |
+
+Nine tenths of the modern tables' sound names have **no language segment to substitute into**, and
+the whole language-shaped part of the corpus is one language (`ar`) plus eighty names of anything
+else. So there is no twelve-way grid here to fill: the shipped cell for a non-Arabic language is not
+missing from the tables, it is not a sound-file name at all. This is the same wall the take-number
+gap sweep hit (`Sound take-number gap filling, both games, 2026-09-08`: 915,696 candidates, 0
+matched, codec/language tails are fixed per asset, not per language).
+
+Written down because the *inverse* of this claim is what actually paid tonight -- the modern sound
+names do carry a substituted segment, but it is the **codec/encoding tail** (`rn75`, `ln64`, the
+`.l/s/t/rn*` shape `derive_modern_lists.py` measures), not the language. Per-game endings were worth
+1,402 names on MWII; per-game languages are worth nothing, and this is the measurement that says so
+before somebody spends an evening on it.
+
+## Duplication rate is a targeting instrument, and it is free -- 2026-10-13
+
+`submit` prints the drop as one number, but it is per game, and read across a night it says where to
+point the machine. Measured on this machine's own batches, same method, same hour, same exclusion
+rules:
+
+| game | locally new | dropped as already claimed | survived |
+|---|---|---|---|
+| YAMYAMOK | 16,360 | 16,200 | **160** (1.0%) |
+| BLACKOP7 | 14,854 | 14,802 | 52 (0.35%) |
+| BLACKOP6 | 9,661 | 9,615 | 46 (0.48%) |
+| MODWAR7 | 874 | 244 | 630 (72%) |
+
+Four games, one derivation round, and the survival rate spans three orders of magnitude. MWIII, BO7
+and BO6 are being swept by other contributors faster than a re-derivation can outrun them; MW7 is
+not. So the useful figure is not a method's efficiency -- it is **what fraction of what this machine
+just found somebody else already had**, and `logs/submit*.log` already holds it.
+
+This is the negative space §7 asks for, measured off one's own submission log rather than a ranking,
+and it is safe to publish: it says where the crowd is, which is precisely the place not to send a
+batch from.
