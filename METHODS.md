@@ -6321,3 +6321,29 @@ new confirmations keep arriving -- the general half of the same method went 228,
 in one afternoon on 272 fresh names, and the modern titles paid 38/66/76/96/17 from that alone while
 Black Ops 4 and Cold War paid 0, which is the usual decay of a corpus that is nearly named. Regenerate
 before running; the list is the perishable half.
+
+## Beginning x bare core, per game, is closed -- 2026-10-12
+
+The one column the all-boundary sweeps had never worn: `begin:` from the game's own measured
+list (699 entries in `data/modern/<game>/prefixes.txt`) over `stem: ` the confirmed-only
+all-boundary cores (229,546), no ending column and `bare: no` -- so every candidate is a real
+beginning joined to a real body and nothing else. 160,452,654 candidates a game, against 464,578
+unnamed MWII ids, 455,685 MWIII and 675,925 BO6: **0 new, three games, three times.** Black Ops 7
+and MW7 never ran, because the futility guard refused after the third empty -- 160M is well above
+`NOT_A_LOSS`, so that is the guard behaving rather than the artifact it used to be.
+
+The positive control is the part worth reading, because three clean zeros are exactly the shape of
+a sweep that never built a valid candidate: **234 of the 338,914 image names MWII holds are *exactly*
+one of those beginnings plus one of those cores.** The shape is real, the hashing is right, the
+candidates were built. And 0.07% of the corpus is the ceiling, not the yield -- a core that appears
+in **no** published table almost never meets a beginning the same game also holds, because the two
+halves are measured off different names, and recombining them asks for a name nobody authored that
+way.
+
+That is `splice.py`'s dead end from the other side. `splice` joined the head of one real name to the
+tail of another and measured 1 per 13.7 billion; this joins a head to a *body* and measures 0 in 481
+million across three games. What every all-boundary sweep that *does* pay has in common is the
+ending column: the tail is where a core's own name continues. A beginning is not.
+
+Generator: the plan is three lines and is regenerated per game by the same driver that carried the
+sound half; `contrib/` is staging, so the run folders and their fingerprints are the record.
