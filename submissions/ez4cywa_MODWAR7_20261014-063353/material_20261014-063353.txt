@@ -1,0 +1,5 @@
+40ba96c281149839,i/vfx_rex_decal_imp_metal_hole_01_em
+434749e556938e2a,m/att_lens_minireddot_rex_pstl_01_far
+4ba359c25180c12f,m/offh_2h_rex_gren_hijack_grip_trans_v0
+6a35cacb3f161ad7,i/vfx_rex_decal_imp_glow_pen_01
+6d3abfd6d75204a3,m/att_lens_minireddot_rex_pstl_02_far
