@@ -1,0 +1,15 @@
+c2b60c1f32be86e,vox/scripted/mpl/ami6/vox_ami6_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
+db4129122fc4fae,vox/scripted/mpl/adgi/vox_adgi_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
+ee9577787d20a78,vox/scripted/mpl/ahva/vox_ahva_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
+2299aed8dfdf4338,vox/scripted/mpl/anbo/vox_anbo_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
+2bc6cd7dd9ae3f8b,vox/scripted/mpl/abnd/vox_abnd_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
+3003eca6cafb6900,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_explode_kill_prox_00.rn75.pc.en.snd
+35123ea581072f7d,vox/scripted/mpl/anbo/vox_anbo_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
+3c60b654cc353b4b,vox/scripted/mpl/ami6/vox_ami6_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
+5697fc710d60142a,zmb/exfil/exfil_fail_platinum.sn75.pc.all.snd
+598f8b559b3e85ae,vox/scripted/mpl/abnd/vox_abnd_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
+5feb54b9616c098b,vox/scripted/mpl/adgi/vox_adgi_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
+651a95787d59e4d6,vox/scripted/mpl/anme/vox_anme_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
+6968b717ef0457bd,vox/scripted/mpl/ahva/vox_ahva_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
+7bc571db51fc567a,veh/road_sounds/rattles/rattle_layer_van.rr75.pc.all.snd
+7d3cb2390b8c1ab3,vox/scripted/mpl/anme/vox_anme_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
