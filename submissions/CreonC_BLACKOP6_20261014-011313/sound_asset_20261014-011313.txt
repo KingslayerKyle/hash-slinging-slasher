@@ -1,0 +1,11 @@
+46a6b7d5d8d790c,iw9/wpn/reloads/iw9_mike16/.op.graves.dx_op_grvs_bttl_grav_isho_shockstickincoming_opg3_full.snn.75.48000.all
+34940ac73ba18bce,mantle_vestheavy_vecho_fire_plr_shot_08.ln.85.48000.all_smag_boltpull.tnn.75.48000.all
+3fa479efdf92f616,iw9/wpn/reloads/iw9_mcharlie/up.wpn.lm.mgolf36.p01_lm_mgolf36_reload_fast_drum_drumhit1.ln_npc_01.lnn.75.48000.all
+406473f403355f0f,jup/wpn/sn/moscar/wpn_sn_moscar_charge_fire_npc_swt_06.tnn.85.48000.all
+40dc38a46ae3d058,t10/wpn/pistol/usugar9/reloads/p13_pi_usugar9_transition_r_reload_empty_01_away.tnn.75.48000.all
+487336e39a91aa7e,t10/wpn/pistol/usugar9/reloads/p13_pi_usugar9_transition_l_reload_empty_01_away.tnn.75.48000.all
+559058d76ba819c2,t10/wpn/pistol/usugar9/reloads/p13_pi_usugar9_transition_l_reload_empty_02_up.tnn.75.48000.all
+55ba5c41cc2d23d9,iw9/mp/mp_killstreak/dx_mp_kill_grim_uktl_ause_friendlystealthbombe_01.snn.20.48000.english
+60291fe95bee7110,jup/wpn/sn/moscar/wpn_sn_moscar_charge_fire_npc_swt_05.tnn.85.48000.all
+67a87033571a734d,jup/wpn/sn/moscar/wpn_sn_moscar_charge_fire_npc_swt_04.tnn.85.48000.all
+7705f491f9c42b14,t10/wpn/pistol/usugar9/reloads/p13_pi_usugar9_transition_r_reload_empty_02_up.tnn.75.48000.all
