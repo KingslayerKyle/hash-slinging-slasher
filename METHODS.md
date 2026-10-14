@@ -1618,6 +1618,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | all-boundary sound cores x top-100k uncarried sound endings, after +18k merge, 2026-09-25 | 1 | 2 | 26 | 509,470,494,654 | 19,595,019,025 | 15,920,952,957 | 15,920,952,957 | 2026-09-25 | 2026-09-25 | live |
 | all-boundary sound cores x confirmed-only-discovered 1-segment sound endings, 2026-09-22 | 1 | 2 | 3 | 58,864,563,696 | 19,621,521,232 | 14,716,140,924 | 29,432,281,848 | 2026-09-22 | 2026-09-22 | live |
 | slotswap-substituted all-boundary cores, sound, slices 5-8 | 1 | 1 | 76 | 1,511,869,118,540 | 19,893,014,717 | 19,893,014,717 | 19,893,014,717 | 2026-09-28 | 2026-09-28 | untried |
+| grown confirmed-only cores x the 100k uncarried endings, blkopscw | 1 | 1 | 2 | 40,582,805,824 | 20,291,402,912 | 20,291,402,912 | 20,291,402,912 | 2026-10-13 | 2026-10-13 | untried |
 | scoped all-boundary cores x all uncarried 5-segment endings | 1 | 1 | 8 | 163,703,135,601 | 20,462,891,950 | 20,462,891,950 | 20,462,891,950 | 2026-09-03 | 2026-09-03 | untried |
 | harvested strings, tails of length 3 | 1 | 1 | 4 | 86,898,811,198 | 21,724,702,799 | 21,724,702,799 | 21,724,702,799 | 2026-08-24 | 2026-08-24 | untried |
 | all-boundary sound cores x confirmed-only-discovered 3-segment sound endings, 2026-09-22 | 1 | 2 | 23 | 506,393,663,886 | 22,017,115,821 | 21,099,735,995 | 23,017,893,813 | 2026-09-22 | 2026-09-22 | live |
@@ -1754,7 +1755,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1676 distinct methods, run 2054 ways between them, across 6380 runs. `names` is what each run
+1677 distinct methods, run 2055 ways between them, across 6381 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->
@@ -6381,6 +6382,30 @@ new confirmations keep arriving -- the general half of the same method went 228,
 in one afternoon on 272 fresh names, and the modern titles paid 38/66/76/96/17 from that alone while
 Black Ops 4 and Cold War paid 0, which is the usual decay of a corpus that is nearly named. Regenerate
 before running; the list is the perishable half.
+
+## Beginning x bare core: negative result on three tested corpora -- 2026-10-12
+
+The one column the all-boundary sweeps had never worn: `begin:` from the game's own measured
+list (699 entries in `data/modern/<game>/prefixes.txt`) over `stem: ` the confirmed-only
+all-boundary cores (229,546), no ending column and `bare: no` -- so every candidate is a real
+beginning joined to a real body and nothing else. 160,452,654 candidates a game, against 464,578
+unnamed MWII ids, 455,685 MWIII and 675,925 BO6: **0 new, three games, three times.** Black Ops 7
+and MW7 never ran, because the futility guard refused after the third empty -- 160M is well above
+`NOT_A_LOSS`, so that is the guard behaving rather than the artifact it used to be.
+
+The positive control is the part worth reading, because three clean zeros are exactly the shape of
+a sweep that never built a valid candidate: **234 of the 338,914 image names MWII holds are *exactly*
+one of those beginnings plus one of those cores.** This is a positive control for candidate construction on the measured MWII image corpus;
+the run report records correct-game hashing and zero new results. The 0.07% figure is the
+observed coverage of that known image corpus, not a ceiling on unknown assets or other games.
+
+The tested beginning/core lists produced 0 new names in 481 million candidates across MWII,
+MWIII and BO6. Keep this exact space closed at those input versions. BO7 and MW7 were not
+tested, and a targeted beginning relation or genuinely new seed vocabulary is a separate
+question. This result does not establish that every useful method needs an ending column.
+
+Generator: the plan is three lines and is regenerated per game by the same driver that carried the
+sound half; `contrib/` is staging, so the run folders and their fingerprints are the record.
 
 ## Language substitution: token scan does not establish a dead end -- 2026-10-13
 

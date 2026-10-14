@@ -1,0 +1,5 @@
+e22d8ac65012867,elcq/vfx_rex_water_ripple_sheet_01
+1c03666c9d740546,elcqp/vfx_rex_water_bubble_anim_01_02
+281ad0942cfa4f2f,elcq/vfx_rex_water_bubble_sheet_01
+41e0f63b2849aa2c,elcq/vfx_rex_water_bubble_anim_01_02
+664efb1e14c934c9,elcqp/vfx_rex_water_bubble_sheet_01
