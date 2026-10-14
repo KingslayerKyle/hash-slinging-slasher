@@ -1,0 +1,2 @@
+5fee28a792ba64c1,jup/wpn/energy/plasmagun/charging_shot/plasma_gun_charge_lfe.tnl.100.48000.all
+62117588aa63439b,jup/wpn/energy/plasmagun/charging_jump/plasma_jump_charge_lfe.tnl.100.48000.all

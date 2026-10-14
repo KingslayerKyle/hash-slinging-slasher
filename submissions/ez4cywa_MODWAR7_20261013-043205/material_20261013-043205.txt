@@ -1,0 +1,9 @@
+801488d4ee284e0,elcq/vfx_rex_water_bubble_card_01
+19ca30c2a632a170,elcq/vfx_rex_water_bubble_anim_02
+19ca33c2a632a689,elcq/vfx_rex_water_bubble_anim_01
+19ca36c2a632aba2,elcq/vfx_rex_water_bubble_anim_04
+215a20b52d4f5539,m/veh_rex_air_gunship_turrets
+4e4ffbd73e6fef12,elcqp/vfx_rex_water_bubble_anim_02
+73fc406cd1380878,m/att_rex_ammo_5x21_ss
+77285456a5ad0b24,elcq/vfx_rex_fluid_thick_splat_sheet_01
+7f387527da180a4d,m/veh_rex_air_drill_charge_bomb01

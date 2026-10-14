@@ -2666,6 +2666,7 @@ d084873d4757ca0,core/fly/water/underwater/mvmt_swim_lr_uw_plr_submerge_fastest_0
 1a8f769c7d64b2f8,core/fly/weapmvmt/launcher/gear_rattle_weap_lchland_04.vnn.75.48000.all
 3fad5760bd0fb495,core/fly/weapmvmt/launcher/gear_rattle_weap_lchland_05.vnn.75.48000.all
 7dca53c7d8b24592,core/fly/weapmvmt/launcher/gear_rattle_weap_lchland_06.vnn.75.48000.all
+57ebd78e3cc58fc9,core/fly/wpfoly_case_bomb_raise_v1.lnn.75.48000.all
 7f07cbe0701fc8c8,core/gam/zmb/ai/zombie/vox/death/zmb_vox_death_10.snn.85.48000.all
 63dcbeddc82090ac,core/gam/zmb/ai/zombie/vox/death/zmb_vox_death_14.snn.85.48000.all
 509cc31a0aef2129,core/gam/zmb/ai/zombie/vox/death/zmb_vox_death_20.snn.85.48000.all
@@ -4030,6 +4031,8 @@ bb0d16e5e230786,iw9/amb/amb_emitters/foliage/emt_iw8_tree_fir_gust_06.dnn.75.480
 f991535e9b79d1a,iw9/amb/amb_emitters_iw9/foliage/emt_foliage_tree_lp_02.dnl.75.48000.all
 36bfdfc7a95d1ef9,iw9/amb/amb_emitters_iw9/velocity/vel_emt_sm_tree_04_lp.dnl.75.48000.all
 1bfd658b151b5fb6,iw9/amb/amb_silence_over_black.snl.75.48000.all
+636f4b186570aaf5,iw9/amb/ambient_iw9/amb_mp_farm18_ext_lr.snl.75.48000.all
+3555b0a6d5ce37e9,iw9/amb/ambient_iw9/amb_mp_farm18_ext_lsrs.snl.75.48000.all
 5ad81a8c67aac4dd,iw9/amb/animal/dogcall_whistle_01.lnn.85.48000.all
 273303af3410c14a,iw9/amb/animal/dogcall_whistle_02.lnn.85.48000.all
 5a769dc5d70c0e9f,iw9/amb/animal/dogcall_whistle_03.lnn.85.48000.all
@@ -12269,6 +12272,7 @@ b498c038fe06c09,mp/care_package/iw8_mp_care_package_impact_wood_01.lnn.85.48000.
 23e1404e37c69ebc,mp/doors/temp_mp_alarm_door.lnl.75.48000.all
 4689c5dfb9189c93,mp/doors/temp_mp_alarm_off.lnn.75.48000.all
 4db79b7d71e03459,mp/doors/temp_mp_alarm_on.lnn.75.48000.all
+33b3956c4854bdcb,mp/equip/iw8_mp_adrenaline_remove_fly.lnn.75.48000.all
 33e4fb35d2cfd422,mp/equip/iw8_mp_adrenaline_use_fly.lnn.75.48000.all
 58493b8b852242d2,mp/equip/iw8_mp_adrenaline_use_stim_sfx.lnn.75.48000.all
 7fc786dfa717c625,mp/equip_destroy/mp_equip_destroy_close_01.vnn.75.48000.all

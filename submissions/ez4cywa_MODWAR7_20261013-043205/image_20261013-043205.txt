@@ -1,0 +1,4 @@
+1b5e28ccfc0be878,ui_rex_icon_emblem_0101
+3e03d5cd0fab7817,ui_rex_icon_emblem_0500
+64a1d6405c59f12b,sw2_cl_zl
+64a1e4405c5a08f5,sw2_cl_zr

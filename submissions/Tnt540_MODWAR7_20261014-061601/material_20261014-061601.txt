@@ -1,0 +1,7 @@
+c2e8a79b76eddaa,elcq/vfx_rex_dist_ripple_01
+12e7fb80fa87083e,elcqp/vfx_rex_smoke_roll_thin_med_loop_01
+20477b07bc4c7f77,elcq/vfx_rex_dist_heat_haze_01
+20477c07bc4c812a,elcq/vfx_rex_dist_heat_haze_02
+3a763b48fb14aa93,m/park_arcade_standing_glass
+3f223607fc5fe777,elcq/vfx_rex_dist_wave_01
+59b989e8d2fe9a06,elc/vfx_rex_smoke_roll_thin_med_loop_02

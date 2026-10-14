@@ -955,8 +955,11 @@ d79e86d82c61dcb,mpl/mpl_casino/chips/chips_01.ln75.pc.all.snd
 4691d5e947151d1d,uin/2k20/battlepass/tier_purchase/battlepass_tier_purch_s7.sn75.pc.all.snd
 3f47b044418b7fd4,uin/2k20/battlepass/tier_purchase/battlepass_tier_purch_s8.sn75.pc.all.snd
 396fa437e07804cd,veh/horns/loops/muscle_car_horn.ll75.pc.all.snd
+7bc571db51fc567a,veh/road_sounds/rattles/rattle_layer_van.rr75.pc.all.snd
 47370e49aa78862a,vox/scripted/mpl/abnd/vox_abnd_dbl_atpsy_oprt_00.rn75.pc.en.snd
 192ed62bd28eb707,vox/scripted/mpl/abnd/vox_abnd_dbl_atpsy_oprt_01.rn75.pc.en.snd
+2bc6cd7dd9ae3f8b,vox/scripted/mpl/abnd/vox_abnd_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
+598f8b559b3e85ae,vox/scripted/mpl/abnd/vox_abnd_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
 3b44f7bdf2486d56,vox/scripted/mpl/abnd/vox_abnd_dbl_radio_hack_00.rn75.pc.en.snd
 5367147e807aa333,vox/scripted/mpl/abnd/vox_abnd_dbl_radio_hack_01.rn75.pc.en.snd
 20621d99abe67295,vox/scripted/mpl/abnd/vox_abnd_dbl_radio_play_00.rn75.pc.en.snd
@@ -993,6 +996,8 @@ d1c747baede27bc,vox/scripted/mpl/abnd/vox_abnd_stk_hub_offline_00.rn75.pc.en.snd
 5571eb2b77313d8c,vox/scripted/mpl/abnd/vox_abnd_stk_hub_online_mult_01.rn75.pc.en.snd
 56d07a5a4b41102a,vox/scripted/mpl/adgi/vox_adgi_dbl_atpsy_oprt_00.rn75.pc.en.snd
 28c8423c73574107,vox/scripted/mpl/adgi/vox_adgi_dbl_atpsy_oprt_01.rn75.pc.en.snd
+5feb54b9616c098b,vox/scripted/mpl/adgi/vox_adgi_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
+db4129122fc4fae,vox/scripted/mpl/adgi/vox_adgi_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
 4ade63ce9310f756,vox/scripted/mpl/adgi/vox_adgi_dbl_radio_hack_00.rn75.pc.en.snd
 6300808f21432d33,vox/scripted/mpl/adgi/vox_adgi_dbl_radio_hack_01.rn75.pc.en.snd
 2ffb89aa4caefc95,vox/scripted/mpl/adgi/vox_adgi_dbl_radio_play_00.rn75.pc.en.snd
@@ -1029,6 +1034,8 @@ e933c787a3c9332,vox/scripted/mpl/adgi/vox_adgi_stk_hub_offline_mult_01.rn75.pc.e
 5b6dc57143e29b8c,vox/scripted/mpl/adgi/vox_adgi_stk_hub_online_mult_01.rn75.pc.en.snd
 254b09cae9f9afa8,vox/scripted/mpl/ahva/vox_ahva_dbl_atpsy_oprt_00.rn75.pc.en.snd
 247827da1d61b2ad,vox/scripted/mpl/ahva/vox_ahva_dbl_atpsy_oprt_01.rn75.pc.en.snd
+6968b717ef0457bd,vox/scripted/mpl/ahva/vox_ahva_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
+ee9577787d20a78,vox/scripted/mpl/ahva/vox_ahva_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
 1abea505d3552598,vox/scripted/mpl/ahva/vox_ahva_dbl_radio_hack_00.rn75.pc.en.snd
 1cdac1eba886ab5d,vox/scripted/mpl/ahva/vox_ahva_dbl_radio_hack_01.rn75.pc.en.snd
 651e005f74c99947,vox/scripted/mpl/ahva/vox_ahva_dbl_radio_play_00.rn75.pc.en.snd
@@ -1065,6 +1072,8 @@ d63aebf45b7a7e4,vox/scripted/mpl/ahva/vox_ahva_stk_hub_online_00.rn75.pc.en.snd
 9cffe3528f7b3fa,vox/scripted/mpl/ahva/vox_ahva_stk_hub_online_mult_01.rn75.pc.en.snd
 4bd13d515a022fea,vox/scripted/mpl/ami6/vox_ami6_dbl_atpsy_oprt_00.rn75.pc.en.snd
 315970caf7afe2c7,vox/scripted/mpl/ami6/vox_ami6_dbl_atpsy_oprt_01.rn75.pc.en.snd
+3c60b654cc353b4b,vox/scripted/mpl/ami6/vox_ami6_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
+c2b60c1f32be86e,vox/scripted/mpl/ami6/vox_ami6_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
 60a4aedd59df7016,vox/scripted/mpl/ami6/vox_ami6_dbl_radio_hack_00.rn75.pc.en.snd
 3023978407642df3,vox/scripted/mpl/ami6/vox_ami6_dbl_radio_hack_01.rn75.pc.en.snd
 5b10b056cdaaee55,vox/scripted/mpl/ami6/vox_ami6_dbl_radio_play_00.rn75.pc.en.snd
@@ -1101,6 +1110,8 @@ d6beaa56beec62b,vox/scripted/mpl/ami6/vox_ami6_stk_hub_move_mult_00.rn75.pc.en.s
 1733798eb777274c,vox/scripted/mpl/ami6/vox_ami6_stk_hub_online_mult_01.rn75.pc.en.snd
 1e0dc5e6c6d11768,vox/scripted/mpl/anbo/vox_anbo_dbl_atpsy_oprt_00.rn75.pc.en.snd
 3c2bbf93a085cf6d,vox/scripted/mpl/anbo/vox_anbo_dbl_atpsy_oprt_01.rn75.pc.en.snd
+35123ea581072f7d,vox/scripted/mpl/anbo/vox_anbo_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
+2299aed8dfdf4338,vox/scripted/mpl/anbo/vox_anbo_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
 68afdb659ced2a58,vox/scripted/mpl/anbo/vox_anbo_dbl_radio_hack_00.rn75.pc.en.snd
 57cdc55d833ba01d,vox/scripted/mpl/anbo/vox_anbo_dbl_radio_hack_01.rn75.pc.en.snd
 1e068e9a86fd9407,vox/scripted/mpl/anbo/vox_anbo_dbl_radio_play_00.rn75.pc.en.snd
@@ -1137,6 +1148,8 @@ a5413087aaf9020,vox/scripted/mpl/anbo/vox_anbo_stk_hub_move_mult_01.rn75.pc.en.s
 518d1514bf22eeba,vox/scripted/mpl/anbo/vox_anbo_stk_hub_online_mult_01.rn75.pc.en.snd
 7d5472f4fc6778b2,vox/scripted/mpl/anme/vox_anme_dbl_atpsy_oprt_00.rn75.pc.en.snd
 73099cf81b720c2f,vox/scripted/mpl/anme/vox_anme_dbl_atpsy_oprt_01.rn75.pc.en.snd
+7d3cb2390b8c1ab3,vox/scripted/mpl/anme/vox_anme_dbl_fldmic_all_destroy_00.rn75.pc.en.snd
+651a95787d59e4d6,vox/scripted/mpl/anme/vox_anme_dbl_fldmic_all_destroy_01.rn75.pc.en.snd
 7b63ba76339d72fe,vox/scripted/mpl/anme/vox_anme_dbl_radio_hack_00.rn75.pc.en.snd
 a000bb06a50985b,vox/scripted/mpl/anme/vox_anme_dbl_radio_hack_01.rn75.pc.en.snd
 1aa21172749e38fd,vox/scripted/mpl/anme/vox_anme_dbl_radio_play_00.rn75.pc.en.snd
@@ -2313,6 +2326,7 @@ d9b1a05c4dc810e,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_death_incarnate
 287ff5181baf6e3,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_executed_00.rn75.pc.en.snd
 3869bf97b21b979b,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_executioner_00.rn75.pc.en.snd
 357b73d1a7b50010,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_explode_kill_00.rn75.pc.en.snd
+3003eca6cafb6900,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_explode_kill_prox_00.rn75.pc.en.snd
 3809029cdc59c5b6,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_fire_00.rn75.pc.en.snd
 5aed5c1c3a25dc27,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_fire_chill_00.rn75.pc.en.snd
 4b84a83fcfa6b075,vox/scripted/operators/hdsn/vox_hdsn_mtx_execute_fire_flamethrower_00.rn75.pc.en.snd
@@ -5179,6 +5193,7 @@ fa0fcfe44d29540,zmb/ai/tormentor/vox/ambient/ambient_08.rn75.pc.all.snd
 69a5ac01575778e3,zmb/ai/werewolf/vox/pain_2.0/wwolf_pain_05.rn75.pc.all.snd
 7c42a983d69114c2,zmb/ai/werewolf/vox/pain_2.0/wwolf_pain_06.rn75.pc.all.snd
 fcd135253ece34,zmb/armor/armor_break_swt.ln75.pc.all.snd
+5697fc710d60142a,zmb/exfil/exfil_fail_platinum.sn75.pc.all.snd
 6cd6e236fe02a9d2,zmb/level/zm_silver/quest/main/aetherbomb/explo_base/explo_base_00.ln75.pc.all.snd
 7c3a90f74aced744,zmb/level/zm_silver/quest/main/aetherbomb/explo_base/explo_base_00.rn75.pc.all.snd
 6faa9ada86ba855,zmb/level/zm_silver/quest/main/aetherbomb/explo_base/explo_base_01.ln75.pc.all.snd
