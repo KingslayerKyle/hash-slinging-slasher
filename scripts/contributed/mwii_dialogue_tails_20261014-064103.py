@@ -13,7 +13,14 @@ quality {20,75,85}, rate {48000,32000,24000,44100} and language {english, englis
 from pathlib import Path
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+if not (ROOT / "scripts" / "snapshot.py").is_file():
+    raise SystemExit("Run this helper from within a hash-slinging-slasher checkout")
+# Prepare these verified, game-and-pool-specific inputs with scripts/export_named.py.
+if not (ROOT / "state" / "an").is_dir():
+    raise SystemExit("Run python scripts/export_named.py first (see --help)")
 stems = set()
 for f in (ROOT / "state" / "an").glob("*_sound_asset.named"):
     for line in open(f, encoding="utf-8"):

@@ -12,7 +12,14 @@ import collections
 import re
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+if not (ROOT / "scripts" / "snapshot.py").is_file():
+    raise SystemExit("Run this helper from within a hash-slinging-slasher checkout")
+# Prepare these verified, game-and-pool-specific inputs with scripts/export_named.py.
+if not (ROOT / "state" / "an").is_dir():
+    raise SystemExit("Run python scripts/export_named.py first (see --help)")
 g = sys.argv[1].upper()
 DIG = re.compile(r"\d+")
 known = set(l.strip() for l in open(ROOT / "state" / "an" / f"{g}_sound_asset.named", encoding="utf-8") if l.strip())
