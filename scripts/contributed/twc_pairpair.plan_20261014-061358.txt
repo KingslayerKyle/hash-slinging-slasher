@@ -1,0 +1,5 @@
+label: twc quads joined from two known twc pairs
+describe: twc/*<known pair>_<known pair>; 6-18% of known quads are two known pairs (measured 2026-10-14), and the 0..800 quad range cannot reach their large tokens
+begin: @contrib/twc_pp_begin.txt
+stem: @contrib/twc_pp_stem.txt
+bare: no
