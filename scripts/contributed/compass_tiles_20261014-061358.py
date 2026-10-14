@@ -11,7 +11,14 @@ with `_ob` added/removed) with the three compass prefixes and a 00..32 x 00..32 
 from pathlib import Path
 import re
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+if not (ROOT / "scripts" / "snapshot.py").is_file():
+    raise SystemExit("Run this helper from within a hash-slinging-slasher checkout")
+# Prepare these verified, game-and-pool-specific inputs with scripts/export_named.py.
+if not (ROOT / "state" / "an").is_dir():
+    raise SystemExit("Run python scripts/export_named.py first (see --help)")
 names = set()
 for f in (ROOT / "state" / "an").glob("*_image.named"):
     for line in open(f, encoding="utf-8"):

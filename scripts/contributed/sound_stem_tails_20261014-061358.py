@@ -6,14 +6,21 @@ game for the same source file: BO7 `iw9/wpn/.../x.tnn.85.48000.all`, MW7 `...x.l
 space); this moves the stem and re-dresses it in each of the target game's measured tails (all
 tails seen 20+ times on its named files) and its separator (`.` for MWII/MWIII, `/` otherwise).
 
-    python contrib/_dump_named.py BLACKOP6 BLACKOP7 YAMYAMOK MODWAR22 MODWAR7
+    python scripts/export_named.py BLACKOP6 BLACKOP7 YAMYAMOK MODWAR22 MODWAR7
     python contrib/sound_stem_tails.py MODWAR7 | confirm_list - --game MODWAR7
 """
 from pathlib import Path
 import collections
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+if not (ROOT / "scripts" / "snapshot.py").is_file():
+    raise SystemExit("Run this helper from within a hash-slinging-slasher checkout")
+# Prepare these verified, game-and-pool-specific inputs with scripts/export_named.py.
+if not (ROOT / "state" / "an").is_dir():
+    raise SystemExit("Run python scripts/export_named.py first (see --help)")
 AN = ROOT / "state" / "an"
 target = sys.argv[1].upper()
 DOTTED = {"YAMYAMOK", "MODWAR22"}

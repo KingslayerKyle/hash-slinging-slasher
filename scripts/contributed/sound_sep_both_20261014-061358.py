@@ -11,7 +11,14 @@ MWII/MWIII finds reach BO6/BO7/MW7. Reads state/an/*_sound_asset.named (contrib/
 from pathlib import Path
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+if not (ROOT / "scripts" / "snapshot.py").is_file():
+    raise SystemExit("Run this helper from within a hash-slinging-slasher checkout")
+# Prepare these verified, game-and-pool-specific inputs with scripts/export_named.py.
+if not (ROOT / "state" / "an").is_dir():
+    raise SystemExit("Run python scripts/export_named.py first (see --help)")
 want = sys.argv[1] if len(sys.argv) > 1 else "slash"
 seen = set()
 for f in (ROOT / "state" / "an").glob("*_sound_asset.named"):

@@ -6,14 +6,21 @@ known (k-1)-token names for each terrain directory (state/an/*_material.named, e
 and writes plans over the difference only -- a refill after other people's merges costs a few
 seconds instead of the whole space again.
 
-    python contrib/_dump_named.py BLACKOP6 BLACKOP7 YAMYAMOK MODWAR22 MODWAR7
+    python scripts/export_named.py BLACKOP6 BLACKOP7 YAMYAMOK MODWAR22 MODWAR7
     python contrib/twc_extend_delta.py
     confirm_plan contrib/twc_delta/<dir><k>_{app,pre}.plan.txt --game BLACKOP7
 """
 from pathlib import Path
 import collections
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+if not (ROOT / "scripts" / "snapshot.py").is_file():
+    raise SystemExit("Run this helper from within a hash-slinging-slasher checkout")
+# Prepare these verified, game-and-pool-specific inputs with scripts/export_named.py.
+if not (ROOT / "state" / "an").is_dir():
+    raise SystemExit("Run python scripts/export_named.py first (see --help)")
 CONTRIB = ROOT / "contrib"
 OUT = CONTRIB / "twc_delta"
 NL = "\n"
@@ -27,9 +34,8 @@ for f in (ROOT / "state" / "an").glob("*_material.named"):
         if d in DIRS and rest:
             known[d].add(rest)
 
-OUT.mkdir(exist_ok=True)
-for f in OUT.glob("*"):
-    f.unlink()
+OUT.mkdir(parents=True, exist_ok=True)
+# Only replace named generated files; never delete unrelated user files.
 total = 0
 for d in DIRS:
     tag = "" if d == "twc" else "_" + d

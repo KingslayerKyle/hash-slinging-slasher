@@ -16,27 +16,36 @@ from pathlib import Path
 import subprocess
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+if not (ROOT / "scripts" / "snapshot.py").is_file():
+    raise SystemExit("Run this helper from within a hash-slinging-slasher checkout")
 CONTRIB = ROOT / "contrib"
+helpers = sorted((ROOT / "scripts" / "contributed").glob("model_log_stems_*.py"))
+helper = CONTRIB / "model_log_stems.py"
+if not helper.is_file():
+    if not helpers:
+        raise SystemExit("Missing model_log_stems helper")
+    helper = helpers[-1]
+if not sys.argv[1:]:
+    raise SystemExit("Supply an explicit verified model-names file; no game log is read automatically")
+CONTRIB.mkdir(parents=True, exist_ok=True)
 prev_file = CONTRIB / "modellog_stems.prev.txt"
 cur_file = CONTRIB / "modellog_stems.txt"
 if not prev_file.is_file():
-    prev_file.write_text(cur_file.read_text(encoding="utf-8"), encoding="utf-8")
+    prev_file.write_text(cur_file.read_text(encoding="utf-8") if cur_file.is_file() else "", encoding="utf-8")
 prev = set(prev_file.read_text(encoding="utf-8").split())
 
 log = ROOT / "state" / "modelhash" / "combined_models.log"
 names = set()
-src = ROOT.parent / "assets.log"
-if src.is_file():
-    for line in open(src, encoding="utf-8", errors="replace"):
-        if line.startswith("Model,"):
-            names.add(line.strip()[6:].lower())
 for p in sys.argv[1:]:
     for line in open(p, encoding="utf-8", errors="replace"):
         if line.strip():
             names.add(line.strip().lower())
+log.parent.mkdir(parents=True, exist_ok=True)
 log.write_text("".join(f"Model,{n}\n" for n in sorted(names)), encoding="utf-8")
-subprocess.run([sys.executable, str(CONTRIB / "model_log_stems.py"), str(log)], check=True)
+subprocess.run([sys.executable, str(helper), str(log)], check=True)
 
 stems = set(cur_file.read_text(encoding="utf-8").split())
 new = sorted(stems - prev)

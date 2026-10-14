@@ -9,7 +9,7 @@ so `cm_` only ever meets `_pri`/`_sec`-style endings and the space stays small.
 
 Bases of a material: the name past its directory, and that with `mtl_` taken off.
 
-    python contrib/_dump_named.py BLACKOP6 BLACKOP7 YAMYAMOK MODWAR22 MODWAR7
+    python scripts/export_named.py BLACKOP6 BLACKOP7 YAMYAMOK MODWAR22 MODWAR7
     python contrib/mat_image_templates.py [min_count]
     confirm_plan contrib/mat_image_templates/<n>.plan.txt --game BLACKOP7     (one plan per opening)
 """
@@ -18,7 +18,14 @@ import collections
 import glob
 import sys
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+if not (ROOT / "scripts" / "snapshot.py").is_file():
+    raise SystemExit("Run this helper from within a hash-slinging-slasher checkout")
+# Prepare these verified, game-and-pool-specific inputs with scripts/export_named.py.
+if not (ROOT / "state" / "an").is_dir():
+    raise SystemExit("Run python scripts/export_named.py first (see --help)")
 AN = ROOT / "state" / "an"
 OUTNAME = "img_sibling_templates" if "--image-bases" in sys.argv else "mat_image_templates"
 OUT = ROOT / "contrib" / OUTNAME
@@ -93,9 +100,8 @@ def main():
     for (opening, ending), c in sorted(keep.items(), key=lambda kv: -kv[1]):
         by_opening[opening].append((ending, c))
 
-    OUT.mkdir(exist_ok=True)
-    for f in OUT.glob("*"):
-        f.unlink()
+    OUT.mkdir(parents=True, exist_ok=True)
+    # Only replace named generated files; never delete unrelated user files.
     (OUT / "bases.txt").write_text("\n".join(sorted(bases)) + "\n", encoding="utf-8")
     total = 0
     for k, (opening, ends) in enumerate(sorted(by_opening.items(), key=lambda kv: -sum(c for _, c in kv[1]))):
