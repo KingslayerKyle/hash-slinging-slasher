@@ -16,6 +16,12 @@ rules, provenance and an aggregate report. Does not confirm, write findings,
 modify configuration or submit. Reusable only for a genuinely fresh seed delta.
 An explicit finite candidate/round budget errors instead of calling a truncated
 frontier closed. Normal typed confirmation and submission remain necessary.
+Training exclusions and --exclude-*-file inputs contain plain names, including
+literal commas and leading ``#`` characters. Use --exclude-*-factor-file for
+historical candidate files written as explicit ``0,name`` rows; executed plan
+factors use that format too. Input formats are explicit, never inferred. A frozen
+training replay checks its source, exclusions and complete rules against the
+saved measurement before applying any seeds.
 
 BO7 2026-10-15: 152 new image roots applied to 706 frozen triples learned from
 80,293 public images and 161,718 public materials after excluding all local
@@ -47,13 +53,50 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def read_names(path):
+def read_plain_names(path):
+    """Read a name-per-line artifact without interpreting commas as CSV."""
     for row in path.read_text(encoding='utf8').splitlines():
+        if not row:
+            continue
+        yield row.strip().lower()
+
+
+def read_factor_names(path):
+    """Read the explicit zero-count factor format, preserving the entire name."""
+    for number, row in enumerate(path.read_text(encoding='utf8').splitlines(), 1):
         if not row or row.startswith('#'):
             continue
-        name = row.partition(',')[2] if ',' in row else row
+        raw, sep, name = row.partition(',')
+        if not sep or raw != '0':
+            raise ValueError(f'{path}:{number}: expected an explicit 0,name factor row')
         if name:
             yield name.strip().lower()
+
+
+def serialized_rules(rules):
+    return [{'image_prefix': p, 'image_suffix': s, 'material_directory': d,
+             'cores': sorted(cores)} for (p, s, d), cores in sorted(rules.items())]
+
+
+def verify_frozen_training(directory, commit, source_digests, generated, training, rules):
+    """Reject a changed freeze rather than silently relearning a different graph."""
+    old = json.loads((directory/'measurement.json').read_text(encoding='utf8'))
+    checks = {
+        'source_commit': commit,
+        'source_table_sha256': source_digests,
+        'training_descendants_excluded': {k: len(v) for k, v in generated.items()},
+        'training': {k: len(v) for k, v in training.items()},
+        'frozen_triples': len(rules),
+        'training_pair_controls': sum(map(len, rules.values())),
+        'frozen_training_exclusion_sha256': {
+            k: sha(directory/(k+'.training_exclusions.txt')) for k in generated},
+    }
+    for key, actual in checks.items():
+        if old.get(key) != actual:
+            raise ValueError(f'Frozen training replay changed {key}')
+    old_rules = json.loads((directory/'rules.json').read_text(encoding='utf8'))
+    if old_rules != serialized_rules(rules):
+        raise ValueError('Frozen training replay changed the complete rule witnesses')
 
 
 def load_seeds(paths, held, game):
@@ -105,6 +148,10 @@ def main():
     ap.add_argument('--seed-image', type=Path, action='append', required=True)
     ap.add_argument('--exclude-image-file', type=Path, action='append', default=[])
     ap.add_argument('--exclude-material-file', type=Path, action='append', default=[])
+    ap.add_argument('--exclude-image-factor-file', type=Path, action='append', default=[],
+                    help='Prior image candidates in explicit 0,name format (not plain names)')
+    ap.add_argument('--exclude-material-factor-file', type=Path, action='append', default=[],
+                    help='Prior material candidates in explicit 0,name format (not plain names)')
     ap.add_argument('--exclude-pair-plan-dir', type=Path, action='append', default=[])
     ap.add_argument('--frozen-training-exclusions-dir', type=Path,
                     help='Replay the saved image/material training exclusions from an earlier measurement')
@@ -121,7 +168,7 @@ def main():
     generated = {k: set() for k in held}
     for kind in held:
         if a.frozen_training_exclusions_dir:
-            generated[kind].update(read_names(a.frozen_training_exclusions_dir/(kind+'.training_exclusions.txt')))
+            generated[kind].update(read_plain_names(a.frozen_training_exclusions_dir/(kind+'.training_exclusions.txt')))
         for path in ([] if a.frozen_training_exclusions_dir else (ROOT / 'findings').rglob(kind+'*.txt')):
             for row in path.read_text(encoding='utf8').splitlines():
                 raw, sep, name = row.partition(',')
@@ -140,13 +187,29 @@ def main():
     if roots & training['image']:
         raise ValueError('Application roots must not enter training')
     rules = learn(training['image'], training['material'])
+    if a.frozen_training_exclusions_dir:
+        verify_frozen_training(a.frozen_training_exclusions_dir, commit, source_digests,
+                               generated, training, rules)
     previous = {'image': set(), 'material': set()}
-    for kind, paths in [('image',a.exclude_image_file),('material',a.exclude_material_file)]:
+    excluded_candidate_inputs = {k: [] for k in held}
+    groups = [('image',a.exclude_image_file,'plain-name-lines',read_plain_names),
+              ('material',a.exclude_material_file,'plain-name-lines',read_plain_names),
+              ('image',a.exclude_image_factor_file,'zero-count-name-rows',read_factor_names),
+              ('material',a.exclude_material_factor_file,'zero-count-name-rows',read_factor_names)]
+    formats_by_path = {}
+    for kind, paths, file_format, reader in groups:
         for path in paths:
-            previous[kind].update(read_names(path))
+            resolved = path.resolve()
+            if resolved in formats_by_path and formats_by_path[resolved] != (kind,file_format):
+                raise ValueError('A prior candidate file was supplied with conflicting kind or format')
+            formats_by_path[resolved] = kind,file_format
+            names = set(reader(path))
+            previous[kind].update(names)
+            excluded_candidate_inputs[kind].append({'path':str(path),'sha256':sha(path),
+                                                     'format':file_format,'names':len(names)})
     plans = []
     for d in a.exclude_pair_plan_dir:
-        begins, pairs, ends = [set(read_names(d/(role+'.txt'))) for role in ('begin','stem','end')]
+        begins, pairs, ends = [set(read_factor_names(d/(role+'.txt'))) for role in ('begin','stem','end')]
         plans.append((begins,pairs,ends|{''}))
     def previously_in_image_plan(name):
         for begins, pairs, ends in plans:
@@ -221,8 +284,7 @@ def main():
     for kind in held:
         for label,names in [('candidates',candidates[kind]),('hits',positives[kind].values()),('training_exclusions',generated[kind])]:
             (a.output_dir/(kind+'.'+label+'.txt')).write_text(''.join(n+'\n' for n in sorted(names)),encoding='utf8')
-    serialized_rules = [{'image_prefix':p,'image_suffix':s,'material_directory':d,'cores':sorted(cores)} for (p,s,d),cores in sorted(rules.items())]
-    (a.output_dir/'rules.json').write_text(json.dumps(serialized_rules,indent=2)+'\n',encoding='utf8')
+    (a.output_dir/'rules.json').write_text(json.dumps(serialized_rules(rules),indent=2)+'\n',encoding='utf8')
     (a.output_dir/'provenance.json').write_text(json.dumps(provenance,indent=2)+'\n',encoding='utf8')
     report = {'game':a.game,'source_commit':commit,'source_table_sha256':source_digests,'seed_images':len(roots),
         'seed_sha256':{str(p):sha(p) for p in a.seed_image},'training':{k:len(v) for k,v in training.items()},
@@ -231,7 +293,8 @@ def main():
         'prior_candidates_excluded':{k:len(v) for k,v in excluded_previous.items()},
         'known_target_controls':{k:len(v) for k,v in controls.items()},'fresh_typed_keys':{k:len(v) for k,v in positives.items()},
         'rounds':rounds,'closed':True,'normal_confirmation_still_required':True,
-        'excluded_candidate_sha256':{str(p):sha(p) for p in [*a.exclude_image_file,*a.exclude_material_file]},
+        'excluded_candidate_sha256':{str(p):sha(p) for _,paths,_,_ in groups for p in paths},
+        'excluded_candidate_inputs':excluded_candidate_inputs,
         'excluded_pair_plan_sha256':{str(d):{r:sha(d/(r+'.txt')) for r in ('begin','stem','end')} for d in a.exclude_pair_plan_dir},
         'frozen_training_exclusion_sha256':{k:sha(a.output_dir/(k+'.training_exclusions.txt')) for k in held}}
     (a.output_dir/'measurement.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf8')
