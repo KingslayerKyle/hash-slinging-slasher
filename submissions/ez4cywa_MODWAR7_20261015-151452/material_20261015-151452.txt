@@ -1,0 +1,5 @@
+3383290937ae9a6c,elcq/vfx_rex_water_splash_radial_sml_anim_01_col
+4c1d9940ab16e3fc,m/att_rex_lens_reflection_02_ads
+5ceb1dac4e74850e,elcq/vfx_rex_water_splash_radial_sml_anim_02_s
+6afd9d6c2b48f527,m/att_rex_lens_reflection_03_ads
+7d1a2e7893820bc5,i/vfx_rex_decal_water_02_white
