@@ -36,6 +36,16 @@ ROOT=next((p for p in [Path.cwd(),*Path(__file__).resolve().parents]
 if ROOT is None:raise SystemExit('Run inside a solver checkout')
 sys.path.insert(0,str(ROOT/'scripts'))
 import snapshot
+
+
+def table_checkout():
+    """Use the configured table checkout when pinned Git history is required."""
+    folder = Path(snapshot.settings.tables_csv()).resolve()
+    for candidate in (folder, folder.parent, ROOT / 'cod-name-db'):
+        if (candidate / '.git').exists() and (candidate / 'csv').is_dir():
+            return candidate
+    raise ValueError('Pinned source revisions require a cod-name-db Git checkout; '
+                     'configure tables in config.toml and fetch its history first')
 WEAPON=re.compile(r'(?:^|_)(ar|sm|pi|sh|lm|br|dm|sn|me|la|ww|smg|pistol|lmg|dmr|shotgun|sniper|rifle|launcher|melee|special)_[a-z0-9]+(?:_|$)')
 TABLES={'sound_alias':'fnv1a_soundbanks_aliases_v2','xanim':'fnv1a_xanims_v2'}
 
@@ -90,11 +100,11 @@ def main():
     shot=snapshot.read(ROOT/'snapshots'/(a.game.lower()+'.ids'))
     if shot.game!=a.game:raise ValueError('Wrong capture game')
     held={k:set(shot.by_pool()[k]) for k in TABLES}
-    commit=subprocess.check_output(['git','-C',str(ROOT/'cod-name-db'),'rev-parse','--verify',a.source_rev+'^{commit}']).decode().strip()
+    commit=subprocess.check_output(['git','-C',str(table_checkout()),'rev-parse','--verify',a.source_rev+'^{commit}']).decode().strip()
     generated={k:set() for k in TABLES};local={k:set() for k in TABLES}
     for kind in TABLES:
         for top in ('all_names','submissions','findings'):
-            for path in (ROOT/top).rglob(kind+'*.txt'):
+            for path in (Path(snapshot.settings.path('findings', 'findings')) if top == 'findings' else ROOT / top).rglob(kind+'*.txt'):
                 for row in path.read_text(encoding='utf8',errors='replace').splitlines():
                     raw,sep,n=row.partition(',')
                     if not sep or not n:continue
@@ -105,7 +115,7 @@ def main():
                     if key in held[kind]:local[kind].add(n)
     baseline={};application={};source_hashes={}
     for kind,table in TABLES.items():
-        data=subprocess.check_output(['git','-C',str(ROOT/'cod-name-db'),'show',commit+':csv/'+table+'.csv'])
+        data=subprocess.check_output(['git','-C',str(table_checkout()),'show',commit+':csv/'+table+'.csv'])
         source_hashes[kind]=hashlib.sha256(data).hexdigest()
         names={n for n in snapshot.database_names(table,data.decode('utf8').splitlines())
                if n.isascii() and n==n.strip().lower()}
