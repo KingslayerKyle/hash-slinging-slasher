@@ -1,0 +1,2 @@
+406473f403355f0f,jup/wpn/sn/moscar/wpn_sn_moscar_charge_fire_npc_swt_06.tnn.85.48000.all
+60291fe95bee7110,jup/wpn/sn/moscar/wpn_sn_moscar_charge_fire_npc_swt_05.tnn.85.48000.all
