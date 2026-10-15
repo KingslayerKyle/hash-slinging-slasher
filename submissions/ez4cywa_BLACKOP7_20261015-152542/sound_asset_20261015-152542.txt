@@ -1,0 +1,11 @@
+74af6cd0c6fcd7,iw9/amb/amb_emitters_iw9/marina/emt_wood_boat_creaks_11.dnn.85.48000.all
+19d62345efdffe6e,iw9/amb/amb_emitters_iw9/marina/emt_wood_boat_creaks_14.dnn.85.48000.all
+2e1ca492db10c6ec,iw9/amb/amb_emitters_iw9/marina/emt_dock_water_lap_10.dnn.75.48000.all
+2ed2a5d275621c6b,iw9/amb/amb_emitters_iw9/marina/emt_dock_water_lap_13.dnn.75.48000.all
+364d2869f762b678,iw9/amb/amb_emitters_iw9/marina/emt_wood_boat_creaks_12.dnn.85.48000.all
+3fca5a785155a895,iw9/amb/amb_emitters_iw9/marina/emt_wood_boat_creaks_13.dnn.85.48000.all
+406473f403355f0f,jup/wpn/sn/moscar/wpn_sn_moscar_charge_fire_npc_swt_06.tnn.85.48000.all
+4722863f11fb032b,iw9/amb/amb_emitters/fire/emt_fire_sizzle_3.lnn.75.48000.all
+574ddefa9cc049f9,iw9/amb/amb_emitters_iw9/marina/emt_dock_water_lap_11.dnn.75.48000.all
+60291fe95bee7110,jup/wpn/sn/moscar/wpn_sn_moscar_charge_fire_npc_swt_05.tnn.85.48000.all
+73c23441f42772f6,iw9/amb/amb_emitters_iw9/marina/emt_dock_water_lap_12.dnn.75.48000.all
