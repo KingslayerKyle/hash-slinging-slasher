@@ -220,7 +220,7 @@ def main():
     if training - public:
         raise ValueError('Baseline contains names not independently verified by the public material table')
     local = set()
-    for path in (ROOT / 'findings').rglob('material*.txt'):
+    for path in (Path(snapshot.settings.path('findings', 'findings'))).rglob('material*.txt'):
         for row in path.read_text(encoding='utf-8').splitlines():
             parsed = parse_keyed_row(row, args.game)
             if parsed:
