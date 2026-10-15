@@ -37,6 +37,16 @@ OUT = ROOT / 'logs/gpu_visual_20261015/material11_reverse_images'
 sys.path.insert(0, str(ROOT / 'scripts'))
 import snapshot
 
+
+def table_checkout():
+    """Use the configured table checkout when pinned Git history is required."""
+    folder = Path(snapshot.settings.tables_csv()).resolve()
+    for candidate in (folder, folder.parent, ROOT / 'cod-name-db'):
+        if (candidate / '.git').exists() and (candidate / 'csv').is_dir():
+            return candidate
+    raise ValueError('Pinned source revisions require a cod-name-db Git checkout; '
+                     'configure tables in config.toml and fetch its history first')
+
 FROZEN = ROOT / 'logs/visual_seed_closure_20261015/result'
 SEED = ROOT / 'logs/gpu_visual_20261015/structure_directory_tail.hits.txt'
 GAME = 'BLACKOP7'
@@ -94,39 +104,39 @@ def main():
     started = time.monotonic()
     capture_path = ROOT / 'snapshots/blackop7.ids'
     capture = snapshot.read(capture_path)
-    assert capture.game == GAME
+    if not (capture.game == GAME): raise ValueError("Frozen source, rule, seed or capture validation failed")
     held = {kind: set(capture.by_pool()[kind]) for kind in ('image', 'material')}
     measurement = json.loads((FROZEN / 'measurement.json').read_text())
     rule_path = FROZEN / 'rules.json'
-    assert sha(rule_path) == RULE_SHA
+    if not (sha(rule_path) == RULE_SHA): raise ValueError("Frozen source, rule, seed or capture validation failed")
     rules = json.loads(rule_path.read_text())
     training, source_digests = {}, {}
     for kind, table in [('image', 'fnv1a_ximages_v2'), ('material', 'fnv1a_xmaterials_v2')]:
         exclusion_path = FROZEN / (kind + '.training_exclusions.txt')
-        assert sha(exclusion_path) == measurement['frozen_training_exclusion_sha256'][kind]
+        if not (sha(exclusion_path) == measurement['frozen_training_exclusion_sha256'][kind]): raise ValueError("Frozen source, rule, seed or capture validation failed")
         generated = raw_lines(exclusion_path)
-        assert len(generated) == measurement['training_descendants_excluded'][kind]
-        data = subprocess.check_output(['git', '-C', str(ROOT / 'cod-name-db'), 'show',
+        if not (len(generated) == measurement['training_descendants_excluded'][kind]): raise ValueError("Frozen source, rule, seed or capture validation failed")
+        data = subprocess.check_output(['git', '-C', str(table_checkout()), 'show',
                                         measurement['source_commit'] + ':csv/' + table + '.csv'])
         source_digests[kind] = hashlib.sha256(data).hexdigest()
-        assert source_digests[kind] == measurement['source_table_sha256'][kind]
+        if not (source_digests[kind] == measurement['source_table_sha256'][kind]): raise ValueError("Frozen source, rule, seed or capture validation failed")
         training[kind] = {n for n in snapshot.database_names(table, data.decode('utf-8').splitlines())
                           if n.isascii() and n == n.strip().lower() and n not in generated
                           and snapshot.fnv1a(n, GAME, kind) & MASK in held[kind]}
-        assert len(training[kind]) == measurement['training'][kind]
+        if not (len(training[kind]) == measurement['training'][kind]): raise ValueError("Frozen source, rule, seed or capture validation failed")
     pair_controls = 0
     for rule in rules:
         p, s, d, cores = (rule[k] for k in ('image_prefix', 'image_suffix', 'material_directory', 'cores'))
-        assert len(set(cores)) == len(cores) >= 3
+        if not (len(set(cores)) == len(cores) >= 3): raise ValueError("Frozen source, rule, seed or capture validation failed")
         for core in cores:
-            assert p + core + s in training['image'] and d + core in training['material']
+            if not (p + core + s in training['image'] and d + core in training['material']): raise ValueError("Frozen source, rule, seed or capture validation failed")
         pair_controls += len(cores)
-    assert (len(rules), pair_controls) == (706, 25660)
+    if not ((len(rules), pair_controls) == (706, 25660)): raise ValueError("Frozen source, rule, seed or capture validation failed")
 
     roots = raw_lines(SEED)
-    assert len(roots) == 11 and not roots.intersection(training['material'])
+    if not (len(roots) == 11 and not roots.intersection(training['material'])): raise ValueError("Frozen source, rule, seed or capture validation failed")
     for name in roots:
-        assert snapshot.fnv1a(name, GAME, 'material') & MASK in held['material']
+        if not (snapshot.fnv1a(name, GAME, 'material') & MASK in held['material']): raise ValueError("Frozen source, rule, seed or capture validation failed")
     proposals, provenance = set(), {}
     for name in sorted(roots):
         directory, slash, core = name.rpartition('/')
@@ -195,7 +205,7 @@ def main():
 
     excluded = {k & MASK for k in snapshot.known_hashes(game=GAME)}
     for top in ('all_names', 'submissions', 'findings'):
-        for path in (ROOT / top).rglob('*.txt'):
+        for path in (Path(snapshot.settings.path('findings', 'findings')) if top == 'findings' else ROOT / top).rglob('*.txt'):
             for row in path.read_text(encoding='utf-8', errors='replace').splitlines():
                 raw, sep, _ = row.partition(',')
                 if sep:
@@ -232,7 +242,7 @@ def main():
               'capture_sha256': sha(capture_path), 'source_commit': measurement['source_commit'],
               'source_table_sha256': source_digests, 'prior_input_artifacts': inputs,
               'seconds': round(time.monotonic()-started, 3)}
-    OUT.mkdir(exist_ok=True)
+    OUT.mkdir(parents=True, exist_ok=True)
     for label, names in [('candidates', candidates), ('hits', hits), ('known_controls', controls)]:
         (OUT / ('image.' + label + '.txt')).write_text(''.join(n+'\n' for n in sorted(names)), encoding='utf-8')
     (OUT / 'provenance.json').write_text(json.dumps({n: provenance[n] for n in sorted(candidates)}, indent=2)+'\n')
