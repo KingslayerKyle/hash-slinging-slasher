@@ -13,10 +13,19 @@ Two counts are printed per (A -> B) pair, and the second is the control:
   total   -- names that hash to any id B holds, named or not. ~0 here means the relation does not
              exist, and a zero in the next column would be about the shape of the sweep, not the
              ground.
-  unnamed -- names that hash to an id B holds that nothing can name yet. This is the yield.
+  unnamed -- names that hash to an id B holds that neither the current tables nor merged/open claims name yet. This is provisional yield.
 """
+import argparse
+from pathlib import Path
 import collections
 import sys
+
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts/snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+if not (ROOT / "scripts/snapshot.py").is_file():
+    raise SystemExit("Run inside a hash-slinging-slasher checkout")
+sys.path.insert(0, str(ROOT / "scripts"))
 
 import snapshot
 import settings
@@ -30,17 +39,37 @@ TABLE = {
 SAMPLE = int(__import__("os").environ.get("SAMPLE", "200000"))
 
 
-finds = open('contrib/name_laundering_finds.txt', 'a', encoding='utf-8')
+def hash_for(name, game, pool):
+    value = snapshot.fnv1a_nofold(name) if game == 'BLKOPS04' and pool == 'sound_asset' else snapshot.fnv1a(name, game, pool)
+    return value & snapshot.ID_MASK
 
 
-def measure(game):
+def claimed_ids(game):
+    keys = set()
+    for folder in (ROOT / 'submissions', Path(settings.path('findings', 'findings'))):
+        for path in folder.rglob('*.txt'):
+            for row in path.read_text(encoding='utf8', errors='replace').splitlines():
+                raw, sep, _ = row.partition(',')
+                if sep:
+                    try: keys.add(int(raw, 16) & snapshot.ID_MASK)
+                    except ValueError: pass
+    path = ROOT / 'state/claimed.txt'
+    if not path.is_file():
+        raise ValueError('Run start first: current open-PR claims are required to measure unclaimed yield')
+    for row in path.read_text(encoding='utf8').splitlines():
+        try: keys.add(int(row, 16) & snapshot.ID_MASK)
+        except ValueError: pass
+    return keys
+
+
+def measure(game, finds):
     paths = [p for p in snapshot.snapshots() if snapshot.read(p).game == game]
     if not paths:
         print(f"{game}: no capture on disk")
         return
     snap = snapshot.read(paths[0])
-    known = snapshot.known_hashes()
-    unnamed = snap.unnamed(known)
+    known = {key & snapshot.ID_MASK for key in snapshot.known_hashes(game=game)}
+    known.update(claimed_ids(game))
 
     held = collections.defaultdict(set)
     for name in snap.by_pool():
@@ -61,7 +90,7 @@ def measure(game):
             table = table + "_v2"
             if pool == "xmodel":
                 continue  # modern models carry embedded names; not huntable here
-        got = [n.strip().lower().replace("\\", "/") for n in snapshot.table_names(table) if n.strip()]
+        got = [n for n in snapshot.table_names(table) if n and hash_for(n, game, pool) in held.get(pool, set())]
         got = list(dict.fromkeys(got))[:SAMPLE]
         if got:
             names[pool] = got
@@ -82,7 +111,7 @@ def measure(game):
             held_ids = held.get(target, set())
             wanted_ids = wanted.get(target, set())
             for name in source_names:
-                digest = snapshot.fnv1a(name, game, target) & snapshot.ID_MASK
+                digest = hash_for(name, game, target)
                 if digest in held_ids:
                     hits += 1
                     if digest in wanted_ids:
@@ -99,7 +128,12 @@ def measure(game):
 
 
 if __name__ == "__main__":
-    games = sys.argv[1:] or ["BLKOPSCW", "BLKOPS04", "MODWAR22"]
-    for game in games:
-        print(f"\n=== {game}")
-        measure(game)
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument('games', nargs='*', choices=sorted(snapshot.MODERN | {'BLKOPS04', 'BLKOPSCW'}))
+    parser.add_argument('--output', type=Path, default=ROOT / 'contrib/name_laundering_finds.txt')
+    args = parser.parse_args()
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with args.output.open('a', encoding='utf8') as finds:
+        for game in args.games or ['BLKOPSCW', 'BLKOPS04', 'MODWAR22']:
+            print(f"\n=== {game}")
+            measure(game, finds)
