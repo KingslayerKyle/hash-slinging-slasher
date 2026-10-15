@@ -77,7 +77,7 @@ def corpus(game):
     names = set(snapshot.table_names('fnv1a_ximages_v2'))
     stored = set()
     for top in ('all_names', 'submissions', 'findings'):
-        for path in (ROOT / top).rglob('image*.txt'):
+        for path in (Path(snapshot.settings.path('findings', 'findings')) if top == 'findings' else ROOT / top).rglob('image*.txt'):
             for row in path.read_text(encoding='utf-8').splitlines():
                 raw, sep, name = row.partition(',')
                 if not sep or not name:

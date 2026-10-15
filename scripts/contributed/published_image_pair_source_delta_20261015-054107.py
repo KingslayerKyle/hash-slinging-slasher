@@ -46,6 +46,16 @@ if ROOT is None:
 sys.path.insert(0, str(ROOT / 'scripts'))
 import snapshot
 
+
+def table_checkout():
+    """Use the configured table checkout when pinned Git history is required."""
+    folder = Path(snapshot.settings.tables_csv()).resolve()
+    for candidate in (folder, folder.parent, ROOT / 'cod-name-db'):
+        if (candidate / '.git').exists() and (candidate / 'csv').is_dir():
+            return candidate
+    raise ValueError('Pinned source revisions require a cod-name-db Git checkout; '
+                     'configure tables in config.toml and fetch its history first')
+
 TABLE = 'fnv1a_ximages_v2'
 
 
@@ -69,7 +79,7 @@ def values(path):
 
 def table_version(ref):
     def git(*args):
-        return subprocess.check_output(['git', '-C', str(ROOT / 'cod-name-db'), *args])
+        return subprocess.check_output(['git', '-C', str(table_checkout()), *args])
     commit = git('rev-parse', '--verify', ref + '^{commit}').decode('ascii').strip()
     data = git('show', commit + ':csv/' + TABLE + '.csv')
     names = set(snapshot.database_names(TABLE, data.decode('utf8').splitlines()))
