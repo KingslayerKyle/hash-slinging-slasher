@@ -1,0 +1,5 @@
+2149eb40298d8d1e,sat/br/br_bongo_mode/dx_br_brbm_bogd_wzba_gdap_guildsurveillancedro_01.snn.20.48000.english
+2390bb98114d214f,sat/br/br_bongo_mode/dx_br_brbm_sabm_wzba_bogw_allenemysquadselimin_01.snn.20.48000.english
+38d37d8a6620e8c5,sat/br/br_bongo_mode/dx_br_brbm_botu_wzba_ltue_terminalscancomplete_01.snn.20.48000.english
+3a0b02aa36c57518,sat/br/br_bongo_mode/dx_br_brbm_bocb_wzba_cbsh_thecradlebombisclear_01.snn.20.48000.english
+3a6a4dfb029adc8e,s6/op/operator_paul/dx_op_paat_bttl_atre_resp_longlivethefighters_01.scn.20.48000.english
