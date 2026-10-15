@@ -51,6 +51,16 @@ ROOT=next((p for p in [Path.cwd(),*Path(__file__).resolve().parents] if (p/'scri
 if ROOT is None:raise SystemExit('Run inside a solver checkout')
 sys.path.insert(0,str(ROOT/'scripts'))
 import snapshot
+
+
+def table_checkout():
+    """Use the configured table checkout when pinned Git history is required."""
+    folder = Path(snapshot.settings.tables_csv()).resolve()
+    for candidate in (folder, folder.parent, ROOT / 'cod-name-db'):
+        if (candidate / '.git').exists() and (candidate / 'csv').is_dir():
+            return candidate
+    raise ValueError('Pinned source revisions require a cod-name-db Git checkout; '
+                     'configure tables in config.toml and fetch its history first')
 TOKEN=re.compile(r'[a-z0-9]+')
 WIDTH=6
 
@@ -110,6 +120,7 @@ def derive(train):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source-rev',required=True)
+    parser.add_argument('--game', choices=sorted(snapshot.MODERN | {'BLKOPS04', 'BLKOPSCW'}), default='BLACKOP7', help='Target game pinned into the generated alias plan')
     parser.add_argument('--frozen-input-dir',type=Path)
     parser.add_argument('--exclude-file',type=Path,action='append',default=[],
                         help='Explicit plain generated-alias exclusions for normal source mode')
@@ -134,7 +145,7 @@ def main():
                 local.update(plain_names(path))
                 input_files[str(path)]={'path':str(path),'sha256':byte_digest(path.read_bytes()),'format':'plain-name-lines'}
         else:
-            for path in (ROOT/'findings').rglob('sound_alias*.txt'):
+            for path in (Path(snapshot.settings.path('findings', 'findings'))).rglob('sound_alias*.txt'):
                 for number,row in enumerate(path.read_text(encoding='utf8').splitlines(),1):
                     if not row:continue
                     raw,sep,name=row.partition(',')
@@ -157,7 +168,7 @@ def main():
         capture_identities[game]={'snapshot_sha256':actual,'census_sha256':byte_digest(path.with_suffix('.pools.txt').read_bytes()),
                                 'alias_pool_index':shot.pools.index('sound_alias')}
     union=set().union(*held.values())
-    def git(*words):return subprocess.check_output(['git','-C',str(ROOT/'cod-name-db'),*words])
+    def git(*words):return subprocess.check_output(['git','-C',str(table_checkout()),*words])
     commit=git('rev-parse','--verify',args.source_rev+'^{commit}').decode().strip()
     public=set();source_digests={}
     for table in ('fnv1a_soundbanks_aliases','fnv1a_soundbanks_aliases_v2'):
@@ -209,7 +220,7 @@ def main():
     report['factor_file_sha256']={role:byte_digest((out/(role+'.txt')).read_bytes()) for role in ('begin','stem','end')}
     plan=('label: frozen independent all-game complete six-character alias block product\n'
           'describe: pinned source-verified alias tables; local descendants excluded; frozen independent source split; whole blocks and whole sibling endings each need three distinct source cores; heldout names never train; aliases only; see measurement.json\n'
-          'game: BLACKOP7\n'+''.join(f'{role}: @{(out/(role+".txt")).as_posix()}\n' for role in ('begin','stem','end'))+
+          f'game: {args.game}\n'+''.join(f'{role}: @{(out/(role+".txt")).as_posix()}\n' for role in ('begin','stem','end'))+
           'bare: no\nfold: yes\n')
     (out/'aliases.plan.txt').write_text(plan,encoding='utf8')
     (out/'factor_witnesses.json').write_text(json.dumps(evidence,separators=(',',':'))+'\n',encoding='utf8')

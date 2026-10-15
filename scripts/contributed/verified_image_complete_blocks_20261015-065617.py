@@ -57,6 +57,16 @@ if ROOT is None:
 sys.path.insert(0, str(ROOT / 'scripts'))
 import snapshot
 
+
+def table_checkout():
+    """Use the configured table checkout when pinned Git history is required."""
+    folder = Path(snapshot.settings.tables_csv()).resolve()
+    for candidate in (folder, folder.parent, ROOT / 'cod-name-db'):
+        if (candidate / '.git').exists() and (candidate / 'csv').is_dir():
+            return candidate
+    raise ValueError('Pinned source revisions require a cod-name-db Git checkout; '
+                     'configure tables in config.toml and fetch its history first')
+
 SOURCE_COMMIT = '3d42c005d5405af8b225958bef09a041e9ada0be'
 TABLE = 'fnv1a_ximages_v2'
 GAME = 'BLACKOP7'
@@ -189,7 +199,7 @@ def main():
         data = args.source_table.read_bytes()
     else:
         try:
-            data = subprocess.check_output(['git', '-C', str(ROOT/'cod-name-db'), 'show',
+            data = subprocess.check_output(['git', '-C', str(table_checkout()), 'show',
                                             args.source_rev + ':csv/' + TABLE + '.csv'])
         except subprocess.CalledProcessError as exc:
             raise SystemExit('Pinned table unavailable: fetch cod-name-db history or pass --source-table with a verified public image CSV') from exc
@@ -199,7 +209,7 @@ def main():
     source_inputs = {}
     if not args.no_local_history:
         for top in ('all_names', 'submissions', 'findings'):
-            for path in (ROOT/top).rglob('image*.txt'):
+            for path in (Path(snapshot.settings.path('findings', 'findings')) if top == 'findings' else ROOT / top).rglob('image*.txt'):
                 names = read_keyed(path, source_inputs, strict=False)
                 application.update(names)
                 if top == 'findings':
