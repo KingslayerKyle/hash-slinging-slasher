@@ -51,6 +51,16 @@ if ROOT is None:
 sys.path.insert(0, str(ROOT / 'scripts'))
 import snapshot
 
+
+def table_checkout():
+    """Use the configured table checkout when pinned Git history is required."""
+    folder = Path(snapshot.settings.tables_csv()).resolve()
+    for candidate in (folder, folder.parent, ROOT / 'cod-name-db'):
+        if (candidate / '.git').exists() and (candidate / 'csv').is_dir():
+            return candidate
+    raise ValueError('Pinned source revisions require a cod-name-db Git checkout; '
+                     'configure tables in config.toml and fetch its history first')
+
 TABLE = 'fnv1a_ximages_v2'
 TOKEN = re.compile(r'[a-z0-9]{1,16}')
 
@@ -69,7 +79,7 @@ def located(path):
 
 def table_version(ref):
     def git(*args):
-        return subprocess.check_output(['git', '-C', str(ROOT / 'cod-name-db'), *args])
+        return subprocess.check_output(['git', '-C', str(table_checkout()), *args])
     commit = git('rev-parse', '--verify', ref + '^{commit}').decode('ascii').strip()
     data = git('show', commit + ':csv/' + TABLE + '.csv')
     names = {n for n in snapshot.database_names(TABLE, data.decode('utf-8').splitlines())
@@ -219,7 +229,7 @@ def main():
     # controls but cannot add independent new rule evidence.
     known = set(current) | local_descendants
     for top in ('all_names', 'submissions'):
-        known.update(history((ROOT / top).rglob('image*.txt'), args.game))
+        known.update(history((Path(snapshot.settings.path('findings', 'findings')) if top == 'findings' else ROOT / top).rglob('image*.txt'), args.game))
     target = {n for n in known if snapshot.fnv1a(n, args.game, 'image') & snapshot.ID_MASK in held}
     _, witnessed_tails = witness_factors(target, old_pairs, set())
     witnessed_pairs = {stem[-2:] for n in target for _, stem, tail in cuts(n)

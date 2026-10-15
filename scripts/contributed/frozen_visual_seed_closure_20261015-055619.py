@@ -49,6 +49,16 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import snapshot
 
 
+def table_checkout():
+    """Use the configured table checkout when pinned Git history is required."""
+    folder = Path(snapshot.settings.tables_csv()).resolve()
+    for candidate in (folder, folder.parent, ROOT / 'cod-name-db'):
+        if (candidate / '.git').exists() and (candidate / 'csv').is_dir():
+            return candidate
+    raise ValueError('Pinned source revisions require a cod-name-db Git checkout; '
+                     'configure tables in config.toml and fetch its history first')
+
+
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -162,14 +172,14 @@ def main():
         raise ValueError('Wrong capture game')
     held = {k: set(pools.by_pool()[k]) for k in ('image', 'material')}
     roots = load_seeds(a.seed_image, held['image'], a.game)
-    commit = subprocess.check_output(['git', '-C', str(ROOT / 'cod-name-db'), 'rev-parse', '--verify', a.source_rev+'^{commit}']).decode().strip()
+    commit = subprocess.check_output(['git', '-C', str(table_checkout()), 'rev-parse', '--verify', a.source_rev+'^{commit}']).decode().strip()
     training = {}
     source_digests = {}
     generated = {k: set() for k in held}
     for kind in held:
         if a.frozen_training_exclusions_dir:
             generated[kind].update(read_plain_names(a.frozen_training_exclusions_dir/(kind+'.training_exclusions.txt')))
-        for path in ([] if a.frozen_training_exclusions_dir else (ROOT / 'findings').rglob(kind+'*.txt')):
+        for path in ([] if a.frozen_training_exclusions_dir else (Path(snapshot.settings.path('findings', 'findings'))).rglob(kind+'*.txt')):
             for row in path.read_text(encoding='utf8').splitlines():
                 raw, sep, name = row.partition(',')
                 if not sep:
@@ -179,7 +189,7 @@ def main():
                 if snapshot.fnv1a(name, a.game, kind) & snapshot.ID_MASK == key:
                     generated[kind].add(name.strip().lower())
         table = {'image':'fnv1a_ximages_v2', 'material':'fnv1a_xmaterials_v2'}[kind]
-        data = subprocess.check_output(['git','-C',str(ROOT/'cod-name-db'),'show',commit+':csv/'+table+'.csv'])
+        data = subprocess.check_output(['git','-C',str(table_checkout()),'show',commit+':csv/'+table+'.csv'])
         source_digests[kind] = hashlib.sha256(data).hexdigest()
         training[kind] = {n for n in snapshot.database_names(table, data.decode('utf8').splitlines())
                           if n.isascii() and n == n.strip().lower() and n not in generated[kind]
@@ -221,7 +231,7 @@ def main():
         return False
     excluded = {k & snapshot.ID_MASK for k in snapshot.known_hashes(game=a.game)}
     for top in ('all_names','submissions','findings'):
-        for path in (ROOT/top).rglob('*.txt'):
+        for path in (Path(snapshot.settings.path('findings', 'findings')) if top == 'findings' else ROOT / top).rglob('*.txt'):
             for row in path.read_text(encoding='utf8',errors='replace').splitlines():
                 raw,sep,_ = row.partition(',')
                 if sep:
