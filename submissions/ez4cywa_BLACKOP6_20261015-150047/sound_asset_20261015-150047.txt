@@ -1,0 +1,6 @@
+d582c0db635e54f,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_euse_hostileoverwatchhelo_02.snn.20.48000.english_safe
+1d691ba09e5f3f85,iw9/mp/mp_killstreak/dx_mp_kill_cmis_uktl_ause_friendlycruisemissil_02.snn.20.48000.english_safe
+1f891016838689eb,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_ause_friendlyoverwatchhel_02.snn.20.48000.english_safe
+2d0001b2bd902c06,iw9/amb/amb_emitters/ventsfans/emt_sm_vent_rattle_lp_01_mono.dnl.85.48000.all
+3dd2aad53f0133c4,iw9/mp/mp_killstreak/dx_mp_kill_chop_uktl_euse_hostilechoppergunner_02.snn.20.48000.english_safe
+5ebbda00b67f0d4a,iw9/mp/mp_killstreak/dx_mp_kill_grim_uktl_ause_friendlystealthbombe_02.snn.20.48000.english_safe
