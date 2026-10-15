@@ -1,0 +1,7 @@
+731a94e4d73ef27,m/c_sat_gear_display_screen_gold_west
+1c3904104094c848,mc/c_sat_zmb_virgil_weakspot_7
+1c3905104094c9fb,mc/c_sat_zmb_virgil_weakspot_6
+1c93631a6af5f27b,m/c_t10_gear_jumpsuit_07_legs
+1d3936c8542705e8,m/c_sat_zmb_virgil_weakspot_6
+1d3937c85427079b,m/c_sat_zmb_virgil_weakspot_7
+5c79ba3a19114279,m/c_sat_gear_company_helmet_gold_west

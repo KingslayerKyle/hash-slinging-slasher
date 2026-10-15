@@ -1,0 +1,3 @@
+1ce5f1c9970f3328,c_jup_mp_hammer_headset01_thermalmap
+42309870915398fd,body_c_jup_sierra_14_pmc_vest_thermalmap
+70658ea9d52cbb51,c_jup_sp_enemy_pmc_soldier_pistol03_01_thermalmap

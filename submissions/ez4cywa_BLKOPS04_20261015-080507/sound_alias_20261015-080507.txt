@@ -1,0 +1,7 @@
+23b70a4921e44f50,vox_orac_outro_igc_10_10
+27d65c572028dd08,vox_orac_outro_igc_12_12
+3874b1bb58cb3cfd,fly_lever_act_close_npc
+4d943f1b7bb61487,fly_lever_act_open_npc
+4dca488f9bba95a5,wpn_wkud_charge_start_plr
+7638532d66f5f9b6,vox_orac_outro_igc_15_15
+7cf25562693acda2,vox_orac_outro_igc_13_13
