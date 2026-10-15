@@ -6141,12 +6141,49 @@ largest gap in any game). Spent by: the corpora as they stand; each snowballs af
 | `sound_tail_swap.py` | every sound-file stem under the 40 most common encoding tails (`.tnn.75.48000.all` ...) | **35** sound files |
 | `packed_material_codes.py` | `twc/*<k>n_<k>dn[_...]` numeric material codes, k < 2,500 | 2 tokens **25**; 3 tokens (1.7T candidates, 0.26 chance matches) ran past 30 min, ~240 recovered by `submit` |
 
+## A zero from a wide cut is a reading of the stem list, not of the ground -- 2026-10-15
+
+Same plan, same engine, one hour apart, all seven captures, `bare: yes`, 40.6 B candidates a game:
+
+| game | cores 405,943 | cores 448,815 | what changed |
+|---|---|---|---|
+| BLKOPSCW | 0 | **367** (#2714) | 53,450 names merged into the tables |
+| BLKOPS04 | 0 | **167** (#2713) | the same |
+| MODWAR22 | 881 (#2684) | 220 (#2715) | also 4 newly claimed by others |
+| BLACKOP7 | 87 (#2683) | 173 (#2712) | |
+| YAMYAMOK | 79 (#2685) | 122 (#2717) | |
+| MODWAR7 | 45 (#2671) | 26 (#2716) | 15 taken by other contributors mid-flight |
+| BLACKOP6 | 96 (#2682) | 0 sent -- all 269 claimed between the two attempts | |
+
+Three things to take from it, in order of how much they cost to learn:
+
+**A "spent" verdict on this method is only valid at the stem-list size it was measured on.** The
+two legacy zeros were read as saturation and reported as such an hour before the same cut returned
+534 names from them, because `--confirmed-only` cores regenerate as the corpus moves: names that
+were published a moment ago become *confirmed-only material* again the moment they merge, and names
+everybody else merged become new prefixes and new endings for the next round. Quote the core count
+next to any zero, or the next reader inherits a wrong closed sign -- including from this file.
+
+**Contest is per (game x shape) and it moves within an hour.** Black Ops 6 sent 96 wide-sound names
+a day ago with 0 dropped and 269 wide-general names today with all 269 already claimed by the time
+`submit` re-read the open pull requests. Cold War, which every count in this file calls nearly
+finished, took 367.
+
+**The `--confirmed-only` half of the all-boundary construction is what makes it re-pay.** The plain
+cores are shared with every other contributor and get picked over; the confirmed-only set is a
+function of what *this repository* has merged, so it refreshes on a schedule nobody controls and
+every merge is new material. That is the snowball, and this is what its arithmetic looks like at
+40.6 B candidates a game.
+
 ## Dead ends
 
 Do not spend a night rediscovering these. Each cost real time.
 
 | Tried | Outcome |
 |---|---|
+| **Whole-name identity across pools of one capture** -- take a name the game holds in pool A, hash it whole under pool B's policy, ask whether it lands on a B id nothing can name yet (`contrib/name_laundering.py`, 2026-10-14). Different from every cross-type method here, which strip a *core* and re-spell it | Real, tiny, and already taken. Across seven captures the off-diagonal hits are a trickle next to the same-pool identity (Cold War: 210,244 image names hit image ids, 20 hit material ids), and only **8** landed on an unnamed id anywhere: `misc_vm_missiledefusal_crawl_{f,in,l,r}`, which are xanim names that double as sound_alias names in MWII (12 hits, 4 unnamed) and MWIII (7 hits, 4 unnamed). confirm_list, which subtracts the tables AND the 3.5 M claimed hashes, matched **none of the 8**; two were checked directly and both are ids somebody already claims in an open pull request. Worth **zero** today -- though the alias doubling is a fact worth knowing if that batch ever changes hands. |
+| **Measuring `unnamed` against the tables only, not the claims** | The trap that made the row above look like a harvest for a minute. `snapshot.unnamed(known_hashes())` subtracts what the published tables name, which is NOT what is available: `state/claimed.txt` holds 3.5 M hashes from merged submissions and open pull requests, and these 8 were excluded by the tool; the two whose reason was checked by hand were in it. Any measurement that reports a yield has to subtract both, or it will report somebody else's night as your find -- which is exactly the failure `submit` exists to catch, at the worst possible moment. Second lesson from the same minute: `claimed.txt` lines are 16-hex **hashes**, so grepping it by asset *name* returns nothing and proves nothing. Both of these produced a clean looking zero and a clean looking non-zero in the same hour. |
+| **Two tables in `cod-name-db` nobody had tried as a relation**: `cod_techsets.csv` as the source of material-path tokens, and the five weapon tables (`weapons`, `_attachments`, `_tunables`, `_stylesettings`, `fnv1a_animpkgs_v2`) as a stem vocabulary -- 2026-10-14 | Both dead, and the first died on its own premise in seconds: `cod_techsets.csv` holds 1,888 `2d_add#a60c435b`-shaped 2D effect names, not the technique-set token a material path carries, so **0 of 583,725** known `fnv1a_xmaterials` names have one as a path segment. There was no relation to measure, only a name collision with `technique_set` the pool. The weapon half did get measured: 19,581 stems (the table names themselves and their pieces, so the complete names were in the list under `bare: yes`) crossed with each game's committed endings -- 94 M candidates a game on Cold War, MWII and Black Ops 4, 282 M in all, **0 matched on all three**. Its control passed, which is what makes the zero an answer rather than a broken sweep: 51.4% of MWII's 1,367,216 known names and 59.5% of Cold War's 1,351,649 carry at least one segment from that vocabulary. Read that number with its top contributors in mind, because they are `iw9`, `t10`, `sat`, `veh`, `metal`, `smg` -- three-to-four-letter generic fragments, not weapon codenames, and 1,319 distinct stems in all. A control that reports only a percentage would have looked far stronger than it is; print the contributors. Same wall as every seam row above: the pieces are shared because it is one engine's vocabulary, and sharing pieces says nothing about whether the recombined name exists. It also re-confirms the recorded cross-era verbatim zero, three captures wide, for the cost of a coffee. |
 | **BO7 packed image suffix as a non-FNV hash**, 2026-10-09 | 300 `A&B~N` names from `fnv1a_ximages_v2` (45% of that table is packed): N against xxh64 (seed 0 and the modern basis), xxh3, murmur3 x64 both halves, md5/sha1/sha256 first 8 bytes in both byte orders, and both FNV bases, over the whole text, the parts joined bare / by newline / by comma, and each part alone, upper and lower case, masked 64/63/32: **0 hits.** Likely a content hash; packed images are unreachable from names. |
 | **BO7 terrain tile grid**, 2026-10-09 | `saw_sierra_<hex>_<x>_<y>_<z>_emissivitymap`: every integer x,y in [-400,400] under the 16 known hexes, z -8..8, 16 channels: **0.** Each hex names one tile. |
 | **BO7 weapon sound files across sibling weapons**, 2026-10-09 | `weapon_sound_swap.py`: 66,280 `<title>/wpn/<class>/{W}/...` templates filled with every weapon of the class (436k): **0.** Same result as Cold War's weapon event grid. |
