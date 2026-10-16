@@ -1,0 +1,3 @@
+4d8f33ed1b41623,mc/mtl_p8_afr_arch_west_spawn_01_decal_damaged02
+44bff76b677dc873,vd/t8_zm_ora_element_115_vein_rock_01
+4ef79686568f875e,wc/t8_zm_ora_element_115_vein_rock_02
