@@ -1,0 +1,2 @@
+df08480a69c3345,sat/zm/zm_sat_ruby_mn_vox/dx_zm_rumn_1ftc_thur_rm1vra4ln3.snn.20.48000.english
+100ec5b23834ccdb,sat/zm/zm_sat_ruby_mn_vox/dx_zm_rumn_1ftc_thur_rm1vra4ln3.snn.20.48000.english_safe
