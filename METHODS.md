@@ -6568,3 +6568,51 @@ just found somebody else already had**, and `logs/submit*.log` already holds it.
 This is the negative space §7 asks for, measured off one's own submission log rather than a ranking,
 and it describes competition in that measured round. Re-measure on fresh inputs; these
 rates are not permanent per-game rankings and do not imply a fixed rotation.
+
+## Black Ops 4 models, one model at a time: own-id searches over the Saluki export -- 2026-10-16
+
+The Saluki export of every unnamed Black Ops 4 model (cast + material names + image names, see
+`contrib/bo4_models/`) makes it possible to search **each model against its own id only**. The
+ending (and an optional size token) is peeled off that one id, so a candidate can only ever be
+accepted for the model whose own materials, bones, size and neighbours produced it. Coincidental
+matches fall from "candidates x every unnamed id / 2^63" to "candidates / 2^63", which is what lets
+these tools use vocabularies a global plan could not afford. Every tool was first run in
+`--validate` mode: the already-named exported models are held out of every list and searched for.
+**Zero wrong names in every validation run.**
+
+| tool | candidate shape (all checked against the model's own id) | held-out recall | new names |
+|---|---|---|---|
+| `inner_spans.plan.txt` (global plan) | known model head x 2-4 token run from *inside* an export material/image core x 8k endings | -- | 43 |
+| `dimpm` + `dim_blocks.py` | own prefix [x word x word] x **size token from the mesh bounding box** x ending | 72 / 294 size-named | 16 |
+| `dimpm` + `mid_blocks.py` | own / neighbour / common family prefix x middle run (known runs, export spans, any BO4 token) x up to 70k endings | 692 / 1838 | 96 + 62 + 80 + 11 + 23 |
+| `dimpm` + `kit_blocks.py` | `p8_kit` family x piece x shape/material run x size x tail | 54 / 176 kit pieces | 10 |
+| `nbedit` + `nb_blocks.py` | material-neighbour name with one token swapped / inserted (42k-100k token vocabulary) or deleted | 1215 / 1935 | 24 + 15 + 8 + 26 + 12 + 1 + 3 + 3 |
+
+Facts worth keeping:
+
+- **The casts are in centimetres.** Bounding box / 2.54 gives inches, and 266 of ~370 size tokens in
+  named exported models sit within 15% of an extent (220 within 5%). Kit names use both `AxB` and
+  `Ah_Bw` (`..._painted_wood_128h_64w_01`).
+- **Check only the model's own id, then widen the vocabulary.** A one-token neighbour edit with the
+  42k-token BO4 vocabulary runs over 5,757 models in under two minutes; adding 35k tokens from all
+  seven games' names and a learned letter+number grid (`c17`, `in3`, `brk_02a`) paid 34 more.
+- **Letter+number tokens are the cheapest gap.** Prefixes measured off BO4/CW names (221 of them) x
+  0-99, padded and unpadded, found whole families (`p8_jpn_highway_pannel_01_out_brk_02a..03d`).
+- The neighbour-edit tool snowballs: each round's finds become the next round's neighbours
+  (26, 12, 1, ...). Run it to a fixpoint after any model gain.
+
+Dead or spent (measured, do not repeat as-is):
+
+- `fam_mid.plan.txt` (300 common family prefixes x middles x 20k endings, global): 0 in 2 of 8
+  slices -- the per-model runs had already covered it.
+- `kit_blocks.py` second round with map-wide kit families: 0.
+- `mid_blocks.py` round 4 without family prefixes: 11 for ~35 min.
+- Geometry twins as neighbours: only 63 unnamed models have a named geometry twin in the export (1 name).
+- Image-sharing neighbours (named models sharing a texture used by at most 20 models): 0.
+- Size tokens, second round on the grown corpus: 0.
+
+One operational note: give the per-model tool one shared copy of the global ending list (`#E @G` plus
+env `GE`). Writing the 71k endings into every model's block made a 7.4 GB block file and a 23.7 GB
+process, which the host killed for low memory; shared, it is 86 MB and 0.7 GB with identical results.
+
+Session total: about 440 new Black Ops 4 model names (unnamed 7,247 -> 6,801).
