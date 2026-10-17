@@ -6245,6 +6245,7 @@ Do not spend a night rediscovering these. Each cost real time.
 
 | Tried | Outcome |
 |---|---|
+| **The bare `.snd` endings as a separate `end:` list, crossed with the published directories and basenames of the same table** -- `contrib/sound_shape.py`, both legacy games, 2026-10-17 | Started from a real hole: `scripts/reach.py --missing` measures `fnv1a_xsounds.csv` at 100% reached but **3.3% named**, and the table's nine trailing forms (`.sn100.pc.snd` heads 115,027 of 174,838 names) appear as **0 of 9** standalone lines in `data/sound.suffixes.txt`. Filling that hole as a plan -- published dirs x published repeat stems x those nine endings, with the backslash half split on a backslash so Black Ops 4's 60,501 SAB-spelled names become paths rather than one long stem -- costs 269 M candidates on BLKOPS04 (`fold: no`) and 3.89 B on BLKOPSCW: **0 new on both.** The hole is list coverage, not ground availability. Every piece of these names is published, so every recombination is either a name the tables already hold or a name the game does not: a VO line's basename is bound to the directory that recorded it, exactly as `vox_line_grid.py` found from the other side. Fourth recombination shape to return 0 against this pool, so §17's sentence still stands -- anything reaching `sound_asset` comes from outside the naming. |
 | **Whole-name identity across pools of one capture** -- take a name the game holds in pool A, hash it whole under pool B's policy, ask whether it lands on a B id nothing can name yet (`contrib/name_laundering.py`, 2026-10-14). Different from every cross-type method here, which strip a *core* and re-spell it | Contributor-reported 2026-10-14 measurement: a small space with no confirmed new output. Across seven captures the off-diagonal hits are a trickle next to the same-pool identity (Cold War: 210,244 image names hit image ids, 20 hit material ids), and only **8** landed on an unnamed id anywhere: `misc_vm_missiledefusal_crawl_{f,in,l,r}`, which are xanim names that double as sound_alias names in MWII (12 hits, 4 unnamed) and MWIII (7 hits, 4 unnamed). confirm_list, which subtracts the tables AND the 3.5 M claimed hashes, matched **none of the 8**; two were checked directly and both were reported as already claimed at measurement time. This is **zero** confirmed new output for that recorded run -- though the alias doubling is a fact worth knowing if that batch ever changes hands. |
 | **Measuring `unnamed` against the tables only, not the claims** | The trap that made the row above look like a harvest for a minute. `snapshot.unnamed(known_hashes())` subtracts what the published tables name, which is NOT what is available: `state/claimed.txt` holds 3.5 M hashes from merged submissions and open pull requests, and these 8 were excluded by the tool; the two whose reason was checked by hand were in it. Any provisional new-yield measurement has to subtract both, or it will report somebody else's night as your find -- which is exactly the failure `submit` exists to catch, at the worst possible moment. Second lesson from the same minute: `claimed.txt` lines are 16-hex **hashes**, so grepping it by asset *name* returns nothing and proves nothing. Both of these produced a clean looking zero and a clean looking non-zero in the same hour. |
 | **Two tables in `cod-name-db` nobody had tried as a relation**: `cod_techsets.csv` as the source of material-path tokens, and the five weapon tables (`weapons`, `_attachments`, `_tunables`, `_stylesettings`, `fnv1a_animpkgs_v2`) as a stem vocabulary -- 2026-10-14 | Contributor-reported negative results for these particular source tables and candidate lists: `cod_techsets.csv` holds 1,888 `2d_add#a60c435b`-shaped 2D effect names, not the technique-set token a material path carries, so **0 of 583,725** known `fnv1a_xmaterials` names have one as a path segment. There was no relation to measure, only a name collision with `technique_set` the pool. The weapon half did get measured: 19,581 stems (the table names themselves and their pieces, so the complete names were in the list under `bare: yes`) crossed with each game's committed endings -- 94 M candidates a game on Cold War, MWII and Black Ops 4, 282 M in all, **0 matched on all three**. Its control passed, which is what makes the zero an answer rather than a broken sweep: 51.4% of MWII's 1,367,216 known names and 59.5% of Cold War's 1,351,649 carry at least one segment from that vocabulary. Read that number with its top contributors in mind, because they are `iw9`, `t10`, `sat`, `veh`, `metal`, `smg` -- three-to-four-letter generic fragments, not weapon codenames, and 1,319 distinct stems in all. A control that reports only a percentage would have looked far stronger than it is; print the contributors. Same wall as every seam row above: the pieces are shared because it is one engine's vocabulary, and sharing pieces says nothing about whether the recombined name exists. It also re-confirms the recorded cross-era verbatim zero, three captures wide, for the cost of a coffee. |
@@ -6568,3 +6569,70 @@ just found somebody else already had**, and `logs/submit*.log` already holds it.
 This is the negative space §7 asks for, measured off one's own submission log rather than a ranking,
 and it describes competition in that measured round. Re-measure on fresh inputs; these
 rates are not permanent per-game rankings and do not imply a fixed rotation.
+
+## The snowball's first derivation has never run on a fresh clone — 2026-10-17
+
+`derive_closure.py` opens its round with "image siblings of confirmed materials" and describes it
+as "the strongest measured cross-type seam: 15,770 shared cores, 12.8% of image's". Its entry was:
+
+```python
+"script": "contrib/image_siblings.py",
+```
+
+`/contrib/` is on line 27 of `.gitignore` -- it is the staging folder `submit` empties into a pull
+request -- so no clone obtained from GitHub can hold that file. `run_derivation` checks
+`os.path.exists` and prints `skipped: contrib/image_siblings.py is not here`, which is one line in a
+seven-line round summary, and the loop carried on as if the corpus were closed under the relation.
+The header of the same file claims these derivations "are the highest yield-per-candidate methods in
+the project by three orders of magnitude". The top one has been running for nobody.
+
+Nothing upstream is missing the generator either. It was merged as
+`scripts/contributed/image_siblings_wide_20260902-120635.py` (Zakkary19, 18 names, 2026-09-02) and
+sits two directories away from the path the closure asks for, under a stamped name. This is the same
+file, promoted to `scripts/image_siblings.py` -- the path the other six derivations use -- with the
+2026-09-02 prefix and ending lists kept verbatim so the registry history stays comparable, and an
+`--game` flag accepted and ignored like the other generators that build vocabulary from every
+capture.
+
+**What it returns once it can run.** 161,061,272 candidates a game, expected coincidental matches
+0.0000 at that size: **59 new on Black Ops 7**, 0 on Cold War, 0 on Black Ops 4. The two legacy games
+are what the 2026-09-02 lists were measured on, and the method registry already had the seam down as
+worked over there; the number that matters is the modern one. Black Ops 7 holds 740,991 unnamed images
+-- 11.7% of that pool is named, the least of any capture in the project -- and a derivation that has
+never been in anybody's round puts 59 of them on disk in six minutes.
+
+So the lesson is not that this seam is productive. It is that **a `contrib/` path in a tracked file is
+a bug that reports itself as a finished corpus.** The same slip is everywhere in the documentation: of
+the 121 distinct `contrib/*.py` generators named by tracked files, **113 are not in the repository**,
+and `AGENTS.md` already records the same complaint about scripts named in old pull requests. One of
+those 113 was wired into executable code, and that one has been quietly shrinking every contributor's
+snowball since it was written. When a derivation prints `skipped`, read it as a broken tool, not as an
+answer.
+
+## The shared-100k sound-ending cross is now landing outside sound entirely — 2026-10-17
+
+Three consecutive rounds of the same plan shape -- `stem: @contrib/ab_sound_cores.txt`,
+`end: @contrib/ab_sound_ends.txt`, `bare: yes` (the confirmed-only all-boundary sound cores crossed
+with the 100,000 sound endings the committed 3,014-entry list caps away):
+
+| round | games | names | where they landed |
+|---|---|---|---|
+| 7 | six | 180 | sent as #2836-#2840 |
+| 8 | four | 4 | #2841-#2843 |
+| 9 | MODWAR7 | 8 | #2844: 6 `material`, 2 `xanim`, **no sound at all** |
+
+The corpus grew across those three rounds -- `derive_lists.py` measured 1,837,445 confirmed names
+feeding 639,902 sound cores after the Oct 16 merge wave, more than round 7 ran on -- so the fall from
+180 to 4 is not a smaller cut. The MODWAR7 result is the part worth reading twice: a generator of
+sound cores crossed with sound endings returning eight names, all of them materials and animations.
+Those are coincidences of vocabulary, not the pool the plan was built to hunt, and they are not
+collisions either -- at 63.9 B candidates MODWAR7 expected 0.0009 names by chance against its 129,531
+unnamed ids, so all eight really do hash to ids the game holds. They are simply not what this shape
+was for: once the sound ground it was built to reach is named, what the vocabulary still describes
+lives in the other pools.
+
+**Spent by:** every sound ending this game's own list can already spell. Per-game endings are the
+reason the modern titles paid at all (see the method-25 section above), and the shared legacy cap of
+100k is now paying in other pools. Re-run only after a merge wave that brings endings this list has
+never seen -- which is what `scripts/uncarried.py --write-plan` measures, rather than this list's
+size.
