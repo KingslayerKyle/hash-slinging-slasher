@@ -1,0 +1,9 @@
+.ln100.pc.all.snd_transient
+.ln100.pc.snd
+.ln75.pc.all.snd
+.rn75.pc.all.snd
+.sl100.pc.snd
+.sl75.pc.all.snd
+.sn100.pc.snd
+.sn75.pc.all.snd
+.snd
