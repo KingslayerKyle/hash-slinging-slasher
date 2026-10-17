@@ -107,6 +107,25 @@ fn main() {
     let findings = paths::findings_root();
     let outbox = paths::submissions();
 
+    // A batch is composed out of the surveyed tree and moved in only once its pull request exists.
+    //
+    // `recon::survey` reads every `.txt` under `submissions/` as a merged claim, and
+    // `recover_stranded` reads the same folders as evidence that a name has been accounted for.
+    // Both are right about a batch that landed and both are wrong about one that is still sitting
+    // there because `open_pull_request` failed: the batch's own names come back as
+    // `already claimed by a merged submission or an open pull request`, so the retry sends nothing,
+    // and `recover_stranded` refuses to re-offer names that were never sent anywhere. Measured on
+    // this machine 2026-10-17: six run folders, 180 names, all of them reported claimed by their
+    // own earlier attempt after a panic mid-submit, and the claim looked exactly like an ordinary
+    // duplicate so the round was written off as somebody else's. Staging under `state/`, which is
+    // gitignored and never surveyed, makes the sentence at the failure branch true instead: the
+    // names are still in `findings/` and the next submit re-derives them.
+    let staging = paths::state().join("unsent");
+    if let Err(error) = fs::create_dir_all(&staging) {
+        eprintln!("could not make {}: {error}", staging.display());
+        std::process::exit(1);
+    }
+
     // 1. Who we are. Without this the whole night has nowhere to go, which is why `preflight`
     //    checks it before any searching rather than leaving it until now.
     let Some(who) = github_user() else {
@@ -209,7 +228,7 @@ fn main() {
         }
         println!("{} hashes already published for {game}'s hash family", known.len());
 
-        if let Some(url) = send(game, runs, &repo, &outbox, &who, &known, &landscape, &cached) {
+        if let Some(url) = send(game, runs, &repo, &outbox, &staging, &who, &known, &landscape, &cached) {
             println!("\nsubmitted: {url}");
             opened += 1;
         }
@@ -319,6 +338,7 @@ fn send(
     pending: &[PathBuf],
     repo: &str,
     outbox: &Path,
+    staging: &Path,
     who: &str,
     known: &HashSet<u64>,
     landscape: &recon::Landscape,
@@ -399,9 +419,10 @@ fn send(
     }
 
     // Write the batch, named for the game and the moment it was sent, so nothing ever collides
-    // and a folder says what it holds without being opened.
+    // and a folder says what it holds without being opened. It is written under `staging` and
+    // moved into the outbox only once the pull request exists -- see the note in `main`.
     let when = stamp();
-    let folder = outbox.join(format!("{who}_{game}_{when}"));
+    let folder = staging.join(format!("{who}_{game}_{when}"));
     if let Err(error) = fs::create_dir_all(&folder) {
         eprintln!("could not make {}: {error}", folder.display());
         std::process::exit(1);
@@ -469,17 +490,38 @@ fn send(
 
     println!("\nwritten to {}", folder.display());
 
-    match open_pull_request(
+    let url = match open_pull_request(
         repo, game, &folder, &scripts, &when, who, batch.len(), dropped, claimed_elsewhere,
         &accounts, &breakdown,
     ) {
-        Ok(url) => Some(url),
+        Ok(url) => url,
         Err(why) => {
             eprintln!("\nthe pull request could not be opened: {why}");
-            eprintln!("the batch is saved at {} and will be sent next time.", folder.display());
+            eprintln!(
+                "nothing was claimed: {} is outside `submissions/`, so these names are not \
+                 counted as anybody's. The runs are still in `findings/` and the next submit \
+                 re-derives this batch from them.",
+                folder.display()
+            );
             std::process::exit(1);
         }
+    };
+
+    // The pull request exists, so the batch has earned its place in the surveyed tree.
+    let landed = outbox.join(folder.file_name().unwrap_or_default());
+    match fs::rename(&folder, &landed) {
+        Ok(_) => println!("landed in the outbox as {}", landed.display()),
+        // The submission is already open upstream, so losing the local copy must not be fatal --
+        // but saying so is, because the next submit will re-offer these names and `submit` drops
+        // them as duplicates, which is the correct outcome and looks like a bug.
+        Err(error) => eprintln!(
+            "the batch is submitted but could not move into {}: {error}. The next submit will \
+             re-offer these names and drop them as already claimed.",
+            outbox.display()
+        ),
     }
+
+    Some(url)
 }
 
 /// Each pending run's account of itself, as markdown: the folder, then whatever `notes.md` its
