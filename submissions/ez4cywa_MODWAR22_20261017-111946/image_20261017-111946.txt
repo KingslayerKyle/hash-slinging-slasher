@@ -1,0 +1,7 @@
+c34c353099ed48f,*pdl_offset583_mp_sira_gw
+1049d8cf2e9ee531,*pdl_offset583_cp_observatory
+33338c8b1c7d6d33,*pdl_offset583_mp_wartorn_gw
+46149aea21c66a65,*pdl_offset569_cp_observatory
+4d5a340b451901eb,*pdl_offset583_cp_hydro
+61c114581092e6b9,*pdl_offset552_cp_lone
+7018f5585029fc1b,*pdl_offset617_mp_embassy
