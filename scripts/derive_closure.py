@@ -23,7 +23,7 @@ Two consequences, and they are why this loops rather than being a list somebody 
   - **It terminates.** Each round derives only from what the round before confirmed. When a round
     adds nothing, the corpus is closed under every relation here and the loop stops. It cannot
     grind on bare ground, because bare ground produces no round.
-  - **It is worth running after any pass at all.** `contrib/image_siblings.py` has said so in its
+  - **It is worth running after any pass at all.** `scripts/image_siblings.py` has said so in its
     own docstring since the day it was written -- *"worth re-running after any pass that gains
     materials"* -- and that instruction has only ever been carried out when somebody remembered.
 
@@ -67,7 +67,10 @@ ROOT = snapshot.ROOT
 DERIVATIONS = [
     {
         "label": "image siblings of confirmed materials",
-        "script": "contrib/image_siblings.py",
+        # This used to be `contrib/image_siblings.py` -- a path inside the gitignored staging
+        # folder, so a fresh clone could not run it and no clone but the one that staged it ever
+        # did. Every contributor's round printed `skipped` on this line and carried on.
+        "script": "scripts/image_siblings.py",
         "args": [],
         "why": "the strongest measured cross-type seam: 15,770 shared cores, 12.8% of image's",
     },
