@@ -6651,4 +6651,18 @@ of 500 instead of 300: +9 held-out, 0 new. Model pool order as a location signal
 A weighted material -> family predictor: no better than the material neighbours already used. Hashing every string of
 every cod-name-db table against the unnamed model ids: 2 names (`void`, one vehicle part).
 
-Session total: 378 new Black Ops 4 model names (unnamed 6,763 -> 6,385), PRs #2852-#2859.
+**The same search works on every pool of every game.** `hwt_load.py <game>` builds the name cache (legacy games:
+Treyarch offset; modern: IW offset, aliases on the Treyarch offset; BO4 sound files unfolded), `hwt_pool_prep.py` makes
+the per-pool lists and `hwt_game.py <game> <tag> maxc=X` runs a whole game, raising the suffix-count threshold per pool
+until the expected chance hits fall under `maxc`. First rounds (new names): Cold War 1,820 + 774, Black Ops 4 non-model
+pools 1,452 + 287 sounds + 155, BO7 1,351, BO6 1,521, MWII materials 296.
+
+Chance control: in the modern games most names are sparsely known codes (`dx_op_bttl_<operator>_<code>`), so a
+coincidental match looks exactly like a real one. Use `maxc=0.02` per pool there (or `hwt_strict.py` to keep only the
+hits a strict run would also produce). `hwt_audit.py` flags hits whose every split needs a rare middle word and whose
+junctions no other known name attests; it caught both validation collisions and flags ~5% of real legacy names.
+A 10x random-decoy run returned 0 hits: the printed figure overstates the risk, because many head/word/tail splits
+spell the same string.
+
+Session total: about 8,200 new names across five games (387 of them Black Ops 4 models, unnamed 6,763 -> 6,376),
+PRs #2852-#2871.
