@@ -1,0 +1,11 @@
+77021631cd3f709,en\vox\scripted\zmb\common\vox_cmn_homu_homun_throw_exert_0.pn100.pc.snd
+168995d9d259314a,wpn\smg\folding\rapid2\plr\wpn_smg_folding_loop_ads.ll100.pc.snd
+39f106fdd5bfada0,wpn\smg\folding\rapid2\plr\wpn_smg_folding_loop_act.ll100.pc.snd
+3f0bfb0fcc02751a,en\vox\scripted\zmb\common\vox_cmn_homu_homun_scream_exert_0.pn100.pc.snd
+427c053ea7c84f48,en\vox\scripted\zmb\common\vox_cmn_homu_homun_land_exert_6.pn100.pc.snd
+46c27f4353e97cb6,en\vox\scripted\zmb\common\vox_cmn_homu_homun_land_exert_0.pn100.pc.snd
+4912cc6ac3479c34,wpn\smg\folding\rapid2\lfe\wpn_smg_folding_loop_lfe.ll100.pc.snd
+61adaf271c7e0885,en\vox\scripted\zmb\common\vox_cmn_homu_homun_land_exert_7.pn100.pc.snd
+672357dfd924c4f7,en\vox\scripted\zmb\common\vox_cmn_homu_homun_land_exert_5.pn100.pc.snd
+732a49180bb331b2,en\vox\scripted\zmb\common\vox_cmn_homu_homun_land_exert_4.pn100.pc.snd
+78b73a1dd173ed31,wpn\smg\folding\rapid2\plr\wpn_smg_folding_loop.ll100.pc.snd
