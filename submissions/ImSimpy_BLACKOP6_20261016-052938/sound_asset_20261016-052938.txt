@@ -1,0 +1,11 @@
+1374d1884b1a433c,iw9/dst/iw9_dst_gas_tank_explo_debris_01.lnn.75.48000.all
+196133578ee3024a,iw9/mp/mp_killstreak/dx_mp_kill_grim_uktl_ause_friendlystealthbombe_02.snn.20.48000.english
+1a0db63733652ad7,iw9/mp/mp_killstreak/dx_mp_kill_cmis_uktl_ause_friendlycruisemissil_02.snn.20.48000.english
+1b2678fce3c26435,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_ause_friendlyoverwatchhel_02.snn.20.48000.english
+240e532f3a8516cd,iw9/amb/ambient_iw9/amb_mp_swap_meet_warehouse_lsrs.snl.75.48000.all
+3ee5a806710f561c,jup/fly/executions/smg/jup_exec_smg_stand_bodyfall_01.pnn.85.48000.all
+4ea9972f1621eba6,iw9/dst/iw9_dst_gas_tank_explo_debris_03.lnn.75.48000.all
+52878b6f0ed6c019,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_euse_hostileoverwatchhelo_02.snn.20.48000.english
+590fdc4570ba9a39,iw9/amb/ambient_iw9/amb_mp_swap_meet_warehouse_lr.snl.75.48000.all
+7aa9a22d3627191b,iw9/dst/iw9_dst_gas_tank_explo_debris_02.lnn.75.48000.all
+7d384d8891d0bd84,iw9/mp/mp_killstreak/dx_mp_kill_chop_uktl_euse_hostilechoppergunner_02.snn.20.48000.english
