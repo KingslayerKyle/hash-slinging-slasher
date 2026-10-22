@@ -1,0 +1,2 @@
+273932bba6214a78,attach_t8_loot_crossbow_special_mag_exploding_view
+4bde76e81247c093,attach_t8_loot_crossbow_special_mag_exploding_world
