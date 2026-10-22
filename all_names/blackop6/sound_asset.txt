@@ -2180,6 +2180,8 @@ a13781a5911131d,iw9/amb/amb_mp_escape3_resi_lg_wood_room_lr.snl.75.48000.all
 3555b0a6d5ce37e9,iw9/amb/ambient_iw9/amb_mp_farm18_ext_lsrs.snl.75.48000.all
 608d49d2d77a24e6,iw9/amb/ambient_iw9/amb_mp_jup_bigmap_default_lr.snl.75.48000.all
 504456595a8bf86,iw9/amb/ambient_iw9/amb_mp_jup_bigmap_default_lsrs.snl.75.48000.all
+590fdc4570ba9a39,iw9/amb/ambient_iw9/amb_mp_swap_meet_warehouse_lr.snl.75.48000.all
+240e532f3a8516cd,iw9/amb/ambient_iw9/amb_mp_swap_meet_warehouse_lsrs.snl.75.48000.all
 5a7bd565a9467e2d,iw9/amb/animal/anml_dog_angry_growl_01.lnn.85.48000.all
 786f232e870c161a,iw9/amb/animal/anml_dog_angry_growl_02.lnn.85.48000.all
 20fda18913e58def,iw9/amb/animal/anml_dog_angry_growl_03.lnn.85.48000.all
@@ -2710,6 +2712,9 @@ c13b407a3049c1f,iw9/dst/dst_storage_produce_cratedestroy_02.tnn.85.48000.all
 589de45c51f79818,iw9/dst/iw9_dst_gas_tank_explo_01.lnn.75.48000.all
 17cce2b74cbdffe7,iw9/dst/iw9_dst_gas_tank_explo_02.lnn.75.48000.all
 3b1a6ba4c394c152,iw9/dst/iw9_dst_gas_tank_explo_03.lnn.75.48000.all
+1374d1884b1a433c,iw9/dst/iw9_dst_gas_tank_explo_debris_01.lnn.75.48000.all
+7aa9a22d3627191b,iw9/dst/iw9_dst_gas_tank_explo_debris_02.lnn.75.48000.all
+4ea9972f1621eba6,iw9/dst/iw9_dst_gas_tank_explo_debris_03.lnn.75.48000.all
 7ddc02760314801c,iw9/dst/iw9_dst_gas_tank_explo_flame_01.lnn.75.48000.all
 5c4870042d8d4fb,iw9/dst/iw9_dst_gas_tank_explo_flame_02.lnn.75.48000.all
 5f89f91b035efe06,iw9/dst/iw9_dst_gas_tank_explo_flame_03.lnn.75.48000.all
@@ -3386,6 +3391,7 @@ daaf4a786f6dacd,iw9/mp/mp_killstreak/dx_mp_kill_chop_uktl_earn_choppergunnerread
 51274b5ba71d3e23,iw9/mp/mp_killstreak/dx_mp_kill_chop_uktl_euse_hostilechoppergunner.snn.20.48000.english_safe
 64592f618651296f,iw9/mp/mp_killstreak/dx_mp_kill_chop_uktl_euse_hostilechoppergunner_01.snn.20.48000.english
 25660f113eeaaefd,iw9/mp/mp_killstreak/dx_mp_kill_chop_uktl_euse_hostilechoppergunner_01.snn.20.48000.english_safe
+7d384d8891d0bd84,iw9/mp/mp_killstreak/dx_mp_kill_chop_uktl_euse_hostilechoppergunner_02.snn.20.48000.english
 3dd2aad53f0133c4,iw9/mp/mp_killstreak/dx_mp_kill_chop_uktl_euse_hostilechoppergunner_02.snn.20.48000.english_safe
 7df98cbcb20371d,iw9/mp/mp_killstreak/dx_mp_kill_cmis_kthp_rhit_directhit.snn.75.48000.english_safe
 5f24f2d0c1cf8d03,iw9/mp/mp_killstreak/dx_mp_kill_cmis_kthp_rhit_impactgoodhit.snn.75.48000.english_safe
@@ -3409,6 +3415,7 @@ ea49a9d654a1a62,iw9/mp/mp_killstreak/dx_mp_kill_cmis_sghp_rhit_rightontarget.snn
 3d86941aea371c88,iw9/mp/mp_killstreak/dx_mp_kill_cmis_uktl_ause_friendlycruisemissil.snn.20.48000.english_safe
 3b778d29537062cc,iw9/mp/mp_killstreak/dx_mp_kill_cmis_uktl_ause_friendlycruisemissil_01.snn.20.48000.english
 62b735facf75806c,iw9/mp/mp_killstreak/dx_mp_kill_cmis_uktl_ause_friendlycruisemissil_01.snn.20.48000.english_safe
+1a0db63733652ad7,iw9/mp/mp_killstreak/dx_mp_kill_cmis_uktl_ause_friendlycruisemissil_02.snn.20.48000.english
 1d691ba09e5f3f85,iw9/mp/mp_killstreak/dx_mp_kill_cmis_uktl_ause_friendlycruisemissil_02.snn.20.48000.english_safe
 19a879dbdec51342,iw9/mp/mp_killstreak/dx_mp_kill_cmis_uktl_earn_cruisemissilereadyfo.snn.20.48000.english
 5f71528dd14904e2,iw9/mp/mp_killstreak/dx_mp_kill_cmis_uktl_earn_cruisemissilereadyfo.snn.20.48000.english_safe
@@ -3508,6 +3515,7 @@ f8a3cebdc2ef135,iw9/mp/mp_killstreak/dx_mp_kill_cuav_uktl_earn_counteruavready.s
 719226565dec0a4a,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_ause_friendlyoverwatchhel.snn.20.48000.english_safe
 12a551c572fcaf16,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_ause_friendlyoverwatchhel_01.snn.20.48000.english
 31cefd0db7458116,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_ause_friendlyoverwatchhel_01.snn.20.48000.english_safe
+1b2678fce3c26435,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_ause_friendlyoverwatchhel_02.snn.20.48000.english
 1f891016838689eb,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_ause_friendlyoverwatchhel_02.snn.20.48000.english_safe
 4775c12f3fdbd59e,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_earn_overwatchheloreadyfo.snn.20.48000.english
 3c4a40da0d82591e,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_earn_overwatchheloreadyfo.snn.20.48000.english_safe
@@ -3519,6 +3527,7 @@ f8a3cebdc2ef135,iw9/mp/mp_killstreak/dx_mp_kill_cuav_uktl_earn_counteruavready.s
 7e77a1ea4de2f48e,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_euse_hostileoverwatchhelo.snn.20.48000.english_safe
 58aaec2252b2dc8a,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_euse_hostileoverwatchhelo_01.snn.20.48000.english
 5a384fca1964778a,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_euse_hostileoverwatchhelo_01.snn.20.48000.english_safe
+52878b6f0ed6c019,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_euse_hostileoverwatchhelo_02.snn.20.48000.english
 d582c0db635e54f,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_euse_hostileoverwatchhelo_02.snn.20.48000.english_safe
 5f6f6f02b4c36e27,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_lcra_hostilesdestroyedour.snn.20.48000.english
 6379f950b96e8675,iw9/mp/mp_killstreak/dx_mp_kill_esco_uktl_lcra_hostilesdestroyedour.snn.20.48000.english_safe
@@ -3548,6 +3557,7 @@ c227244be9aa749,iw9/mp/mp_killstreak/dx_mp_kill_grim_ktap_rres_thisisvulture61so
 3c9754daa47a6c1d,iw9/mp/mp_killstreak/dx_mp_kill_grim_uktl_ause_friendlystealthbombe.snn.20.48000.english_safe
 55ba5c41cc2d23d9,iw9/mp/mp_killstreak/dx_mp_kill_grim_uktl_ause_friendlystealthbombe_01.snn.20.48000.english
 75ead8ba3cc6750f,iw9/mp/mp_killstreak/dx_mp_kill_grim_uktl_ause_friendlystealthbombe_01.snn.20.48000.english_safe
+196133578ee3024a,iw9/mp/mp_killstreak/dx_mp_kill_grim_uktl_ause_friendlystealthbombe_02.snn.20.48000.english
 5ebbda00b67f0d4a,iw9/mp/mp_killstreak/dx_mp_kill_grim_uktl_ause_friendlystealthbombe_02.snn.20.48000.english_safe
 740b57095030fc41,iw9/mp/mp_killstreak/dx_mp_kill_grim_uktl_earn_stealthbomberisready.snn.20.48000.english
 1a705b440e8a6257,iw9/mp/mp_killstreak/dx_mp_kill_grim_uktl_earn_stealthbomberisready.snn.20.48000.english_safe
@@ -5685,6 +5695,7 @@ c2a732c229ae233,jup/fly/executions/plum/jup_exec_plum_ice_breath_lstand_01.pnn.8
 fbd0fe2f885483a,jup/fly/executions/smg/jup_exec_smg_prone_foley_01.pnn.85.48000.all
 3dd4a37ff32ad355,jup/fly/executions/smg/jup_exec_smg_prone_foley_02.pnn.85.48000.all
 25166071583f56e9,jup/fly/executions/smg/jup_exec_smg_stand_body_01.pnn.85.48000.all
+3ee5a806710f561c,jup/fly/executions/smg/jup_exec_smg_stand_bodyfall_01.pnn.85.48000.all
 3c583175e1029c45,jup/fly/executions/smg/jup_exec_smg_stand_fire_01.pnn.85.48000.all
 3c644479eaf981ea,jup/fly/executions/smg/jup_exec_smg_stand_fire_02.pnn.85.48000.all
 5d62b76e58ee45d0,jup/fly/executions/smg/jup_exec_smg_stand_foley_01.pnn.85.48000.all
