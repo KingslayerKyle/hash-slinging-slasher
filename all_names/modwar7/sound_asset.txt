@@ -13561,6 +13561,11 @@ b4be68e5dd8b49f,physics/rock/iw9_rock_bounce_soft_02.lnn.75.48000.all
 e5c5daf05758aea,rex/dth/deaths_door_death_lfe.snn.75.48000.all
 5405397bdf81e515,rex/dth/deaths_door_death_lsrs_01.snn.75.48000.all
 44aaf14ca8311262,rex/dth/deaths_door_death_lsrs_02.snn.75.48000.all
+2de23c95d22a5d3c,rex/dth/deaths_door_heartrate_beep_01.lnn.75.48000.all
+15170d3abd37331b,rex/dth/deaths_door_heartrate_beep_02.lnn.75.48000.all
+6917023c9d3205a6,rex/dth/deaths_door_heartrate_beep_03.lnn.75.48000.all
+7bf51ed539a8cc25,rex/dth/deaths_door_heartrate_beep_04.lnn.75.48000.all
+69f378ff06ab5273,rex/dth/deaths_door_heartrate_flatline.lnn.75.48000.all
 2034d5b302409c99,rex/dth/deaths_door_in_lfe.snn.75.48000.all
 18fac1953c8d07b2,rex/dth/deaths_door_in_lsrs_01.snn.75.48000.all
 39a4c0e9b2ae90a5,rex/dth/deaths_door_in_lsrs_02.snn.75.48000.all
@@ -15354,7 +15359,9 @@ bfeb8e8747e3ce1,rex/wpn/sh_bmike3/wpn_rex_bmike3_npc_sup_mech_08.hnn.85.48000.al
 c43c38c7dec1fa3,t10/eqp/grapplehook/eqp_grapplehook_wind_03.vnn.75.48000.all
 453d10f27ef338e0,t10/eqp/grapplehook/eqp_grapplehook_wind_04.vnn.75.48000.all
 4afba44d4521d36b,t10/eqp/spycam/eqp_spycam_nomark.lnn.75.48000.all
+4893b92b7b49c9b1,t10/eqp/spycam/eqp_spycam_thermal_toggle.lnn.75.48000.all
 2efffd984821bfab,t10/eqp/spycam/eqp_spycam_thermal_toggle_off.lnn.75.48000.all
+3a7fea12cea81090,t10/eqp/spycam/eqp_spycam_zoom.lnn.75.48000.all
 153b93a8903e001a,t10/exp/cruise_missile/iw9_cruise_missile_lp_close.lnl.75.48000.all
 45e3b270e669aa20,t10/exp/cruise_missile/iw9_cruise_missile_lp_dist.lnl.75.48000.all
 53a66915bf06b9b3,t10/exp/frag/expl_debris_concrete_01.vnn.75.48000.all

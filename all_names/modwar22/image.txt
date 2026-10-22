@@ -1598,6 +1598,7 @@ adfd50ea867b8c5,*pdl_offset546_mp_observe_gw
 30b56b25f2bd42b3,*pdl_offset551_mp_fishtown_gw
 5fd2d6f755352719,*pdl_offset551_mp_observe_gw
 793156f1b74601f7,*pdl_offset551_mp_saba2
+61c114581092e6b9,*pdl_offset552_cp_lone
 361b2e3165ba7018,*pdl_offset552_mp_fishtown_gw
 4c9f5d94f8a005bc,*pdl_offset552_mp_observe_gw
 2326c69f27101125,*pdl_offset553_mp_saba2
@@ -1628,6 +1629,7 @@ b0bd83d2726021f,*pdl_offset560_mp_saba2
 8d2ab850d4e1932,*pdl_offset567_mp_fort
 29ac10cf587e7a98,*pdl_offset567_mp_saba2
 53c307c0c183290f,*pdl_offset568_mp_dogtown_gw
+46149aea21c66a65,*pdl_offset569_cp_observatory
 102246525b34cd90,*pdl_offset569_mp_dogtown_gw
 559caed9552ef798,*pdl_offset56_mp_crossing
 1b375887eb05ba3d,*pdl_offset56_mp_dogtown_gw
@@ -1656,7 +1658,11 @@ c41ffade6db6e27,*pdl_offset57_mp_nogales_gw2
 39b2adf2b8f9df84,*pdl_offset57_mp_saba2
 3645a8912b7fe3a4,*pdl_offset57_mp_sealion
 23b673dc59e0e2a6,*pdl_offset57_mp_townhouses
+4d5a340b451901eb,*pdl_offset583_cp_hydro
+1049d8cf2e9ee531,*pdl_offset583_cp_observatory
 226f06e85542c32a,*pdl_offset583_mp_fishtown_gw
+c34c353099ed48f,*pdl_offset583_mp_sira_gw
+33338c8b1c7d6d33,*pdl_offset583_mp_wartorn_gw
 3efb22ed1022684a,*pdl_offset58_mp_crossing
 e16f1fa962271db,*pdl_offset58_mp_dogtown_gw
 255a06e47ff75167,*pdl_offset58_mp_fishtown_gw
@@ -1711,6 +1717,7 @@ a6b14fb67eac972,*pdl_offset59_mp_sealion
 5b067aa45360842f,*pdl_offset616_mp_dogtown_gw
 e7659a8172347e7,*pdl_offset616_mp_saba2
 52222fdd59a8c530,*pdl_offset617_mp_dogtown_gw
+7018f5585029fc1b,*pdl_offset617_mp_embassy
 70c97f3892ae44ea,*pdl_offset61_cp_hydro
 b72a489999e501b,*pdl_offset61_mp_caves_gw
 685f09260fcae9fb,*pdl_offset61_mp_dogtown_gw
