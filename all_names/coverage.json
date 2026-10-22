@@ -17,7 +17,7 @@
         "total": 10
       },
       "ai_interaction": {
-        "named": 2,
+        "named": 9,
         "ours_at_baseline": 0,
         "total": 96
       },
@@ -102,7 +102,7 @@
         "total": 1
       },
       "animpkg": {
-        "named": 2572,
+        "named": 2573,
         "ours_at_baseline": 0,
         "total": 2818
       },
@@ -312,12 +312,12 @@
         "total": 1
       },
       "decalvolumemask": {
-        "named": 0,
+        "named": 1,
         "ours_at_baseline": 0,
         "total": 462
       },
       "decalvolumematerial": {
-        "named": 3076,
+        "named": 3654,
         "ours_at_baseline": 0,
         "total": 5213
       },
@@ -402,7 +402,7 @@
         "total": 58
       },
       "fonticon": {
-        "named": 42,
+        "named": 62,
         "ours_at_baseline": 0,
         "total": 220
       },
@@ -577,8 +577,8 @@
         "total": 1
       },
       "image": {
-        "named": 47384,
-        "ours_at_baseline": 0,
+        "named": 78033,
+        "ours_at_baseline": 28578,
         "total": 389526
       },
       "impactfxtable": {
@@ -712,8 +712,8 @@
         "total": 41
       },
       "material": {
-        "named": 70369,
-        "ours_at_baseline": 0,
+        "named": 142513,
+        "ours_at_baseline": 69552,
         "total": 186048
       },
       "materialanimation": {
@@ -757,7 +757,7 @@
         "total": 3
       },
       "mayhem": {
-        "named": 1,
+        "named": 2,
         "ours_at_baseline": 0,
         "total": 58
       },
@@ -1042,7 +1042,7 @@
         "total": 1
       },
       "scriptable": {
-        "named": 551,
+        "named": 552,
         "ours_at_baseline": 0,
         "total": 7735
       },
@@ -1202,13 +1202,13 @@
         "total": 3
       },
       "sound_alias": {
-        "named": 14883,
-        "ours_at_baseline": 0,
+        "named": 143279,
+        "ours_at_baseline": 103658,
         "total": 207980
       },
       "sound_asset": {
-        "named": 79244,
-        "ours_at_baseline": 0,
+        "named": 98317,
+        "ours_at_baseline": 18253,
         "total": 327081
       },
       "soundbank": {
@@ -1227,7 +1227,7 @@
         "total": 62
       },
       "soundbanktransient": {
-        "named": 1105,
+        "named": 1107,
         "ours_at_baseline": 0,
         "total": 1983
       },
@@ -1562,7 +1562,7 @@
         "total": 44
       },
       "weathervolume": {
-        "named": 1,
+        "named": 3,
         "ours_at_baseline": 0,
         "total": 7
       },
@@ -1587,8 +1587,8 @@
         "total": 7
       },
       "xanim": {
-        "named": 68229,
-        "ours_at_baseline": 0,
+        "named": 83396,
+        "ours_at_baseline": 13355,
         "total": 87620
       },
       "xanimcurve": {
@@ -1759,7 +1759,7 @@
         "total": 1
       },
       "animpkg": {
-        "named": 2984,
+        "named": 2985,
         "ours_at_baseline": 0,
         "total": 3325
       },
@@ -1854,7 +1854,7 @@
         "total": 97
       },
       "camo": {
-        "named": 13,
+        "named": 16,
         "ours_at_baseline": 0,
         "total": 2425
       },
@@ -1969,12 +1969,12 @@
         "total": 105
       },
       "decalvolumemask": {
-        "named": 0,
+        "named": 1,
         "ours_at_baseline": 0,
         "total": 642
       },
       "decalvolumematerial": {
-        "named": 3468,
+        "named": 4284,
         "ours_at_baseline": 0,
         "total": 7141
       },
@@ -2024,7 +2024,7 @@
         "total": 2845
       },
       "emote": {
-        "named": 143,
+        "named": 145,
         "ours_at_baseline": 0,
         "total": 283
       },
@@ -2079,7 +2079,7 @@
         "total": 51
       },
       "fonticon": {
-        "named": 42,
+        "named": 63,
         "ours_at_baseline": 0,
         "total": 244
       },
@@ -2299,8 +2299,8 @@
         "total": 1
       },
       "image": {
-        "named": 62966,
-        "ours_at_baseline": 0,
+        "named": 97575,
+        "ours_at_baseline": 30913,
         "total": 839489
       },
       "impactfxtable": {
@@ -2379,7 +2379,7 @@
         "total": 95
       },
       "lightstate": {
-        "named": 1,
+        "named": 3,
         "ours_at_baseline": 0,
         "total": 103
       },
@@ -2439,8 +2439,8 @@
         "total": 57
       },
       "material": {
-        "named": 105285,
-        "ours_at_baseline": 0,
+        "named": 182122,
+        "ours_at_baseline": 74966,
         "total": 388231
       },
       "materialanimation": {
@@ -2519,7 +2519,7 @@
         "total": 1
       },
       "movie": {
-        "named": 225,
+        "named": 248,
         "ours_at_baseline": 0,
         "total": 2382
       },
@@ -2659,7 +2659,7 @@
         "total": 1
       },
       "physicsasset": {
-        "named": 312,
+        "named": 343,
         "ours_at_baseline": 0,
         "total": 57588
       },
@@ -2814,7 +2814,7 @@
         "total": 1
       },
       "scriptable": {
-        "named": 480,
+        "named": 499,
         "ours_at_baseline": 0,
         "total": 10503
       },
@@ -3004,13 +3004,13 @@
         "total": 1409
       },
       "sound_alias": {
-        "named": 22504,
-        "ours_at_baseline": 0,
+        "named": 206417,
+        "ours_at_baseline": 157020,
         "total": 254502
       },
       "sound_asset": {
-        "named": 99625,
-        "ours_at_baseline": 0,
+        "named": 172955,
+        "ours_at_baseline": 71150,
         "total": 399776
       },
       "soundbank": {
@@ -3029,7 +3029,7 @@
         "total": 166
       },
       "soundbanktransient": {
-        "named": 1414,
+        "named": 1417,
         "ours_at_baseline": 0,
         "total": 2480
       },
@@ -3124,7 +3124,7 @@
         "total": 3
       },
       "spray": {
-        "named": 303,
+        "named": 312,
         "ours_at_baseline": 0,
         "total": 313
       },
@@ -3429,8 +3429,8 @@
         "total": 5
       },
       "xanim": {
-        "named": 81521,
-        "ours_at_baseline": 0,
+        "named": 93806,
+        "ours_at_baseline": 10462,
         "total": 97260
       },
       "xanimcurve": {
@@ -3791,8 +3791,8 @@
         "total": 5
       },
       "image": {
-        "named": 155461,
-        "ours_at_baseline": 48257,
+        "named": 157891,
+        "ours_at_baseline": 50665,
         "total": 167360
       },
       "impact_fx": {
@@ -3886,8 +3886,8 @@
         "total": 37
       },
       "material": {
-        "named": 111898,
-        "ours_at_baseline": 39562,
+        "named": 114849,
+        "ours_at_baseline": 42455,
         "total": 122750
       },
       "motion_matching_input": {
@@ -4091,13 +4091,13 @@
         "total": 100
       },
       "sound_alias": {
-        "named": 45924,
-        "ours_at_baseline": 19315,
+        "named": 46449,
+        "ours_at_baseline": 19836,
         "total": 50043
       },
       "sound_asset": {
-        "named": 68827,
-        "ours_at_baseline": 60396,
+        "named": 69159,
+        "ours_at_baseline": 60728,
         "total": 79263
       },
       "spectate_camera": {
@@ -4271,8 +4271,8 @@
         "total": 1093
       },
       "xanim": {
-        "named": 18859,
-        "ours_at_baseline": 6861,
+        "named": 19609,
+        "ours_at_baseline": 7539,
         "total": 21968
       },
       "xanim_tree": {
@@ -4286,8 +4286,8 @@
         "total": 588
       },
       "xmodel": {
-        "named": 52360,
-        "ours_at_baseline": 12225,
+        "named": 55495,
+        "ours_at_baseline": 15347,
         "total": 61139
       },
       "xmodelalias": {
@@ -4683,8 +4683,8 @@
         "total": 5
       },
       "image": {
-        "named": 210289,
-        "ours_at_baseline": 10990,
+        "named": 213893,
+        "ours_at_baseline": 14428,
         "total": 245235
       },
       "impactsfxtable": {
@@ -4763,8 +4763,8 @@
         "total": 2
       },
       "material": {
-        "named": 143079,
-        "ours_at_baseline": 22335,
+        "named": 148444,
+        "ours_at_baseline": 27327,
         "total": 158158
       },
       "milestone": {
@@ -5033,8 +5033,8 @@
         "total": 42
       },
       "sound_alias": {
-        "named": 41550,
-        "ours_at_baseline": 32838,
+        "named": 42970,
+        "ours_at_baseline": 34224,
         "total": 50890
       },
       "sound_alias_modifier": {
@@ -5043,8 +5043,8 @@
         "total": 57
       },
       "sound_asset": {
-        "named": 83133,
-        "ours_at_baseline": 5195,
+        "named": 83305,
+        "ours_at_baseline": 5367,
         "total": 97217
       },
       "sound_bank": {
@@ -5278,8 +5278,8 @@
         "total": 40
       },
       "xanim": {
-        "named": 21885,
-        "ours_at_baseline": 5287,
+        "named": 22783,
+        "ours_at_baseline": 6132,
         "total": 28468
       },
       "xanimcurve": {
@@ -5293,13 +5293,13 @@
         "total": 1125
       },
       "xcollision": {
-        "named": 47536,
+        "named": 47687,
         "ours_at_baseline": 0,
         "total": 60670
       },
       "xmodel": {
-        "named": 68370,
-        "ours_at_baseline": 3879,
+        "named": 69820,
+        "ours_at_baseline": 5304,
         "total": 85612
       },
       "xmodelalias": {
@@ -5313,7 +5313,7 @@
         "total": 271840
       },
       "xskeleton": {
-        "named": 68204,
+        "named": 68395,
         "ours_at_baseline": 0,
         "total": 85613
       },
@@ -5500,12 +5500,12 @@
         "total": 39
       },
       "decalvolumemask": {
-        "named": 0,
+        "named": 5,
         "ours_at_baseline": 0,
         "total": 402
       },
       "decalvolumematerial": {
-        "named": 2007,
+        "named": 2282,
         "ours_at_baseline": 0,
         "total": 2626
       },
@@ -5520,7 +5520,7 @@
         "total": 217
       },
       "dynamicbones": {
-        "named": 0,
+        "named": 2,
         "ours_at_baseline": 0,
         "total": 1132
       },
@@ -5605,7 +5605,7 @@
         "total": 4
       },
       "gesture": {
-        "named": 11,
+        "named": 13,
         "ours_at_baseline": 0,
         "total": 413
       },
@@ -5655,8 +5655,8 @@
         "total": 2
       },
       "image": {
-        "named": 118484,
-        "ours_at_baseline": 0,
+        "named": 126288,
+        "ours_at_baseline": 6780,
         "total": 307431
       },
       "impactfx": {
@@ -5755,8 +5755,8 @@
         "total": 45
       },
       "material": {
-        "named": 100669,
-        "ours_at_baseline": 0,
+        "named": 226352,
+        "ours_at_baseline": 121237,
         "total": 230876
       },
       "materialanimation": {
@@ -5785,7 +5785,7 @@
         "total": 1
       },
       "mayhem": {
-        "named": 1,
+        "named": 2,
         "ours_at_baseline": 0,
         "total": 36
       },
@@ -5835,7 +5835,7 @@
         "total": 13
       },
       "physicsasset": {
-        "named": 82,
+        "named": 85,
         "ours_at_baseline": 0,
         "total": 23505
       },
@@ -5935,7 +5935,7 @@
         "total": 1
       },
       "scriptable": {
-        "named": 38,
+        "named": 52,
         "ours_at_baseline": 0,
         "total": 4997
       },
@@ -5980,13 +5980,13 @@
         "total": 38
       },
       "sound_alias": {
-        "named": 9919,
-        "ours_at_baseline": 0,
+        "named": 96432,
+        "ours_at_baseline": 52668,
         "total": 147867
       },
       "sound_asset": {
-        "named": 45911,
-        "ours_at_baseline": 0,
+        "named": 143845,
+        "ours_at_baseline": 97844,
         "total": 249863
       },
       "soundbank": {
@@ -6240,8 +6240,8 @@
         "total": 1
       },
       "xanim": {
-        "named": 44996,
-        "ours_at_baseline": 0,
+        "named": 55209,
+        "ours_at_baseline": 10199,
         "total": 55778
       },
       "xanimcurve": {
@@ -6260,7 +6260,7 @@
         "total": 671
       },
       "xmodeldetailcollision": {
-        "named": 153,
+        "named": 157,
         "ours_at_baseline": 0,
         "total": 33071
       },
@@ -6279,52 +6279,52 @@
       "achievement": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 39
+        "total": 175
       },
       "achievementlist": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 2
+        "total": 6
       },
       "ai_eventlist": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 9
       },
       "ai_interaction": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 12
+        "total": 184
       },
       "ai_token_collections": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 3
       },
       "ai_token_definitions": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 3
       },
       "ai_token_stealing_definitions": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2
       },
       "ai_token_types": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2
       },
       "aianimsettings": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 11
+        "total": 32
       },
       "aiasm": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 12
+        "total": 29
       },
       "aidebugdata": {
         "named": 0,
@@ -6334,29 +6334,34 @@
       "aiimpactvfxtable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 4
       },
       "aimarkup": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 5
+        "total": 41
       },
       "aimarkup_generated": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 18
       },
       "aiobstacle": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 11
+        "total": 196
       },
       "aipaths": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 18
       },
       "aishootstyleslist": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2
+      },
+      "aispline": {
         "named": 0,
         "ours_at_baseline": 0,
         "total": 2
@@ -6364,7 +6369,7 @@
       "aitype": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 417
       },
       "ambientsfxpackage": {
         "named": 0,
@@ -6372,44 +6377,44 @@
         "total": 1
       },
       "animpkg": {
-        "named": 578,
+        "named": 575,
         "ours_at_baseline": 0,
-        "total": 725
+        "total": 986
       },
       "assetstreamcollection": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 10
       },
       "attachment": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 973
+        "total": 1389
       },
       "attachmentblueprint": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 84
+        "total": 457
       },
       "battlechatterevent": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 124
+        "total": 137
       },
       "battlechattertree": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 276
+        "total": 310
       },
       "behaviorsequencer": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 14
+        "total": 21
       },
       "behaviortree": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 4
+        "total": 15
       },
       "bestplaycam": {
         "named": 0,
@@ -6424,12 +6429,12 @@
       "bloodtraildecaldescription": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2
       },
       "bonefollowermappinggraph": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 2
+        "total": 9
       },
       "bonetoggleparams": {
         "named": 0,
@@ -6439,7 +6444,7 @@
       "botbtconstants": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2
       },
       "bullet_penetration": {
         "named": 0,
@@ -6459,12 +6464,12 @@
       "calloutmarkerping": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 88
+        "total": 174
       },
       "calloutmarkerpingmetadata": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 4
+        "total": 5
       },
       "calloutmarkerpingwheel": {
         "named": 0,
@@ -6474,32 +6479,32 @@
       "camera": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 49
+        "total": 105
       },
       "camo": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 7
+        "total": 189
       },
       "carryobject": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 2
+        "total": 12
       },
       "character": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 2
+        "total": 639
       },
       "charcollbounds": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2
       },
       "cinematicmotion": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 32
+        "total": 55
       },
       "cinematicscene": {
         "named": 0,
@@ -6514,12 +6519,12 @@
       "clothasset": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 4
       },
       "codcasterdata": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 3
       },
       "codcastergameplaystat": {
         "named": 0,
@@ -6529,17 +6534,32 @@
       "codcasterteamcustomization": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2
+      },
+      "col_map": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
+      },
+      "collisiontile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 5054
+      },
+      "com_map": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
       },
       "compassdata": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 4
       },
       "computeshader": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1380
+        "total": 1440
       },
       "contraildata": {
         "named": 0,
@@ -6549,17 +6569,17 @@
       "conversation": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1582
+        "total": 2189
       },
       "coverselector": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 17
+        "total": 49
       },
       "curve": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 204
+        "total": 386
       },
       "customdamagepattern": {
         "named": 0,
@@ -6569,22 +6589,22 @@
       "ddl": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 52
+        "total": 54
       },
       "deatheffect": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 6
       },
       "decalvolumemask": {
-        "named": 0,
+        "named": 1,
         "ours_at_baseline": 0,
-        "total": 9
+        "total": 798
       },
       "decalvolumematerial": {
-        "named": 171,
+        "named": 1235,
         "ours_at_baseline": 0,
-        "total": 480
+        "total": 3592
       },
       "deployableweaponconfig": {
         "named": 0,
@@ -6599,7 +6619,7 @@
       "dismembermenttype": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 6
+        "total": 9
       },
       "dlogschema": {
         "named": 0,
@@ -6614,12 +6634,12 @@
       "dynamicbones": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 106
+        "total": 563
       },
       "dynentitylist": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 570
       },
       "ecsasset": {
         "named": 0,
@@ -6629,7 +6649,7 @@
       "edgelist": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 1716
       },
       "emote": {
         "named": 0,
@@ -6644,7 +6664,7 @@
       "enemyselector": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 2
+        "total": 4
       },
       "equipmentsfx": {
         "named": 0,
@@ -6654,12 +6674,12 @@
       "execution": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 20
+        "total": 39
       },
       "fastfilemodule": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 13
+        "total": 17
       },
       "firereactiveentspackage": {
         "named": 0,
@@ -6669,7 +6689,7 @@
       "fogspline": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 20
+        "total": 50
       },
       "foliageimpactfxsettings": {
         "named": 0,
@@ -6679,12 +6699,12 @@
       "foliageimpactfxtable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 9
+        "total": 10
       },
       "foliagesfxtable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 16
+        "total": 19
       },
       "foliagevfxtable": {
         "named": 0,
@@ -6694,52 +6714,67 @@
       "font": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 67
+        "total": 70
       },
       "fonticon": {
-        "named": 42,
+        "named": 63,
         "ours_at_baseline": 0,
-        "total": 251
+        "total": 253
       },
       "footstepdecaldescription": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 3
       },
       "footstepsfxoverride": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 28
       },
       "footstepsfxtable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 9
+        "total": 13
       },
       "footstepsurfacetable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 3
       },
       "footstepvfx": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 36
+        "total": 89
+      },
+      "fx_map": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
+      },
+      "fx_map_trzone": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 664
       },
       "gamemode": {
         "named": 0,
         "ours_at_baseline": 0,
         "total": 8
       },
+      "gamemodedictionary": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
       "gamemodefeatureflags": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 5
+        "total": 7
       },
       "gamemodeinit": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 8
+        "total": 12
       },
       "gamemodescenario": {
         "named": 0,
@@ -6749,17 +6784,17 @@
       "gameprops": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 3
       },
       "gametype": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 127
+        "total": 131
       },
       "gametypestatdata": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 13
+        "total": 15
       },
       "gametypetable": {
         "named": 0,
@@ -6772,9 +6807,34 @@
         "total": 1
       },
       "gesture": {
-        "named": 89,
+        "named": 91,
         "ours_at_baseline": 0,
-        "total": 565
+        "total": 715
+      },
+      "gfx_map": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
+      },
+      "gfx_map_trzone": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3927
+      },
+      "gfxumbratome": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 2668
+      },
+      "glass_map": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
+      },
+      "glasscollisionworld": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
       },
       "glassmaterialsettings": {
         "named": 0,
@@ -6784,22 +6844,22 @@
       "gobo": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 4
+        "total": 46
       },
       "gradingclut": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 20
+        "total": 45
       },
       "grappleweapontunables": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 2
+        "total": 1
       },
       "grenadeutilityspec": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 7
       },
       "grounddeformationvis": {
         "named": 0,
@@ -6809,12 +6869,12 @@
       "gscobj": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 558
+        "total": 908
       },
       "gunnyarchetype": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 142
+        "total": 250
       },
       "handplantsfxtable": {
         "named": 0,
@@ -6824,17 +6884,17 @@
       "heatmapradar": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 2
+        "total": 1
       },
       "hudoutline": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 142
+        "total": 164
       },
       "hwconfig": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 19
+        "total": 96
       },
       "hwconfiggroup": {
         "named": 0,
@@ -6874,7 +6934,7 @@
       "iesprofile": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 8
+        "total": 54
       },
       "ikparameters": {
         "named": 0,
@@ -6887,24 +6947,24 @@
         "total": 1
       },
       "image": {
-        "named": 14873,
-        "ours_at_baseline": 0,
-        "total": 37365
+        "named": 25297,
+        "ours_at_baseline": 4973,
+        "total": 146884
       },
       "impactfxtable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 61
+        "total": 90
       },
       "impactsfxtable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 11
+        "total": 10
       },
       "impacttypetoimpactfxtable": {
         "named": 2,
         "ours_at_baseline": 0,
-        "total": 4
+        "total": 45
       },
       "importsettingconfig": {
         "named": 0,
@@ -6926,6 +6986,11 @@
         "ours_at_baseline": 0,
         "total": 1
       },
+      "indoorexclusiontile": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 315
+      },
       "keybinds": {
         "named": 0,
         "ours_at_baseline": 0,
@@ -6934,12 +6999,12 @@
       "keyvaluepairs": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 217
+        "total": 755
       },
       "laser": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 37
+        "total": 40
       },
       "leagueplayseasons": {
         "named": 0,
@@ -6959,52 +7024,57 @@
       "lightstate": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 59
       },
       "localize": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 69015
+        "total": 93471
       },
       "localizeassetentrydev": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 512
+        "total": 520
       },
       "locdmgtable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 6
+        "total": 7
       },
       "luafile": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 10831
+        "total": 12255
+      },
+      "map_ents": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
       },
       "map_ents_trzone": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 42
       },
       "map_fx_objects": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 5
+        "total": 79
       },
       "map_game_objects": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 5
+        "total": 79
       },
       "map_spawn_points": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 6
+        "total": 41
       },
       "mapinfo": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 13
+        "total": 40
       },
       "maptable": {
         "named": 0,
@@ -7014,22 +7084,22 @@
       "mapvoxelizedstateformat": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 2
+        "total": 75
       },
       "material": {
-        "named": 3640,
-        "ours_at_baseline": 0,
-        "total": 7809
+        "named": 29972,
+        "ours_at_baseline": 1409,
+        "total": 120480
       },
       "materialanimation": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 16
+        "total": 65
       },
       "materialanimationparams": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 18
+        "total": 73
       },
       "materialcamoanimationparams": {
         "named": 0,
@@ -7049,32 +7119,32 @@
       "materialsfxtable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 859
+        "total": 1074
       },
       "materialtintanimationparams": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 4
       },
       "materialuvanimationparams": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2
       },
       "materialuvdistortionparams": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2
       },
       "mayhem": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 76
       },
       "mlmodel": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 2
+        "total": 1
       },
       "motionmatchingfeatures": {
         "named": 0,
@@ -7087,14 +7157,14 @@
         "total": 1
       },
       "movie": {
-        "named": 0,
+        "named": 3,
         "ours_at_baseline": 0,
-        "total": 103
+        "total": 356
       },
       "movingplatform": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 5
+        "total": 43
       },
       "nameplatesettings": {
         "named": 0,
@@ -7104,12 +7174,12 @@
       "navmesh": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 18
       },
       "netconststrings": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 438
+        "total": 645
       },
       "notifgroup": {
         "named": 0,
@@ -7124,12 +7194,12 @@
       "objectivedata": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 11
+        "total": 16
       },
       "objectstoreddlconfig": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 17
+        "total": 20
       },
       "objectstoreddlconfiggroup": {
         "named": 0,
@@ -7139,7 +7209,7 @@
       "objectstoregamemode": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 9
+        "total": 8
       },
       "objectstoreproject": {
         "named": 0,
@@ -7164,7 +7234,7 @@
       "operator": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 22
+        "total": 35
       },
       "operatorbonesync": {
         "named": 0,
@@ -7179,7 +7249,7 @@
       "operatorskin": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 25
+        "total": 53
       },
       "parachutedata": {
         "named": 0,
@@ -7194,7 +7264,7 @@
       "particlesystem": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 4858
+        "total": 21135
       },
       "pbgcolor": {
         "named": 0,
@@ -7209,17 +7279,17 @@
       "pbgpostfxbundle": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 65
+        "total": 154
       },
       "pbgpostfxbundlenvt": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 23
+        "total": 51
       },
       "perk": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 173
+        "total": 185
       },
       "perlinnoise": {
         "named": 0,
@@ -7227,9 +7297,9 @@
         "total": 5
       },
       "physicsasset": {
-        "named": 51,
+        "named": 94,
         "ours_at_baseline": 0,
-        "total": 1627
+        "total": 46813
       },
       "physicsbodyqualitylibrary": {
         "named": 0,
@@ -7239,12 +7309,12 @@
       "physicsfxpipeline": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 11
+        "total": 15
       },
       "physicsfxshape": {
-        "named": 2,
+        "named": 5,
         "ours_at_baseline": 0,
-        "total": 520
+        "total": 3884
       },
       "physicsmateriallibrary": {
         "named": 0,
@@ -7259,12 +7329,12 @@
       "physicssfxeventasset": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 11
+        "total": 216
       },
       "physicsvfxeventasset": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 3
       },
       "playerlookatprofile": {
         "named": 0,
@@ -7274,12 +7344,12 @@
       "playerspawninfluencer": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 53
+        "total": 73
       },
       "playerspawnsettings": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 5
+        "total": 7
       },
       "posematchingasmconfig": {
         "named": 0,
@@ -7289,7 +7359,7 @@
       "posematchingtransitionset": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 12
+        "total": 13
       },
       "proceduralbonelodsettings": {
         "named": 0,
@@ -7299,17 +7369,17 @@
       "proceduralbones": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 94
+        "total": 655
       },
       "project": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 2
       },
       "projectinit": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 2
       },
       "projecttable": {
         "named": 0,
@@ -7319,17 +7389,17 @@
       "radar": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 4
+        "total": 5
       },
       "ragdollasset": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 8
       },
       "rawfile": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 572
+        "total": 486
       },
       "reactiveaudiopackage": {
         "named": 0,
@@ -7349,107 +7419,112 @@
       "reactivevfxpackage": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 5
       },
       "reticle": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 780
+        "total": 1532
       },
       "reverbpreset": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 33
+        "total": 252
       },
       "rgblogitechprofile": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 31
+        "total": 32
       },
       "rumble": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 56
+        "total": 63
       },
       "rumblegraph": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 133
+        "total": 143
       },
       "scenario": {
         "named": 0,
         "ours_at_baseline": 0,
         "total": 1
       },
-      "scriptable": {
-        "named": 19,
+      "scoreboarddata": {
+        "named": 0,
         "ours_at_baseline": 0,
-        "total": 341
+        "total": 1
+      },
+      "scriptable": {
+        "named": 65,
+        "ours_at_baseline": 0,
+        "total": 6360
       },
       "scriptablevariant": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 13
       },
       "scriptbrushmodel": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2178
       },
       "scriptbundle": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 15582
+        "total": 31819
       },
       "sfxpkg": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 226
+        "total": 287
       },
       "shock": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 78
+        "total": 88
       },
       "shockwave": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 18
+        "total": 35
       },
       "sightconfig": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 54
+        "total": 174
       },
       "sightconfigtemplate": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 48
       },
       "sndacoustics": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 40
       },
       "sndadsr": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 51
+        "total": 154
       },
       "sndadsrzone": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 8
+        "total": 15
       },
       "sndambient": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 15
+        "total": 384
       },
       "sndambientelement": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 28
+        "total": 620
       },
       "sndbreathsettings": {
         "named": 0,
@@ -7459,7 +7534,7 @@
       "sndbreathstate": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 4
       },
       "sndchannels": {
         "named": 0,
@@ -7474,22 +7549,22 @@
       "sndcurve": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 257
+        "total": 254
       },
       "sndfilter": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 10
+        "total": 25
       },
       "sndfullocclusion": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 6
       },
       "sndfutz": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 6
+        "total": 7
       },
       "sndhdrloudness": {
         "named": 0,
@@ -7509,39 +7584,49 @@
       "sndmodifier": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 103
+        "total": 187
       },
       "sndmusicset": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 9
+        "total": 32
       },
       "sndocclusion": {
-        "named": 0,
+        "named": 1,
         "ours_at_baseline": 0,
-        "total": 4
+        "total": 20
       },
       "sndocclusionsetting": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 63
+        "total": 77
       },
       "sndprojectsettings": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2
       },
       "sndreverb": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 49
+        "total": 279
       },
       "sndtable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 67
       },
       "sndtagmanager": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndtagpackage": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 1
+      },
+      "sndtagregistry": {
         "named": 0,
         "ours_at_baseline": 0,
         "total": 1
@@ -7549,7 +7634,7 @@
       "sndtimescale": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 9
+        "total": 10
       },
       "sndvolmod": {
         "named": 0,
@@ -7564,52 +7649,57 @@
       "sndzoneweather": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 3
       },
       "socialplayerprofile": {
         "named": 0,
         "ours_at_baseline": 0,
         "total": 4
       },
-      "sound_alias": {
-        "named": 7523,
+      "socullingocclusion": {
+        "named": 0,
         "ours_at_baseline": 0,
-        "total": 73962
+        "total": 707
+      },
+      "sound_alias": {
+        "named": 57893,
+        "ours_at_baseline": 37169,
+        "total": 149151
       },
       "sound_asset": {
-        "named": 24454,
-        "ours_at_baseline": 0,
-        "total": 130464
+        "named": 46024,
+        "ours_at_baseline": 18183,
+        "total": 223292
       },
       "soundbank": {
         "named": 24,
         "ours_at_baseline": 0,
-        "total": 105
+        "total": 194
       },
       "soundbanklist": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 2
+        "total": 15
       },
       "soundbankpackage": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 6
+        "total": 8
       },
       "soundbanktransient": {
-        "named": 291,
+        "named": 326,
         "ours_at_baseline": 0,
-        "total": 582
+        "total": 1765
       },
       "soundcone": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 38
+        "total": 55
       },
       "soundevent": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1624
+        "total": 1653
       },
       "soundglobalbulletcrack": {
         "named": 0,
@@ -7669,12 +7759,17 @@
       "soundspeakermap": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 71
+        "total": 91
       },
       "soundsubmix": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 769
+        "total": 1085
+      },
+      "spatialcinematics": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
       },
       "spikeprofilerconfig": {
         "named": 0,
@@ -7694,47 +7789,62 @@
       "storagefile": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 27
+        "total": 30
       },
       "streaminginfo": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 1349
+        "total": 5396
       },
       "streamtreeasset": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 5
+        "total": 79
       },
       "stringtable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 557
+        "total": 623
+      },
+      "stterrain": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 34
       },
       "suit": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 15
+        "total": 40
       },
       "suitanimpackage": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 27
+        "total": 39
+      },
+      "surfacefx": {
+        "named": 1,
+        "ours_at_baseline": 0,
+        "total": 1
       },
       "tacgraph": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 18
       },
       "techset": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 2139
+        "total": 2949
       },
       "threattype": {
         "named": 0,
         "ours_at_baseline": 0,
         "total": 1
+      },
+      "timelapsesky": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 4
       },
       "timeline": {
         "named": 0,
@@ -7744,7 +7854,7 @@
       "tracer": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 37
+        "total": 50
       },
       "trackerfootstepfx": {
         "named": 0,
@@ -7769,7 +7879,7 @@
       "unlockfeedconfig": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2
       },
       "unlockfeeditem": {
         "named": 0,
@@ -7779,67 +7889,102 @@
       "vectorfield": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 19
+        "total": 434
       },
       "vehicle": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 43
+        "total": 232
       },
       "vehicleblueprint": {
         "named": 0,
         "ours_at_baseline": 0,
         "total": 1
       },
+      "vehiclefallbehavior": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 3
+      },
       "vehiclerevsfx": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 26
       },
       "vehicletrick": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 6
       },
       "vehicletunables": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 6
+        "total": 41
       },
       "vehleanoutanimcurveset": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 3
       },
       "vfxpkg": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 167
+        "total": 242
+      },
+      "vhmdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
+      },
+      "virtualcutoutmap": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
       },
       "visionset": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 151
+        "total": 226
+      },
+      "volumetriccloud": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 6
+      },
+      "volumetricheightmap": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 47
       },
       "volumetricsmokesettings": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 4
+      },
+      "vtmdata": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 41
       },
       "waterbuoyancy": {
         "named": 0,
         "ours_at_baseline": 0,
         "total": 1
       },
+      "watersystem": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 20
+      },
       "watervis": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 65
       },
       "weapon": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 312
+        "total": 577
       },
       "weaponaccuracy": {
         "named": 0,
@@ -7854,17 +7999,17 @@
       "weaponblueprint": {
         "named": 3,
         "ours_at_baseline": 0,
-        "total": 12
+        "total": 69
       },
       "weaponsndreflections": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 87
+        "total": 296
       },
       "weaponsndreflectionzone": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 8
       },
       "weapontrigger": {
         "named": 0,
@@ -7874,7 +8019,7 @@
       "weapontunables": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 353
+        "total": 665
       },
       "weaponwearable": {
         "named": 0,
@@ -7884,27 +8029,37 @@
       "weather": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 132
       },
       "weatherdistantsfxpackage": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 3
       },
       "weatherenvironmentsfxpackage": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 11
       },
       "weatherimpactsfxtable": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 3
+      },
+      "weatherlayer": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 12
       },
       "weatherlayermask": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 2
+        "total": 3
+      },
+      "weathermap": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 24
       },
       "weatherprecipitationsfxpackage": {
         "named": 0,
@@ -7914,67 +8069,67 @@
       "weathersettings": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 12
       },
       "weathersoundthresholds": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 9
       },
       "weatherstate": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 81
       },
       "weathersurfacetypemapping": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 11
       },
       "weathertile": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 675
       },
       "weatherwind": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 29
       },
       "whizbysfx": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 31
+        "total": 35
       },
       "world_event_data": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 5
+        "total": 79
       },
       "worldmodelattachment": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3
+        "total": 4
       },
       "xanim": {
-        "named": 25929,
-        "ours_at_baseline": 0,
-        "total": 35164
+        "named": 37127,
+        "ours_at_baseline": 6034,
+        "total": 60608
       },
       "xanimcurve": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 11
+        "total": 104
       },
       "xanimnode": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 4537
+        "total": 5494
       },
       "xanimparammodifier": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1
+        "total": 2
       },
       "xanimpayload": {
         "named": 0,
@@ -7984,52 +8139,57 @@
       "xanimset": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 47
+        "total": 353
       },
       "xanimsetalias": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 53063
+        "total": 78611
       },
       "xanimsetparameters": {
         "named": 1,
         "ours_at_baseline": 0,
-        "total": 295
+        "total": 330
       },
       "xanimsetstate": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 3553
+        "total": 10768
       },
       "xanimtree": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 130
+        "total": 211
       },
       "xcam": {
         "named": 24,
         "ours_at_baseline": 0,
-        "total": 235
+        "total": 1053
       },
       "xcompositemodel": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 39
+        "total": 1296
       },
       "xlens": {
         "named": 0,
         "ours_at_baseline": 0,
         "total": 1
       },
+      "xmodelalias": {
+        "named": 0,
+        "ours_at_baseline": 0,
+        "total": 72
+      },
       "xmodeldetailcollision": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 1779
+        "total": 31108
       },
       "xmodelsurfs": {
         "named": 0,
         "ours_at_baseline": 0,
-        "total": 11137
+        "total": 255820
       },
       "zivart": {
         "named": 0,
@@ -8249,12 +8409,12 @@
         "total": 46
       },
       "decalvolumemask": {
-        "named": 0,
+        "named": 7,
         "ours_at_baseline": 0,
         "total": 589
       },
       "decalvolumematerial": {
-        "named": 2884,
+        "named": 3290,
         "ours_at_baseline": 0,
         "total": 4258
       },
@@ -8274,7 +8434,7 @@
         "total": 3
       },
       "dynamicbones": {
-        "named": 0,
+        "named": 2,
         "ours_at_baseline": 0,
         "total": 1959
       },
@@ -8449,8 +8609,8 @@
         "total": 30
       },
       "image": {
-        "named": 142419,
-        "ours_at_baseline": 0,
+        "named": 159576,
+        "ours_at_baseline": 15600,
         "total": 436889
       },
       "impactfxtable": {
@@ -8544,8 +8704,8 @@
         "total": 17
       },
       "material": {
-        "named": 116042,
-        "ours_at_baseline": 0,
+        "named": 209354,
+        "ours_at_baseline": 86339,
         "total": 221679
       },
       "materialanimation": {
@@ -8844,13 +9004,13 @@
         "total": 1
       },
       "sound_alias": {
-        "named": 11671,
-        "ours_at_baseline": 0,
+        "named": 131446,
+        "ours_at_baseline": 63222,
         "total": 166718
       },
       "sound_asset": {
-        "named": 152549,
-        "ours_at_baseline": 0,
+        "named": 204456,
+        "ours_at_baseline": 51773,
         "total": 291343
       },
       "soundbank": {
@@ -9119,8 +9279,8 @@
         "total": 1
       },
       "xanim": {
-        "named": 62214,
-        "ours_at_baseline": 0,
+        "named": 64010,
+        "ours_at_baseline": 1221,
         "total": 64407
       },
       "xanimcurve": {
@@ -9160,5 +9320,5 @@
       }
     }
   },
-  "measured": "2026-10-08"
+  "measured": "2026-10-22"
 }
