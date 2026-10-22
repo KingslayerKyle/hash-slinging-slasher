@@ -6,8 +6,17 @@
 # Justified by a measurement, not a schedule: on MODWAR7 the same cores with the committed 4,800
 # endings returned 36 names and with the 100,000 uncarried ones returned 211, six times the yield
 # for the same stems. The two legacy titles have only ever had the narrow cut here.
-set -u
-cd "$(dirname "$0")/.."
+set -euo pipefail
+repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+while [ ! -f "$repo_root/scripts/snapshot.py" ]; do
+  parent=$(dirname -- "$repo_root")
+  if [ "$parent" = "$repo_root" ]; then
+    echo "Cannot locate the solver checkout" >&2
+    exit 2
+  fi
+  repo_root=$parent
+done
+cd -- "$repo_root"
 mkdir -p logs plans/grind
 
 for game in BLKOPSCW BLKOPS04; do

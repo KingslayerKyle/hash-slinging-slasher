@@ -32,7 +32,14 @@ import re
 import sys
 import subprocess
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+if not (ROOT / "scripts" / "snapshot.py").is_file():
+    raise SystemExit("Cannot locate the solver checkout")
+sys.path.insert(0, str(ROOT / "scripts"))
+
 TABLE = os.path.join(ROOT, "cod-name-db", "csv", "fnv1a_xsounds.csv")
 OUT = os.path.join(ROOT, "contrib")
 
@@ -103,6 +110,7 @@ def main():
     if report_only:
         return
 
+    os.makedirs(OUT, exist_ok=True)
     for filename, values in (
         ("snd_dirs.txt", dirs),
         ("snd_stems.txt", stems),

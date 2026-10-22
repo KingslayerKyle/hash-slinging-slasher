@@ -18,6 +18,14 @@ Two counts are printed per (A -> B) pair, and the second is the control:
 import collections
 import sys
 
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
+while not (ROOT / "scripts" / "snapshot.py").is_file() and ROOT != ROOT.parent:
+    ROOT = ROOT.parent
+if not (ROOT / "scripts" / "snapshot.py").is_file():
+    raise SystemExit("Cannot locate the solver checkout")
+sys.path.insert(0, str(ROOT / "scripts"))
+
 import snapshot
 import settings
 
@@ -30,7 +38,8 @@ TABLE = {
 SAMPLE = int(__import__("os").environ.get("SAMPLE", "200000"))
 
 
-finds = open('contrib/name_laundering_finds.txt', 'a', encoding='utf-8')
+(ROOT / 'contrib').mkdir(parents=True, exist_ok=True)
+finds = (ROOT / 'contrib/name_laundering_finds.txt').open('a', encoding='utf-8')
 
 
 def measure(game):
@@ -39,7 +48,7 @@ def measure(game):
         print(f"{game}: no capture on disk")
         return
     snap = snapshot.read(paths[0])
-    known = snapshot.known_hashes()
+    known = snapshot.known_hashes(game=game)
     unnamed = snap.unnamed(known)
 
     held = collections.defaultdict(set)

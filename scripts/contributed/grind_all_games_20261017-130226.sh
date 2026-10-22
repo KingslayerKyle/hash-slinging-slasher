@@ -7,8 +7,17 @@
 # Not a method rotation: one method, pointed at seven games, with the stems regenerated from
 # whatever the corpus holds today. AGENTS.md 2 forbids looping over every existing method; this
 # loops over games, which is what `start` itself does, and stops the moment a game's pass refuses.
-set -u
-cd "$(dirname "$0")/.."
+set -euo pipefail
+repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+while [ ! -f "$repo_root/scripts/snapshot.py" ]; do
+  parent=$(dirname -- "$repo_root")
+  if [ "$parent" = "$repo_root" ]; then
+    echo "Cannot locate the solver checkout" >&2
+    exit 2
+  fi
+  repo_root=$parent
+done
+cd -- "$repo_root"
 
 GAMES=(BLKOPS04 BLKOPSCW MODWAR22 YAMYAMOK BLACKOP6 BLACKOP7 MODWAR7)
 mkdir -p logs plans/grind
@@ -36,19 +45,13 @@ for game in "${GAMES[@]}"; do
   } > "$plan"
 
   streak=$(cat state/empty_runs.txt 2>/dev/null || echo 0)
-  override=()
-  if [ "${streak:-0}" -ge 3 ]; then
-    # The guard trips on derive_closure's own empty derivations, which the tool itself says is
-    # not the case it is meant for. Any run that confirms one name clears it again.
-    override=(--anyway)
-  fi
 
   echo "=== $game  stems=$(wc -l < contrib/ab_cores.txt)  endings=$(wc -l < "$ends")  streak=$streak"
   log=logs/grind_${game,,}.log
   bin/windows/confirm_plan.exe "$plan" --size > "$log" 2>&1
   grep -E "candidates:|unnamed ids|expected to match" "$log"
 
-  bin/windows/confirm_plan.exe "$plan" "${override[@]}" >> "$log" 2>&1
+  bin/windows/confirm_plan.exe "$plan" >> "$log" 2>&1
   grep -E "^total:|this run added|fingerprint|new\b" "$log" | tail -4
 done
 

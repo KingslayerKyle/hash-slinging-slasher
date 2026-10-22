@@ -6,8 +6,17 @@
 # Only ever run on MODWAR7 so far, where the same cores went 36 names on the committed 4,800
 # endings and 211 on this list. The exclusion set and the uncarried-ending list have both been
 # recomputed since, so this is not a re-sweep of a closed question.
-set -u
-cd "$(dirname "$0")/.."
+set -euo pipefail
+repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+while [ ! -f "$repo_root/scripts/snapshot.py" ]; do
+  parent=$(dirname -- "$repo_root")
+  if [ "$parent" = "$repo_root" ]; then
+    echo "Cannot locate the solver checkout" >&2
+    exit 2
+  fi
+  repo_root=$parent
+done
+cd -- "$repo_root"
 mkdir -p logs plans/grind
 
 for game in BLKOPS04 BLKOPSCW MODWAR22 YAMYAMOK BLACKOP6 BLACKOP7 MODWAR7; do

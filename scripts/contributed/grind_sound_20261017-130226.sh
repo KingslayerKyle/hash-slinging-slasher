@@ -7,8 +7,17 @@
 # Separate from grind_all_games.sh because sound names share no vocabulary with the rest -- an
 # alias ending tried against an xmodel id can only coincide, never match -- so this gets its own
 # core list (535,239 cut at every boundary AND every path separator) and its own ending list.
-set -u
-cd "$(dirname "$0")/.."
+set -euo pipefail
+repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+while [ ! -f "$repo_root/scripts/snapshot.py" ]; do
+  parent=$(dirname -- "$repo_root")
+  if [ "$parent" = "$repo_root" ]; then
+    echo "Cannot locate the solver checkout" >&2
+    exit 2
+  fi
+  repo_root=$parent
+done
+cd -- "$repo_root"
 
 GAMES=(BLKOPS04 BLKOPSCW MODWAR22 YAMYAMOK BLACKOP6 BLACKOP7 MODWAR7)
 mkdir -p logs plans/grind

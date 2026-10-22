@@ -7,8 +7,17 @@
 # 16,360 MWIII names, 9,615 of 9,661 BO6 and 14,802 of 14,854 BO7 as already claimed, but only
 # 244 of 874 for MW7. Ground that is contested returns other people's names however fresh the
 # stems are, so MW7 and the two legacy titles run here and the contested three do not.
-set -u
-cd "$(dirname "$0")/.."
+set -euo pipefail
+repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+while [ ! -f "$repo_root/scripts/snapshot.py" ]; do
+  parent=$(dirname -- "$repo_root")
+  if [ "$parent" = "$repo_root" ]; then
+    echo "Cannot locate the solver checkout" >&2
+    exit 2
+  fi
+  repo_root=$parent
+done
+cd -- "$repo_root"
 mkdir -p logs plans/grind
 
 for game in MODWAR7 BLKOPS04 BLKOPSCW; do
