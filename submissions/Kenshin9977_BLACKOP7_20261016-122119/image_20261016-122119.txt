@@ -1,0 +1,2 @@
+523fc9848e050f00,sat_ui_icon_zm_augment_major_critical_damage_conditional
+6c61b9a1d4fcf791,ui_icon_zm_augment_major_critical_damage_conditional
