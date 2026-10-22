@@ -1,0 +1,3 @@
+e7874a4c20d5a0a,p8_ice_bay2_doorframe_01_grey
+1690105b374b8d75,p8_ice_bay2_doorframe_01_yellow
+275d8099b68d32f5,p8_ice_bay2_doorframe_01_door
