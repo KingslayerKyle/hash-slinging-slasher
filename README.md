@@ -11,7 +11,7 @@ Call of Duty stores most of its asset names as hashes rather than text. The name
 the number survives. This recovers them — and proves each one against the real game, so what
 comes out is a fact rather than a guess.
 
-Supports **Black Ops 4, Cold War, MWII, MWIII, BO6, BO7 and MW7**. The modern-games release adds five games and their canonical snapshots. Available captures take turns, and findings stay separate per game. MP/SP modes are searched together after merging their captures by asset type.
+Supports **Black Ops 4, Cold War, MWII, MWIII, BO6, BO7 and MW4**. The modern-games release adds five games and their canonical snapshots. Available captures take turns, and findings stay separate per game. MP/SP modes are searched together after merging their captures by asset type.
 
 See [modern capture setup and local verification](docs/MODERN_CAPTURES.md). The repository ships one snapshot per game. MWII, MWIII and BO6 each combine their captured MP/SP modes, so a game is searched once.
 
