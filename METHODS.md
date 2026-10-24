@@ -6649,3 +6649,101 @@ just found somebody else already had**, and `logs/submit*.log` already holds it.
 This is the negative space §7 asks for, measured off one's own submission log rather than a ranking,
 and it describes competition in that measured round. Re-measure on fresh inputs; these
 rates are not permanent per-game rankings and do not imply a fixed rotation.
+
+## Black Ops 4 models, one model at a time: own-id searches over the Saluki export -- 2026-10-16
+
+The Saluki export of every unnamed Black Ops 4 model (cast + material names + image names, see
+`contrib/bo4_models/`) makes it possible to search **each model against its own id only**. The
+ending (and an optional size token) is peeled off that one id, so a candidate can only ever be
+accepted for the model whose own materials, bones, size and neighbours produced it. Coincidental
+matches fall from "candidates x every unnamed id / 2^63" to "candidates / 2^63", which is what lets
+these tools use vocabularies a global plan could not afford. Every tool was first run in
+`--validate` mode: the already-named exported models are held out of every list and searched for.
+**Zero wrong names in every validation run.**
+
+| tool | candidate shape (all checked against the model's own id) | held-out recall | new names |
+|---|---|---|---|
+| `inner_spans.plan.txt` (global plan) | known model head x 2-4 token run from *inside* an export material/image core x 8k endings | -- | 43 |
+| `dimpm` + `dim_blocks.py` | own prefix [x word x word] x **size token from the mesh bounding box** x ending | 72 / 294 size-named | 16 |
+| `dimpm` + `mid_blocks.py` | own / neighbour / common family prefix x middle run (known runs, export spans, any BO4 token) x up to 70k endings | 692 / 1838 | 96 + 62 + 80 + 11 + 23 |
+| `dimpm` + `kit_blocks.py` | `p8_kit` family x piece x shape/material run x size x tail | 54 / 176 kit pieces | 10 |
+| `nbedit` + `nb_blocks.py` | material-neighbour name with one token swapped / inserted (42k-100k token vocabulary) or deleted | 1215 / 1935 | 24 + 15 + 8 + 26 + 12 + 1 + 3 + 3 |
+
+Facts worth keeping:
+
+- **The casts are in centimetres.** Bounding box / 2.54 gives inches, and 266 of ~370 size tokens in
+  named exported models sit within 15% of an extent (220 within 5%). Kit names use both `AxB` and
+  `Ah_Bw` (`..._painted_wood_128h_64w_01`).
+- **Check only the model's own id, then widen the vocabulary.** A one-token neighbour edit with the
+  42k-token BO4 vocabulary runs over 5,757 models in under two minutes; adding 35k tokens from all
+  seven games' names and a learned letter+number grid (`c17`, `in3`, `brk_02a`) paid 34 more.
+- **Letter+number tokens are the cheapest gap.** Prefixes measured off BO4/CW names (221 of them) x
+  0-99, padded and unpadded, found whole families (`p8_jpn_highway_pannel_01_out_brk_02a..03d`).
+- The neighbour-edit tool snowballs: each round's finds become the next round's neighbours
+  (26, 12, 1, ...). Run it to a fixpoint after any model gain.
+
+Dead or spent (measured, do not repeat as-is):
+
+- `fam_mid.plan.txt` (300 common family prefixes x middles x 20k endings, global): 0 in 2 of 8
+  slices -- the per-model runs had already covered it.
+- `kit_blocks.py` second round with map-wide kit families: 0.
+- `mid_blocks.py` round 4 without family prefixes: 11 for ~35 min.
+- Geometry twins as neighbours: only 63 unnamed models have a named geometry twin in the export (1 name).
+- Image-sharing neighbours (named models sharing a texture used by at most 20 models): 0.
+- Size tokens, second round on the grown corpus: 0.
+
+One operational note: give the per-model tool one shared copy of the global ending list (`#E @G` plus
+env `GE`). Writing the 71k endings into every model's block made a 7.4 GB block file and a 23.7 GB
+process, which the host killed for low memory; shared, it is 86 MB and 0.7 GB with identical results.
+
+Session total: about 440 new Black Ops 4 model names (unnamed 7,247 -> 6,801).
+
+## Black Ops 4 models: global meet-in-the-middle over known prefixes and suffixes -- 2026-10-18
+
+Measured first, on the held-out named export models: what keeps the remaining 6.7k unnamed models out of reach is
+**not vocabulary** (almost every middle token of a held-out name is already a known BO4 token) but how far apart the
+known pieces are. 2,575 of the unnamed export models use **only generic `t7_`/`t8_` materials** (38%, against 10% of
+named models), so their material cores say nothing about the name. But against *every* >=2-token prefix and *every*
+1-5 token suffix of any known model name, about half the held-out names are `known prefix [one word] known suffix`.
+
+| tool | candidate shape | held-out recall | new names |
+|---|---|---|---|
+| `hwt.cs` + `hwt_prep.py` (global, 63-bit, all unnamed model ids) | any known prefix x [BO4 token] x any known 1-5 token suffix | 966 / 2232 | 81 + 56 + 9 |
+| same, `bi=2` | middle may also be a known 2-token run | 1230 / 2299 | 59 + 21 + 23 |
+| same, `bi=1 tri=2` | + every 2-token run, 3-token runs seen twice | 1302 / 2299 (1 wrong) | 25 |
+| `dimpm` + `fam_blocks.py` (own id) | every known prefix inside the model's 3/4-token families x 0-2 family words x any known suffix | 878 / 2320 (186 not found by hwt) | 47 + 5 |
+| same, global single middles | one token from every table of every game (`fam_outvocab.txt`, 79k) | +38 | 37 |
+| `dimpm3.cs` (`V3=40`) | family prefix x three family words x suffix | +69 | 3 |
+| `bone_nb.py` + `nbedit` | the model's own cast bone stems with one token edit (90k vocabulary) | 85 / 445 | 4 |
+| `splm/` copies of known base names | | | 8 |
+
+How `hwt` works: every `_suffix` (138k of them) is peeled off every unnamed id once (0.9 billion states), split into
+16 passes by state bits so one pass fits in ~1.6 GB, and every `prefix` / `prefix_word` state is streamed against the
+pass. 9e14 candidates take 3.5-8 minutes on 12 cores.
+
+**Chance matches are the limit of the global form.** Expected coincidences = candidates x unnamed ids / 2^63, about
+0.6 per run at 8.5e14. The validation runs produced exactly such hits once the space passed ~1.5e15
+(`p8_wz_nt_roof_tile_wood_02_32x32a_proxy_normal_3441_01_vista_lite` for a held-out id), so: keep a global run under
+~1e15, read every new name from it before `confirm_list`, and take anything wider to the per-model form, where the
+same space costs candidates / 2^63.
+
+Dead (measured): heads from named material/image names (`mh=1`): +13 held-out for 2 wrong. A family vocabulary
+of 500 instead of 300: +9 held-out, 0 new. Model pool order as a location signal: the snapshot is sorted by id.
+A weighted material -> family predictor: no better than the material neighbours already used. Hashing every string of
+every cod-name-db table against the unnamed model ids: 2 names (`void`, one vehicle part).
+
+**The same search works on every pool of every game.** `hwt_load.py <game>` builds the name cache (legacy games:
+Treyarch offset; modern: IW offset, aliases on the Treyarch offset; BO4 sound files unfolded), `hwt_pool_prep.py` makes
+the per-pool lists and `hwt_game.py <game> <tag> maxc=X` runs a whole game, raising the suffix-count threshold per pool
+until the expected chance hits fall under `maxc`. First rounds (new names): Cold War 1,820 + 774, Black Ops 4 non-model
+pools 1,452 + 287 sounds + 155, BO7 1,351, BO6 1,521, MWII materials 296.
+
+Chance control: in the modern games most names are sparsely known codes (`dx_op_bttl_<operator>_<code>`), so a
+coincidental match looks exactly like a real one. Use `maxc=0.02` per pool there (or `hwt_strict.py` to keep only the
+hits a strict run would also produce). `hwt_audit.py` flags hits whose every split needs a rare middle word and whose
+junctions no other known name attests; it caught both validation collisions and flags ~5% of real legacy names.
+A 10x random-decoy run returned 0 hits: the printed figure overstates the risk, because many head/word/tail splits
+spell the same string.
+
+Session total: about 8,200 new names across five games (387 of them Black Ops 4 models, unnamed 6,763 -> 6,376),
+PRs #2852-#2871.
