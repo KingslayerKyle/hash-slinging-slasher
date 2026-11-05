@@ -1,0 +1,2 @@
+261bda1a20b7a60c,weap_generic_disconnect_plr_rumble
+397dfddb09039d72,weap_generic_fire_plr_rumble
