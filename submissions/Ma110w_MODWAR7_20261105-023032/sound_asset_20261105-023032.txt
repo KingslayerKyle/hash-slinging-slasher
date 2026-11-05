@@ -1,0 +1,2 @@
+12ebc7063040fccc,rex/eqp/thermite/eqp_thermite_ignite_04.lnn.75.48000.all
+3f9d3ff3fa861790,rex/eqp/molotov/eqp_molotov_ignite_04.lnn.75.48000.all
