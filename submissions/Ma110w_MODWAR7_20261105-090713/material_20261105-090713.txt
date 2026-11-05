@@ -1,0 +1,7 @@
+82d78f2ef798f71,m/wpn_rex_dm_moscar_mag_lrg762r_v0
+ea86f820aa89634,m/wpn_rex_la_golf94_stockadapt_df_v0
+1f0284cc712a36af,m/wpn_rex_br_ngsierra_muz_df_v0
+2c37fa17bbd35a23,tm9/weapon_vm_ar_falpha_body
+3c5c4c262567648f,m/rex_parts_mag_ar_mike16_xmag_proxy
+6b28b61c69ee46a4,m/wpn_rex_lm_recho_muz_df_v04
+6c6af84c923164f8,m/wpn_rex_lm_recho_muz_df_v0
