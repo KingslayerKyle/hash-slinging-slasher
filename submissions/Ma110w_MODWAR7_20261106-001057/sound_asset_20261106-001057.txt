@@ -1,0 +1,8 @@
+a9556fc59a4a59,rex/dst/dst_rex_food_fruit_medium_04.vnn.75.48000.all
+18e9e714a5dc3f9d,rex/dst/dst_rex_food_fruit_medium_08.vnn.75.48000.all
+203c67d8183b770c,rex/dst/dst_rex_food_fruit_medium_05.vnn.75.48000.all
+29ca308504225847,rex/dst/dst_rex_food_fruit_medium_02.vnn.75.48000.all
+3fab5e07ddff4a08,rex/dst/dst_rex_food_fruit_medium_01.vnn.75.48000.all
+4c4f4d63315724d6,rex/dst/dst_rex_food_fruit_medium_07.vnn.75.48000.all
+539e8278ec5a3062,rex/dst/dst_rex_food_fruit_medium_03.vnn.75.48000.all
+59424f29bff5308b,rex/dst/dst_rex_food_fruit_medium_06.vnn.75.48000.all
