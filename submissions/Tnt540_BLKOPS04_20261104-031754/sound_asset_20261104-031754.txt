@@ -1,0 +1,3 @@
+24d3208e12b749a2,amb\environment\location_bgs\jungle\amb_jungle_generic_00.sl100.pc.snd
+3e7caccd5485fa95,amb\environment\wind\snowy\wind_snow_l.sl100.pc.snd
+78e7a540f93de3ab,amb\environment\wind\snowy\wind_snow_r.sl100.pc.snd
