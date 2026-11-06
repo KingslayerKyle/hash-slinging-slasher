@@ -1,0 +1,12 @@
+ui
+icon
+wpn
+hud
+li
+mp
+jup
+rex
+sat
+parts
+loot
+t10
