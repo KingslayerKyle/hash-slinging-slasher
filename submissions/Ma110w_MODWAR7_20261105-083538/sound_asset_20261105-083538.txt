@@ -1,0 +1,8 @@
+7245423f7d182c1,iw9/sp/gunship_compound/dx_sp_gscp_gnht_grav_targetconfirmed.pnn.75.48000.english
+17a4fdec06a30c20,iw9/wpn/apache_hellfire/weap_apache_plr_missile_pop_03.hnn.75.48000.all
+249fdcbe797e0c06,rex/fly/focusmode/rex_focusmode_hold_lr.lnn.65.48000.all
+3793f3315acf65d7,iw9/sp/gunship_compound/dx_sp_gscp_gnht_grav_targetconfirmed.pnn.75.48000.english_safe
+449c3b7e1b105735,iw9/wpn/apache_hellfire/weap_apache_plr_missile_pop_02.hnn.75.48000.all
+527ee9ff86254564,rex/fly/focusmode/rex_focusmode_in_lr.lnn.65.48000.all
+7371c4d55b89d333,rex/fly/focusmode/rex_focusmode_out_lr.lnn.65.48000.all
+7ccfd6d85c0bc97a,iw9/wpn/apache_hellfire/weap_apache_plr_missile_pop_01.hnn.75.48000.all
