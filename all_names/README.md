@@ -40,16 +40,16 @@
 
 <table>
 <tr><th align="left"><code>blkops04/</code></th>
-<th align="right" colspan="2">196,613 names in 6 file(s)</th>
+<th align="right" colspan="2">196,888 names in 6 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>xmodel</code></td><td align="right">15,389</td><td align="right">55,537 / 61,139 &nbsp;(90.8%)</td></tr>
-<tr><td><code>material</code></td><td align="right">42,456</td><td align="right">114,850 / 122,750 &nbsp;(93.6%)</td></tr>
-<tr><td><code>image</code></td><td align="right">50,665</td><td align="right">157,891 / 167,360 &nbsp;(94.3%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">7,539</td><td align="right">19,609 / 21,968 &nbsp;(89.3%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">60,728</td><td align="right">69,159 / 79,263 &nbsp;(87.3%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">19,836</td><td align="right">46,449 / 50,043 &nbsp;(92.8%)</td></tr>
+<tr><td><code>xmodel</code></td><td align="right">15,423</td><td align="right">55,571 / 61,139 &nbsp;(90.9%)</td></tr>
+<tr><td><code>material</code></td><td align="right">42,540</td><td align="right">114,934 / 122,750 &nbsp;(93.6%)</td></tr>
+<tr><td><code>image</code></td><td align="right">50,760</td><td align="right">157,986 / 167,360 &nbsp;(94.4%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">7,573</td><td align="right">19,643 / 21,968 &nbsp;(89.4%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">60,731</td><td align="right">69,162 / 79,263 &nbsp;(87.3%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">19,861</td><td align="right">46,474 / 50,043 &nbsp;(92.9%)</td></tr>
 </table>
 
 </td>
@@ -92,15 +92,15 @@
 
 <table>
 <tr><th align="left"><code>modwar7/</code></th>
-<th align="right" colspan="2">83,658 names in 5 file(s)</th>
+<th align="right" colspan="2">122,285 names in 5 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>material</code></td><td align="right">1,809</td><td align="right">30,372 / 120,480 &nbsp;(25.2%)</td></tr>
-<tr><td><code>image</code></td><td align="right">5,116</td><td align="right">25,440 / 146,884 &nbsp;(17.3%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">11,720</td><td align="right">42,813 / 60,608 &nbsp;(70.6%)</td></tr>
-<tr><td><code>sound_asset</code></td><td align="right">22,332</td><td align="right">50,173 / 223,292 &nbsp;(22.5%)</td></tr>
-<tr><td><code>sound_alias</code></td><td align="right">42,681</td><td align="right">63,405 / 149,151 &nbsp;(42.5%)</td></tr>
+<tr><td><code>material</code></td><td align="right">24,511</td><td align="right">53,074 / 120,480 &nbsp;(44.1%)</td></tr>
+<tr><td><code>image</code></td><td align="right">9,590</td><td align="right">29,914 / 146,884 &nbsp;(20.4%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">13,090</td><td align="right">44,183 / 60,608 &nbsp;(72.9%)</td></tr>
+<tr><td><code>sound_asset</code></td><td align="right">26,461</td><td align="right">54,302 / 223,292 &nbsp;(24.3%)</td></tr>
+<tr><td><code>sound_alias</code></td><td align="right">48,633</td><td align="right">69,357 / 149,151 &nbsp;(46.5%)</td></tr>
 </table>
 
 </td>

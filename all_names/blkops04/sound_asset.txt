@@ -23,6 +23,7 @@ e3dbb47100d95d4,amb\electronics\computer\loops\mainframe\mainframe_loop_03.ll100
 2eaa0fc827ec33b1,amb\environment\industrial\generic\amb_industrial_loop_02.ll100.pc.snd
 15d2a2788d54dea1,amb\environment\location_bgs\dock\foghorn\foghorn_00.ln100.pc.snd
 4242be311eb0521c,amb\environment\location_bgs\dock\foghorn\foghorn_01.ln100.pc.snd
+24d3208e12b749a2,amb\environment\location_bgs\jungle\amb_jungle_generic_00.sl100.pc.snd
 2423b9b9ea130d0f,amb\environment\location_bgs\jungle\birds\amb_birds_03.ln100.pc.snd
 423ddec2c35534f4,amb\environment\location_bgs\swamp\swamp_bg_l.ll100.pc.snd
 23db52b482b7c2c2,amb\environment\location_bgs\swamp\swamp_bg_r.ll100.pc.snd
@@ -63,6 +64,8 @@ e3dbb47100d95d4,amb\electronics\computer\loops\mainframe\mainframe_loop_03.ll100
 1dff94a77cda8b77,amb\environment\wind\opening\opening_03.ln100.pc.snd
 441664b27ad50336,amb\environment\wind\opening\opening_04.ll100.pc.snd
 5d5832257d1b1684,amb\environment\wind\opening\opening_04.ln100.pc.snd
+3e7caccd5485fa95,amb\environment\wind\snowy\wind_snow_l.sl100.pc.snd
+78e7a540f93de3ab,amb\environment\wind\snowy\wind_snow_r.sl100.pc.snd
 4e662b77fa7ca1e,amb\environment\wind\tree\leaves\line\line.sl100.pc.snd
 2c7920819f3f184b,amb\environment\wind\tunnel\tunnel_wind_low.ll100.pc.snd
 cb04534da584f28,amb\environment\wind\tunnel\tunnel_wind_low.sl100.pc.snd
