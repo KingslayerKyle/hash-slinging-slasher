@@ -1,0 +1,10 @@
+cde0599013630c8,rex/wpn/ar_bayonet/wpn_rex_ar_bayonet_atmo_int_05.qnn.85.48000.all
+1ddf8d6d2fae51a4,rex/eqp/c4/eqp_c4_attach_glass_02.lnn.75.48000.all
+1ef96da27390fdcb,rex/eqp/riotshield/eqp_rex_riotshield_impact_06.lnn.85.48000.all
+25122f43fad287fe,rex/eqp/c4/eqp_c4_attach_gravel_03.lnn.75.48000.all
+40cb318a89e1113d,rex/eqp/thermite/eqp_thermite_ignite_uw_04.lnn.75.48000.all
+4134e96a0778199a,rex/eqp/semtex/eqp_semtex_attach_glass_02.lnn.75.48000.all
+49c2f7c1444fdc90,rex/eqp/semtex/eqp_semtex_attach_gravel_03.lnn.75.48000.all
+78f78c33330d1fec,rex/eqp/riotshield/eqp_rex_riotshield_impact_05.lnn.85.48000.all
+79fddfb0d85a9176,rex/eqp/riotshield/eqp_rex_riotshield_impact_07.lnn.85.48000.all
+7aa6cae7164ce019,rex/eqp/riotshield/eqp_rex_riotshield_impact_04.lnn.85.48000.all
