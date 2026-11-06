@@ -1,0 +1,2 @@
+2f8ca1da740a6872,rex/dst/dst_rex_food_fruit_medium_10.vnn.75.48000.all
+7374f2e9e38642a0,rex/dst/dst_rex_food_fruit_medium_09.vnn.75.48000.all
