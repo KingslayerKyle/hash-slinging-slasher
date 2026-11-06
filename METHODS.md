@@ -1080,7 +1080,6 @@ table under a name you would not have guessed is the thing you are about to rebu
 | material all-boundary segment plan | 1 | 2 | 1,672 | 5,440,267,836 | 3,253,748 | 3,137,409 | 3,137,409 | 2026-10-08 | 2026-10-08 | live |
 | slot swap fwd+from-end, --max-slot 3000 --max-tails 30000, all kinds | 1 | 2 | 509 | 1,701,515,596 | 3,342,859 | 2,780,254 | 2,780,254 | 2026-10-11 | 2026-10-11 | live |
 | family grid completion: head x axis x tail, unseen cells | 1 | 1 | 15 | 50,326,771 | 3,355,118 | 3,355,118 | 3,355,118 | 2026-08-23 | 2026-08-23 | untried |
-| one-token edits of known names | 1 | 1 | 775 | 2,614,790,296 | 3,373,922 | 3,373,922 | 3,373,922 | 2026-10-30 | 2026-10-30 | untried |
 | pooled insert-delete xanim r1 | 1 | 1 | 6 | 20,272,459 | 3,378,743 | 3,378,743 | 3,378,743 | 2026-10-10 | 2026-10-10 | untried |
 | token edits anim cap30 | 1 | 2 | 4 | 13,523,498 | 3,380,874 | 3,380,865 | 3,380,883 | 2026-09-03 | 2026-09-03 | live |
 | material head swap | 1 | 4 | 2,459 | 8,343,111,990 | 3,392,888 | 1,718,907 | 10,562,770 | 2026-10-08 | 2026-10-08 | cooling |
@@ -1120,6 +1119,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | material token insertion and deletion after pr983 | 1 | 1 | 8 | 32,496,827 | 4,062,103 | 4,062,103 | 4,062,103 | 2026-08-27 | 2026-08-27 | untried |
 | slot swap xanim closure | 1 | 1 | 1 | 4,064,766 | 4,064,766 | 4,064,766 | 4,064,766 | 2026-10-09 | 2026-10-09 | untried |
 | cold war sound stems, black ops 4 spelling | 1 | 1 | 3 | 12,257,370 | 4,085,790 | 4,085,790 | 4,085,790 | 2026-08-21 | 2026-08-21 | untried |
+| one-token edits of known names | 1 | 2 | 1,246 | 5,093,569,793 | 4,087,937 | 3,373,922 | 3,373,922 | 2026-10-30 | 2026-10-30 | live |
 | modwar7 source-verified sound-file tails | 1 | 2 | 461 | 1,894,989,629 | 4,110,606 | 3,649,507 | 4,590,067 | 2026-10-09 | 2026-11-05 | live |
 | per-suffix precedents, five-token mirror | 1 | 1 | 73 | 301,603,209 | 4,131,550 | 4,131,550 | 4,131,550 | 2026-08-26 | 2026-08-26 | untried |
 | ab snowball r4 sound: new cores x all endings | 1 | 1 | 3 | 12,500,125 | 4,166,708 | 4,166,708 | 4,166,708 | 2026-10-01 | 2026-10-01 | untried |
@@ -1320,6 +1320,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon-slot plan | 1 | 4 | 1,764 | 35,624,312,292 | 20,195,188 | 13,620,660 | 31,691,799 | 2026-10-09 | 2026-10-09 | live |
 | cold war, uncarried two-segment endings | 1 | 1 | 597 | 12,179,260,896 | 20,400,772 | 20,400,772 | 20,400,772 | 2026-08-23 | 2026-08-23 | untried |
 | context swap material r4 | 1 | 1 | 1 | 20,534,631 | 20,534,631 | 20,534,631 | 20,534,631 | 2026-10-10 | 2026-10-10 | untried |
+| one-token edits of known names (mw4 token edits), ai families | 1 | 1 | 141 | 2,932,212,689 | 20,795,834 | 20,795,834 | 20,795,834 | 2026-10-30 | 2026-10-30 | untried |
 | context indel material r3 | 1 | 1 | 1 | 20,808,723 | 20,808,723 | 20,808,723 | 20,808,723 | 2026-10-10 | 2026-10-10 | untried |
 | modern sound heads, one codename swapped, x modwar7's own tails | 1 | 1 | 5 | 108,534,727 | 21,706,945 | 21,706,945 | 21,706,945 | 2026-10-15 | 2026-10-15 | untried |
 | rare shared-token splices family size 1801-2100 | 1 | 2 | 2 | 43,513,608 | 21,756,804 | 21,756,771 | 21,756,837 | 2026-08-28 | 2026-08-28 | live |
@@ -1960,7 +1961,7 @@ table under a name you would not have guessed is the thing you are about to rebu
 | weapon vocabulary growth, then attachment unfolding | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 | names already found and verified, but never sent | 1 | 1 | 0 | - | - | - | - | 2026-08-19 | 2026-08-19 | unmeasured |
 
-1882 distinct methods, run 2370 ways between them, across 7045 runs. `names` is what each run
+1883 distinct methods, run 2371 ways between them, across 7047 runs. `names` is what each run
 found new to the machine that ran it. A blank candidate count means no run of that method
 recorded one, so it cannot be ranked -- see `--unattributed`.
 <!-- END GENERATED REGISTRY -->

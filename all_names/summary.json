@@ -194,7 +194,7 @@
     },
     "modwar7": {
       "files": 5,
-      "names": 122285,
+      "names": 122897,
       "types": {
         "image": {
           "found_pct": 20.4,
@@ -221,9 +221,9 @@
           "total": 223292
         },
         "xanim": {
-          "found_pct": 72.9,
-          "named": 44183,
-          "names": 13090,
+          "found_pct": 73.9,
+          "named": 44795,
+          "names": 13702,
           "total": 60608
         }
       }
@@ -275,6 +275,6 @@
   ],
   "totals": {
     "games": 7,
-    "names": 1498061
+    "names": 1498673
   }
 }
