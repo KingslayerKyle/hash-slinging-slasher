@@ -40,11 +40,11 @@
 
 <table>
 <tr><th align="left"><code>blkops04/</code></th>
-<th align="right" colspan="2">196,571 names in 6 file(s)</th>
+<th align="right" colspan="2">196,613 names in 6 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>xmodel</code></td><td align="right">15,347</td><td align="right">55,495 / 61,139 &nbsp;(90.8%)</td></tr>
+<tr><td><code>xmodel</code></td><td align="right">15,389</td><td align="right">55,537 / 61,139 &nbsp;(90.8%)</td></tr>
 <tr><td><code>material</code></td><td align="right">42,456</td><td align="right">114,850 / 122,750 &nbsp;(93.6%)</td></tr>
 <tr><td><code>image</code></td><td align="right">50,665</td><td align="right">157,891 / 167,360 &nbsp;(94.3%)</td></tr>
 <tr><td><code>xanim</code></td><td align="right">7,539</td><td align="right">19,609 / 21,968 &nbsp;(89.3%)</td></tr>
@@ -57,14 +57,14 @@
 
 <table>
 <tr><th align="left"><code>blkopscw/</code></th>
-<th align="right" colspan="2">92,783 names in 6 file(s)</th>
+<th align="right" colspan="2">93,023 names in 6 file(s)</th>
 </tr>
 <tr><th align="left">asset type</th><th align="right">found here</th><th align="right">named, of all in the game</th>
 </tr>
-<tr><td><code>xmodel</code></td><td align="right">5,304</td><td align="right">69,820 / 85,612 &nbsp;(81.6%)</td></tr>
+<tr><td><code>xmodel</code></td><td align="right">5,541</td><td align="right">70,057 / 85,612 &nbsp;(81.8%)</td></tr>
 <tr><td><code>material</code></td><td align="right">27,327</td><td align="right">148,444 / 158,158 &nbsp;(93.9%)</td></tr>
 <tr><td><code>image</code></td><td align="right">14,428</td><td align="right">213,893 / 245,235 &nbsp;(87.2%)</td></tr>
-<tr><td><code>xanim</code></td><td align="right">6,133</td><td align="right">22,784 / 28,468 &nbsp;(80.0%)</td></tr>
+<tr><td><code>xanim</code></td><td align="right">6,136</td><td align="right">22,787 / 28,468 &nbsp;(80.0%)</td></tr>
 <tr><td><code>sound_asset</code></td><td align="right">5,367</td><td align="right">83,305 / 97,217 &nbsp;(85.7%)</td></tr>
 <tr><td><code>sound_alias</code></td><td align="right">34,224</td><td align="right">42,970 / 50,890 &nbsp;(84.4%)</td></tr>
 </table>
