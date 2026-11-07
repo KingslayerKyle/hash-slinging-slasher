@@ -1,0 +1,3 @@
+250589a3ba633c0b,cap_sdr_patrol_fixing_antenna01_loop04
+25058ca3ba634124,cap_sdr_patrol_fixing_antenna01_loop01
+25058ea3ba63448a,cap_sdr_patrol_fixing_antenna01_loop03
