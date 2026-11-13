@@ -1,0 +1,2 @@
+2e91c0a44dae13d4,holdout_window_clip
+6e1380f2de74e0e6,test_cylinder_white
